@@ -1,0 +1,4 @@
+// https://leetcode.com/problems/reverse-pairs/
+pub fn reverse_pairs(nums: Vec<i32>) -> i32 {
+    todo!()
+}
