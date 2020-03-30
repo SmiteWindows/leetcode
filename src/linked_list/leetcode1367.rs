@@ -9,7 +9,7 @@ pub struct ListNode {
 impl ListNode {
     #[inline]
     fn new(val: i32) -> Self {
-        ListNode { next: None, val }
+        Self { next: None, val }
     }
 }
 // Definition for a binary tree node.
@@ -23,7 +23,7 @@ pub struct TreeNode {
 impl TreeNode {
     #[inline]
     pub fn new(val: i32) -> Self {
-        TreeNode {
+        Self {
             val,
             left: None,
             right: None,
