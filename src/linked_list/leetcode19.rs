@@ -33,15 +33,29 @@ pub fn remove_nth_from_end(head: Option<Box<ListNode>>, n: i32) -> Option<Box<Li
     dummy_head?.next
 }
 #[test]
-fn test1_19(){
-    let mut a = Some(Box::new(ListNode::new(1)));
-    a.as_mut().unwrap().next = Some(Box::new(ListNode::new(2)));
-    a.as_mut().unwrap().next.as_mut().unwrap().next = Some(Box::new(ListNode::new(3)));
-    a.as_mut().unwrap().next.as_mut().unwrap().next.as_mut().unwrap().next = Some(Box::new(ListNode::new(4)));
-    a.as_mut().unwrap().next.as_mut().unwrap().next.as_mut().unwrap().next.as_mut().unwrap().next = Some(Box::new(ListNode::new(5)));
-    let mut b = Some(Box::new(ListNode::new(1)));
-    b.as_mut().unwrap().next = Some(Box::new(ListNode::new(2)));
-    b.as_mut().unwrap().next.as_mut().unwrap().next = Some(Box::new(ListNode::new(3)));
-    b.as_mut().unwrap().next.as_mut().unwrap().next.as_mut().unwrap().next = Some(Box::new(ListNode::new(5)));
-    assert_eq!(b,remove_nth_from_end(a, 2));
+fn test1_19() {
+    let l1 = Some(Box::new(ListNode {
+        val: 1,
+        next: Some(Box::new(ListNode {
+            val: 2,
+            next: Some(Box::new(ListNode {
+                val: 3,
+                next: Some(Box::new(ListNode {
+                    val: 4,
+                    next: Some(Box::new(ListNode { val: 5, next: None })),
+                })),
+            })),
+        })),
+    }));
+    let res = Some(Box::new(ListNode {
+        val: 1,
+        next: Some(Box::new(ListNode {
+            val: 2,
+            next: Some(Box::new(ListNode {
+                val: 3,
+                next: Some(Box::new(ListNode { val: 5, next: None })),
+            })),
+        })),
+    }));
+    assert_eq!(res, remove_nth_from_end(l1, 2));
 }

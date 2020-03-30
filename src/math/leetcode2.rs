@@ -82,26 +82,26 @@ pub fn add_two_numbers(
 }
 #[test]
 fn test2_2(){
-    let mut first = Some(Box::new(ListNode::new(3)));
-    first.as_mut().unwrap().next = None;
-    let mut second = Some(Box::new(ListNode::new(4)));
-    second.as_mut().unwrap().next = first;
-    let mut left = Some(Box::new(ListNode::new(2)));
-    left.as_mut().unwrap().next = second;
-
-    let mut first = Some(Box::new(ListNode::new(4)));
-    first.as_mut().unwrap().next = None;
-    let mut second = Some(Box::new(ListNode::new(6)));
-    second.as_mut().unwrap().next = first;
-    let mut right = Some(Box::new(ListNode::new(5)));
-    right.as_mut().unwrap().next = second;
-
-    let mut first = Some(Box::new(ListNode::new(8)));
-    first.as_mut().unwrap().next = None;
-    let mut second = Some(Box::new(ListNode::new(0)));
-    second.as_mut().unwrap().next = first;
-    let mut res = Some(Box::new(ListNode::new(7)));
-    res.as_mut().unwrap().next = second;
-
-    assert_eq!(res, add_two_numbers(left, right));
+    let l1 = Some(Box::new(ListNode {
+        val: 2,
+        next: Some(Box::new(ListNode {
+            val: 4,
+            next: Some(Box::new(ListNode { val: 3, next: None })),
+        })),
+    }));
+    let l2 = Some(Box::new(ListNode {
+        val: 5,
+        next: Some(Box::new(ListNode {
+            val: 6,
+            next: Some(Box::new(ListNode { val: 4, next: None })),
+        })),
+    }));
+    let res = Some(Box::new(ListNode {
+        val: 7,
+        next: Some(Box::new(ListNode {
+            val: 0,
+            next: Some(Box::new(ListNode { val: 8, next: None })),
+        })),
+    }));
+    assert_eq!(res, add_two_numbers(l1, l2));
 }
