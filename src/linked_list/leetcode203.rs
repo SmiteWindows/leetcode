@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/remove-linked-list-elements/
+/// 删除链表中等于给定值 val 的所有节点。
 // Definition for singly-linked list.
 #[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {
