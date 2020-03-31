@@ -23,9 +23,11 @@ pub fn is_palindrome(head: Option<Box<ListNode>>) -> bool {
         len += 1;
         dummy = &dummy.as_ref().unwrap().next;
     }
-    if len <= 1 { return true; }
+    if len <= 1 {
+        return true;
+    }
     let mut first = &mut head;
-    let mut second: Option<Box<ListNode>> ;
+    let mut second: Option<Box<ListNode>>;
     let mid = len / 2;
     for _ in 1..mid {
         first = &mut first.as_mut().unwrap().next;
@@ -35,9 +37,9 @@ pub fn is_palindrome(head: Option<Box<ListNode>>) -> bool {
     } else {
         second = first.as_mut().unwrap().next.take().unwrap().next.take();
     }
-    let mut prev:Option<Box<ListNode>> = None;
+    let mut prev: Option<Box<ListNode>> = None;
     let mut cur = head;
-    let mut next:Option<Box<ListNode>>;
+    let mut next: Option<Box<ListNode>>;
     while cur.is_some() {
         let mut node = cur.unwrap();
         next = node.next.take();
