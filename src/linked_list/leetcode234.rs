@@ -37,7 +37,7 @@ pub fn is_palindrome(head: Option<Box<ListNode>>) -> bool {
     }
     let mut prev:Option<Box<ListNode>> = None;
     let mut cur = head;
-    let mut next;
+    let mut next:Option<Box<ListNode>>;
     while cur.is_some() {
         let mut node = cur.unwrap();
         next = node.next.take();
