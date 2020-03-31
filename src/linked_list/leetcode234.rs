@@ -1,5 +1,4 @@
 // https://leetcode.com/problems/palindrome-linked-list/
-/// 请判断一个链表是否为回文链表。你能否用 O(n) 时间复杂度和 O(1) 空间复杂度解决此题？
 // Definition for singly-linked list.
 #[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {

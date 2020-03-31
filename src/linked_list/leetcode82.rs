@@ -1,6 +1,5 @@
 // https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/
 // Definition for singly-linked list.
-/// 给定一个排序链表，删除所有含有重复数字的节点，只保留原始链表中 没有重复出现 的数字。
 #[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {
     pub val: i32,

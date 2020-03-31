@@ -1,5 +1,4 @@
 // https://leetcode.com/problems/merge-k-sorted-lists/
-/// 合并 k 个排序链表，返回合并后的排序链表。
 // Definition for singly-linked list.
 #[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {

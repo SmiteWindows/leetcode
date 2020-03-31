@@ -20,4 +20,6 @@ impl TreeNode {
 use std::cell::RefCell;
 use std::rc::Rc;
 
-pub fn recover_tree(root: &mut Option<Rc<RefCell<TreeNode>>>) {}
+pub fn recover_tree(root: &mut Option<Rc<RefCell<TreeNode>>>) {
+    todo!()
+}
