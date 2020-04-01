@@ -16,21 +16,20 @@ impl ListNode {
 /// Memory Usage: 2.8 MB
 use std::collections::HashSet;
 pub fn num_components(head: Option<Box<ListNode>>, g: Vec<i32>) -> i32 {
-    let mut head = head;
     let mut gset = HashSet::new();
     let mut res = 0;
     for x in g {
         gset.insert(x);
     }
-    let mut cur = &mut head;
+    let mut cur = &head;
     while cur.is_some() {
-        if gset.contains(&cur.as_mut().unwrap().val)
-            && (cur.as_mut().unwrap().next.is_none()
-                || !gset.contains(&cur.as_mut().unwrap().next.as_mut().unwrap().val))
+        if gset.contains(&cur.as_ref().unwrap().val)
+            && (cur.as_ref().unwrap().next.is_none()
+                || !gset.contains(&cur.as_ref().unwrap().next.as_ref().unwrap().val))
         {
             res += 1;
         }
-        cur = &mut cur.as_mut().unwrap().next;
+        cur = &cur.as_ref().unwrap().next;
     }
     res
 }
