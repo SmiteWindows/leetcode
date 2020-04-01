@@ -13,6 +13,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: fmt
+      run: cargo fmt
     - name: clippy
       run: cargo clippy
     - name: Build
