@@ -13,8 +13,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: rust-cargo
-      uses: actions-rs/cargo@v1.0.1
     - name: rust-clippy-check
       uses: actions-rs/clippy-check@v1.0.5
     - name: Build
