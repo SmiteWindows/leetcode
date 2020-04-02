@@ -1,5 +1,3 @@
-use std::{cell::RefCell, rc::Rc};
-
 // https://leetcode.com/problems/find-elements-in-a-contaminated-binary-tree/
 // Definition for a binary tree node.
 #[derive(Debug, PartialEq, Eq)]
@@ -12,13 +10,15 @@ pub struct TreeNode {
 impl TreeNode {
     #[inline]
     pub fn new(val: i32) -> Self {
-        TreeNode {
+        Self {
             val,
             left: None,
             right: None,
         }
     }
 }
+use std::{cell::RefCell, rc::Rc};
+
 struct FindElements {}
 
 /**

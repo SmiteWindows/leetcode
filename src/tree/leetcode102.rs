@@ -17,8 +17,7 @@ impl TreeNode {
         }
     }
 }
-use std::cell::RefCell;
-use std::rc::Rc;
+use std::{rc::Rc, cell::RefCell};
 
 pub fn level_order(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<i32>> {
     todo!()

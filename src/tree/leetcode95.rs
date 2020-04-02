@@ -10,15 +10,14 @@ pub struct TreeNode {
 impl TreeNode {
     #[inline]
     pub fn new(val: i32) -> Self {
-        TreeNode {
+        Self {
             val,
             left: None,
             right: None,
         }
     }
 }
-use std::cell::RefCell;
-use std::rc::Rc;
+use std::{rc::Rc, cell::RefCell};
 
 pub fn generate_trees(n: i32) -> Vec<Option<Rc<RefCell<TreeNode>>>> {
     todo!()
