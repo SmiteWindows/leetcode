@@ -18,24 +18,24 @@ pub fn add_two_numbers(
     l1: Option<Box<ListNode>>,
     l2: Option<Box<ListNode>>,
 ) -> Option<Box<ListNode>> {
-    let (mut lhs,mut rhs)=(l1,l2);
-    let mut res=Some(Box::new(ListNode::new(0)));
-    let (mut tmp,mut sum)=(&mut res,0);
-    let (mut lhs_tag,mut rhs_tag)=(lhs.is_some(),rhs.is_some());
-    while lhs_tag|| rhs_tag||sum>0{
-        if lhs_tag  {
-            sum+=lhs.as_ref()?.val;
-            lhs=lhs?.next;
-            lhs_tag=lhs.is_some();
+    let (mut lhs, mut rhs) = (l1, l2);
+    let mut res = Some(Box::new(ListNode::new(0)));
+    let (mut tmp, mut sum) = (&mut res, 0);
+    let (mut lhs_tag, mut rhs_tag) = (lhs.is_some(), rhs.is_some());
+    while lhs_tag || rhs_tag || sum > 0 {
+        if lhs_tag {
+            sum += lhs.as_ref()?.val;
+            lhs = lhs?.next;
+            lhs_tag = lhs.is_some();
         }
-        if rhs_tag  {
-            sum+=rhs.as_ref()?.val;
-            rhs=rhs?.next;
-            rhs_tag=rhs.is_some();
+        if rhs_tag {
+            sum += rhs.as_ref()?.val;
+            rhs = rhs?.next;
+            rhs_tag = rhs.is_some();
         }
-        tmp.as_mut()?.next=Some(Box::new(ListNode::new(sum%10)));
-        tmp=&mut tmp.as_mut()?.next;
-        sum/=10;
+        tmp.as_mut()?.next = Some(Box::new(ListNode::new(sum % 10)));
+        tmp = &mut tmp.as_mut()?.next;
+        sum /= 10;
     }
     res?.next
 }
