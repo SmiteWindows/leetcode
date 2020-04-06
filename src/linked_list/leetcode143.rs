@@ -17,12 +17,12 @@ impl ListNode {
 use std::collections::VecDeque;
 pub fn reorder_list(head: &mut Option<Box<ListNode>>) {
     let mut p = head.take();
-    let mut deque: VecDeque<Option<Box<ListNode>>> = VecDeque::new();
+    let mut deque = VecDeque::new();
     while let Some(mut n) = p {
         p = n.next.take();
         deque.push_back(Some(n));
     }
-    let mut stack: Vec<Option<Box<ListNode>>> = vec![];
+    let mut stack = vec![];
     let mut direction = true;
     while !deque.is_empty() {
         if direction {

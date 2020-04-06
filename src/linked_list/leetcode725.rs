@@ -24,7 +24,7 @@ pub fn split_list_to_parts(root: Option<Box<ListNode>>, k: i32) -> Vec<Option<Bo
     }
     let width = n / k;
     let rem = n % k;
-    let mut res: Vec<Option<Box<ListNode>>> = Vec::with_capacity(k);
+    let mut res = Vec::with_capacity(k);
     cur = root.as_ref();
     let mut i = 0;
     while i < k {
