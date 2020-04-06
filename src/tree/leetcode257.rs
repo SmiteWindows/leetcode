@@ -17,7 +17,7 @@ impl TreeNode {
         }
     }
 }
-use std::{rc::Rc, cell::RefCell};
+use std::{cell::RefCell, rc::Rc};
 
 pub fn binary_tree_paths(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<String> {
     todo!()

@@ -25,7 +25,7 @@ pub fn reverse_between(head: Option<Box<ListNode>>, m: i32, n: i32) -> Option<Bo
         ptr = ptr.next.as_mut()?;
         cnt += 1
     }
-    let mut tail= ptr.next.take();
+    let mut tail = ptr.next.take();
     let mut prev: Option<Box<ListNode>> = None;
     if let Some(mut node) = tail {
         prev = node.next.take();

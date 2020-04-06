@@ -20,18 +20,17 @@ pub fn odd_even_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
     let mut odd_tail = &mut odd_list;
     let mut even_tail = &mut even_list;
     let mut curr = head;
-    let mut is_odd=true;
+    let mut is_odd = true;
     while let Some(mut curr_inner) = curr {
         curr = curr_inner.next.take();
         if is_odd {
-            odd_tail.as_mut()?.next =Some(curr_inner);
-            odd_tail=&mut odd_tail.as_mut()?.next;
+            odd_tail.as_mut()?.next = Some(curr_inner);
+            odd_tail = &mut odd_tail.as_mut()?.next;
+        } else {
+            even_tail.as_mut()?.next = Some(curr_inner);
+            even_tail = &mut even_tail.as_mut()?.next;
         }
-        else {
-            even_tail.as_mut()?.next =Some(curr_inner);
-            even_tail=&mut even_tail.as_mut()?.next;
-        }
-        is_odd=!is_odd;
+        is_odd = !is_odd;
     }
     odd_tail.as_mut()?.next = even_list?.next.take();
     odd_list?.next

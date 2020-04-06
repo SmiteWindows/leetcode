@@ -15,13 +15,13 @@ impl ListNode {
 /// Runtime: 4 ms
 /// Memory Usage: 2.7 MB
 pub fn remove_elements(head: Option<Box<ListNode>>, val: i32) -> Option<Box<ListNode>> {
-    let mut head=head;
-    let mut p=&mut head;
+    let mut head = head;
+    let mut p = &mut head;
     while p.is_some() {
-        if p.as_ref()?.val==val {
-            *p=p.take()?.next.take();
-        }else{
-            p=&mut p.as_mut()?.next;
+        if p.as_ref()?.val == val {
+            *p = p.take()?.next.take();
+        } else {
+            p = &mut p.as_mut()?.next;
         }
     }
     head

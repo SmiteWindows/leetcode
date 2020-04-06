@@ -17,7 +17,7 @@ impl TreeNode {
         }
     }
 }
-use std::{rc::Rc, cell::RefCell};
+use std::{cell::RefCell, rc::Rc};
 
 pub fn generate_trees(n: i32) -> Vec<Option<Rc<RefCell<TreeNode>>>> {
     todo!()

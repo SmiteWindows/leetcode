@@ -12,6 +12,7 @@ pub mod leetcode1366;
 pub mod leetcode1370;
 pub mod leetcode1383;
 pub mod leetcode1387;
+pub mod leetcode1403;
 pub mod leetcode147;
 pub mod leetcode148;
 pub mod leetcode164;

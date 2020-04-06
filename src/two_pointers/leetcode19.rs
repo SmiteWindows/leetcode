@@ -49,7 +49,7 @@ pub fn remove_nth_from_end(head: Option<Box<ListNode>>, n: i32) -> Option<Box<Li
     res
 }
 #[test]
-fn test2_19(){
+fn test2_19() {
     let l1 = Some(Box::new(ListNode {
         val: 1,
         next: Some(Box::new(ListNode {

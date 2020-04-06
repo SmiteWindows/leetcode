@@ -17,10 +17,10 @@ impl ListNode {
 pub fn reverse_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
     let mut head = head;
     let mut prev = None;
-    while let Some(mut node)=head{
-        head= node.next.take();
-        node.next =prev;
-        prev=Some(node);
+    while let Some(mut node) = head {
+        head = node.next.take();
+        node.next = prev;
+        prev = Some(node);
     }
     prev
 }

@@ -77,7 +77,7 @@ pub fn add_two_numbers(
     head.next
 }
 #[test]
-fn test2_2(){
+fn test2_2() {
     let l1 = Some(Box::new(ListNode {
         val: 2,
         next: Some(Box::new(ListNode {

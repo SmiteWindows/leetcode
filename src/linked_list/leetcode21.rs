@@ -17,9 +17,9 @@ pub fn merge_two_lists(
     l1: Option<Box<ListNode>>,
     l2: Option<Box<ListNode>>,
 ) -> Option<Box<ListNode>> {
-    match (l1,l2) {
-        (t,None)|(None,t)=>t,
-        (Some(mut p1),Some(mut p2))=>{
+    match (l1, l2) {
+        (t, None) | (None, t) => t,
+        (Some(mut p1), Some(mut p2)) => {
             if p1.val < p2.val {
                 p1.next = merge_two_lists(p1.next, Some(p2));
                 Some(p1)
@@ -31,21 +31,19 @@ pub fn merge_two_lists(
     }
 }
 #[test]
-fn test1_21(){
+fn test1_21() {
     let l1 = Some(Box::new(ListNode {
         val: 1,
         next: Some(Box::new(ListNode {
             val: 2,
-            next: Some(Box::new(ListNode { 
-                val: 4, next: None })),
+            next: Some(Box::new(ListNode { val: 4, next: None })),
         })),
     }));
     let l2 = Some(Box::new(ListNode {
         val: 1,
         next: Some(Box::new(ListNode {
             val: 3,
-            next: Some(Box::new(ListNode { 
-                val: 4, next: None })),
+            next: Some(Box::new(ListNode { val: 4, next: None })),
         })),
     }));
     let res = Some(Box::new(ListNode {
@@ -58,8 +56,7 @@ fn test1_21(){
                     val: 3,
                     next: Some(Box::new(ListNode {
                         val: 4,
-                        next: Some(Box::new(ListNode { 
-                            val: 4, next: None })),
+                        next: Some(Box::new(ListNode { val: 4, next: None })),
                     })),
                 })),
             })),

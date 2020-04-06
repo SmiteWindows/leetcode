@@ -20,20 +20,23 @@ pub fn insertion_sort_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>>
     }
     let mut head = head?;
     let mut curr = head.next.take();
-    let mut res=Some(Box::new(ListNode{val: 0, next: Some(Box::new(ListNode::new(head.val)))}));
+    let mut res = Some(Box::new(ListNode {
+        val: 0,
+        next: Some(Box::new(ListNode::new(head.val))),
+    }));
     while curr.is_some() {
         let mut prev = res.as_mut()?;
-        let curr_val=curr.as_ref()?.val;
+        let curr_val = curr.as_ref()?.val;
         while prev.next.is_some() {
-            if prev.next.as_ref()?.val>=curr_val {
+            if prev.next.as_ref()?.val >= curr_val {
                 break;
             }
-            prev=prev.next.as_mut()?;
+            prev = prev.next.as_mut()?;
         }
-        let mut data=ListNode::new(curr_val);
-        data.next=prev.next.take();
-        prev.next=Some(Box::new(data));
-        curr=curr?.next.take();
+        let mut data = ListNode::new(curr_val);
+        data.next = prev.next.take();
+        prev.next = Some(Box::new(data));
+        curr = curr?.next.take();
     }
     res?.next
 }

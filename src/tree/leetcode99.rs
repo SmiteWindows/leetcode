@@ -17,6 +17,6 @@ impl TreeNode {
         }
     }
 }
-use std::{rc::Rc, cell::RefCell};
+use std::{cell::RefCell, rc::Rc};
 
 pub fn recover_tree(root: &mut Option<Rc<RefCell<TreeNode>>>) {}
