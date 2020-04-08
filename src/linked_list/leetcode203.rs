@@ -12,8 +12,8 @@ impl ListNode {
         Self { next: None, val }
     }
 }
-/// Runtime: 4 ms
-/// Memory Usage: 2.7 MB
+// Runtime: 4 ms
+// Memory Usage: 2.7 MB
 pub fn remove_elements(head: Option<Box<ListNode>>, val: i32) -> Option<Box<ListNode>> {
     let mut head = head;
     let mut p = &mut head;

@@ -12,7 +12,8 @@ impl ListNode {
         Self { next: None, val }
     }
 }
-
+// Runtime: 0 ms
+// Memory Usage: 2 MB
 pub fn merge_two_lists(
     l1: Option<Box<ListNode>>,
     l2: Option<Box<ListNode>>,

@@ -12,8 +12,8 @@ impl ListNode {
         Self { next: None, val }
     }
 }
-/// Runtime: 8 ms
-/// Memory Usage: 2.8 MB
+// Runtime: 8 ms
+// Memory Usage: 2.8 MB
 use std::collections::HashSet;
 pub fn num_components(head: Option<Box<ListNode>>, g: Vec<i32>) -> i32 {
     let mut gset = HashSet::new();

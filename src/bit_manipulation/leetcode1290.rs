@@ -12,8 +12,8 @@ impl ListNode {
         Self { next: None, val }
     }
 }
-/// Runtime: 0 ms
-/// Memory Usage: 1.9 MB
+// Runtime: 0 ms
+// Memory Usage: 1.9 MB
 pub fn get_decimal_value(head: Option<Box<ListNode>>) -> i32 {
     let mut cur = head.as_ref();
     let mut res = 0;
@@ -23,6 +23,7 @@ pub fn get_decimal_value(head: Option<Box<ListNode>>) -> i32 {
     }
     res
 }
+// bit_manipulation linked_list
 #[test]
 fn test2_1290() {
     let l1 = Some(Box::new(ListNode {

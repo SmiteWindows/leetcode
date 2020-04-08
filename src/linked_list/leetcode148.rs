@@ -12,8 +12,8 @@ impl ListNode {
         ListNode { next: None, val }
     }
 }
-/// Runtime: 4 ms
-/// Memory Usage: 4 MB
+// Runtime: 4 ms
+// Memory Usage: 4 MB
 pub fn sort_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
     let mut cur = head;
     let mut v= vec![];

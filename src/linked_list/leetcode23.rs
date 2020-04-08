@@ -26,8 +26,8 @@ impl PartialOrd for ListNode {
 }
 use std::cmp::Ordering;
 
-/// Runtime: 208 ms
-/// Memory Usage: 3.2 MB
+// Runtime: 208 ms
+// Memory Usage: 3.2 MB
 pub fn merge_k_lists(lists: Vec<Option<Box<ListNode>>>) -> Option<Box<ListNode>> {
     let mut lists = lists;
     let mut head = Box::new(ListNode::new(0));

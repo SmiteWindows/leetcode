@@ -12,8 +12,8 @@ impl ListNode {
         Self { next: None, val }
     }
 }
-/// Runtime: 0 ms
-/// Memory Usage: 2.3 MB
+// Runtime: 0 ms
+// Memory Usage: 2.3 MB
 pub fn reverse_k_group(head: Option<Box<ListNode>>, k: i32) -> Option<Box<ListNode>> {
     fn reverse(
         mut head: Option<Box<ListNode>>,

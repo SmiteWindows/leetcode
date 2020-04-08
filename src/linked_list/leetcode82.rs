@@ -12,8 +12,8 @@ impl ListNode {
         Self { next: None, val }
     }
 }
-/// Runtime: 0 ms
-/// Memory Usage: 2 MB
+// Runtime: 0 ms
+// Memory Usage: 2 MB
 pub fn delete_duplicates(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
     let mut head = head;
     let mut root = None; //head(node) ,(head)node.next ,last_node

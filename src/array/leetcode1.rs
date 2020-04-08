@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/two-sum/
-/// Runtime: 24 ms
-/// Memory Usage: 2.2 MB
+// Runtime: 24 ms
+// Memory Usage: 2.2 MB
 pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
     for i in 0..nums.len() {
         let a = target - nums[i];

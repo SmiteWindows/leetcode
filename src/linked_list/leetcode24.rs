@@ -12,8 +12,8 @@ impl ListNode {
         Self { next: None, val }
     }
 }
-/// Runtime: 0 ms
-/// Memory Usage: 1.9 MB
+// Runtime: 0 ms
+// Memory Usage: 1.9 MB
 pub fn swap_pairs(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
     let mut dummy_head = Some(Box::new(ListNode { val: 0, next: head }));
     let mut head = dummy_head.as_mut();

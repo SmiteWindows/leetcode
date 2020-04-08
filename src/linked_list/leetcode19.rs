@@ -12,8 +12,8 @@ impl ListNode {
         Self { next: None, val }
     }
 }
-/// Runtime: 0 ms
-/// Memory Usage: 2 MB
+// Runtime: 0 ms
+// Memory Usage: 2 MB
 pub fn remove_nth_from_end(head: Option<Box<ListNode>>, n: i32) -> Option<Box<ListNode>> {
     let mut dummy_head = Some(Box::new(ListNode { val: 0, next: head }));
     let mut len = 0;

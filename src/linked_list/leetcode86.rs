@@ -12,8 +12,8 @@ impl ListNode {
         Self { next: None, val }
     }
 }
-/// Runtime: 4 ms
-/// Memory Usage: 2 MB
+// Runtime: 4 ms
+// Memory Usage: 2 MB
 pub fn partition(head: Option<Box<ListNode>>, x: i32) -> Option<Box<ListNode>> {
     let mut lower = Some(Box::new(ListNode::new(0)));
     let mut higher = Some(Box::new(ListNode::new(0)));

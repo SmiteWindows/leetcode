@@ -12,8 +12,8 @@ impl ListNode {
         Self { next: None, val }
     }
 }
-/// Runtime: 36 ms
-/// Memory Usage: 2.5 MB
+// Runtime: 36 ms
+// Memory Usage: 2.5 MB
 pub fn insertion_sort_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
     if head.is_none() {
         return None;

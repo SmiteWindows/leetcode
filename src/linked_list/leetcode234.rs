@@ -12,8 +12,8 @@ impl ListNode {
         Self { next: None, val }
     }
 }
-/// Runtime: 4 ms
-/// Memory Usage: 4.3 MB
+// Runtime: 4 ms
+// Memory Usage: 4.3 MB
 pub fn is_palindrome(head: Option<Box<ListNode>>) -> bool {
     let mut head = head;
     let mut dummy = &head;

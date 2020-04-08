@@ -12,8 +12,8 @@ impl ListNode {
         Self { next: None, val }
     }
 }
-/// Runtime: 0 ms
-/// Memory Usage: 2 MB
+// Runtime: 0 ms
+// Memory Usage: 2 MB
 pub fn split_list_to_parts(root: Option<Box<ListNode>>, k: i32) -> Vec<Option<Box<ListNode>>> {
     let mut cur = root.as_ref();
     let k = k as usize;

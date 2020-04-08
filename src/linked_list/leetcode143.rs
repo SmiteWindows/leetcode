@@ -12,8 +12,8 @@ impl ListNode {
         Self { next: None, val }
     }
 }
-/// Runtime: 8 ms
-/// Memory Usage: 4.1 MB
+// Runtime: 8 ms
+// Memory Usage: 4.1 MB
 use std::collections::VecDeque;
 pub fn reorder_list(head: &mut Option<Box<ListNode>>) {
     let mut p = head.take();

@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/subsets/
-/// Runtime: 0 ms
-/// Memory Usage: 2.2 MB
+// Runtime: 0 ms
+// Memory Usage: 2.2 MB
 pub fn subsets(nums: Vec<i32>) -> Vec<Vec<i32>> {
     let len=nums.len();
     let all_lens = usize::pow(2usize, len as u32);
@@ -16,7 +16,7 @@ pub fn subsets(nums: Vec<i32>) -> Vec<Vec<i32>> {
     }
     res
 }
-//  array backtracking bit_manipulation
+// array backtracking bit_manipulation
 #[test]
 fn test_3_78() {
     let nums = vec![1];

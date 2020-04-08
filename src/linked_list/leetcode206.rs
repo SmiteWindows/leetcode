@@ -12,8 +12,8 @@ impl ListNode {
         Self { next: None, val }
     }
 }
-/// Runtime: 0 ms
-/// Memory Usage: 2.3 MB
+// Runtime: 0 ms
+// Memory Usage: 2.3 MB
 pub fn reverse_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
     let mut head = head;
     let mut prev = None;

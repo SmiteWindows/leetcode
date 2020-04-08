@@ -12,8 +12,8 @@ impl ListNode {
         Self { next: None, val }
     }
 }
-/// Runtime: 0 ms
-/// Memory Usage: 2.3 MB
+// Runtime: 0 ms
+// Memory Usage: 2.3 MB
 pub fn odd_even_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
     let mut odd_list = Some(Box::new(ListNode::new(0)));
     let mut even_list = Some(Box::new(ListNode::new(0)));

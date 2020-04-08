@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/two-sum/
-/// Runtime: 0 ms
-/// Memory Usage: 2.2 MB
+// Runtime: 0 ms
+// Memory Usage: 2.2 MB
 pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
     use std::collections::HashMap;
     let nums_map = nums

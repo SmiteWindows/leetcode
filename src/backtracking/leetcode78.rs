@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/subsets/
-/// Runtime: 0 ms
-/// Memory Usage: 2 MB
+// Runtime: 0 ms
+// Memory Usage: 2 MB
 pub fn subsets(nums: Vec<i32>) -> Vec<Vec<i32>> {
     fn backtrack(
         start: usize,
@@ -27,12 +27,12 @@ pub fn subsets(nums: Vec<i32>) -> Vec<Vec<i32>> {
     }
     res
 }
-//  array backtracking bit_manipulation
+// array backtracking bit_manipulation
 #[test]
 fn test_2_78() {
-    // let nums = vec![1];
-    // let res = vec![vec![], vec![1]];
-    // assert_eq!(subsets(nums), res);
+    let nums = vec![1];
+    let res = vec![vec![], vec![1]];
+    assert_eq!(subsets(nums), res);
     let nums = vec![1, 2, 3];
     let res = vec![
         vec![],
