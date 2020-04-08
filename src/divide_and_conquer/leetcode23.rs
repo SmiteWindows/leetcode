@@ -46,7 +46,7 @@ pub fn merge_k_lists(lists: Vec<Option<Box<ListNode>>>) -> Option<Box<ListNode>>
     }
     lists[0].take()
 }
-
+// linked_list divide_and_conquer heap
 #[test]
 fn test3_23() {
     let l1 = Some(Box::new(ListNode {

@@ -12,6 +12,7 @@ pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
     }
     unreachable!()
 }
+// array hash_table
 #[test]
 fn test1_1() {
     let v1 = vec![2, 7, 11, 15];
