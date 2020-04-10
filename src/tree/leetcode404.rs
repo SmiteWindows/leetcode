@@ -22,3 +22,17 @@ use std::{cell::RefCell, rc::Rc};
 pub fn sum_of_left_leaves(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     todo!()
 }
+// tree
+#[test]
+fn test1_404() {
+    let root = Some(Rc::new(RefCell::new(TreeNode {
+        val: 3,
+        left: Some(Rc::new(RefCell::new(TreeNode::new(9)))),
+        right: Some(Rc::new(RefCell::new(TreeNode {
+            val: 20,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(15)))),
+            right: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
+        }))),
+    })));
+    assert_eq!(24, sum_of_left_leaves(root));
+}

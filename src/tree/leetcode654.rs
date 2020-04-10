@@ -22,3 +22,26 @@ use std::{cell::RefCell, rc::Rc};
 pub fn construct_maximum_binary_tree(nums: Vec<i32>) -> Option<Rc<RefCell<TreeNode>>> {
     todo!()
 }
+// tree
+#[test]
+fn test1_653() {
+    let nums = vec![3, 2, 1, 6, 0, 5];
+    let res = Some(Rc::new(RefCell::new(TreeNode {
+        val: 6,
+        left: Some(Rc::new(RefCell::new(TreeNode {
+            val: 3,
+            left: None,
+            right: Some(Rc::new(RefCell::new(TreeNode {
+                val: 2,
+                left: None,
+                right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
+            }))),
+        }))),
+        right: Some(Rc::new(RefCell::new(TreeNode {
+            val: 5,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(5)))),
+            right: None,
+        }))),
+    })));
+    assert_eq!(res, construct_maximum_binary_tree(nums));
+}

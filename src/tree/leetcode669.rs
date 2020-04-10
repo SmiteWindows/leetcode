@@ -26,3 +26,41 @@ pub fn trim_bst(
 ) -> Option<Rc<RefCell<TreeNode>>> {
     todo!()
 }
+// tree
+#[test]
+fn test1_669() {
+    let t1 = Some(Rc::new(RefCell::new(TreeNode {
+        val: 1,
+        left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
+        right: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
+    })));
+    let res1 = Some(Rc::new(RefCell::new(TreeNode {
+        val: 1,
+        left: None,
+        right: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
+    })));
+    assert_eq!(trim_bst(t1, 1, 2), res1);
+    let res2 = Some(Rc::new(RefCell::new(TreeNode {
+        val: 3,
+        left: Some(Rc::new(RefCell::new(TreeNode {
+            val: 2,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
+            right: None,
+        }))),
+        right: None,
+    })));
+    let t2 = Some(Rc::new(RefCell::new(TreeNode {
+        val: 3,
+        left: Some(Rc::new(RefCell::new(TreeNode {
+            val: 0,
+            left: None,
+            right: Some(Rc::new(RefCell::new(TreeNode {
+                val: 2,
+                left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
+                right: None,
+            }))),
+        }))),
+        right: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
+    })));
+    assert_eq!(trim_bst(t2, 1, 3), res2);
+}

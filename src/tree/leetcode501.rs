@@ -22,3 +22,18 @@ use std::{cell::RefCell, rc::Rc};
 pub fn find_mode(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
     todo!()
 }
+// tree
+#[test]
+fn test1_501() {
+    let root = Some(Rc::new(RefCell::new(TreeNode {
+        val: 1,
+        left: None,
+        right: Some(Rc::new(RefCell::new(TreeNode {
+            val: 2,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
+            right: None,
+        }))),
+    })));
+    let res = vec![2];
+    assert_eq!(res, find_mode(root));
+}

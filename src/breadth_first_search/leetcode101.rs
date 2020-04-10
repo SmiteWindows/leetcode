@@ -38,7 +38,7 @@ pub fn is_symmetric(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
 //             right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
 //         }))),
 //     })));
-//     assert_eq!(true,is_symmetric(root1));
+//     assert_eq!(true, is_symmetric(root1));
 //     let root2 = Some(Rc::new(RefCell::new(TreeNode {
 //         val: 1,
 //         left: Some(Rc::new(RefCell::new(TreeNode {
@@ -52,5 +52,5 @@ pub fn is_symmetric(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
 //             right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
 //         }))),
 //     })));
-//     assert_eq!(false,is_symmetric(root2));
+//     assert_eq!(false, is_symmetric(root2));
 // }

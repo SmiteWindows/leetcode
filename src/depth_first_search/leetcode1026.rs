@@ -22,3 +22,29 @@ use std::{cell::RefCell, rc::Rc};
 pub fn max_ancestor_diff(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     todo!()
 }
+// tree depth_first_search
+#[test]
+fn test2_1026() {
+    let root = Some(Rc::new(RefCell::new(TreeNode {
+        val: 8,
+        left: Some(Rc::new(RefCell::new(TreeNode {
+            val: 3,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
+            right: Some(Rc::new(RefCell::new(TreeNode {
+                val: 6,
+                left: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
+                right: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
+            }))),
+        }))),
+        right: Some(Rc::new(RefCell::new(TreeNode {
+            val: 10,
+            left: None,
+            right: Some(Rc::new(RefCell::new(TreeNode {
+                val: 14,
+                left: Some(Rc::new(RefCell::new(TreeNode::new(13)))),
+                right: None,
+            }))),
+        }))),
+    })));
+    assert_eq!(max_ancestor_diff(root), 7);
+}

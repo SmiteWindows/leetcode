@@ -22,3 +22,17 @@ use std::{cell::RefCell, rc::Rc};
 pub fn min_depth(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     todo!()
 }
+// tree depth_first_search breadth_first_search
+#[test]
+fn test2_111() {
+    let root = Some(Rc::new(RefCell::new(TreeNode {
+        val: 3,
+        left: Some(Rc::new(RefCell::new(TreeNode::new(9)))),
+        right: Some(Rc::new(RefCell::new(TreeNode {
+            val: 20,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(15)))),
+            right: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
+        }))),
+    })));
+    assert_eq!(2, min_depth(root));
+}

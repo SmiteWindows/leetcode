@@ -22,3 +22,29 @@ use std::{cell::RefCell, rc::Rc};
 pub fn deepest_leaves_sum(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     todo!()
 }
+// tree depth_first_search
+#[test]
+fn test2_1302() {
+    let root = Some(Rc::new(RefCell::new(TreeNode {
+        val: 1,
+        left: Some(Rc::new(RefCell::new(TreeNode {
+            val: 2,
+            left: Some(Rc::new(RefCell::new(TreeNode {
+                val: 4,
+                left: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
+                right: None,
+            }))),
+            right: Some(Rc::new(RefCell::new(TreeNode::new(5)))),
+        }))),
+        right: Some(Rc::new(RefCell::new(TreeNode {
+            val: 3,
+            left: None,
+            right: Some(Rc::new(RefCell::new(TreeNode {
+                val: 6,
+                left: None,
+                right: Some(Rc::new(RefCell::new(TreeNode::new(8)))),
+            }))),
+        }))),
+    })));
+    assert_eq!(deepest_leaves_sum(root), 15);
+}

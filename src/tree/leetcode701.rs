@@ -25,3 +25,53 @@ pub fn insert_into_bst(
 ) -> Option<Rc<RefCell<TreeNode>>> {
     todo!()
 }
+// tree
+#[test]
+fn test1_701() {
+    let t1 = Some(Rc::new(RefCell::new(TreeNode {
+        val: 4,
+        left: Some(Rc::new(RefCell::new(TreeNode {
+            val: 2,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
+            right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
+        }))),
+        right: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
+    })));
+    let res1 = Some(Rc::new(RefCell::new(TreeNode {
+        val: 4,
+        left: Some(Rc::new(RefCell::new(TreeNode {
+            val: 2,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
+            right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
+        }))),
+        right: Some(Rc::new(RefCell::new(TreeNode {
+            val: 7,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(5)))),
+            right: None,
+        }))),
+    })));
+    let t2 = Some(Rc::new(RefCell::new(TreeNode {
+        val: 4,
+        left: Some(Rc::new(RefCell::new(TreeNode {
+            val: 2,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
+            right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
+        }))),
+        right: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
+    })));
+    let res2 = Some(Rc::new(RefCell::new(TreeNode {
+        val: 5,
+        left: Some(Rc::new(RefCell::new(TreeNode {
+            val: 2,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
+            right: Some(Rc::new(RefCell::new(TreeNode {
+                val: 3,
+                left: None,
+                right: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
+            }))),
+        }))),
+        right: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
+    })));
+    assert_eq!(res1, insert_into_bst(t1, 5));
+    assert_eq!(res2, insert_into_bst(t2, 5));
+}

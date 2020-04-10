@@ -22,3 +22,18 @@ use std::{cell::RefCell, rc::Rc};
 pub fn average_of_levels(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<f64> {
     todo!()
 }
+// tree
+#[test]
+fn test1_637() {
+    let t = Some(Rc::new(RefCell::new(TreeNode {
+        val: 3,
+        left: Some(Rc::new(RefCell::new(TreeNode::new(9)))),
+        right: Some(Rc::new(RefCell::new(TreeNode {
+            val: 20,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(15)))),
+            right: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
+        }))),
+    })));
+    let res = vec![3, 14, 5, 11];
+    assert_eq!(res, average_of_levels(t));
+}

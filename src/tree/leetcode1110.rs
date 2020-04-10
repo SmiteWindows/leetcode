@@ -25,3 +25,36 @@ pub fn del_nodes(
 ) -> Vec<Option<Rc<RefCell<TreeNode>>>> {
     todo!()
 }
+// tree depth_first_search
+#[test]
+fn test1_1110() {
+    let root = Some(Rc::new(RefCell::new(TreeNode {
+        val: 1,
+        left: Some(Rc::new(RefCell::new(TreeNode {
+            val: 2,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
+            right: Some(Rc::new(RefCell::new(TreeNode::new(5)))),
+        }))),
+        right: Some(Rc::new(RefCell::new(TreeNode {
+            val: 3,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
+            right: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
+        }))),
+    })));
+    let s1 = Some(Rc::new(RefCell::new(TreeNode {
+        val: 1,
+        left: Some(Rc::new(RefCell::new(TreeNode {
+            val: 2,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
+            right: Some(Rc::new(RefCell::new(TreeNode::new(5)))),
+        }))),
+        right: Some(Rc::new(RefCell::new(TreeNode {
+            val: 3,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
+            right: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
+        }))),
+    })));
+    let s2 = Some(Rc::new(RefCell::new(TreeNode::new(6))));
+    let s3 = Some(Rc::new(RefCell::new(TreeNode::new(7))));
+    assert_eq!(del_nodes(root, vec![3, 5]), vec![s1, s2, s3]);
+}

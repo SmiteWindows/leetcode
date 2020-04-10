@@ -22,3 +22,22 @@ use std::{cell::RefCell, rc::Rc};
 pub fn sorted_array_to_bst(nums: Vec<i32>) -> Option<Rc<RefCell<TreeNode>>> {
     todo!()
 }
+// tree depth_first_search
+#[test]
+fn test2_108() {
+    let nums = vec![-10, -3, 0, 5, 9];
+    let res = Some(Rc::new(RefCell::new(TreeNode {
+        val: 0,
+        left: Some(Rc::new(RefCell::new(TreeNode {
+            val: -3,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(-10)))),
+            right: None,
+        }))),
+        right: Some(Rc::new(RefCell::new(TreeNode {
+            val: 9,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(5)))),
+            right: None,
+        }))),
+    })));
+    assert_eq!(res, sorted_array_to_bst(nums));
+}

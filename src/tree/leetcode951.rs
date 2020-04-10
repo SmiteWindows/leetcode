@@ -25,3 +25,42 @@ pub fn flip_equiv(
 ) -> bool {
     todo!()
 }
+// tree
+#[test]
+fn test1_951() {
+    let t1 = Some(Rc::new(RefCell::new(TreeNode {
+        val: 1,
+        left: Some(Rc::new(RefCell::new(TreeNode {
+            val: 2,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
+            right: Some(Rc::new(RefCell::new(TreeNode {
+                val: 5,
+                left: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
+                right: Some(Rc::new(RefCell::new(TreeNode::new(8)))),
+            }))),
+        }))),
+        right: Some(Rc::new(RefCell::new(TreeNode {
+            val: 3,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
+            right: None,
+        }))),
+    })));
+    let t2 = Some(Rc::new(RefCell::new(TreeNode {
+        val: 1,
+        left: Some(Rc::new(RefCell::new(TreeNode {
+            val: 3,
+            left: None,
+            right: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
+        }))),
+        right: Some(Rc::new(RefCell::new(TreeNode {
+            val: 2,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
+            right: Some(Rc::new(RefCell::new(TreeNode {
+                val: 5,
+                left: Some(Rc::new(RefCell::new(TreeNode::new(8)))),
+                right: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
+            }))),
+        }))),
+    })));
+    assert_eq!(flip_equiv(t1, t2), true);
+}

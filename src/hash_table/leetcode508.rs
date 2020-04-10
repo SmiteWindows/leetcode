@@ -22,3 +22,21 @@ use std::{cell::RefCell, rc::Rc};
 pub fn find_frequent_tree_sum(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
     todo!()
 }
+// tree hash_table
+#[test]
+fn test2_508() {
+    let root1 = Some(Rc::new(RefCell::new(TreeNode {
+        val: 5,
+        left: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
+        right: Some(Rc::new(RefCell::new(TreeNode::new(-3)))),
+    })));
+    let res = vec![2, -3, 4];
+    assert_eq!(res, find_frequent_tree_sum(root1));
+    let root2 = Some(Rc::new(RefCell::new(TreeNode {
+        val: 5,
+        left: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
+        right: Some(Rc::new(RefCell::new(TreeNode::new(-5)))),
+    })));
+    let res = vec![2];
+    assert_eq!(res, find_frequent_tree_sum(root2));
+}

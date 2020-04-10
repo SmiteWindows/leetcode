@@ -22,3 +22,34 @@ use std::{cell::RefCell, rc::Rc};
 pub fn invert_tree(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
     todo!()
 }
+// tree
+#[test]
+fn test1_226() {
+    let root = Some(Rc::new(RefCell::new(TreeNode {
+        val: 4,
+        left: Some(Rc::new(RefCell::new(TreeNode {
+            val: 2,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
+            right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
+        }))),
+        right: Some(Rc::new(RefCell::new(TreeNode {
+            val: 7,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
+            right: Some(Rc::new(RefCell::new(TreeNode::new(9)))),
+        }))),
+    })));
+    let res = Some(Rc::new(RefCell::new(TreeNode {
+        val: 4,
+        left: Some(Rc::new(RefCell::new(TreeNode {
+            val: 7,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(9)))),
+            right: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
+        }))),
+        right: Some(Rc::new(RefCell::new(TreeNode {
+            val: 2,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
+            right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
+        }))),
+    })));
+    assert_eq!(res, invert_tree(root));
+}

@@ -16,7 +16,7 @@ impl ListNode {
 // Memory Usage: 4 MB
 pub fn sort_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
     let mut cur = head;
-    let mut v= vec![];
+    let mut v = vec![];
     while let Some(node) = cur {
         v.push(node.val);
         cur = node.next;

@@ -22,3 +22,21 @@ use std::{cell::RefCell, rc::Rc};
 pub fn count_nodes(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     todo!()
 }
+// tree binary_search
+#[test]
+fn test2_222() {
+    let root = Some(Rc::new(RefCell::new(TreeNode {
+        val: 1,
+        left: Some(Rc::new(RefCell::new(TreeNode {
+            val: 2,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
+            right: Some(Rc::new(RefCell::new(TreeNode::new(5)))),
+        }))),
+        right: Some(Rc::new(RefCell::new(TreeNode {
+            val: 3,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
+            right: None,
+        }))),
+    })));
+    assert_eq!(6, count_nodes(root));
+}

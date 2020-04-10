@@ -22,3 +22,13 @@ use std::{cell::RefCell, rc::Rc};
 pub fn find_tilt(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     todo!()
 }
+// tree
+#[test]
+fn test1_563() {
+    let root = Some(Rc::new(RefCell::new(TreeNode {
+        val: 1,
+        left: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
+        right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
+    })));
+    assert_eq!(1, find_tilt(root));
+}

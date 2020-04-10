@@ -25,3 +25,43 @@ pub fn leaf_similar(
 ) -> bool {
     todo!()
 }
+// tree depth_first_search
+#[test]
+fn test1_872() {
+    let root1 = Some(Rc::new(RefCell::new(TreeNode {
+        val: 3,
+        left: Some(Rc::new(RefCell::new(TreeNode {
+            val: 5,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
+            right: Some(Rc::new(RefCell::new(TreeNode {
+                val: 2,
+                left: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
+                right: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
+            }))),
+        }))),
+        right: Some(Rc::new(RefCell::new(TreeNode {
+            val: 1,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(9)))),
+            right: Some(Rc::new(RefCell::new(TreeNode::new(8)))),
+        }))),
+    })));
+    // FIX
+    let root2 = Some(Rc::new(RefCell::new(TreeNode {
+        val: 3,
+        left: Some(Rc::new(RefCell::new(TreeNode {
+            val: 5,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
+            right: Some(Rc::new(RefCell::new(TreeNode {
+                val: 2,
+                left: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
+                right: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
+            }))),
+        }))),
+        right: Some(Rc::new(RefCell::new(TreeNode {
+            val: 1,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(9)))),
+            right: Some(Rc::new(RefCell::new(TreeNode::new(8)))),
+        }))),
+    })));
+    assert_eq!(leaf_similar(root1, root2), true);
+}

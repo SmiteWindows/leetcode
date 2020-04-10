@@ -22,3 +22,22 @@ use std::{cell::RefCell, rc::Rc};
 pub fn right_side_view(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
     todo!()
 }
+// tree depth_first_search breadth_first_search
+#[test]
+fn test1_199() {
+    let root = Some(Rc::new(RefCell::new(TreeNode {
+        val: 1,
+        left: Some(Rc::new(RefCell::new(TreeNode {
+            val: 2,
+            left: None,
+            right: Some(Rc::new(RefCell::new(TreeNode::new(5)))),
+        }))),
+        right: Some(Rc::new(RefCell::new(TreeNode {
+            val: 3,
+            left: None,
+            right: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
+        }))),
+    })));
+    let res = vec![1, 3, 4];
+    assert_eq!(res, right_side_view(root));
+}

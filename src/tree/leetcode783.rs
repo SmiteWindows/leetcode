@@ -22,3 +22,17 @@ use std::{cell::RefCell, rc::Rc};
 pub fn min_diff_in_bst(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     todo!()
 }
+// tree recursion
+#[test]
+fn test1_783() {
+    let root = Some(Rc::new(RefCell::new(TreeNode {
+        val: 4,
+        left: Some(Rc::new(RefCell::new(TreeNode {
+            val: 2,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
+            right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
+        }))),
+        right: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
+    })));
+    assert_eq!(1, min_diff_in_bst(root));
+}

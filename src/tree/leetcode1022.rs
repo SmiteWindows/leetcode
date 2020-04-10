@@ -22,3 +22,21 @@ use std::{cell::RefCell, rc::Rc};
 pub fn sum_root_to_leaf(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     todo!()
 }
+// tree
+#[test]
+fn test1_1022() {
+    let root = Some(Rc::new(RefCell::new(TreeNode {
+        val: 1,
+        left: Some(Rc::new(RefCell::new(TreeNode {
+            val: 0,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
+            right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
+        }))),
+        right: Some(Rc::new(RefCell::new(TreeNode {
+            val: 1,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
+            right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
+        }))),
+    })));
+    assert_eq!(sum_root_to_leaf(root), 22);
+}

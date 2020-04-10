@@ -21,14 +21,15 @@ use std::{cell::RefCell, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn is_same_tree(p: Option<Rc<RefCell<TreeNode>>>, q: Option<Rc<RefCell<TreeNode>>>) -> bool {
-    match (p,q) {
+    match (p, q) {
         (None, None) => true,
-        (None, _) | (_,None) => false,
-        (Some(pr),Some(qr)) => {
-            let (pr,qr) = (pr.as_ref().borrow(), qr.as_ref().borrow());
+        (None, _) | (_, None) => false,
+        (Some(pr), Some(qr)) => {
+            let (pr, qr) = (pr.as_ref().borrow(), qr.as_ref().borrow());
             if pr.val == qr.val {
-                is_same_tree(pr.left.clone(),qr.left.clone()) && is_same_tree(pr.right.clone(),qr.right.clone())
-            }else{
+                is_same_tree(pr.left.clone(), qr.left.clone())
+                    && is_same_tree(pr.right.clone(), qr.right.clone())
+            } else {
                 false
             }
         }

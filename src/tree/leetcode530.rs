@@ -22,3 +22,17 @@ use std::{cell::RefCell, rc::Rc};
 pub fn get_minimum_difference(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     todo!()
 }
+// tree
+#[test]
+fn test1_530() {
+    let root = Some(Rc::new(RefCell::new(TreeNode {
+        val: 1,
+        left: None,
+        right: Some(Rc::new(RefCell::new(TreeNode {
+            val: 3,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
+            right: None,
+        }))),
+    })));
+    assert_eq!(1, get_minimum_difference(root));
+}

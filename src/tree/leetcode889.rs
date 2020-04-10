@@ -22,3 +22,23 @@ use std::{cell::RefCell, rc::Rc};
 pub fn construct_from_pre_post(pre: Vec<i32>, post: Vec<i32>) -> Option<Rc<RefCell<TreeNode>>> {
     todo!()
 }
+// tree
+#[test]
+fn test1_889() {
+    let pre = vec![1, 2, 4, 5, 3, 6, 7]; // root left right
+    let post = vec![4, 5, 2, 6, 7, 3, 1]; // left right root
+    let res = Some(Rc::new(RefCell::new(TreeNode {
+        val: 1,
+        left: Some(Rc::new(RefCell::new(TreeNode {
+            val: 2,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
+            right: Some(Rc::new(RefCell::new(TreeNode::new(5)))),
+        }))),
+        right: Some(Rc::new(RefCell::new(TreeNode {
+            val: 3,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
+            right: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
+        }))),
+    })));
+    assert_eq!(construct_from_pre_post(pre, post), res);
+}

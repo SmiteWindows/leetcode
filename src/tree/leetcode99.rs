@@ -19,4 +19,48 @@ impl TreeNode {
 }
 use std::{cell::RefCell, rc::Rc};
 
-pub fn recover_tree(root: &mut Option<Rc<RefCell<TreeNode>>>) {}
+pub fn recover_tree(root: &mut Option<Rc<RefCell<TreeNode>>>) {
+    todo!()
+}
+// tree depth_first_search
+#[test]
+fn test1_99() {
+    let t1 = Some(Rc::new(RefCell::new(TreeNode {
+        val: 1,
+        left: Some(Rc::new(RefCell::new(TreeNode {
+            val: 3,
+            left: None,
+            right: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
+        }))),
+        right: None,
+    })));
+    let res1 = Some(Rc::new(RefCell::new(TreeNode {
+        val: 3,
+        left: Some(Rc::new(RefCell::new(TreeNode {
+            val: 1,
+            left: None,
+            right: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
+        }))),
+        right: None,
+    })));
+    let t2 = Some(Rc::new(RefCell::new(TreeNode {
+        val: 3,
+        left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
+        right: Some(Rc::new(RefCell::new(TreeNode {
+            val: 4,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
+            right: None,
+        }))),
+    })));
+    let res2 = Some(Rc::new(RefCell::new(TreeNode {
+        val: 2,
+        left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
+        right: Some(Rc::new(RefCell::new(TreeNode {
+            val: 4,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
+            right: None,
+        }))),
+    })));
+    assert_eq!(res1, recover_tree(&mut t1));
+    assert_eq!(res2, recover_tree(&mut t2));
+}

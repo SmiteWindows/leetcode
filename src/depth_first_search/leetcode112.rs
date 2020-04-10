@@ -22,3 +22,29 @@ use std::{cell::RefCell, rc::Rc};
 pub fn has_path_sum(root: Option<Rc<RefCell<TreeNode>>>, sum: i32) -> bool {
     todo!()
 }
+// tree depth_first_search
+#[test]
+fn test2_112() {
+    let root = Some(Rc::new(RefCell::new(TreeNode {
+        val: 5,
+        left: Some(Rc::new(RefCell::new(TreeNode {
+            val: 4,
+            left: Some(Rc::new(RefCell::new(TreeNode {
+                val: 11,
+                left: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
+                right: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
+            }))),
+            right: None,
+        }))),
+        right: Some(Rc::new(RefCell::new(TreeNode {
+            val: 8,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(13)))),
+            right: Some(Rc::new(RefCell::new(TreeNode {
+                val: 4,
+                left: None,
+                right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
+            }))),
+        }))),
+    })));
+    assert_eq!(true, has_path_sum(root, 22));
+}

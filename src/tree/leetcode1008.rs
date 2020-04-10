@@ -22,3 +22,21 @@ use std::{cell::RefCell, rc::Rc};
 pub fn bst_from_preorder(preorder: Vec<i32>) -> Option<Rc<RefCell<TreeNode>>> {
     todo!()
 }
+// tree
+#[test]
+fn test1_1008() {
+    let res = Some(Rc::new(RefCell::new(TreeNode {
+        val: 8,
+        left: Some(Rc::new(RefCell::new(TreeNode {
+            val: 5,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
+            right: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
+        }))),
+        right: Some(Rc::new(RefCell::new(TreeNode {
+            val: 10,
+            left: None,
+            right: Some(Rc::new(RefCell::new(TreeNode::new(12)))),
+        }))),
+    })));
+    assert_eq!(bst_from_preorder(vec![8, 5, 1, 7, 10, 12]), res);
+}
