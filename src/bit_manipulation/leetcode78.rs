@@ -5,12 +5,11 @@ pub fn subsets(nums: Vec<i32>) -> Vec<Vec<i32>> {
     let len = nums.len();
     let all_lens = usize::pow(2usize, len as u32);
     let mut res = vec![vec![]; all_lens];
-    for i in 0..len {
+    for (i, num) in nums.iter().enumerate().take(len).map(|(i,&num)|(i,num)) {
         let mod_lens = usize::pow(2usize, (len - 1 - i) as u32);
-        let num = nums[i];
-        for j in 0..all_lens {
+        for (j, item) in res.iter_mut().enumerate().take(all_lens){
             if (j / mod_lens) % 2 == 0 {
-                res[j].push(num);
+                item.push(num);
             }
         }
     }

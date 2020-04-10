@@ -10,7 +10,7 @@ pub struct TreeNode {
 impl TreeNode {
     #[inline]
     pub fn new(val: i32) -> Self {
-        TreeNode {
+        Self {
             val,
             left: None,
             right: None,
@@ -35,6 +35,5 @@ fn test2_145() {
             right: None,
         }))),
     })));
-    let res = vec![3, 2, 1];
-    assert_eq!(res, preorder_traversal(root));
+    assert_eq!(vec![3, 2, 1], postorder_traversal(root));
 }

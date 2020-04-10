@@ -9,15 +9,14 @@ pub struct TreeNode {
 impl TreeNode {
     #[inline]
     pub fn new(val: i32) -> Self {
-        TreeNode {
+        Self {
             val,
             left: None,
             right: None,
         }
     }
 }
-use std::cell::RefCell;
-use std::rc::Rc;
+use std::{cell::RefCell, rc::Rc};
 
 pub fn flatten(root: &mut Option<Rc<RefCell<TreeNode>>>) {
     todo!()
@@ -25,7 +24,7 @@ pub fn flatten(root: &mut Option<Rc<RefCell<TreeNode>>>) {
 // tree depth_first_search
 #[test]
 fn test2_114() {
-    let root = Some(Rc::new(RefCell::new(TreeNode {
+    let mut root = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
         left: Some(Rc::new(RefCell::new(TreeNode {
             val: 2,
@@ -59,5 +58,6 @@ fn test2_114() {
             }))),
         }))),
     })));
-    assert_eq!(res, flatten(&mut root));
+    flatten(&mut root);
+    assert_eq!(res, root);
 }

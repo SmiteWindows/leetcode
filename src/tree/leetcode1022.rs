@@ -20,7 +20,23 @@ impl TreeNode {
 use std::{cell::RefCell, rc::Rc};
 
 pub fn sum_root_to_leaf(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    todo!()
+    let mut sum = 0;
+    fn helper(root: Option<&Rc<RefCell<TreeNode>>>, mut sum: i32, val: i32) {
+        if root.is_none() {
+            return;
+        }
+        let new_val = val << 1 | root.unwrap().as_ref().borrow().val;
+        if root.unwrap().as_ref().borrow().left.is_none()
+            && root.unwrap().as_ref().borrow().right.is_none()
+        {
+            sum += new_val;
+        } else {
+            helper(root.unwrap().as_ref().borrow().left.as_ref(), sum, new_val);
+            helper(root.unwrap().as_ref().borrow().right.as_ref(), sum, new_val);
+        }
+    }
+    helper(root.as_ref(), sum, 0);
+    sum
 }
 // tree
 #[test]

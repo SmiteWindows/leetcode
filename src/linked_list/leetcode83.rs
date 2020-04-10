@@ -13,11 +13,9 @@ impl ListNode {
     }
 }
 // Runtime: 0 ms
-// Memory Usage: 1.9 MB
+// Memory Usage: 2 MB
 pub fn delete_duplicates(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
-    if head.is_none() {
-        return None;
-    }
+    head.as_ref()?;
     let mut head = head;
     let mut p1 = head.as_mut()?;
     while let Some(p2) = p1.next.as_mut() {

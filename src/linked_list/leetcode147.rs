@@ -12,12 +12,10 @@ impl ListNode {
         Self { next: None, val }
     }
 }
-// Runtime: 36 ms
+// Runtime: 32 ms
 // Memory Usage: 2.5 MB
 pub fn insertion_sort_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
-    if head.is_none() {
-        return None;
-    }
+    head.as_ref()?;
     let mut head = head?;
     let mut curr = head.next.take();
     let mut res = Some(Box::new(ListNode {
@@ -40,6 +38,7 @@ pub fn insertion_sort_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>>
     }
     res?.next
 }
+// linked_list sort
 #[test]
 fn test1_147() {
     let l1 = Some(Box::new(ListNode {

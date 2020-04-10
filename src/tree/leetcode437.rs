@@ -46,5 +46,5 @@ fn test1_437() {
             right: Some(Rc::new(RefCell::new(TreeNode::new(11)))),
         }))),
     })));
-    assert_eq!(3, path_sum(root));
+    assert_eq!(3, path_sum(root, 8));
 }

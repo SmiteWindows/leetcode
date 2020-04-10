@@ -25,7 +25,7 @@ pub fn flatten(root: &mut Option<Rc<RefCell<TreeNode>>>) {
 // tree depth_first_search
 #[test]
 fn test1_114() {
-    let root = Some(Rc::new(RefCell::new(TreeNode {
+    let mut root = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
         left: Some(Rc::new(RefCell::new(TreeNode {
             val: 2,
@@ -59,5 +59,6 @@ fn test1_114() {
             }))),
         }))),
     })));
-    assert_eq!(res, flatten(&mut root));
+    flatten(&mut root);
+    assert_eq!(res, root);
 }

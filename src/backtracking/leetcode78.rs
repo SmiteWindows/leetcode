@@ -5,7 +5,7 @@ pub fn subsets(nums: Vec<i32>) -> Vec<Vec<i32>> {
     fn backtrack(
         start: usize,
         curr: &mut Vec<i32>,
-        nums: &Vec<i32>,
+        nums: &[i32],
         res: &mut Vec<Vec<i32>>,
         k: usize,
         len: usize,

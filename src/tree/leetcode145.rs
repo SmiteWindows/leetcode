@@ -34,6 +34,5 @@ fn test1_145() {
             right: None,
         }))),
     })));
-    let res = vec![3, 2, 1];
-    assert_eq!(res, preorder_traversal(root));
+    assert_eq!(vec![3, 2, 1], postorder_traversal(root));
 }

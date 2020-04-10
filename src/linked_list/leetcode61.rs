@@ -35,7 +35,7 @@ pub fn rotate_right(head: Option<Box<ListNode>>, k: i32) -> Option<Box<ListNode>
         for _ in 0..len - k {
             current = &mut current.as_mut()?.next;
         }
-        let mut new_head = replace(current, None);
+        let mut new_head = current.take();
         let mut new_tail = &mut new_head;
         while let Some(b) = new_tail {
             new_tail = &mut b.next;

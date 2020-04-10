@@ -25,7 +25,7 @@ pub fn recover_tree(root: &mut Option<Rc<RefCell<TreeNode>>>) {
 // tree depth_first_search
 #[test]
 fn test1_99() {
-    let t1 = Some(Rc::new(RefCell::new(TreeNode {
+    let mut t1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
         left: Some(Rc::new(RefCell::new(TreeNode {
             val: 3,
@@ -43,7 +43,7 @@ fn test1_99() {
         }))),
         right: None,
     })));
-    let t2 = Some(Rc::new(RefCell::new(TreeNode {
+    let mut t2 = Some(Rc::new(RefCell::new(TreeNode {
         val: 3,
         left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
         right: Some(Rc::new(RefCell::new(TreeNode {
@@ -61,6 +61,8 @@ fn test1_99() {
             right: None,
         }))),
     })));
-    assert_eq!(res1, recover_tree(&mut t1));
-    assert_eq!(res2, recover_tree(&mut t2));
+    recover_tree(&mut t1);
+    assert_eq!(res1, t1);
+    recover_tree(&mut t2);
+    assert_eq!(res2, t2);
 }
