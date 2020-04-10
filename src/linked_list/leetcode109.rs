@@ -35,3 +35,34 @@ use std::{cell::RefCell, rc::Rc};
 pub fn sorted_list_to_bst(head: Option<Box<ListNode>>) -> Option<Rc<RefCell<TreeNode>>> {
     todo!()
 }
+// linked_list depth_first_search
+#[test]
+fn test1_109() {
+    let head = Some(Box::new(ListNode {
+        val: -10,
+        next: Some(Box::new(ListNode {
+            val: -3,
+            next: Some(Box::new(ListNode {
+                val: 0,
+                next: Some(Box::new(ListNode {
+                    val: 5,
+                    next: Some(Box::new(ListNode { val: 9, next: None })),
+                })),
+            })),
+        })),
+    }));
+    let res = Some(Rc::new(RefCell::new(TreeNode {
+        val: 0,
+        left: Some(Rc::new(RefCell::new(TreeNode {
+            val: -3,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(-10)))),
+            right: None,
+        }))),
+        right: Some(Rc::new(RefCell::new(TreeNode {
+            val: 9,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(5)))),
+            right: None,
+        }))),
+    })));
+    assert_eq!(res, sorted_list_to_bst(head));
+}
