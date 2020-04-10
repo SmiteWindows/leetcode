@@ -17,10 +17,34 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
-
+use std::{cell::RefCell, rc::Rc, cmp::max};
+// Runtime: 16 ms
+// Memory Usage: 3 MB
 pub fn longest_univalue_path(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    todo!()
+    fn arrow_length(root: Option<&Rc<RefCell<TreeNode>>>, res: i32) -> (i32, i32) {
+        if let Some(node) = root {
+            let (left, res) = arrow_length(node.as_ref().borrow().left.as_ref(), res);
+            let (right, res) = arrow_length(node.as_ref().borrow().right.as_ref(), res);
+            let (mut arrow_left, mut arrow_right) = (0, 0);
+            if let Some(left_node) = node.as_ref().borrow().left.as_ref() {
+                if left_node.as_ref().borrow().val == node.as_ref().borrow().val {
+                    arrow_left += left + 1;
+                }
+            }
+            if let Some(right_node) = node.as_ref().borrow().right.as_ref() {
+                if right_node.as_ref().borrow().val == node.as_ref().borrow().val {
+                    arrow_right += right + 1;
+                }
+            }
+            (
+                max(arrow_left, arrow_right),
+                max(res, arrow_left + arrow_right),
+            )
+        } else {
+            (0, res)
+        }
+    }
+    arrow_length(root.as_ref(), 0).1
 }
 // tree recursion
 #[test]
