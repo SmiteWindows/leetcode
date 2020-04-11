@@ -18,9 +18,32 @@ impl TreeNode {
     }
 }
 use std::{cell::RefCell, rc::Rc};
-
+// Runtime: 0 ms
+// Memory Usage: 2 MB
 pub fn is_unival_tree(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
-    todo!()
+    fn is_unival(root: Option<&Rc<RefCell<TreeNode>>>) -> bool {
+        match root {
+            Some(node) => {
+                let left_unival = match node.as_ref().borrow().left.as_ref() {
+                    Some(left_node) => {
+                        (node.as_ref().borrow().val == left_node.as_ref().borrow().val)
+                            && is_unival(node.as_ref().borrow().left.as_ref())
+                    }
+                    None => true,
+                };
+                let right_unival = match node.as_ref().borrow().right.as_ref() {
+                    Some(right_node) => {
+                        (node.as_ref().borrow().val == right_node.as_ref().borrow().val)
+                            && is_unival(node.as_ref().borrow().right.as_ref())
+                    }
+                    None => true,
+                };
+                left_unival && right_unival
+            }
+            _ => true,
+        }
+    }
+    is_unival(root.as_ref())
 }
 // tree
 #[test]
