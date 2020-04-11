@@ -17,7 +17,7 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc, cmp::max};
+use std::{cell::RefCell, cmp::max, rc::Rc};
 // Runtime: 16 ms
 // Memory Usage: 3 MB
 pub fn longest_univalue_path(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
