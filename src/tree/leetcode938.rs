@@ -18,9 +18,27 @@ impl TreeNode {
     }
 }
 use std::{cell::RefCell, rc::Rc};
-
+// Runtime: 8 ms
+// Memory Usage: 4 MB
 pub fn range_sum_bst(root: Option<Rc<RefCell<TreeNode>>>, l: i32, r: i32) -> i32 {
-    todo!()
+    fn walk(root: Option<&Rc<RefCell<TreeNode>>>, l: i32, r: i32, mut res: i32) -> i32 {
+        if let Some(node) = root {
+            let node_val = node.as_ref().borrow().val;
+            if node_val > r {
+                res = walk(node.as_ref().borrow().left.as_ref(), l, r, res);
+            }
+            if node_val < l {
+                res = walk(node.as_ref().borrow().right.as_ref(), l, r, res);
+            }
+            if l <= node_val && r >= node_val {
+                res += node_val
+                    + walk(node.as_ref().borrow().left.as_ref(), l, r, res)
+                    + walk(node.as_ref().borrow().right.as_ref(), l, r, res);
+            }
+        }
+        res
+    }
+    walk(root.as_ref(), l, r, 0)
 }
 // tree recursion
 #[test]
