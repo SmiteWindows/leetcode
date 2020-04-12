@@ -24,6 +24,7 @@ pub fn delete_node(root: Option<Rc<RefCell<TreeNode>>>, key: i32) -> Option<Rc<R
 }
 // tree
 #[test]
+#[ignore]
 fn test1_450() {
     let root1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 5,

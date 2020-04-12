@@ -24,6 +24,7 @@ pub fn kth_smallest(root: Option<Rc<RefCell<TreeNode>>>, k: i32) -> i32 {
 }
 // tree binary_search
 #[test]
+#[ignore]
 fn test2_230() {
     let root1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 3,

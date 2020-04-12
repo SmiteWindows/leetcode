@@ -24,6 +24,7 @@ pub fn sorted_array_to_bst(nums: Vec<i32>) -> Option<Rc<RefCell<TreeNode>>> {
 }
 // tree depth_first_search
 #[test]
+#[ignore]
 fn test1_108() {
     let nums = vec![-10, -3, 0, 5, 9];
     let res = Some(Rc::new(RefCell::new(TreeNode {

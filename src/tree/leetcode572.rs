@@ -24,6 +24,7 @@ pub fn is_subtree(s: Option<Rc<RefCell<TreeNode>>>, t: Option<Rc<RefCell<TreeNod
 }
 // tree
 #[test]
+#[ignore]
 fn test1_572() {
     let s1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 3,

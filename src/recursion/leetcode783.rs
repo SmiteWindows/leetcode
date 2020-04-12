@@ -24,6 +24,7 @@ pub fn min_diff_in_bst(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
 }
 // tree recursion
 #[test]
+#[ignore]
 fn test2_783() {
     let root = Some(Rc::new(RefCell::new(TreeNode {
         val: 4,

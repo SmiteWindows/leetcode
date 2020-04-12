@@ -27,6 +27,7 @@ pub fn del_nodes(
 }
 // tree depth_first_search
 #[test]
+#[ignore]
 fn test1_1110() {
     let root = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,

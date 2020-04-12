@@ -24,6 +24,7 @@ pub fn flip_match_voyage(root: Option<Rc<RefCell<TreeNode>>>, voyage: Vec<i32>) 
 }
 // tree depth_first_search
 #[test]
+#[ignore]
 fn test1_971() {
     let t1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,

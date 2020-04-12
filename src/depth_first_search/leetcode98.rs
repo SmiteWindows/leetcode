@@ -24,6 +24,7 @@ pub fn is_valid_bst(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
 }
 // tree depth_first_search
 #[test]
+#[ignore]
 fn test2_98() {
     let t1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 2,

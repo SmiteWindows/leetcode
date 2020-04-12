@@ -24,6 +24,7 @@ pub fn tree2str(t: Option<Rc<RefCell<TreeNode>>>) -> String {
 }
 // tree string
 #[test]
+#[ignore]
 fn test2_606() {
     let t1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,

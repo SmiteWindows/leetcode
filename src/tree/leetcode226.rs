@@ -24,6 +24,7 @@ pub fn invert_tree(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<Tre
 }
 // tree
 #[test]
+#[ignore]
 fn test1_226() {
     let root = Some(Rc::new(RefCell::new(TreeNode {
         val: 4,

@@ -24,6 +24,7 @@ pub fn is_balanced(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
 }
 // tree depth_first_search
 #[test]
+#[ignore]
 fn test1_110() {
     let root1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 3,

@@ -24,6 +24,7 @@ pub fn all_possible_fbt(n: i32) -> Vec<Option<Rc<RefCell<TreeNode>>>> {
 }
 // tree recursion
 #[test]
+#[ignore]
 fn test1_894() {
     let t1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 0,

@@ -24,6 +24,7 @@ pub fn get_minimum_difference(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
 }
 // tree
 #[test]
+#[ignore]
 fn test1_530() {
     let root = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,

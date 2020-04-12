@@ -24,6 +24,7 @@ pub fn convert_bst(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<Tre
 }
 // tree
 #[test]
+#[ignore]
 fn test1_538() {
     let root = Some(Rc::new(RefCell::new(TreeNode {
         val: 5,

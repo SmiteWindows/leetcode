@@ -24,6 +24,7 @@ pub fn find_tilt(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
 }
 // tree
 #[test]
+#[ignore]
 fn test1_563() {
     let root = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,

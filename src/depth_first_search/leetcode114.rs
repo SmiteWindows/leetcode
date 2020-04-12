@@ -23,6 +23,7 @@ pub fn flatten(root: &mut Option<Rc<RefCell<TreeNode>>>) {
 }
 // tree depth_first_search
 #[test]
+#[ignore]
 fn test2_114() {
     let mut root = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,

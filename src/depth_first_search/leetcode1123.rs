@@ -24,7 +24,8 @@ pub fn lca_deepest_leaves(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefC
 }
 // tree depth_first_search
 #[test]
-fn test2_1110() {
+#[ignore]
+fn test2_1123() {
     let t1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
         left: Some(Rc::new(RefCell::new(TreeNode::new(2)))),

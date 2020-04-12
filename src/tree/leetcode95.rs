@@ -24,6 +24,7 @@ pub fn generate_trees(n: i32) -> Vec<Option<Rc<RefCell<TreeNode>>>> {
 }
 // tree dynamic_programming
 #[test]
+#[ignore]
 fn test1_95() {
     let s1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,

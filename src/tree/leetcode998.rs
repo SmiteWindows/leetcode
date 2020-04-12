@@ -27,6 +27,7 @@ pub fn insert_into_max_tree(
 }
 // tree
 #[test]
+#[ignore]
 fn test1_998() {
     let t1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 4,

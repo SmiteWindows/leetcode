@@ -24,6 +24,7 @@ pub fn build_tree(preorder: Vec<i32>, inorder: Vec<i32>) -> Option<Rc<RefCell<Tr
 }
 // tree depth_first_search array
 #[test]
+#[ignore]
 fn test3_105() {
     let res = Some(Rc::new(RefCell::new(TreeNode {
         val: 3,

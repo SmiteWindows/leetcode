@@ -27,6 +27,7 @@ pub fn remove_leaf_nodes(
 }
 // tree
 #[test]
+#[ignore]
 fn test1_1325() {
     let t1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,

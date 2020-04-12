@@ -10,21 +10,21 @@ pub struct TreeNode {
 impl TreeNode {
     #[inline]
     pub fn new(val: i32) -> Self {
-        TreeNode {
+        Self {
             val,
             left: None,
             right: None,
         }
     }
 }
-use std::cell::RefCell;
-use std::rc::Rc;
+use std::{rc::Rc, cell::RefCell};
 
 pub fn preorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
     todo!()
 }
 // tree stack
 #[test]
+#[ignore]
 fn test2_144() {
     let root = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,

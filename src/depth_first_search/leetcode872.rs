@@ -27,6 +27,7 @@ pub fn leaf_similar(
 }
 // tree depth_first_search
 #[test]
+#[ignore]
 fn test2_872() {
     let root1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 3,

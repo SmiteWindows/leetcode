@@ -24,6 +24,7 @@ pub fn longest_zig_zag(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
 }
 // tree dynamic_programming
 #[test]
+#[ignore]
 fn test1_1372() {
     let t1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,

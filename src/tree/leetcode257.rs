@@ -24,6 +24,7 @@ pub fn binary_tree_paths(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<String> {
 }
 // tree depth_first_search
 #[test]
+#[ignore]
 fn test1_257() {
     let root = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,

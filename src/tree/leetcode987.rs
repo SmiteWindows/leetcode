@@ -24,6 +24,7 @@ pub fn vertical_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<i32>> 
 }
 // tree hash_table
 #[test]
+#[ignore]
 fn test1_987() {
     let t1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 3,

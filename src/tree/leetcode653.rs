@@ -24,6 +24,7 @@ pub fn find_target(root: Option<Rc<RefCell<TreeNode>>>, k: i32) -> bool {
 }
 // tree
 #[test]
+#[ignore]
 fn test1_653() {
     let t1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 5,

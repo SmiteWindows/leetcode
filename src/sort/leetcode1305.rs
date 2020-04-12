@@ -28,6 +28,7 @@ pub fn get_all_elements(
 }
 // tree sort
 #[test]
+#[ignore]
 fn test2_1305() {
     let t1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 2,

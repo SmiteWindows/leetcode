@@ -24,6 +24,7 @@ pub fn path_sum(root: Option<Rc<RefCell<TreeNode>>>, sum: i32) -> Vec<Vec<i32>> 
 }
 // tree depth_first_search
 #[test]
+#[ignore]
 fn test2_113() {
     let root = Some(Rc::new(RefCell::new(TreeNode {
         val: 5,

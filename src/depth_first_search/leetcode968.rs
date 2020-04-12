@@ -25,6 +25,7 @@ pub fn min_camera_cover(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
 }
 // tree dynamic_programming depth_first_search
 #[test]
+#[ignore]
 fn test2_968() {
     let t1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 0,

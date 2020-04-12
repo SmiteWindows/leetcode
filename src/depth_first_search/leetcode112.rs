@@ -24,6 +24,7 @@ pub fn has_path_sum(root: Option<Rc<RefCell<TreeNode>>>, sum: i32) -> bool {
 }
 // tree depth_first_search
 #[test]
+#[ignore]
 fn test2_112() {
     let root = Some(Rc::new(RefCell::new(TreeNode {
         val: 5,

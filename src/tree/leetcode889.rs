@@ -24,6 +24,7 @@ pub fn construct_from_pre_post(pre: Vec<i32>, post: Vec<i32>) -> Option<Rc<RefCe
 }
 // tree
 #[test]
+#[ignore]
 fn test1_889() {
     let pre = vec![1, 2, 4, 5, 3, 6, 7]; // root left right
     let post = vec![4, 5, 2, 6, 7, 3, 1]; // left right root

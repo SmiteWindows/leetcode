@@ -24,6 +24,7 @@ pub fn bst_from_preorder(preorder: Vec<i32>) -> Option<Rc<RefCell<TreeNode>>> {
 }
 // tree
 #[test]
+#[ignore]
 fn test1_1008() {
     let res = Some(Rc::new(RefCell::new(TreeNode {
         val: 8,

@@ -24,6 +24,7 @@ pub fn recover_from_preorder(s: String) -> Option<Rc<RefCell<TreeNode>>> {
 }
 // tree depth_first_search
 #[test]
+#[ignore]
 fn test1_1028() {
     let res1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,

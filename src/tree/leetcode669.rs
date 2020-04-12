@@ -28,6 +28,7 @@ pub fn trim_bst(
 }
 // tree
 #[test]
+#[ignore]
 fn test1_669() {
     let t1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,

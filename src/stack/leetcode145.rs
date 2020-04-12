@@ -17,14 +17,14 @@ impl TreeNode {
         }
     }
 }
-use std::cell::RefCell;
-use std::rc::Rc;
+use std::{cell::RefCell, rc::Rc};
 
 pub fn postorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
     todo!()
 }
 // tree stack
 #[test]
+#[ignore]
 fn test2_145() {
     let root = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,

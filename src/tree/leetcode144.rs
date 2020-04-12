@@ -24,6 +24,7 @@ pub fn preorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
 }
 // tree stack
 #[test]
+#[ignore]
 fn test1_144() {
     let root = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,

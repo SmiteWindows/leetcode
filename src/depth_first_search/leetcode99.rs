@@ -24,6 +24,7 @@ pub fn recover_tree(root: &mut Option<Rc<RefCell<TreeNode>>>) {
 }
 // tree depth_first_search
 #[test]
+#[ignore]
 fn test2_99() {
     let mut t1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,

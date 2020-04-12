@@ -24,6 +24,7 @@ pub fn smallest_from_leaf(root: Option<Rc<RefCell<TreeNode>>>) -> String {
 }
 // tree depth_first_search
 #[test]
+#[ignore]
 fn test2_988() {
     let t1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 0,

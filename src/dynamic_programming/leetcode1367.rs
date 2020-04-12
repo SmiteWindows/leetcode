@@ -37,6 +37,7 @@ pub fn is_sub_path(head: Option<Box<ListNode>>, root: Option<Rc<RefCell<TreeNode
 }
 // tree linked_list dynamic_programming
 #[test]
+#[ignore]
 fn test3_1367() {
     let l1 = Some(Box::new(ListNode {
         val: 4,

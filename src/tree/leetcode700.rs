@@ -24,6 +24,7 @@ pub fn search_bst(root: Option<Rc<RefCell<TreeNode>>>, val: i32) -> Option<Rc<Re
 }
 // tree
 #[test]
+#[ignore]
 fn test1_700() {
     let root = Some(Rc::new(RefCell::new(TreeNode {
         val: 4,

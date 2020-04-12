@@ -24,6 +24,7 @@ pub fn print_tree(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<String>> {
 }
 // tree
 #[test]
+#[ignore]
 fn test1_655() {
     let t1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,

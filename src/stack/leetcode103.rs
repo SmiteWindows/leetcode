@@ -10,21 +10,21 @@ pub struct TreeNode {
 impl TreeNode {
     #[inline]
     pub fn new(val: i32) -> Self {
-        TreeNode {
+        Self {
             val,
             left: None,
             right: None,
         }
     }
 }
-use std::cell::RefCell;
-use std::rc::Rc;
+use std::{rc::Rc, cell::RefCell};
 
 pub fn zigzag_level_order(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<i32>> {
     todo!()
 }
 // tree breadth_first_search stack
 #[test]
+#[ignore]
 fn test3_103() {
     let root = Some(Rc::new(RefCell::new(TreeNode {
         val: 3,

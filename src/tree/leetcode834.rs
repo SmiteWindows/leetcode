@@ -4,6 +4,7 @@ pub fn sum_of_distances_in_tree(n: i32, edges: Vec<Vec<i32>>) -> Vec<i32> {
 }
 // tree depth_first_search
 #[test]
+#[ignore]
 fn test1_834() {
     assert_eq!(
         sum_of_distances_in_tree(

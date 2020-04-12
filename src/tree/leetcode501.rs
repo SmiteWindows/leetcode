@@ -24,6 +24,7 @@ pub fn find_mode(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
 }
 // tree
 #[test]
+#[ignore]
 fn test1_501() {
     let root = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,

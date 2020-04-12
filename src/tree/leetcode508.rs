@@ -24,6 +24,7 @@ pub fn find_frequent_tree_sum(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
 }
 // tree hash_table
 #[test]
+#[ignore]
 fn test1_508() {
     let root1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 5,

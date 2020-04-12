@@ -28,6 +28,7 @@ pub fn add_one_row(
 }
 // tree
 #[test]
+#[ignore]
 fn test1_623() {
     let t1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 4,

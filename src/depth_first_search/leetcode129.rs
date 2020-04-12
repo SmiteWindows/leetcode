@@ -24,6 +24,7 @@ pub fn sum_numbers(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
 }
 // tree depth_first_search
 #[test]
+#[ignore]
 fn test2_129() {
     let root1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,

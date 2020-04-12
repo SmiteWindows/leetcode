@@ -24,6 +24,7 @@ pub fn postorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
 }
 // tree stack
 #[test]
+#[ignore]
 fn test1_145() {
     let root = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,

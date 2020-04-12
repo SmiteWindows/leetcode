@@ -4,6 +4,7 @@ pub fn num_trees(n: i32) -> i32 {
 }
 // tree dynamic_programming
 #[test]
+#[ignore]
 fn test1_96() {
     assert_eq!(num_trees(3), 5);
 }

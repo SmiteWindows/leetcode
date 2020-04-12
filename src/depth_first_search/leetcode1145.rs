@@ -24,6 +24,7 @@ pub fn btree_game_winning_move(root: Option<Rc<RefCell<TreeNode>>>, n: i32, x: i
 }
 // tree depth_first_search
 #[test]
+#[ignore]
 fn test2_1145() {
     let root = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
