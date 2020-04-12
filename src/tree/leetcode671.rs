@@ -18,9 +18,32 @@ impl TreeNode {
     }
 }
 use std::{cell::RefCell, rc::Rc};
-
+// Runtime: 0 ms
+// Memory Usage: 2 MB
 pub fn find_second_minimum_value(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    todo!()
+    fn walk(root: Option<&Rc<RefCell<TreeNode>>>, min: i32) -> i32 {
+        if let Some(node) = root {
+            if node.as_ref().borrow().val > min {
+                return node.as_ref().borrow().val;
+            }
+            let left = walk(node.as_ref().borrow().left.as_ref(), min);
+            let right = walk(node.as_ref().borrow().right.as_ref(), min);
+            if left == -1 {
+                return right;
+            }
+            if right == -1 {
+                return left;
+            }
+            std::cmp::min(left, right)
+        } else {
+            -1
+        }
+    }
+    if let Some(node)=root{
+        walk(Some(&node), node.as_ref().borrow().val)
+    }else{
+        -1
+    }
 }
 // tree
 #[test]
