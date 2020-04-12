@@ -25,7 +25,7 @@ pub fn construct_maximum_binary_tree(nums: Vec<i32>) -> Option<Rc<RefCell<TreeNo
 // tree
 #[test]
 #[ignore]
-fn test1_653() {
+fn test1_654() {
     let nums = vec![3, 2, 1, 6, 0, 5];
     let res = Some(Rc::new(RefCell::new(TreeNode {
         val: 6,
