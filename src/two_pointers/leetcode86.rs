@@ -36,6 +36,7 @@ pub fn partition(head: Option<Box<ListNode>>, x: i32) -> Option<Box<ListNode>> {
     lower_tail.as_mut()?.next = higher?.next.take();
     lower?.next.take()
 }
+// linked_list two_pointers
 #[test]
 fn test1_86() {
     let l1 = Some(Box::new(ListNode {

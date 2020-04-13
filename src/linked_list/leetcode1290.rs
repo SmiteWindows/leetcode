@@ -23,6 +23,7 @@ pub fn get_decimal_value(head: Option<Box<ListNode>>) -> i32 {
     }
     res
 }
+// linked_list bit_manipulation
 #[test]
 fn test1_1290() {
     let l1 = Some(Box::new(ListNode {

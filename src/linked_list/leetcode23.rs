@@ -32,7 +32,6 @@ pub fn merge_k_lists(lists: Vec<Option<Box<ListNode>>>) -> Option<Box<ListNode>>
     let mut lists = lists;
     let mut head = Box::new(ListNode::new(0));
     let mut tail = &mut head;
-
     if lists.is_empty() {
         return None;
     }
@@ -51,7 +50,6 @@ pub fn merge_k_lists(lists: Vec<Option<Box<ListNode>>>) -> Option<Box<ListNode>>
                 }
             }
         }
-
         match lists[min].take() {
             Some(m) => {
                 tail.next = Some(Box::new(ListNode::new(m.val)));
@@ -61,7 +59,6 @@ pub fn merge_k_lists(lists: Vec<Option<Box<ListNode>>>) -> Option<Box<ListNode>>
             None => break,
         }
     }
-
     head.next
 }
 // linked_list divide_and_conquer heap

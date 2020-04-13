@@ -60,6 +60,7 @@ pub fn delete_duplicates(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
     }
     root
 }
+// linked_list
 #[test]
 fn test1_82() {
     let l1 = Some(Box::new(ListNode {

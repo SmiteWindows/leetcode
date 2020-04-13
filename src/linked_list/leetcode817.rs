@@ -33,6 +33,7 @@ pub fn num_components(head: Option<Box<ListNode>>, g: Vec<i32>) -> i32 {
     }
     res
 }
+// linked_list
 #[test]
 fn test1_817() {
     let l1 = Some(Box::new(ListNode {

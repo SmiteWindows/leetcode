@@ -35,6 +35,7 @@ pub fn odd_even_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
     odd_tail.as_mut()?.next = even_list?.next.take();
     odd_list?.next
 }
+// linked_list
 #[test]
 fn test1_328() {
     let l1 = Some(Box::new(ListNode {

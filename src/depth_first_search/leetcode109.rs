@@ -33,11 +33,42 @@ impl TreeNode {
 use std::{cell::RefCell, rc::Rc};
 
 pub fn sorted_list_to_bst(head: Option<Box<ListNode>>) -> Option<Rc<RefCell<TreeNode>>> {
-    todo!()
+    fn sorted_list_to_bst_rec(
+        mut head: Option<Box<ListNode>>,
+        length: usize,
+    ) -> Option<Rc<RefCell<TreeNode>>> {
+        if length == 0 {
+            return None;
+        }
+        if length == 1 {
+            return Some(Rc::new(RefCell::new(TreeNode::new(
+                head.as_ref()?.val,
+            ))));
+        }
+        let mut ptr = head.as_mut()?;
+        for _ in 0..length / 2 - 1 {
+            ptr = ptr.next.as_mut()?;
+        }
+        let right_half = ptr.next.take();
+        let root = Some(Rc::new(RefCell::new(TreeNode::new(
+            right_half.as_ref()?.val,
+        ))));
+        root.as_ref()?.borrow_mut().left = sorted_list_to_bst_rec(head, length / 2);
+        root.as_ref()?.borrow_mut().right =
+            sorted_list_to_bst_rec(right_half?.next, length - length / 2 - 1);
+        root
+    }
+    let mut dummy_head = Some(Box::new(ListNode { val: 0, next: head }));
+    let mut ptr = dummy_head.as_ref()?;
+    let mut length = 0;
+    while ptr.next.is_some() {
+        length += 1;
+        ptr = ptr.next.as_ref()?;
+    }
+    sorted_list_to_bst_rec(dummy_head.as_mut()?.next.take(), length)
 }
 // linked_list depth_first_search
 #[test]
-#[ignore]
 fn test2_109() {
     let head = Some(Box::new(ListNode {
         val: -10,

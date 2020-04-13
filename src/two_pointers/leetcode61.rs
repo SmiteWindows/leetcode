@@ -44,48 +44,50 @@ pub fn rotate_right(head: Option<Box<ListNode>>, k: i32) -> Option<Box<ListNode>
     //     new_head
     // }
 }
-// #[test]
-// fn test2_61() {
-//     let l1 = Some(Box::new(ListNode {
-//         val: 1,
-//         next: Some(Box::new(ListNode {
-//             val: 2,
-//             next: Some(Box::new(ListNode {
-//                 val: 3,
-//                 next: Some(Box::new(ListNode {
-//                     val: 4,
-//                     next: Some(Box::new(ListNode { val: 5, next: None })),
-//                 })),
-//             })),
-//         })),
-//     }));
-//     let l2 = Some(Box::new(ListNode {
-//         val: 4,
-//         next: Some(Box::new(ListNode {
-//             val: 5,
-//             next: Some(Box::new(ListNode {
-//                 val: 1,
-//                 next: Some(Box::new(ListNode {
-//                     val: 2,
-//                     next: Some(Box::new(ListNode { val: 3, next: None })),
-//                 })),
-//             })),
-//         })),
-//     }));
-//     let l3 = Some(Box::new(ListNode {
-//         val: 0,
-//         next: Some(Box::new(ListNode {
-//             val: 1,
-//             next: Some(Box::new(ListNode { val: 2, next: None })),
-//         })),
-//     }));
-//     let l4 = Some(Box::new(ListNode {
-//         val: 2,
-//         next: Some(Box::new(ListNode {
-//             val: 0,
-//             next: Some(Box::new(ListNode { val: 1, next: None })),
-//         })),
-//     }));
-//     assert_eq!(l2, rotate_right(l1, 2));
-//     assert_eq!(l4, rotate_right(l3, 4));
-// }
+// linked_list two_pointers
+#[test]
+#[ignore]
+fn test2_61() {
+    let l1 = Some(Box::new(ListNode {
+        val: 1,
+        next: Some(Box::new(ListNode {
+            val: 2,
+            next: Some(Box::new(ListNode {
+                val: 3,
+                next: Some(Box::new(ListNode {
+                    val: 4,
+                    next: Some(Box::new(ListNode { val: 5, next: None })),
+                })),
+            })),
+        })),
+    }));
+    let l2 = Some(Box::new(ListNode {
+        val: 4,
+        next: Some(Box::new(ListNode {
+            val: 5,
+            next: Some(Box::new(ListNode {
+                val: 1,
+                next: Some(Box::new(ListNode {
+                    val: 2,
+                    next: Some(Box::new(ListNode { val: 3, next: None })),
+                })),
+            })),
+        })),
+    }));
+    let l3 = Some(Box::new(ListNode {
+        val: 0,
+        next: Some(Box::new(ListNode {
+            val: 1,
+            next: Some(Box::new(ListNode { val: 2, next: None })),
+        })),
+    }));
+    let l4 = Some(Box::new(ListNode {
+        val: 2,
+        next: Some(Box::new(ListNode {
+            val: 0,
+            next: Some(Box::new(ListNode { val: 1, next: None })),
+        })),
+    }));
+    assert_eq!(l2, rotate_right(l1, 2));
+    assert_eq!(l4, rotate_right(l3, 4));
+}

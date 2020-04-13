@@ -33,13 +33,13 @@ impl TreeNode {
 use std::{cell::RefCell, rc::Rc};
 
 pub fn sorted_list_to_bst(head: Option<Box<ListNode>>) -> Option<Rc<RefCell<TreeNode>>> {
-    todo!()
+todo!()
 }
 // linked_list depth_first_search
 #[test]
 #[ignore]
 fn test1_109() {
-    let head = Some(Box::new(ListNode {
+    let head1 = Some(Box::new(ListNode {
         val: -10,
         next: Some(Box::new(ListNode {
             val: -3,
@@ -52,7 +52,7 @@ fn test1_109() {
             })),
         })),
     }));
-    let res = Some(Rc::new(RefCell::new(TreeNode {
+    let res1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 0,
         left: Some(Rc::new(RefCell::new(TreeNode {
             val: -3,
@@ -65,5 +65,41 @@ fn test1_109() {
             right: None,
         }))),
     })));
-    assert_eq!(res, sorted_list_to_bst(head));
+    let head2 = Some(Box::new(ListNode {
+        val: -20,
+        next: Some(Box::new(ListNode {
+            val: -9,
+            next: Some(Box::new(ListNode {
+                val: 4,
+                next: Some(Box::new(ListNode {
+                    val: 8,
+                    next: Some(Box::new(ListNode {
+                        val: 10,
+                        next: Some(Box::new(ListNode {
+                            val: 12,
+                            next: Some(Box::new(ListNode {
+                                val: 20,
+                                next: None,
+                            })),
+                        })),
+                    })),
+                })),
+            })),
+        })),
+    }));
+    let res2 = Some(Rc::new(RefCell::new(TreeNode {
+        val: 8,
+        left: Some(Rc::new(RefCell::new(TreeNode {
+            val: -9,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(-20)))),
+            right: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
+        }))),
+        right: Some(Rc::new(RefCell::new(TreeNode {
+            val: 12,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(10)))),
+            right: Some(Rc::new(RefCell::new(TreeNode::new(20)))),
+        }))),
+    })));
+    assert_eq!(res1, sorted_list_to_bst(head1));
+    assert_eq!(res2, sorted_list_to_bst(head2));
 }

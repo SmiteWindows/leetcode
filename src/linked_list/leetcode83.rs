@@ -27,6 +27,7 @@ pub fn delete_duplicates(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
     }
     head
 }
+// linked_list
 #[test]
 fn test1_83() {
     let l1 = Some(Box::new(ListNode {

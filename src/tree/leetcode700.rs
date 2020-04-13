@@ -21,28 +21,18 @@ use std::{cell::RefCell, rc::Rc};
 // Runtime: 4 ms
 // Memory Usage: 2.5 MB
 pub fn search_bst(root: Option<Rc<RefCell<TreeNode>>>, val: i32) -> Option<Rc<RefCell<TreeNode>>> {
-    // if let Some(node) = root {
-    //     if node.borrow().val == val {
-    //         Some(node)
-    //     } else if node.borrow().val > val {
-    //         search_bst(node.borrow().left.clone(), val)
-    //     } else {
-    //         search_bst(node.borrow().right.clone(), val)
-    //     }
-    // } else {
-    //     None
-    // }
     fn search(root: Option<&Rc<RefCell<TreeNode>>>, val: i32) -> Option<Rc<RefCell<TreeNode>>> {
-        if let Some(node) = root {
-            if node.as_ref().borrow().val == val {
-                Some(node.clone())
-            } else if node.as_ref().borrow().val > val {
-                search(node.as_ref().borrow().left.as_ref(), val)
-            } else {
-                search(node.as_ref().borrow().right.as_ref(), val)
-            }
-        } else {
-            None
+        match root {
+            Some(node) => {
+                    if node.as_ref().borrow().val == val {
+                        Some(node.clone())
+                    } else if node.as_ref().borrow().val > val {
+                        search(node.as_ref().borrow().left.as_ref(), val)
+                    } else {
+                        search(node.as_ref().borrow().right.as_ref(), val)
+                    }
+                }
+            _ => None,
         }
     }
     search(root.as_ref(), val)
