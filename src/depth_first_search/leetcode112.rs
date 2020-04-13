@@ -18,13 +18,24 @@ impl TreeNode {
     }
 }
 use std::{cell::RefCell, rc::Rc};
-
+// Runtime: 0 ms
+// Memory Usage: 2.5 MB
 pub fn has_path_sum(root: Option<Rc<RefCell<TreeNode>>>, sum: i32) -> bool {
-    todo!()
+    fn helper(root: Option<&Rc<RefCell<TreeNode>>>, mut sum: i32) -> bool {
+        if let Some(node) = root {
+            sum -= node.borrow().val;
+            if node.borrow().left.as_ref().is_none() && node.borrow().right.as_ref().is_none() {
+                return sum == 0;
+            }
+            helper(node.borrow().left.as_ref(),sum)||helper(node.borrow().right.as_ref(),sum)
+        } else {
+            false
+        }
+    }
+    helper(root.as_ref(), sum)
 }
 // tree depth_first_search
 #[test]
-#[ignore]
 fn test2_112() {
     let root = Some(Rc::new(RefCell::new(TreeNode {
         val: 5,
