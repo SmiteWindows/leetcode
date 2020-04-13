@@ -17,22 +17,18 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
+use std::{cell::RefCell, rc::Rc, cmp::Ordering};
 // Runtime: 4 ms
 // Memory Usage: 2.5 MB
 pub fn search_bst(root: Option<Rc<RefCell<TreeNode>>>, val: i32) -> Option<Rc<RefCell<TreeNode>>> {
     fn search(root: Option<&Rc<RefCell<TreeNode>>>, val: i32) -> Option<Rc<RefCell<TreeNode>>> {
         match root {
-            Some(node) => {
-                    if node.as_ref().borrow().val == val {
-                        Some(node.clone())
-                    } else if node.as_ref().borrow().val > val {
-                        search(node.as_ref().borrow().left.as_ref(), val)
-                    } else {
-                        search(node.as_ref().borrow().right.as_ref(), val)
-                    }
-                }
-            _ => None,
+            Some(node) => match node.as_ref().borrow().val.cmp(&val) {
+                Ordering::Equal => Some(node.clone()),
+                Ordering::Less => search(node.as_ref().borrow().right.as_ref(), val),
+                Ordering::Greater => search(node.as_ref().borrow().left.as_ref(), val),
+            },
+            None => None,
         }
     }
     search(root.as_ref(), val)
