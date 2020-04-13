@@ -18,13 +18,36 @@ impl TreeNode {
     }
 }
 use std::{cell::RefCell, rc::Rc};
-
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
 pub fn zigzag_level_order(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<i32>> {
-    todo!()
+    fn helper(root: Option<&Rc<RefCell<TreeNode>>>, level: usize, res: &mut Vec<Vec<i32>>) {
+        if let Some(node) = root {
+            if level >= res.len() {
+                let mut new_level = Vec::new();
+                new_level.push(node.borrow().val);
+                res.push(new_level);
+            } else {
+                if level%2==0 {
+                    res[level].push(node.borrow().val);
+                }else{
+                    res[level].insert(0,node.borrow().val);
+                }
+            }
+            if node.borrow().left.as_ref().is_some() {
+                helper(node.borrow().left.as_ref(), level + 1, res);
+            }
+            if node.borrow().right.as_ref().is_some() {
+                helper(node.borrow().right.as_ref(), level + 1, res);
+            }
+        }
+    }
+    let mut res = Vec::new();
+    helper(root.as_ref(), 0, &mut res);
+    res
 }
 // tree breadth_first_search stack
 #[test]
-#[ignore]
 fn test1_103() {
     let root = Some(Rc::new(RefCell::new(TreeNode {
         val: 3,
