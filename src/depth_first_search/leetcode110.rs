@@ -17,14 +17,29 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
-
+use std::{cell::RefCell, cmp::max, rc::Rc};
+// Runtime: 0 ms
+// Memory Usage: 2.7 MB
 pub fn is_balanced(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
-    todo!()
+    fn helper(root: Option<&Rc<RefCell<TreeNode>>>) -> (i32, bool) {
+        if let Some(node) = root {
+            let left = helper(node.borrow().left.as_ref());
+            if !left.1 {
+                return (0, false);
+            }
+            let right = helper(node.borrow().right.as_ref());
+            if !right.1 {
+                return (0, false);
+            }
+            (1 + max(left.0, right.0), ((left.0 - right.0).abs() < 2))
+        } else {
+            (-1, true)
+        }
+    }
+    helper(root.as_ref()).1
 }
 // tree depth_first_search
 #[test]
-#[ignore]
 fn test1_110() {
     let root1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 3,

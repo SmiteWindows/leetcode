@@ -36,7 +36,7 @@ pub fn swap_pairs(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
     }
     dummy_head?.next
 }
-// linked_list 
+// linked_list
 #[test]
 fn test1_24() {
     let l1 = Some(Box::new(ListNode {

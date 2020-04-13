@@ -22,11 +22,11 @@ use std::{cell::RefCell, cmp::max, rc::Rc};
 // Memory Usage: 2.7 MB
 pub fn max_depth(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     fn max_height(root: Option<&Rc<RefCell<TreeNode>>>) -> i32 {
-        if let Some(node)=root{
+        if let Some(node) = root {
             let left_height = max_height(node.as_ref().borrow().left.as_ref());
             let right_height = max_height(node.as_ref().borrow().right.as_ref());
             max(left_height, right_height) + 1
-        } else{
+        } else {
             0
         }
     }

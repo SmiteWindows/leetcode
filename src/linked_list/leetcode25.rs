@@ -51,7 +51,7 @@ pub fn reverse_k_group(head: Option<Box<ListNode>>, k: i32) -> Option<Box<ListNo
     }
     dummy_head?.next
 }
-// linked_list 
+// linked_list
 #[test]
 fn test1_25() {
     let l1 = Some(Box::new(ListNode {

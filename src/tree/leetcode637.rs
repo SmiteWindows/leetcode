@@ -35,6 +35,6 @@ fn test1_637() {
             right: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
         }))),
     })));
-    let res:Vec<f64>=vec![3.0, 14.5, 11.0];
+    let res: Vec<f64> = vec![3.0, 14.5, 11.0];
     assert_eq!(res, average_of_levels(root));
 }
