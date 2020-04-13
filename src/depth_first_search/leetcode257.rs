@@ -10,7 +10,7 @@ pub struct TreeNode {
 impl TreeNode {
     #[inline]
     pub fn new(val: i32) -> Self {
-        TreeNode {
+        Self {
             val,
             left: None,
             right: None,
@@ -18,13 +18,27 @@ impl TreeNode {
     }
 }
 use std::{cell::RefCell, rc::Rc};
-
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
 pub fn binary_tree_paths(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<String> {
-    todo!()
+    fn helper(root: Option<&Rc<RefCell<TreeNode>>>, mut path: String, paths: &mut Vec<String>) {
+        if let Some(node)= root {
+            path+=&(node.borrow().val).to_string();
+            if node.borrow().left.as_ref().is_none() && node.borrow().right.as_ref().is_none(){
+                paths.push(path);
+            }else{
+                path+="->";
+                helper(node.borrow().left.as_ref(),path.clone(), paths);
+                helper(node.borrow().right.as_ref(),path.clone(), paths);
+            }
+        }
+    }
+    let mut paths: Vec<String> = Vec::new();
+    helper(root.as_ref(),"".to_string(),&mut paths);
+    paths
 }
 // tree depth_first_search
 #[test]
-#[ignore]
 fn test2_257() {
     let root = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
