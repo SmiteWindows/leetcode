@@ -18,17 +18,39 @@ impl TreeNode {
     }
 }
 use std::{cell::RefCell, rc::Rc};
-
+// Runtime: 0 ms
+// Memory Usage: 3.1 MB
 pub fn trim_bst(
     root: Option<Rc<RefCell<TreeNode>>>,
     l: i32,
     r: i32,
 ) -> Option<Rc<RefCell<TreeNode>>> {
-    todo!()
+    fn helper(
+        root: Option<&Rc<RefCell<TreeNode>>>,
+        l: i32,
+        r: i32,
+    ) -> Option<Rc<RefCell<TreeNode>>> {
+        if let Some(node) = root {
+            let left = helper(node.borrow().left.as_ref(), l, r);
+            let right = helper(node.borrow().right.clone().as_ref(), l, r);
+            let val = node.borrow().val;
+            if val > r {
+                return left;
+            } else if val < l {
+                return right;
+            } else {
+                node.borrow_mut().left = left;
+                node.borrow_mut().right = right;
+            }
+            Some(node.clone())
+        } else {
+            None
+        }
+    }
+    helper(root.as_ref(), l, r)
 }
 // tree
 #[test]
-#[ignore]
 fn test1_669() {
     let t1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
