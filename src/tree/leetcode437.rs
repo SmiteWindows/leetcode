@@ -18,42 +18,32 @@ impl TreeNode {
     }
 }
 use std::{cell::RefCell, collections::HashMap, rc::Rc};
-// Runtime: 24 ms
+// Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn path_sum(root: Option<Rc<RefCell<TreeNode>>>, sum: i32) -> i32 {
     fn walk(
         root: Option<&Rc<RefCell<TreeNode>>>,
-        target: i32,
-        prefix_sum_count: &mut HashMap<i32, i32>,
+        sum: i32,
         mut curr_sum: i32,
+        map: &mut HashMap<i32, i32>,
     ) -> i32 {
         if let Some(node) = root {
             let mut res = 0;
             curr_sum += node.borrow().val;
-            res += *prefix_sum_count.entry(curr_sum - target).or_default();
-            let v = *prefix_sum_count.entry(curr_sum).or_default();
-            prefix_sum_count.insert(curr_sum, v + 1);
-            res += walk(
-                node.borrow().right.as_ref(),
-                target,
-                prefix_sum_count,
-                curr_sum,
-            );
-            res += walk(
-                node.borrow().left.as_ref(),
-                target,
-                prefix_sum_count,
-                curr_sum,
-            );
-            prefix_sum_count.insert(curr_sum, prefix_sum_count.get(&curr_sum).unwrap() - 1);
+            res += *map.entry(curr_sum - sum).or_default();
+            let v = *map.entry(curr_sum).or_default();
+            map.insert(curr_sum, v + 1);
+            res += walk(node.borrow().right.as_ref(), sum, curr_sum, map);
+            res += walk(node.borrow().left.as_ref(), sum, curr_sum, map);
+            map.insert(curr_sum, map.get(&curr_sum).unwrap() - 1);
             res
         } else {
             0
         }
     }
-    let mut prefix_sum_count = HashMap::new();
-    prefix_sum_count.insert(0, 1);
-    walk(root.as_ref(), sum, &mut prefix_sum_count, 0)
+    let mut map = HashMap::new();
+    map.insert(0, 1);
+    walk(root.as_ref(), sum, 0, &mut map)
 }
 // tree
 #[test]
