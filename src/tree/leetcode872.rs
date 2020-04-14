@@ -18,18 +18,31 @@ impl TreeNode {
     }
 }
 use std::{cell::RefCell, rc::Rc};
-
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
 pub fn leaf_similar(
     root1: Option<Rc<RefCell<TreeNode>>>,
     root2: Option<Rc<RefCell<TreeNode>>>,
 ) -> bool {
-    todo!()
+    fn walk(root: Option<&Rc<RefCell<TreeNode>>>,leaf_values: &mut Vec<i32>){
+        if let Some(node) = root {
+            if node.borrow().left.as_ref().is_none()&& node.borrow().right.as_ref().is_none(){
+                leaf_values.push(node.borrow().val);
+            }
+            walk(node.borrow().left.as_ref(),leaf_values);
+            walk(node.borrow().right.as_ref(),leaf_values);
+        }
+    }
+    let mut leaves1 =Vec::new();
+    let mut leaves2 =Vec::new();
+    walk(root1.as_ref(),&mut leaves1);
+    walk(root2.as_ref(),&mut leaves2);
+    leaves1==leaves2
 }
 // tree depth_first_search
 #[test]
-#[ignore]
 fn test1_872() {
-    let root1 = Some(Rc::new(RefCell::new(TreeNode {
+    let t1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 3,
         left: Some(Rc::new(RefCell::new(TreeNode {
             val: 5,
@@ -46,11 +59,10 @@ fn test1_872() {
             right: Some(Rc::new(RefCell::new(TreeNode::new(8)))),
         }))),
     })));
-    // FIX
-    let root2 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 3,
+    let t2 = Some(Rc::new(RefCell::new(TreeNode {
+        val: 8,
         left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 5,
+            val: 4,
             left: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
             right: Some(Rc::new(RefCell::new(TreeNode {
                 val: 2,
@@ -59,10 +71,10 @@ fn test1_872() {
             }))),
         }))),
         right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 1,
+            val: 8,
             left: Some(Rc::new(RefCell::new(TreeNode::new(9)))),
             right: Some(Rc::new(RefCell::new(TreeNode::new(8)))),
         }))),
     })));
-    assert_eq!(leaf_similar(root1, root2), true);
+    assert_eq!(leaf_similar(t1, t2), true);
 }
