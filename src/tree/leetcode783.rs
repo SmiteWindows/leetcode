@@ -18,15 +18,29 @@ impl TreeNode {
     }
 }
 use std::{cell::RefCell, rc::Rc};
-
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
 pub fn min_diff_in_bst(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    todo!()
+    fn walk(root: Option<&Rc<RefCell<TreeNode>>>, prev: &mut Option<i32>, mut res: i32) -> i32 {
+        if let Some(node) = root {
+            res = walk(node.borrow().left.as_ref(), prev, res);
+            let val = node.borrow().val;
+            if let Some(n) = prev {
+                res = std::cmp::min(res, val - *n);
+            }
+            *prev = Some(val);
+            res = walk(node.borrow().right.as_ref(), prev, res);
+        }
+        res
+    }
+    let (mut prev, res) = (None, std::i32::MAX);
+    walk(root.as_ref(), &mut prev, res)
 }
 // tree recursion
 #[test]
 #[ignore]
 fn test1_783() {
-    let root = Some(Rc::new(RefCell::new(TreeNode {
+    let t1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 4,
         left: Some(Rc::new(RefCell::new(TreeNode {
             val: 2,
@@ -35,5 +49,43 @@ fn test1_783() {
         }))),
         right: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
     })));
-    assert_eq!(1, min_diff_in_bst(root));
+    assert_eq!(1, min_diff_in_bst(t1));
+    let t2 = Some(Rc::new(RefCell::new(TreeNode {
+        val: 5,
+        left: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
+        right: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
+    })));
+    assert_eq!(1, min_diff_in_bst(t2));
+    let t3 = Some(Rc::new(RefCell::new(TreeNode {
+        val: 27,
+        left: None,
+        right: Some(Rc::new(RefCell::new(TreeNode {
+            val: 34,
+            left: None,
+            right: Some(Rc::new(RefCell::new(TreeNode {
+                val: 58,
+                left: Some(Rc::new(RefCell::new(TreeNode {
+                    val: 50,
+                    left: Some(Rc::new(RefCell::new(TreeNode::new(44)))),
+                    right: None,
+                }))),
+                right: None,
+            }))),
+        }))),
+    })));
+    assert_eq!(6, min_diff_in_bst(t3));
+    let t4 = Some(Rc::new(RefCell::new(TreeNode {
+        val: 90,
+        left: Some(Rc::new(RefCell::new(TreeNode {
+            val: 69,
+            left: Some(Rc::new(RefCell::new(TreeNode {
+                val: 49,
+                left: None,
+                right: Some(Rc::new(RefCell::new(TreeNode::new(52)))),
+            }))),
+            right: Some(Rc::new(RefCell::new(TreeNode::new(89)))),
+        }))),
+        right: None,
+    })));
+    assert_eq!(1, min_diff_in_bst(t4));
 }
