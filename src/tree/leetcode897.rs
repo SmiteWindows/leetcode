@@ -18,13 +18,27 @@ impl TreeNode {
     }
 }
 use std::{cell::RefCell, rc::Rc};
-
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
 pub fn increasing_bst(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
-    todo!()
+    fn walk(
+        root: Option<&Rc<RefCell<TreeNode>>>,
+        next: Option<Rc<RefCell<TreeNode>>>,
+    ) -> Option<Rc<RefCell<TreeNode>>> {
+        if let Some(node) = root {
+            let left = node.borrow_mut().left.take();
+            let right = node.borrow_mut().right.take();
+            let res = walk(left.as_ref(), Some(node.clone()));
+            node.borrow_mut().right = walk(right.as_ref(), next);
+            res
+        } else {
+            next
+        }
+    }
+    walk(root.as_ref(), None)
 }
 // tree depth_first_search
 #[test]
-#[ignore]
 fn test1_897() {
     let root = Some(Rc::new(RefCell::new(TreeNode {
         val: 5,
