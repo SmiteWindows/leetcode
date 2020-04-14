@@ -27,7 +27,7 @@ pub fn has_path_sum(root: Option<Rc<RefCell<TreeNode>>>, sum: i32) -> bool {
             if node.borrow().left.as_ref().is_none() && node.borrow().right.as_ref().is_none() {
                 return sum == 0;
             }
-            helper(node.borrow().left.as_ref(),sum)||helper(node.borrow().right.as_ref(),sum)
+            helper(node.borrow().left.as_ref(), sum) || helper(node.borrow().right.as_ref(), sum)
         } else {
             false
         }

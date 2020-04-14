@@ -27,13 +27,12 @@ pub fn zigzag_level_order(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<i32>> 
                 let mut new_level = Vec::new();
                 new_level.push(node.borrow().val);
                 res.push(new_level);
+            } else if level % 2 == 0 {
+                res[level].push(node.borrow().val);
             } else {
-                if level%2==0 {
-                    res[level].push(node.borrow().val);
-                }else{
-                    res[level].insert(0,node.borrow().val);
-                }
+                res[level].insert(0, node.borrow().val);
             }
+
             if node.borrow().left.as_ref().is_some() {
                 helper(node.borrow().left.as_ref(), level + 1, res);
             }
