@@ -10,7 +10,7 @@ pub struct TreeNode {
 impl TreeNode {
     #[inline]
     pub fn new(val: i32) -> Self {
-        TreeNode {
+        Self {
             val,
             left: None,
             right: None,
@@ -18,13 +18,29 @@ impl TreeNode {
     }
 }
 use std::{cell::RefCell, rc::Rc};
-
+// Runtime: 0 ms
+// Memory Usage: 2.2 MB
 pub fn level_order(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<i32>> {
-    todo!()
+    fn helper(root: Option<&Rc<RefCell<TreeNode>>>, level: usize, res: &mut Vec<Vec<i32>>) {
+        if let Some(node) = root {
+            if level == res.len() {
+                res.push(Vec::new());
+            }
+            res[level].push(node.borrow().val);
+            if node.borrow().left.as_ref().is_some() {
+                helper(node.borrow().left.as_ref(), level + 1, res);
+            }
+            if node.borrow().right.as_ref().is_some() {
+                helper(node.borrow().right.as_ref(), level + 1, res);
+            }
+        }
+    }
+    let mut res = Vec::new();
+    helper(root.as_ref(), 0, &mut res);
+    res
 }
 // tree breadth_first_search
 #[test]
-#[ignore]
 fn test1_102() {
     let root = Some(Rc::new(RefCell::new(TreeNode {
         val: 3,
