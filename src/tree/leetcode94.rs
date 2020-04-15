@@ -18,13 +18,26 @@ impl TreeNode {
     }
 }
 use std::{cell::RefCell, rc::Rc};
-
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
 pub fn inorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
-    todo!()
+    fn helper(root: Option<&Rc<RefCell<TreeNode>>>, res: &mut Vec<i32>) {
+        if let Some(node) = root {
+            if node.borrow().left.as_ref().is_some() {
+                helper(node.borrow().left.as_ref(), res);
+            }
+            res.push(node.borrow().val);
+            if node.borrow().right.as_ref().is_some() {
+                helper(node.borrow().right.as_ref(), res);
+            }
+        }
+    }
+    let mut res = Vec::new();
+    helper(root.as_ref(), &mut res);
+    res
 }
 // tree hash_table stack
 #[test]
-#[ignore]
 fn test1_94() {
     let root = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
