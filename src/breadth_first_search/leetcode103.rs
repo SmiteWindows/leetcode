@@ -17,14 +17,44 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
-
+use std::{cell::RefCell, collections::VecDeque, rc::Rc};
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
 pub fn zigzag_level_order(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<i32>> {
-    todo!()
+    let mut res = Vec::new();
+    if let Some(node) = root {
+        let mut queue = VecDeque::new();
+        queue.push_back(Some(node));
+        queue.push_back(None);
+        let mut level_list = Vec::new();
+        let mut is_order_left = true;
+        while !queue.is_empty() {
+            if let Some(curr) = queue.pop_front().unwrap() {
+                if is_order_left {
+                    level_list.push(curr.borrow().val);
+                } else {
+                    level_list.insert(0, curr.borrow().val);
+                }
+                if curr.borrow().left.as_ref().is_some() {
+                    queue.push_back(curr.borrow().left.clone());
+                }
+                if curr.borrow().right.as_ref().is_some() {
+                    queue.push_back(curr.borrow().right.clone());
+                }
+            } else {
+                res.push(level_list);
+                level_list=Vec::new();
+                if !queue.is_empty() {
+                    queue.push_back(None);
+                }
+                is_order_left = !is_order_left;
+            }
+        }
+    }
+    res
 }
 // tree breadth_first_search stack
 #[test]
-#[ignore]
 fn test2_103() {
     let root = Some(Rc::new(RefCell::new(TreeNode {
         val: 3,
