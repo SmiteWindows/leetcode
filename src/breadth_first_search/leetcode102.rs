@@ -17,14 +17,35 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
-
+use std::{cell::RefCell, rc::Rc, collections::VecDeque};
+// Runtime: 0 ms
+// Memory Usage: 2.2 MB
 pub fn level_order(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<i32>> {
-    todo!()
+    let mut res = Vec::new();
+    if let Some(node) = root {
+        let mut queue=VecDeque::new();
+        queue.push_back(Some(node));
+        let mut level = 0;
+        while !queue.is_empty(){
+            res.push(Vec::new());
+            let level_length=queue.len();
+            for i in 0..level_length{
+                let n=queue.pop_front().unwrap().unwrap();
+                res[level].push(n.borrow().val);
+                if n.borrow().left.as_ref().is_some() {
+                    queue.push_back(n.borrow().left.clone());
+                }
+                if n.borrow().right.as_ref().is_some() {
+                    queue.push_back(n.borrow().right.clone());
+                }
+            }
+            level+=1;
+        }
+    }
+    res
 }
 // tree breadth_first_search
 #[test]
-#[ignore]
 fn test2_102() {
     let root = Some(Rc::new(RefCell::new(TreeNode {
         val: 3,
