@@ -10,7 +10,7 @@ pub struct TreeNode {
 impl TreeNode {
     #[inline]
     pub fn new(val: i32) -> Self {
-        TreeNode {
+        Self {
             val,
             left: None,
             right: None,
@@ -18,13 +18,24 @@ impl TreeNode {
     }
 }
 use std::{cell::RefCell, rc::Rc};
-
+// Runtime: 4 ms
+// Memory Usage: 2.6 MB
 pub fn build_tree(preorder: Vec<i32>, inorder: Vec<i32>) -> Option<Rc<RefCell<TreeNode>>> {
-    todo!()
+    fn helper(preorder: &[i32], inorder: &[i32]) -> Option<Rc<RefCell<TreeNode>>> {
+        if inorder.is_empty() {
+            return None;
+        }
+        let len = inorder.len();
+        let root = Some(Rc::new(RefCell::new(TreeNode::new(preorder[0]))));
+        let mid = inorder.iter().position(|&x| x == preorder[0]).unwrap();
+        root.as_ref()?.borrow_mut().left = helper(&preorder[1..=mid], &inorder[0..mid]);
+        root.as_ref()?.borrow_mut().right = helper(&preorder[mid + 1..len], &inorder[mid + 1..len]);
+        root
+    }
+    helper(&preorder, &inorder)
 }
 // tree depth_first_search array
 #[test]
-#[ignore]
 fn test2_105() {
     let res = Some(Rc::new(RefCell::new(TreeNode {
         val: 3,

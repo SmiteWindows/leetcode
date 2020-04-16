@@ -43,7 +43,7 @@ pub fn zigzag_level_order(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<i32>> 
                 }
             } else {
                 res.push(level_list);
-                level_list=Vec::new();
+                level_list = Vec::new();
                 if !queue.is_empty() {
                     queue.push_back(None);
                 }

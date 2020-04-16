@@ -17,20 +17,20 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc, collections::VecDeque};
+use std::{cell::RefCell, collections::VecDeque, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn level_order(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<i32>> {
     let mut res = Vec::new();
     if let Some(node) = root {
-        let mut queue=VecDeque::new();
+        let mut queue = VecDeque::new();
         queue.push_back(Some(node));
         let mut level = 0;
-        while !queue.is_empty(){
+        while !queue.is_empty() {
             res.push(Vec::new());
-            let level_length=queue.len();
-            for i in 0..level_length{
-                let n=queue.pop_front().unwrap().unwrap();
+            let level_length = queue.len();
+            for i in 0..level_length {
+                let n = queue.pop_front().unwrap().unwrap();
                 res[level].push(n.borrow().val);
                 if n.borrow().left.as_ref().is_some() {
                     queue.push_back(n.borrow().left.clone());
@@ -39,7 +39,7 @@ pub fn level_order(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<i32>> {
                     queue.push_back(n.borrow().right.clone());
                 }
             }
-            level+=1;
+            level += 1;
         }
     }
     res

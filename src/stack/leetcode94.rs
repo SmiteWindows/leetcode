@@ -21,18 +21,18 @@ use std::{cell::RefCell, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn inorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
-    let mut res= Vec::new();
+    let mut res = Vec::new();
     let mut stack = Vec::new();
-    let mut curr=root;
+    let mut curr = root;
     while curr.is_some() || !stack.is_empty() {
-        while let Some(node)=curr {
+        while let Some(node) = curr {
             let left = node.borrow_mut().left.take();
             stack.push(Some(node));
             curr = left;
         }
-        let node=stack.pop().unwrap().unwrap();
+        let node = stack.pop().unwrap().unwrap();
         res.push(node.borrow_mut().val);
-        curr=node.borrow_mut().right.take();
+        curr = node.borrow_mut().right.take();
     }
     res
 }
