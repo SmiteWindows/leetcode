@@ -17,7 +17,7 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, collections::HashMap, rc::Rc};
+use std::{cell::RefCell, rc::Rc};
 // Runtime: 4 ms
 // Memory Usage: 2.6 MB
 pub fn build_tree(preorder: Vec<i32>, inorder: Vec<i32>) -> Option<Rc<RefCell<TreeNode>>> {
