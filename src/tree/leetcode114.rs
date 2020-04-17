@@ -18,13 +18,28 @@ impl TreeNode {
     }
 }
 use std::{cell::RefCell, rc::Rc};
-
+// Runtime: 0 ms
+// Memory Usage: 2.2 MB
 pub fn flatten(root: &mut Option<Rc<RefCell<TreeNode>>>) {
-    todo!()
+    fn postorder(
+        root: Option<Rc<RefCell<TreeNode>>>,
+        prev: &mut Option<Rc<RefCell<TreeNode>>>,
+    ) {
+        if let Some(node) = root {
+            let left=node.borrow_mut().left.take();
+            let right=node.borrow_mut().right.take();
+            postorder(right,prev);
+            postorder(left,prev);
+            node.borrow_mut().right =prev.take();
+            *prev = Some(node);
+        }
+    }
+    let mut prev = None;
+    postorder(root.take(), &mut prev);
+    *root=prev;
 }
 // tree depth_first_search
 #[test]
-#[ignore]
 fn test1_114() {
     let mut root = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
