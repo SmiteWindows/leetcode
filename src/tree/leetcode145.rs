@@ -18,13 +18,29 @@ impl TreeNode {
     }
 }
 use std::{cell::RefCell, rc::Rc};
-
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
 pub fn postorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
-    todo!()
+    let mut stack = Vec::new();
+    let mut res = Vec::new();
+    if root.is_none() {
+        return res;
+    }
+    stack.push(root);
+    while !stack.is_empty() {
+        let node = stack.pop().unwrap();
+        res.insert(0, node.as_ref().unwrap().borrow().val);
+        if node.as_ref().unwrap().borrow().left.is_some() {
+            stack.push(node.as_ref().unwrap().borrow().left.clone());
+        }
+        if node.as_ref().unwrap().borrow().right.is_some() {
+            stack.push(node.as_ref().unwrap().borrow().right.clone());
+        }
+    }
+    res
 }
 // tree stack
 #[test]
-#[ignore]
 fn test1_145() {
     let root = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
