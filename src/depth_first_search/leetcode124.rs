@@ -24,7 +24,7 @@ pub fn max_path_sum(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     fn max_gain(root: Option<&Rc<RefCell<TreeNode>>>, max_sum: &mut i32) -> i32 {
         if let Some(node) = root {
             let node = node.borrow();
-            let val=node.val;
+            let val = node.val;
             let left_gain = max(max_gain(node.left.as_ref(), max_sum), 0);
             let right_gain = max(max_gain(node.right.as_ref(), max_sum), 0);
             *max_sum = max(*max_sum, val + left_gain + right_gain);

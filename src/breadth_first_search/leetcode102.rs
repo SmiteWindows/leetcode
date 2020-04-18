@@ -31,7 +31,7 @@ pub fn level_order(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<i32>> {
             let level_length = queue.len();
             for i in 0..level_length {
                 let n = queue.pop_front().unwrap().unwrap();
-                let n=n.borrow();
+                let n = n.borrow();
                 res[level].push(n.val);
                 if n.left.is_some() {
                     queue.push_back(n.left.clone());

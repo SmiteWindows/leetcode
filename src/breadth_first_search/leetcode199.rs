@@ -17,28 +17,28 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc, collections::VecDeque};
+use std::{cell::RefCell, collections::VecDeque, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn right_side_view(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
-    let mut res= Vec::new();
+    let mut res = Vec::new();
     if root.is_none() {
         return res;
     }
-    let mut queue =VecDeque::new();
+    let mut queue = VecDeque::new();
     queue.push_back(root);
     while !queue.is_empty() {
-        let len=queue.len();
+        let len = queue.len();
         for i in 0..len {
             let node = queue.pop_front().unwrap().unwrap();
-            let node=node.borrow();
-            if node.left.is_some(){
+            let node = node.borrow();
+            if node.left.is_some() {
                 queue.push_back(node.left.clone());
             }
-            if node.right.is_some(){
+            if node.right.is_some() {
                 queue.push_back(node.right.clone());
             }
-            if i==len-1{
+            if i == len - 1 {
                 res.push(node.val);
             }
         }

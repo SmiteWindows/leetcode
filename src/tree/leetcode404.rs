@@ -24,10 +24,7 @@ pub fn sum_of_left_leaves(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     fn helper(root: Option<&Rc<RefCell<TreeNode>>>, flag: bool) -> i32 {
         if let Some(node) = root {
             let node = node.borrow();
-            let leave = if flag
-                && node.left.is_none()
-                && node.right.is_none()
-            {
+            let leave = if flag && node.left.is_none() && node.right.is_none() {
                 node.val
             } else {
                 0

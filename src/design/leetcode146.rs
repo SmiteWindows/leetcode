@@ -62,7 +62,7 @@ impl LRUCache {
     }
 
     fn put_element(&mut self, key: i32, value: i32) -> Option<Element> {
-        let new_element =Element::new(key, value);
+        let new_element = Element::new(key, value);
         let old_element = self.hash_map.insert(key, new_element);
         self.list.push_front(new_element);
         old_element

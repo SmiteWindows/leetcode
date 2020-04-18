@@ -21,8 +21,8 @@ use std::{cell::RefCell, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn preorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
-    let mut stack=Vec::new();
-    let mut res=Vec::new();
+    let mut stack = Vec::new();
+    let mut res = Vec::new();
     if root.is_none() {
         return res;
     }

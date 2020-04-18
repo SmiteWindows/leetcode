@@ -23,7 +23,12 @@ use std::{cell::RefCell, rc::Rc};
 pub fn path_sum(root: Option<Rc<RefCell<TreeNode>>>, sum: i32) -> Vec<Vec<i32>> {
     let mut res = Vec::new();
     let mut tmp = Vec::new();
-    fn path(root: Option<&Rc<RefCell<TreeNode>>>, sum: i32, res: &mut Vec<Vec<i32>>, tmp: &mut Vec<i32>) {
+    fn path(
+        root: Option<&Rc<RefCell<TreeNode>>>,
+        sum: i32,
+        res: &mut Vec<Vec<i32>>,
+        tmp: &mut Vec<i32>,
+    ) {
         if let Some(node) = root {
             tmp.push(node.borrow().val);
             if node.borrow().left.is_none()
