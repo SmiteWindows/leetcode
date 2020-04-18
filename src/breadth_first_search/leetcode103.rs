@@ -3,8 +3,8 @@
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
     pub val: i32,
-    pub left: Option<Rc<RefCell<TreeNode>>>,
-    pub right: Option<Rc<RefCell<TreeNode>>>,
+    pub left: Option<Rc<RefCell<Self>>>,
+    pub right: Option<Rc<RefCell<Self>>>,
 }
 
 impl TreeNode {
@@ -19,7 +19,7 @@ impl TreeNode {
 }
 use std::{cell::RefCell, collections::VecDeque, rc::Rc};
 // Runtime: 0 ms
-// Memory Usage: 2.1 MB
+// Memory Usage: 2 MB
 pub fn zigzag_level_order(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<i32>> {
     let mut res = Vec::new();
     if let Some(node) = root {
@@ -30,16 +30,17 @@ pub fn zigzag_level_order(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<i32>> 
         let mut is_order_left = true;
         while !queue.is_empty() {
             if let Some(curr) = queue.pop_front().unwrap() {
+                let curr =curr.borrow();
                 if is_order_left {
-                    level_list.push(curr.borrow().val);
+                    level_list.push(curr.val);
                 } else {
-                    level_list.insert(0, curr.borrow().val);
+                    level_list.insert(0, curr.val);
                 }
-                if curr.borrow().left.as_ref().is_some() {
-                    queue.push_back(curr.borrow().left.clone());
+                if curr.left.is_some() {
+                    queue.push_back(curr.left.clone());
                 }
-                if curr.borrow().right.as_ref().is_some() {
-                    queue.push_back(curr.borrow().right.clone());
+                if curr.right.is_some() {
+                    queue.push_back(curr.right.clone());
                 }
             } else {
                 res.push(level_list);

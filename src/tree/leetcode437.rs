@@ -3,8 +3,8 @@
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
     pub val: i32,
-    pub left: Option<Rc<RefCell<TreeNode>>>,
-    pub right: Option<Rc<RefCell<TreeNode>>>,
+    pub left: Option<Rc<RefCell<Self>>>,
+    pub right: Option<Rc<RefCell<Self>>>,
 }
 
 impl TreeNode {
@@ -28,13 +28,14 @@ pub fn path_sum(root: Option<Rc<RefCell<TreeNode>>>, sum: i32) -> i32 {
         map: &mut HashMap<i32, i32>,
     ) -> i32 {
         if let Some(node) = root {
+            let node = node.borrow();
             let mut res = 0;
-            curr_sum += node.borrow().val;
+            curr_sum += node.val;
             res += *map.entry(curr_sum - sum).or_default();
             let v = *map.entry(curr_sum).or_default();
             map.insert(curr_sum, v + 1);
-            res += walk(node.borrow().right.as_ref(), sum, curr_sum, map);
-            res += walk(node.borrow().left.as_ref(), sum, curr_sum, map);
+            res += walk(node.right.as_ref(), sum, curr_sum, map);
+            res += walk(node.left.as_ref(), sum, curr_sum, map);
             map.insert(curr_sum, map.get(&curr_sum).unwrap() - 1);
             res
         } else {

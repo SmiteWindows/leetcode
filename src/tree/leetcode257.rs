@@ -23,13 +23,14 @@ use std::{cell::RefCell, rc::Rc};
 pub fn binary_tree_paths(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<String> {
     fn helper(root: Option<&Rc<RefCell<TreeNode>>>, mut path: String, paths: &mut Vec<String>) {
         if let Some(node) = root {
-            path += &(node.borrow().val).to_string();
-            if node.borrow().left.as_ref().is_none() && node.borrow().right.as_ref().is_none() {
+            let node = node.borrow();
+            path += &(node.val).to_string();
+            if node.left.is_none() && node.right.is_none() {
                 paths.push(path);
             } else {
                 path += "->";
-                helper(node.borrow().left.as_ref(), path.clone(), paths);
-                helper(node.borrow().right.as_ref(), path, paths);
+                helper(node.left.as_ref(), path.clone(), paths);
+                helper(node.right.as_ref(), path, paths);
             }
         }
     }

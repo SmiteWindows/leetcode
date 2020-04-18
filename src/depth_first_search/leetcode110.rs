@@ -3,8 +3,8 @@
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
     pub val: i32,
-    pub left: Option<Rc<RefCell<TreeNode>>>,
-    pub right: Option<Rc<RefCell<TreeNode>>>,
+    pub left: Option<Rc<RefCell<Self>>>,
+    pub right: Option<Rc<RefCell<Self>>>,
 }
 
 impl TreeNode {
@@ -23,11 +23,12 @@ use std::{cell::RefCell, cmp::max, rc::Rc};
 pub fn is_balanced(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
     fn helper(root: Option<&Rc<RefCell<TreeNode>>>) -> (i32, bool) {
         if let Some(node) = root {
-            let left = helper(node.borrow().left.as_ref());
+            let node = node.borrow();
+            let left = helper(node.left.as_ref());
             if !left.1 {
                 return (0, false);
             }
-            let right = helper(node.borrow().right.as_ref());
+            let right = helper(node.right.as_ref());
             if !right.1 {
                 return (0, false);
             }

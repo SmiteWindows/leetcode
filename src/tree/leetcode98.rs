@@ -27,17 +27,18 @@ pub fn is_valid_bst(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
         upper: Option<i32>,
     ) -> bool {
         if let Some(node) = root {
-            let val = node.borrow().val;
+            let node = node.borrow();
+            let val = node.val;
             if lower.is_some() && val <= lower.unwrap() {
                 return false;
             }
             if upper.is_some() && val >= upper.unwrap() {
                 return false;
             }
-            if !helper(node.borrow().left.as_ref(), lower, Some(val)) {
+            if !helper(node.left.as_ref(), lower, Some(val)) {
                 return false;
             }
-            if !helper(node.borrow().right.as_ref(), Some(val), upper) {
+            if !helper(node.right.as_ref(), Some(val), upper) {
                 return false;
             }
             true

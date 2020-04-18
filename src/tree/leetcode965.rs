@@ -3,8 +3,8 @@
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
     pub val: i32,
-    pub left: Option<Rc<RefCell<TreeNode>>>,
-    pub right: Option<Rc<RefCell<TreeNode>>>,
+    pub left: Option<Rc<RefCell<Self>>>,
+    pub right: Option<Rc<RefCell<Self>>>,
 }
 
 impl TreeNode {
@@ -24,17 +24,20 @@ pub fn is_unival_tree(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
     fn is_unival(root: Option<&Rc<RefCell<TreeNode>>>) -> bool {
         match root {
             Some(node) => {
-                let left_unival = match node.as_ref().borrow().left.as_ref() {
+                let node= node.borrow();
+                let left_unival = match node.left.as_ref() {
                     Some(left_node) => {
-                        (node.as_ref().borrow().val == left_node.as_ref().borrow().val)
-                            && is_unival(node.as_ref().borrow().left.as_ref())
+                        let left_node= left_node.borrow();
+                        (node.val == left_node.val)
+                            && is_unival(node.left.as_ref())
                     }
                     None => true,
                 };
-                let right_unival = match node.as_ref().borrow().right.as_ref() {
+                let right_unival = match node.right.as_ref() {
                     Some(right_node) => {
-                        (node.as_ref().borrow().val == right_node.as_ref().borrow().val)
-                            && is_unival(node.as_ref().borrow().right.as_ref())
+                        let right_node = right_node.borrow();
+                        (node.val == right_node.val)
+                            && is_unival(node.right.as_ref())
                     }
                     None => true,
                 };

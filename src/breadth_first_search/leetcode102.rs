@@ -3,8 +3,8 @@
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
     pub val: i32,
-    pub left: Option<Rc<RefCell<TreeNode>>>,
-    pub right: Option<Rc<RefCell<TreeNode>>>,
+    pub left: Option<Rc<RefCell<Self>>>,
+    pub right: Option<Rc<RefCell<Self>>>,
 }
 
 impl TreeNode {
@@ -19,7 +19,7 @@ impl TreeNode {
 }
 use std::{cell::RefCell, collections::VecDeque, rc::Rc};
 // Runtime: 0 ms
-// Memory Usage: 2.2 MB
+// Memory Usage: 2.1 MB
 pub fn level_order(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<i32>> {
     let mut res = Vec::new();
     if let Some(node) = root {
@@ -31,12 +31,13 @@ pub fn level_order(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<i32>> {
             let level_length = queue.len();
             for i in 0..level_length {
                 let n = queue.pop_front().unwrap().unwrap();
-                res[level].push(n.borrow().val);
-                if n.borrow().left.as_ref().is_some() {
-                    queue.push_back(n.borrow().left.clone());
+                let n=n.borrow();
+                res[level].push(n.val);
+                if n.left.is_some() {
+                    queue.push_back(n.left.clone());
                 }
-                if n.borrow().right.as_ref().is_some() {
-                    queue.push_back(n.borrow().right.clone());
+                if n.right.is_some() {
+                    queue.push_back(n.right.clone());
                 }
             }
             level += 1;

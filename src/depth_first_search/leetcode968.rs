@@ -3,8 +3,8 @@
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
     pub val: i32,
-    pub left: Option<Rc<RefCell<TreeNode>>>,
-    pub right: Option<Rc<RefCell<TreeNode>>>,
+    pub left: Option<Rc<RefCell<Self>>>,
+    pub right: Option<Rc<RefCell<Self>>>,
 }
 
 impl TreeNode {
@@ -17,8 +17,7 @@ impl TreeNode {
         }
     }
 }
-use std::cell::RefCell;
-use std::rc::Rc;
+use std::{rc::Rc, cell::RefCell};
 
 pub fn min_camera_cover(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     todo!()

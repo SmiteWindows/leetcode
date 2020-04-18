@@ -3,8 +3,8 @@
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
     pub val: i32,
-    pub left: Option<Rc<RefCell<TreeNode>>>,
-    pub right: Option<Rc<RefCell<TreeNode>>>,
+    pub left: Option<Rc<RefCell<Self>>>,
+    pub right: Option<Rc<RefCell<Self>>>,
 }
 
 impl TreeNode {
@@ -19,19 +19,20 @@ impl TreeNode {
 }
 use std::{cell::RefCell, cmp::min, rc::Rc};
 // Runtime: 0 ms
-// Memory Usage: 2.8 MB
+// Memory Usage: 2.7 MB
 pub fn min_depth(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     fn helper(root: Option<&Rc<RefCell<TreeNode>>>) -> i32 {
         if let Some(node) = root {
+            let node = node.borrow();
             let mut min_depth = std::i32::MAX;
-            if node.borrow().left.as_ref().is_none() && node.borrow().right.as_ref().is_none() {
+            if node.left.is_none() && node.right.is_none() {
                 return 1;
             }
-            if node.borrow().left.as_ref().is_some() {
-                min_depth = min(helper(node.borrow().left.as_ref()), min_depth);
+            if node.left.is_some() {
+                min_depth = min(helper(node.left.as_ref()), min_depth);
             }
-            if node.borrow().right.as_ref().is_some() {
-                min_depth = min(helper(node.borrow().right.as_ref()), min_depth);
+            if node.right.is_some() {
+                min_depth = min(helper(node.right.as_ref()), min_depth);
             }
             min_depth + 1
         } else {

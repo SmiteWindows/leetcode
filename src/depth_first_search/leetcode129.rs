@@ -3,8 +3,8 @@
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
     pub val: i32,
-    pub left: Option<Rc<RefCell<TreeNode>>>,
-    pub right: Option<Rc<RefCell<TreeNode>>>,
+    pub left: Option<Rc<RefCell<Self>>>,
+    pub right: Option<Rc<RefCell<Self>>>,
 }
 
 impl TreeNode {
@@ -19,20 +19,21 @@ impl TreeNode {
 }
 use std::{cell::RefCell, rc::Rc};
 // Runtime: 0 ms
-// Memory Usage: 2.2 MB
+// Memory Usage: 1.9 MB
 pub fn sum_numbers(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    fn walk(root: Option<&Rc<RefCell<TreeNode>>>,cur:i32, sum:&mut i32){
-        if let Some(node) = root{
-            let val = node.borrow().val;
-            if node.borrow().left.is_none()&& node.borrow().right.is_none(){ 
-                *sum += cur*10 +val;
+    fn walk(root: Option<&Rc<RefCell<TreeNode>>>, cur: i32, sum: &mut i32) {
+        if let Some(node) = root {
+            let node=node.borrow();
+            let val = node.val;
+            if node.left.is_none() && node.right.is_none() {
+                *sum += cur * 10 + val;
                 return;
             }
-            walk(node.borrow().left.as_ref(),cur*10+val,sum);
-            walk(node.borrow().right.as_ref(),cur*10+val,sum);
+            walk(node.left.as_ref(), cur * 10 + val, sum);
+            walk(node.right.as_ref(), cur * 10 + val, sum);
         }
     }
-    let mut sum= 0;
+    let mut sum = 0;
     walk(root.as_ref(), 0, &mut sum);
     sum
 }

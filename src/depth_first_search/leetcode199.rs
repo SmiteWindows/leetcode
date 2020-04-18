@@ -3,8 +3,8 @@
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
     pub val: i32,
-    pub left: Option<Rc<RefCell<TreeNode>>>,
-    pub right: Option<Rc<RefCell<TreeNode>>>,
+    pub left: Option<Rc<RefCell<Self>>>,
+    pub right: Option<Rc<RefCell<Self>>>,
 }
 
 impl TreeNode {
@@ -18,13 +18,28 @@ impl TreeNode {
     }
 }
 use std::{cell::RefCell, rc::Rc};
-
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
 pub fn right_side_view(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
-    todo!()
+    fn walk(root: Option<&Rc<RefCell<TreeNode>>>, level: usize, res: &mut Vec<i32>) {
+        if let Some(node) = root {
+            let node = node.borrow();
+            let val = node.val;
+            if res.len() <= level {
+                res.push(val);
+            } else {
+                res[level] = val;
+            }
+            walk(node.left.as_ref(), level + 1, res);
+            walk(node.right.as_ref(), level + 1, res);
+        }
+    }
+    let mut res = Vec::new();
+    walk(root.as_ref(), 0, &mut res);
+    res
 }
 // tree depth_first_search breadth_first_search
 #[test]
-#[ignore]
 fn test3_199() {
     let root = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,

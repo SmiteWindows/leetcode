@@ -3,8 +3,8 @@
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
     pub val: i32,
-    pub left: Option<Rc<RefCell<TreeNode>>>,
-    pub right: Option<Rc<RefCell<TreeNode>>>,
+    pub left: Option<Rc<RefCell<Self>>>,
+    pub right: Option<Rc<RefCell<Self>>>,
 }
 
 impl TreeNode {
@@ -23,27 +23,20 @@ use std::{cell::RefCell, rc::Rc};
 pub fn path_sum(root: Option<Rc<RefCell<TreeNode>>>, sum: i32) -> Vec<Vec<i32>> {
     let mut res = Vec::new();
     let mut tmp = Vec::new();
-    fn path(root: Option<&Rc<RefCell<TreeNode>>>, sum: i32, res: &mut Vec<Vec<i32>>, tmp: &mut Vec<i32>) {
+    fn path(
+        root: Option<&Rc<RefCell<TreeNode>>>,
+        sum: i32,
+        res: &mut Vec<Vec<i32>>,
+        tmp: &mut Vec<i32>,
+    ) {
         if let Some(node) = root {
-            tmp.push(node.borrow().val);
-            if node.borrow().left.is_none()
-                && node.borrow().right.is_none()
-                && sum == node.borrow().val
-            {
+            let node = node.borrow();
+            tmp.push(node.val);
+            if node.left.is_none() && node.right.is_none() && sum == node.val {
                 res.push(tmp.to_vec());
             }
-            path(
-                node.borrow().left.as_ref(),
-                sum - node.borrow().val,
-                res,
-                tmp,
-            );
-            path(
-                node.borrow().right.as_ref(),
-                sum - node.borrow().val,
-                res,
-                tmp,
-            );
+            path(node.left.as_ref(), sum - node.val, res, tmp);
+            path(node.right.as_ref(), sum - node.val, res, tmp);
             tmp.pop();
         }
     }

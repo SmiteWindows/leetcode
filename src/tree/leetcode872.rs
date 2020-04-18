@@ -3,8 +3,8 @@
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
     pub val: i32,
-    pub left: Option<Rc<RefCell<TreeNode>>>,
-    pub right: Option<Rc<RefCell<TreeNode>>>,
+    pub left: Option<Rc<RefCell<Self>>>,
+    pub right: Option<Rc<RefCell<Self>>>,
 }
 
 impl TreeNode {
@@ -26,11 +26,12 @@ pub fn leaf_similar(
 ) -> bool {
     fn walk(root: Option<&Rc<RefCell<TreeNode>>>, leaf_values: &mut Vec<i32>) {
         if let Some(node) = root {
-            if node.borrow().left.as_ref().is_none() && node.borrow().right.as_ref().is_none() {
-                leaf_values.push(node.borrow().val);
+            let node = node.borrow();
+            if node.left.is_none() && node.right.is_none() {
+                leaf_values.push(node.val);
             }
-            walk(node.borrow().left.as_ref(), leaf_values);
-            walk(node.borrow().right.as_ref(), leaf_values);
+            walk(node.left.as_ref(), leaf_values);
+            walk(node.right.as_ref(), leaf_values);
         }
     }
     let mut leaves1 = Vec::new();

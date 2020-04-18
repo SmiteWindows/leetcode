@@ -3,8 +3,8 @@
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
     pub val: i32,
-    pub left: Option<Rc<RefCell<TreeNode>>>,
-    pub right: Option<Rc<RefCell<TreeNode>>>,
+    pub left: Option<Rc<RefCell<Self>>>,
+    pub right: Option<Rc<RefCell<Self>>>,
 }
 
 impl TreeNode {
@@ -23,11 +23,12 @@ use std::{cell::RefCell, rc::Rc};
 pub fn find_second_minimum_value(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     fn walk(root: Option<&Rc<RefCell<TreeNode>>>, min: i32) -> i32 {
         if let Some(node) = root {
-            if node.as_ref().borrow().val > min {
-                return node.as_ref().borrow().val;
+            let node = node.borrow();
+            if node.val > min {
+                return node.val;
             }
-            let left = walk(node.as_ref().borrow().left.as_ref(), min);
-            let right = walk(node.as_ref().borrow().right.as_ref(), min);
+            let left = walk(node.left.as_ref(), min);
+            let right = walk(node.right.as_ref(), min);
             if left == -1 {
                 return right;
             }

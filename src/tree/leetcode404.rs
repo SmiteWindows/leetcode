@@ -3,8 +3,8 @@
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
     pub val: i32,
-    pub left: Option<Rc<RefCell<TreeNode>>>,
-    pub right: Option<Rc<RefCell<TreeNode>>>,
+    pub left: Option<Rc<RefCell<Self>>>,
+    pub right: Option<Rc<RefCell<Self>>>,
 }
 
 impl TreeNode {
@@ -23,16 +23,17 @@ use std::{cell::RefCell, rc::Rc};
 pub fn sum_of_left_leaves(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     fn helper(root: Option<&Rc<RefCell<TreeNode>>>, flag: bool) -> i32 {
         if let Some(node) = root {
+            let node = node.borrow();
             let leave = if flag
-                && node.borrow().left.as_ref().is_none()
-                && node.borrow().right.as_ref().is_none()
+                && node.left.is_none()
+                && node.right.is_none()
             {
-                node.borrow().val
+                node.val
             } else {
                 0
             };
-            let left = helper(node.borrow().left.as_ref(), true);
-            let right = helper(node.borrow().right.as_ref(), false);
+            let left = helper(node.left.as_ref(), true);
+            let right = helper(node.right.as_ref(), false);
             left + right + leave
         } else {
             0

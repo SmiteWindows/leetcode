@@ -23,12 +23,13 @@ use std::{cell::RefCell, rc::Rc};
 pub fn inorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
     fn helper(root: Option<&Rc<RefCell<TreeNode>>>, res: &mut Vec<i32>) {
         if let Some(node) = root {
-            if node.borrow().left.as_ref().is_some() {
-                helper(node.borrow().left.as_ref(), res);
+            let node = node.borrow();
+            if node.left.is_some() {
+                helper(node.left.as_ref(), res);
             }
-            res.push(node.borrow().val);
-            if node.borrow().right.as_ref().is_some() {
-                helper(node.borrow().right.as_ref(), res);
+            res.push(node.val);
+            if node.right.is_some() {
+                helper(node.right.as_ref(), res);
             }
         }
     }
