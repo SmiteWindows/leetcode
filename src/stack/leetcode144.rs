@@ -28,13 +28,14 @@ pub fn preorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
     }
     stack.push(root);
     while !stack.is_empty() {
-        let node = stack.pop().unwrap();
-        res.push(node.as_ref().unwrap().borrow().val);
-        if node.as_ref().unwrap().borrow().right.is_some() {
-            stack.push(node.as_ref().unwrap().borrow().right.clone());
+        let node = stack.pop().unwrap().unwrap();
+        let node = node.borrow();
+        res.push(node.val);
+        if node.right.is_some() {
+            stack.push(node.right.clone());
         }
-        if node.as_ref().unwrap().borrow().left.is_some() {
-            stack.push(node.as_ref().unwrap().borrow().left.clone());
+        if node.left.is_some() {
+            stack.push(node.left.clone());
         }
     }
     res
