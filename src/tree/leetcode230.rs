@@ -18,13 +18,28 @@ impl TreeNode {
     }
 }
 use std::{cell::RefCell, rc::Rc};
-
+// Runtime: 0 ms
+// Memory Usage: 3.1 MB
 pub fn kth_smallest(root: Option<Rc<RefCell<TreeNode>>>, k: i32) -> i32 {
-    todo!()
+    fn inorder(root: Option<&Rc<RefCell<TreeNode>>>, k: i32, num: &mut i32, res: &mut i32) {
+        if let Some(node) = root {
+            let node = node.borrow();
+            inorder(node.left.as_ref(), k, num, res);
+            *num += 1;
+            if *num == k {
+                *res = node.val;
+                return;
+            }
+            inorder(node.right.as_ref(), k, num, res);
+        }
+    }
+    let mut num = 0;
+    let mut res = 0;
+    inorder(root.as_ref(), k, &mut num, &mut res);
+    res
 }
 // tree binary_search
 #[test]
-#[ignore]
 fn test1_230() {
     let root1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 3,
