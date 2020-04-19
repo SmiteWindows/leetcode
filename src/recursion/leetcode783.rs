@@ -3,8 +3,8 @@
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
     pub val: i32,
-    pub left: Option<Rc<RefCell<TreeNode>>>,
-    pub right: Option<Rc<RefCell<TreeNode>>>,
+    pub left: Option<Rc<RefCell<Self>>>,
+    pub right: Option<Rc<RefCell<Self>>>,
 }
 
 impl TreeNode {
@@ -23,13 +23,14 @@ use std::{cell::RefCell, rc::Rc};
 pub fn min_diff_in_bst(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     fn walk(root: Option<&Rc<RefCell<TreeNode>>>, prev: &mut Option<i32>, mut res: i32) -> i32 {
         if let Some(node) = root {
-            res = walk(node.borrow().left.as_ref(), prev, res);
-            let val = node.borrow().val;
+            let node = node.borrow();
+            res = walk(node.left.as_ref(), prev, res);
+            let val = node.val;
             if let Some(n) = prev {
                 res = std::cmp::min(res, val - *n);
             }
             *prev = Some(val);
-            res = walk(node.borrow().right.as_ref(), prev, res);
+            res = walk(node.right.as_ref(), prev, res);
         }
         res
     }

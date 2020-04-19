@@ -1,10 +1,9 @@
 // https://leetcode.com/problems/rotate-list/
-/// 给定一个链表，旋转链表，将链表每个节点向右移动 k 个位置，其中 k 是非负数。
 // Definition for singly-linked list.
 #[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {
     pub val: i32,
-    pub next: Option<Box<ListNode>>,
+    pub next: Option<Box<Self>>,
 }
 
 impl ListNode {

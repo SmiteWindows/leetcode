@@ -3,8 +3,8 @@
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
     pub val: i32,
-    pub left: Option<Rc<RefCell<TreeNode>>>,
-    pub right: Option<Rc<RefCell<TreeNode>>>,
+    pub left: Option<Rc<RefCell<Self>>>,
+    pub right: Option<Rc<RefCell<Self>>>,
 }
 
 impl TreeNode {
@@ -23,16 +23,19 @@ use std::{cell::RefCell, cmp::max, rc::Rc};
 pub fn longest_univalue_path(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     fn arrow_length(root: Option<&Rc<RefCell<TreeNode>>>, res: i32) -> (i32, i32) {
         if let Some(node) = root {
-            let (left, res) = arrow_length(node.as_ref().borrow().left.as_ref(), res);
-            let (right, res) = arrow_length(node.as_ref().borrow().right.as_ref(), res);
+            let node=node.borrow();
+            let (left, res) = arrow_length(node.left.as_ref(), res);
+            let (right, res) = arrow_length(node.right.as_ref(), res);
             let (mut arrow_left, mut arrow_right) = (0, 0);
-            if let Some(left_node) = node.as_ref().borrow().left.as_ref() {
-                if left_node.as_ref().borrow().val == node.as_ref().borrow().val {
+            if let Some(left_node) = node.left.as_ref() {
+                let left_node = left_node.borrow();
+                if left_node.val == node.val {
                     arrow_left += left + 1;
                 }
             }
-            if let Some(right_node) = node.as_ref().borrow().right.as_ref() {
-                if right_node.as_ref().borrow().val == node.as_ref().borrow().val {
+            if let Some(right_node) = node.right.as_ref() {
+                let right_node = right_node.borrow();
+                if right_node.val == node.val {
                     arrow_right += right + 1;
                 }
             }
