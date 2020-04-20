@@ -17,7 +17,7 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
+use std::{cell::RefCell, cmp::Ordering, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 3.1 MB
 pub fn kth_smallest(root: Option<Rc<RefCell<TreeNode>>>, k: i32) -> i32 {
@@ -33,12 +33,10 @@ pub fn kth_smallest(root: Option<Rc<RefCell<TreeNode>>>, k: i32) -> i32 {
     fn helper(root: Option<&Rc<RefCell<TreeNode>>>, k: i32) -> i32 {
         let node = root.unwrap().borrow();
         let n = count(node.left.as_ref());
-        if n + 1 == k {
-            node.val
-        } else if n + 1 < k {
-            helper(node.right.as_ref(), k - n - 1)
-        } else {
-            helper(node.left.as_ref(), k)
+        match (n + 1).cmp(&k) {
+            Ordering::Equal => node.val,
+            Ordering::Less => helper(node.right.as_ref(), k - n - 1),
+            Ordering::Greater => helper(node.left.as_ref(), k),
         }
     }
     helper(root.as_ref(), k)

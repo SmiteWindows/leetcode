@@ -17,16 +17,46 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
-
+use std::{cell::RefCell, cmp::Ordering, rc::Rc};
+// Runtime: 0 ms
+// Memory Usage: 2.9 MB
 pub fn find_mode(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
-    todo!()
+    fn walk(
+        root: Option<&Rc<RefCell<TreeNode>>>,
+        max: &mut i32,
+        cur: &mut i32,
+        count: &mut i32,
+        res: &mut Vec<i32>,
+    ) {
+        if let Some(node) = root {
+            let node = node.borrow();
+            walk(node.left.as_ref(), max, cur, count, res);
+            if node.val != *cur {
+                *count = 0;
+            }
+            *count += 1;
+            match (*max).cmp(&*count) {
+                Ordering::Equal => res.push(node.val),
+                Ordering::Less => {
+                    *max = *count;
+                    res.clear();
+                    res.push(node.val);
+                }
+                Ordering::Greater => {}
+            }
+            *cur = node.val;
+            walk(node.right.as_ref(), max, cur, count, res);
+        }
+    }
+    let (mut max, mut cur, mut count) = (0, 0, 0);
+    let mut res = Vec::new();
+    walk(root.as_ref(), &mut max, &mut cur, &mut count, &mut res);
+    res
 }
 // tree
 #[test]
-#[ignore]
 fn test1_501() {
-    let root = Some(Rc::new(RefCell::new(TreeNode {
+    let t1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
         left: None,
         right: Some(Rc::new(RefCell::new(TreeNode {
@@ -35,6 +65,11 @@ fn test1_501() {
             right: None,
         }))),
     })));
-    let res = vec![2];
-    assert_eq!(res, find_mode(root));
+    let t2 = Some(Rc::new(RefCell::new(TreeNode {
+        val: 1,
+        left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
+        right: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
+    })));
+    assert_eq!(vec![2], find_mode(t1));
+    assert_eq!(vec![1], find_mode(t2));
 }

@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
+use std::{cell::RefCell, cmp::Ordering, rc::Rc};
 // Runtime: 4 ms
-// Memory Usage: 3.2 MB
+// Memory Usage: 3.1 MB
 pub fn delete_node(root: Option<Rc<RefCell<TreeNode>>>, key: i32) -> Option<Rc<RefCell<TreeNode>>> {
     fn helper(
         root: Option<&Rc<RefCell<TreeNode>>>,
@@ -29,15 +29,17 @@ pub fn delete_node(root: Option<Rc<RefCell<TreeNode>>>, key: i32) -> Option<Rc<R
         if let Some(node) = root {
             let left = node.borrow().left.clone();
             let right = node.borrow().right.clone();
-            if key < node.borrow().val {
-                node.as_ref().borrow_mut().left = helper(left.as_ref(), key, l);
-                return Some(node.clone());
-            } else if key > node.borrow().val {
-                node.as_ref().borrow_mut().right = helper(right.as_ref(), key, l);
-                return Some(node.clone());
-            } else {
-                return helper(right.as_ref(), key, left);
-                // return helper(left.as_ref(), key, right);
+            let val = node.borrow().val;
+            match val.cmp(&key) {
+                Ordering::Equal => helper(right.as_ref(), key, left), //  helper(left.as_ref(), key, right),
+                Ordering::Less => {
+                    node.as_ref().borrow_mut().right = helper(right.as_ref(), key, l);
+                    Some(node.clone())
+                }
+                Ordering::Greater => {
+                    node.as_ref().borrow_mut().left = helper(left.as_ref(), key, l);
+                    Some(node.clone())
+                }
             }
         } else {
             l
@@ -100,6 +102,6 @@ fn test1_450() {
             right: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
         }))),
     })));
-    // assert_eq!(res1, delete_node(t1, 3));
-    assert_eq!(res2, delete_node(t2, 3));
+    assert_eq!(res1, delete_node(t1, 3));
+    // assert_eq!(res2, delete_node(t2, 3));
 }
