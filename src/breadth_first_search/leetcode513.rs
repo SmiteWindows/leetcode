@@ -17,14 +17,28 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
-
+use std::{cell::RefCell, collections::VecDeque, rc::Rc};
+// Runtime: 0 ms
+// Memory Usage: 2.9 MB
 pub fn find_bottom_left_value(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    todo!()
+    let mut queue = VecDeque::new();
+    queue.push_back(root);
+    let mut res=0;
+    while !queue.is_empty() {
+        let cur = queue.pop_front().unwrap().unwrap();
+        let cur = cur.borrow();
+        if cur.right.is_some() {
+            queue.push_back(cur.right.clone());
+        }
+        if cur.left.is_some() {
+            queue.push_back(cur.left.clone());
+        }
+        res=cur.val;
+    }
+    res
 }
 // tree depth_first_search breadth_first_search
 #[test]
-#[ignore]
 fn test2_513() {
     let root1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 2,

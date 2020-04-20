@@ -18,20 +18,34 @@ impl TreeNode {
     }
 }
 use std::{cell::RefCell, rc::Rc};
-
+// Runtime: 0 ms
+// Memory Usage: 2.9 MB
 pub fn find_bottom_left_value(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    todo!()
+    fn walk(root: Option<&Rc<RefCell<TreeNode>>>, level: i32, max_level: &mut i32, res: &mut i32) {
+        if let Some(node) = root {
+            let node = node.borrow();
+            if level > *max_level {
+                *max_level = level;
+                *res = node.val;
+            }
+            walk(node.left.as_ref(), level + 1, max_level, res);
+            walk(node.right.as_ref(), level + 1, max_level, res);
+        }
+    }
+    let mut res = 0;
+    let mut max_level = -1;
+    walk(root.as_ref(), 0, &mut max_level, &mut res);
+    res
 }
 // tree depth_first_search breadth_first_search
 #[test]
-#[ignore]
 fn test1_513() {
-    let root1 = Some(Rc::new(RefCell::new(TreeNode {
+    let t1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 2,
         left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
         right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
     })));
-    let root2 = Some(Rc::new(RefCell::new(TreeNode {
+    let t2 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
         left: Some(Rc::new(RefCell::new(TreeNode {
             val: 2,
@@ -48,6 +62,6 @@ fn test1_513() {
             right: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
         }))),
     })));
-    assert_eq!(1, find_bottom_left_value(root1));
-    assert_eq!(7, find_bottom_left_value(root2));
+    assert_eq!(1, find_bottom_left_value(t1));
+    assert_eq!(7, find_bottom_left_value(t2));
 }

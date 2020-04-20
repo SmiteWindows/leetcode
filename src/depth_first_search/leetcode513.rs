@@ -18,13 +18,27 @@ impl TreeNode {
     }
 }
 use std::{cell::RefCell, rc::Rc};
-
+// Runtime: 0 ms
+// Memory Usage: 2.9 MB
 pub fn find_bottom_left_value(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    todo!()
+    fn walk(root: Option<&Rc<RefCell<TreeNode>>>, level: i32, max_level: &mut i32, res: &mut i32) {
+        if let Some(node) = root {
+            let node = node.borrow();
+            if level > *max_level {
+                *max_level = level;
+                *res = node.val;
+            }
+            walk(node.left.as_ref(), level + 1, max_level, res);
+            walk(node.right.as_ref(), level + 1, max_level, res);
+        }
+    }
+    let mut res = 0;
+    let mut max_level = -1;
+    walk(root.as_ref(), 0, &mut max_level, &mut res);
+    res
 }
 // tree depth_first_search breadth_first_search
 #[test]
-#[ignore]
 fn test3_513() {
     let root1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 2,
