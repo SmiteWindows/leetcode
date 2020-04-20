@@ -37,6 +37,7 @@ pub fn delete_node(root: Option<Rc<RefCell<TreeNode>>>, key: i32) -> Option<Rc<R
                 return Some(node.clone());
             } else {
                 return helper(right.as_ref(), key, left);
+                // return helper(left.as_ref(), key, right);
             }
         } else {
             l
@@ -99,6 +100,6 @@ fn test1_450() {
             right: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
         }))),
     })));
-    assert_eq!(res1, delete_node(t1, 3));
-    // assert_eq!(res2, delete_node(t2, 3));
+    // assert_eq!(res1, delete_node(t1, 3));
+    assert_eq!(res2, delete_node(t2, 3));
 }
