@@ -17,12 +17,43 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
+use std::{cell::RefCell, collections::HashMap, rc::Rc};
 
 pub fn find_duplicate_subtrees(
     root: Option<Rc<RefCell<TreeNode>>>,
 ) -> Vec<Option<Rc<RefCell<TreeNode>>>> {
-    todo!()
+    fn walk(
+        root: Option<&Rc<RefCell<TreeNode>>>,
+        trees: &mut HashMap<String, i32>,
+        count: &mut HashMap<i32, i32>,
+        ans: &mut Vec<Option<Rc<RefCell<TreeNode>>>>,
+        t: i32,
+    ) -> i32 {
+        if let Some(n) = root {
+            let node = n.borrow();
+            let serial = node.val.to_string()
+                + ","
+                + &walk(node.left.as_ref(), trees, count, ans, t).to_string()
+                + ","
+                + &walk(node.right.as_ref(), trees, count, ans, t).to_string();
+            let uid = *trees.entry(serial).or_insert(t + 1);
+            let v = *count.entry(uid).or_default() + 1;
+            count.insert(uid, v);
+            if count.get(&uid).unwrap() == &2 {
+                dbg!();
+                ans.push(Some(n.clone()));
+            }
+            uid
+        } else {
+            0
+        }
+    }
+
+    let mut trees = HashMap::new();
+    let mut count = HashMap::new();
+    let mut ans = Vec::new();
+    walk(root.as_ref(), &mut trees, &mut count, &mut ans, 1);
+    ans
 }
 // tree
 #[test]
