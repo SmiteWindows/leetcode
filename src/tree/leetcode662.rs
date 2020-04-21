@@ -17,14 +17,32 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
-
+use std::{cell::RefCell, cmp::max, collections::HashMap, rc::Rc};
+// Runtime: 0 ms
+// Memory Usage: 2.4 MB
 pub fn width_of_binary_tree(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    todo!()
+    fn walk(
+        root: Option<&Rc<RefCell<TreeNode>>>,
+        depth: i32,
+        pos: i32,
+        res: &mut i32,
+        left_map: &mut HashMap<i32, i32>,
+    ) {
+        if let Some(node) = root {
+            let node = node.borrow();
+            left_map.entry(depth).or_insert(pos);
+            *res = max(*res, pos - left_map.get(&depth).unwrap() + 1);
+            walk(node.left.as_ref(), depth + 1, pos * 2, res, left_map);
+            walk(node.right.as_ref(), depth + 1, pos * 2 + 1, res, left_map);
+        }
+    }
+    let mut res = 0;
+    let mut left_map = HashMap::new();
+    walk(root.as_ref(), 0, 0, &mut res, &mut left_map);
+    res
 }
 // tree
 #[test]
-#[ignore]
 fn test1_662() {
     let t1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
