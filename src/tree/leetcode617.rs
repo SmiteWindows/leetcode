@@ -18,16 +18,29 @@ impl TreeNode {
     }
 }
 use std::{cell::RefCell, rc::Rc};
-
+// Runtime: 4 ms
+// Memory Usage: 2.2 MB
 pub fn merge_trees(
     t1: Option<Rc<RefCell<TreeNode>>>,
     t2: Option<Rc<RefCell<TreeNode>>>,
 ) -> Option<Rc<RefCell<TreeNode>>> {
-    todo!()
+    if t1.is_none() {
+        return t2;
+    }
+    if t2.is_none() {
+        return t1;
+    }
+    t1.as_ref().unwrap().borrow_mut().val += t2.as_ref().unwrap().borrow().val;
+    let t1_left=t1.as_ref().unwrap().borrow().left.clone();
+    let t2_left=t2.as_ref().unwrap().borrow().left.clone();
+    let t1_right=t1.as_ref().unwrap().borrow().right.clone();
+    let t2_right=t2.as_ref().unwrap().borrow().right.clone();
+    t1.as_ref().unwrap().borrow_mut().left = merge_trees(t1_left, t2_left);
+    t1.as_ref().unwrap().borrow_mut().right = merge_trees(t1_right, t2_right);
+    t1
 }
 // tree
 #[test]
-#[ignore]
 fn test1_617() {
     let t1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
