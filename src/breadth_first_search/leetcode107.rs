@@ -26,7 +26,7 @@ pub fn level_order_bottom(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<i32>> 
         return res;
     }
     let mut queue = VecDeque::new();
-    queue.push_back(root.clone());
+    queue.push_back(root);
     while !queue.is_empty() {
         let mut tmp=Vec::new();
         let len=queue.len();

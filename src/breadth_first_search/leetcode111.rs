@@ -26,7 +26,7 @@ pub fn min_depth(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
         return 0;
     }
     else {
-        stack.push_back((root.clone(),1));
+        stack.push_back((root,1));
     }
     let mut current_depth=0;
     while !stack.is_empty() {
