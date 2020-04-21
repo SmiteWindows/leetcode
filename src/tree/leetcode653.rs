@@ -17,14 +17,28 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
-
+use std::{cell::RefCell, collections::HashSet, rc::Rc};
+// Runtime: 4 ms
+// Memory Usage: 3.1 MB
 pub fn find_target(root: Option<Rc<RefCell<TreeNode>>>, k: i32) -> bool {
-    todo!()
+    fn walk(root: Option<&Rc<RefCell<TreeNode>>>, k: i32, set: &mut HashSet<i32>) -> bool {
+        if let Some(node) = root {
+            let node = node.borrow();
+            if set.contains(&(k - node.val)) {
+                return true;
+            }
+            set.insert(node.val);
+            walk(node.left.as_ref(), k, set) || walk(node.right.as_ref(), k, set)
+        } else {
+            false
+        }
+    }
+
+    let mut set = HashSet::new();
+    walk(root.as_ref(), k, &mut set)
 }
 // tree
 #[test]
-#[ignore]
 fn test1_653() {
     let t1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 5,
