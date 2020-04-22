@@ -58,9 +58,9 @@ fn test2_508() {
         left: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
         right: Some(Rc::new(RefCell::new(TreeNode::new(-3)))),
     })));
-    let mut s1=find_frequent_tree_sum(t1);
+    let mut s1 = find_frequent_tree_sum(t1);
     s1.sort();
-    let res = vec![-3, 2,4];
+    let res = vec![-3, 2, 4];
     assert_eq!(res, s1);
     let t2 = Some(Rc::new(RefCell::new(TreeNode {
         val: 5,
