@@ -32,7 +32,7 @@ pub fn find_bottom_left_value(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
             walk(node.right.as_ref(), level + 1, max_level, res);
         }
     }
-    
+
     let mut res = 0;
     let mut max_level = -1;
     walk(root.as_ref(), 0, &mut max_level, &mut res);

@@ -48,7 +48,7 @@ pub fn find_mode(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
             walk(node.right.as_ref(), max, cur, count, res);
         }
     }
-    
+
     let (mut max, mut cur, mut count) = (0, 0, 0);
     let mut res = Vec::new();
     walk(root.as_ref(), &mut max, &mut cur, &mut count, &mut res);

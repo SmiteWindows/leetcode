@@ -31,7 +31,7 @@ pub fn sorted_array_to_bst(nums: Vec<i32>) -> Option<Rc<RefCell<TreeNode>>> {
         root.as_ref()?.borrow_mut().right = helper(p as i32 + 1, right, nums);
         root
     }
-    
+
     let n = nums.len() as i32 - 1;
     helper(0, n, nums.as_slice())
 }

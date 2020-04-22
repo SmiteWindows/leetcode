@@ -33,8 +33,8 @@ pub fn is_symmetric(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
         if t1.is_none() || t2.is_none() {
             return false;
         }
-        let (t1,t2)=(t1.unwrap(),t2.unwrap());
-        let (t1,t2)=(t1.borrow(),t2.borrow());
+        let (t1, t2) = (t1.unwrap(), t2.unwrap());
+        let (t1, t2) = (t1.borrow(), t2.borrow());
         if t1.val != t2.val {
             return false;
         }

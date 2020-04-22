@@ -34,7 +34,7 @@ pub fn sum_root_to_leaf(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
         }
         sum
     }
-    
+
     helper(root.as_ref(), 0, 0)
 }
 // tree

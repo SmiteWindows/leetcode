@@ -36,7 +36,7 @@ pub fn width_of_binary_tree(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
             walk(node.right.as_ref(), depth + 1, pos * 2 + 1, res, left_map);
         }
     }
-    
+
     let mut res = 0;
     let mut left_map = HashMap::new();
     walk(root.as_ref(), 0, 0, &mut res, &mut left_map);

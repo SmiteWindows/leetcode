@@ -23,7 +23,7 @@ use std::{cell::RefCell, cmp::max, rc::Rc};
 pub fn longest_univalue_path(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     fn arrow_length(root: Option<&Rc<RefCell<TreeNode>>>, res: i32) -> (i32, i32) {
         if let Some(node) = root {
-            let node=node.borrow();
+            let node = node.borrow();
             let (left, res) = arrow_length(node.left.as_ref(), res);
             let (right, res) = arrow_length(node.right.as_ref(), res);
             let (mut arrow_left, mut arrow_right) = (0, 0);

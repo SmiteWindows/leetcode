@@ -39,7 +39,7 @@ pub fn range_sum_bst(root: Option<Rc<RefCell<TreeNode>>>, l: i32, r: i32) -> i32
         }
         res
     }
-    
+
     walk(root.as_ref(), l, r, 0)
 }
 // tree recursion

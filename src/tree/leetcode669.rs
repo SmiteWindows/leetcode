@@ -47,7 +47,7 @@ pub fn trim_bst(
             None
         }
     }
-    
+
     helper(root.as_ref(), l, r)
 }
 // tree

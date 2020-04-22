@@ -30,24 +30,11 @@ pub fn path_sum(root: Option<Rc<RefCell<TreeNode>>>, sum: i32) -> Vec<Vec<i32>> 
         if let Some(node) = root {
             let node = node.borrow();
             tmp.push(node.val);
-            if node.left.is_none()
-                && node.right.is_none()
-                && sum == node.val
-            {
+            if node.left.is_none() && node.right.is_none() && sum == node.val {
                 res.push(tmp.to_vec());
             }
-            path(
-                node.left.as_ref(),
-                sum - node.val,
-                res,
-                tmp,
-            );
-            path(
-                node.right.as_ref(),
-                sum - node.val,
-                res,
-                tmp,
-            );
+            path(node.left.as_ref(), sum - node.val, res, tmp);
+            path(node.right.as_ref(), sum - node.val, res, tmp);
             tmp.pop();
         }
     }

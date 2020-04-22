@@ -33,7 +33,7 @@ pub fn kth_smallest(root: Option<Rc<RefCell<TreeNode>>>, k: i32) -> i32 {
             inorder(node.right.as_ref(), k, num, res);
         }
     }
-    
+
     let mut num = 0;
     let mut res = 0;
     inorder(root.as_ref(), k, &mut num, &mut res);

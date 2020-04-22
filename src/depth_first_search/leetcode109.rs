@@ -53,7 +53,7 @@ pub fn sorted_list_to_bst(head: Option<Box<ListNode>>) -> Option<Rc<RefCell<Tree
         root.as_ref()?.borrow_mut().right = helper(right_half?.next, length - length / 2 - 1);
         root
     }
-    
+
     let mut dummy_head = Some(Box::new(ListNode { val: 0, next: head }));
     let mut ptr = dummy_head.as_ref()?;
     let mut length = 0;

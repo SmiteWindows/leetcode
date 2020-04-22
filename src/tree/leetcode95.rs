@@ -41,7 +41,7 @@ pub fn generate_trees(n: i32) -> Vec<Option<Rc<RefCell<TreeNode>>>> {
         }
         res
     }
-    
+
     if n == 0 {
         Vec::new()
     } else {

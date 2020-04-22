@@ -31,7 +31,7 @@ pub fn search_bst(root: Option<Rc<RefCell<TreeNode>>>, val: i32) -> Option<Rc<Re
             None => None,
         }
     }
-    
+
     search(root.as_ref(), val)
 }
 // tree

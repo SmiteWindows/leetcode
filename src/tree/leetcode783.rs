@@ -34,7 +34,7 @@ pub fn min_diff_in_bst(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
         }
         res
     }
-    
+
     let (mut prev, res) = (None, std::i32::MAX);
     walk(root.as_ref(), &mut prev, res)
 }

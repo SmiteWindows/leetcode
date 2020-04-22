@@ -40,7 +40,7 @@ pub fn find_second_minimum_value(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
             -1
         }
     }
-    
+
     if let Some(node) = root {
         walk(Some(&node), node.as_ref().borrow().val)
     } else {

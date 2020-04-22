@@ -17,31 +17,30 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc, collections::VecDeque};
+use std::{cell::RefCell, collections::VecDeque, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2.7 MB
 pub fn min_depth(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    let mut  stack= VecDeque::new();
+    let mut stack = VecDeque::new();
     if root.is_none() {
         return 0;
+    } else {
+        stack.push_back((root, 1));
     }
-    else {
-        stack.push_back((root,1));
-    }
-    let mut current_depth=0;
+    let mut current_depth = 0;
     while !stack.is_empty() {
-        let (node,depth) = stack.pop_front().unwrap();
-        current_depth=depth;
-        let node=node.unwrap();
-        let node= node.borrow();
-        if node.left.is_none()&&node.right.is_none() {
+        let (node, depth) = stack.pop_front().unwrap();
+        current_depth = depth;
+        let node = node.unwrap();
+        let node = node.borrow();
+        if node.left.is_none() && node.right.is_none() {
             break;
         }
         if node.left.is_some() {
-            stack.push_back((node.left.clone(),depth+1));
+            stack.push_back((node.left.clone(), depth + 1));
         }
         if node.right.is_some() {
-            stack.push_back((node.right.clone(),depth+1));
+            stack.push_back((node.right.clone(), depth + 1));
         }
     }
     current_depth

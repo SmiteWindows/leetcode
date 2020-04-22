@@ -39,7 +39,7 @@ pub fn min_depth(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
             0
         }
     }
-    
+
     helper(root.as_ref())
 }
 // tree depth_first_search breadth_first_search

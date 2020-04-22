@@ -17,31 +17,31 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc, collections::VecDeque};
+use std::{cell::RefCell, collections::VecDeque, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn level_order_bottom(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<i32>> {
-    let mut res= Vec::new();
+    let mut res = Vec::new();
     if root.is_none() {
         return res;
     }
     let mut queue = VecDeque::new();
     queue.push_back(root);
     while !queue.is_empty() {
-        let mut tmp=Vec::new();
-        let len=queue.len();
+        let mut tmp = Vec::new();
+        let len = queue.len();
         for i in 0..len {
             let node = queue.pop_front().unwrap().unwrap();
             let node = node.borrow();
             tmp.push(node.val);
-            if node.left.is_some(){
+            if node.left.is_some() {
                 queue.push_back(node.left.clone());
             }
-            if node.right.is_some(){
+            if node.right.is_some() {
                 queue.push_back(node.right.clone());
             }
         }
-        res.insert(0,tmp);
+        res.insert(0, tmp);
     }
     res
 }

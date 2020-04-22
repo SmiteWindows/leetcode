@@ -34,7 +34,7 @@ pub fn right_side_view(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
             walk(node.right.as_ref(), level + 1, res);
         }
     }
-    
+
     let mut res = Vec::new();
     walk(root.as_ref(), 0, &mut res);
     res

@@ -42,7 +42,7 @@ pub fn path_sum(root: Option<Rc<RefCell<TreeNode>>>, sum: i32) -> i32 {
             0
         }
     }
-    
+
     let mut map = HashMap::new();
     map.insert(0, 1);
     walk(root.as_ref(), sum, 0, &mut map)

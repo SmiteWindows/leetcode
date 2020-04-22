@@ -46,7 +46,7 @@ pub fn is_valid_bst(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
             true
         }
     }
-    
+
     helper(root.as_ref(), None, None)
 }
 // tree depth_first_search

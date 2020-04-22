@@ -23,7 +23,7 @@ use std::{cell::RefCell, collections::VecDeque, rc::Rc};
 pub fn find_bottom_left_value(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     let mut queue = VecDeque::new();
     queue.push_back(root);
-    let mut res=0;
+    let mut res = 0;
     while !queue.is_empty() {
         let cur = queue.pop_front().unwrap().unwrap();
         let cur = cur.borrow();
@@ -33,7 +33,7 @@ pub fn find_bottom_left_value(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
         if cur.left.is_some() {
             queue.push_back(cur.left.clone());
         }
-        res=cur.val;
+        res = cur.val;
     }
     res
 }

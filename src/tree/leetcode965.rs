@@ -44,7 +44,7 @@ pub fn is_unival_tree(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
             _ => true,
         }
     }
-    
+
     is_unival(root.as_ref())
 }
 // tree

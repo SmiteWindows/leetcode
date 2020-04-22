@@ -34,7 +34,7 @@ pub fn binary_tree_paths(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<String> {
             }
         }
     }
-    
+
     let mut paths: Vec<String> = Vec::new();
     helper(root.as_ref(), "".to_string(), &mut paths);
     paths

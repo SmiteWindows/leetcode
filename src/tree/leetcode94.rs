@@ -33,7 +33,7 @@ pub fn inorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
             }
         }
     }
-    
+
     let mut res = Vec::new();
     helper(root.as_ref(), &mut res);
     res
