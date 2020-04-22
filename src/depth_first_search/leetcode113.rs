@@ -21,8 +21,6 @@ use std::{cell::RefCell, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2.5 MB
 pub fn path_sum(root: Option<Rc<RefCell<TreeNode>>>, sum: i32) -> Vec<Vec<i32>> {
-    let mut res = Vec::new();
-    let mut tmp = Vec::new();
     fn path(
         root: Option<&Rc<RefCell<TreeNode>>>,
         sum: i32,
@@ -40,6 +38,9 @@ pub fn path_sum(root: Option<Rc<RefCell<TreeNode>>>, sum: i32) -> Vec<Vec<i32>> 
             tmp.pop();
         }
     }
+
+    let mut res = Vec::new();
+    let mut tmp = Vec::new();
     path(root.as_ref(), sum, &mut res, &mut tmp);
     res
 }

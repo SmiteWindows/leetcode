@@ -37,6 +37,7 @@ pub fn is_balanced(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
             (-1, true)
         }
     }
+    
     helper(root.as_ref()).1
 }
 // tree depth_first_search

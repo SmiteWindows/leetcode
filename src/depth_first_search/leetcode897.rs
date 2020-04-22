@@ -35,6 +35,7 @@ pub fn increasing_bst(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<
             next
         }
     }
+    
     walk(root.as_ref(), None)
 }
 // tree depth_first_search

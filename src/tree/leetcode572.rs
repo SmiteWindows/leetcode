@@ -18,13 +18,41 @@ impl TreeNode {
     }
 }
 use std::{cell::RefCell, rc::Rc};
-
+// Runtime: 4 ms
+// Memory Usage: 2 MB
 pub fn is_subtree(s: Option<Rc<RefCell<TreeNode>>>, t: Option<Rc<RefCell<TreeNode>>>) -> bool {
-    todo!()
+    fn is_same(s: Option<&Rc<RefCell<TreeNode>>>, t: Option<&Rc<RefCell<TreeNode>>>) -> bool {
+        if s.is_none() && t.is_none() {
+            return true;
+        }
+        if s.is_none() || t.is_none() {
+            return false;
+        }
+        let (sn, tn) = (s.unwrap().borrow(), t.unwrap().borrow());
+        if sn.val != tn.val {
+            false
+        } else {
+            is_same(sn.left.as_ref(), tn.left.as_ref())
+                && is_same(sn.right.as_ref(), tn.right.as_ref())
+        }
+    }
+
+    fn helper(s: Option<&Rc<RefCell<TreeNode>>>, t: Option<&Rc<RefCell<TreeNode>>>) -> bool {
+        if s.is_none() {
+            return false;
+        }
+        if is_same(s, t) {
+            true
+        } else {
+            let sn = s.unwrap().borrow();
+            helper(sn.left.as_ref(), t) || helper(sn.right.as_ref(), t)
+        }
+    }
+
+    helper(s.as_ref(), t.as_ref())
 }
 // tree
 #[test]
-#[ignore]
 fn test1_572() {
     let s1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 3,

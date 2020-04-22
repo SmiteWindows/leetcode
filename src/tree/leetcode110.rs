@@ -23,23 +23,27 @@ use std::{cell::RefCell, cmp::max, rc::Rc};
 pub fn is_balanced(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
     fn height(root: Option<&Rc<RefCell<TreeNode>>>) -> i32 {
         if let Some(node) = root {
+            let node = node.borrow();
             1 + max(
-                height(node.borrow().left.as_ref()),
-                height(node.borrow().right.as_ref()),
+                height(node.left.as_ref()),
+                height(node.right.as_ref()),
             )
         } else {
             -1
         }
     }
+
     fn helper(root: Option<&Rc<RefCell<TreeNode>>>) -> bool {
         if let Some(node) = root {
-            (height(node.borrow().left.as_ref()) - height(node.borrow().right.as_ref())).abs() < 2
-                && helper(node.borrow().left.as_ref())
-                && helper(node.borrow().right.as_ref())
+            let node = node.borrow();
+            (height(node.left.as_ref()) - height(node.right.as_ref())).abs() < 2
+                && helper(node.left.as_ref())
+                && helper(node.right.as_ref())
         } else {
             true
         }
     }
+
     helper(root.as_ref())
 }
 // tree depth_first_search

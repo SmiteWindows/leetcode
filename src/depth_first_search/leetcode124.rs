@@ -33,6 +33,7 @@ pub fn max_path_sum(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
             0
         }
     }
+    
     let mut max_sum = std::i32::MIN;
     max_gain(root.as_ref(), &mut max_sum);
     max_sum

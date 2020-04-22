@@ -23,21 +23,23 @@ use std::{cell::RefCell, cmp::min, rc::Rc};
 pub fn min_depth(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     fn helper(root: Option<&Rc<RefCell<TreeNode>>>) -> i32 {
         if let Some(node) = root {
+            let node = node.borrow();
             let mut min_depth = std::i32::MAX;
-            if node.borrow().left.as_ref().is_none() && node.borrow().right.as_ref().is_none() {
+            if node.left.is_none() && node.right.is_none() {
                 return 1;
             }
-            if node.borrow().left.as_ref().is_some() {
-                min_depth = min(helper(node.borrow().left.as_ref()), min_depth);
+            if node.left.is_some() {
+                min_depth = min(helper(node.left.as_ref()), min_depth);
             }
-            if node.borrow().right.as_ref().is_some() {
-                min_depth = min(helper(node.borrow().right.as_ref()), min_depth);
+            if node.right.is_some() {
+                min_depth = min(helper(node.right.as_ref()), min_depth);
             }
             min_depth + 1
         } else {
             0
         }
     }
+
     helper(root.as_ref())
 }
 // tree depth_first_search breadth_first_search

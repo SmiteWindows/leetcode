@@ -33,6 +33,7 @@ pub fn sum_numbers(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
             walk(node.right.as_ref(), cur * 10 + val, sum);
         }
     }
+    
     let mut sum = 0;
     walk(root.as_ref(), 0, &mut sum);
     sum

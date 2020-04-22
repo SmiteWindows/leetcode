@@ -34,6 +34,7 @@ pub fn leaf_similar(
             walk(node.right.as_ref(), leaf_values);
         }
     }
+    
     let mut leaves1 = Vec::new();
     let mut leaves2 = Vec::new();
     walk(root1.as_ref(), &mut leaves1);

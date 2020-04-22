@@ -49,6 +49,7 @@ pub fn is_cousins(root: Option<Rc<RefCell<TreeNode>>>, x: i32, y: i32) -> bool {
             );
         }
     }
+    
     let mut depth = HashMap::new();
     let mut parent = HashMap::new();
     walk(root.as_ref(), None, &mut depth, &mut parent);

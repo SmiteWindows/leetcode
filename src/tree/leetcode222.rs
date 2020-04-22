@@ -31,6 +31,7 @@ pub fn count_nodes(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
             0
         }
     }
+    
     walk(root.as_ref())
 }
 // tree binary_search

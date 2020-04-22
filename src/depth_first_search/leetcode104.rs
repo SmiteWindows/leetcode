@@ -31,6 +31,7 @@ pub fn max_depth(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
             0
         }
     }
+    
     max_height(root.as_ref())
 }
 // tree depth_first_search

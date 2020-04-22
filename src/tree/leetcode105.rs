@@ -32,6 +32,7 @@ pub fn build_tree(preorder: Vec<i32>, inorder: Vec<i32>) -> Option<Rc<RefCell<Tr
         root.as_ref()?.borrow_mut().right = helper(&preorder[mid + 1..len], &inorder[mid + 1..len]);
         root
     }
+    
     helper(&preorder, &inorder)
 }
 // tree depth_first_search array

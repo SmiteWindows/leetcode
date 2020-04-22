@@ -23,18 +23,20 @@ use std::{cell::RefCell, rc::Rc};
 pub fn level_order(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<i32>> {
     fn helper(root: Option<&Rc<RefCell<TreeNode>>>, level: usize, res: &mut Vec<Vec<i32>>) {
         if let Some(node) = root {
+            let node = node.borrow();
             if level == res.len() {
                 res.push(Vec::new());
             }
-            res[level].push(node.borrow().val);
-            if node.borrow().left.as_ref().is_some() {
-                helper(node.borrow().left.as_ref(), level + 1, res);
+            res[level].push(node.val);
+            if node.left.is_some() {
+                helper(node.left.as_ref(), level + 1, res);
             }
-            if node.borrow().right.as_ref().is_some() {
-                helper(node.borrow().right.as_ref(), level + 1, res);
+            if node.right.is_some() {
+                helper(node.right.as_ref(), level + 1, res);
             }
         }
     }
+
     let mut res = Vec::new();
     helper(root.as_ref(), 0, &mut res);
     res

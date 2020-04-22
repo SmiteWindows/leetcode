@@ -30,6 +30,7 @@ pub fn flatten(root: &mut Option<Rc<RefCell<TreeNode>>>) {
             *prev = Some(node);
         }
     }
+    
     let mut prev = None;
     postorder(root.take(), &mut prev);
     *root = prev;

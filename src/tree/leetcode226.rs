@@ -32,6 +32,7 @@ pub fn invert_tree(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<Tre
             None
         }
     }
+    
     invert(root.as_ref())
 }
 // tree

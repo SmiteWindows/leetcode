@@ -33,6 +33,7 @@ pub fn is_symmetric(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
             }
         }
     }
+    
     is_mirror(root.as_ref(), root.as_ref())
 }
 // tree depth_first_search breadth_first_search
