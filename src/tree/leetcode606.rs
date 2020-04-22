@@ -18,13 +18,33 @@ impl TreeNode {
     }
 }
 use std::{cell::RefCell, rc::Rc};
-
+// Runtime: 4 ms
+// Memory Usage: 2.7 MB
 pub fn tree2str(t: Option<Rc<RefCell<TreeNode>>>) -> String {
-    todo!()
+    fn helper(t: Option<&Rc<RefCell<TreeNode>>>) -> String {
+        if let Some(n) = t {
+            let n = n.borrow();
+            if n.left.is_none() && n.right.is_none() {
+                return n.val.to_string() + "";
+            }
+            if n.right.is_none() {
+                return n.val.to_string() + "(" + &helper(n.left.as_ref()) + ")";
+            }
+            n.val.to_string()
+                + "("
+                + &helper(n.left.as_ref())
+                + ")("
+                + &helper(n.right.as_ref())
+                + ")"
+        } else {
+            String::from("")
+        }
+    }
+
+    helper(t.as_ref())
 }
 // tree string
 #[test]
-#[ignore]
 fn test1_606() {
     let t1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
