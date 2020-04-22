@@ -18,13 +18,27 @@ impl TreeNode {
     }
 }
 use std::{cell::RefCell, rc::Rc};
-
+// Runtime: 0 ms
+// Memory Usage: 2.6 MB
 pub fn find_tilt(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    todo!()
+    fn walk(root: Option<&Rc<RefCell<TreeNode>>>, tilt: &mut i32) -> i32 {
+        if let Some(node) = root {
+            let node = node.borrow();
+            let left = walk(node.left.as_ref(), tilt);
+            let right = walk(node.right.as_ref(), tilt);
+            *tilt += (left - right).abs();
+            left + right + node.val
+        } else {
+            0
+        }
+    }
+
+    let mut tilt = 0;
+    walk(root.as_ref(), &mut tilt);
+    tilt
 }
 // tree
 #[test]
-#[ignore]
 fn test1_563() {
     let root = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
