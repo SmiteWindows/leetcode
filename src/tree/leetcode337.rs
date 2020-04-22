@@ -33,7 +33,7 @@ pub fn rob(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
         res
     }
 
-    let res=walk(root.as_ref());
+    let res = walk(root.as_ref());
     *res.iter().max().unwrap()
 }
 // tree depth_first_search

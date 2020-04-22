@@ -26,10 +26,13 @@ pub fn build_tree(inorder: Vec<i32>, postorder: Vec<i32>) -> Option<Rc<RefCell<T
             return None;
         }
         let len = inorder.len();
-        let root = Some(Rc::new(RefCell::new(TreeNode::new(postorder[len-1]))));
-        let i = inorder.iter().position(|&x| x == postorder[len-1]).unwrap();
+        let root = Some(Rc::new(RefCell::new(TreeNode::new(postorder[len - 1]))));
+        let i = inorder
+            .iter()
+            .position(|&x| x == postorder[len - 1])
+            .unwrap();
         root.as_ref()?.borrow_mut().left = helper(&inorder[0..i], &postorder[0..i]);
-        root.as_ref()?.borrow_mut().right = helper(&inorder[i + 1..len], &postorder[i..len-1]);
+        root.as_ref()?.borrow_mut().right = helper(&inorder[i + 1..len], &postorder[i..len - 1]);
         root
     }
 
