@@ -32,8 +32,7 @@ pub fn path_sum(root: Option<Rc<RefCell<TreeNode>>>, sum: i32) -> i32 {
             let mut res = 0;
             curr_sum += node.val;
             res += *map.entry(curr_sum - sum).or_default();
-            let v = *map.entry(curr_sum).or_default();
-            map.insert(curr_sum, v + 1);
+            *map.entry(curr_sum).or_default() += 1;
             res += walk(node.right.as_ref(), sum, curr_sum, map);
             res += walk(node.left.as_ref(), sum, curr_sum, map);
             map.insert(curr_sum, map.get(&curr_sum).unwrap() - 1);

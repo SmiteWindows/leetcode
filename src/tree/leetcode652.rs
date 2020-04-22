@@ -35,8 +35,7 @@ pub fn find_duplicate_subtrees(
                 + &walk(node.left.as_ref(), count, ans)
                 + ","
                 + &walk(node.right.as_ref(), count, ans);
-            let v = *count.entry(serial.clone()).or_default() + 1;
-            count.insert(serial.clone(), v);
+            *count.entry(serial.clone()).or_default() += 1;
             if count.get(&serial).unwrap() == &2 {
                 ans.push(Some(n.clone()));
             }
