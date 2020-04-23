@@ -17,14 +17,35 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
-
+use std::{cell::RefCell, collections::VecDeque, rc::Rc};
+// Runtime: 0 ms
+// Memory Usage: 2 MB
 pub fn is_complete_tree(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
-    todo!()
+    if root.is_none() {
+        return true;
+    }
+    let mut queue = VecDeque::new();
+    queue.push_back(root);
+    let mut flag = false;
+    while !queue.is_empty() {
+        for i in 0..queue.len() {
+            let curr = queue.pop_front().unwrap();
+            if curr.is_some() {
+                if flag {
+                    return false;
+                }
+                let curr = curr.as_ref().unwrap().borrow();
+                queue.push_back(curr.left.clone());
+                queue.push_back(curr.right.clone());
+            } else {
+                flag = true;
+            }
+        }
+    }
+    true
 }
 // tree
 #[test]
-#[ignore]
 fn test1_958() {
     let t1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
