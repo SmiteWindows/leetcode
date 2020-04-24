@@ -18,13 +18,48 @@ impl TreeNode {
     }
 }
 use std::{cell::RefCell, rc::Rc};
-
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
 pub fn flip_match_voyage(root: Option<Rc<RefCell<TreeNode>>>, voyage: Vec<i32>) -> Vec<i32> {
-    todo!()
+    fn walk(
+        root: Option<&Rc<RefCell<TreeNode>>>,
+        voyage: &[i32],
+        index: &mut usize,
+        flipped: &mut Vec<i32>,
+    ) {
+        if let Some(node) = root {
+            let node = node.borrow();
+            if node.val != voyage[*index] {
+                flipped.clear();
+                flipped.push(-1);
+                return;
+            }
+            *index += 1;
+            if *index < voyage.len()
+                && node.left.is_some()
+                && node.left.as_ref().unwrap().borrow().val != voyage[*index]
+            {
+                flipped.push(node.val);
+                walk(node.right.as_ref(), voyage, index, flipped);
+                walk(node.left.as_ref(), voyage, index, flipped);
+            } else {
+                walk(node.left.as_ref(), voyage, index, flipped);
+                walk(node.right.as_ref(), voyage, index, flipped);
+            }
+        }
+    }
+
+    let mut flipped = Vec::new();
+    let mut index = 0;
+    walk(root.as_ref(), &voyage, &mut index, &mut flipped);
+    if !flipped.is_empty() && flipped[0] == -1 {
+        flipped.clear();
+        flipped.push(-1);
+    }
+    flipped
 }
 // tree depth_first_search
 #[test]
-#[ignore]
 fn test2_971() {
     let t1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
