@@ -18,13 +18,27 @@ impl TreeNode {
     }
 }
 use std::{cell::RefCell, rc::Rc};
-
+// Runtime: 0 ms
+// Memory Usage: 2 MB
 pub fn distribute_coins(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    todo!()
+    fn walk(root: Option<&Rc<RefCell<TreeNode>>>, res: &mut i32) -> i32{
+        if let Some(node) = root {
+            let node = node.borrow();
+            let left = walk(node.left.as_ref(), res);
+            let right = walk(node.right.as_ref(), res);
+            *res += left.abs() + right.abs();
+            node.val + left + right - 1
+        } else {
+            0
+        }
+    }
+
+    let mut res = 0;
+    walk(root.as_ref(), &mut res);
+    res
 }
 // tree depth_first_search
 #[test]
-#[ignore]
 fn test1_979() {
     let t1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 3,
