@@ -18,16 +18,33 @@ impl TreeNode {
     }
 }
 use std::{cell::RefCell, rc::Rc};
-
+// Runtime: 0 ms
+// Memory Usage: 2 MB
 pub fn insert_into_max_tree(
     root: Option<Rc<RefCell<TreeNode>>>,
     val: i32,
 ) -> Option<Rc<RefCell<TreeNode>>> {
-    todo!()
+    fn helper(root: Option<&Rc<RefCell<TreeNode>>>,val: i32) -> Option<Rc<RefCell<TreeNode>>> {
+        if let Some( node)=root {
+            if node.borrow().val>val{
+                let tmp=helper(node.borrow().right.as_ref(),val);
+                node.borrow_mut().right=tmp;
+                Some(node.clone())
+            }
+            else{
+                let mut tmp=TreeNode::new(val);
+                tmp.left=Some(node.clone());
+                Some(Rc::new(RefCell::new(tmp)))
+            }
+        }else{
+            Some(Rc::new(RefCell::new(TreeNode::new(val))))
+        }
+    }
+
+    helper(root.as_ref(), val)
 }
 // tree
 #[test]
-#[ignore]
 fn test1_998() {
     let t1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 4,
