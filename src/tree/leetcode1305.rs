@@ -18,16 +18,29 @@ impl TreeNode {
     }
 }
 use std::{cell::RefCell, rc::Rc};
-
+// Runtime: 32 ms
+// Memory Usage: 3 MB
 pub fn get_all_elements(
     root1: Option<Rc<RefCell<TreeNode>>>,
     root2: Option<Rc<RefCell<TreeNode>>>,
 ) -> Vec<i32> {
-    todo!()
+    fn walk(root: Option<&Rc<RefCell<TreeNode>>>, v: &mut Vec<i32>) {
+        if let Some(node) = root {
+            let node = node.borrow();
+            walk(node.left.as_ref(), v);
+            v.push(node.val);
+            walk(node.right.as_ref(), v);
+        }
+    }
+
+    let mut res = Vec::new();
+    walk(root1.as_ref(), &mut res);
+    walk(root2.as_ref(), &mut res);
+    res.sort();
+    res
 }
 // tree sort
 #[test]
-#[ignore]
 fn test1_1305() {
     let t1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 2,
