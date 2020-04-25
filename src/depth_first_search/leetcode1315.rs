@@ -18,13 +18,26 @@ impl TreeNode {
     }
 }
 use std::{cell::RefCell, rc::Rc};
-
+// Runtime: 4 ms
+// Memory Usage: 3 MB
 pub fn sum_even_grandparent(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    todo!()
+    fn walk(root: Option<&Rc<RefCell<TreeNode>>>, gp_val: i32, p_val: i32, res: &mut i32) {
+        if let Some(node) = root {
+            let node = node.borrow();
+            if gp_val % 2 == 0 {
+                *res += node.val;
+            }
+            walk(node.left.as_ref(), p_val, node.val, res);
+            walk(node.right.as_ref(), p_val, node.val, res);
+        }
+    }
+
+    let mut res = 0;
+    walk(root.as_ref(), 1, 1, &mut res);
+    res
 }
 // tree depth_first_search
 #[test]
-#[ignore]
 fn test2_1315() {
     let root = Some(Rc::new(RefCell::new(TreeNode {
         val: 6,
