@@ -17,14 +17,39 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
-
+use std::{cell::RefCell, cmp::max, rc::Rc};
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
 pub fn btree_game_winning_move(root: Option<Rc<RefCell<TreeNode>>>, n: i32, x: i32) -> bool {
-    todo!()
+    fn walk(
+        root: Option<&Rc<RefCell<TreeNode>>>,
+        x: i32,
+        left_count: &mut i32,
+        right_count: &mut i32,
+    ) -> i32 {
+        if let Some(node) = root {
+            let node = node.borrow();
+            let left = walk(node.left.as_ref(), x, left_count, right_count);
+            let right = walk(node.right.as_ref(), x, left_count, right_count);
+            if node.val == x {
+                *left_count = left;
+                *right_count = right;
+            }
+            left + right + 1
+        } else {
+            0
+        }
+    }
+
+    let (mut left_count, mut right_count) = (0, 0);
+    walk(root.as_ref(), x, &mut left_count, &mut right_count);
+    max(
+        left_count,
+        max(right_count, n - left_count - right_count - 1),
+    ) > n / 2
 }
 // tree depth_first_search
 #[test]
-#[ignore]
 fn test2_1145() {
     let root = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
