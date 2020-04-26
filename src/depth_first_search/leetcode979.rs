@@ -21,7 +21,7 @@ use std::{cell::RefCell, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn distribute_coins(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    fn walk(root: Option<&Rc<RefCell<TreeNode>>>, res: &mut i32) -> i32{
+    fn walk(root: Option<&Rc<RefCell<TreeNode>>>, res: &mut i32) -> i32 {
         if let Some(node) = root {
             let node = node.borrow();
             let left = walk(node.left.as_ref(), res);

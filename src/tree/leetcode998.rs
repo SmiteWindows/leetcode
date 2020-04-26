@@ -24,19 +24,18 @@ pub fn insert_into_max_tree(
     root: Option<Rc<RefCell<TreeNode>>>,
     val: i32,
 ) -> Option<Rc<RefCell<TreeNode>>> {
-    fn helper(root: Option<&Rc<RefCell<TreeNode>>>,val: i32) -> Option<Rc<RefCell<TreeNode>>> {
-        if let Some( node)=root {
-            if node.borrow().val>val{
-                let tmp=helper(node.borrow().right.as_ref(),val);
-                node.borrow_mut().right=tmp;
+    fn helper(root: Option<&Rc<RefCell<TreeNode>>>, val: i32) -> Option<Rc<RefCell<TreeNode>>> {
+        if let Some(node) = root {
+            if node.borrow().val > val {
+                let tmp = helper(node.borrow().right.as_ref(), val);
+                node.borrow_mut().right = tmp;
                 Some(node.clone())
-            }
-            else{
-                let mut tmp=TreeNode::new(val);
-                tmp.left=Some(node.clone());
+            } else {
+                let mut tmp = TreeNode::new(val);
+                tmp.left = Some(node.clone());
                 Some(Rc::new(RefCell::new(tmp)))
             }
-        }else{
+        } else {
             Some(Rc::new(RefCell::new(TreeNode::new(val))))
         }
     }

@@ -17,7 +17,7 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc, cmp::Ordering};
+use std::{cell::RefCell, cmp::Ordering, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn lca_deepest_leaves(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
