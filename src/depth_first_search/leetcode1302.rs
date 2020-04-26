@@ -17,7 +17,7 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
+use std::{cell::RefCell, cmp::Ordering, rc::Rc};
 // Runtime: 4 ms
 // Memory Usage: 3 MB
 pub fn deepest_leaves_sum(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
@@ -29,11 +29,13 @@ pub fn deepest_leaves_sum(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     ) {
         if let Some(node) = root {
             let node = node.borrow();
-            if depth > *max_depth {
-                *max_depth = depth;
-                *total = node.val;
-            } else if depth == *max_depth {
-                *total += node.val;
+            match depth.cmp(max_depth) {
+                Ordering::Equal => *total += node.val,
+                Ordering::Greater => {
+                    *max_depth = depth;
+                    *total = node.val;
+                }
+                Ordering::Less => {}
             }
             walk(node.left.as_ref(), depth + 1, max_depth, total);
             walk(node.right.as_ref(), depth + 1, max_depth, total);
