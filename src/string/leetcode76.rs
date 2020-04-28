@@ -30,14 +30,14 @@ pub fn min_window(s: String, t: String) -> String {
         }
         while l <= r && formed == required {
             c = filtered_s[l].1;
-            let end=filtered_s[r].0;
-            let start=filtered_s[l].0;
+            let end = filtered_s[r].0;
+            let start = filtered_s[l].0;
             if end - start + 1 < res[0] {
                 res[0] = end - start + 1;
                 res[1] = start;
                 res[2] = end;
             }
-            *window_counts.entry(c).or_default() -= 1;// TODO
+            *window_counts.entry(c).or_default() -= 1; // TODO
             if dict_t.contains_key(&c) && window_counts[&c] < dict_t[&c] {
                 formed -= 1;
             }
@@ -48,7 +48,7 @@ pub fn min_window(s: String, t: String) -> String {
     if res[0] == std::usize::MAX {
         String::from("")
     } else {
-        s[res[1]..=res[2]].to_string() 
+        s[res[1]..=res[2]].to_string()
     }
 }
 // hash_table two_pointers string sliding_window

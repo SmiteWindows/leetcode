@@ -3,7 +3,7 @@ use std::{cmp::max, collections::HashMap};
 // Runtime: 4 ms
 // Memory Usage: 2.9 MB
 pub fn length_of_longest_substring(s: String) -> i32 {
-    let ic: Vec<(usize, char)>= s.char_indices().collect();
+    let ic: Vec<(usize, char)> = s.char_indices().collect();
     let len = ic.len();
     let (mut ans, mut start) = (0, 0);
     let mut set = HashMap::with_capacity(len);
