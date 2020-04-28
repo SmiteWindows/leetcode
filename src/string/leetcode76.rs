@@ -48,7 +48,7 @@ pub fn min_window(s: String, t: String) -> String {
     if res[0] == std::usize::MAX {
         String::from("")
     } else {
-        s[res[1]..=res[2]].to_string()
+        s[res[1]..=res[2]].to_string() 
     }
 }
 // hash_table two_pointers string sliding_window
