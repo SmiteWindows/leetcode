@@ -49,7 +49,7 @@ pub fn max_product(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     let mut best = 0;
     walk(root.as_ref(), &mut sum);
     helper(root.as_ref(), &mut sum, &mut best);
-    let res = best as i64 * (sum as i64 - best as i64) % 1000000007;
+    let res = best as i64 * (sum as i64 - best as i64) % 1_000_000_007;
     res as i32
 }
 // tree depth_first_search dynamic_programming
