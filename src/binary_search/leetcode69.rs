@@ -1,24 +1,24 @@
 // https://leetcode.com/problems/sqrtx/
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
 use std::cmp::Ordering;
 pub fn my_sqrt(x: i32) -> i32 {
-    if x < 2 {
-        return x;
+    if x == 0 {
+        return 0;
     }
-    let mut n: i64;
-    let mut pivot: i32;
-    let mut left = 2;
+    let x = x as i64;
+    let mut left = 1;
     let mut right = x / 2;
-    while left <= right {
-        pivot = left + (right - left) / 2;
-        n = (pivot * pivot).into();
-        let x = x as i64;
+    while left < right {
+        let pivot = (left + right + 1) >> 1;
+        let n = pivot * pivot;
         match n.cmp(&x) {
-            Ordering::Equal => return pivot,
-            Ordering::Less => left = pivot + 1,
+            Ordering::Equal => return pivot as i32,
+            Ordering::Less => left = pivot,
             Ordering::Greater => right = pivot - 1,
         }
     }
-    right
+    left as i32
 }
 // math binary_search
 #[test]
