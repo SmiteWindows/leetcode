@@ -5,7 +5,7 @@ pub fn my_atoi(str: String) -> i32 {
 // math string
 #[test]
 #[ignore]
-fn test1_8() {
+fn test2_8() {
     assert_eq!(my_atoi(String::from("42")), 42);
     assert_eq!(my_atoi(String::from("   -42")), -42);
     assert_eq!(my_atoi(String::from("4193 with words")), 4193);
