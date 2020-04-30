@@ -40,7 +40,7 @@ pub fn rotate_right(head: Option<Box<ListNode>>, k: i32) -> Option<Box<ListNode>
         while let Some(b) = new_tail {
             new_tail = &mut b.next;
         }
-        replace(new_tail, head); // 衔接
+        let _ = replace(new_tail, head); // 衔接
         new_head
     }
 }
