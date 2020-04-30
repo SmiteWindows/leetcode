@@ -15,9 +15,9 @@ pub fn my_pow(x: f64, n: i32) -> f64 {
     }
 
     let mut n = n as i64;
-    let mut x =x;
+    let mut x = x;
     if n < 0 {
-        x = 1 as f64/ x;
+        x = 1_f64 / x;
         n = -n;
     }
     fast_pow(x, n)
