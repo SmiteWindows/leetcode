@@ -2,3 +2,9 @@
 pub fn nth_ugly_number(n: i32) -> i32 {
     todo!()
 }
+// math heap dynamic_programming
+#[test]
+#[ignore]
+fn test2_264() {
+    assert_eq!(nth_ugly_number(10), 12);
+}
