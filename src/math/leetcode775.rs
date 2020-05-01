@@ -2,3 +2,10 @@
 pub fn is_ideal_permutation(a: Vec<i32>) -> bool {
     todo!()
 }
+// math array
+#[test]
+#[ignore]
+fn test1_775() {
+    assert_eq!(is_ideal_permutation(vec![1, 0, 2]), true);
+    assert_eq!(is_ideal_permutation(vec![1, 2, 0]), false);
+}
