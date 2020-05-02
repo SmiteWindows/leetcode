@@ -2,3 +2,11 @@
 pub fn count_orders(n: i32) -> i32 {
     todo!()
 }
+// math dynamic_programming
+#[test]
+#[ignore]
+fn test1_1359() {
+    assert_eq!(count_orders(1), 1);
+    assert_eq!(count_orders(2), 6);
+    assert_eq!(count_orders(3), 90);
+}
