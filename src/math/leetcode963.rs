@@ -28,7 +28,7 @@ fn test1_963() {
             vec![1, 3],
             vec![2, 1]
         ]),
-        0
+        0.00000
     );
     assert_eq!(
         min_area_free_rect(vec![
