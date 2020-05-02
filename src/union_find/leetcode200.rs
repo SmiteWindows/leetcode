@@ -7,11 +7,21 @@ pub fn num_islands(grid: Vec<Vec<char>>) -> i32 {
 #[ignore]
 fn test1_200() {
     assert_eq!(
-        num_islands(vec![vec![11110], vec![11010], vec![11000], vec![00000]]),
+        num_islands(vec![
+            vec!['1', '1', '1', '1', '0'],
+            vec!['1', '1', '0', '1', '0'],
+            vec!['1', '1', '0', '0', '0'],
+            vec!['0', '0', '0', '0', '0']
+        ]),
         1
     );
     assert_eq!(
-        num_islands(vec![vec![11000], vec![11000], vec![00100], vec![00011]]),
+        num_islands(vec![
+            vec!['1', '1', '0', '0', '0'],
+            vec!['1', '1', '0', '0', '0'],
+            vec!['0', '0', '1', '0', '0'],
+            vec!['0', '0', '0', '1', '1']
+        ]),
         3
     );
 }
