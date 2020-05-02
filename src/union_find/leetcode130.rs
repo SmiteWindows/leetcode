@@ -15,7 +15,7 @@ fn test1_130() {
     let res = vec![
         vec!['X', 'X', 'X', 'X'],
         vec!['X', 'X', 'X', 'X'],
-        vec!['X', 'X, 'X', 'X'],
+        vec!['X', 'X', 'X', 'X'],
         vec!['X', 'O', 'X', 'X'],
     ];
     solve(&mut board);
