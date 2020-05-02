@@ -2,3 +2,13 @@
 pub fn last_substring(s: String) -> String {
     todo!()
 }
+// string suffix_array
+#[test]
+#[ignore]
+fn test1_1163() {
+    assert_eq!(last_substring(String::from("abab")), String::from("bab"));
+    assert_eq!(
+        last_substring(String::from("leetcode")),
+        String::from("tcode")
+    );
+}
