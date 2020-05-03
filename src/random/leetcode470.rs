@@ -8,3 +8,4 @@
 pub fn rand10() -> i32 {
     todo!()
 }
+// random rejection_sampling
