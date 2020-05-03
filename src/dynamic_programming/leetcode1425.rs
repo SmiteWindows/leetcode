@@ -2,6 +2,7 @@
 pub fn constrained_subset_sum(nums: Vec<i32>, k: i32) -> i32 {
     todo!()
 }
+// dynamic_programming
 #[test]
 #[ignore]
 fn test1_1425() {
