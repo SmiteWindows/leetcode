@@ -2,3 +2,13 @@
 pub fn reverse_vowels(s: String) -> String {
     todo!()
 }
+// string two_pointers
+#[test]
+#[ignore]
+fn test2_345() {
+    assert_eq!(reverse_vowels(String::from("hello")), String::from("holle"));
+    assert_eq!(
+        reverse_vowels(String::from("leetcode")),
+        String::from("leetcode")
+    );
+}
