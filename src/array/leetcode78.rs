@@ -17,20 +17,19 @@ pub fn subsets(nums: Vec<i32>) -> Vec<Vec<i32>> {
 }
 //  array backtracking bit_manipulation
 #[test]
-fn test_1_78() {
-    let nums = vec![1];
-    let res = vec![vec![], vec![1]];
-    assert_eq!(subsets(nums), res);
-    let nums = vec![1, 2, 3];
-    let res = vec![
-        vec![],
-        vec![1],
-        vec![2],
-        vec![1, 2],
-        vec![3],
-        vec![1, 3],
-        vec![2, 3],
-        vec![1, 2, 3],
-    ];
-    assert_eq!(subsets(nums), res);
+fn test1_78() {
+    assert_eq!(subsets(vec![1]), vec![vec![], vec![1]]);
+    assert_eq!(
+        subsets(vec![1, 2, 3]),
+        vec![
+            vec![],
+            vec![1],
+            vec![2],
+            vec![1, 2],
+            vec![3],
+            vec![1, 3],
+            vec![2, 3],
+            vec![1, 2, 3],
+        ]
+    );
 }

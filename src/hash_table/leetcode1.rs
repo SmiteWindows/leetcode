@@ -20,7 +20,5 @@ pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
 // array hash_table
 #[test]
 fn test2_1() {
-    let v2 = vec![2, 11, 7, 9, 15];
-    let b = two_sum(v2, 9);
-    assert_eq!(b, vec![0, 2]);
+    assert_eq!(two_sum(vec![2, 11, 7, 9, 15], 9), vec![0, 2]);
 }

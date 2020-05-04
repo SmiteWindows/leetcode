@@ -6,3 +6,52 @@ pub fn find_ladders(
 ) -> Vec<Vec<String>> {
     todo!()
 }
+// string backtracking array breadth_first_search
+#[test]
+#[ignore]
+fn test2_126() {
+    assert_eq!(
+        find_ladders(
+            String::from("hit"),
+            String::from("cog"),
+            vec![
+                String::from("hot"),
+                String::from("dot"),
+                String::from("dog"),
+                String::from("lot"),
+                String::from("log"),
+                String::from("cog")
+            ]
+        ),
+        vec![
+            vec![
+                String::from("hit"),
+                String::from("hot"),
+                String::from("dot"),
+                String::from("dog"),
+                String::from("cog")
+            ],
+            vec![
+                String::from("hit"),
+                String::from("hot"),
+                String::from("lot"),
+                String::from("log"),
+                String::from("cog")
+            ]
+        ]
+    );
+    assert_eq!(
+        find_ladders(
+            String::from("hit"),
+            String::from("cog"),
+            vec![
+                String::from("hot"),
+                String::from("dot"),
+                String::from("dog"),
+                String::from("lot"),
+                String::from("log")
+            ]
+        ),
+        vec![vec![String::new()]]
+    );
+}
