@@ -10,3 +10,12 @@ pub fn check_overlap(
 ) -> bool {
     todo!()
 }
+// geometry
+#[test]
+#[ignore]
+fn test1_1401() {
+    assert_eq!(check_overlap(1, 0, 0, 1, -1, 3, 1), true);
+    assert_eq!(check_overlap(1, 0, 0, -1, 0, 0, 1), true);
+    assert_eq!(check_overlap(1, 1, 1, -3, -3, 3, 3), true);
+    assert_eq!(check_overlap(1, 1, 1, 1, -3, 2, -1), false);
+}
