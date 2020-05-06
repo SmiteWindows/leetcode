@@ -5,7 +5,7 @@ pub fn max_performance(n: i32, speed: Vec<i32>, efficiency: Vec<i32>, k: i32) ->
 // sort greedy
 #[test]
 #[ignore]
-fn test1_1356() {
+fn test1_1383() {
     assert_eq!(
         max_performance(6, vec![2, 10, 3, 1, 5, 8], vec![5, 4, 3, 9, 7, 2], 2),
         60

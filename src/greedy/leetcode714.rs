@@ -2,3 +2,9 @@
 pub fn max_profit(prices: Vec<i32>, fee: i32) -> i32 {
     todo!()
 }
+// greedy array dynamic_programming
+#[test]
+#[ignore]
+fn test1_714() {
+    assert_eq!(max_profit(vec![1, 3, 2, 8, 4, 9], 2), 8);
+}
