@@ -8,3 +8,52 @@ pub fn max_candies(
 ) -> i32 {
     todo!()
 }
+// breadth_first_search
+#[test]
+#[ignore]
+fn test1_1298() {
+    assert_eq!(
+        max_candies(
+            vec![1, 0, 1, 0],
+            vec![7, 5, 4, 100],
+            vec![vec![], vec![], vec![1], vec![]],
+            vec![vec![1, 2], vec![3], vec![], vec![]],
+            vec![0]
+        ),
+        16
+    );
+    assert_eq!(
+        max_candies(
+            vec![1, 0, 0, 0, 0, 0],
+            vec![1, 1, 1, 1, 1, 1],
+            vec![vec![1, 2, 3, 4, 5], vec![], vec![], vec![], vec![], vec![]],
+            vec![vec![1, 2, 3, 4, 5], vec![], vec![], vec![], vec![], vec![]],
+            vec![0]
+        ),
+        6
+    );
+    assert_eq!(
+        max_candies(
+            vec![1, 1, 1],
+            vec![100, 1, 100],
+            vec![vec![], vec![0, 2], vec![]],
+            vec![vec![], vec![], vec![]],
+            vec![1]
+        ),
+        1
+    );
+    assert_eq!(
+        max_candies(vec![1], vec![100], vec![vec![]], vec![vec![]], vec![]),
+        0
+    );
+    assert_eq!(
+        max_candies(
+            vec![1, 1, 1],
+            vec![2, 3, 2],
+            vec![vec![], vec![], vec![]],
+            vec![vec![], vec![], vec![]],
+            vec![2, 1, 0]
+        ),
+        7
+    );
+}
