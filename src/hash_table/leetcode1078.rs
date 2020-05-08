@@ -1,10 +1,18 @@
 // https://leetcode.com/problems/occurrences-after-bigram/
+// Runtime: 0 ms
+// Memory Usage: 2 MB
 pub fn find_ocurrences(text: String, first: String, second: String) -> Vec<String> {
-    todo!()
+    let mut res = vec![];
+    let words: Vec<&str> = text.split_whitespace().collect();
+    words.windows(3).for_each(|v| {
+        if v[0] == first && v[1] == second {
+            res.push(v[2].to_string());
+        }
+    });
+    res
 }
 // hash_table
 #[test]
-#[ignore]
 fn test1_1078() {
     assert_eq!(
         find_ocurrences(
