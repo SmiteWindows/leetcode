@@ -6,12 +6,10 @@ pub fn num_moves_stones(a: i32, b: i32, c: i32) -> Vec<i32> {
     a.sort_unstable();
     let min = if a[0] + 1 == a[1] && a[1] + 1 == a[2] {
         0
+    } else if a[0] + 2 >= a[1] || a[1] + 2 >= a[2] {
+        1
     } else {
-        if a[0] + 2 >= a[1] || a[1] + 2 >= a[2] {
-            1
-        } else {
-            2
-        }
+        2
     };
     let max = a[1] - a[0] - 1 + a[2] - a[1] - 1;
     vec![min, max]
