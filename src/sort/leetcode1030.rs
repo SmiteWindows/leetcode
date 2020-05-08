@@ -1,10 +1,18 @@
 // https://leetcode.com/problems/matrix-cells-in-distance-order/
+// Runtime: 20 ms
+// Memory Usage: 2.6 MB
 pub fn all_cells_dist_order(r: i32, c: i32, r0: i32, c0: i32) -> Vec<Vec<i32>> {
-    todo!()
+    let mut cells = vec![];
+    for i in 0..r {
+        for j in 0..c {
+            cells.push(vec![i, j]);
+        }
+    }
+    cells.sort_unstable_by_key(|v| (v[0] - r0).abs() + (v[1] - c0).abs());
+    cells
 }
 // sort
 #[test]
-#[ignore]
 fn test1_1030() {
     assert_eq!(
         all_cells_dist_order(1, 2, 0, 0),
