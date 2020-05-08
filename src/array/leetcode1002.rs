@@ -1,10 +1,30 @@
 // https://leetcode.com/problems/find-common-characters/
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
 pub fn common_chars(a: Vec<String>) -> Vec<String> {
-    todo!()
+    let n = a.len();
+    let mut counts = vec![vec![0; 256]; n];
+    for (i, w) in a.iter().enumerate() {
+        for c in w.chars() {
+            counts[i][c as usize] += 1;
+        }
+    }
+    let mut res = vec![];
+    for i in 0..26 {
+        let c: u8 = b'a' + i;
+        let mut min = std::usize::MAX;
+        for (j, j_chars) in counts.iter().enumerate() {
+            let count = j_chars[c as usize];
+            min = usize::min(count, min);
+        }
+        for _ in 0..min {
+            res.push(format!("{}", c as char))
+        }
+    }
+    res
 }
 // hash_table array
 #[test]
-#[ignore]
 fn test2_1002() {
     assert_eq!(
         common_chars(vec![

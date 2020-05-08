@@ -14,7 +14,6 @@ pub fn remove_element(nums: &mut Vec<i32>, val: i32) -> i32 {
 }
 // array two_pointers
 #[test]
-#[ignore]
 fn test2_27() {
     let mut nums1 = vec![3, 2, 2, 3];
     assert_eq!(remove_element(&mut nums1, 3), 2);
