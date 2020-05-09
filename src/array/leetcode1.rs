@@ -4,8 +4,8 @@
 pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
     for i in 0..nums.len() {
         let a = target - nums[i];
-        for (k, _) in nums.iter().enumerate().skip(i + 1) {
-            if a == nums[k] {
+        for (k, &k_num) in nums.iter().enumerate().skip(i + 1) {
+            if a == k_num {
                 return vec![i as i32, k as i32];
             }
         }
