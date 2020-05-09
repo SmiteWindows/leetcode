@@ -1,10 +1,11 @@
 // https://leetcode.com/problems/defanging-an-ip-address/
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
 pub fn defang_i_paddr(address: String) -> String {
-    todo!()
+    address.replace(".", "[.]")
 }
 // string
 #[test]
-#[ignore]
 fn test1_1108() {
     assert_eq!(
         defang_i_paddr(String::from("1.1.1.1")),
