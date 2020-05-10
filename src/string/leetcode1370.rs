@@ -1,10 +1,38 @@
 // https://leetcode.com/problems/increasing-decreasing-string/
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
 pub fn sort_string(s: String) -> String {
-    todo!()
+    let mut count: Vec<usize> = vec![0; 26];
+    let mut n = s.len();
+    for c in s.chars() {
+        count[(c as u8 - b'a') as usize] += 1;
+    }
+    let mut direction = true;
+    let mut res = "".to_string();
+    while n > 0 {
+        if direction {
+            for i in 0..26 {
+                if count[i] > 0 {
+                    count[i] -= 1;
+                    n -= 1;
+                    res.push((b'a' + i as u8) as char);
+                }
+            }
+        } else {
+            for i in (0..26).rev() {
+                if count[i] > 0 {
+                    count[i] -= 1;
+                    n -= 1;
+                    res.push((b'a' + i as u8) as char);
+                }
+            }
+        }
+        direction = !direction;
+    }
+    res
 }
 // sort string
 #[test]
-#[ignore]
 fn test2_1370() {
     assert_eq!(
         sort_string(String::from("aaaabbbbcccc")),
