@@ -9,7 +9,7 @@ pub fn count_characters(words: Vec<String>, chars: String) -> i32 {
     }
     let mut sum = 0;
     for w in words {
-        let mut hs=hs.clone();
+        let mut hs = hs.clone();
         let mut valid = true;
         for c in w.chars() {
             let count = hs.entry(c).or_default();

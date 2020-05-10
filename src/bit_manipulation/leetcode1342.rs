@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn number_of_steps(num: i32) -> i32 {
-    let mut num=num;
+    let mut num = num;
     let mut res = 0;
     while num != 0 {
         if num & 1 == 1 {
