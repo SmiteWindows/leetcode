@@ -1,10 +1,20 @@
 // https://leetcode.com/problems/decrypt-string-from-alphabet-to-integer-mapping/
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
 pub fn freq_alphabets(s: String) -> String {
-    todo!()
+    let mut v = vec![];
+    let mut u: Vec<char> = s.chars().collect();
+    while let Some(c) = u.pop() {
+        let d = match c {
+            '#' => (u.pop().unwrap() as u8 - b'0') + 10 * (u.pop().unwrap() as u8 - b'0'),
+            _ => c as u8 - b'0',
+        } - 1;
+        v.insert(0, (b'a' + d) as char);
+    }
+    v.iter().collect()
 }
 // string
 #[test]
-#[ignore]
 fn test1_1309() {
     assert_eq!(
         freq_alphabets(String::from("10#11#12")),
