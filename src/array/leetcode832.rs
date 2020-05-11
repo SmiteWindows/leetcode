@@ -4,16 +4,16 @@
 pub fn flip_and_invert_image(a: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
     let mut a = a;
     let n = a.len();
-    for val in a.iter_mut().take(n) {
+    for i in a.iter_mut().take(n) {
         let mut l = 0;
         let mut r = n - 1;
         while l < r {
-            val.swap(l, r);
+            i.swap(l, r);
             l += 1;
             r -= 1;
         }
-        for j in 0..n {
-            val[j] = 1 - val[j];
+        for j in i.iter_mut().take(n) {
+            *j = 1 - *j;
         }
     }
     a
