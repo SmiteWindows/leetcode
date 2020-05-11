@@ -17,14 +17,14 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, cmp::max, rc::Rc};
+use std::{cell::RefCell, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn print_tree(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<String>> {
     fn get_height(root: Option<&Rc<RefCell<TreeNode>>>) -> usize {
         if let Some(node) = root {
             let node = node.borrow();
-            1 + max(
+            1 + usize::max(
                 get_height(node.left.as_ref()),
                 get_height(node.right.as_ref()),
             )

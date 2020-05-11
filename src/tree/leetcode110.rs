@@ -17,14 +17,14 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, cmp::max, rc::Rc};
+use std::{cell::RefCell, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2.6 MB
 pub fn is_balanced(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
     fn height(root: Option<&Rc<RefCell<TreeNode>>>) -> i32 {
         if let Some(node) = root {
             let node = node.borrow();
-            1 + max(height(node.left.as_ref()), height(node.right.as_ref()))
+            1 + i32::max(height(node.left.as_ref()), height(node.right.as_ref()))
         } else {
             -1
         }

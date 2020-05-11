@@ -17,7 +17,7 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, cmp::max, rc::Rc};
+use std::{cell::RefCell, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2.6 MB
 pub fn max_depth(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
@@ -26,7 +26,7 @@ pub fn max_depth(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
             let node = node.borrow();
             let left_height = max_height(node.left.as_ref());
             let right_height = max_height(node.right.as_ref());
-            max(left_height, right_height) + 1
+            i32::max(left_height, right_height) + 1
         } else {
             0
         }

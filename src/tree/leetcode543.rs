@@ -17,7 +17,7 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, cmp::max, rc::Rc};
+use std::{cell::RefCell, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2.5 MB
 pub fn diameter_of_binary_tree(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
@@ -26,8 +26,8 @@ pub fn diameter_of_binary_tree(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
             let node = node.borrow();
             let left = walk(node.left.as_ref(), depth);
             let right = walk(node.right.as_ref(), depth);
-            *depth = max(*depth, left + right + 1);
-            max(left, right) + 1
+            *depth = i32::max(*depth, left + right + 1);
+            i32::max(left, right) + 1
         } else {
             0
         }

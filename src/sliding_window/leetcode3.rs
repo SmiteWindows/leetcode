@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/longest-substring-without-repeating-characters/
-use std::{cmp::max, collections::HashMap};
+use std::collections::HashMap;
 // Runtime: 4 ms
 // Memory Usage: 2.9 MB
 pub fn length_of_longest_substring(s: String) -> i32 {
@@ -9,9 +9,9 @@ pub fn length_of_longest_substring(s: String) -> i32 {
     let mut set = HashMap::with_capacity(len);
     for (idx, ch) in ic {
         if set.contains_key(&ch) {
-            start = max(set[&ch], start);
+            start = usize::max(set[&ch], start);
         }
-        ans = max(ans, idx - start + 1);
+        ans = usize::max(ans, idx - start + 1);
         set.insert(ch, idx + 1);
     }
     ans as i32

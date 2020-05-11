@@ -3,14 +3,14 @@
 // Memory Usage: 2.1 MB
 pub fn to_lower_case(str: String) -> String {
     str.chars()
-    .map(|c| {
-        if c as u8 >= b'A' && c as u8 <= b'Z' {
-            (c as u8 + (b'a' - b'A')) as char
-        } else {
-            c
-        }
-    })
-    .collect()
+        .map(|c| {
+            if c as u8 >= b'A' && c as u8 <= b'Z' {
+                (c as u8 + (b'a' - b'A')) as char
+            } else {
+                c
+            }
+        })
+        .collect()
 }
 // string
 #[test]

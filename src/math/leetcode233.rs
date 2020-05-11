@@ -1,5 +1,4 @@
 // https://leetcode.com/problems/number-of-digit-one/
-use std::cmp::{max, min};
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn count_digit_one(n: i32) -> i32 {
@@ -8,7 +7,7 @@ pub fn count_digit_one(n: i32) -> i32 {
     let n = n as i64;
     while i <= n {
         let d = i * 10 as i64;
-        res += (n / d) * i + min(max(n % d - i + 1, 0), i);
+        res += (n / d) * i + i64::min(i64::max(n % d - i + 1, 0), i);
         i *= 10;
     }
     res as i32

@@ -17,7 +17,7 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, cmp::max, rc::Rc};
+use std::{cell::RefCell, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2.9 MB
 pub fn largest_values(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
@@ -27,7 +27,7 @@ pub fn largest_values(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
             if res.len() == level {
                 res.push(std::i32::MIN);
             }
-            res[level] = max(res[level], node.val);
+            res[level] = i32::max(res[level], node.val);
             if node.left.is_some() {
                 walk(node.left.as_ref(), res, level + 1);
             }

@@ -17,7 +17,7 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, cmp::max, collections::VecDeque, rc::Rc};
+use std::{cell::RefCell, collections::VecDeque, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2.8 MB
 pub fn largest_values(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
@@ -33,7 +33,7 @@ pub fn largest_values(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
         for i in 0..len {
             let tmp = queue.pop_front().unwrap().unwrap();
             let tmp = tmp.borrow();
-            max_value = max(max_value, tmp.val);
+            max_value = i32::max(max_value, tmp.val);
             if tmp.left.is_some() {
                 queue.push_back(tmp.left.clone());
             }

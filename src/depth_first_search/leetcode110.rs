@@ -17,7 +17,7 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, cmp::max, rc::Rc};
+use std::{cell::RefCell, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2.7 MB
 pub fn is_balanced(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
@@ -32,7 +32,10 @@ pub fn is_balanced(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
             if !right.1 {
                 return (0, false);
             }
-            (1 + max(left.0, right.0), ((left.0 - right.0).abs() < 2))
+            (
+                1 + i32::max(left.0, right.0),
+                ((left.0 - right.0).abs() < 2),
+            )
         } else {
             (-1, true)
         }

@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/longest-substring-without-repeating-characters/
-use std::{cmp::max, collections::HashSet};
+use std::collections::HashSet;
 // Runtime: 732 ms
 // Memory Usage: 2.1 MB
 pub fn length_of_longest_substring(s: String) -> i32 {
@@ -17,7 +17,7 @@ pub fn length_of_longest_substring(s: String) -> i32 {
         } else {
             set.insert(ch);
             j += 1;
-            res = max(res, j - i);
+            res = usize::max(res, j - i);
         }
     }
     res as i32

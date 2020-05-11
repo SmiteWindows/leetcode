@@ -17,7 +17,7 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, cmp::max, rc::Rc};
+use std::{cell::RefCell, rc::Rc};
 // Runtime: 28 ms
 // Memory Usage: 10.7 MB
 pub fn max_sum_bst(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
@@ -41,7 +41,7 @@ pub fn max_sum_bst(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
                 node.val
             };
             sum += node.val + left.3 + right.3;
-            *max_sum = max(*max_sum, sum);
+            *max_sum = i32::max(*max_sum, sum);
             (true, cur_min, cur_max, sum)
         } else {
             (true, i32::MAX, i32::MIN, 0)

@@ -17,7 +17,7 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, cmp::max, collections::HashMap, rc::Rc};
+use std::{cell::RefCell, collections::HashMap, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 3 MB
 pub fn find_frequent_tree_sum(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
@@ -32,7 +32,7 @@ pub fn find_frequent_tree_sum(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
             let right = walk(node.right.as_ref(), map, max_value);
             let sum = node.val + left + right;
             *map.entry(sum).or_default() += 1;
-            *max_value = max(*max_value, *map.get(&sum).unwrap());
+            *max_value = i32::max(*max_value, *map.get(&sum).unwrap());
             sum
         } else {
             0
