@@ -1,10 +1,16 @@
 // https://leetcode.com/problems/create-target-array-in-the-given-order/
 pub fn create_target_array(nums: Vec<i32>, index: Vec<i32>) -> Vec<i32> {
-    todo!()
+    let mut res = vec![];
+    let n = nums.len();
+    for i in 0..n {
+        let e = nums[i];
+        let j = index[i] as usize;
+        res.insert(j, e);
+    }
+    res
 }
 // array
 #[test]
-#[ignore]
 fn test1_1389() {
     assert_eq!(
         create_target_array(vec![0, 1, 2, 3, 4], vec![0, 1, 2, 2, 1]),
