@@ -1,10 +1,20 @@
 // https://leetcode.com/problems/destination-city/
+use std::collections::HashSet;
 pub fn dest_city(paths: Vec<Vec<String>>) -> String {
-    todo!()
+    let mut citys = HashSet::new();
+    let n = paths.len();
+    for i in 0..n {
+        citys.insert(&paths[i][0]);
+    }
+    for i in 0..n {
+        if citys.insert(&paths[i][1]) {
+            return paths[i][1].to_string();
+        };
+    }
+    "".to_string()
 }
 // string
 #[test]
-#[ignore]
 fn test1_1436() {
     assert_eq!(
         dest_city(vec![
