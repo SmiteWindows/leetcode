@@ -44,7 +44,7 @@ pub fn max_sum_bst(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
             *max_sum = max(*max_sum, sum);
             (true, cur_min, cur_max, sum)
         } else {
-            (true, std::i32::MAX, std::i32::MIN, 0)
+            (true, i32::MAX, i32::MIN, 0)
         }
     }
 

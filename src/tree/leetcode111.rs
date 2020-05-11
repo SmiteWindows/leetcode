@@ -24,7 +24,7 @@ pub fn min_depth(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     fn helper(root: Option<&Rc<RefCell<TreeNode>>>) -> i32 {
         if let Some(node) = root {
             let node = node.borrow();
-            let mut min_depth = std::i32::MAX;
+            let mut min_depth = i32::MAX;
             if node.left.is_none() && node.right.is_none() {
                 return 1;
             }
