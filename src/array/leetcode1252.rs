@@ -4,22 +4,22 @@
 pub fn odd_cells(n: i32, m: i32, indices: Vec<Vec<i32>>) -> i32 {
     let n = n as usize;
     let m = m as usize;
-    let mut a = vec![vec![0; m]; n];
+    let mut arr = vec![vec![0; m]; n];
     let mut res = 0;
     for p in indices {
         let r = p[0] as usize;
         let c = p[1] as usize;
         for j in 0..m {
-            a[r][j] += 1;
-            if a[r][j] % 2 == 1 {
+            arr[r][j] += 1;
+            if arr[r][j] % 2 == 1 {
                 res += 1;
             } else {
                 res -= 1;
             }
         }
         for i in 0..n {
-            a[i][c] += 1;
-            if a[i][c] % 2 == 1 {
+            arr[i][c] += 1;
+            if arr[i][c] % 2 == 1 {
                 res += 1;
             } else {
                 res -= 1;
