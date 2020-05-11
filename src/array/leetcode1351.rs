@@ -6,8 +6,8 @@ pub fn count_negatives(grid: Vec<Vec<i32>>) -> i32 {
     let m = grid[0].len();
     let mut j = m;
     let mut res = 0;
-    for i in 0..n {
-        while j > 0 && grid[i][j - 1] < 0 {
+    for row in grid.iter().take(n) {
+        while j > 0 && row[j - 1] < 0 {
             j -= 1;
         }
         res += m - j;
