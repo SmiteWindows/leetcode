@@ -1,10 +1,20 @@
 // https://leetcode.com/problems/play-with-chips/
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
 pub fn min_cost_to_move_chips(chips: Vec<i32>) -> i32 {
-    todo!()
+    let mut a = 0;
+    let mut b = 0;
+    for val in chips {
+        if val % 2 == 0 {
+            a += 1;
+        } else {
+            b += 1;
+        }
+    }
+    i32::min(a, b)
 }
 // math array greedy
 #[test]
-#[ignore]
 fn test3_1217() {
     assert_eq!(min_cost_to_move_chips(vec![1, 2, 3]), 1);
     assert_eq!(min_cost_to_move_chips(vec![2, 2, 2, 3, 3]), 2);
