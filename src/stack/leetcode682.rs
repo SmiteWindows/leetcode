@@ -1,10 +1,36 @@
 // https://leetcode.com/problems/baseball-game/
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
 pub fn cal_points(ops: Vec<String>) -> i32 {
-    todo!()
+    let mut stack = vec![];
+    for s in ops {
+        match s.as_ref() {
+            "C" => {
+                stack.pop();
+            }
+            "D" => {
+                let top = stack.pop().unwrap();
+                let double = top * 2;
+                stack.push(top);
+                stack.push(double);
+            }
+            "+" => {
+                let b = stack.pop().unwrap();
+                let a = stack.pop().unwrap();
+                let plus = a + b;
+                stack.push(a);
+                stack.push(b);
+                stack.push(plus);
+            }
+            _ => {
+                stack.push(s.parse::<i32>().unwrap());
+            }
+        }
+    }
+    stack.iter().sum()
 }
 // stack
 #[test]
-#[ignore]
 fn test1_682() {
     assert_eq!(
         cal_points(vec![
