@@ -51,7 +51,7 @@ jobs:
         toolchain: stable
         profile: default
         override: true
-        components: rustfmt, rust-src
+        components: rust-src
 
     - name: Compile
       run: cargo test --no-run
