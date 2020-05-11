@@ -1,10 +1,21 @@
 // https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
 pub fn count_negatives(grid: Vec<Vec<i32>>) -> i32 {
-    todo!()
+    let n = grid.len();
+    let m = grid[0].len();
+    let mut j = m;
+    let mut res = 0;
+    for i in 0..n {
+        while j > 0 && grid[i][j - 1] < 0 {
+            j -= 1;
+        }
+        res += m - j;
+    }
+    res as i32
 }
 // binary_search array
 #[test]
-#[ignore]
 fn test2_1351() {
     assert_eq!(
         count_negatives(vec![
