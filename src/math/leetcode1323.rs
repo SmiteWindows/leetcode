@@ -1,8 +1,25 @@
 // https://leetcode.com/problems/maximum-69-number/
 // Runtime: 0 ms
-// Memory Usage: 2 MB
+// Memory Usage: 2.1 MB
 pub fn maximum69_number(num: i32) -> i32 {
-    num.to_string().replacen("6", "9", 1).parse().unwrap()
+    let mut num = num;
+    let mut stack: Vec<i32> = vec![];
+    while num > 0 {
+        stack.push(num % 10);
+        num /= 10;
+    }
+    let n = stack.len();
+    let mut changed = false;
+    let mut res = 0;
+    for i in (0..n).rev() {
+        if stack[i] == 6 && !changed {
+            res = res * 10 + 9;
+            changed = true;
+        } else {
+            res = res * 10 + stack[i];
+        }
+    }
+    res
 }
 // math
 #[test]
