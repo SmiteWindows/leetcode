@@ -8,43 +8,137 @@ pub fn display_table(orders: Vec<Vec<String>>) -> Vec<Vec<String>> {
 fn test1_1418() {
     assert_eq!(
         display_table(vec![
-            vec!["David", "3", "Ceviche"],
-            vec!["Corina", "10", "Beef Burrito"],
-            vec!["David", "3", "Fried Chicken"],
-            vec!["Carla", "5", "Water"],
-            vec!["Carla", "5", "Ceviche"],
-            vec!["Rous", "3", "Ceviche"]
+            vec![
+                String::from("David"),
+                String::from("3"),
+                String::from("Ceviche")
+            ],
+            vec![
+                String::from("Corina"),
+                String::from("10"),
+                String::from("Beef Burrito")
+            ],
+            vec![
+                String::from("David"),
+                String::from("3"),
+                String::from("Fried Chicken")
+            ],
+            vec![
+                String::from("Carla"),
+                String::from("5"),
+                String::from("Water")
+            ],
+            vec![
+                String::from("Carla"),
+                String::from("5"),
+                String::from("Ceviche")
+            ],
+            vec![
+                String::from("Rous"),
+                String::from("3"),
+                String::from("Ceviche")
+            ]
         ]),
         vec![
-            vec!["Table", "Beef Burrito", "Ceviche", "Fried Chicken", "Water"],
-            vec!["3", "0", "2", "1", "0"],
-            vec!["5", "0", "1", "0", "1"],
-            vec!["10", "1", "0", "0", "0"]
+            vec![
+                String::from("Table"),
+                String::from("Beef Burrito"),
+                String::from("Ceviche"),
+                String::from("Fried Chicken"),
+                String::from("Water")
+            ],
+            vec![
+                String::from("3"),
+                String::from("0"),
+                String::from("2"),
+                String::from("1"),
+                String::from("0")
+            ],
+            vec![
+                String::from("5"),
+                String::from("0"),
+                String::from("1"),
+                String::from("0"),
+                String::from("1")
+            ],
+            vec![
+                String::from("10"),
+                String::from("1"),
+                String::from("0"),
+                String::from("0"),
+                String::from("0")
+            ]
         ]
     );
     assert_eq!(
         display_table(vec![
-            vec!["James", "12", "Fried Chicken"],
-            vec!["Ratesh", "12", "Fried Chicken"],
-            vec!["Amadeus", "12", "Fried Chicken"],
-            vec!["Adam", "1", "Canadian Waffles"],
-            vec!["Brianna", "1", "Canadian Waffles"]
+            vec![
+                String::from("James"),
+                String::from("12"),
+                String::from("Fried Chicken")
+            ],
+            vec![
+                String::from("Ratesh"),
+                String::from("12"),
+                String::from("Fried Chicken")
+            ],
+            vec![
+                String::from("Amadeus"),
+                String::from("12"),
+                String::from("Fried Chicken")
+            ],
+            vec![
+                String::from("Adam"),
+                String::from("1"),
+                String::from("Canadian Waffles")
+            ],
+            vec![
+                String::from("Brianna"),
+                String::from("1"),
+                String::from("Canadian Waffles")
+            ]
         ]),
         vec![
-            vec!["Table", "Canadian Waffles", "Fried Chicken"],
-            vec!["1", "2", "0"],
-            vec!["12", "0", "3"]
+            vec![
+                String::from("Table"),
+                String::from("Canadian Waffles"),
+                String::from("Fried Chicken")
+            ],
+            vec![String::from("1"), String::from("2"), String::from("0")],
+            vec![String::from("12"), String::from("0"), String::from("3")]
         ]
     );
     assert_eq!(
         display_table(vec![
-            vec!["Laura", "2", "Bean Burrito"],
-            vec!["Jhon", "2", "Beef Burrito"],
-            vec!["Melissa", "2", "Soda"]
+            vec![
+                String::from("Laura"),
+                String::from("2"),
+                String::from("Bean Burrito")
+            ],
+            vec![
+                String::from("Jhon"),
+                String::from("2"),
+                String::from("Beef Burrito")
+            ],
+            vec![
+                String::from("Melissa"),
+                String::from("2"),
+                String::from("Soda")
+            ]
         ]),
         vec![
-            vec!["Table", "Bean Burrito", "Beef Burrito", "Soda"],
-            vec!["2", "1", "1", "1"]
+            vec![
+                String::from("Table"),
+                String::from("Bean Burrito"),
+                String::from("Beef Burrito"),
+                String::from("Soda")
+            ],
+            vec![
+                String::from("2"),
+                String::from("1"),
+                String::from("1"),
+                String::from("1")
+            ]
         ]
     );
 }

@@ -1,6 +1,7 @@
 // https://leetcode.com/tag/heap/
 pub mod leetcode1046;
 pub mod leetcode1054;
+pub mod leetcode1439;
 pub mod leetcode215;
 pub mod leetcode218;
 pub mod leetcode23;
