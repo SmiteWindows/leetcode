@@ -51,7 +51,7 @@ jobs:
         toolchain: stable
         profile: default
         override: true
-        components: rust-src
+        components: rust-src clippy
 
     - name: Compile
       run: cargo test --no-run
