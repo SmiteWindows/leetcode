@@ -1,10 +1,15 @@
 // https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
 pub fn kids_with_candies(candies: Vec<i32>, extra_candies: i32) -> Vec<bool> {
-    todo!()
+    let max = *candies.iter().max().unwrap();
+    candies
+        .into_iter()
+        .map(|x| x + extra_candies >= max)
+        .collect()
 }
 // array
 #[test]
-#[ignore]
 fn test1_1431() {
     assert_eq!(
         kids_with_candies(vec![2, 3, 5, 1, 3], 3),
