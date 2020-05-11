@@ -1,25 +1,23 @@
 // https://leetcode.com/problems/letter-case-permutation/
-// Runtime: 0 ms
+// Runtime: 4 ms
 // Memory Usage: 2.3 MB
 pub fn letter_case_permutation(s: String) -> Vec<String> {
     fn permutation(s: &[char], n: usize, i: usize, t: &mut String, res: &mut Vec<String>) {
         if i == n {
             res.push(t.clone());
+        } else if s[i].is_alphabetic() {
+            let lower: char = s[i].to_ascii_lowercase();
+            let upper: char = s[i].to_ascii_uppercase();
+            t.push(lower);
+            permutation(s, n, i + 1, t, res);
+            t.pop();
+            t.push(upper);
+            permutation(s, n, i + 1, t, res);
+            t.pop();
         } else {
-            if s[i].is_alphabetic() {
-                let lower: char = s[i].to_ascii_lowercase();
-                let upper: char = s[i].to_ascii_uppercase();
-                t.push(lower);
-                permutation(s, n, i + 1, t, res);
-                t.pop();
-                t.push(upper);
-                permutation(s, n, i + 1, t, res);
-                t.pop();
-            } else {
-                t.push(s[i]);
-                permutation(s, n, i + 1, t, res);
-                t.pop();
-            }
+            t.push(s[i]);
+            permutation(s, n, i + 1, t, res);
+            t.pop();
         }
     }
 
