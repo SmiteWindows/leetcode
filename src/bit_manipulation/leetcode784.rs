@@ -25,7 +25,6 @@ pub fn letter_case_permutation(s: String) -> Vec<String> {
                 word.push(letter);
             }
         }
-
         res.push(word.to_string());
     }
     res
