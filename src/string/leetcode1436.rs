@@ -1,12 +1,13 @@
 // https://leetcode.com/problems/destination-city/
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
 use std::collections::HashSet;
 pub fn dest_city(paths: Vec<Vec<String>>) -> String {
     let mut citys: HashSet<&str> = HashSet::new();
-    let n = paths.len();
-    for val in paths.iter().take(n) {
+    for val in paths.iter() {
         citys.insert(&val[0]);
     }
-    for val in paths.iter().take(n) {
+    for val in paths.iter() {
         if citys.insert(&val[1]) {
             return val[1].to_string();
         };
