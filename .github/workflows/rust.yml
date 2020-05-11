@@ -53,17 +53,17 @@ jobs:
         override: true
         components: rust-src
 
+    - name: Format
+      run: cargo fmt
+      
+    - name: Clippy
+      run: cargo clippy
+      
     - name: Compile
       run: cargo test --no-run
 
     - name: Test
       run: cargo test
-      
-    - name: Clippy
-      run: cargo clippy
-      
-    - name: Format
-      run: cargo fmt
       
     - name: Run
       run: cargo run
