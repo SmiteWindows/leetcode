@@ -1,14 +1,14 @@
 // https://leetcode.com/problems/destination-city/
 use std::collections::HashSet;
 pub fn dest_city(paths: Vec<Vec<String>>) -> String {
-    let mut citys = HashSet::new();
+    let mut citys: HashSet<&str> = HashSet::new();
     let n = paths.len();
-    for i in 0..n {
-        citys.insert(&paths[i][0]);
+    for val in paths.iter().take(n) {
+        citys.insert(&val[0]);
     }
-    for i in 0..n {
-        if citys.insert(&paths[i][1]) {
-            return paths[i][1].to_string();
+    for val in paths.iter().take(n) {
+        if citys.insert(&val[1]) {
+            return val[1].to_string();
         };
     }
     "".to_string()
