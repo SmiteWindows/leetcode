@@ -17,9 +17,9 @@ pub fn odd_cells(n: i32, m: i32, indices: Vec<Vec<i32>>) -> i32 {
                 res -= 1;
             }
         }
-        for i in 0..n {
-            arr[i][c] += 1;
-            if arr[i][c] % 2 == 1 {
+        for row in arr.iter_mut().take(n) {
+            row[c] += 1;
+            if row[c] % 2 == 1 {
                 res += 1;
             } else {
                 res -= 1;
