@@ -5,9 +5,9 @@ pub fn transpose(a: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
     let n = a.len();
     let m = a[0].len();
     let mut res: Vec<Vec<i32>> = vec![vec![0; n]; m];
-    for i in 0..n {
-        for j in 0..m {
-            res[j][i] = a[i][j];
+    for (i, arr_i) in a.iter().enumerate().take(n) {
+        for (j, arr_j) in res.iter_mut().enumerate().take(m) {
+            arr_j[i] = arr_i[j];
         }
     }
     res
