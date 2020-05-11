@@ -25,7 +25,7 @@ pub fn largest_values(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
         if let Some(node) = root {
             let node = node.borrow();
             if res.len() == level {
-                res.push(std::i32::MIN);
+                res.push(i32::MIN);
             }
             res[level] = i32::max(res[level], node.val);
             if node.left.is_some() {

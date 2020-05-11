@@ -29,7 +29,7 @@ pub fn largest_values(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
     queue.push_back(root);
     while !queue.is_empty() {
         let len = queue.len();
-        let mut max_value = std::i32::MIN;
+        let mut max_value = i32::MIN;
         for i in 0..len {
             let tmp = queue.pop_front().unwrap().unwrap();
             let tmp = tmp.borrow();
