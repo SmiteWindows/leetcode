@@ -11,17 +11,17 @@ pub fn sort_string(s: String) -> String {
     let mut res = "".to_string();
     while n > 0 {
         if direction {
-            for i in 0..26 {
-                if count[i] > 0 {
-                    count[i] -= 1;
+            for (i, val) in count.iter_mut().enumerate().take(26) {
+                if *val > 0 {
+                    *val -= 1;
                     n -= 1;
                     res.push((b'a' + i as u8) as char);
                 }
             }
         } else {
-            for i in (0..26).rev() {
-                if count[i] > 0 {
-                    count[i] -= 1;
+            for (i, val) in count.iter_mut().enumerate().take(26).rev() {
+                if *val > 0 {
+                    *val -= 1;
                     n -= 1;
                     res.push((b'a' + i as u8) as char);
                 }
