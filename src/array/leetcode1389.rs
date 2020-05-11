@@ -1,4 +1,6 @@
 // https://leetcode.com/problems/create-target-array-in-the-given-order/
+// Runtime: 0 ms
+// Memory Usage: 2 MB
 pub fn create_target_array(nums: Vec<i32>, index: Vec<i32>) -> Vec<i32> {
     let mut res = vec![];
     let n = nums.len();
