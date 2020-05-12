@@ -1,10 +1,13 @@
 // https://leetcode.com/problems/sort-integers-by-the-number-of-1-bits/
+// Runtime: 0 ms
+// Memory Usage: 2 MB
 pub fn sort_by_bits(arr: Vec<i32>) -> Vec<i32> {
-    todo!()
+    let mut arr = arr;
+    arr.sort_unstable_by_key(|&x| (x.count_ones(), x));
+    arr
 }
 // sort bit_manipulation
 #[test]
-#[ignore]
 fn test2_1356() {
     assert_eq!(
         sort_by_bits(vec![0, 1, 2, 3, 4, 5, 6, 7, 8]),
