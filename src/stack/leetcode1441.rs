@@ -1,10 +1,20 @@
 // https://leetcode.com/problems/build-an-array-with-stack-operations/
+// Runtime: 0 ms
+// Memory Usage: 2 MB
 pub fn build_array(target: Vec<i32>, n: i32) -> Vec<String> {
-    todo!()
+    let mut res = Vec::new();
+    let mut curr = 1;
+    for i in target {
+        if i != curr {
+            res.extend(["Push", "Pop"].repeat((i - curr) as usize));
+        }
+        res.push("Push");
+        curr = i + 1;
+    }
+    res.into_iter().map(|a| a.to_string()).collect()
 }
 // stack
 #[test]
-#[ignore]
 fn test1_1441() {
     assert_eq!(
         build_array(vec![1, 3], 3),
