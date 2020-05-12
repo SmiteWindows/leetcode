@@ -1,4 +1,6 @@
 // https://leetcode.com/problems/keyboard-row/
+// Runtime: 0 ms
+// Memory Usage: 2 MB
 use std::collections::HashMap;
 pub fn find_words(words: Vec<String>) -> Vec<String> {
     let rows = vec![
@@ -7,8 +9,8 @@ pub fn find_words(words: Vec<String>) -> Vec<String> {
         String::from("zxcvbnmZXCVBNM"),
     ];
     let mut hm: HashMap<char, usize> = HashMap::new();
-    for i in 0..3 {
-        for c in rows[i].chars() {
+    for (i, row) in rows.iter().enumerate().take(3) {
+        for c in row.chars() {
             hm.insert(c, i);
         }
     }
