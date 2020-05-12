@@ -7,15 +7,15 @@ pub fn lucky_numbers(matrix: Vec<Vec<i32>>) -> Vec<i32> {
     let mut mins: Vec<i32> = vec![i32::MAX; m];
     let mut maxs: Vec<i32> = vec![0; n];
     let mut res = vec![];
-    for i in 0..m {
+    for (i, min) in mins.iter_mut().enumerate().take(m) {
         for (j, max) in maxs.iter_mut().enumerate().take(n) {
-            mins[i] = mins[i].min(matrix[i][j]);
+            *min = i32::min(*min, matrix[i][j]);
             *max = i32::max(*max, matrix[i][j]);
         }
     }
-    for i in 0..m {
+    for (i, min) in mins.iter().enumerate().take(m) {
         for (j, max) in maxs.iter().enumerate().take(n) {
-            if mins[i] == matrix[i][j] && *max == matrix[i][j] {
+            if *min == matrix[i][j] && *max == matrix[i][j] {
                 res.push(matrix[i][j]);
             }
         }
