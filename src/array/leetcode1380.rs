@@ -1,10 +1,29 @@
 // https://leetcode.com/problems/lucky-numbers-in-a-matrix/
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
 pub fn lucky_numbers(matrix: Vec<Vec<i32>>) -> Vec<i32> {
-    todo!()
+    let m = matrix.len();
+    let n = matrix[0].len();
+    let mut mins: Vec<i32> = vec![std::i32::MAX; m];
+    let mut maxs: Vec<i32> = vec![0; n];
+    let mut res = vec![];
+    for i in 0..m {
+        for j in 0..n {
+            mins[i] = mins[i].min(matrix[i][j]);
+            maxs[j] = maxs[j].max(matrix[i][j]);
+        }
+    }
+    for i in 0..m {
+        for j in 0..n {
+            if mins[i] == matrix[i][j] && maxs[j] == matrix[i][j] {
+                res.push(matrix[i][j]);
+            }
+        }
+    }
+    res
 }
 // array
 #[test]
-#[ignore]
 fn test1_1380() {
     assert_eq!(
         lucky_numbers(vec![vec![3, 7, 8], vec![9, 11, 13], vec![15, 16, 17]]),
