@@ -4,13 +4,13 @@
 pub fn lucky_numbers(matrix: Vec<Vec<i32>>) -> Vec<i32> {
     let m = matrix.len();
     let n = matrix[0].len();
-    let mut mins: Vec<i32> = vec![std::i32::MAX; m];
+    let mut mins: Vec<i32> = vec![i32::MAX; m];
     let mut maxs: Vec<i32> = vec![0; n];
     let mut res = vec![];
     for i in 0..m {
         for (j, max) in maxs.iter_mut().enumerate().take(n) {
             mins[i] = mins[i].min(matrix[i][j]);
-            *max = i32::max(*max,matrix[i][j]);
+            *max = i32::max(*max, matrix[i][j]);
         }
     }
     for i in 0..m {
