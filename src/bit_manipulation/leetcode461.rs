@@ -1,10 +1,12 @@
 // https://leetcode.com/problems/hamming-distance/
+// Runtime: 0 ms
+// Memory Usage: 2 MB
 pub fn hamming_distance(x: i32, y: i32) -> i32 {
     let mut z = x ^ y;
     let mut distance = 0;
-    for _ in 0..32 {
-        distance += z & 1;
-        z >>= 1;
+    while z != 0 {
+        distance += 1;
+        z = z & (z - 1);
     }
     distance
 }
