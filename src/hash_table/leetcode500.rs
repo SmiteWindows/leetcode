@@ -8,7 +8,7 @@ pub fn find_words(words: Vec<String>) -> Vec<String> {
         String::from("asdfghjklASDFGHJKL"),
         String::from("zxcvbnmZXCVBNM"),
     ];
-    let mut hm: HashMap<char, usize> = HashMap::new();
+    let mut hm = HashMap::new();
     for (i, row) in rows.iter().enumerate().take(3) {
         for c in row.chars() {
             hm.insert(c, i);
