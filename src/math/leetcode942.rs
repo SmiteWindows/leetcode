@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/di-string-match/
 // Runtime: 4 ms
-// Memory Usage: 2.3 MB
+// Memory Usage: 2.2 MB
 pub fn di_string_match(s: String) -> Vec<i32> {
     let mut l = 0;
     let mut r = s.len() as i32;
@@ -20,7 +20,6 @@ pub fn di_string_match(s: String) -> Vec<i32> {
             _ => unreachable!(),
         })
         .collect();
-    {}
     res.push(l);
     res
 }
