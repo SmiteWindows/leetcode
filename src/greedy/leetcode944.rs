@@ -1,10 +1,23 @@
 // https://leetcode.com/problems/delete-columns-to-make-sorted/
+// Runtime: 0 ms
+// Memory Usage: 2.3 MB
 pub fn min_deletion_size(a: Vec<String>) -> i32 {
-    todo!()
+    let mut d = 0;
+    let a: Vec<&[u8]> = a.iter().map(|s| s.as_bytes()).collect();
+    let n = a.len();
+    let m = a[0].len();
+    for i in 0..m {
+        for j in 1..n {
+            if a[j][i] < a[j - 1][i] {
+                d += 1;
+                break;
+            }
+        }
+    }
+    d
 }
 // greedy
 #[test]
-#[ignore]
 fn test1_944() {
     assert_eq!(
         min_deletion_size(vec![
