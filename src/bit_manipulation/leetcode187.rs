@@ -40,10 +40,11 @@ pub fn find_repeated_dna_sequences(s: String) -> Vec<String> {
 }
 // bit_manipulation hash_table
 #[test]
-#[ignore]
 fn test1_187() {
+    let mut res = find_repeated_dna_sequences(String::from("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"));
+    res.sort();
     assert_eq!(
-        find_repeated_dna_sequences(String::from("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT")),
+        res,
         vec![String::from("AAAAACCCCC"), String::from("CCCCCAAAAA")]
     );
 }

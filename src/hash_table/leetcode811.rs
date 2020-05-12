@@ -33,30 +33,33 @@ pub fn subdomain_visits(cpdomains: Vec<String>) -> Vec<String> {
 }
 // hash_table
 #[test]
-#[ignore]
 fn test1_811() {
+    let mut res1 = subdomain_visits(vec![String::from("9001 discuss.leetcode.com")]);
+    res1.sort();
     assert_eq!(
-        subdomain_visits(vec![String::from("9001 discuss.leetcode.com")]),
+        res1,
         vec![
+            String::from("9001 com"),
             String::from("9001 discuss.leetcode.com"),
-            String::from("9001 leetcode.com"),
-            String::from("9001 com")
+            String::from("9001 leetcode.com")
         ]
     );
+    let mut res2 = subdomain_visits(vec![
+        String::from("900 google.mail.com"),
+        String::from("50 yahoo.com"),
+        String::from("1 intel.mail.com"),
+        String::from("5 wiki.org"),
+    ]);
+    res2.sort();
     assert_eq!(
-        subdomain_visits(vec![
-            String::from("900 google.mail.com"),
-            String::from("50 yahoo.com"),
-            String::from("1 intel.mail.com"),
-            String::from("5 wiki.org")
-        ]),
+        res2,
         vec![
-            String::from("901 mail.com"),
+            String::from("1 intel.mail.com"),
+            String::from("5 org"),
+            String::from("5 wiki.org"),
             String::from("50 yahoo.com"),
             String::from("900 google.mail.com"),
-            String::from("5 wiki.org"),
-            String::from("5 org"),
-            String::from("1 intel.mail.com"),
+            String::from("901 mail.com"),
             String::from("951 com")
         ]
     );
