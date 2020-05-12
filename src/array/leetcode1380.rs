@@ -8,14 +8,14 @@ pub fn lucky_numbers(matrix: Vec<Vec<i32>>) -> Vec<i32> {
     let mut maxs: Vec<i32> = vec![0; n];
     let mut res = vec![];
     for i in 0..m {
-        for j in 0..n {
+        for (j, max) in maxs.iter_mut().enumerate().take(n) {
             mins[i] = mins[i].min(matrix[i][j]);
-            maxs[j] = maxs[j].max(matrix[i][j]);
+            *max = i32::max(*max,matrix[i][j]);
         }
     }
     for i in 0..m {
-        for j in 0..n {
-            if mins[i] == matrix[i][j] && maxs[j] == matrix[i][j] {
+        for (j, max) in maxs.iter().enumerate().take(n) {
+            if mins[i] == matrix[i][j] && *max == matrix[i][j] {
                 res.push(matrix[i][j]);
             }
         }
