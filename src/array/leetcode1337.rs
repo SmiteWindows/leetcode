@@ -1,10 +1,25 @@
 // https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
+use std::collections::BinaryHeap;
 pub fn k_weakest_rows(mat: Vec<Vec<i32>>, k: i32) -> Vec<i32> {
-    todo!()
+    let mut pq = BinaryHeap::new();
+    for (i, m) in mat.iter().enumerate() {
+        let sum = m.iter().sum::<i32>();
+        pq.push((sum, i));
+        if pq.len() > k as usize {
+            pq.pop();
+        }
+    }
+    let mut res = vec![];
+    while let Some(biggest) = pq.pop() {
+        res.push(biggest.1 as i32);
+    }
+    res.reverse();
+    res
 }
 // binary_search array
 #[test]
-#[ignore]
 fn test2_1337() {
     assert_eq!(
         k_weakest_rows(
