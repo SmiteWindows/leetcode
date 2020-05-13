@@ -4,26 +4,20 @@
 use std::collections::HashMap;
 pub fn can_construct(ransom_note: String, magazine: String) -> bool {
     let mut hm: HashMap<char, i32> = HashMap::new();
-    if ransom_note.len() > magazine.len() {
-        return false;
-    }
-    if ransom_note == magazine {
-        return true;
-    }
-    for c in magazine.chars() {
+    for c in ransom_note.chars() {
         *hm.entry(c).or_default() += 1;
     }
-    for c in ransom_note.chars() {
+    let len = hm.len();
+    let mut count = 0;
+    for c in magazine.chars() {
         if let Some(v) = hm.get_mut(&c) {
             *v -= 1;
-            if *v < 0 {
-                return false;
+            if *v == 0 {
+                count += 1;
             }
-        } else {
-            return false;
         }
     }
-    true
+    count == len
 }
 // string
 #[test]
