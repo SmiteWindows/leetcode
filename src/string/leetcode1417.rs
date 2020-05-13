@@ -22,16 +22,15 @@ pub fn reformat(s: String) -> String {
             iter = digits.iter();
             next_iter = chars.iter();
         }
+    } else if chars.len() > digits.len() + 1 {
+        return "".to_string();
     } else {
-        if chars.len() > digits.len() + 1 {
-            return "".to_string();
-        } else {
-            iter = chars.iter();
-            next_iter = digits.iter();
-        }
+        iter = chars.iter();
+        next_iter = digits.iter();
     }
-    while let Some(c) = iter.next() {
-        res.push(*c);
+
+    while let Some(&c) = iter.next() {
+        res.push(c);
         swap(&mut iter, &mut next_iter);
     }
     res.into_iter().collect()
