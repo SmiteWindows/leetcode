@@ -1,8 +1,11 @@
 // https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
+// Runtime: 12 ms
+// Memory Usage: 2.5 MB
 pub fn find_disappeared_numbers(nums: Vec<i32>) -> Vec<i32> {
     let mut nums = nums;
     let mut res = Vec::new();
-    for i in 0..nums.len() {
+    let n = nums.len();
+    for i in 0..n {
         let t = nums[i].abs() as usize - 1;
         if nums[t] > 0 {
             nums[t] = -nums[t];
