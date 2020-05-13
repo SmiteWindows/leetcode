@@ -1,10 +1,22 @@
 // https://leetcode.com/problems/verifying-an-alien-dictionary/
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
 pub fn is_alien_sorted(words: Vec<String>, order: String) -> bool {
-    todo!()
+    fn translate(s: String, mapping: &[char]) -> String {
+        s.chars().map(|c| mapping[c as usize]).collect()
+    }
+
+    let mut mapping = vec![0 as char; 256];
+    for (i, c) in order.chars().enumerate() {
+        mapping[c as usize] = (i as u8 + b'a') as char;
+    }
+    let words: Vec<String> = words.into_iter().map(|s| translate(s, &mapping)).collect();
+    let mut sorted = words.to_vec();
+    sorted.sort();
+    words == sorted
 }
 // hash_table
 #[test]
-#[ignore]
 fn test1_953() {
     assert_eq!(
         is_alien_sorted(
