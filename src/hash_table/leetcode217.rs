@@ -1,10 +1,18 @@
 // https://leetcode.com/problems/contains-duplicate/
+// Runtime: 4 ms
+// Memory Usage: 2.7 MB
+use std::collections::HashSet;
 pub fn contains_duplicate(nums: Vec<i32>) -> bool {
-    todo!()
+    let mut hs: HashSet<i32> = HashSet::new();
+    for n in nums {
+        if !hs.insert(n) {
+            return true;
+        }
+    }
+    false
 }
 // hash_table array
 #[test]
-#[ignore]
 fn test1_217() {
     assert_eq!(contains_duplicate(vec![1, 2, 3, 1]), true);
     assert_eq!(contains_duplicate(vec![1, 2, 3, 4]), false);
