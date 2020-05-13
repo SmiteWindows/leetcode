@@ -25,9 +25,7 @@ pub fn tictactoe(moves: Vec<Vec<i32>>) -> String {
         let mut a = 0;
         let mut b = 0;
         for p in s {
-            let i = p.0;
-            let j = p.1;
-            match board[i][j] {
+            match board[p.0][p.1] {
                 'X' => a += 1,
                 'O' => b += 1,
                 _ => {}
