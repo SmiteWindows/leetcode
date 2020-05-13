@@ -12,9 +12,9 @@ pub fn common_chars(a: Vec<String>) -> Vec<String> {
     let mut res = vec![];
     for i in 0..26 {
         let c: u8 = b'a' + i;
-        let mut min = std::usize::MAX;
-        for (j, j_chars) in counts.iter().enumerate() {
-            let count = j_chars[c as usize];
+        let mut min = usize::MAX;
+        for ch in counts.iter() {
+            let count = ch[c as usize];
             min = usize::min(count, min);
         }
         for _ in 0..min {

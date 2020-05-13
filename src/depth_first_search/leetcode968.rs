@@ -28,32 +28,6 @@ pub fn min_camera_cover(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
 fn test2_968() {
     let t1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 0,
-        left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 0,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-            right: Some(Rc::new(RefCell::new(TreeNode {
-                val: 0,
-                left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-                right: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-            }))),
-        }))),
-    })));
-    let t2 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 0,
-        left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 0,
-            left: Some(Rc::new(RefCell::new(TreeNode {
-                val: 0,
-                left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-                right: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-            }))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-        }))),
-    })));
-    let t1 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 0,
         left: Some(Rc::new(RefCell::new(TreeNode {
             val: 0,
             left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
