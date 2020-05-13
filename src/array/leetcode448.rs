@@ -8,8 +8,10 @@ pub fn find_disappeared_numbers(nums: Vec<i32>) -> Vec<i32> {
             nums[t] = -nums[t];
         }
     }
-    for i in 0..nums.len() {
-        if nums[i] > 0 { res.push(i as i32 + 1); }
+    for (i, &x) in nums.iter().enumerate() {
+        if x > 0 {
+            res.push(i as i32 + 1);
+        }
     }
     res
 }
