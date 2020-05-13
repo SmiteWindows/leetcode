@@ -1,51 +1,31 @@
 // https://leetcode.com/problems/flood-fill/
 // Runtime: 0 ms
-// Memory Usage: 2 MB
-use std::collections::VecDeque;
-struct Pixel {
-    i: usize,
-    j: usize,
-}
+// Memory Usage: 2.1 MB
 pub fn flood_fill(image: Vec<Vec<i32>>, sr: i32, sc: i32, new_color: i32) -> Vec<Vec<i32>> {
+    fn dfs(image: &mut [Vec<i32>], r: usize, c: usize, color: i32, new_color: i32) {
+        if image[r][c] == color {
+            image[r][c] = new_color;
+            if r >= 1 {
+                dfs(image, r - 1, c, color, new_color);
+            }
+            if c >= 1 {
+                dfs(image, r, c - 1, color, new_color);
+            }
+            if r + 1 < image.len() {
+                dfs(image, r + 1, c, color, new_color);
+            }
+            if c + 1 < image[0].len() {
+                dfs(image, r, c + 1, color, new_color);
+            }
+        }
+    }
+
     let mut image = image;
-    let n = image.len();
-    let m = image[0].len();
     let sr = sr as usize;
     let sc = sc as usize;
-    if sr >= n {
-        return image;
-    }
-    if sc >= m {
-        return image;
-    }
-    let c = image[sr][sc];
-    if c == new_color {
-        return image;
-    }
-    let mut queue = VecDeque::new();
-    queue.push_back(Pixel { i: sr, j: sc });
-    let di = vec![0, 0, -1, 1];
-    let dj = vec![-1, 1, 0, 0];
-    while let Some(pixel) = queue.pop_front() {
-        let i = pixel.i;
-        let j = pixel.j;
-        image[i][j] = new_color;
-        for k in 0..4 {
-            let i = i as i32 + di[k];
-            let j = j as i32 + dj[k];
-            let i = i as usize;
-            let j = j as usize;
-            if i >= n {
-                continue;
-            }
-            if j >= m {
-                continue;
-            }
-            if image[i][j] != c {
-                continue;
-            }
-            queue.push_back(Pixel { i, j })
-        }
+    let color = image[sr][sc];
+    if color != new_color {
+        dfs(&mut image, sr, sc, color, new_color);
     }
     image
 }
