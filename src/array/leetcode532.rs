@@ -12,11 +12,13 @@ pub fn find_pairs(nums: Vec<i32>, k: i32) -> i32 {
     match k.cmp(&0) {
         Equal => {
             for x in nums {
-                let e = hm.entry(x).or_default();
-                if let 1 = *e {
-                    res += 1;
-                }
-                *e += 1;
+                *hm.entry(x)
+                    .and_modify(|e| {
+                        if let 1 = *e {
+                            res += 1;
+                        }
+                    })
+                    .or_default() += 1;
             }
         }
         Greater => {
