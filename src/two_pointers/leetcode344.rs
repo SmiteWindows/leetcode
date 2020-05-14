@@ -1,10 +1,11 @@
 // https://leetcode.com/problems/reverse-string/
+// Runtime: 20 ms
+// Memory Usage: 5.3 MB
 pub fn reverse_string(s: &mut Vec<char>) {
-    todo!()
+    s.reverse();
 }
 // string two_pointers
 #[test]
-#[ignore]
 fn test1_344() {
     let mut s1 = vec!['h', 'e', 'l', 'l', 'o'];
     reverse_string(&mut s1);

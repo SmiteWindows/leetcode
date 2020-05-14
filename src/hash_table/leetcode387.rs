@@ -3,7 +3,7 @@
 // Memory Usage: 2.2 MB
 use std::collections::HashMap;
 pub fn first_uniq_char(s: String) -> i32 {
-    let mut hm= HashMap::new();
+    let mut hm = HashMap::new();
     for c in s.chars() {
         *hm.entry(c).or_default() += 1;
     }
