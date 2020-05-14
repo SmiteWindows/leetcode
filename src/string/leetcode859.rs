@@ -5,9 +5,9 @@ use std::collections::HashSet;
 pub fn buddy_strings(a: String, b: String) -> bool {
     let ac: Vec<char> = a.chars().collect();
     let bc: Vec<char> = b.chars().collect();
-    let n = ac.len();
-    let m = bc.len();
-    if n != m {
+    let a_len = ac.len();
+    let b_len = bc.len();
+    if a_len != b_len {
         return false;
     }
     if ac == bc {
@@ -21,7 +21,7 @@ pub fn buddy_strings(a: String, b: String) -> bool {
         sum != 0
     } else {
         let mut pair = vec![];
-        for i in 0..n {
+        for i in 0..a_len {
             if ac[i] != bc[i] {
                 pair.push(i);
             }
