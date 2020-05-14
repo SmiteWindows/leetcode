@@ -1,4 +1,6 @@
 // https://leetcode.com/problems/k-diff-pairs-in-an-array/
+// Runtime: 4 ms
+// Memory Usage: 2.1 MB
 use std::{
     cmp::Ordering::{Equal, Greater, Less},
     collections::{HashMap, HashSet},
