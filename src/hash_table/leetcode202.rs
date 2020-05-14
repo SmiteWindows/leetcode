@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/happy-number/
-use std::collections::HashSet;
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
+use std::collections::HashSet;
 pub fn is_happy(n: i32) -> bool {
     fn get_next(mut n: i32) -> i32 {
         let mut sum = 0;

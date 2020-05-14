@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/single-number/
-use std::collections::HashMap;
 // Runtime: 0 ms
 // Memory Usage: 2.4 MB
+use std::collections::HashMap;
 pub fn single_number(nums: Vec<i32>) -> i32 {
     let mut map: HashMap<i32, i32> = HashMap::new();
     for i in nums.iter() {

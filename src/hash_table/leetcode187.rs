@@ -2,7 +2,7 @@
 #![allow(clippy::many_single_char_names)]
 use std::collections::{HashMap, HashSet};
 pub fn find_repeated_dna_sequences(s: String) -> Vec<String> {
-    let l = 10;
+    let l = 10; // TODO
     let n = s.len();
     if n <= l {
         return vec![];

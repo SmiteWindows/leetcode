@@ -17,7 +17,7 @@ pub fn length_of_longest_substring(s: String) -> i32 {
         } else {
             set.insert(ch);
             j += 1;
-            res = usize::max(res, j - i);
+            res = res.max(j - i);
         }
     }
     res as i32

@@ -45,7 +45,7 @@ pub fn min_window(s: String, t: String) -> String {
         }
         r += 1;
     }
-    if res[0] == std::usize::MAX {
+    if res[0] == usize::MAX {
         String::from("")
     } else {
         s[res[1]..=res[2]].to_string()

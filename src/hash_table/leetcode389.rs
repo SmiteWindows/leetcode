@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/find-the-difference/
-use std::collections::HashMap;
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
+use std::collections::HashMap;
 pub fn find_the_difference(s: String, t: String) -> char {
     let mut map: HashMap<char, i32> = HashMap::new();
     for c in t.chars() {

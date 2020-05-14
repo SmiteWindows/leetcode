@@ -16,15 +16,15 @@ pub fn find_shortest_sub_array(nums: Vec<i32>) -> i32 {
             right: i,
             count: 0,
         });
-        e.left = usize::min(e.left, i);
-        e.right = usize::max(e.right, i);
+        e.left = e.left.min(i);
+        e.right = e.right.max(i);
         e.count += 1;
-        max_degree = usize::max(e.count, max_degree);
+        max_degree = e.count.max(max_degree);
     }
     let mut min_width = nums.len();
     for d in hm.values() {
         if d.count == max_degree {
-            min_width = usize::min(d.right - d.left + 1, min_width);
+            min_width = min_width.min(d.right - d.left + 1);
         }
     }
     min_width as i32
