@@ -17,10 +17,8 @@ pub fn check_possibility(nums: Vec<i32>) -> bool {
         }
     }
     if let Some(p) = p {
-        if p != 0 && p != n - 2 {
-            if nums[p - 1] >= nums[p + 1] && nums[p] >= nums[p + 2] {
-                return false;
-            }
+        if p != 0 && p != n - 2 && nums[p - 1] >= nums[p + 1] && nums[p] >= nums[p + 2] {
+            return false;
         }
     }
     true
