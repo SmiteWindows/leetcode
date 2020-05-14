@@ -2,7 +2,17 @@
 // Runtime: 20 ms
 // Memory Usage: 5.3 MB
 pub fn reverse_string(s: &mut Vec<char>) {
-    s.reverse();
+    let n = s.len();
+    if n == 0 {
+        return;
+    }
+    let mut i = 0;
+    let mut j = n - 1;
+    while i < j {
+        s.swap(i, j);
+        i += 1;
+        j -= 1;
+    }
 }
 // string two_pointers
 #[test]
