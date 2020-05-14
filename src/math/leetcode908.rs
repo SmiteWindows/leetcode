@@ -4,7 +4,7 @@
 pub fn smallest_range_i(a: Vec<i32>, k: i32) -> i32 {
     let max = a.iter().max().unwrap();
     let min = a.iter().min().unwrap();
-    i32::max(0, max - min - 2 * k)
+    (max - min - 2 * k).max(0)
 }
 // math
 #[test]

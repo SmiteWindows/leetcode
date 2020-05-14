@@ -5,10 +5,10 @@ pub fn replace_elements(arr: Vec<i32>) -> Vec<i32> {
     let mut arr = arr;
     let mut max = -1;
     let n = arr.len();
-    for i in (0..n).rev() {
+    for (i, val) in arr.iter_mut().enumerate().rev() {
         let t = max;
-        max = i32::max(arr[i], max);
-        arr[i] = t;
+        max = max.max(*val);
+        *val = t;
     }
     arr
 }

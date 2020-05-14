@@ -33,7 +33,7 @@ pub fn largest_values(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
         for i in 0..len {
             let tmp = queue.pop_front().unwrap().unwrap();
             let tmp = tmp.borrow();
-            max_value = i32::max(max_value, tmp.val);
+            max_value = tmp.val.max(max_value);
             if tmp.left.is_some() {
                 queue.push_back(tmp.left.clone());
             }

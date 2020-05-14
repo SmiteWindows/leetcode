@@ -40,8 +40,8 @@ pub fn longest_univalue_path(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
                 }
             }
             (
-                i32::max(arrow_left, arrow_right),
-                i32::max(res, arrow_left + arrow_right),
+                arrow_left.max(arrow_right),
+                (arrow_left + arrow_right).max(res),
             )
         } else {
             (0, res)

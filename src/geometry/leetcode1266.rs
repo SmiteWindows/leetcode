@@ -9,7 +9,7 @@ pub fn min_time_to_visit_all_points(points: Vec<Vec<i32>>) -> i32 {
         let y1 = points[i - 1][1];
         let x2 = points[i][0];
         let y2 = points[i][1];
-        res += i32::max((x2 - x1).abs(), (y2 - y1).abs());
+        res += (x2 - x1).abs().max((y2 - y1).abs());
     }
     res
 }

@@ -43,10 +43,10 @@ pub fn btree_game_winning_move(root: Option<Rc<RefCell<TreeNode>>>, n: i32, x: i
 
     let (mut left_count, mut right_count) = (0, 0);
     walk(root.as_ref(), x, &mut left_count, &mut right_count);
-    i32::max(
-        left_count,
-        i32::max(right_count, n - left_count - right_count - 1),
-    ) > n / 2
+    (n - left_count - right_count - 1)
+        .max(right_count)
+        .max(left_count)
+        > n / 2
 }
 // tree depth_first_search
 #[test]

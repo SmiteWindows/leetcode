@@ -11,7 +11,7 @@ pub fn min_cost_to_move_chips(chips: Vec<i32>) -> i32 {
             b += 1;
         }
     }
-    i32::min(a, b)
+    a.min(b)
 }
 // math array greedy
 #[test]

@@ -9,8 +9,8 @@ pub fn lucky_numbers(matrix: Vec<Vec<i32>>) -> Vec<i32> {
     let mut res = vec![];
     for (i, min) in mins.iter_mut().enumerate().take(m) {
         for (j, max) in maxs.iter_mut().enumerate().take(n) {
-            *min = i32::min(*min, matrix[i][j]);
-            *max = i32::max(*max, matrix[i][j]);
+            *min = matrix[i][j].min(*min);
+            *max = matrix[i][j].max(*max);
         }
     }
     for (i, min) in mins.iter().enumerate().take(m) {

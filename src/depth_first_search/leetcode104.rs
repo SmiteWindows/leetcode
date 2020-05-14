@@ -26,7 +26,7 @@ pub fn max_depth(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
             let node = node.borrow();
             let left_height = max_height(node.left.as_ref());
             let right_height = max_height(node.right.as_ref());
-            i32::max(left_height, right_height) + 1
+            left_height.max(right_height) + 1
         } else {
             0
         }

@@ -27,7 +27,7 @@ pub fn largest_values(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
             if res.len() == level {
                 res.push(i32::MIN);
             }
-            res[level] = i32::max(res[level], node.val);
+            res[level] = node.val.max(res[level]);
             if node.left.is_some() {
                 walk(node.left.as_ref(), res, level + 1);
             }

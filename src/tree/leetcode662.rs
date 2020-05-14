@@ -31,7 +31,7 @@ pub fn width_of_binary_tree(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
         if let Some(node) = root {
             let node = node.borrow();
             left_map.entry(depth).or_insert(pos);
-            *res = i32::max(*res, pos - left_map.get(&depth).unwrap() + 1);
+            *res = (pos - left_map.get(&depth).unwrap() + 1).max(*res);
             walk(node.left.as_ref(), depth + 1, pos * 2, res, left_map);
             walk(node.right.as_ref(), depth + 1, pos * 2 + 1, res, left_map);
         }

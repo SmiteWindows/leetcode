@@ -8,7 +8,7 @@ pub fn distribute_candies(candies: i32, num_people: i32) -> Vec<i32> {
     let mut res: Vec<i32> = vec![0; n];
     let mut gift = 0;
     while candies > 0 {
-        gift = i32::min(gift + 1, candies);
+        gift = candies.min(gift + 1);
         res[i] += gift;
         candies -= gift;
         i = (i + 1) % n;

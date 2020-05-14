@@ -32,10 +32,7 @@ pub fn is_balanced(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
             if !right.1 {
                 return (0, false);
             }
-            (
-                1 + i32::max(left.0, right.0),
-                ((left.0 - right.0).abs() < 2),
-            )
+            (1 + left.0.max(right.0), ((left.0 - right.0).abs() < 2))
         } else {
             (-1, true)
         }

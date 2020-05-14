@@ -25,10 +25,10 @@ pub fn max_path_sum(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
         if let Some(node) = root {
             let node = node.borrow();
             let val = node.val;
-            let left_gain = i32::max(max_gain(node.left.as_ref(), max_sum), 0);
-            let right_gain = i32::max(max_gain(node.right.as_ref(), max_sum), 0);
-            *max_sum = i32::max(*max_sum, val + left_gain + right_gain);
-            val + i32::max(left_gain, right_gain)
+            let left_gain = max_gain(node.left.as_ref(), max_sum).max(0);
+            let right_gain = max_gain(node.right.as_ref(), max_sum).max(0);
+            *max_sum = (val + left_gain + right_gain).max(*max_sum);
+            val + left_gain.max(right_gain)
         } else {
             0
         }
