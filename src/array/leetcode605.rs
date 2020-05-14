@@ -5,10 +5,7 @@ pub fn can_place_flowers(flowerbed: Vec<i32>, n: i32) -> bool {
     let mut sum = 0;
     for i in 0..m {
         if flowerbed[i] == 0 {
-            if i == 0 {
-                sum += 1;
-                flowerbed[i] = 1;
-            } else if flowerbed[i - 1] == 0 {
+            if i == 0 || flowerbed[i - 1] == 0 {
                 sum += 1;
                 flowerbed[i] = 1;
             }
