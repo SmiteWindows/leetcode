@@ -3,13 +3,13 @@
 // Memory Usage: 2.1 MB
 pub fn repeated_string_match(a: String, b: String) -> i32 {
     let mut s = String::new();
-    let n = a.len();
-    let m = b.len();
-    if n == 0 || m == 0 {
+    let an = a.len();
+    let bm = b.len();
+    if an == 0 || bm == 0 {
         return -1;
     }
-    let mut k = m / n;
-    if k * n < m {
+    let mut k = bm / an;
+    if k * an < bm {
         k += 1;
     }
     for _ in 0..k {
