@@ -6,23 +6,23 @@ pub fn reverse_only_letters(s: String) -> String {
     if n == 0 {
         return "".to_string();
     }
-    let mut a: Vec<char> = s.chars().collect();
+    let mut res: Vec<char> = s.chars().collect();
     let mut i = 0;
     let mut j = n - 1;
     while i < j {
-        while i < j && !a[i].is_alphabetic() {
+        while i < j && !res[i].is_alphabetic() {
             i += 1;
         }
-        while i < j && !a[j].is_alphabetic() {
+        while i < j && !res[j].is_alphabetic() {
             j -= 1;
         }
         if i < j {
-            a.swap(i, j);
+            res.swap(i, j);
         }
         i += 1;
         j -= 1;
     }
-    a.iter().collect()
+    res.iter().collect()
 }
 // string
 #[test]
