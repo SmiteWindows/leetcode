@@ -1,10 +1,12 @@
 // https://leetcode.com/problems/rotate-array/
+// Runtime: 0 ms
+// Memory Usage: 2.3 MB
 pub fn rotate(nums: &mut Vec<i32>, k: i32) {
-    todo!()
+    let k = k as usize % nums.len();
+    nums.rotate_right(k);
 }
 // array
 #[test]
-#[ignore]
 fn test1_189() {
     let mut nums1 = vec![1, 2, 3, 4, 5, 6, 7];
     rotate(&mut nums1, 3);
