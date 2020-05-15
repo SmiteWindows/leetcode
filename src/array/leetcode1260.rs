@@ -6,16 +6,16 @@ pub fn shift_grid(grid: Vec<Vec<i32>>, k: i32) -> Vec<Vec<i32>> {
     let m = grid.len();
     let n = grid[0].len();
     let mut arr = vec![];
-    for i in 0..m {
+    for row in grid.iter().take(m)  {
         for j in 0..n {
-            arr.push(grid[i][j]);
+            arr.push(row[j]);
         }
     }
     let s = n * m;
     let mut k = s - (k as usize) % s;
-    for i in 0..m {
+    for row in grid.iter_mut().take(m) {
         for j in 0..n {
-            grid[i][j] = arr[k % s];
+            row[j] = arr[k % s];
             k += 1;
         }
     }
