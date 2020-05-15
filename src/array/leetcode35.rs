@@ -1,10 +1,11 @@
 // https://leetcode.com/problems/search-insert-position/
+// Runtime: 0 ms
+// Memory Usage: 2.2 MB
 pub fn search_insert(nums: Vec<i32>, target: i32) -> i32 {
-    todo!()
+    nums.binary_search(&target).unwrap_or_else(|x| x) as i32
 }
 // binary_search array
 #[test]
-#[ignore]
 fn test2_35() {
     assert_eq!(search_insert(vec![1, 3, 5, 6], 5), 2);
     assert_eq!(search_insert(vec![1, 3, 5, 6], 2), 1);
