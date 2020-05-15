@@ -1,10 +1,13 @@
 // https://leetcode.com/problems/find-the-distance-value-between-two-arrays/
+// Runtime: 0 ms
+// Memory Usage: 2 MB
 pub fn find_the_distance_value(arr1: Vec<i32>, arr2: Vec<i32>, d: i32) -> i32 {
-    todo!()
+    arr1.iter()
+        .filter(|&&x| arr2.iter().all(|&y| (x - y).abs() > d))
+        .count() as i32
 }
 // array
 #[test]
-#[ignore]
 fn test1_1385() {
     assert_eq!(
         find_the_distance_value(vec![4, 5, 8], vec![10, 9, 1, 8], 2),
