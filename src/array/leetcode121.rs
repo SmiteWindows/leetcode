@@ -1,19 +1,14 @@
 // https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 // Runtime: 0 ms
-// Memory Usage: 2.1 MB
+// Memory Usage: 2.2 MB
 pub fn max_profit(prices: Vec<i32>) -> i32 {
-    let n = prices.len();
-    let mut mins = vec![0; n];
-    let mut prev_min = std::i32::MAX;
+    let mut min_price = i32::MAX;
+    let mut max_profit = 0;
     for (i, &price) in prices.iter().enumerate() {
-        prev_min = prev_min.min(price);
-        mins[i] = prev_min;
+        min_price = min_price.min(price);
+        max_profit = max_profit.max(price - min_price);
     }
-    let mut res = 0;
-    for (i, &price) in prices.iter().enumerate().skip(1) {
-        res = res.max(price - mins[i - 1]);
-    }
-    res
+    max_profit
 }
 // dynamic_programming array
 #[test]
