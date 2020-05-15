@@ -1,4 +1,6 @@
 // https://leetcode.com/problems/move-zeroes/
+// Runtime: 0 ms
+// Memory Usage: 2.2 MB
 pub fn move_zeroes(nums: &mut Vec<i32>) {
     let mut j = 0;
     for i in 0..nums.len() {
