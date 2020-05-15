@@ -1,10 +1,17 @@
 // https://leetcode.com/problems/move-zeroes/
 pub fn move_zeroes(nums: &mut Vec<i32>) {
-    todo!()
+    let mut j = 0;
+    for i in 0..nums.len() {
+        let x = nums[i];
+        if x != 0 {
+            nums[i] = 0;
+            nums[j] = x;
+            j += 1;
+        }
+    }
 }
 // array two_pointers
 #[test]
-#[ignore]
 fn test2_283() {
     let mut nums1 = vec![0, 1, 0, 3, 12];
     move_zeroes(&mut nums1);
