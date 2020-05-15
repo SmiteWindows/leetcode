@@ -1,4 +1,6 @@
 // https://leetcode.com/problems/x-of-a-kind-in-a-deck-of-cards/
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
 use std::collections::HashMap;
 pub fn has_groups_size_x(deck: Vec<i32>) -> bool {
     fn gcd(a: i32, b: i32) -> i32 {
