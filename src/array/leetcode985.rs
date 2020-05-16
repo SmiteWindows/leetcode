@@ -1,10 +1,28 @@
 // https://leetcode.com/problems/sum-of-even-numbers-after-queries/
+// Runtime: 20 ms
+// Memory Usage: 3 MB
 pub fn sum_even_after_queries(a: Vec<i32>, queries: Vec<Vec<i32>>) -> Vec<i32> {
-    todo!()
+    let mut a = a;
+    let mut sum = a.iter().filter(|&x| x % 2 == 0).sum();
+    let mut res= vec![];
+    for query in queries {
+        let v = query[0];
+        let i = query[1] as usize;
+        let x = a[i];
+        let y = a[i] + v;
+        if x % 2 == 0 {
+            sum -= x;
+        }
+        if y % 2 == 0 {
+            sum += y;
+        }
+        a[i] = y;
+        res.push(sum);
+    }
+    res
 }
 // array
 #[test]
-#[ignore]
 fn test1_985() {
     assert_eq!(
         sum_even_after_queries(
