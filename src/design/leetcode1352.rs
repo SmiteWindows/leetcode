@@ -38,8 +38,9 @@ impl ProductOfNumbers {
  * obj.add(num);
  * let ret_2: i32 = obj.get_product(k);
  */
+// array design
 #[test]
-fn test1_1352() {
+fn test2_1352() {
     let mut obj = ProductOfNumbers::new();
     obj.add(3);
     obj.add(0);

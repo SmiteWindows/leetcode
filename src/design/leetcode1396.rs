@@ -49,6 +49,7 @@ impl UndergroundSystem {
  * obj.check_out(id, stationName, t);
  * let ret_3: f64 = obj.get_average_time(startStation, endStation);
  */
+// design
 #[test]
 fn test1_1396() {
     let mut obj = UndergroundSystem::new();

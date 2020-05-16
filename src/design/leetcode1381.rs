@@ -58,6 +58,7 @@ impl CustomStack {
  * let ret_2: i32 = obj.pop();
  * obj.increment(k, val);
  */
+// design stack
 #[test]
 fn test2_1381() {
     let mut stack = CustomStack::new(3);

@@ -45,6 +45,7 @@ impl MyStack {
  * let ret_3: i32 = obj.top();
  * let ret_4: bool = obj.empty();
  */
+// design stack
 #[test]
 fn test2_225() {
     let mut stack = MyStack::new();

@@ -73,6 +73,7 @@ impl MinStack {
  * let ret_3: i32 = obj.top();
  * let ret_4: i32 = obj.get_min();
  */
+// design stack
 #[test]
 fn test1_155() {
     let mut min_stack = MinStack::new();

@@ -61,6 +61,7 @@ impl MyQueue {
  * let ret_3: i32 = obj.peek();
  * let ret_4: bool = obj.empty();
  */
+// design stack
 #[test]
 fn test2_232() {
     let mut queue = MyQueue::new();
