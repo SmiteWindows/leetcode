@@ -7,8 +7,8 @@ pub fn max_dist_to_closest(seats: Vec<i32>) -> i32 {
     let mut prev: Option<usize> = None;
     let n = seats.len();
     let mut max = 0;
-    for i in 0..n {
-        if seats[i] == 1 {
+    for (i, &seat) in seats.iter().enumerate().take(n) {
+        if seat == 1 {
             if first.is_none() {
                 first = Some(i);
             }
