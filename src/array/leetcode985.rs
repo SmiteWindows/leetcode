@@ -4,19 +4,19 @@
 pub fn sum_even_after_queries(a: Vec<i32>, queries: Vec<Vec<i32>>) -> Vec<i32> {
     let mut a = a;
     let mut sum = a.iter().filter(|&x| x % 2 == 0).sum();
-    let mut res= vec![];
+    let mut res = vec![];
     for query in queries {
-        let v = query[0];
-        let i = query[1] as usize;
-        let x = a[i];
-        let y = a[i] + v;
+        let val = query[0];
+        let index = query[1] as usize;
+        let x = a[index];
+        let y = a[index] + val;
         if x % 2 == 0 {
             sum -= x;
         }
         if y % 2 == 0 {
             sum += y;
         }
-        a[i] = y;
+        a[index] = y;
         res.push(sum);
     }
     res
