@@ -1,10 +1,30 @@
 // https://leetcode.com/problems/maximize-distance-to-closest-person/
+// Runtime: 0 ms
+// Memory Usage: 2.2 MB
 pub fn max_dist_to_closest(seats: Vec<i32>) -> i32 {
-    todo!()
+    let mut first: Option<usize> = None;
+    let mut last: Option<usize> = None;
+    let mut prev: Option<usize> = None;
+    let n = seats.len();
+    let mut max = 0;
+    for i in 0..n {
+        if seats[i] == 1 {
+            if first.is_none() {
+                first = Some(i);
+            }
+            if let Some(j) = prev {
+                max = max.max((i - j) / 2);
+            }
+            prev = Some(i);
+            last = Some(i);
+        }
+    }
+    max = max.max(first.unwrap());
+    max = max.max(n - 1 - last.unwrap());
+    max as i32
 }
 // array
 #[test]
-#[ignore]
 fn test1_849() {
     assert_eq!(max_dist_to_closest(vec![1, 0, 0, 0, 1, 0, 1]), 2);
     assert_eq!(max_dist_to_closest(vec![1, 0, 0, 0]), 3);
