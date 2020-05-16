@@ -15,9 +15,9 @@ enum Direction {
 
 pub fn num_rook_captures(board: Vec<Vec<char>>) -> i32 {
     fn search_rook(board: &[Vec<char>]) -> Chess {
-        for r in 0..8 {
-            for c in 0..8 {
-                if board[r][c] == 'R' {
+        for (r, row) in board.iter().enumerate().take(8) {
+            for (c, &col) in row.iter().enumerate().take(8) {
+                if col == 'R' {
                     return Chess { r, c };
                 }
             }
