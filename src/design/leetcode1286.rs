@@ -1,4 +1,6 @@
 // https://leetcode.com/problems/iterator-for-combination/
+// Runtime: 4 ms
+// Memory Usage: 4 MB
 struct CombinationIterator {
     combinations: Vec<String>,
     index: usize,
@@ -66,7 +68,7 @@ impl CombinationIterator {
  */
 // design backtracking
 #[test]
-fn test1_1286() {
+fn test2_1286() {
     let mut iter = CombinationIterator::new("abc".to_string(), 2);
     assert_eq!(iter.has_next(), true);
     assert_eq!(iter.next(), "ab".to_string());
