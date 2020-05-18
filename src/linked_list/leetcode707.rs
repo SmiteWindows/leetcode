@@ -103,7 +103,7 @@ impl MyLinkedList {
  */
 // design linked_list
 #[test]
-fn test2_707() {
+fn test1_707() {
     let mut obj = MyLinkedList::new();
     obj.add_at_head(1);
     obj.add_at_tail(3);
