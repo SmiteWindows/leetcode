@@ -2,7 +2,10 @@
 // Runtime: 4 ms
 // Memory Usage: 5.9 MB
 use rand::prelude::*;
-use std::collections::HashMap;
+use std::collections::{
+    hash_map::Entry::{Occupied, Vacant},
+    HashMap,
+};
 struct RandomizedSet {
     rng: ThreadRng,
     indexes: HashMap<i32, usize>,
@@ -24,9 +27,9 @@ impl RandomizedSet {
 
     /** Inserts a value to the set. Returns true if the set did not already contain the specified element. */
     fn insert(&mut self, val: i32) -> bool {
-        match self.indexes.entry(val){
-            Occupied(_)=>false,
-            Vacant(e)=>{
+        match self.indexes.entry(val) {
+            Occupied(_) => false,
+            Vacant(e) => {
                 e.insert(val, self.values.len());
                 self.values.push(val);
                 true
