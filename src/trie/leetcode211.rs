@@ -25,7 +25,7 @@ impl WordDictionary {
     fn add_word(&mut self, word: String) {
         fn add(wd: &mut WordDictionary, word: &str) {
             if let Some(c) = word.chars().next() {
-                let next_wd = wd.map.entry(c).or_insert_with(|| WordDictionary::new());
+                let next_wd = wd.map.entry(c).or_insert_with(WordDictionary::new);
                 add(next_wd, &word[1..]);
             } else {
                 wd.is_word = true;
