@@ -4,7 +4,7 @@
 use std::collections::HashMap;
 #[derive(Default)]
 struct Trie {
-    children: HashMap<char, Trie>,
+    children: HashMap<char, Self>,
     end: bool,
 }
 /**
@@ -14,10 +14,7 @@ struct Trie {
 impl Trie {
     /** Initialize your data structure here. */
     fn new() -> Self {
-        Self {
-            children: HashMap::new(),
-            end: false,
-        }
+        Self::default()
     }
 
     /** Inserts a word into the trie. */
