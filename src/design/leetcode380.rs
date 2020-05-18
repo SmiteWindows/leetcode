@@ -1,4 +1,6 @@
 // https://leetcode.com/problems/insert-delete-getrandom-o1/
+// Runtime: 4 ms
+// Memory Usage: 5.9 MB
 use rand::prelude::*;
 use std::collections::HashMap;
 struct RandomizedSet {
@@ -22,12 +24,13 @@ impl RandomizedSet {
 
     /** Inserts a value to the set. Returns true if the set did not already contain the specified element. */
     fn insert(&mut self, val: i32) -> bool {
-        if self.indexes.get(&val).is_some() {
-            false
-        } else {
-            self.indexes.insert(val, self.values.len());
-            self.values.push(val);
-            true
+        match self.indexes.entry(val){
+            Occupied(_)=>false,
+            Vacant(e)=>{
+                e.insert(val, self.values.len());
+                self.values.push(val);
+                true
+            }
         }
     }
 
@@ -48,7 +51,7 @@ impl RandomizedSet {
 
     /** Get a random element from the set. */
     fn get_random(&mut self) -> i32 {
-        let index = self.rng.gen_range(0, self.values.len()) as usize;
+        let index = self.rng.gen_range(0, self.values.len());
         self.values[index]
     }
 }
