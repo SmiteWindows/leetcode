@@ -67,7 +67,7 @@ impl RandomizedSet {
  */
 // design array hash_table
 #[test]
-fn test() {
+fn test3_380() {
     let mut obj = RandomizedSet::new();
     assert_eq!(obj.insert(1), true);
     assert_eq!(obj.remove(2), false);
