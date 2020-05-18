@@ -1,13 +1,11 @@
 // https://leetcode.com/problems/insert-delete-getrandom-o1/
-struct RandomizedSet {}
-
-/**
- * Your RandomizedSet object will be instantiated and called as such:
- * let obj = RandomizedSet::new();
- * let ret_1: bool = obj.insert(val);
- * let ret_2: bool = obj.remove(val);
- * let ret_3: i32 = obj.get_random();
- */
+use rand::prelude::*;
+use std::collections::HashMap;
+struct RandomizedSet {
+    rng: ThreadRng,
+    indexes: HashMap<i32, usize>,
+    values: Vec<i32>,
+}
 /**
  * `&self` means the method takes an immutable reference.
  * If you need a mutable reference, change it to `&mut self` instead.
@@ -15,21 +13,61 @@ struct RandomizedSet {}
 impl RandomizedSet {
     /** Initialize your data structure here. */
     fn new() -> Self {
-        todo!()
+        Self {
+            rng: rand::thread_rng(),
+            indexes: HashMap::new(),
+            values: Vec::new(),
+        }
     }
 
     /** Inserts a value to the set. Returns true if the set did not already contain the specified element. */
-    fn insert(&self, val: i32) -> bool {
-        todo!()
+    fn insert(&mut self, val: i32) -> bool {
+        if self.indexes.get(&val).is_some() {
+            false
+        } else {
+            self.indexes.insert(val, self.values.len());
+            self.values.push(val);
+            true
+        }
     }
 
     /** Removes a value from the set. Returns true if the set contained the specified element. */
-    fn remove(&self, val: i32) -> bool {
-        todo!()
+    fn remove(&mut self, val: i32) -> bool {
+        if let Some(index) = self.indexes.remove(&val) {
+            let last = self.values[self.values.len() - 1];
+            self.indexes
+                .entry(last)
+                .and_modify(|old_index| *old_index = index);
+            self.values[index] = last;
+            self.values.pop();
+            true
+        } else {
+            false
+        }
     }
 
     /** Get a random element from the set. */
-    fn get_random(&self) -> i32 {
-        todo!()
+    fn get_random(&mut self) -> i32 {
+        let index = self.rng.gen_range(0, self.values.len()) as usize;
+        self.values[index]
     }
+}
+/**
+ * Your RandomizedSet object will be instantiated and called as such:
+ * let obj = RandomizedSet::new();
+ * let ret_1: bool = obj.insert(val);
+ * let ret_2: bool = obj.remove(val);
+ * let ret_3: i32 = obj.get_random();
+ */
+// design array hash_table
+#[test]
+fn test() {
+    let mut obj = RandomizedSet::new();
+    assert_eq!(obj.insert(1), true);
+    assert_eq!(obj.remove(2), false);
+    assert_eq!(obj.insert(2), true);
+    assert_eq!(obj.get_random(), 1 || 2);
+    assert_eq!(obj.remove(1), true);
+    assert_eq!(obj.insert(2), false);
+    assert_eq!(obj.get_random(), 2);
 }
