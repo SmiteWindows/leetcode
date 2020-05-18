@@ -30,7 +30,7 @@ impl RandomizedSet {
         match self.indexes.entry(val) {
             Occupied(_) => false,
             Vacant(e) => {
-                e.insert(val, self.values.len());
+                e.insert(self.values.len());
                 self.values.push(val);
                 true
             }
