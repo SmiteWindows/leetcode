@@ -24,9 +24,9 @@ impl PartialOrd for ListNode {
         Some(other.val.cmp(&self.val))
     }
 }
-use std::{cmp::Ordering, collections::BinaryHeap};
 // Runtime: 4 ms
 // Memory Usage: 3 MB
+use std::{cmp::Ordering, collections::BinaryHeap};
 pub fn merge_k_lists(lists: Vec<Option<Box<ListNode>>>) -> Option<Box<ListNode>> {
     let mut h: BinaryHeap<Option<Box<ListNode>>> = BinaryHeap::with_capacity(lists.len());
     for x in lists.iter() {

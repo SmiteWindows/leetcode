@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/valid-perfect-square/
-use std::cmp::Ordering;
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
+use std::cmp::Ordering;
 pub fn is_perfect_square(num: i32) -> bool {
     if num < 2 {
         return true;

@@ -1,5 +1,4 @@
 // https://leetcode.com/problems/median-of-two-sorted-arrays/
-use std::cmp::{max, min};
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn find_median_sorted_arrays(nums1: Vec<i32>, nums2: Vec<i32>) -> f64 {
@@ -24,7 +23,7 @@ pub fn find_median_sorted_arrays(nums1: Vec<i32>, nums2: Vec<i32>) -> f64 {
             } else if j == 0 {
                 nums1[i - 1]
             } else {
-                max(nums1[i - 1], nums2[j - 1])
+                nums1[i - 1].max(nums2[j - 1])
             };
             if (m + n) % 2 == 1 {
                 return max_left.into();
@@ -34,7 +33,7 @@ pub fn find_median_sorted_arrays(nums1: Vec<i32>, nums2: Vec<i32>) -> f64 {
             } else if j == n {
                 nums1[i]
             } else {
-                min(nums2[j], nums1[i])
+                nums2[j].min(nums1[i])
             };
             return (max_left + min_right) as f64 / 2.0;
         }
