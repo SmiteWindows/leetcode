@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2.8 MB
+use std::{cell::RefCell, rc::Rc};
 pub fn get_minimum_difference(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     fn walk(root: Option<&Rc<RefCell<TreeNode>>>, prev: &mut Option<i32>, mut res: i32) -> i32 {
         if let Some(node) = root {

@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 3 MB
+use std::{cell::RefCell, rc::Rc};
 pub fn average_of_levels(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<f64> {
     fn average(
         root: Option<&Rc<RefCell<TreeNode>>>,

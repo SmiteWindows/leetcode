@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
+use std::{cell::RefCell, rc::Rc};
 pub fn prune_tree(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
     fn contains_one(root: Option<&Rc<RefCell<TreeNode>>>) -> bool {
         if let Some(node) = root {

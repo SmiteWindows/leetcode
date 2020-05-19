@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, collections::HashSet, rc::Rc};
 // Runtime: 4 ms
 // Memory Usage: 3.1 MB
+use std::{cell::RefCell, collections::HashSet, rc::Rc};
 pub fn find_target(root: Option<Rc<RefCell<TreeNode>>>, k: i32) -> bool {
     fn walk(root: Option<&Rc<RefCell<TreeNode>>>, k: i32, set: &mut HashSet<i32>) -> bool {
         if let Some(node) = root {

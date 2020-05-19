@@ -22,7 +22,6 @@ use std::{
     collections::{BTreeMap, BinaryHeap},
     rc::Rc,
 };
-
 pub fn vertical_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<i32>> {
     fn walk(
         root: Option<&Rc<RefCell<TreeNode>>>,

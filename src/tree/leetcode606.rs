@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
 // Runtime: 4 ms
 // Memory Usage: 2.7 MB
+use std::{cell::RefCell, rc::Rc};
 pub fn tree2str(t: Option<Rc<RefCell<TreeNode>>>) -> String {
     fn helper(t: Option<&Rc<RefCell<TreeNode>>>) -> String {
         if let Some(n) = t {

@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, collections::HashMap, rc::Rc};
 // Runtime: 12 ms
 // Memory Usage: 10.4 MB
+use std::{cell::RefCell, collections::HashMap, rc::Rc};
 pub fn find_duplicate_subtrees(
     root: Option<Rc<RefCell<TreeNode>>>,
 ) -> Vec<Option<Rc<RefCell<TreeNode>>>> {

@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2.5 MB
+use std::{cell::RefCell, rc::Rc};
 pub fn has_path_sum(root: Option<Rc<RefCell<TreeNode>>>, sum: i32) -> bool {
     fn helper(root: Option<&Rc<RefCell<TreeNode>>>, mut sum: i32) -> bool {
         if let Some(node) = root {

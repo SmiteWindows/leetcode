@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 3.1 MB
+use std::{cell::RefCell, rc::Rc};
 pub fn trim_bst(
     root: Option<Rc<RefCell<TreeNode>>>,
     l: i32,

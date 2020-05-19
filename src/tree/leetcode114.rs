@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
+use std::{cell::RefCell, rc::Rc};
 pub fn flatten(root: &mut Option<Rc<RefCell<TreeNode>>>) {
     fn postorder(root: Option<Rc<RefCell<TreeNode>>>, prev: &mut Option<Rc<RefCell<TreeNode>>>) {
         if let Some(node) = root {

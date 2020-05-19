@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, cmp::Ordering, rc::Rc};
 // Runtime: 4 ms
 // Memory Usage: 2.5 MB
+use std::{cell::RefCell, cmp::Ordering, rc::Rc};
 pub fn search_bst(root: Option<Rc<RefCell<TreeNode>>>, val: i32) -> Option<Rc<RefCell<TreeNode>>> {
     fn search(root: Option<&Rc<RefCell<TreeNode>>>, val: i32) -> Option<Rc<RefCell<TreeNode>>> {
         match root {

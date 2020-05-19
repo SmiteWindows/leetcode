@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
 // Runtime: 8 ms
 // Memory Usage: 2.5 MB
+use std::{cell::RefCell, rc::Rc};
 pub fn insert_into_bst(
     root: Option<Rc<RefCell<TreeNode>>>,
     val: i32,

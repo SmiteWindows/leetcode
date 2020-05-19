@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
 // Runtime: 4 ms
 // Memory Usage: 3 MB
+use std::{cell::RefCell, rc::Rc};
 pub fn sum_even_grandparent(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     fn walk(root: Option<&Rc<RefCell<TreeNode>>>, gp_val: i32, p_val: i32, res: &mut i32) {
         if let Some(node) = root {

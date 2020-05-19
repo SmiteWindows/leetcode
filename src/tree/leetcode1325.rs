@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2.4 MB
+use std::{cell::RefCell, rc::Rc};
 pub fn remove_leaf_nodes(
     root: Option<Rc<RefCell<TreeNode>>>,
     target: i32,

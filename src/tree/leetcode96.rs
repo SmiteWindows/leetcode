@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/unique-binary-search-trees/
-use std::convert::TryInto;
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
+use std::convert::TryInto;
 pub fn num_trees(n: i32) -> i32 {
     let mut catalan = 1 as i64;
     let n = n as i64;

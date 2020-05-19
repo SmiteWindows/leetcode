@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, cmp::Ordering, rc::Rc};
 // Runtime: 4 ms
 // Memory Usage: 3 MB
+use std::{cell::RefCell, cmp::Ordering, rc::Rc};
 pub fn deepest_leaves_sum(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     fn walk(
         root: Option<&Rc<RefCell<TreeNode>>>,

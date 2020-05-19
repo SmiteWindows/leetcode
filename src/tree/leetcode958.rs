@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, collections::VecDeque, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2 MB
+use std::{cell::RefCell, collections::VecDeque, rc::Rc};
 pub fn is_complete_tree(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
     if root.is_none() {
         return true;

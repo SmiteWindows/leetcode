@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
 // Runtime: 4 ms
 // Memory Usage: 2 MB
+use std::{cell::RefCell, rc::Rc};
 pub fn is_subtree(s: Option<Rc<RefCell<TreeNode>>>, t: Option<Rc<RefCell<TreeNode>>>) -> bool {
     fn is_same(s: Option<&Rc<RefCell<TreeNode>>>, t: Option<&Rc<RefCell<TreeNode>>>) -> bool {
         if s.is_none() && t.is_none() {

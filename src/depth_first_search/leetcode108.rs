@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2.9 MB
+use std::{cell::RefCell, rc::Rc};
 pub fn sorted_array_to_bst(nums: Vec<i32>) -> Option<Rc<RefCell<TreeNode>>> {
     fn helper(left: i32, right: i32, nums: &[i32]) -> Option<Rc<RefCell<TreeNode>>> {
         if left > right {

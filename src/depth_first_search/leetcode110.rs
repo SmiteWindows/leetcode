@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2.7 MB
+use std::{cell::RefCell, rc::Rc};
 pub fn is_balanced(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
     fn helper(root: Option<&Rc<RefCell<TreeNode>>>) -> (i32, bool) {
         if let Some(node) = root {

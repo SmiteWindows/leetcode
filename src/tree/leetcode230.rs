@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 3.1 MB
+use std::{cell::RefCell, rc::Rc};
 pub fn kth_smallest(root: Option<Rc<RefCell<TreeNode>>>, k: i32) -> i32 {
     fn inorder(root: Option<&Rc<RefCell<TreeNode>>>, k: i32, num: &mut i32, res: &mut i32) {
         if let Some(node) = root {

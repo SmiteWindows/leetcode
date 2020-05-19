@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 1.9 MB
+use std::{cell::RefCell, rc::Rc};
 pub fn sum_numbers(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     fn walk(root: Option<&Rc<RefCell<TreeNode>>>, cur: i32, sum: &mut i32) {
         if let Some(node) = root {

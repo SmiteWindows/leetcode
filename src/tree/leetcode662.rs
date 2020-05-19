@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, collections::HashMap, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2.4 MB
+use std::{cell::RefCell, collections::HashMap, rc::Rc};
 pub fn width_of_binary_tree(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     fn walk(
         root: Option<&Rc<RefCell<TreeNode>>>,

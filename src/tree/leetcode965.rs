@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2 MB
+use std::{cell::RefCell, rc::Rc};
 pub fn is_unival_tree(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
     fn is_unival(root: Option<&Rc<RefCell<TreeNode>>>) -> bool {
         match root {

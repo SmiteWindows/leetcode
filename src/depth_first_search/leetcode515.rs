@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2.9 MB
+use std::{cell::RefCell, rc::Rc};
 pub fn largest_values(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
     fn walk(root: Option<&Rc<RefCell<TreeNode>>>, res: &mut Vec<i32>, level: usize) {
         if let Some(node) = root {

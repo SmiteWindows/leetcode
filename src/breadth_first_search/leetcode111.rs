@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, collections::VecDeque, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2.7 MB
+use std::{cell::RefCell, collections::VecDeque, rc::Rc};
 pub fn min_depth(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     let mut stack = VecDeque::new();
     if root.is_none() {

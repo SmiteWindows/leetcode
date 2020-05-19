@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2.6 MB
+use std::{cell::RefCell, rc::Rc};
 pub fn generate_trees(n: i32) -> Vec<Option<Rc<RefCell<TreeNode>>>> {
     fn helper(start: i32, end: i32) -> Vec<Option<Rc<RefCell<TreeNode>>>> {
         let mut res = Vec::new();

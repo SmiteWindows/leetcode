@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, collections::HashMap, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
+use std::{cell::RefCell, collections::HashMap, rc::Rc};
 pub fn path_sum(root: Option<Rc<RefCell<TreeNode>>>, sum: i32) -> i32 {
     fn walk(
         root: Option<&Rc<RefCell<TreeNode>>>,

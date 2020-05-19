@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
 // Runtime: 4 ms
 // Memory Usage: 2.2 MB
+use std::{cell::RefCell, rc::Rc};
 pub fn merge_trees(
     t1: Option<Rc<RefCell<TreeNode>>>,
     t2: Option<Rc<RefCell<TreeNode>>>,

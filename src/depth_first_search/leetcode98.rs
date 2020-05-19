@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2.9 MB
+use std::{cell::RefCell, rc::Rc};
 pub fn is_valid_bst(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
     fn helper(
         root: Option<&Rc<RefCell<TreeNode>>>,

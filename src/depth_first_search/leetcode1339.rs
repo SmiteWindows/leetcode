@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
 // Runtime: 20 ms
 // Memory Usage: 10.9 MB
+use std::{cell::RefCell, rc::Rc};
 pub fn max_product(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     fn walk(root: Option<&Rc<RefCell<TreeNode>>>, sum: &mut i32) {
         if let Some(node) = root {

@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, collections::VecDeque, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2.9 MB
+use std::{cell::RefCell, collections::VecDeque, rc::Rc};
 pub fn find_bottom_left_value(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     let mut queue = VecDeque::new();
     queue.push_back(root);

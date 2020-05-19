@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, collections::HashSet, rc::Rc};
 // Runtime: 4 ms
 // Memory Usage: 2.1 MB
+use std::{cell::RefCell, collections::HashSet, rc::Rc};
 pub fn del_nodes(
     root: Option<Rc<RefCell<TreeNode>>>,
     to_delete: Vec<i32>,

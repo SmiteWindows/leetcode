@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2 MB
+use std::{cell::RefCell, rc::Rc};
 pub fn is_symmetric(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
     let mut queue = Vec::new();
     queue.push(root.clone());

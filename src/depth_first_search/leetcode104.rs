@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2.6 MB
+use std::{cell::RefCell, rc::Rc};
 pub fn max_depth(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     fn max_height(root: Option<&Rc<RefCell<TreeNode>>>) -> i32 {
         if let Some(node) = root {

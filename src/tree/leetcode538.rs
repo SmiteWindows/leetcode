@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
 // Runtime: 4 ms
 // Memory Usage: 2.9 MB
+use std::{cell::RefCell, rc::Rc};
 pub fn convert_bst(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
     fn walk(root: Option<&Rc<RefCell<TreeNode>>>, sum: &mut i32) {
         if let Some(node) = root {

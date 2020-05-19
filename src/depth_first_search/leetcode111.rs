@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, cmp::min, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2.7 MB
+use std::{cell::RefCell, rc::Rc};
 pub fn min_depth(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     fn helper(root: Option<&Rc<RefCell<TreeNode>>>) -> i32 {
         if let Some(node) = root {
@@ -29,10 +29,10 @@ pub fn min_depth(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
                 return 1;
             }
             if node.left.is_some() {
-                min_depth = min(helper(node.left.as_ref()), min_depth);
+                min_depth = min_depth.min(helper(node.left.as_ref()));
             }
             if node.right.is_some() {
-                min_depth = min(helper(node.right.as_ref()), min_depth);
+                min_depth = min_depth.min(helper(node.right.as_ref()));
             }
             min_depth + 1
         } else {

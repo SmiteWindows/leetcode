@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, cmp::Ordering, rc::Rc};
 // Runtime: 4 ms
 // Memory Usage: 3.1 MB
+use std::{cell::RefCell, cmp::Ordering, rc::Rc};
 pub fn delete_node(root: Option<Rc<RefCell<TreeNode>>>, key: i32) -> Option<Rc<RefCell<TreeNode>>> {
     fn helper(
         root: Option<&Rc<RefCell<TreeNode>>>,

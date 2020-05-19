@@ -22,12 +22,6 @@ impl Element {
  * `&self` means the method takes an immutable reference.
  * If you need a mutable reference, change it to `&mut self` instead.
  */
-/**
- * Your LRUCache object will be instantiated and called as such:
- * let obj = LRUCache::new(capacity);
- * let ret_1: i32 = obj.get(key);
- * obj.put(key, value);
- */
 impl LRUCache {
     fn new(capacity: i32) -> Self {
         let capacity = capacity as usize;
@@ -76,6 +70,12 @@ impl LRUCache {
         }
     }
 }
+/**
+ * Your LRUCache object will be instantiated and called as such:
+ * let obj = LRUCache::new(capacity);
+ * let ret_1: i32 = obj.get(key);
+ * obj.put(key, value);
+ */
 #[test]
 #[ignore]
 fn test() {
@@ -101,6 +101,6 @@ fn test() {
     assert_eq!(obj.get(1), -1);
     assert_eq!(obj.get(2), 2);
     assert_eq!(obj.get(3), 3);
-    assert_eq!(obj.get(4), 4);
-    assert_eq!(obj.get(5), -1);
+    assert_eq!(obj.get(4), -1);
+    assert_eq!(obj.get(5), 5);
 }
