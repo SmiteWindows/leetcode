@@ -3,7 +3,7 @@
 // Memory Usage: 2.1 MB
 pub fn max_sub_array(nums: Vec<i32>) -> i32 {
     let mut prev = 0;
-    let mut max = std::i32::MIN;
+    let mut max = i32::MIN;
     for &val in nums.iter() {
         prev = val.max(prev + val);
         max = max.max(prev);

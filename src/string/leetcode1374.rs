@@ -1,8 +1,9 @@
 // https://leetcode.com/problems/generate-a-string-with-characters-that-have-odd-counts/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
+use std::iter::repeat;
 pub fn generate_the_string(n: i32) -> String {
-    let mut s: String = std::iter::repeat('a').take((n - 1) as usize).collect();
+    let mut s: String = repeat('a').take((n - 1) as usize).collect();
     s.push(if n % 2 == 0 { 'b' } else { 'a' });
     s
 }

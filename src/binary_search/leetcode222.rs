@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
 // Runtime: 4 ms
 // Memory Usage: 4.8 MB
+use std::{cell::RefCell, rc::Rc};
 pub fn count_nodes(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     fn compute_depth(mut root: Option<Rc<RefCell<TreeNode>>>) -> u32 {
         let mut d = 0;

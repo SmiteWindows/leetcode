@@ -12,9 +12,9 @@ impl ListNode {
         Self { next: None, val }
     }
 }
-use std::mem::replace;
 // Runtime: 0 ms
 // Memory Usage: 2 MB
+use std::mem::replace;
 pub fn rotate_right(head: Option<Box<ListNode>>, k: i32) -> Option<Box<ListNode>> {
     let mut head = head;
     let mut k = k;

@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
 // Runtime: 32 ms
 // Memory Usage: 3 MB
+use std::{cell::RefCell, rc::Rc};
 pub fn get_all_elements(
     root1: Option<Rc<RefCell<TreeNode>>>,
     root2: Option<Rc<RefCell<TreeNode>>>,

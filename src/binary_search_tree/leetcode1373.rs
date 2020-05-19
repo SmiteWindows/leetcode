@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
 // Runtime: 28 ms
 // Memory Usage: 10.7 MB
+use std::{cell::RefCell, rc::Rc};
 pub fn max_sum_bst(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     fn walk(root: Option<&Rc<RefCell<TreeNode>>>, max_sum: &mut i32) -> (bool, i32, i32, i32) {
         if let Some(node) = root {

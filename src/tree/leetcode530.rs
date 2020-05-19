@@ -27,7 +27,7 @@ pub fn get_minimum_difference(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
             res = walk(node.left.as_ref(), prev, res);
             let val = node.val;
             if let Some(n) = prev {
-                res = std::cmp::min(res, val - *n);
+                res = res.min(val - *n);
             }
             *prev = Some(val);
             res = walk(node.right.as_ref(), prev, res);

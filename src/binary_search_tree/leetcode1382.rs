@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
 // Runtime: 16 ms
 // Memory Usage: 3.3 MB
+use std::{cell::RefCell, rc::Rc};
 pub fn balance_bst(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
     fn inorder(root: Option<&Rc<RefCell<TreeNode>>>, sort_list: &mut Vec<i32>) {
         if let Some(node) = root {

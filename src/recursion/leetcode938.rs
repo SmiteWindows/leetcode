@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
 // Runtime: 8 ms
 // Memory Usage: 4 MB
+use std::{cell::RefCell, rc::Rc};
 pub fn range_sum_bst(root: Option<Rc<RefCell<TreeNode>>>, l: i32, r: i32) -> i32 {
     fn walk(root: Option<&Rc<RefCell<TreeNode>>>, l: i32, r: i32, mut res: i32) -> i32 {
         if let Some(node) = root {

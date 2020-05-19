@@ -21,7 +21,7 @@ pub fn min_window(s: String, t: String) -> String {
     let (mut l, mut r) = (0, 0);
     let mut formed = 0;
     let mut window_counts: HashMap<char, i32> = HashMap::new();
-    let mut res = [std::usize::MAX, 0, 0];
+    let mut res = [usize::MAX, 0, 0];
     while r < filtered_s.len() {
         let mut c = filtered_s[r].1;
         *window_counts.entry(c).or_default() += 1;

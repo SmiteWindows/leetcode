@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
+use std::{cell::RefCell, rc::Rc};
 pub fn bst_to_gst(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
     fn helper(root: Option<&Rc<RefCell<TreeNode>>>, sum: &mut i32) {
         if let Some(node) = root {

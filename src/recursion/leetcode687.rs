@@ -17,9 +17,9 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
 // Runtime: 16 ms
 // Memory Usage: 3 MB
+use std::{cell::RefCell, rc::Rc};
 pub fn longest_univalue_path(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     fn arrow_length(root: Option<&Rc<RefCell<TreeNode>>>, res: i32) -> (i32, i32) {
         if let Some(node) = root {
