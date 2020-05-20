@@ -3,19 +3,19 @@
 // Memory Usage: 2 MB
 use std::collections::HashSet;
 pub fn is_valid_sudoku(board: Vec<Vec<char>>) -> bool {
-    let mut rows: Vec<HashSet<char>> = vec![HashSet::new(); 9];
-    let mut cols: Vec<HashSet<char>> = vec![HashSet::new(); 9];
-    let mut boxes: Vec<HashSet<char>> = vec![HashSet::new(); 9];
-    for i in 0..9 {
-        for j in 0..9 {
-            let c: char = board[i][j];
+    let mut rows = vec![HashSet::new(); 9];
+    let mut cols = vec![HashSet::new(); 9];
+    let mut boxes = vec![HashSet::new(); 9];
+    for (i, row) in rows.iter_mut().enumerate().take(9) {
+        for (j, col) in cols.iter_mut().enumerate().take(9) {
+            let c = board[i][j];
             if c == '.' {
                 continue;
             }
-            if !rows[i].insert(c) {
+            if !row.insert(c) {
                 return false;
             }
-            if !cols[j].insert(c) {
+            if !col.insert(c) {
                 return false;
             }
             let k = (i / 3) * 3 + (j / 3);
