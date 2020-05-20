@@ -1,10 +1,33 @@
 // https://leetcode.com/problems/valid-sudoku/
+// Runtime: 0 ms
+// Memory Usage: 2 MB
+use std::collections::HashSet;
 pub fn is_valid_sudoku(board: Vec<Vec<char>>) -> bool {
-    todo!()
+    let mut rows: Vec<HashSet<char>> = vec![HashSet::new(); 9];
+    let mut cols: Vec<HashSet<char>> = vec![HashSet::new(); 9];
+    let mut boxes: Vec<HashSet<char>> = vec![HashSet::new(); 9];
+    for i in 0..9 {
+        for j in 0..9 {
+            let c: char = board[i][j];
+            if c == '.' {
+                continue;
+            }
+            if !rows[i].insert(c) {
+                return false;
+            }
+            if !cols[j].insert(c) {
+                return false;
+            }
+            let k = (i / 3) * 3 + (j / 3);
+            if !boxes[k].insert(c) {
+                return false;
+            }
+        }
+    }
+    true
 }
 // hash_table
 #[test]
-#[ignore]
 fn test1_36() {
     assert_eq!(
         is_valid_sudoku(vec![
