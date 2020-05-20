@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/valid-sudoku/
-// Runtime: 0 ms
+// Runtime: 4 ms
 // Memory Usage: 2 MB
 use std::collections::HashSet;
 pub fn is_valid_sudoku(board: Vec<Vec<char>>) -> bool {
