@@ -20,12 +20,12 @@ fn backtrack(
     if target == 0 {
         res.push(combination.to_vec());
     } else {
-        for i in begin..candidates.len() {
-            if candidates[i] > target {
+        for (i, &candidate) in candidates.iter().enumerate().skip(begin) {
+            if candidate > target {
                 break;
             } else {
-                combination.push(candidates[i]);
-                backtrack(res, combination, candidates, target - candidates[i], i);
+                combination.push(candidate);
+                backtrack(res, combination, candidates, target - candidate, i);
                 combination.pop();
             }
         }
@@ -33,11 +33,10 @@ fn backtrack(
 }
 // array backtracking
 #[test]
-#[ignore]
 fn test1_39() {
     assert_eq!(
         combination_sum(vec![2, 3, 6, 7], 7),
-        vec![vec![7], vec![2, 2, 3]]
+        vec![vec![2, 2, 3], vec![7]]
     );
     assert_eq!(
         combination_sum(vec![2, 3, 5], 8),

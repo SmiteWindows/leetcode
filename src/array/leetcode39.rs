@@ -20,12 +20,12 @@ fn backtrack(
     if target == 0 {
         res.push(combination.to_vec());
     } else {
-        for i in begin..candidates.len() {
-            if candidates[i] > target {
+        for (i, &candidate) in candidates.iter().enumerate().skip(begin) {
+            if candidate > target {
                 break;
             } else {
-                combination.push(candidates[i]);
-                backtrack(res, combination, candidates, target - candidates[i], i);
+                combination.push(candidate);
+                backtrack(res, combination, candidates, target - candidate, i);
                 combination.pop();
             }
         }
