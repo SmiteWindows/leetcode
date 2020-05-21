@@ -21,18 +21,18 @@ impl TreeNode {
 // Memory Usage: 2.9 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn convert_bst(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
-    fn walk(root: Option<&Rc<RefCell<TreeNode>>>, sum: &mut i32) {
-        if let Some(node) = root {
-            walk(node.borrow().right.as_ref(), sum);
-            *sum += node.borrow().val;
-            node.borrow_mut().val = *sum;
-            walk(node.borrow().left.as_ref(), sum);
-        }
-    }
-
     let mut sum = 0;
     walk(root.as_ref(), &mut sum);
     root
+}
+
+fn walk(root: Option<&Rc<RefCell<TreeNode>>>, sum: &mut i32) {
+    if let Some(node) = root {
+        walk(node.borrow().right.as_ref(), sum);
+        *sum += node.borrow().val;
+        node.borrow_mut().val = *sum;
+        walk(node.borrow().left.as_ref(), sum);
+    }
 }
 // tree
 #[test]

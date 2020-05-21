@@ -21,22 +21,22 @@ impl TreeNode {
 // Memory Usage: 2.8 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn get_minimum_difference(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    fn walk(root: Option<&Rc<RefCell<TreeNode>>>, prev: &mut Option<i32>, mut res: i32) -> i32 {
-        if let Some(node) = root {
-            let node = node.borrow();
-            res = walk(node.left.as_ref(), prev, res);
-            let val = node.val;
-            if let Some(n) = prev {
-                res = res.min(val - *n);
-            }
-            *prev = Some(val);
-            res = walk(node.right.as_ref(), prev, res);
-        }
-        res
-    }
-
     let (mut prev, res) = (None, i32::MAX);
     walk(root.as_ref(), &mut prev, res)
+}
+
+fn walk(root: Option<&Rc<RefCell<TreeNode>>>, prev: &mut Option<i32>, mut res: i32) -> i32 {
+    if let Some(node) = root {
+        let node = node.borrow();
+        res = walk(node.left.as_ref(), prev, res);
+        let val = node.val;
+        if let Some(n) = prev {
+            res = res.min(val - *n);
+        }
+        *prev = Some(val);
+        res = walk(node.right.as_ref(), prev, res);
+    }
+    res
 }
 // tree
 #[test]

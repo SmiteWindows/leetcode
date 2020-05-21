@@ -2,41 +2,6 @@
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn solve_sudoku(board: &mut Vec<Vec<char>>) {
-    fn dfs(
-        start: usize,
-        board: &mut Vec<Vec<char>>,
-        rows: &mut Vec<u32>,
-        cols: &mut Vec<u32>,
-        zones: &mut Vec<Vec<u32>>,
-    ) -> bool {
-        if start == 81 {
-            return true;
-        }
-        let i = start / 9;
-        let j = start % 9;
-        if board[i][j] == '.' {
-            for k in (0..9).rev() {
-                let bit = 1 << k;
-                if rows[i] & bit == 0 && cols[j] & bit == 0 && zones[i / 3][j / 3] & bit == 0 {
-                    board[i][j] = (b'1' + k as u8) as char;
-                    rows[i] |= bit;
-                    cols[j] |= bit;
-                    zones[i / 3][j / 3] |= bit;
-                    if dfs(start + 1, board, rows, cols, zones) {
-                        return true;
-                    }
-                    board[i][j] = '.';
-                    rows[i] &= !bit;
-                    cols[j] &= !bit;
-                    zones[i / 3][j / 3] &= !bit;
-                }
-            }
-            false
-        } else {
-            dfs(start + 1, board, rows, cols, zones)
-        }
-    }
-
     let mut rows = vec![0; 9];
     let mut cols = vec![0; 9];
     let mut zones = vec![vec![0; 3]; 3];
@@ -53,6 +18,42 @@ pub fn solve_sudoku(board: &mut Vec<Vec<char>>) {
     }
     dfs(0, board, &mut rows, &mut cols, &mut zones);
 }
+
+fn dfs(
+    start: usize,
+    board: &mut Vec<Vec<char>>,
+    rows: &mut Vec<u32>,
+    cols: &mut Vec<u32>,
+    zones: &mut Vec<Vec<u32>>,
+) -> bool {
+    if start == 81 {
+        return true;
+    }
+    let i = start / 9;
+    let j = start % 9;
+    if board[i][j] == '.' {
+        for k in (0..9).rev() {
+            let bit = 1 << k;
+            if rows[i] & bit == 0 && cols[j] & bit == 0 && zones[i / 3][j / 3] & bit == 0 {
+                board[i][j] = (b'1' + k as u8) as char;
+                rows[i] |= bit;
+                cols[j] |= bit;
+                zones[i / 3][j / 3] |= bit;
+                if dfs(start + 1, board, rows, cols, zones) {
+                    return true;
+                }
+                board[i][j] = '.';
+                rows[i] &= !bit;
+                cols[j] &= !bit;
+                zones[i / 3][j / 3] &= !bit;
+            }
+        }
+        false
+    } else {
+        dfs(start + 1, board, rows, cols, zones)
+    }
+}
+
 // hash_table backtracking
 #[test]
 fn test1_37() {

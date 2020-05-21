@@ -21,32 +21,32 @@ impl TreeNode {
 // Memory Usage: 3.1 MB
 use std::{cell::RefCell, cmp::Ordering, rc::Rc};
 pub fn delete_node(root: Option<Rc<RefCell<TreeNode>>>, key: i32) -> Option<Rc<RefCell<TreeNode>>> {
-    fn helper(
-        root: Option<&Rc<RefCell<TreeNode>>>,
-        key: i32,
-        l: Option<Rc<RefCell<TreeNode>>>,
-    ) -> Option<Rc<RefCell<TreeNode>>> {
-        if let Some(node) = root {
-            let left = node.borrow().left.clone();
-            let right = node.borrow().right.clone();
-            let val = node.borrow().val;
-            match val.cmp(&key) {
-                Ordering::Equal => helper(right.as_ref(), key, left), //  helper(left.as_ref(), key, right),
-                Ordering::Less => {
-                    node.as_ref().borrow_mut().right = helper(right.as_ref(), key, l);
-                    Some(node.clone())
-                }
-                Ordering::Greater => {
-                    node.as_ref().borrow_mut().left = helper(left.as_ref(), key, l);
-                    Some(node.clone())
-                }
-            }
-        } else {
-            l
-        }
-    }
-
     helper(root.as_ref(), key, None)
+}
+
+fn helper(
+    root: Option<&Rc<RefCell<TreeNode>>>,
+    key: i32,
+    l: Option<Rc<RefCell<TreeNode>>>,
+) -> Option<Rc<RefCell<TreeNode>>> {
+    if let Some(node) = root {
+        let left = node.borrow().left.clone();
+        let right = node.borrow().right.clone();
+        let val = node.borrow().val;
+        match val.cmp(&key) {
+            Ordering::Equal => helper(right.as_ref(), key, left), //  helper(left.as_ref(), key, right),
+            Ordering::Less => {
+                node.as_ref().borrow_mut().right = helper(right.as_ref(), key, l);
+                Some(node.clone())
+            }
+            Ordering::Greater => {
+                node.as_ref().borrow_mut().left = helper(left.as_ref(), key, l);
+                Some(node.clone())
+            }
+        }
+    } else {
+        l
+    }
 }
 // tree
 #[test]

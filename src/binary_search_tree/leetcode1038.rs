@@ -21,17 +21,17 @@ impl TreeNode {
 // Memory Usage: 2.1 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn bst_to_gst(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
-    fn helper(root: Option<&Rc<RefCell<TreeNode>>>, sum: &mut i32) {
-        if let Some(node) = root {
-            helper(node.borrow().right.as_ref(), sum);
-            *sum += node.borrow().val;
-            node.borrow_mut().val = *sum;
-            helper(node.borrow().left.as_ref(), sum);
-        }
-    }
-
     helper(root.as_ref(), &mut 0);
     root
+}
+
+fn helper(root: Option<&Rc<RefCell<TreeNode>>>, sum: &mut i32) {
+    if let Some(node) = root {
+        helper(node.borrow().right.as_ref(), sum);
+        *sum += node.borrow().val;
+        node.borrow_mut().val = *sum;
+        helper(node.borrow().left.as_ref(), sum);
+    }
 }
 // binary_search_tree
 #[test]

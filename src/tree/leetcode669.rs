@@ -25,31 +25,28 @@ pub fn trim_bst(
     l: i32,
     r: i32,
 ) -> Option<Rc<RefCell<TreeNode>>> {
-    fn helper(
-        root: Option<&Rc<RefCell<TreeNode>>>,
-        l: i32,
-        r: i32,
-    ) -> Option<Rc<RefCell<TreeNode>>> {
-        if let Some(node) = root {
-            let left = helper(node.borrow().left.as_ref(), l, r);
-            let right = helper(node.borrow().right.clone().as_ref(), l, r);
-            let val = node.borrow().val;
-            if val > r {
-                return left;
-            } else if val < l {
-                return right;
-            } else {
-                node.borrow_mut().left = left;
-                node.borrow_mut().right = right;
-            }
-            Some(node.clone())
-        } else {
-            None
-        }
-    }
-
     helper(root.as_ref(), l, r)
 }
+
+fn helper(root: Option<&Rc<RefCell<TreeNode>>>, l: i32, r: i32) -> Option<Rc<RefCell<TreeNode>>> {
+    if let Some(node) = root {
+        let left = helper(node.borrow().left.as_ref(), l, r);
+        let right = helper(node.borrow().right.clone().as_ref(), l, r);
+        let val = node.borrow().val;
+        if val > r {
+            return left;
+        } else if val < l {
+            return right;
+        } else {
+            node.borrow_mut().left = left;
+            node.borrow_mut().right = right;
+        }
+        Some(node.clone())
+    } else {
+        None
+    }
+}
+
 // tree
 #[test]
 fn test1_669() {

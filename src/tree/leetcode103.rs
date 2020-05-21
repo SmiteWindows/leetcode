@@ -21,31 +21,31 @@ impl TreeNode {
 // Memory Usage: 2.1 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn zigzag_level_order(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<i32>> {
-    fn helper(root: Option<&Rc<RefCell<TreeNode>>>, level: usize, res: &mut Vec<Vec<i32>>) {
-        if let Some(node) = root {
-            let node = node.borrow();
-            if level >= res.len() {
-                let mut new_level = Vec::new();
-                new_level.push(node.val);
-                res.push(new_level);
-            } else if level % 2 == 0 {
-                res[level].push(node.val);
-            } else {
-                res[level].insert(0, node.val);
-            }
-
-            if node.left.is_some() {
-                helper(node.left.as_ref(), level + 1, res);
-            }
-            if node.right.is_some() {
-                helper(node.right.as_ref(), level + 1, res);
-            }
-        }
-    }
-
     let mut res = Vec::new();
     helper(root.as_ref(), 0, &mut res);
     res
+}
+
+fn helper(root: Option<&Rc<RefCell<TreeNode>>>, level: usize, res: &mut Vec<Vec<i32>>) {
+    if let Some(node) = root {
+        let node = node.borrow();
+        if level >= res.len() {
+            let mut new_level = Vec::new();
+            new_level.push(node.val);
+            res.push(new_level);
+        } else if level % 2 == 0 {
+            res[level].push(node.val);
+        } else {
+            res[level].insert(0, node.val);
+        }
+
+        if node.left.is_some() {
+            helper(node.left.as_ref(), level + 1, res);
+        }
+        if node.right.is_some() {
+            helper(node.right.as_ref(), level + 1, res);
+        }
+    }
 }
 // tree breadth_first_search stack
 #[test]

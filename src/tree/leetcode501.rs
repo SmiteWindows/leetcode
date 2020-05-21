@@ -21,38 +21,38 @@ impl TreeNode {
 // Memory Usage: 2.9 MB
 use std::{cell::RefCell, cmp::Ordering, rc::Rc};
 pub fn find_mode(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
-    fn walk(
-        root: Option<&Rc<RefCell<TreeNode>>>,
-        max: &mut i32,
-        cur: &mut i32,
-        count: &mut i32,
-        res: &mut Vec<i32>,
-    ) {
-        if let Some(node) = root {
-            let node = node.borrow();
-            walk(node.left.as_ref(), max, cur, count, res);
-            if node.val != *cur {
-                *count = 0;
-            }
-            *count += 1;
-            match (*max).cmp(&*count) {
-                Ordering::Equal => res.push(node.val),
-                Ordering::Less => {
-                    *max = *count;
-                    res.clear();
-                    res.push(node.val);
-                }
-                Ordering::Greater => {}
-            }
-            *cur = node.val;
-            walk(node.right.as_ref(), max, cur, count, res);
-        }
-    }
-
     let (mut max, mut cur, mut count) = (0, 0, 0);
     let mut res = Vec::new();
     walk(root.as_ref(), &mut max, &mut cur, &mut count, &mut res);
     res
+}
+
+fn walk(
+    root: Option<&Rc<RefCell<TreeNode>>>,
+    max: &mut i32,
+    cur: &mut i32,
+    count: &mut i32,
+    res: &mut Vec<i32>,
+) {
+    if let Some(node) = root {
+        let node = node.borrow();
+        walk(node.left.as_ref(), max, cur, count, res);
+        if node.val != *cur {
+            *count = 0;
+        }
+        *count += 1;
+        match (*max).cmp(&*count) {
+            Ordering::Equal => res.push(node.val),
+            Ordering::Less => {
+                *max = *count;
+                res.clear();
+                res.push(node.val);
+            }
+            Ordering::Greater => {}
+        }
+        *cur = node.val;
+        walk(node.right.as_ref(), max, cur, count, res);
+    }
 }
 // tree
 #[test]

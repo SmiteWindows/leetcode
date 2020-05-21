@@ -23,41 +23,41 @@ use std::{
     rc::Rc,
 };
 pub fn vertical_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<i32>> {
-    fn walk(
-        root: Option<&Rc<RefCell<TreeNode>>>,
-        x: i32,
-        y: i32,
-        nodes: &mut BTreeMap<i32, BTreeMap<i32, BinaryHeap<i32>>>,
-    ) {
-        if let Some(node) = root {
-            let node = node.borrow();
-            nodes
-                .entry(x)
-                .or_default()
-                .entry(y)
-                .or_default()
-                .push(node.val);
-            walk(node.left.as_ref(), x - 1, y - 1, nodes);
-            walk(node.right.as_ref(), x + 1, y - 1, nodes);
-        }
-    }
-
-    fn vertical_order(mut nodes: BTreeMap<i32, BTreeMap<i32, BinaryHeap<i32>>>) -> Vec<Vec<i32>> {
-        let n = nodes.len();
-        let mut res = vec![vec![]; n];
-        for (i, col) in nodes.values_mut().enumerate() {
-            for row in col.values_mut() {
-                while let Some(smallest) = row.pop() {
-                    res[i].push(smallest);
-                }
-            }
-        }
-        res
-    }
-
     let mut nodes = BTreeMap::new();
     walk(root.as_ref(), 0, 0, &mut nodes);
     vertical_order(nodes)
+}
+
+fn walk(
+    root: Option<&Rc<RefCell<TreeNode>>>,
+    x: i32,
+    y: i32,
+    nodes: &mut BTreeMap<i32, BTreeMap<i32, BinaryHeap<i32>>>,
+) {
+    if let Some(node) = root {
+        let node = node.borrow();
+        nodes
+            .entry(x)
+            .or_default()
+            .entry(y)
+            .or_default()
+            .push(node.val);
+        walk(node.left.as_ref(), x - 1, y - 1, nodes);
+        walk(node.right.as_ref(), x + 1, y - 1, nodes);
+    }
+}
+
+fn vertical_order(mut nodes: BTreeMap<i32, BTreeMap<i32, BinaryHeap<i32>>>) -> Vec<Vec<i32>> {
+    let n = nodes.len();
+    let mut res = vec![vec![]; n];
+    for (i, col) in nodes.values_mut().enumerate() {
+        for row in col.values_mut() {
+            while let Some(smallest) = row.pop() {
+                res[i].push(smallest);
+            }
+        }
+    }
+    res
 }
 // tree hash_table
 #[test]

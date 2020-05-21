@@ -21,20 +21,20 @@ impl TreeNode {
 // Memory Usage: 2.9 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn rob(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    fn walk(root: Option<&Rc<RefCell<TreeNode>>>) -> Vec<i32> {
-        let mut res = vec![0; 2];
-        if let Some(node) = root {
-            let node = node.borrow();
-            let left = walk(node.left.as_ref());
-            let right = walk(node.right.as_ref());
-            res[0] = left.iter().max().unwrap() + right.iter().max().unwrap();
-            res[1] = left[0] + right[0] + node.val;
-        }
-        res
-    }
-
     let res = walk(root.as_ref());
     *res.iter().max().unwrap()
+}
+
+fn walk(root: Option<&Rc<RefCell<TreeNode>>>) -> Vec<i32> {
+    let mut res = vec![0; 2];
+    if let Some(node) = root {
+        let node = node.borrow();
+        let left = walk(node.left.as_ref());
+        let right = walk(node.right.as_ref());
+        res[0] = left.iter().max().unwrap() + right.iter().max().unwrap();
+        res[1] = left[0] + right[0] + node.val;
+    }
+    res
 }
 // tree depth_first_search
 #[test]

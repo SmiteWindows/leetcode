@@ -22,28 +22,28 @@ impl TreeNode {
 use std::{cell::RefCell, rc::Rc};
 pub fn level_order_bottom(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<i32>> {
     let mut res = Vec::new();
-    fn helper(root: Option<&Rc<RefCell<TreeNode>>>, level: usize, res: &mut Vec<Vec<i32>>) {
-        if let Some(node) = root {
-            let node = node.borrow();
-            if level >= res.len() {
-                let mut new_level = Vec::new();
-                new_level.push(node.val);
-                res.push(new_level);
-            } else {
-                res[level].push(node.val);
-            }
-            if node.left.is_some() {
-                helper(node.left.as_ref(), level + 1, res);
-            }
-            if node.right.is_some() {
-                helper(node.right.as_ref(), level + 1, res);
-            }
-        }
-    }
-
     helper(root.as_ref(), 0, &mut res);
     res.reverse();
     res
+}
+
+fn helper(root: Option<&Rc<RefCell<TreeNode>>>, level: usize, res: &mut Vec<Vec<i32>>) {
+    if let Some(node) = root {
+        let node = node.borrow();
+        if level >= res.len() {
+            let mut new_level = Vec::new();
+            new_level.push(node.val);
+            res.push(new_level);
+        } else {
+            res[level].push(node.val);
+        }
+        if node.left.is_some() {
+            helper(node.left.as_ref(), level + 1, res);
+        }
+        if node.right.is_some() {
+            helper(node.right.as_ref(), level + 1, res);
+        }
+    }
 }
 // tree breadth_first_search
 #[test]

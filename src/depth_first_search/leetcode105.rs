@@ -21,19 +21,19 @@ impl TreeNode {
 // Memory Usage: 2.7 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn build_tree(preorder: Vec<i32>, inorder: Vec<i32>) -> Option<Rc<RefCell<TreeNode>>> {
-    fn helper(preorder: &[i32], inorder: &[i32]) -> Option<Rc<RefCell<TreeNode>>> {
-        if preorder.is_empty() {
-            return None;
-        }
-        let len = preorder.len();
-        let root = Some(Rc::new(RefCell::new(TreeNode::new(preorder[0]))));
-        let i = inorder.iter().position(|&x| x == preorder[0]).unwrap();
-        root.as_ref()?.borrow_mut().left = helper(&preorder[1..=i], &inorder[0..i]);
-        root.as_ref()?.borrow_mut().right = helper(&preorder[i + 1..len], &inorder[i + 1..len]);
-        root
-    }
-
     helper(&preorder, &inorder)
+}
+
+fn helper(preorder: &[i32], inorder: &[i32]) -> Option<Rc<RefCell<TreeNode>>> {
+    if preorder.is_empty() {
+        return None;
+    }
+    let len = preorder.len();
+    let root = Some(Rc::new(RefCell::new(TreeNode::new(preorder[0]))));
+    let i = inorder.iter().position(|&x| x == preorder[0]).unwrap();
+    root.as_ref()?.borrow_mut().left = helper(&preorder[1..=i], &inorder[0..i]);
+    root.as_ref()?.borrow_mut().right = helper(&preorder[i + 1..len], &inorder[i + 1..len]);
+    root
 }
 // tree depth_first_search array
 #[test]

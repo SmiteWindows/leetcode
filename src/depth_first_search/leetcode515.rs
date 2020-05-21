@@ -21,28 +21,28 @@ impl TreeNode {
 // Memory Usage: 2.9 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn largest_values(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
-    fn walk(root: Option<&Rc<RefCell<TreeNode>>>, res: &mut Vec<i32>, level: usize) {
-        if let Some(node) = root {
-            let node = node.borrow();
-            if res.len() == level {
-                res.push(i32::MIN);
-            }
-            res[level] = node.val.max(res[level]);
-            if node.left.is_some() {
-                walk(node.left.as_ref(), res, level + 1);
-            }
-            if node.right.is_some() {
-                walk(node.right.as_ref(), res, level + 1);
-            }
-        }
-    }
-
     let mut res = Vec::new();
     if root.is_none() {
         return res;
     }
     walk(root.as_ref(), &mut res, 0);
     res
+}
+
+fn walk(root: Option<&Rc<RefCell<TreeNode>>>, res: &mut Vec<i32>, level: usize) {
+    if let Some(node) = root {
+        let node = node.borrow();
+        if res.len() == level {
+            res.push(i32::MIN);
+        }
+        res[level] = node.val.max(res[level]);
+        if node.left.is_some() {
+            walk(node.left.as_ref(), res, level + 1);
+        }
+        if node.right.is_some() {
+            walk(node.right.as_ref(), res, level + 1);
+        }
+    }
 }
 // tree depth_first_search breadth_first_search
 #[test]

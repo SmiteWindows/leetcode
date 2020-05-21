@@ -24,35 +24,6 @@ pub fn del_nodes(
     root: Option<Rc<RefCell<TreeNode>>>,
     to_delete: Vec<i32>,
 ) -> Vec<Option<Rc<RefCell<TreeNode>>>> {
-    fn helper(
-        root: Option<&Rc<RefCell<TreeNode>>>,
-        is_add: bool,
-        delete_set: &mut HashSet<i32>,
-        res: &mut Vec<Option<Rc<RefCell<TreeNode>>>>,
-    ) -> bool {
-        if let Some(node) = root {
-            if delete_set.contains(&node.borrow().val) {
-                if helper(node.borrow().left.as_ref(), true, delete_set, res) {
-                    node.borrow_mut().left = None;
-                }
-                if helper(node.borrow().right.as_ref(), true, delete_set, res) {
-                    node.borrow_mut().right = None;
-                }
-                return true;
-            }
-            if is_add {
-                res.push(Some(node.clone()));
-            }
-            if helper(node.borrow().left.as_ref(), false, delete_set, res) {
-                node.borrow_mut().left = None;
-            }
-            if helper(node.borrow().right.as_ref(), false, delete_set, res) {
-                node.borrow_mut().right = None;
-            }
-        }
-        false
-    }
-
     let mut delete_set = HashSet::with_capacity(to_delete.len());
     let mut res = Vec::new();
     for delete in to_delete {
@@ -60,6 +31,35 @@ pub fn del_nodes(
     }
     helper(root.as_ref(), true, &mut delete_set, &mut res);
     res
+}
+
+fn helper(
+    root: Option<&Rc<RefCell<TreeNode>>>,
+    is_add: bool,
+    delete_set: &mut HashSet<i32>,
+    res: &mut Vec<Option<Rc<RefCell<TreeNode>>>>,
+) -> bool {
+    if let Some(node) = root {
+        if delete_set.contains(&node.borrow().val) {
+            if helper(node.borrow().left.as_ref(), true, delete_set, res) {
+                node.borrow_mut().left = None;
+            }
+            if helper(node.borrow().right.as_ref(), true, delete_set, res) {
+                node.borrow_mut().right = None;
+            }
+            return true;
+        }
+        if is_add {
+            res.push(Some(node.clone()));
+        }
+        if helper(node.borrow().left.as_ref(), false, delete_set, res) {
+            node.borrow_mut().left = None;
+        }
+        if helper(node.borrow().right.as_ref(), false, delete_set, res) {
+            node.borrow_mut().right = None;
+        }
+    }
+    false
 }
 // tree depth_first_search
 #[test]

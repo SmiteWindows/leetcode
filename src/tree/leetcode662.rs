@@ -21,26 +21,26 @@ impl TreeNode {
 // Memory Usage: 2.4 MB
 use std::{cell::RefCell, collections::HashMap, rc::Rc};
 pub fn width_of_binary_tree(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    fn walk(
-        root: Option<&Rc<RefCell<TreeNode>>>,
-        depth: i32,
-        pos: i32,
-        res: &mut i32,
-        left_map: &mut HashMap<i32, i32>,
-    ) {
-        if let Some(node) = root {
-            let node = node.borrow();
-            left_map.entry(depth).or_insert(pos);
-            *res = (pos - left_map.get(&depth).unwrap() + 1).max(*res);
-            walk(node.left.as_ref(), depth + 1, pos * 2, res, left_map);
-            walk(node.right.as_ref(), depth + 1, pos * 2 + 1, res, left_map);
-        }
-    }
-
     let mut res = 0;
     let mut left_map = HashMap::new();
     walk(root.as_ref(), 0, 0, &mut res, &mut left_map);
     res
+}
+
+fn walk(
+    root: Option<&Rc<RefCell<TreeNode>>>,
+    depth: i32,
+    pos: i32,
+    res: &mut i32,
+    left_map: &mut HashMap<i32, i32>,
+) {
+    if let Some(node) = root {
+        let node = node.borrow();
+        left_map.entry(depth).or_insert(pos);
+        *res = (pos - left_map.get(&depth).unwrap() + 1).max(*res);
+        walk(node.left.as_ref(), depth + 1, pos * 2, res, left_map);
+        walk(node.right.as_ref(), depth + 1, pos * 2 + 1, res, left_map);
+    }
 }
 // tree
 #[test]

@@ -11,32 +11,12 @@ struct CombinationIterator {
  */
 impl CombinationIterator {
     fn new(characters: String, combination_length: i32) -> Self {
-        fn dfs(
-            start: usize,
-            indexes: &mut Vec<usize>,
-            combinations: &mut Vec<String>,
-            s: &[char],
-            m: usize,
-            n: usize,
-        ) {
-            if indexes.len() == m {
-                let t: String = indexes.iter().map(|&i| s[i]).collect();
-                combinations.push(t);
-            } else {
-                for i in start..n {
-                    indexes.push(i);
-                    dfs(i + 1, indexes, combinations, s, m, n);
-                    indexes.pop();
-                }
-            }
-        }
-
         let combination_length = combination_length as usize;
         let n = characters.len();
         let mut indexes = vec![];
         let mut combinations = vec![];
         let s: Vec<char> = characters.chars().collect();
-        dfs(
+        Self::dfs(
             0,
             &mut indexes,
             &mut combinations,
@@ -50,6 +30,25 @@ impl CombinationIterator {
         }
     }
 
+    fn dfs(
+        start: usize,
+        indexes: &mut Vec<usize>,
+        combinations: &mut Vec<String>,
+        s: &[char],
+        m: usize,
+        n: usize,
+    ) {
+        if indexes.len() == m {
+            let t: String = indexes.iter().map(|&i| s[i]).collect();
+            combinations.push(t);
+        } else {
+            for i in start..n {
+                indexes.push(i);
+                Self::dfs(i + 1, indexes, combinations, s, m, n);
+                indexes.pop();
+            }
+        }
+    }
     fn next(&mut self) -> String {
         let res = self.combinations[self.index].to_string();
         self.index += 1;

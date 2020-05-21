@@ -21,21 +21,21 @@ impl TreeNode {
 // Memory Usage: 2.1 MB
 use std::{cell::RefCell, cmp::Ordering, rc::Rc};
 pub fn lca_deepest_leaves(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
-    fn helper(root: Option<&Rc<RefCell<TreeNode>>>) -> (usize, Option<Rc<RefCell<TreeNode>>>) {
-        if let Some(node) = root {
-            let left = helper(node.borrow().left.as_ref());
-            let right = helper(node.borrow().right.as_ref());
-            match left.0.cmp(&right.0) {
-                Ordering::Equal => (left.0 + 1, Some(node.clone())),
-                Ordering::Less => (right.0 + 1, right.1),
-                Ordering::Greater => (left.0 + 1, left.1),
-            }
-        } else {
-            (0, None)
-        }
-    }
-
     helper(root.as_ref()).1
+}
+
+fn helper(root: Option<&Rc<RefCell<TreeNode>>>) -> (usize, Option<Rc<RefCell<TreeNode>>>) {
+    if let Some(node) = root {
+        let left = helper(node.borrow().left.as_ref());
+        let right = helper(node.borrow().right.as_ref());
+        match left.0.cmp(&right.0) {
+            Ordering::Equal => (left.0 + 1, Some(node.clone())),
+            Ordering::Less => (right.0 + 1, right.1),
+            Ordering::Greater => (left.0 + 1, left.1),
+        }
+    } else {
+        (0, None)
+    }
 }
 // tree depth_first_search
 #[test]

@@ -23,32 +23,32 @@ use std::{cell::RefCell, collections::HashMap, rc::Rc};
 pub fn find_duplicate_subtrees(
     root: Option<Rc<RefCell<TreeNode>>>,
 ) -> Vec<Option<Rc<RefCell<TreeNode>>>> {
-    fn walk(
-        root: Option<&Rc<RefCell<TreeNode>>>,
-        count: &mut HashMap<String, i32>,
-        ans: &mut Vec<Option<Rc<RefCell<TreeNode>>>>,
-    ) -> String {
-        if let Some(n) = root {
-            let node = n.borrow();
-            let serial = node.val.to_string()
-                + ","
-                + &walk(node.left.as_ref(), count, ans)
-                + ","
-                + &walk(node.right.as_ref(), count, ans);
-            *count.entry(serial.clone()).or_default() += 1;
-            if count.get(&serial).unwrap() == &2 {
-                ans.push(Some(n.clone()));
-            }
-            serial
-        } else {
-            String::from("#")
-        }
-    }
-
     let mut count = HashMap::new();
     let mut ans = Vec::new();
     walk(root.as_ref(), &mut count, &mut ans);
     ans
+}
+
+fn walk(
+    root: Option<&Rc<RefCell<TreeNode>>>,
+    count: &mut HashMap<String, i32>,
+    ans: &mut Vec<Option<Rc<RefCell<TreeNode>>>>,
+) -> String {
+    if let Some(n) = root {
+        let node = n.borrow();
+        let serial = node.val.to_string()
+            + ","
+            + &walk(node.left.as_ref(), count, ans)
+            + ","
+            + &walk(node.right.as_ref(), count, ans);
+        *count.entry(serial.clone()).or_default() += 1;
+        if count.get(&serial).unwrap() == &2 {
+            ans.push(Some(n.clone()));
+        }
+        serial
+    } else {
+        String::from("#")
+    }
 }
 // tree
 #[test]

@@ -1,6 +1,35 @@
 // https://leetcode.com/problems/combination-sum/
+// Runtime: 0 ms
+// Memory Usage: 2 MB
 pub fn combination_sum(candidates: Vec<i32>, target: i32) -> Vec<Vec<i32>> {
-    todo!()
+    let mut candidates = candidates;
+    candidates.sort_unstable();
+    let mut combination = vec![];
+    let mut res = vec![];
+    backtrack(&mut res, &mut combination, &candidates, target, 0);
+    res
+}
+
+fn backtrack(
+    res: &mut Vec<Vec<i32>>,
+    combination: &mut Vec<i32>,
+    candidates: &[i32],
+    target: i32,
+    begin: usize,
+) {
+    if target == 0 {
+        res.push(combination.to_vec());
+    } else {
+        for i in begin..candidates.len() {
+            if candidates[i] > target {
+                break;
+            } else {
+                combination.push(candidates[i]);
+                backtrack(res, combination, candidates, target - candidates[i], i);
+                combination.pop();
+            }
+        }
+    }
 }
 // array backtracking
 #[test]

@@ -21,33 +21,29 @@ impl TreeNode {
 // Memory Usage: 3 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn is_valid_bst(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
-    fn helper(
-        root: Option<&Rc<RefCell<TreeNode>>>,
-        lower: Option<i32>,
-        upper: Option<i32>,
-    ) -> bool {
-        if let Some(node) = root {
-            let node = node.borrow();
-            let val = node.val;
-            if lower.is_some() && val <= lower.unwrap() {
-                return false;
-            }
-            if upper.is_some() && val >= upper.unwrap() {
-                return false;
-            }
-            if !helper(node.left.as_ref(), lower, Some(val)) {
-                return false;
-            }
-            if !helper(node.right.as_ref(), Some(val), upper) {
-                return false;
-            }
-            true
-        } else {
-            true
-        }
-    }
-
     helper(root.as_ref(), None, None)
+}
+
+fn helper(root: Option<&Rc<RefCell<TreeNode>>>, lower: Option<i32>, upper: Option<i32>) -> bool {
+    if let Some(node) = root {
+        let node = node.borrow();
+        let val = node.val;
+        if lower.is_some() && val <= lower.unwrap() {
+            return false;
+        }
+        if upper.is_some() && val >= upper.unwrap() {
+            return false;
+        }
+        if !helper(node.left.as_ref(), lower, Some(val)) {
+            return false;
+        }
+        if !helper(node.right.as_ref(), Some(val), upper) {
+            return false;
+        }
+        true
+    } else {
+        true
+    }
 }
 // tree depth_first_search
 #[test]

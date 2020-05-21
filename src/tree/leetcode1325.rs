@@ -24,25 +24,25 @@ pub fn remove_leaf_nodes(
     root: Option<Rc<RefCell<TreeNode>>>,
     target: i32,
 ) -> Option<Rc<RefCell<TreeNode>>> {
-    fn walk(root: Option<&Rc<RefCell<TreeNode>>>, target: i32) -> Option<Rc<RefCell<TreeNode>>> {
-        if let Some(node) = root {
-            let left = walk(node.borrow().left.as_ref(), target);
-            let right = walk(node.borrow().right.as_ref(), target);
-            node.borrow_mut().left = left;
-            node.borrow_mut().right = right;
-            if node.borrow().left.is_none()
-                && node.borrow().right.is_none()
-                && node.borrow().val == target
-            {
-                return None;
-            }
-            Some(node.clone())
-        } else {
-            None
-        }
-    }
-
     walk(root.as_ref(), target)
+}
+
+fn walk(root: Option<&Rc<RefCell<TreeNode>>>, target: i32) -> Option<Rc<RefCell<TreeNode>>> {
+    if let Some(node) = root {
+        let left = walk(node.borrow().left.as_ref(), target);
+        let right = walk(node.borrow().right.as_ref(), target);
+        node.borrow_mut().left = left;
+        node.borrow_mut().right = right;
+        if node.borrow().left.is_none()
+            && node.borrow().right.is_none()
+            && node.borrow().val == target
+        {
+            return None;
+        }
+        Some(node.clone())
+    } else {
+        None
+    }
 }
 // tree
 #[test]

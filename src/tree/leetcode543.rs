@@ -21,21 +21,21 @@ impl TreeNode {
 // Memory Usage: 2.5 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn diameter_of_binary_tree(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    fn walk(root: Option<&Rc<RefCell<TreeNode>>>, depth: &mut i32) -> i32 {
-        if let Some(node) = root {
-            let node = node.borrow();
-            let left = walk(node.left.as_ref(), depth);
-            let right = walk(node.right.as_ref(), depth);
-            *depth = (left + right + 1).max(*depth);
-            left.max(right) + 1
-        } else {
-            0
-        }
-    }
-
     let mut depth = 1;
     walk(root.as_ref(), &mut depth);
     depth - 1
+}
+
+fn walk(root: Option<&Rc<RefCell<TreeNode>>>, depth: &mut i32) -> i32 {
+    if let Some(node) = root {
+        let node = node.borrow();
+        let left = walk(node.left.as_ref(), depth);
+        let right = walk(node.right.as_ref(), depth);
+        *depth = (left + right + 1).max(*depth);
+        left.max(right) + 1
+    } else {
+        0
+    }
 }
 // tree
 #[test]

@@ -21,23 +21,23 @@ impl TreeNode {
 // Memory Usage: 2.1 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn binary_tree_paths(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<String> {
-    fn helper(root: Option<&Rc<RefCell<TreeNode>>>, mut path: String, paths: &mut Vec<String>) {
-        if let Some(node) = root {
-            let node = node.borrow();
-            path += &(node.val).to_string();
-            if node.left.is_none() && node.right.is_none() {
-                paths.push(path);
-            } else {
-                path += "->";
-                helper(node.left.as_ref(), path.clone(), paths);
-                helper(node.right.as_ref(), path, paths);
-            }
-        }
-    }
-
     let mut paths: Vec<String> = Vec::new();
     helper(root.as_ref(), "".to_string(), &mut paths);
     paths
+}
+
+fn helper(root: Option<&Rc<RefCell<TreeNode>>>, mut path: String, paths: &mut Vec<String>) {
+    if let Some(node) = root {
+        let node = node.borrow();
+        path += &(node.val).to_string();
+        if node.left.is_none() && node.right.is_none() {
+            paths.push(path);
+        } else {
+            path += "->";
+            helper(node.left.as_ref(), path.clone(), paths);
+            helper(node.right.as_ref(), path, paths);
+        }
+    }
 }
 // tree depth_first_search
 #[test]

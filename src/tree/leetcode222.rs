@@ -21,18 +21,18 @@ impl TreeNode {
 // Memory Usage: 4.8 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn count_nodes(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    fn walk(root: Option<&Rc<RefCell<TreeNode>>>) -> i32 {
-        if let Some(node) = root {
-            let node = node.borrow();
-            let left = walk(node.left.as_ref());
-            let right = walk(node.right.as_ref());
-            1 + left + right
-        } else {
-            0
-        }
-    }
-
     walk(root.as_ref())
+}
+
+fn walk(root: Option<&Rc<RefCell<TreeNode>>>) -> i32 {
+    if let Some(node) = root {
+        let node = node.borrow();
+        let left = walk(node.left.as_ref());
+        let right = walk(node.right.as_ref());
+        1 + left + right
+    } else {
+        0
+    }
 }
 // tree binary_search
 #[test]

@@ -21,36 +21,36 @@ impl TreeNode {
 // Memory Usage: 10.7 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn max_sum_bst(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    fn walk(root: Option<&Rc<RefCell<TreeNode>>>, max_sum: &mut i32) -> (bool, i32, i32, i32) {
-        if let Some(node) = root {
-            let node = node.borrow();
-            let left = walk(node.left.as_ref(), max_sum);
-            let right = walk(node.right.as_ref(), max_sum);
-            let mut sum = 0;
-            if !left.0 || !right.0 || node.val >= right.1 || node.val <= left.2 {
-                return (false, 0, 0, 0);
-            }
-            let cur_min = if node.left.is_some() {
-                left.1
-            } else {
-                node.val
-            };
-            let cur_max = if node.right.is_some() {
-                right.2
-            } else {
-                node.val
-            };
-            sum += node.val + left.3 + right.3;
-            *max_sum = sum.max(*max_sum);
-            (true, cur_min, cur_max, sum)
-        } else {
-            (true, i32::MAX, i32::MIN, 0)
-        }
-    }
-
     let mut max_sum = 0;
     walk(root.as_ref(), &mut max_sum);
     max_sum
+}
+
+fn walk(root: Option<&Rc<RefCell<TreeNode>>>, max_sum: &mut i32) -> (bool, i32, i32, i32) {
+    if let Some(node) = root {
+        let node = node.borrow();
+        let left = walk(node.left.as_ref(), max_sum);
+        let right = walk(node.right.as_ref(), max_sum);
+        let mut sum = 0;
+        if !left.0 || !right.0 || node.val >= right.1 || node.val <= left.2 {
+            return (false, 0, 0, 0);
+        }
+        let cur_min = if node.left.is_some() {
+            left.1
+        } else {
+            node.val
+        };
+        let cur_max = if node.right.is_some() {
+            right.2
+        } else {
+            node.val
+        };
+        sum += node.val + left.3 + right.3;
+        *max_sum = sum.max(*max_sum);
+        (true, cur_min, cur_max, sum)
+    } else {
+        (true, i32::MAX, i32::MIN, 0)
+    }
 }
 // binary_search_tree dynamic_programming
 #[test]
