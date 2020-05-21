@@ -74,7 +74,6 @@ impl WordSearch {
 }
 // backtracking array
 #[test]
-#[ignore]
 fn test1_79() {
     let board = vec![
         vec!['A', 'B', 'C', 'E'],
