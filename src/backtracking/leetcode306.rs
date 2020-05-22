@@ -25,12 +25,10 @@ fn dfs(start: usize, cur: &mut Vec<u64>, res: &mut bool, s: &str, n: usize) {
                     cur.push(x);
                     dfs(i, cur, res, s, n);
                     cur.pop();
-                } else {
-                    if cur[k - 1] + cur[k - 2] == x {
-                        cur.push(x);
-                        dfs(i, cur, res, s, n);
-                        cur.pop();
-                    }
+                } else if cur[k - 1] + cur[k - 2] == x {
+                    cur.push(x);
+                    dfs(i, cur, res, s, n);
+                    cur.pop();
                 }
             }
         }

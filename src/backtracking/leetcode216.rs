@@ -20,17 +20,13 @@ fn dfs(
     nums: &[i32],
     n: usize,
 ) {
-    if cur.len() == n {
-        if target == 0 {
-            res.push(cur.to_vec());
-        }
-    } else {
-        if target > 0 && start < nums.len() {
-            dfs(start + 1, target, cur, res, nums, n);
-            cur.push(nums[start]);
-            dfs(start + 1, target - nums[start], cur, res, nums, n);
-            cur.pop();
-        }
+    if cur.len() == n && target == 0 {
+        res.push(cur.to_vec());
+    } else if target > 0 && start < nums.len() {
+        dfs(start + 1, target, cur, res, nums, n);
+        cur.push(nums[start]);
+        dfs(start + 1, target - nums[start], cur, res, nums, n);
+        cur.pop();
     }
 }
 // backtracking array
