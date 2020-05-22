@@ -31,12 +31,12 @@ fn test2_90() {
     assert_eq!(
         subsets_with_dup(vec![1, 2, 2]),
         vec![
-            vec![2],
-            vec![1],
-            vec![1, 2, 2],
-            vec![2, 2],
-            vec![1, 2],
             vec![],
+            vec![1],
+            vec![1, 2],
+            vec![1, 2, 2],
+            vec![2],
+            vec![2, 2],
         ]
     );
 }
