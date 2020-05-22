@@ -15,40 +15,39 @@ struct WordDictionary {
 impl WordDictionary {
     /** Initialize your data structure here. */
     fn new() -> Self {
-        Self {
-            map: HashMap::new(),
-            is_word: false,
-        }
+        Self::default()
     }
 
     /** Adds a word into the data structure. */
     fn add_word(&mut self, word: String) {
-        fn add(wd: &mut WordDictionary, word: &str) {
-            if let Some(c) = word.chars().next() {
-                let next_wd = wd.map.entry(c).or_insert_with(WordDictionary::new);
-                add(next_wd, &word[1..]);
-            } else {
-                wd.is_word = true;
-            }
-        }
-
-        add(self, &word);
+        Self::add(self, &word);
     }
 
+    fn add(wd: &mut WordDictionary, word: &str) {
+        if let Some(c) = word.chars().next() {
+            let next_wd = wd.map.entry(c).or_insert_with(WordDictionary::new);
+            Self::add(next_wd, &word[1..]);
+        } else {
+            wd.is_word = true;
+        }
+    }
     /** Returns if the word is in the data structure. A word could contain the dot character '.' to represent any one letter. */
     fn search(&self, word: String) -> bool {
-        fn find(wd: &WordDictionary, word: &str) -> bool {
-            match word.chars().next() {
-                Some('.') => wd.map.values().any(|next_wd| find(next_wd, &word[1..])),
-                Some(c) => wd
-                    .map
-                    .get(&c)
-                    .map_or(false, |next_wd| find(next_wd, &word[1..])),
-                None => wd.is_word,
-            }
-        }
+        Self::find(self, &word)
+    }
 
-        find(self, &word)
+    fn find(wd: &WordDictionary, word: &str) -> bool {
+        match word.chars().next() {
+            Some('.') => wd
+                .map
+                .values()
+                .any(|next_wd| Self::find(next_wd, &word[1..])),
+            Some(c) => wd
+                .map
+                .get(&c)
+                .map_or(false, |next_wd| Self::find(next_wd, &word[1..])),
+            None => wd.is_word,
+        }
     }
 }
 /**
