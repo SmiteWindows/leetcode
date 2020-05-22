@@ -1,10 +1,40 @@
 // https://leetcode.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
 pub fn max_length(arr: Vec<String>) -> i32 {
-    todo!()
+    let arr: Vec<u32> = arr
+        .into_iter()
+        .filter_map(|s| {
+            let mut bitset = 0;
+            for b in s.bytes() {
+                let bit = 1 << (b - b'a');
+                if bitset & bit == 0 {
+                    bitset |= bit
+                } else {
+                    return None;
+                }
+            }
+            Some(bitset)
+        })
+        .collect();
+    let n = arr.len();
+    let mut res = 0;
+    dfs(0, 0, &mut res, &arr, n);
+    res as i32
+}
+
+fn dfs(start: usize, cur: u32, max: &mut u32, arr: &[u32], n: usize) {
+    if start == n {
+        *max = (*max).max(cur.count_ones());
+    } else {
+        if arr[start] & cur == 0 {
+            dfs(start + 1, cur | arr[start], max, arr, n);
+        }
+        dfs(start + 1, cur, max, arr, n);
+    }
 }
 // backtracking bit_manipulation
 #[test]
-#[ignore]
 fn test2_1239() {
     assert_eq!(
         max_length(vec![
