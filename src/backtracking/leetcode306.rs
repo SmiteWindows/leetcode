@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/additive-number/
 // Runtime: 0 ms
-// Memory Usage: 2.1 MB
+// Memory Usage: 2 MB
 pub fn is_additive_number(num: String) -> bool {
     let n = num.len();
     let mut res = false;
@@ -21,11 +21,7 @@ fn dfs(start: usize, cur: &mut Vec<u64>, res: &mut bool, s: &str, n: usize) {
             }
             if let Ok(x) = s[start..i].parse::<u64>() {
                 let k = cur.len();
-                if k < 2 {
-                    cur.push(x);
-                    dfs(i, cur, res, s, n);
-                    cur.pop();
-                } else if cur[k - 1] + cur[k - 2] == x {
+                if k < 2 || cur[k - 1] + cur[k - 2] == x {
                     cur.push(x);
                     dfs(i, cur, res, s, n);
                     cur.pop();
