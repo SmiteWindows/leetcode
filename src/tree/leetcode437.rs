@@ -40,7 +40,7 @@ fn walk(
         *map.entry(curr_sum).or_default() += 1;
         res += walk(node.right.as_ref(), sum, curr_sum, map);
         res += walk(node.left.as_ref(), sum, curr_sum, map);
-        map.insert(curr_sum, map.get(&curr_sum).unwrap() - 1);
+        map.entry(curr_sum).and_modify(|e| *e -= 1);
         res
     } else {
         0

@@ -21,28 +21,28 @@ impl TreeNode {
 // Memory Usage: 2.1 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn construct_maximum_binary_tree(nums: Vec<i32>) -> Option<Rc<RefCell<TreeNode>>> {
-    fn get_max(nums: &[i32], l: usize, r: usize) -> usize {
-        let mut max_i = l;
-        for i in l..r {
-            if nums[max_i] < nums[i] {
-                max_i = i;
-            }
-        }
-        max_i
-    }
-
-    fn construct(nums: &[i32], l: usize, r: usize) -> Option<Rc<RefCell<TreeNode>>> {
-        if l == r {
-            return None;
-        }
-        let max_i = get_max(nums, l, r);
-        let mut node = TreeNode::new(nums[max_i]);
-        node.left = construct(nums, l, max_i);
-        node.right = construct(nums, max_i + 1, r);
-        Some(Rc::new(RefCell::new(node)))
-    }
-
     construct(&nums, 0, nums.len())
+}
+
+fn get_max(nums: &[i32], l: usize, r: usize) -> usize {
+    let mut max_i = l;
+    for i in l..r {
+        if nums[max_i] < nums[i] {
+            max_i = i;
+        }
+    }
+    max_i
+}
+
+fn construct(nums: &[i32], l: usize, r: usize) -> Option<Rc<RefCell<TreeNode>>> {
+    if l == r {
+        return None;
+    }
+    let max_i = get_max(nums, l, r);
+    let mut node = TreeNode::new(nums[max_i]);
+    node.left = construct(nums, l, max_i);
+    node.right = construct(nums, max_i + 1, r);
+    Some(Rc::new(RefCell::new(node)))
 }
 // tree
 #[test]

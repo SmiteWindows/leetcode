@@ -24,30 +24,30 @@ pub fn insert_into_bst(
     root: Option<Rc<RefCell<TreeNode>>>,
     val: i32,
 ) -> Option<Rc<RefCell<TreeNode>>> {
-    fn insert(root: Option<Rc<RefCell<TreeNode>>>, val: i32) -> Option<Rc<RefCell<TreeNode>>> {
-        if let Some(node) = root {
-            let node_val = node.borrow().val;
-            let left = node.borrow_mut().left.take();
-            let right = node.borrow_mut().right.take();
-            if val > node_val {
-                Some(Rc::new(RefCell::new(TreeNode {
-                    val: node_val,
-                    left,
-                    right: insert(right, val),
-                })))
-            } else {
-                Some(Rc::new(RefCell::new(TreeNode {
-                    val: node_val,
-                    left: insert(left, val),
-                    right,
-                })))
-            }
-        } else {
-            Some(Rc::new(RefCell::new(TreeNode::new(val))))
-        }
-    }
-
     insert(root, val)
+}
+
+fn insert(root: Option<Rc<RefCell<TreeNode>>>, val: i32) -> Option<Rc<RefCell<TreeNode>>> {
+    if let Some(node) = root {
+        let node_val = node.borrow().val;
+        let left = node.borrow_mut().left.take();
+        let right = node.borrow_mut().right.take();
+        if val > node_val {
+            Some(Rc::new(RefCell::new(TreeNode {
+                val: node_val,
+                left,
+                right: insert(right, val),
+            })))
+        } else {
+            Some(Rc::new(RefCell::new(TreeNode {
+                val: node_val,
+                left: insert(left, val),
+                right,
+            })))
+        }
+    } else {
+        Some(Rc::new(RefCell::new(TreeNode::new(val))))
+    }
 }
 // tree
 #[test]

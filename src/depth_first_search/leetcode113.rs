@@ -21,28 +21,28 @@ impl TreeNode {
 // Memory Usage: 2.5 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn path_sum(root: Option<Rc<RefCell<TreeNode>>>, sum: i32) -> Vec<Vec<i32>> {
-    fn path(
-        root: Option<&Rc<RefCell<TreeNode>>>,
-        sum: i32,
-        res: &mut Vec<Vec<i32>>,
-        tmp: &mut Vec<i32>,
-    ) {
-        if let Some(node) = root {
-            let node = node.borrow();
-            tmp.push(node.val);
-            if node.left.is_none() && node.right.is_none() && sum == node.val {
-                res.push(tmp.to_vec());
-            }
-            path(node.left.as_ref(), sum - node.val, res, tmp);
-            path(node.right.as_ref(), sum - node.val, res, tmp);
-            tmp.pop();
-        }
-    }
-
     let mut res = Vec::new();
     let mut tmp = Vec::new();
     path(root.as_ref(), sum, &mut res, &mut tmp);
     res
+}
+
+fn path(
+    root: Option<&Rc<RefCell<TreeNode>>>,
+    sum: i32,
+    res: &mut Vec<Vec<i32>>,
+    tmp: &mut Vec<i32>,
+) {
+    if let Some(node) = root {
+        let node = node.borrow();
+        tmp.push(node.val);
+        if node.left.is_none() && node.right.is_none() && sum == node.val {
+            res.push(tmp.to_vec());
+        }
+        path(node.left.as_ref(), sum - node.val, res, tmp);
+        path(node.right.as_ref(), sum - node.val, res, tmp);
+        tmp.pop();
+    }
 }
 // tree depth_first_search
 #[test]

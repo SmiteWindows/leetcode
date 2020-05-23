@@ -21,19 +21,19 @@ impl TreeNode {
 // Memory Usage: 2.1 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn invert_tree(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
-    fn invert(root: Option<&Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
-        if let Some(node) = root {
-            let left = invert(node.borrow().left.as_ref());
-            let right = invert(node.borrow().right.as_ref());
-            node.as_ref().borrow_mut().left = right;
-            node.as_ref().borrow_mut().right = left;
-            Some(node.clone())
-        } else {
-            None
-        }
-    }
-
     invert(root.as_ref())
+}
+
+fn invert(root: Option<&Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
+    if let Some(node) = root {
+        let left = invert(node.borrow().left.as_ref());
+        let right = invert(node.borrow().right.as_ref());
+        node.as_ref().borrow_mut().left = right;
+        node.as_ref().borrow_mut().right = left;
+        Some(node.clone())
+    } else {
+        None
+    }
 }
 // tree
 #[test]

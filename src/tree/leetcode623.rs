@@ -25,24 +25,6 @@ pub fn add_one_row(
     v: i32,
     d: i32,
 ) -> Option<Rc<RefCell<TreeNode>>> {
-    fn insert(root: Option<&mut Rc<RefCell<TreeNode>>>, value: i32, depth: i32, n: i32) {
-        if let Some(node) = root {
-            let mut node = node.borrow_mut();
-            if depth == n - 1 {
-                let mut t = node.left.take();
-                node.left = Some(Rc::new(RefCell::new(TreeNode::new(value))));
-                node.left.as_mut().unwrap().borrow_mut().left = t;
-                t = node.right.take();
-                node.right = Some(Rc::new(RefCell::new(TreeNode::new(value))));
-                node.right.as_mut().unwrap().borrow_mut().right = t;
-            }
-            {
-                insert(node.left.as_mut(), value, depth + 1, n);
-                insert(node.right.as_mut(), value, depth + 1, n);
-            }
-        }
-    }
-
     if d == 1 {
         let mut n = TreeNode::new(v);
         n.left = root;
@@ -51,6 +33,24 @@ pub fn add_one_row(
     let mut root = root;
     insert(root.as_mut(), v, 1, d);
     root
+}
+
+fn insert(root: Option<&mut Rc<RefCell<TreeNode>>>, value: i32, depth: i32, n: i32) {
+    if let Some(node) = root {
+        let mut node = node.borrow_mut();
+        if depth == n - 1 {
+            let mut t = node.left.take();
+            node.left = Some(Rc::new(RefCell::new(TreeNode::new(value))));
+            node.left.as_mut().unwrap().borrow_mut().left = t;
+            t = node.right.take();
+            node.right = Some(Rc::new(RefCell::new(TreeNode::new(value))));
+            node.right.as_mut().unwrap().borrow_mut().right = t;
+        }
+        {
+            insert(node.left.as_mut(), value, depth + 1, n);
+            insert(node.right.as_mut(), value, depth + 1, n);
+        }
+    }
 }
 // tree
 #[test]

@@ -21,26 +21,6 @@ impl TreeNode {
 // Memory Usage: 3 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn average_of_levels(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<f64> {
-    fn average(
-        root: Option<&Rc<RefCell<TreeNode>>>,
-        i: usize,
-        sum: &mut Vec<f64>,
-        count: &mut Vec<i32>,
-    ) {
-        if let Some(node) = root {
-            let node = node.borrow();
-            if i < sum.len() {
-                sum[i] += node.val as f64;
-                count[i] += 1;
-            } else {
-                sum.push(node.val.into());
-                count.push(1);
-            }
-            average(node.left.as_ref(), i + 1, sum, count);
-            average(node.right.as_ref(), i + 1, sum, count);
-        }
-    }
-
     let mut count = Vec::new();
     let mut res = Vec::new();
     average(root.as_ref(), 0, &mut res, &mut count);
@@ -49,6 +29,26 @@ pub fn average_of_levels(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<f64> {
         res[i] /= count[i] as f64;
     }
     res
+}
+
+fn average(
+    root: Option<&Rc<RefCell<TreeNode>>>,
+    i: usize,
+    sum: &mut Vec<f64>,
+    count: &mut Vec<i32>,
+) {
+    if let Some(node) = root {
+        let node = node.borrow();
+        if i < sum.len() {
+            sum[i] += node.val as f64;
+            count[i] += 1;
+        } else {
+            sum.push(node.val.into());
+            count.push(1);
+        }
+        average(node.left.as_ref(), i + 1, sum, count);
+        average(node.right.as_ref(), i + 1, sum, count);
+    }
 }
 // tree
 #[test]

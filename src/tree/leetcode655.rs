@@ -21,39 +21,39 @@ impl TreeNode {
 // Memory Usage: 2.1 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn print_tree(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<String>> {
-    fn get_height(root: Option<&Rc<RefCell<TreeNode>>>) -> usize {
-        if let Some(node) = root {
-            let node = node.borrow();
-            1 + usize::max(
-                get_height(node.left.as_ref()),
-                get_height(node.right.as_ref()),
-            )
-        } else {
-            0
-        }
-    }
-
-    fn fill(
-        res: &mut Vec<Vec<String>>,
-        root: Option<&Rc<RefCell<TreeNode>>>,
-        i: usize,
-        l: usize,
-        r: usize,
-    ) {
-        if let Some(node) = root {
-            let node = node.borrow();
-            res[i][(l + r) / 2] = node.val.to_string();
-            fill(res, node.left.as_ref(), i + 1, l, (l + r) / 2);
-            fill(res, node.right.as_ref(), i + 1, (l + r + 1) / 2, r);
-        }
-    }
-
     let m = get_height(root.as_ref());
     let n = (1 << m) - 1;
     let mut res = vec![vec![String::from(""); n]; m];
     let len = res[0].len();
     fill(&mut res, root.as_ref(), 0, 0, len);
     res
+}
+
+fn get_height(root: Option<&Rc<RefCell<TreeNode>>>) -> usize {
+    if let Some(node) = root {
+        let node = node.borrow();
+        1 + usize::max(
+            get_height(node.left.as_ref()),
+            get_height(node.right.as_ref()),
+        )
+    } else {
+        0
+    }
+}
+
+fn fill(
+    res: &mut Vec<Vec<String>>,
+    root: Option<&Rc<RefCell<TreeNode>>>,
+    i: usize,
+    l: usize,
+    r: usize,
+) {
+    if let Some(node) = root {
+        let node = node.borrow();
+        res[i][(l + r) / 2] = node.val.to_string();
+        fill(res, node.left.as_ref(), i + 1, l, (l + r) / 2);
+        fill(res, node.right.as_ref(), i + 1, (l + r + 1) / 2, r);
+    }
 }
 // tree
 #[test]

@@ -21,31 +21,31 @@ impl TreeNode {
 // Memory Usage: 2 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn is_unival_tree(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
-    fn is_unival(root: Option<&Rc<RefCell<TreeNode>>>) -> bool {
-        match root {
-            Some(node) => {
-                let node = node.borrow();
-                let left_unival = match node.left.as_ref() {
-                    Some(left_node) => {
-                        let left_node = left_node.borrow();
-                        (node.val == left_node.val) && is_unival(node.left.as_ref())
-                    }
-                    None => true,
-                };
-                let right_unival = match node.right.as_ref() {
-                    Some(right_node) => {
-                        let right_node = right_node.borrow();
-                        (node.val == right_node.val) && is_unival(node.right.as_ref())
-                    }
-                    None => true,
-                };
-                left_unival && right_unival
-            }
-            _ => true,
-        }
-    }
-
     is_unival(root.as_ref())
+}
+
+fn is_unival(root: Option<&Rc<RefCell<TreeNode>>>) -> bool {
+    match root {
+        Some(node) => {
+            let node = node.borrow();
+            let left_unival = match node.left.as_ref() {
+                Some(left_node) => {
+                    let left_node = left_node.borrow();
+                    (node.val == left_node.val) && is_unival(node.left.as_ref())
+                }
+                None => true,
+            };
+            let right_unival = match node.right.as_ref() {
+                Some(right_node) => {
+                    let right_node = right_node.borrow();
+                    (node.val == right_node.val) && is_unival(node.right.as_ref())
+                }
+                None => true,
+            };
+            left_unival && right_unival
+        }
+        _ => true,
+    }
 }
 // tree
 #[test]

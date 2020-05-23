@@ -21,18 +21,18 @@ impl TreeNode {
 // Memory Usage: 2.6 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn max_depth(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    fn max_height(root: Option<&Rc<RefCell<TreeNode>>>) -> i32 {
-        if let Some(node) = root {
-            let node = node.borrow();
-            let left_height = max_height(node.left.as_ref());
-            let right_height = max_height(node.right.as_ref());
-            left_height.max(right_height) + 1
-        } else {
-            0
-        }
-    }
-
     max_height(root.as_ref())
+}
+
+fn max_height(root: Option<&Rc<RefCell<TreeNode>>>) -> i32 {
+    if let Some(node) = root {
+        let node = node.borrow();
+        let left_height = max_height(node.left.as_ref());
+        let right_height = max_height(node.right.as_ref());
+        left_height.max(right_height) + 1
+    } else {
+        0
+    }
 }
 // tree depth_first_search
 #[test]
