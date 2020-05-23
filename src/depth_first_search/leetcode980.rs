@@ -7,9 +7,9 @@ pub fn unique_paths_iii(grid: Vec<Vec<i32>>) -> i32 {
     let n = grid.len();
     let m = grid[0].len();
     let mut count = 0;
-    for i in 0..n {
-        for j in 0..m {
-            if grid[i][j] == 0 {
+    for row in grid.iter().take(n) {
+        for &col in row.iter().take(m) {
+            if col == 0 {
                 count += 1;
             }
         }
