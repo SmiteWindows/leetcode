@@ -21,30 +21,30 @@ impl TreeNode {
 // Memory Usage: 3.3 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn balance_bst(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
-    fn inorder(root: Option<&Rc<RefCell<TreeNode>>>, sort_list: &mut Vec<i32>) {
-        if let Some(node) = root {
-            let node = node.borrow();
-            inorder(node.left.as_ref(), sort_list);
-            sort_list.push(node.val);
-            inorder(node.right.as_ref(), sort_list);
-        }
-    }
-
-    fn build_tree(sort_list: &[i32]) -> Option<Rc<RefCell<TreeNode>>> {
-        let n = sort_list.len();
-        if n == 0 {
-            return None;
-        }
-        let m = n / 2;
-        let mut node = TreeNode::new(sort_list[m]);
-        node.left = build_tree(&sort_list[0..m]);
-        node.right = build_tree(&sort_list[m + 1..n]);
-        Some(Rc::new(RefCell::new(node)))
-    }
-
     let mut sort_list = Vec::new();
     inorder(root.as_ref(), &mut sort_list);
     build_tree(&sort_list)
+}
+
+fn inorder(root: Option<&Rc<RefCell<TreeNode>>>, sort_list: &mut Vec<i32>) {
+    if let Some(node) = root {
+        let node = node.borrow();
+        inorder(node.left.as_ref(), sort_list);
+        sort_list.push(node.val);
+        inorder(node.right.as_ref(), sort_list);
+    }
+}
+
+fn build_tree(sort_list: &[i32]) -> Option<Rc<RefCell<TreeNode>>> {
+    let n = sort_list.len();
+    if n == 0 {
+        return None;
+    }
+    let m = n / 2;
+    let mut node = TreeNode::new(sort_list[m]);
+    node.left = build_tree(&sort_list[0..m]);
+    node.right = build_tree(&sort_list[m + 1..n]);
+    Some(Rc::new(RefCell::new(node)))
 }
 // binary_search_tree
 #[test]
