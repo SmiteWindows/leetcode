@@ -19,5 +19,7 @@ pub fn intersection(nums1: Vec<i32>, nums2: Vec<i32>) -> Vec<i32> {
 #[test]
 fn test2_349() {
     assert_eq!(intersection(vec![1, 2, 2, 1], vec![2, 2]), vec![2]);
-    assert_eq!(intersection(vec![4, 9, 5], vec![9, 4, 9, 8, 4]), vec![9, 4]);
+    let mut a = intersection(vec![4, 9, 5], vec![9, 4, 9, 8, 4]);
+    a.sort_unstable();
+    assert_eq!(a, vec![4, 9]);
 }
