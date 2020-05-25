@@ -1,30 +1,37 @@
 // https://leetcode.com/problems/intersection-of-two-arrays-ii/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
-use std::cmp::Ordering::{Equal, Greater, Less};
 pub fn intersect(nums1: Vec<i32>, nums2: Vec<i32>) -> Vec<i32> {
+    if nums1.len() > nums2.len() {
+        return intersect(nums2, nums1);
+    }
     let mut nums1 = nums1;
     nums1.sort_unstable();
     let mut nums2 = nums2;
     nums2.sort_unstable();
-    let (mut i, mut j, mut k) = (0, 0, 0);
-    while i < nums1.len() && j < nums2.len() {
-        match nums1[i].cmp(&nums2[j]) {
-            Less => {
-                i += 1;
-            }
-            Equal => {
-                nums1[k] = nums1[i];
-                i += 1;
-                j += 1;
-                k += 1;
-            }
-            Greater => {
-                j += 1;
+    let n = nums1.len();
+    let mut res = vec![];
+    let mut k = 0;
+    for i in nums2 {
+        if k == n {
+            break;
+        }
+        let mut left = k;
+        let mut right = n - 1;
+        while left < right {
+            let mid = left + (right - left) / 2;
+            if nums1[mid] < i {
+                left = mid + 1;
+            } else {
+                right = mid;
             }
         }
+        if nums1[left] == i {
+            k = left + 1;
+            res.push(i);
+        }
     }
-    nums1[..k].to_vec()
+    res
 }
 // binary_search two_pointers hash_table sort
 #[test]
