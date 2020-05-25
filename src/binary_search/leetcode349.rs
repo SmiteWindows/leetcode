@@ -9,10 +9,8 @@ pub fn intersection(nums1: Vec<i32>, nums2: Vec<i32>) -> Vec<i32> {
     nums2.sort_unstable();
     let mut hs = HashSet::new();
     for i in nums2 {
-        if !hs.contains(&i) {
-            if nums1.binary_search(&i).is_ok() {
-                hs.insert(i);
-            }
+        if !hs.contains(&i) && nums1.binary_search(&i).is_ok() {
+            hs.insert(i);
         }
     }
     hs.into_iter().collect()
