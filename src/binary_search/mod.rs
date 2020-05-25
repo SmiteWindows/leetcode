@@ -33,6 +33,7 @@ pub mod leetcode352;
 pub mod leetcode354;
 pub mod leetcode363;
 pub mod leetcode367;
+pub mod leetcode374;
 pub mod leetcode378;
 pub mod leetcode392;
 pub mod leetcode4;
