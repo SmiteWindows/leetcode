@@ -1,16 +1,21 @@
 // https://leetcode.com/problems/two-sum/
-// Runtime: 24 ms
+// Runtime: 0 ms
 // Memory Usage: 2.2 MB
+use std::collections::HashMap;
 pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
-    for i in 0..nums.len() {
-        let a = target - nums[i];
-        for (k, &k_num) in nums.iter().enumerate().skip(i + 1) {
-            if a == k_num {
-                return vec![i as i32, k as i32];
+    let nums_map: HashMap<i32, usize> = nums
+        .iter()
+        .enumerate()
+        .map(|(index, value)| (target - value, index))
+        .collect();
+    for (index, value) in nums.iter().enumerate() {
+        if let Some(&j) = nums_map.get(value) {
+            if index != j {
+                return vec![index as i32, j as i32];
             }
         }
     }
-    unreachable!()
+    unreachable!();
 }
 // array hash_table
 #[test]
