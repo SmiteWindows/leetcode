@@ -15,12 +15,10 @@ pub fn search(nums: Vec<i32>, target: i32) -> i32 {
             } else {
                 l = m + 1;
             }
+        } else if nums[m as usize] <= target && target <= nums[r as usize] {
+            l = m + 1;
         } else {
-            if nums[m as usize] <= target && target <= nums[r as usize] {
-                l = m + 1;
-            } else {
-                r = m - 1;
-            }
+            r = m - 1;
         }
     }
     -1
