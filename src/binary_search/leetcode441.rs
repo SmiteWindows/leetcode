@@ -8,8 +8,8 @@ pub fn arrange_coins(n: i32) -> i32 {
     let mut r = n;
     while l <= r {
         let k = l + (r - l) / 2;
-        let t = (k + 1) * k / 2;
-        match t.cmp(&n) {
+        let target = (k + 1) * k / 2;
+        match target.cmp(&n) {
             Equal => return k as i32,
             Less => l = k + 1,
             Greater => r = k - 1,
