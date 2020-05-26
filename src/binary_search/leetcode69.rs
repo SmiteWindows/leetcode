@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/sqrtx/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
-use std::cmp::Ordering;
+use std::cmp::Ordering::{Equal, Greater, Less};
 pub fn my_sqrt(x: i32) -> i32 {
     if x == 0 {
         return 0;
@@ -13,9 +13,9 @@ pub fn my_sqrt(x: i32) -> i32 {
         let pivot = (left + right + 1) >> 1;
         let n = pivot * pivot;
         match n.cmp(&x) {
-            Ordering::Equal => return pivot as i32,
-            Ordering::Less => left = pivot,
-            Ordering::Greater => right = pivot - 1,
+            Equal => return pivot as i32,
+            Less => left = pivot,
+            Greater => right = pivot - 1,
         }
     }
     left as i32

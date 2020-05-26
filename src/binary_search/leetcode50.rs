@@ -2,18 +2,6 @@
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn my_pow(x: f64, n: i32) -> f64 {
-    fn fast_pow(x: f64, n: i64) -> f64 {
-        if n == 0 {
-            return 1.0;
-        }
-        let half = fast_pow(x, n / 2);
-        if n % 2 == 0 {
-            half * half
-        } else {
-            half * half * x
-        }
-    }
-
     let mut n = n as i64;
     let mut x = x;
     if n < 0 {
@@ -21,6 +9,18 @@ pub fn my_pow(x: f64, n: i32) -> f64 {
         n = -n;
     }
     fast_pow(x, n)
+}
+
+fn fast_pow(x: f64, n: i64) -> f64 {
+    if n == 0 {
+        return 1.0;
+    }
+    let half = fast_pow(x, n / 2);
+    if n % 2 == 0 {
+        half * half
+    } else {
+        half * half * x
+    }
 }
 // math binary_search
 #[test]
