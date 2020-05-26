@@ -4,9 +4,9 @@
 pub fn is_subsequence(s: String, t: String) -> bool {
     let mut i = 0;
     let mut j = 0;
-    let n = s.len();
-    let m = t.len();
-    while i < n && j < m {
+    let sn = s.len();
+    let tm = t.len();
+    while i < sn && j < tm {
         if s[i..=i] == t[j..=j] {
             i += 1;
             j += 1;
@@ -14,7 +14,7 @@ pub fn is_subsequence(s: String, t: String) -> bool {
             j += 1;
         }
     }
-    i == n
+    i == sn
 }
 // binary_search dynamic_programming greedy
 #[test]
