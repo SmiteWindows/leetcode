@@ -2,10 +2,10 @@
 // Runtime: 4 ms
 // Memory Usage: 2.7 MB
 pub fn next_greatest_letter(letters: Vec<char>, target: char) -> char {
-    match letters.binary_search(&target) {
-        Ok(i) => letters[(i + 1) % letters.len()],
-        Err(i) => letters[i % letters.len()],
-    }
+    letters.binary_search(&target).map_or_else(
+        |i| letters[i % letters.len()],
+        |i| letters[(i + 1) % letters.len()],
+    )
 }
 // binary_search
 #[test]
