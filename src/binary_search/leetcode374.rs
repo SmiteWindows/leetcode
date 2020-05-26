@@ -18,10 +18,10 @@ unsafe fn guessNumber(n: i32) -> i32 {
 }
 /**
 * Forward declaration of guess API.
-* @param  num   your guess
-* @return 	     -1 if num is lower than the guess number
-*			      1 if num is higher than the guess number
-*               otherwise return 0
+* @param num your guess
+* @return -1 if num is lower than the guess number
+* 1 if num is higher than the guess number
+* otherwise return 0
 * unsafe fn guess(num: i32) -> i32 {}
 */
 unsafe fn guess(num: i32) -> i32 {
