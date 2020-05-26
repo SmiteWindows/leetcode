@@ -17,7 +17,7 @@ pub fn find_radius(houses: Vec<i32>, heaters: Vec<i32>) -> i32 {
             },
         })
         .max()
-        .unwrap_or(std::i32::MAX)
+        .unwrap_or(i32::MAX)
 }
 // binary_search
 #[test]

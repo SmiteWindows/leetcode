@@ -21,35 +21,6 @@ impl TreeNode {
 // Memory Usage: 4.8 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn count_nodes(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    fn compute_depth(mut root: Option<Rc<RefCell<TreeNode>>>) -> u32 {
-        let mut d = 0;
-        while root.as_ref().unwrap().borrow().left.is_some() {
-            let left = root.as_ref().unwrap().borrow().left.clone();
-            root = left;
-            d += 1;
-        }
-        d
-    }
-
-    fn exists(mut root: Option<Rc<RefCell<TreeNode>>>, idx: usize, d: u32) -> bool {
-        let mut left = 0 as usize;
-        let mut right = 2usize.pow(d) - 1;
-        let mut pivot;
-        for i in 0..d {
-            pivot = left + (right - left) / 2;
-            if let Some(node) = root {
-                if idx <= pivot {
-                    root = node.borrow().left.clone();
-                    right = pivot;
-                } else {
-                    root = node.borrow().right.clone();
-                    left = pivot + 1;
-                }
-            }
-        }
-        root.is_some()
-    }
-
     if root.is_none() {
         return 0;
     }
@@ -70,6 +41,35 @@ pub fn count_nodes(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     }
     let res = 2usize.pow(d) - 1 + left;
     res as i32
+}
+
+fn compute_depth(mut root: Option<Rc<RefCell<TreeNode>>>) -> u32 {
+    let mut d = 0;
+    while root.as_ref().unwrap().borrow().left.is_some() {
+        let left = root.as_ref().unwrap().borrow().left.clone();
+        root = left;
+        d += 1;
+    }
+    d
+}
+
+fn exists(mut root: Option<Rc<RefCell<TreeNode>>>, idx: usize, d: u32) -> bool {
+    let mut left = 0 as usize;
+    let mut right = 2usize.pow(d) - 1;
+    let mut pivot;
+    for i in 0..d {
+        pivot = left + (right - left) / 2;
+        if let Some(node) = root {
+            if idx <= pivot {
+                root = node.borrow().left.clone();
+                right = pivot;
+            } else {
+                root = node.borrow().right.clone();
+                left = pivot + 1;
+            }
+        }
+    }
+    root.is_some()
 }
 // tree binary_search
 #[test]
