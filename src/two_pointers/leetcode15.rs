@@ -46,8 +46,7 @@ pub fn three_sum(nums: Vec<i32>) -> Vec<Vec<i32>> {
 // array two_pointers
 #[test]
 fn test1_15() {
-    assert_eq!(
-        three_sum(vec![-1, 0, 1, 2, -1, -4]),
-        vec![vec![-1, 0, 1], vec![-1, -1, 2]]
-    );
+    let mut a = three_sum(vec![-1, 0, 1, 2, -1, -4]);
+    a.sort_unstable();
+    assert_eq!(a, vec![vec![-1, -1, 2], vec![-1, 0, 1]]);
 }
