@@ -43,18 +43,13 @@ fn test1_398() {
     for _ in 0..100 {
         let res1 = obj.pick(3);
         match res1 {
-            2 => {
-                print!("2");
-            }
-            3 => {
-                print!("3");
-            }
-            4 => {
-                print!("4");
-            }
-            _=>{
-                panic!();
-            }
+            2 => print!("2"),
+
+            3 => print!("3"),
+
+            4 => print!("4"),
+
+            _ => panic!(),
         }
     }
     let res2 = obj.pick(1);
