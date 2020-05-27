@@ -34,36 +34,16 @@ fn test1_470() {
     for _ in 0..100 {
         let res1 = rand10();
         match res1 {
-            1 => {
-                print!("1");
-            }
-            2 => {
-                print!("2");
-            }
-            3 => {
-                print!("3");
-            }
-            4 => {
-                print!("4");
-            }
-            5 => {
-                print!("5");
-            }
-            6 => {
-                print!("6");
-            }
-            7 => {
-                print!("7");
-            }
-            8 => {
-                print!("8");
-            }
-            9 => {
-                print!("9");
-            }
-            10 => {
-                println!("10");
-            }
+            1 => print!("1"),
+            2 => print!("2"),
+            3 => print!("3"),
+            4 => print!("4"),
+            5 => print!("5"),
+            6 => print!("6"),
+            7 => print!("7"),
+            8 => print!("8"),
+            9 => print!("9"),
+            10 => println!("10"),
             _ => panic!(),
         }
     }
