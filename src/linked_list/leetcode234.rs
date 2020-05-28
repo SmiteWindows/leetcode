@@ -16,17 +16,17 @@ impl ListNode {
 // Memory Usage: 4.3 MB
 pub fn is_palindrome(head: Option<Box<ListNode>>) -> bool {
     let mut head = head;
-    let mut dummy = &head;
+    let mut dummy = head.as_deref();
     let mut len: usize = 0;
-    while dummy.is_some() {
+    while let Some (x)=dummy{
         len += 1;
-        dummy = &dummy.as_ref().unwrap().next;
+        dummy = x.next.as_deref();
     }
     if len <= 1 {
         return true;
     }
     let mut first = &mut head;
-    let mut second: Option<Box<ListNode>>;
+    let mut second;
     let mid = len / 2;
     for _ in 1..mid {
         first = &mut first.as_mut().unwrap().next;
@@ -36,19 +36,16 @@ pub fn is_palindrome(head: Option<Box<ListNode>>) -> bool {
     } else {
         second = first.as_mut().unwrap().next.take().unwrap().next.take();
     }
-    let mut prev: Option<Box<ListNode>> = None;
+    let mut prev = None;
     let mut cur = head;
-    let mut next: Option<Box<ListNode>>;
-    while cur.is_some() {
-        let mut node = cur.unwrap();
-        next = node.next.take();
-        node.next = prev;
-        prev = Some(node);
+    let mut next;
+    while let Some(mut x)=cur {
+        next = x.next.take();
+        x.next = prev;
+        prev = Some(x);
         cur = next;
     }
-    while prev.is_some() && second.is_some() {
-        let node1 = prev.unwrap();
-        let node2 = second.unwrap();
+    while let (Some(node1),Some(node2))=(prev, second) {
         if node1.val != node2.val {
             return false;
         } else {

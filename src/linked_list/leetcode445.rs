@@ -20,16 +20,16 @@ pub fn add_two_numbers(
 ) -> Option<Box<ListNode>> {
     let mut stack1: Vec<i32> = vec![];
     let mut stack2: Vec<i32> = vec![];
-    let mut res: Option<Box<ListNode>> = None;
-    let mut p1 = &l1;
-    let mut p2 = &l2;
+    let mut res= None;
+    let mut p1 = l1.as_deref();
+    let mut p2 = l2.as_deref();
     while let Some(n1) = p1 {
         stack1.push(n1.val);
-        p1 = &n1.next;
+        p1 = n1.next.as_deref();
     }
     while let Some(n2) = p2 {
         stack2.push(n2.val);
-        p2 = &n2.next;
+        p2 = n2.next.as_deref();
     }
     let mut carry = 0;
     while !stack1.is_empty() || !stack2.is_empty() || carry != 0 {
