@@ -21,13 +21,13 @@ impl MyLinkedList {
     /** Get the value of the index-th node in the linked list. If the index is invalid, return -1. */
     fn get(&self, index: i32) -> i32 {
         let mut i = 0;
-        let mut link = &self.head;
+        let mut link = self.head.as_deref();
         while let Some(node) = link {
             if i == index {
                 return node.val;
             }
             i += 1;
-            link = &node.next;
+            link = node.next.as_deref();
         }
         -1
     }
@@ -55,7 +55,7 @@ impl MyLinkedList {
             self.add_at_head(val);
         } else {
             let mut i = 0;
-            let mut link = &mut self.head;
+            let mut link =self.head.as_deref_mut();
             while let Some(node) = link {
                 if index == i + 1 {
                     node.next = Some(Box::new(Node {
@@ -64,7 +64,7 @@ impl MyLinkedList {
                     }));
                     return;
                 } else {
-                    link = &mut node.next;
+                    link = node.next.as_deref_mut();
                     i += 1;
                 }
             }
