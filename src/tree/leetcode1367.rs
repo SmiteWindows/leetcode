@@ -31,13 +31,13 @@ impl TreeNode {
     }
 }
 // Runtime: 4 ms
-// Memory Usage: 2.4 MB
+// Memory Usage: 2.5 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn is_sub_path(head: Option<Box<ListNode>>, root: Option<Rc<RefCell<TreeNode>>>) -> bool {
-    helper(head.as_ref(), root.as_ref())
+    helper(head.as_deref(), root.as_ref())
 }
 
-fn helper(head: Option<&Box<ListNode>>, root: Option<&Rc<RefCell<TreeNode>>>) -> bool {
+fn helper(head: Option<&ListNode>, root: Option<&Rc<RefCell<TreeNode>>>) -> bool {
     if head.is_none() {
         return true;
     }
@@ -49,7 +49,7 @@ fn helper(head: Option<&Box<ListNode>>, root: Option<&Rc<RefCell<TreeNode>>>) ->
         || helper(head, root.unwrap().borrow().right.as_ref())
 }
 
-fn is_sub(head: Option<&Box<ListNode>>, root: Option<&Rc<RefCell<TreeNode>>>) -> bool {
+fn is_sub(head: Option<&ListNode>, root: Option<&Rc<RefCell<TreeNode>>>) -> bool {
     if head.is_none() {
         return true;
     }
@@ -60,10 +60,10 @@ fn is_sub(head: Option<&Box<ListNode>>, root: Option<&Rc<RefCell<TreeNode>>>) ->
         return false;
     }
     is_sub(
-        head.unwrap().next.as_ref(),
+        head.unwrap().next.as_deref(),
         root.unwrap().borrow().left.as_ref(),
     ) || is_sub(
-        head.unwrap().next.as_ref(),
+        head.unwrap().next.as_deref(),
         root.unwrap().borrow().right.as_ref(),
     )
 }
