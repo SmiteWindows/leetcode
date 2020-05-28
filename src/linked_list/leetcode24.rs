@@ -16,23 +16,23 @@ impl ListNode {
 // Memory Usage: 1.9 MB
 pub fn swap_pairs(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
     let mut dummy_head = Some(Box::new(ListNode { val: 0, next: head }));
-    let mut head = dummy_head.as_mut();
+    let mut head = dummy_head.as_deref_mut();
     loop {
-        let mut a = head.as_mut()?.next.take();
+        let mut a = head.as_deref_mut()?.next.take();
         if a.is_none() {
             break;
         }
-        let mut b = a.as_mut()?.next.take();
+        let mut b = a.as_deref_mut()?.next.take();
         if b.is_none() {
-            head.as_mut()?.next = a;
+            head.as_deref_mut()?.next = a;
             break;
         }
-        let next = b.as_mut()?.next.take();
+        let next = b.as_deref_mut()?.next.take();
 
-        a.as_mut()?.next = next;
-        b.as_mut()?.next = a;
-        head.as_mut()?.next = b;
-        head = head?.next.as_mut()?.next.as_mut();
+        a.as_deref_mut()?.next = next;
+        b.as_deref_mut()?.next = a;
+        head.as_deref_mut()?.next = b;
+        head = head?.next.as_deref_mut()?.next.as_deref_mut();
     }
     dummy_head?.next
 }

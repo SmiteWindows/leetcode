@@ -15,41 +15,42 @@ impl ListNode {
 // Runtime: 0 ms
 // Memory Usage: 2.3 MB
 pub fn reverse_k_group(head: Option<Box<ListNode>>, k: i32) -> Option<Box<ListNode>> {
-    fn reverse(
-        mut head: Option<Box<ListNode>>,
-        mut tail: Option<Box<ListNode>>,
-    ) -> Option<Box<ListNode>> {
-        while let Some(mut current) = head {
-            let next = current.next.take();
-            current.next = tail.take();
-            tail = Some(current);
-            head = next;
-        }
-        tail
-    }
     let mut dummy_head = Some(Box::new(ListNode { val: 0, next: head }));
-    let mut head = dummy_head.as_mut();
+    let mut head = dummy_head.as_deref_mut();
     'a: loop {
-        let mut start = head.as_mut()?.next.take();
+        let mut start = head.as_deref_mut()?.next.take();
         if start.is_none() {
             break;
         }
-        let mut end = start.as_mut();
+        let mut end = start.as_deref_mut();
         for _ in 0..k - 1 {
-            end = end?.next.as_mut();
+            end = end?.next.as_deref_mut();
             if end.is_none() {
-                head.as_mut()?.next = start;
+                head.as_deref_mut()?.next = start;
                 break 'a;
             }
         }
-        let tail = end.as_mut()?.next.take();
+        let tail = end.as_deref_mut()?.next.take();
         let end = reverse(start, tail);
-        head.as_mut()?.next = end;
+        head.as_deref_mut()?.next = end;
         for _ in 0..k {
-            head = head?.next.as_mut();
+            head = head?.next.as_deref_mut();
         }
     }
     dummy_head?.next
+}
+
+fn reverse(
+    mut head: Option<Box<ListNode>>,
+    mut tail: Option<Box<ListNode>>,
+) -> Option<Box<ListNode>> {
+    while let Some(mut current) = head {
+        let next = current.next.take();
+        current.next = tail.take();
+        tail = Some(current);
+        head = next;
+    }
+    tail
 }
 // linked_list
 #[test]
