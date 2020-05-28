@@ -15,23 +15,6 @@ impl ListNode {
 // Runtime: 4 ms
 // Memory Usage: 3.3 MB
 pub fn merge_k_lists(lists: Vec<Option<Box<ListNode>>>) -> Option<Box<ListNode>> {
-    fn merge_two_lists(
-        l1: Option<Box<ListNode>>,
-        l2: Option<Box<ListNode>>,
-    ) -> Option<Box<ListNode>> {
-        match (l1, l2) {
-            (t, None) | (None, t) => t,
-            (Some(mut p1), Some(mut p2)) => {
-                if p1.val < p2.val {
-                    p1.next = merge_two_lists(p1.next, Some(p2));
-                    Some(p1)
-                } else {
-                    p2.next = merge_two_lists(Some(p1), p2.next);
-                    Some(p2)
-                }
-            }
-        }
-    }
     if lists.is_empty() {
         return None;
     }
@@ -45,6 +28,24 @@ pub fn merge_k_lists(lists: Vec<Option<Box<ListNode>>>) -> Option<Box<ListNode>>
         i *= 2;
     }
     lists[0].take()
+}
+
+fn merge_two_lists(
+    l1: Option<Box<ListNode>>,
+    l2: Option<Box<ListNode>>,
+) -> Option<Box<ListNode>> {
+    match (l1, l2) {
+        (t, None) | (None, t) => t,
+        (Some(mut p1), Some(mut p2)) => {
+            if p1.val < p2.val {
+                p1.next = merge_two_lists(p1.next, Some(p2));
+                Some(p1)
+            } else {
+                p2.next = merge_two_lists(Some(p1), p2.next);
+                Some(p2)
+            }
+        }
+    }
 }
 // linked_list divide_and_conquer heap
 #[test]

@@ -30,7 +30,7 @@ impl PartialOrd for ListNode {
 use std::cmp::Ordering;
 pub fn merge_k_lists(lists: Vec<Option<Box<ListNode>>>) -> Option<Box<ListNode>> {
     let mut lists = lists;
-    let mut head = Box::new(ListNode::new(0));
+    let mut head = ListNode::new(0);
     let mut tail = &mut head;
     if lists.is_empty() {
         return None;
@@ -39,8 +39,8 @@ pub fn merge_k_lists(lists: Vec<Option<Box<ListNode>>>) -> Option<Box<ListNode>>
     loop {
         let mut min = 0;
         for i in 0..len {
-            if let Some(l) = lists[i].as_ref() {
-                match lists[min].as_ref() {
+            if let Some(l) = lists[i].as_deref() {
+                match lists[min].as_deref() {
                     Some(m) => {
                         if l.val <= m.val {
                             min = i;
@@ -53,7 +53,7 @@ pub fn merge_k_lists(lists: Vec<Option<Box<ListNode>>>) -> Option<Box<ListNode>>
         match lists[min].take() {
             Some(m) => {
                 tail.next = Some(Box::new(ListNode::new(m.val)));
-                tail = tail.next.as_mut()?;
+                tail = tail.next.as_deref_mut()?;
                 lists[min] = m.next; //note!
             }
             None => break,

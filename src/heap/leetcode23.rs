@@ -28,12 +28,12 @@ impl PartialOrd for ListNode {
 // Memory Usage: 3 MB
 use std::{cmp::Ordering, collections::BinaryHeap};
 pub fn merge_k_lists(lists: Vec<Option<Box<ListNode>>>) -> Option<Box<ListNode>> {
-    let mut h: BinaryHeap<Option<Box<ListNode>>> = BinaryHeap::with_capacity(lists.len());
+    let mut h = BinaryHeap::with_capacity(lists.len());
     for x in lists.iter() {
         h.push(x.clone())
     }
     let mut head = Some(Box::new(ListNode::new(0)));
-    let mut current = head.as_mut();
+    let mut current = head.as_deref_mut();
     while let Some(n) = h.pop() {
         if n.is_none() {
             continue;
@@ -42,7 +42,7 @@ pub fn merge_k_lists(lists: Vec<Option<Box<ListNode>>>) -> Option<Box<ListNode>>
         let next = ListNode::new(l.val);
         let v = current?;
         v.next = Some(Box::new(next));
-        current = v.next.as_mut();
+        current = v.next.as_deref_mut();
         h.push(l.next)
     }
     head?.next
