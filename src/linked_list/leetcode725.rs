@@ -15,17 +15,17 @@ impl ListNode {
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn split_list_to_parts(root: Option<Box<ListNode>>, k: i32) -> Vec<Option<Box<ListNode>>> {
-    let mut cur = root.as_ref();
+    let mut cur = root.as_deref();
     let k = k as usize;
     let mut n = 0;
-    while cur.is_some() {
-        cur = cur.unwrap().next.as_ref();
+    while let Some(x)=cur {
+        cur =x.next.as_deref();
         n += 1;
     }
     let width = n / k;
     let rem = n % k;
     let mut res = Vec::with_capacity(k);
-    cur = root.as_ref();
+    cur = root.as_deref();
     let mut i = 0;
     while i < k {
         let mut head = Some(Box::new(ListNode::new(0)));
@@ -35,7 +35,7 @@ pub fn split_list_to_parts(root: Option<Box<ListNode>>, k: i32) -> Vec<Option<Bo
             write.as_mut().unwrap().next = Some(Box::new(ListNode::new(cur.unwrap().val)));
             write = &mut write.as_mut().unwrap().next;
             if cur.is_some() {
-                cur = cur.unwrap().next.as_ref();
+                cur = cur.unwrap().next.as_deref();
             }
             j += 1;
         }

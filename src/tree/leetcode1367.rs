@@ -31,13 +31,13 @@ impl TreeNode {
     }
 }
 // Runtime: 4 ms
-// Memory Usage: 2.5 MB
+// Memory Usage: 2.3 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn is_sub_path(head: Option<Box<ListNode>>, root: Option<Rc<RefCell<TreeNode>>>) -> bool {
-    helper(head.as_deref(), root.as_ref())
+    helper(head.as_deref(), root.as_deref())
 }
 
-fn helper(head: Option<&ListNode>, root: Option<&Rc<RefCell<TreeNode>>>) -> bool {
+fn helper(head: Option<&ListNode>, root: Option<&RefCell<TreeNode>>) -> bool {
     if head.is_none() {
         return true;
     }
@@ -45,11 +45,11 @@ fn helper(head: Option<&ListNode>, root: Option<&Rc<RefCell<TreeNode>>>) -> bool
         return false;
     }
     is_sub(head, root)
-        || helper(head, root.unwrap().borrow().left.as_ref())
-        || helper(head, root.unwrap().borrow().right.as_ref())
+        || helper(head, root.unwrap().borrow().left.as_deref())
+        || helper(head, root.unwrap().borrow().right.as_deref())
 }
 
-fn is_sub(head: Option<&ListNode>, root: Option<&Rc<RefCell<TreeNode>>>) -> bool {
+fn is_sub(head: Option<&ListNode>, root: Option<&RefCell<TreeNode>>) -> bool {
     if head.is_none() {
         return true;
     }
@@ -61,10 +61,10 @@ fn is_sub(head: Option<&ListNode>, root: Option<&Rc<RefCell<TreeNode>>>) -> bool
     }
     is_sub(
         head.unwrap().next.as_deref(),
-        root.unwrap().borrow().left.as_ref(),
+        root.unwrap().borrow().left.as_deref(),
     ) || is_sub(
         head.unwrap().next.as_deref(),
-        root.unwrap().borrow().right.as_ref(),
+        root.unwrap().borrow().right.as_deref(),
     )
 }
 // tree linked_list dynamic_programming
