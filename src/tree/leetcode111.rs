@@ -21,10 +21,10 @@ impl TreeNode {
 // Memory Usage: 2.8 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn min_depth(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    helper(root.as_ref())
+    helper(root.as_deref())
 }
 
-fn helper(root: Option<&Rc<RefCell<TreeNode>>>) -> i32 {
+fn helper(root: Option<&RefCell<TreeNode>>) -> i32 {
     if let Some(node) = root {
         let node = node.borrow();
         let mut min_depth = i32::MAX;
@@ -32,10 +32,10 @@ fn helper(root: Option<&Rc<RefCell<TreeNode>>>) -> i32 {
             return 1;
         }
         if node.left.is_some() {
-            min_depth = min_depth.min(helper(node.left.as_ref()));
+            min_depth = min_depth.min(helper(node.left.as_deref()));
         }
         if node.right.is_some() {
-            min_depth = min_depth.min(helper(node.right.as_ref()));
+            min_depth = min_depth.min(helper(node.right.as_deref()));
         }
         min_depth + 1
     } else {

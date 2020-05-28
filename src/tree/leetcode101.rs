@@ -18,21 +18,21 @@ impl TreeNode {
     }
 }
 // Runtime: 0 ms
-// Memory Usage: 2 MB
+// Memory Usage: 2.1 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn is_symmetric(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
-    is_mirror(root.as_ref(), root.as_ref())
+    is_mirror(root.as_deref(), root.as_deref())
 }
 
-fn is_mirror(p: Option<&Rc<RefCell<TreeNode>>>, q: Option<&Rc<RefCell<TreeNode>>>) -> bool {
+fn is_mirror(p: Option<&RefCell<TreeNode>>, q: Option<&RefCell<TreeNode>>) -> bool {
     match (p, q) {
         (None, None) => true,
         (None, _) | (_, None) => false,
         (Some(pr), Some(qr)) => {
-            let (pr, qr) = (pr.as_ref().borrow(), qr.as_ref().borrow());
+            let (pr, qr) = (pr.borrow(), qr.borrow());
             (pr.val == qr.val)
-                && is_mirror(pr.right.as_ref(), qr.left.as_ref())
-                && is_mirror(pr.left.as_ref(), qr.right.as_ref())
+                && is_mirror(pr.right.as_deref(), qr.left.as_deref())
+                && is_mirror(pr.left.as_deref(), qr.right.as_deref())
         }
     }
 }

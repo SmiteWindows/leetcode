@@ -22,15 +22,15 @@ impl TreeNode {
 use std::{cell::RefCell, rc::Rc};
 pub fn find_tilt(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     let mut tilt = 0;
-    walk(root.as_ref(), &mut tilt);
+    walk(root.as_deref(), &mut tilt);
     tilt
 }
 
-fn walk(root: Option<&Rc<RefCell<TreeNode>>>, tilt: &mut i32) -> i32 {
+fn walk(root: Option<&RefCell<TreeNode>>, tilt: &mut i32) -> i32 {
     if let Some(node) = root {
         let node = node.borrow();
-        let left = walk(node.left.as_ref(), tilt);
-        let right = walk(node.right.as_ref(), tilt);
+        let left = walk(node.left.as_deref(), tilt);
+        let right = walk(node.right.as_deref(), tilt);
         *tilt += (left - right).abs();
         left + right + node.val
     } else {

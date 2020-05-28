@@ -23,7 +23,7 @@ use std::{cell::RefCell, rc::Rc};
 pub fn average_of_levels(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<f64> {
     let mut count = Vec::new();
     let mut res = Vec::new();
-    average(root.as_ref(), 0, &mut res, &mut count);
+    average(root.as_deref(), 0, &mut res, &mut count);
     let len = res.len();
     for i in 0..len {
         res[i] /= count[i] as f64;
@@ -32,7 +32,7 @@ pub fn average_of_levels(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<f64> {
 }
 
 fn average(
-    root: Option<&Rc<RefCell<TreeNode>>>,
+    root: Option<&RefCell<TreeNode>>,
     i: usize,
     sum: &mut Vec<f64>,
     count: &mut Vec<i32>,
@@ -46,8 +46,8 @@ fn average(
             sum.push(node.val.into());
             count.push(1);
         }
-        average(node.left.as_ref(), i + 1, sum, count);
-        average(node.right.as_ref(), i + 1, sum, count);
+        average(node.left.as_deref(), i + 1, sum, count);
+        average(node.right.as_deref(), i + 1, sum, count);
     }
 }
 // tree

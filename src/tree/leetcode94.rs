@@ -22,19 +22,19 @@ impl TreeNode {
 use std::{cell::RefCell, rc::Rc};
 pub fn inorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
     let mut res = Vec::new();
-    helper(root.as_ref(), &mut res);
+    helper(root.as_deref(), &mut res);
     res
 }
 
-fn helper(root: Option<&Rc<RefCell<TreeNode>>>, res: &mut Vec<i32>) {
+fn helper(root: Option<&RefCell<TreeNode>>, res: &mut Vec<i32>) {
     if let Some(node) = root {
         let node = node.borrow();
         if node.left.is_some() {
-            helper(node.left.as_ref(), res);
+            helper(node.left.as_deref(), res);
         }
         res.push(node.val);
         if node.right.is_some() {
-            helper(node.right.as_ref(), res);
+            helper(node.right.as_deref(), res);
         }
     }
 }

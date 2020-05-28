@@ -21,21 +21,21 @@ impl TreeNode {
 // Memory Usage: 4 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn range_sum_bst(root: Option<Rc<RefCell<TreeNode>>>, l: i32, r: i32) -> i32 {
-    walk(root.as_ref(), l, r, 0)
+    walk(root.as_deref(), l, r, 0)
 }
 
-fn walk(root: Option<&Rc<RefCell<TreeNode>>>, l: i32, r: i32, mut res: i32) -> i32 {
+fn walk(root: Option<&RefCell<TreeNode>>, l: i32, r: i32, mut res: i32) -> i32 {
     if let Some(node) = root {
         let node = node.borrow();
         let val = node.val;
         if val > r {
-            res = walk(node.left.as_ref(), l, r, res);
+            res = walk(node.left.as_deref(), l, r, res);
         }
         if val < l {
-            res = walk(node.right.as_ref(), l, r, res);
+            res = walk(node.right.as_deref(), l, r, res);
         }
         if l <= val && r >= val {
-            res += val + walk(node.left.as_ref(), l, r, res) + walk(node.right.as_ref(), l, r, res);
+            res += val + walk(node.left.as_deref(), l, r, res) + walk(node.right.as_deref(), l, r, res);
         }
     }
     res

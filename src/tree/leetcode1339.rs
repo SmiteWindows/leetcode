@@ -23,27 +23,27 @@ use std::{cell::RefCell, rc::Rc};
 pub fn max_product(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     let mut sum = 0;
     let mut best = 0;
-    walk(root.as_ref(), &mut sum);
-    helper(root.as_ref(), &mut sum, &mut best);
+    walk(root.as_deref(), &mut sum);
+    helper(root.as_deref(), &mut sum, &mut best);
     let res = best as i64 * (sum as i64 - best as i64) % 1_000_000_007;
     res as i32
 }
 
-fn walk(root: Option<&Rc<RefCell<TreeNode>>>, sum: &mut i32) {
+fn walk(root: Option<&RefCell<TreeNode>>, sum: &mut i32) {
     if let Some(node) = root {
         let node = node.borrow();
         *sum += node.val;
-        walk(node.left.as_ref(), sum);
-        walk(node.right.as_ref(), sum);
+        walk(node.left.as_deref(), sum);
+        walk(node.right.as_deref(), sum);
     }
 }
 
-fn helper(root: Option<&Rc<RefCell<TreeNode>>>, sum: &mut i32, best: &mut i32) -> i32 {
+fn helper(root: Option<&RefCell<TreeNode>>, sum: &mut i32, best: &mut i32) -> i32 {
     if let Some(node) = root {
         let node = node.borrow();
         let curr = node.val
-            + helper(node.left.as_ref(), sum, best)
-            + helper(node.right.as_ref(), sum, best);
+            + helper(node.left.as_deref(), sum, best)
+            + helper(node.right.as_deref(), sum, best);
         if (curr * 2 - *sum).abs() < (*best * 2 - *sum).abs() {
             *best = curr;
         }

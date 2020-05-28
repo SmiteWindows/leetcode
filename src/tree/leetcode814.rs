@@ -21,17 +21,17 @@ impl TreeNode {
 // Memory Usage: 2.1 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn prune_tree(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
-    if contains_one(root.as_ref()) {
+    if contains_one(root.as_deref()) {
         root
     } else {
         None
     }
 }
 
-fn contains_one(root: Option<&Rc<RefCell<TreeNode>>>) -> bool {
+fn contains_one(root: Option<&RefCell<TreeNode>>) -> bool {
     if let Some(node) = root {
-        let a1 = contains_one(node.borrow().left.as_ref());
-        let a2 = contains_one(node.borrow().right.as_ref());
+        let a1 = contains_one(node.borrow().left.as_deref());
+        let a2 = contains_one(node.borrow().right.as_deref());
         let node_val = node.borrow().val;
         if !a1 {
             node.borrow_mut().left = None;

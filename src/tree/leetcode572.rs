@@ -21,10 +21,10 @@ impl TreeNode {
 // Memory Usage: 2 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn is_subtree(s: Option<Rc<RefCell<TreeNode>>>, t: Option<Rc<RefCell<TreeNode>>>) -> bool {
-    helper(s.as_ref(), t.as_ref())
+    helper(s.as_deref(), t.as_deref())
 }
 
-fn is_same(s: Option<&Rc<RefCell<TreeNode>>>, t: Option<&Rc<RefCell<TreeNode>>>) -> bool {
+fn is_same(s: Option<&RefCell<TreeNode>>, t: Option<&RefCell<TreeNode>>) -> bool {
     if s.is_none() && t.is_none() {
         return true;
     }
@@ -35,11 +35,11 @@ fn is_same(s: Option<&Rc<RefCell<TreeNode>>>, t: Option<&Rc<RefCell<TreeNode>>>)
     if sn.val != tn.val {
         false
     } else {
-        is_same(sn.left.as_ref(), tn.left.as_ref()) && is_same(sn.right.as_ref(), tn.right.as_ref())
+        is_same(sn.left.as_deref(), tn.left.as_deref()) && is_same(sn.right.as_deref(), tn.right.as_deref())
     }
 }
 
-fn helper(s: Option<&Rc<RefCell<TreeNode>>>, t: Option<&Rc<RefCell<TreeNode>>>) -> bool {
+fn helper(s: Option<&RefCell<TreeNode>>, t: Option<&RefCell<TreeNode>>) -> bool {
     if s.is_none() {
         return false;
     }
@@ -47,7 +47,7 @@ fn helper(s: Option<&Rc<RefCell<TreeNode>>>, t: Option<&Rc<RefCell<TreeNode>>>) 
         true
     } else {
         let sn = s.unwrap().borrow();
-        helper(sn.left.as_ref(), t) || helper(sn.right.as_ref(), t)
+        helper(sn.left.as_deref(), t) || helper(sn.right.as_deref(), t)
     }
 }
 // tree

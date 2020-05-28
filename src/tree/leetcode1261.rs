@@ -31,18 +31,17 @@ struct FindElements {
  */
 impl FindElements {
     fn new(root: Option<Rc<RefCell<TreeNode>>>) -> Self {
-        let mut root = root;
         let mut hs = HashSet::new();
-        Self::recover(&mut root, 0, &mut hs);
+        Self::recover(root.as_deref(), 0, &mut hs);
         Self { root, hs }
     }
 
-    fn recover(root: &mut Option<Rc<RefCell<TreeNode>>>, x: i32, hs: &mut HashSet<i32>) {
+    fn recover(root:Option<&RefCell<TreeNode>>, x: i32, hs: &mut HashSet<i32>) {
         if let Some(node) = root {
             hs.insert(x);
             node.borrow_mut().val = x;
-            Self::recover(&mut node.borrow_mut().left, 2 * x + 1, hs);
-            Self::recover(&mut node.borrow_mut().right, 2 * x + 2, hs);
+            Self::recover( node.borrow_mut().left.as_deref(), 2 * x + 1, hs);
+            Self::recover( node.borrow_mut().right.as_deref(), 2 * x + 2, hs);
         }
     }
 

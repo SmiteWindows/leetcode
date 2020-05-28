@@ -23,7 +23,7 @@ use std::{cell::RefCell, rc::Rc};
 pub fn flip_match_voyage(root: Option<Rc<RefCell<TreeNode>>>, voyage: Vec<i32>) -> Vec<i32> {
     let mut flipped = Vec::new();
     let mut index = 0;
-    walk(root.as_ref(), &voyage, &mut index, &mut flipped);
+    walk(root.as_deref(), &voyage, &mut index, &mut flipped);
     if !flipped.is_empty() && flipped[0] == -1 {
         flipped.clear();
         flipped.push(-1);
@@ -32,7 +32,7 @@ pub fn flip_match_voyage(root: Option<Rc<RefCell<TreeNode>>>, voyage: Vec<i32>) 
 }
 
 fn walk(
-    root: Option<&Rc<RefCell<TreeNode>>>,
+    root: Option<&RefCell<TreeNode>>,
     voyage: &[i32],
     index: &mut usize,
     flipped: &mut Vec<i32>,
@@ -50,11 +50,11 @@ fn walk(
             && node.left.as_ref().unwrap().borrow().val != voyage[*index]
         {
             flipped.push(node.val);
-            walk(node.right.as_ref(), voyage, index, flipped);
-            walk(node.left.as_ref(), voyage, index, flipped);
+            walk(node.right.as_deref(), voyage, index, flipped);
+            walk(node.left.as_deref(), voyage, index, flipped);
         } else {
-            walk(node.left.as_ref(), voyage, index, flipped);
-            walk(node.right.as_ref(), voyage, index, flipped);
+            walk(node.left.as_deref(), voyage, index, flipped);
+            walk(node.right.as_deref(), voyage, index, flipped);
         }
     }
 }

@@ -21,10 +21,10 @@ impl TreeNode {
 // Memory Usage: 2.1 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn sum_of_left_leaves(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    helper(root.as_ref(), false)
+    helper(root.as_deref(), false)
 }
 
-fn helper(root: Option<&Rc<RefCell<TreeNode>>>, flag: bool) -> i32 {
+fn helper(root: Option<&RefCell<TreeNode>>, flag: bool) -> i32 {
     if let Some(node) = root {
         let node = node.borrow();
         let leave = if flag && node.left.is_none() && node.right.is_none() {
@@ -32,8 +32,8 @@ fn helper(root: Option<&Rc<RefCell<TreeNode>>>, flag: bool) -> i32 {
         } else {
             0
         };
-        let left = helper(node.left.as_ref(), true);
-        let right = helper(node.right.as_ref(), false);
+        let left = helper(node.left.as_deref(), true);
+        let right = helper(node.right.as_deref(), false);
         left + right + leave
     } else {
         0

@@ -24,10 +24,10 @@ pub fn flip_equiv(
     root1: Option<Rc<RefCell<TreeNode>>>,
     root2: Option<Rc<RefCell<TreeNode>>>,
 ) -> bool {
-    helper(root1.as_ref(), root2.as_ref())
+    helper(root1.as_deref(), root2.as_deref())
 }
 
-fn helper(root1: Option<&Rc<RefCell<TreeNode>>>, root2: Option<&Rc<RefCell<TreeNode>>>) -> bool {
+fn helper(root1: Option<&RefCell<TreeNode>>, root2: Option<&RefCell<TreeNode>>) -> bool {
     if root1 == root2 {
         return true;
     }
@@ -39,10 +39,10 @@ fn helper(root1: Option<&Rc<RefCell<TreeNode>>>, root2: Option<&Rc<RefCell<TreeN
     if node1.val != node2.val {
         return false;
     }
-    helper(node1.left.as_ref(), node2.left.as_ref())
-        && helper(node1.right.as_ref(), node2.right.as_ref())
-        || helper(node1.left.as_ref(), node2.right.as_ref())
-            && helper(node1.right.as_ref(), node2.left.as_ref())
+    helper(node1.left.as_deref(), node2.left.as_deref())
+        && helper(node1.right.as_deref(), node2.right.as_deref())
+        || helper(node1.left.as_deref(), node2.right.as_deref())
+            && helper(node1.right.as_deref(), node2.left.as_deref())
 }
 // tree
 #[test]

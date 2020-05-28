@@ -24,12 +24,12 @@ use std::{
 };
 pub fn vertical_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<i32>> {
     let mut nodes = BTreeMap::new();
-    walk(root.as_ref(), 0, 0, &mut nodes);
+    walk(root.as_deref(), 0, 0, &mut nodes);
     vertical_order(nodes)
 }
 
 fn walk(
-    root: Option<&Rc<RefCell<TreeNode>>>,
+    root: Option<&RefCell<TreeNode>>,
     x: i32,
     y: i32,
     nodes: &mut BTreeMap<i32, BTreeMap<i32, BinaryHeap<i32>>>,
@@ -42,8 +42,8 @@ fn walk(
             .entry(y)
             .or_default()
             .push(node.val);
-        walk(node.left.as_ref(), x - 1, y - 1, nodes);
-        walk(node.right.as_ref(), x + 1, y - 1, nodes);
+        walk(node.left.as_deref(), x - 1, y - 1, nodes);
+        walk(node.right.as_deref(), x + 1, y - 1, nodes);
     }
 }
 

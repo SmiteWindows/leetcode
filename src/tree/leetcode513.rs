@@ -23,19 +23,19 @@ use std::{cell::RefCell, rc::Rc};
 pub fn find_bottom_left_value(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     let mut res = 0;
     let mut max_level = -1;
-    walk(root.as_ref(), 0, &mut max_level, &mut res);
+    walk(root.as_deref(), 0, &mut max_level, &mut res);
     res
 }
 
-fn walk(root: Option<&Rc<RefCell<TreeNode>>>, level: i32, max_level: &mut i32, res: &mut i32) {
+fn walk(root: Option<&RefCell<TreeNode>>, level: i32, max_level: &mut i32, res: &mut i32) {
     if let Some(node) = root {
         let node = node.borrow();
         if level > *max_level {
             *max_level = level;
             *res = node.val;
         }
-        walk(node.left.as_ref(), level + 1, max_level, res);
-        walk(node.right.as_ref(), level + 1, max_level, res);
+        walk(node.left.as_deref(), level + 1, max_level, res);
+        walk(node.right.as_deref(), level + 1, max_level, res);
     }
 }
 // tree depth_first_search breadth_first_search

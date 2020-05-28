@@ -21,19 +21,19 @@ impl TreeNode {
 // Memory Usage: 2.7 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn tree2str(t: Option<Rc<RefCell<TreeNode>>>) -> String {
-    helper(t.as_ref())
+    helper(t.as_deref())
 }
 
-fn helper(t: Option<&Rc<RefCell<TreeNode>>>) -> String {
+fn helper(t: Option<&RefCell<TreeNode>>) -> String {
     if let Some(n) = t {
         let n = n.borrow();
         if n.left.is_none() && n.right.is_none() {
             return n.val.to_string() + "";
         }
         if n.right.is_none() {
-            return n.val.to_string() + "(" + &helper(n.left.as_ref()) + ")";
+            return n.val.to_string() + "(" + &helper(n.left.as_deref()) + ")";
         }
-        n.val.to_string() + "(" + &helper(n.left.as_ref()) + ")(" + &helper(n.right.as_ref()) + ")"
+        n.val.to_string() + "(" + &helper(n.left.as_deref()) + ")(" + &helper(n.right.as_deref()) + ")"
     } else {
         String::from("")
     }

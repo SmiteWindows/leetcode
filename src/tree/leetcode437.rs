@@ -23,11 +23,11 @@ use std::{cell::RefCell, collections::HashMap, rc::Rc};
 pub fn path_sum(root: Option<Rc<RefCell<TreeNode>>>, sum: i32) -> i32 {
     let mut map = HashMap::new();
     map.insert(0, 1);
-    walk(root.as_ref(), sum, 0, &mut map)
+    walk(root.as_deref(), sum, 0, &mut map)
 }
 
 fn walk(
-    root: Option<&Rc<RefCell<TreeNode>>>,
+    root: Option<&RefCell<TreeNode>>,
     sum: i32,
     mut curr_sum: i32,
     map: &mut HashMap<i32, i32>,
@@ -38,8 +38,8 @@ fn walk(
         curr_sum += node.val;
         res += *map.entry(curr_sum - sum).or_default();
         *map.entry(curr_sum).or_default() += 1;
-        res += walk(node.right.as_ref(), sum, curr_sum, map);
-        res += walk(node.left.as_ref(), sum, curr_sum, map);
+        res += walk(node.right.as_deref(), sum, curr_sum, map);
+        res += walk(node.left.as_deref(), sum, curr_sum, map);
         map.entry(curr_sum).and_modify(|e| *e -= 1);
         res
     } else {

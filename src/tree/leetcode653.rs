@@ -22,17 +22,17 @@ impl TreeNode {
 use std::{cell::RefCell, collections::HashSet, rc::Rc};
 pub fn find_target(root: Option<Rc<RefCell<TreeNode>>>, k: i32) -> bool {
     let mut set = HashSet::new();
-    walk(root.as_ref(), k, &mut set)
+    walk(root.as_deref(), k, &mut set)
 }
 
-fn walk(root: Option<&Rc<RefCell<TreeNode>>>, k: i32, set: &mut HashSet<i32>) -> bool {
+fn walk(root: Option<&RefCell<TreeNode>>, k: i32, set: &mut HashSet<i32>) -> bool {
     if let Some(node) = root {
         let node = node.borrow();
         if set.contains(&(k - node.val)) {
             return true;
         }
         set.insert(node.val);
-        walk(node.left.as_ref(), k, set) || walk(node.right.as_ref(), k, set)
+        walk(node.left.as_deref(), k, set) || walk(node.right.as_deref(), k, set)
     } else {
         false
     }

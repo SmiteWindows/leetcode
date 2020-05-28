@@ -21,22 +21,22 @@ impl TreeNode {
 // Memory Usage: 3 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn longest_univalue_path(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    arrow_length(root.as_ref(), 0).1
+    arrow_length(root.as_deref(), 0).1
 }
 
-fn arrow_length(root: Option<&Rc<RefCell<TreeNode>>>, res: i32) -> (i32, i32) {
+fn arrow_length(root: Option<&RefCell<TreeNode>>, res: i32) -> (i32, i32) {
     if let Some(node) = root {
         let node = node.borrow();
-        let (left, res) = arrow_length(node.left.as_ref(), res);
-        let (right, res) = arrow_length(node.right.as_ref(), res);
+        let (left, res) = arrow_length(node.left.as_deref(), res);
+        let (right, res) = arrow_length(node.right.as_deref(), res);
         let (mut arrow_left, mut arrow_right) = (0, 0);
-        if let Some(left_node) = node.left.as_ref() {
+        if let Some(left_node) = node.left.as_deref() {
             let left_node = left_node.borrow();
             if left_node.val == node.val {
                 arrow_left += left + 1;
             }
         }
-        if let Some(right_node) = node.right.as_ref() {
+        if let Some(right_node) = node.right.as_deref() {
             let right_node = right_node.borrow();
             if right_node.val == node.val {
                 arrow_right += right + 1;

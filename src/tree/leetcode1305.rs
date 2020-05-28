@@ -25,18 +25,18 @@ pub fn get_all_elements(
     root2: Option<Rc<RefCell<TreeNode>>>,
 ) -> Vec<i32> {
     let mut res = Vec::new();
-    walk(root1.as_ref(), &mut res);
-    walk(root2.as_ref(), &mut res);
+    walk(root1.as_deref(), &mut res);
+    walk(root2.as_deref(), &mut res);
     res.sort();
     res
 }
 
-fn walk(root: Option<&Rc<RefCell<TreeNode>>>, v: &mut Vec<i32>) {
+fn walk(root: Option<&RefCell<TreeNode>>, v: &mut Vec<i32>) {
     if let Some(node) = root {
         let node = node.borrow();
-        walk(node.left.as_ref(), v);
+        walk(node.left.as_deref(), v);
         v.push(node.val);
-        walk(node.right.as_ref(), v);
+        walk(node.right.as_deref(), v);
     }
 }
 // tree sort

@@ -21,18 +21,18 @@ impl TreeNode {
 // Memory Usage: 2.1 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn sum_root_to_leaf(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    helper(root.as_ref(), 0, 0)
+    helper(root.as_deref(), 0, 0)
 }
 
-fn helper(root: Option<&Rc<RefCell<TreeNode>>>, mut sum: i32, val: i32) -> i32 {
+fn helper(root: Option<&RefCell<TreeNode>>, mut sum: i32, val: i32) -> i32 {
     if let Some(node) = root {
         let node = node.borrow();
         let new_val = val << 1 | node.val;
         if node.left.is_none() && node.right.is_none() {
             sum += new_val;
         } else {
-            sum = helper(node.left.as_ref(), sum, new_val);
-            sum = helper(node.right.as_ref(), sum, new_val);
+            sum = helper(node.left.as_deref(), sum, new_val);
+            sum = helper(node.right.as_deref(), sum, new_val);
         }
     }
     sum

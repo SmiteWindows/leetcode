@@ -22,19 +22,19 @@ impl TreeNode {
 use std::{cell::RefCell, rc::Rc};
 pub fn min_diff_in_bst(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     let (mut prev, res) = (None, i32::MAX);
-    walk(root.as_ref(), &mut prev, res)
+    walk(root.as_deref(), &mut prev, res)
 }
 
-fn walk(root: Option<&Rc<RefCell<TreeNode>>>, prev: &mut Option<i32>, mut res: i32) -> i32 {
+fn walk(root: Option<&RefCell<TreeNode>>, prev: &mut Option<i32>, mut res: i32) -> i32 {
     if let Some(node) = root {
         let node = node.borrow();
-        res = walk(node.left.as_ref(), prev, res);
+        res = walk(node.left.as_deref(), prev, res);
         let val = node.val;
         if let Some(n) = prev {
             res = res.min(val - *n);
         }
         *prev = Some(val);
-        res = walk(node.right.as_ref(), prev, res);
+        res = walk(node.right.as_deref(), prev, res);
     }
     res
 }

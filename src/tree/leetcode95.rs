@@ -37,11 +37,11 @@ fn helper(start: i32, end: i32) -> Vec<Option<Rc<RefCell<TreeNode>>>> {
     for i in start..=end {
         let left_trees = helper(start, i - 1);
         let right_trees = helper(i + 1, end);
-        for lt in &left_trees {
-            for rt in &right_trees {
+        for lt in left_trees.iter() {
+            for rt in right_trees.iter() {
                 let curr_tree = Some(Rc::new(RefCell::new(TreeNode::new(i))));
-                curr_tree.as_ref().unwrap().borrow_mut().left = lt.clone();
-                curr_tree.as_ref().unwrap().borrow_mut().right = rt.clone();
+                curr_tree.as_deref().unwrap().borrow_mut().left = lt.clone();
+                curr_tree.as_deref().unwrap().borrow_mut().right = rt.clone();
                 res.push(curr_tree);
             }
         }
