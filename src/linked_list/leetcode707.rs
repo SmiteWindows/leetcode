@@ -55,7 +55,7 @@ impl MyLinkedList {
             self.add_at_head(val);
         } else {
             let mut i = 0;
-            let mut link =self.head.as_deref_mut();
+            let mut link = self.head.as_deref_mut();
             while let Some(node) = link {
                 if index == i + 1 {
                     node.next = Some(Box::new(Node {

@@ -35,7 +35,8 @@ fn is_same(s: Option<&RefCell<TreeNode>>, t: Option<&RefCell<TreeNode>>) -> bool
     if sn.val != tn.val {
         false
     } else {
-        is_same(sn.left.as_deref(), tn.left.as_deref()) && is_same(sn.right.as_deref(), tn.right.as_deref())
+        is_same(sn.left.as_deref(), tn.left.as_deref())
+            && is_same(sn.right.as_deref(), tn.right.as_deref())
     }
 }
 

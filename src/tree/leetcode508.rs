@@ -33,11 +33,7 @@ pub fn find_frequent_tree_sum(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
     res
 }
 
-fn walk(
-    root: Option<&RefCell<TreeNode>>,
-    map: &mut HashMap<i32, i32>,
-    max_value: &mut i32,
-) -> i32 {
+fn walk(root: Option<&RefCell<TreeNode>>, map: &mut HashMap<i32, i32>, max_value: &mut i32) -> i32 {
     if let Some(node) = root {
         let node = node.borrow();
         let left = walk(node.left.as_deref(), map, max_value);

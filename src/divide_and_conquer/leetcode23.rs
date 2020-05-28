@@ -30,10 +30,7 @@ pub fn merge_k_lists(lists: Vec<Option<Box<ListNode>>>) -> Option<Box<ListNode>>
     lists[0].take()
 }
 
-fn merge_two_lists(
-    l1: Option<Box<ListNode>>,
-    l2: Option<Box<ListNode>>,
-) -> Option<Box<ListNode>> {
+fn merge_two_lists(l1: Option<Box<ListNode>>, l2: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
     match (l1, l2) {
         (t, None) | (None, t) => t,
         (Some(mut p1), Some(mut p2)) => {

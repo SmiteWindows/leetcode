@@ -36,12 +36,12 @@ impl FindElements {
         Self { root, hs }
     }
 
-    fn recover(root:Option<&RefCell<TreeNode>>, x: i32, hs: &mut HashSet<i32>) {
+    fn recover(root: Option<&RefCell<TreeNode>>, x: i32, hs: &mut HashSet<i32>) {
         if let Some(node) = root {
             hs.insert(x);
             node.borrow_mut().val = x;
-            Self::recover( node.borrow_mut().left.as_deref(), 2 * x + 1, hs);
-            Self::recover( node.borrow_mut().right.as_deref(), 2 * x + 2, hs);
+            Self::recover(node.borrow_mut().left.as_deref(), 2 * x + 1, hs);
+            Self::recover(node.borrow_mut().right.as_deref(), 2 * x + 2, hs);
         }
     }
 

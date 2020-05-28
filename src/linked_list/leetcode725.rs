@@ -18,8 +18,8 @@ pub fn split_list_to_parts(root: Option<Box<ListNode>>, k: i32) -> Vec<Option<Bo
     let mut cur = root.as_deref();
     let k = k as usize;
     let mut n = 0;
-    while let Some(x)=cur {
-        cur =x.next.as_deref();
+    while let Some(x) = cur {
+        cur = x.next.as_deref();
         n += 1;
     }
     let width = n / k;
@@ -34,7 +34,7 @@ pub fn split_list_to_parts(root: Option<Box<ListNode>>, k: i32) -> Vec<Option<Bo
         while j < width + if i < rem { 1 } else { 0 } {
             write.as_mut().unwrap().next = Some(Box::new(ListNode::new(cur.unwrap().val)));
             write = write.unwrap().next.as_deref_mut();
-            if let Some(x)=cur {
+            if let Some(x) = cur {
                 cur = x.next.as_deref();
             }
             j += 1;

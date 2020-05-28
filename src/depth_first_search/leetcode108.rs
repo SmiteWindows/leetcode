@@ -34,8 +34,8 @@ fn helper(left: i32, right: i32, nums: &[i32]) -> Option<Rc<RefCell<TreeNode>>> 
         p += 1;
     }
     let root = Some(Rc::new(RefCell::new(TreeNode::new(nums[p]))));
-    root.as_ref()?.borrow_mut().left = helper(left, p as i32 - 1, nums);
-    root.as_ref()?.borrow_mut().right = helper(p as i32 + 1, right, nums);
+    root.as_deref()?.borrow_mut().left = helper(left, p as i32 - 1, nums);
+    root.as_deref()?.borrow_mut().right = helper(p as i32 + 1, right, nums);
     root
 }
 // tree depth_first_search

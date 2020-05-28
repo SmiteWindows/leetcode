@@ -21,17 +21,17 @@ impl TreeNode {
 // Memory Usage: 2.7 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn is_balanced(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
-    helper(root.as_ref()).1
+    helper(root.as_deref()).1
 }
 
-fn helper(root: Option<&Rc<RefCell<TreeNode>>>) -> (i32, bool) {
+fn helper(root: Option<&RefCell<TreeNode>>) -> (i32, bool) {
     if let Some(node) = root {
         let node = node.borrow();
-        let left = helper(node.left.as_ref());
+        let left = helper(node.left.as_deref());
         if !left.1 {
             return (0, false);
         }
-        let right = helper(node.right.as_ref());
+        let right = helper(node.right.as_deref());
         if !right.1 {
             return (0, false);
         }

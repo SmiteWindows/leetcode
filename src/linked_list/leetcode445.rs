@@ -20,7 +20,7 @@ pub fn add_two_numbers(
 ) -> Option<Box<ListNode>> {
     let mut stack1: Vec<i32> = vec![];
     let mut stack2: Vec<i32> = vec![];
-    let mut res= None;
+    let mut res = None;
     let mut p1 = l1.as_deref();
     let mut p2 = l2.as_deref();
     while let Some(n1) = p1 {

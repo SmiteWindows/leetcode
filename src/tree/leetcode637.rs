@@ -31,12 +31,7 @@ pub fn average_of_levels(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<f64> {
     res
 }
 
-fn average(
-    root: Option<&RefCell<TreeNode>>,
-    i: usize,
-    sum: &mut Vec<f64>,
-    count: &mut Vec<i32>,
-) {
+fn average(root: Option<&RefCell<TreeNode>>, i: usize, sum: &mut Vec<f64>, count: &mut Vec<i32>) {
     if let Some(node) = root {
         let node = node.borrow();
         if i < sum.len() {

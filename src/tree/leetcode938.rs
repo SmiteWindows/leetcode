@@ -35,7 +35,9 @@ fn walk(root: Option<&RefCell<TreeNode>>, l: i32, r: i32, mut res: i32) -> i32 {
             res = walk(node.right.as_deref(), l, r, res);
         }
         if l <= val && r >= val {
-            res += val + walk(node.left.as_deref(), l, r, res) + walk(node.right.as_deref(), l, r, res);
+            res += val
+                + walk(node.left.as_deref(), l, r, res)
+                + walk(node.right.as_deref(), l, r, res);
         }
     }
     res

@@ -18,7 +18,7 @@ pub fn is_palindrome(head: Option<Box<ListNode>>) -> bool {
     let mut head = head;
     let mut dummy = head.as_deref();
     let mut len: usize = 0;
-    while let Some (x)=dummy{
+    while let Some(x) = dummy {
         len += 1;
         dummy = x.next.as_deref();
     }
@@ -39,13 +39,13 @@ pub fn is_palindrome(head: Option<Box<ListNode>>) -> bool {
     let mut prev = None;
     let mut cur = head;
     let mut next;
-    while let Some(mut x)=cur {
+    while let Some(mut x) = cur {
         next = x.next.take();
         x.next = prev;
         prev = Some(x);
         cur = next;
     }
-    while let (Some(node1),Some(node2))=(prev, second) {
+    while let (Some(node1), Some(node2)) = (prev, second) {
         if node1.val != node2.val {
             return false;
         } else {

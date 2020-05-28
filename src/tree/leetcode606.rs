@@ -33,7 +33,12 @@ fn helper(t: Option<&RefCell<TreeNode>>) -> String {
         if n.right.is_none() {
             return n.val.to_string() + "(" + &helper(n.left.as_deref()) + ")";
         }
-        n.val.to_string() + "(" + &helper(n.left.as_deref()) + ")(" + &helper(n.right.as_deref()) + ")"
+        n.val.to_string()
+            + "("
+            + &helper(n.left.as_deref())
+            + ")("
+            + &helper(n.right.as_deref())
+            + ")"
     } else {
         String::from("")
     }

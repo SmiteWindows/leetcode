@@ -59,8 +59,8 @@ fn helper(mut head: Option<Box<ListNode>>, length: usize) -> Option<Rc<RefCell<T
     let root = Some(Rc::new(RefCell::new(TreeNode::new(
         right_half.as_deref()?.val,
     ))));
-    root.as_ref()?.borrow_mut().left = helper(head, length / 2);
-    root.as_ref()?.borrow_mut().right = helper(right_half?.next, length - length / 2 - 1);
+    root.as_deref()?.borrow_mut().left = helper(head, length / 2);
+    root.as_deref()?.borrow_mut().right = helper(right_half?.next, length - length / 2 - 1);
     root
 }
 // linked_list depth_first_search

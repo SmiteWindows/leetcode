@@ -26,19 +26,19 @@ pub fn leaf_similar(
 ) -> bool {
     let mut leaves1 = Vec::new();
     let mut leaves2 = Vec::new();
-    walk(root1.as_ref(), &mut leaves1);
-    walk(root2.as_ref(), &mut leaves2);
+    walk(root1.as_deref(), &mut leaves1);
+    walk(root2.as_deref(), &mut leaves2);
     leaves1 == leaves2
 }
 
-fn walk(root: Option<&Rc<RefCell<TreeNode>>>, leaf_values: &mut Vec<i32>) {
+fn walk(root: Option<&RefCell<TreeNode>>, leaf_values: &mut Vec<i32>) {
     if let Some(node) = root {
         let node = node.borrow();
         if node.left.is_none() && node.right.is_none() {
             leaf_values.push(node.val);
         }
-        walk(node.left.as_ref(), leaf_values);
-        walk(node.right.as_ref(), leaf_values);
+        walk(node.left.as_deref(), leaf_values);
+        walk(node.right.as_deref(), leaf_values);
     }
 }
 // tree depth_first_search

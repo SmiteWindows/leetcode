@@ -21,14 +21,18 @@ impl TreeNode {
 // Memory Usage: 2 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn is_same_tree(p: Option<Rc<RefCell<TreeNode>>>, q: Option<Rc<RefCell<TreeNode>>>) -> bool {
+    is_same(p.as_deref(), q.as_deref())
+}
+
+fn is_same(p: Option<&RefCell<TreeNode>>, q: Option<&RefCell<TreeNode>>) -> bool {
     match (p, q) {
         (None, None) => true,
         (None, _) | (_, None) => false,
         (Some(pr), Some(qr)) => {
-            let (pr, qr) = (pr.as_ref().borrow(), qr.as_ref().borrow());
+            let (pr, qr) = (pr.borrow(), qr.borrow());
             if pr.val == qr.val {
-                is_same_tree(pr.left.clone(), qr.left.clone())
-                    && is_same_tree(pr.right.clone(), qr.right.clone())
+                is_same(pr.left.as_deref(), qr.left.as_deref())
+                    && is_same(pr.right.as_deref(), qr.right.as_deref())
             } else {
                 false
             }

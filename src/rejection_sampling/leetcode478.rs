@@ -45,14 +45,14 @@ fn test1_478() {
     let ret_1 = obj.rand_point();
     let ret_2 = obj.rand_point();
     let ret_3 = obj.rand_point();
-    println!("{:?}",ret_1);
-    println!("{:?}",ret_2);
-    println!("{:?}",ret_3);
+    println!("{:?}", ret_1);
+    println!("{:?}", ret_2);
+    println!("{:?}", ret_3);
     let mut obj = Solution::new(10.0, 5.0, -7.5);
     let ret_1 = obj.rand_point();
     let ret_2 = obj.rand_point();
     let ret_3 = obj.rand_point();
-    println!("{:?}",ret_1);
-    println!("{:?}",ret_2);
-    println!("{:?}",ret_3);
+    println!("{:?}", ret_1);
+    println!("{:?}", ret_2);
+    println!("{:?}", ret_3);
 }

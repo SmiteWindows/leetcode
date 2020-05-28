@@ -22,15 +22,15 @@ impl TreeNode {
 use std::{cell::RefCell, rc::Rc};
 pub fn distribute_coins(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     let mut res = 0;
-    walk(root.as_ref(), &mut res);
+    walk(root.as_deref(), &mut res);
     res
 }
 
-fn walk(root: Option<&Rc<RefCell<TreeNode>>>, res: &mut i32) -> i32 {
+fn walk(root: Option<&RefCell<TreeNode>>, res: &mut i32) -> i32 {
     if let Some(node) = root {
         let node = node.borrow();
-        let left = walk(node.left.as_ref(), res);
-        let right = walk(node.right.as_ref(), res);
+        let left = walk(node.left.as_deref(), res);
+        let right = walk(node.right.as_deref(), res);
         *res += left.abs() + right.abs();
         node.val + left + right - 1
     } else {

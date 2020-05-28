@@ -23,11 +23,11 @@ use std::{cell::RefCell, cmp::Ordering, rc::Rc};
 pub fn deepest_leaves_sum(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     let mut max_depth = 0;
     let mut total = 0;
-    walk(root.as_ref(), 0, &mut max_depth, &mut total);
+    walk(root.as_deref(), 0, &mut max_depth, &mut total);
     total
 }
 
-fn walk(root: Option<&Rc<RefCell<TreeNode>>>, depth: i32, max_depth: &mut i32, total: &mut i32) {
+fn walk(root: Option<&RefCell<TreeNode>>, depth: i32, max_depth: &mut i32, total: &mut i32) {
     if let Some(node) = root {
         let node = node.borrow();
         match depth.cmp(max_depth) {
@@ -38,8 +38,8 @@ fn walk(root: Option<&Rc<RefCell<TreeNode>>>, depth: i32, max_depth: &mut i32, t
             }
             Ordering::Less => {}
         }
-        walk(node.left.as_ref(), depth + 1, max_depth, total);
-        walk(node.right.as_ref(), depth + 1, max_depth, total);
+        walk(node.left.as_deref(), depth + 1, max_depth, total);
+        walk(node.right.as_deref(), depth + 1, max_depth, total);
     }
 }
 // tree depth_first_search

@@ -17,9 +17,9 @@ impl ListNode {
 pub fn get_decimal_value(head: Option<Box<ListNode>>) -> i32 {
     let mut cur = head.as_deref();
     let mut res = 0;
-    while let Some(node) =cur {
-        res = res << 1 |node.val;
-        cur =node.next.as_deref();
+    while let Some(node) = cur {
+        res = res << 1 | node.val;
+        cur = node.next.as_deref();
     }
     res
 }

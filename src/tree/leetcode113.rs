@@ -27,12 +27,7 @@ pub fn path_sum(root: Option<Rc<RefCell<TreeNode>>>, sum: i32) -> Vec<Vec<i32>> 
     res
 }
 
-fn path(
-    root: Option<&RefCell<TreeNode>>,
-    sum: i32,
-    res: &mut Vec<Vec<i32>>,
-    tmp: &mut Vec<i32>,
-) {
+fn path(root: Option<&RefCell<TreeNode>>, sum: i32, res: &mut Vec<Vec<i32>>, tmp: &mut Vec<i32>) {
     if let Some(node) = root {
         let node = node.borrow();
         tmp.push(node.val);

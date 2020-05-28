@@ -48,7 +48,6 @@ fn insert(root: Option<&RefCell<TreeNode>>, value: i32, depth: i32, n: i32) {
         }
         insert(node.left.as_deref(), value, depth + 1, n);
         insert(node.right.as_deref(), value, depth + 1, n);
-        
     }
 }
 // tree

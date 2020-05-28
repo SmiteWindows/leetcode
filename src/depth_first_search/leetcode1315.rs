@@ -22,18 +22,18 @@ impl TreeNode {
 use std::{cell::RefCell, rc::Rc};
 pub fn sum_even_grandparent(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     let mut res = 0;
-    walk(root.as_ref(), 1, 1, &mut res);
+    walk(root.as_deref(), 1, 1, &mut res);
     res
 }
 
-fn walk(root: Option<&Rc<RefCell<TreeNode>>>, gp_val: i32, p_val: i32, res: &mut i32) {
+fn walk(root: Option<&RefCell<TreeNode>>, gp_val: i32, p_val: i32, res: &mut i32) {
     if let Some(node) = root {
         let node = node.borrow();
         if gp_val % 2 == 0 {
             *res += node.val;
         }
-        walk(node.left.as_ref(), p_val, node.val, res);
-        walk(node.right.as_ref(), p_val, node.val, res);
+        walk(node.left.as_deref(), p_val, node.val, res);
+        walk(node.right.as_deref(), p_val, node.val, res);
     }
 }
 // tree depth_first_search

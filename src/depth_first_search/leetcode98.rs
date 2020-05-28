@@ -21,10 +21,10 @@ impl TreeNode {
 // Memory Usage: 2.9 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn is_valid_bst(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
-    helper(root.as_ref(), None, None)
+    helper(root.as_deref(), None, None)
 }
 
-fn helper(root: Option<&Rc<RefCell<TreeNode>>>, lower: Option<i32>, upper: Option<i32>) -> bool {
+fn helper(root: Option<&RefCell<TreeNode>>, lower: Option<i32>, upper: Option<i32>) -> bool {
     if let Some(node) = root {
         let node = node.borrow();
         let val = node.val;
@@ -34,10 +34,10 @@ fn helper(root: Option<&Rc<RefCell<TreeNode>>>, lower: Option<i32>, upper: Optio
         if upper.is_some() && val >= upper.unwrap() {
             return false;
         }
-        if !helper(node.left.as_ref(), lower, Some(val)) {
+        if !helper(node.left.as_deref(), lower, Some(val)) {
             return false;
         }
-        if !helper(node.right.as_ref(), Some(val), upper) {
+        if !helper(node.right.as_deref(), Some(val), upper) {
             return false;
         }
         true

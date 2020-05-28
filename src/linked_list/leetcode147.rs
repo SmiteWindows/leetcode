@@ -16,7 +16,7 @@ impl ListNode {
 // Memory Usage: 2.4 MB
 pub fn insertion_sort_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
     let mut head = head;
-    let  head = head.as_deref_mut()?;
+    let head = head.as_deref_mut()?;
     let mut curr = head.next.take();
     let mut res = Some(Box::new(ListNode {
         val: 0,

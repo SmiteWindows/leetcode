@@ -25,11 +25,11 @@ pub fn largest_values(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
     if root.is_none() {
         return res;
     }
-    walk(root.as_ref(), &mut res, 0);
+    walk(root.as_deref(), &mut res, 0);
     res
 }
 
-fn walk(root: Option<&Rc<RefCell<TreeNode>>>, res: &mut Vec<i32>, level: usize) {
+fn walk(root: Option<&RefCell<TreeNode>>, res: &mut Vec<i32>, level: usize) {
     if let Some(node) = root {
         let node = node.borrow();
         if res.len() == level {
@@ -37,10 +37,10 @@ fn walk(root: Option<&Rc<RefCell<TreeNode>>>, res: &mut Vec<i32>, level: usize) 
         }
         res[level] = node.val.max(res[level]);
         if node.left.is_some() {
-            walk(node.left.as_ref(), res, level + 1);
+            walk(node.left.as_deref(), res, level + 1);
         }
         if node.right.is_some() {
-            walk(node.right.as_ref(), res, level + 1);
+            walk(node.right.as_deref(), res, level + 1);
         }
     }
 }

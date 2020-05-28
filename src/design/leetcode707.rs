@@ -12,7 +12,7 @@ struct Node {
  * `&self` means the method takes an immutable reference.
  * If you need a mutable reference, change it to `&mut self` instead.
  */
- impl MyLinkedList {
+impl MyLinkedList {
     /** Initialize your data structure here. */
     fn new() -> Self {
         Self { head: None }
@@ -55,7 +55,7 @@ struct Node {
             self.add_at_head(val);
         } else {
             let mut i = 0;
-            let mut link =self.head.as_deref_mut();
+            let mut link = self.head.as_deref_mut();
             while let Some(node) = link {
                 if index == i + 1 {
                     node.next = Some(Box::new(Node {

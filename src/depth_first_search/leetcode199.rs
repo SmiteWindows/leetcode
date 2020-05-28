@@ -22,11 +22,11 @@ impl TreeNode {
 use std::{cell::RefCell, rc::Rc};
 pub fn right_side_view(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
     let mut res = Vec::new();
-    walk(root.as_ref(), 0, &mut res);
+    walk(root.as_deref(), 0, &mut res);
     res
 }
 
-fn walk(root: Option<&Rc<RefCell<TreeNode>>>, level: usize, res: &mut Vec<i32>) {
+fn walk(root: Option<&RefCell<TreeNode>>, level: usize, res: &mut Vec<i32>) {
     if let Some(node) = root {
         let node = node.borrow();
         let val = node.val;
@@ -35,8 +35,8 @@ fn walk(root: Option<&Rc<RefCell<TreeNode>>>, level: usize, res: &mut Vec<i32>) 
         } else {
             res[level] = val;
         }
-        walk(node.left.as_ref(), level + 1, res);
-        walk(node.right.as_ref(), level + 1, res);
+        walk(node.left.as_deref(), level + 1, res);
+        walk(node.right.as_deref(), level + 1, res);
     }
 }
 // tree depth_first_search breadth_first_search
