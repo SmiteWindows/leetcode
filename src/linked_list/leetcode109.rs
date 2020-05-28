@@ -30,18 +30,18 @@ impl TreeNode {
         }
     }
 }
-use std::{cell::RefCell, rc::Rc};
 // Runtime: 4 ms
-// Memory Usage: 3.3 MB
+// Memory Usage: 3.5 MB
+use std::{cell::RefCell, rc::Rc};
 pub fn sorted_list_to_bst(head: Option<Box<ListNode>>) -> Option<Rc<RefCell<TreeNode>>> {
     let mut dummy_head = Some(Box::new(ListNode { val: 0, next: head }));
-    let mut ptr = dummy_head.as_ref()?;
+    let mut ptr = dummy_head.as_deref()?;
     let mut length = 0;
     while ptr.next.is_some() {
         length += 1;
-        ptr = ptr.next.as_ref()?;
+        ptr = ptr.next.as_deref()?;
     }
-    helper(dummy_head.as_mut()?.next.take(), length)
+    helper(dummy_head.as_deref_mut()?.next.take(), length)
 }
 
 fn helper(mut head: Option<Box<ListNode>>, length: usize) -> Option<Rc<RefCell<TreeNode>>> {
@@ -49,15 +49,15 @@ fn helper(mut head: Option<Box<ListNode>>, length: usize) -> Option<Rc<RefCell<T
         return None;
     }
     if length == 1 {
-        return Some(Rc::new(RefCell::new(TreeNode::new(head.as_ref()?.val))));
+        return Some(Rc::new(RefCell::new(TreeNode::new(head.as_deref()?.val))));
     }
-    let mut ptr = head.as_mut()?;
+    let mut ptr = head.as_deref_mut()?;
     for _ in 0..length / 2 - 1 {
-        ptr = ptr.next.as_mut()?;
+        ptr = ptr.next.as_deref_mut()?;
     }
     let right_half = ptr.next.take();
     let root = Some(Rc::new(RefCell::new(TreeNode::new(
-        right_half.as_ref()?.val,
+        right_half.as_deref()?.val,
     ))));
     root.as_ref()?.borrow_mut().left = helper(head, length / 2);
     root.as_ref()?.borrow_mut().right = helper(right_half?.next, length - length / 2 - 1);
@@ -65,7 +65,6 @@ fn helper(mut head: Option<Box<ListNode>>, length: usize) -> Option<Rc<RefCell<T
 }
 // linked_list depth_first_search
 #[test]
-#[ignore]
 fn test1_109() {
     let head1 = Some(Box::new(ListNode {
         val: -10,
