@@ -15,11 +15,11 @@ impl ListNode {
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn get_decimal_value(head: Option<Box<ListNode>>) -> i32 {
-    let mut cur = head.as_ref();
+    let mut cur = head.as_deref();
     let mut res = 0;
-    while cur.is_some() {
-        res = res * 2 + cur.unwrap().val;
-        cur = cur.unwrap().next.as_ref();
+    while let Some(node)=cur{
+        res = res * 2 + node.val;
+        cur = node.next.as_deref();
     }
     res
 }

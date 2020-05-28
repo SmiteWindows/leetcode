@@ -12,24 +12,24 @@ impl ListNode {
         Self { next: None, val }
     }
 }
-// Runtime: 32 ms
-// Memory Usage: 2.5 MB
+// Runtime: 40 ms
+// Memory Usage: 2.4 MB
 pub fn insertion_sort_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
-    head.as_ref()?;
-    let mut head = head?;
+    let mut head = head;
+    let  head = head.as_deref_mut()?;
     let mut curr = head.next.take();
     let mut res = Some(Box::new(ListNode {
         val: 0,
         next: Some(Box::new(ListNode::new(head.val))),
     }));
     while curr.is_some() {
-        let mut prev = res.as_mut()?;
-        let curr_val = curr.as_ref()?.val;
+        let mut prev = res.as_deref_mut()?;
+        let curr_val = curr.as_deref()?.val;
         while prev.next.is_some() {
-            if prev.next.as_ref()?.val >= curr_val {
+            if prev.next.as_deref()?.val >= curr_val {
                 break;
             }
-            prev = prev.next.as_mut()?;
+            prev = prev.next.as_deref_mut()?;
         }
         let mut data = ListNode::new(curr_val);
         data.next = prev.next.take();
