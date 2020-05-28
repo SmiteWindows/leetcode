@@ -12,26 +12,26 @@ impl ListNode {
         Self { next: None, val }
     }
 }
-/// Runtime: 4 ms
-/// Memory Usage: 2 MB
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
 pub fn partition(head: Option<Box<ListNode>>, x: i32) -> Option<Box<ListNode>> {
     let mut lower = Some(Box::new(ListNode::new(0)));
     let mut higher = Some(Box::new(ListNode::new(0)));
-    let mut lower_tail = lower.as_mut();
-    let mut higher_tail = higher.as_mut();
+    let mut lower_tail = lower.as_deref_mut();
+    let mut higher_tail = higher.as_deref_mut();
     let mut head = head;
     while let Some(mut inner) = head {
         let next = inner.next.take();
         if inner.val < x {
-            lower_tail.as_mut()?.next = Some(inner);
-            lower_tail = lower_tail?.next.as_mut();
+            lower_tail.as_deref_mut()?.next = Some(inner);
+            lower_tail = lower_tail?.next.as_deref_mut();
         } else {
-            higher_tail.as_mut()?.next = Some(inner);
-            higher_tail = higher_tail?.next.as_mut();
+            higher_tail.as_deref_mut()?.next = Some(inner);
+            higher_tail = higher_tail?.next.as_deref_mut();
         }
         head = next
     }
-    lower_tail.as_mut()?.next = higher?.next.take();
+    lower_tail.as_deref_mut()?.next = higher?.next.take();
     lower?.next.take()
 }
 // linked_list two_pointers
