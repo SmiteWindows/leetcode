@@ -29,13 +29,13 @@ pub fn split_list_to_parts(root: Option<Box<ListNode>>, k: i32) -> Vec<Option<Bo
     let mut i = 0;
     while i < k {
         let mut head = Some(Box::new(ListNode::new(0)));
-        let mut write = &mut head;
+        let mut write = head.as_deref_mut();
         let mut j = 0;
         while j < width + if i < rem { 1 } else { 0 } {
             write.as_mut().unwrap().next = Some(Box::new(ListNode::new(cur.unwrap().val)));
-            write = &mut write.as_mut().unwrap().next;
-            if cur.is_some() {
-                cur = cur.unwrap().next.as_deref();
+            write = write.unwrap().next.as_deref_mut();
+            if let Some(x)=cur {
+                cur = x.next.as_deref();
             }
             j += 1;
         }
