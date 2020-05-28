@@ -24,17 +24,17 @@ pub fn add_two_numbers(
     let (mut lhs_tag, mut rhs_tag) = (lhs.is_some(), rhs.is_some());
     while lhs_tag || rhs_tag || sum > 0 {
         if lhs_tag {
-            sum += lhs.as_ref()?.val;
+            sum += lhs.as_deref()?.val;
             lhs = lhs?.next;
             lhs_tag = lhs.is_some();
         }
         if rhs_tag {
-            sum += rhs.as_ref()?.val;
+            sum += rhs.as_deref()?.val;
             rhs = rhs?.next;
             rhs_tag = rhs.is_some();
         }
-        tmp.as_mut()?.next = Some(Box::new(ListNode::new(sum % 10)));
-        tmp = &mut tmp.as_mut()?.next;
+        tmp.as_deref_mut()?.next = Some(Box::new(ListNode::new(sum % 10)));
+        tmp = &mut tmp.as_deref_mut()?.next;
         sum /= 10;
     }
     res?.next

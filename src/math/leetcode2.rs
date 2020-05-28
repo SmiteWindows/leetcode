@@ -72,7 +72,7 @@ pub fn add_two_numbers(
                 break;
             }
         }
-        curr = curr.next.as_mut()?;
+        curr = curr.next.as_deref_mut()?;
     }
     head.next
 }
