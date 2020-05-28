@@ -13,7 +13,7 @@ impl ListNode {
     }
 }
 // Runtime: 4 ms
-// Memory Usage: 2.2 MB
+// Memory Usage: 2.1 MB
 pub fn add_two_numbers(
     l1: Option<Box<ListNode>>,
     l2: Option<Box<ListNode>>,

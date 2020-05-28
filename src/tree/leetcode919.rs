@@ -17,20 +17,12 @@ impl TreeNode {
         }
     }
 }
+
 use std::{cell::RefCell, rc::Rc};
-
 struct CBTInserter {}
-
 /**
  * `&self` means the method takes an immutable reference.
  * If you need a mutable reference, change it to `&mut self` instead.
- */
-
-/**
- * Your CBTInserter object will be instantiated and called as such:
- * let obj = CBTInserter::new(root);
- * let ret_1: i32 = obj.insert(v);
- * let ret_2: Option<Rc<RefCell<TreeNode>>> = obj.get_root();
  */
 impl CBTInserter {
     fn new(root: Option<Rc<RefCell<TreeNode>>>) -> Self {
@@ -44,4 +36,16 @@ impl CBTInserter {
     fn get_root(&self) -> Option<Rc<RefCell<TreeNode>>> {
         todo!()
     }
+}
+/**
+ * Your CBTInserter object will be instantiated and called as such:
+ * let obj = CBTInserter::new(root);
+ * let ret_1: i32 = obj.insert(v);
+ * let ret_2: Option<Rc<RefCell<TreeNode>>> = obj.get_root();
+ */
+// tree
+#[test]
+#[ignore]
+fn test1_199() {
+    todo!()
 }
