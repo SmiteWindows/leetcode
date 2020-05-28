@@ -22,15 +22,15 @@ impl TreeNode {
 use std::{cell::RefCell, rc::Rc};
 pub fn max_sum_bst(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     let mut max_sum = 0;
-    walk(root.as_ref(), &mut max_sum);
+    walk(root.as_deref(), &mut max_sum);
     max_sum
 }
 
-fn walk(root: Option<&Rc<RefCell<TreeNode>>>, max_sum: &mut i32) -> (bool, i32, i32, i32) {
+fn walk(root: Option<&RefCell<TreeNode>>, max_sum: &mut i32) -> (bool, i32, i32, i32) {
     if let Some(node) = root {
         let node = node.borrow();
-        let left = walk(node.left.as_ref(), max_sum);
-        let right = walk(node.right.as_ref(), max_sum);
+        let left = walk(node.left.as_deref(), max_sum);
+        let right = walk(node.right.as_deref(), max_sum);
         let mut sum = 0;
         if !left.0 || !right.0 || node.val >= right.1 || node.val <= left.2 {
             return (false, 0, 0, 0);

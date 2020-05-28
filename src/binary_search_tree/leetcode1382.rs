@@ -22,16 +22,16 @@ impl TreeNode {
 use std::{cell::RefCell, rc::Rc};
 pub fn balance_bst(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
     let mut sort_list = Vec::new();
-    inorder(root.as_ref(), &mut sort_list);
+    inorder(root.as_deref(), &mut sort_list);
     build_tree(&sort_list)
 }
 
-fn inorder(root: Option<&Rc<RefCell<TreeNode>>>, sort_list: &mut Vec<i32>) {
+fn inorder(root: Option<&RefCell<TreeNode>>, sort_list: &mut Vec<i32>) {
     if let Some(node) = root {
         let node = node.borrow();
-        inorder(node.left.as_ref(), sort_list);
+        inorder(node.left.as_deref(), sort_list);
         sort_list.push(node.val);
-        inorder(node.right.as_ref(), sort_list);
+        inorder(node.right.as_deref(), sort_list);
     }
 }
 
