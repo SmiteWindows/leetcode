@@ -13,20 +13,20 @@ impl ListNode {
     }
 }
 // Runtime: 0 ms
-// Memory Usage: 2 MB
+// Memory Usage: 2.1 MB
 pub fn reverse_between(head: Option<Box<ListNode>>, m: i32, n: i32) -> Option<Box<ListNode>> {
     if m == n {
         return head;
     }
     let mut cnt = 1;
     let mut header_node = Some(Box::new(ListNode { val: 0, next: head }));
-    let mut ptr = header_node.as_mut()?;
+    let mut ptr = header_node.as_deref_mut()?;
     while cnt < m {
-        ptr = ptr.next.as_mut()?;
+        ptr = ptr.next.as_deref_mut()?;
         cnt += 1
     }
     let mut tail = ptr.next.take();
-    let mut prev: Option<Box<ListNode>> = None;
+    let mut prev = None;
     if let Some(mut node) = tail {
         prev = node.next.take();
         tail = Some(node);
@@ -42,7 +42,7 @@ pub fn reverse_between(head: Option<Box<ListNode>>, m: i32, n: i32) -> Option<Bo
     }
     ptr.next = tail;
     while ptr.next.is_some() {
-        ptr = ptr.next.as_mut()?;
+        ptr = ptr.next.as_deref_mut()?;
     }
     ptr.next = prev;
     header_node?.next
