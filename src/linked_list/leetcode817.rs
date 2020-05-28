@@ -21,15 +21,15 @@ pub fn num_components(head: Option<Box<ListNode>>, g: Vec<i32>) -> i32 {
     for x in g {
         gset.insert(x);
     }
-    let mut cur = &head;
-    while cur.is_some() {
-        if gset.contains(&cur.as_ref().unwrap().val)
-            && (cur.as_ref().unwrap().next.is_none()
-                || !gset.contains(&cur.as_ref().unwrap().next.as_ref().unwrap().val))
+    let mut cur = head.as_deref();
+    while let Some(x)=cur {
+        if gset.contains(&x.val)
+            && (x.next.is_none()
+                || !gset.contains(&x.next.as_deref().unwrap().val))
         {
             res += 1;
         }
-        cur = &cur.as_ref().unwrap().next;
+        cur = x.next.as_deref();
     }
     res
 }

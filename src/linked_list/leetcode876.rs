@@ -15,13 +15,13 @@ impl ListNode {
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn middle_node(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
-    let mut fast = &head;
-    let mut slow = &head;
-    while fast.is_some() && fast.as_ref()?.next.is_some() {
-        fast = &fast.as_ref()?.next.as_ref()?.next;
-        slow = &slow.as_ref()?.next;
+    let mut head = head;
+    let mut ptr = head.clone();
+    while ptr.is_some() && ptr.as_deref()?.next.is_some() {
+        ptr = ptr?.next?.next;
+        head = head?.next;
     }
-    slow.clone()
+    head
 }
 // linked_list
 #[test]
