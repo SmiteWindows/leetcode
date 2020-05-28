@@ -17,18 +17,18 @@ impl ListNode {
 pub fn remove_nth_from_end(head: Option<Box<ListNode>>, n: i32) -> Option<Box<ListNode>> {
     let mut dummy_head = Some(Box::new(ListNode { val: 0, next: head }));
     let mut len = 0;
-    let mut p = dummy_head.as_ref();
+    let mut p = dummy_head.as_deref();
     while p?.next.is_some() {
         len += 1;
-        p = p?.next.as_ref();
+        p = p?.next.as_deref();
     }
     let idx = len - n;
-    let mut p = dummy_head.as_mut();
+    let mut p = dummy_head.as_deref_mut();
     for _ in 0..idx {
-        p = p?.next.as_mut();
+        p = p?.next.as_deref_mut();
     }
-    let next = p.as_mut()?.next.as_mut()?.next.take();
-    p.as_mut()?.next = next;
+    let next = p.as_deref_mut()?.next.as_deref_mut()?.next.take();
+    p.as_deref_mut()?.next = next;
     dummy_head?.next
 }
 // linked_list two_pointers
