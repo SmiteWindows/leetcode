@@ -31,7 +31,7 @@ impl Solution {
     }
 
     fn pick(&mut self) -> i32 {
-        let distribution = Uniform::new(0, self.wlen + 1);
+        let distribution = Uniform::new(0, self.wlen);
         let k = self.rng.sample(distribution);
         *self.m.entry(k).or_insert(k)
     }
@@ -52,6 +52,7 @@ fn test1_710() {
     println!("{:?}", ret_1);
     println!("{:?}", ret_2);
     println!("{:?}", ret_3);
+    println!("in 0");
     let mut obj = Solution::new(2, vec![]);
     let ret_1 = obj.pick();
     let ret_2 = obj.pick();
@@ -59,6 +60,7 @@ fn test1_710() {
     println!("{:?}", ret_1);
     println!("{:?}", ret_2);
     println!("{:?}", ret_3);
+    println!("in 0,1");
     let mut obj = Solution::new(3, vec![1]);
     let ret_1 = obj.pick();
     let ret_2 = obj.pick();
@@ -66,6 +68,7 @@ fn test1_710() {
     println!("{:?}", ret_1);
     println!("{:?}", ret_2);
     println!("{:?}", ret_3);
+    println!("in 0,2");
     let mut obj = Solution::new(4, vec![2]);
     let ret_1 = obj.pick();
     let ret_2 = obj.pick();
@@ -73,4 +76,13 @@ fn test1_710() {
     println!("{:?}", ret_1);
     println!("{:?}", ret_2);
     println!("{:?}", ret_3);
+    println!("in 0,1,3");
+    let mut obj = Solution::new(4, vec![0,1]);
+    let ret_1 = obj.pick();
+    let ret_2 = obj.pick();
+    let ret_3 = obj.pick();
+    println!("{:?}", ret_1);
+    println!("{:?}", ret_2);
+    println!("{:?}", ret_3);
+    println!("in 2,3");
 }
