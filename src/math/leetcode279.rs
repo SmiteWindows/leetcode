@@ -1,14 +1,14 @@
 // https://leetcode.com/problems/perfect-squares/
 pub fn num_squares(n: i32) -> i32 {
     let mut n = n;
-    while n &3 == 0 {
-        n >>=2;
-    }
-    if n &7 == 7 {
-        return 4;
-    }
     if is_square(n as f64) {
         return 1;
+    }
+    while n & 3 == 0 {
+        n >>= 2;
+    }
+    if n & 7 == 7 {
+        return 4;
     }
     let mut i = 1;
     while i * i <= n {
