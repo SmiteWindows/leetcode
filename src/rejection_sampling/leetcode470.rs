@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/implement-rand10-using-rand7/
 // Runtime: 8 ms
 // Memory Usage: 3 MB
-use rand::{distributions::Uniform, thread_rng, Rng};
+use rand::{distributions::Uniform, prelude::*};
 pub fn rand10() -> i32 {
     let distribution: Uniform<i32> = Uniform::new(0, 10);
     let mut rng = thread_rng();
