@@ -14,9 +14,9 @@ pub fn nth_ugly_number(n: i32) -> i32 {
     heap.push(Reverse(1_i64));
     let mut new;
     let primes = vec![2, 3, 5];
-    for i in 0..n {
+    for num in nums.iter_mut().take(n) {
         if let Some(Reverse(curr)) = heap.pop() {
-            nums[i] = curr;
+            *num = curr;
             for &j in &primes {
                 new = curr * j;
                 if !seen.contains(&new) {
