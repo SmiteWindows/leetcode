@@ -22,7 +22,7 @@ impl TreeNode {
 use std::{cell::RefCell, rc::Rc};
 pub fn sorted_array_to_bst(nums: Vec<i32>) -> Option<Rc<RefCell<TreeNode>>> {
     let n = nums.len() as i32 - 1;
-    helper(0, n, nums.as_slice())
+    helper(0, n, nums.as_slice())// TODO nums.as_ref()
 }
 
 fn helper(left: i32, right: i32, nums: &[i32]) -> Option<Rc<RefCell<TreeNode>>> {
