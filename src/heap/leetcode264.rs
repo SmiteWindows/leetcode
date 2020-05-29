@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/ugly-number-ii/
-// Runtime: 32 ms
+// Runtime: 36 ms
 // Memory Usage: 2.1 MB
 use std::{
     cmp::Reverse,
