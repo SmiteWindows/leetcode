@@ -77,7 +77,7 @@ fn test1_710() {
     println!("{:?}", ret_2);
     println!("{:?}", ret_3);
     println!("in 0,1,3");
-    let mut obj = Solution::new(4, vec![0,1]);
+    let mut obj = Solution::new(4, vec![0, 1]);
     let ret_1 = obj.pick();
     let ret_2 = obj.pick();
     let ret_3 = obj.pick();
