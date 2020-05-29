@@ -22,14 +22,14 @@ impl TreeNode {
 use std::{cell::RefCell, rc::Rc};
 pub fn btree_game_winning_move(root: Option<Rc<RefCell<TreeNode>>>, n: i32, x: i32) -> bool {
     let (mut left_count, mut right_count) = (0, 0);
-    walk(root.as_deref(), x, &mut left_count, &mut right_count);
+    postorder(root.as_deref(), x, &mut left_count, &mut right_count);
     (n - left_count - right_count - 1)
         .max(right_count)
         .max(left_count)
         > n / 2
 }
 
-fn walk(
+fn postorder(
     root: Option<&RefCell<TreeNode>>,
     x: i32,
     left_count: &mut i32,
@@ -37,8 +37,8 @@ fn walk(
 ) -> i32 {
     if let Some(node) = root {
         let node = node.borrow();
-        let left = walk(node.left.as_deref(), x, left_count, right_count);
-        let right = walk(node.right.as_deref(), x, left_count, right_count);
+        let left = postorder(node.left.as_deref(), x, left_count, right_count);
+        let right = postorder(node.right.as_deref(), x, left_count, right_count);
         if node.val == x {
             *left_count = left;
             *right_count = right;
