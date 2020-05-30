@@ -23,11 +23,11 @@ use std::{cell::RefCell, rc::Rc};
 pub fn path_sum(root: Option<Rc<RefCell<TreeNode>>>, sum: i32) -> Vec<Vec<i32>> {
     let mut res = Vec::new();
     let mut tmp = Vec::new();
-    postorder(root.as_deref(), sum, &mut res, &mut tmp);
+    preorder(root.as_deref(), sum, &mut res, &mut tmp);
     res
 }
 
-fn postorder(
+fn preorder(
     root: Option<&RefCell<TreeNode>>,
     sum: i32,
     res: &mut Vec<Vec<i32>>,
@@ -41,8 +41,8 @@ fn postorder(
                 res.push(tmp.to_vec());
             }
         } else {
-            postorder(node.left.as_deref(), sum - node.val, res, tmp);
-            postorder(node.right.as_deref(), sum - node.val, res, tmp);
+            preorder(node.left.as_deref(), sum - node.val, res, tmp);
+            preorder(node.right.as_deref(), sum - node.val, res, tmp);
         }
         tmp.pop();
     }
