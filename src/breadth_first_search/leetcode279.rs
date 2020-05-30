@@ -16,7 +16,7 @@ pub fn num_squares(n: i32) -> i32 {
     queue.insert(n);
 
     let mut level = 0;
-    while queue.len() > 0 {
+    while !queue.is_empty() {
         level += 1;
         let mut next_queue = HashSet::new();
 

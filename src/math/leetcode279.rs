@@ -4,7 +4,7 @@ pub fn num_squares(n: i32) -> i32 {
     if is_square(n as f64) {
         return 1;
     }
-    while n & 3 == 0 {
+    while n.trailing_zeros() >= 2 {
         n >>= 2;
     }
     if n & 7 == 7 {
