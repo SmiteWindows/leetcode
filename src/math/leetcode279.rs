@@ -22,7 +22,7 @@ pub fn num_squares(n: i32) -> i32 {
 
 fn is_square(n: f64) -> bool {
     let sq = n.sqrt();
-    n == sq * sq
+    (n - sq * sq).abs() <= f64::EPSILON
 }
 // math breadth_first_search dynamic_programming
 #[test]
