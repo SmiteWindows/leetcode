@@ -18,27 +18,21 @@ impl TreeNode {
     }
 }
 // Runtime: 0 ms
-// Memory Usage: 2 MB
+// Memory Usage: 2.2 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn preorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
-    let mut stack = Vec::new();
-    let mut res = Vec::new();
-    if root.is_none() {
-        return res;
-    }
-    stack.push(root);
-    while !stack.is_empty() {
-        let node = stack.pop().unwrap().unwrap();
+    let mut res = vec![];
+    preorder(root.as_deref(), &mut res);
+    res
+}
+
+fn preorder(root: Option<&RefCell<TreeNode>>, res: &mut Vec<i32>) {
+    if let Some(node) = root {
         let node = node.borrow();
         res.push(node.val);
-        if node.right.is_some() {
-            stack.push(node.right.clone());
-        }
-        if node.left.is_some() {
-            stack.push(node.left.clone());
-        }
+        preorder(node.left.as_deref(), res);
+        preorder(node.right.as_deref(), res);
     }
-    res
 }
 // tree stack
 #[test]
