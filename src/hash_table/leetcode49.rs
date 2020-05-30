@@ -30,13 +30,13 @@ fn test1_49() {
             String::from("bat")
         ]),
         vec![
+            vec![String::from("bat")],
+            vec![String::from("nat"), String::from("tan")],
             vec![
                 String::from("ate"),
                 String::from("eat"),
                 String::from("tea")
-            ],
-            vec![String::from("nat"), String::from("tan")],
-            vec![String::from("bat")]
+            ]
         ]
     );
 }
