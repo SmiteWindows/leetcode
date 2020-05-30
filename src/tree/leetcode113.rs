@@ -23,19 +23,27 @@ use std::{cell::RefCell, rc::Rc};
 pub fn path_sum(root: Option<Rc<RefCell<TreeNode>>>, sum: i32) -> Vec<Vec<i32>> {
     let mut res = Vec::new();
     let mut tmp = Vec::new();
-    path(root.as_deref(), sum, &mut res, &mut tmp);
+    postorder(root.as_deref(), sum, &mut res, &mut tmp);
     res
 }
 
-fn path(root: Option<&RefCell<TreeNode>>, sum: i32, res: &mut Vec<Vec<i32>>, tmp: &mut Vec<i32>) {
+fn postorder(
+    root: Option<&RefCell<TreeNode>>,
+    sum: i32,
+    res: &mut Vec<Vec<i32>>,
+    tmp: &mut Vec<i32>,
+) {
     if let Some(node) = root {
         let node = node.borrow();
         tmp.push(node.val);
-        if node.left.is_none() && node.right.is_none() && sum == node.val {
-            res.push(tmp.to_vec());
+        if node.left.is_none() && node.right.is_none() {
+            if node.val == sum {
+                res.push(tmp.to_vec());
+            }
+        } else {
+            postorder(node.left.as_deref(), sum - node.val, res, tmp);
+            postorder(node.right.as_deref(), sum - node.val, res, tmp);
         }
-        path(node.left.as_deref(), sum - node.val, res, tmp);
-        path(node.right.as_deref(), sum - node.val, res, tmp);
         tmp.pop();
     }
 }
