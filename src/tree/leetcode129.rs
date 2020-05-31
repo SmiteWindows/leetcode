@@ -21,21 +21,21 @@ impl TreeNode {
 // Memory Usage: 1.9 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn sum_numbers(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    let mut sum = 0;
-    walk(root.as_deref(), 0, &mut sum);
-    sum
+    let mut res = 0;
+    preorder(root.as_deref(), 0, &mut res);
+    res
 }
 
-fn walk(root: Option<&RefCell<TreeNode>>, cur: i32, sum: &mut i32) {
+fn preorder(root: Option<&RefCell<TreeNode>>, path: i32, sum: &mut i32) {
     if let Some(node) = root {
         let node = node.borrow();
         let val = node.val;
+        let path = path * 10 + val;
         if node.left.is_none() && node.right.is_none() {
-            *sum += cur * 10 + val;
-            return;
+            *sum += path;
         }
-        walk(node.left.as_deref(), cur * 10 + val, sum);
-        walk(node.right.as_deref(), cur * 10 + val, sum);
+        preorder(node.left.as_deref(), path, sum);
+        preorder(node.right.as_deref(), path, sum);
     }
 }
 // tree depth_first_search

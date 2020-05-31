@@ -1,10 +1,13 @@
 // https://leetcode.com/problems/make-two-arrays-equal-by-reversing-sub-arrays/
 pub fn can_be_equal(target: Vec<i32>, arr: Vec<i32>) -> bool {
-    todo!()
+    let mut target = target;
+    let mut arr = arr;
+    target.sort();
+    arr.sort();
+    target == arr
 }
 // array
 #[test]
-#[ignore]
 fn test1_1460() {
     assert_eq!(can_be_equal(vec![1, 2, 3, 4], vec![2, 4, 1, 3]), true);
     assert_eq!(can_be_equal(vec![7], vec![7]), true);
