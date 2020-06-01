@@ -1,10 +1,15 @@
 // https://leetcode.com/problems/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence/
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
 pub fn is_prefix_of_word(sentence: String, search_word: String) -> i32 {
-    todo!()
+    sentence
+        .split_whitespace()
+        .enumerate()
+        .position(|(i, word)| word.starts_with(&search_word))
+        .map_or(-1, |x| (x + 1) as i32)
 }
 // string
 #[test]
-#[ignore]
 fn test1_1455() {
     assert_eq!(
         is_prefix_of_word(String::from("i love eating burger"), String::from("burg")),
