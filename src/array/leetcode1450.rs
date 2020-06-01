@@ -16,7 +16,7 @@ pub fn busy_student(start_time: Vec<i32>, end_time: Vec<i32>, query_time: i32) -
 // array
 #[test]
 fn test1_1450() {
-    assert_eq!(busy_student(vec![1, 2, 3], vec![1, 2, 3], 4), 1);
+    assert_eq!(busy_student(vec![1, 2, 3], vec![3, 2, 7], 4), 1);
     assert_eq!(busy_student(vec![4], vec![4], 4), 1);
     assert_eq!(busy_student(vec![4], vec![4], 5), 0);
     assert_eq!(busy_student(vec![1, 1, 1, 1], vec![1, 3, 2, 4], 7), 0);
