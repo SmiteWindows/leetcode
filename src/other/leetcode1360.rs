@@ -35,8 +35,8 @@ fn day_of_year(year: usize, month: usize, day: usize) -> usize {
     if is_leap(year) {
         days[1] += 1;
     }
-    for i in 0..month - 1 {
-        sum += days[i];
+    for d in days.iter().take(month - 1) {
+        sum += d;
     }
     sum += day;
     sum
