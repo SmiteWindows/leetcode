@@ -1,10 +1,17 @@
 // https://leetcode.com/problems/string-matching-in-an-array/
+// Runtime: 4 ms
+// Memory Usage: 2.1 MB
 pub fn string_matching(words: Vec<String>) -> Vec<String> {
-    todo!()
+    let mut res = vec![];
+    for w in &words {
+        if words.iter().any(|w2| w2.contains(w) && w != w2) {
+            res.push(w.clone());
+        }
+    }
+    res
 }
 // string
 #[test]
-#[ignore]
 fn test1_1408() {
     assert_eq!(
         string_matching(vec![
@@ -29,6 +36,6 @@ fn test1_1408() {
             String::from("green"),
             String::from("bu")
         ]),
-        vec![String::new()]
+        vec![] as Vec<String>
     );
 }
