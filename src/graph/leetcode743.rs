@@ -9,8 +9,8 @@ pub fn network_delay_time(times: Vec<Vec<i32>>, n: i32, k: i32) -> i32 {
     for time in times {
         let u = time[0] as usize - 1;
         let v = time[1] as usize - 1;
-        let t = time[2];
-        graph[u].push((v, t));
+        let ti = time[2];
+        graph[u].push((v, ti));
     }
     let mut visited = vec![i32::MAX; n];
     let mut queue = VecDeque::new();
