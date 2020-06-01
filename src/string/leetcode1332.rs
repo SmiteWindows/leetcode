@@ -4,12 +4,10 @@
 pub fn remove_palindrome_sub(s: String) -> i32 {
     if s.is_empty() {
         0
+    } else if is_palindrome(&s) {
+        1
     } else {
-        if is_palindrome(&s) {
-            1
-        } else {
-            2
-        }
+        2
     }
 }
 
@@ -17,9 +15,9 @@ fn is_palindrome(s: &str) -> bool {
     let mut i = 0;
     let n = s.len();
     let mut j = n - 1;
-    let v = s.chars().collect::<Vec<_>>();
+    let vc = s.chars().collect::<Vec<_>>();
     while i <= j {
-        if v[i] != v[j] {
+        if vc[i] != vc[j] {
             return false;
         }
         i += 1;
