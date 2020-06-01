@@ -25,6 +25,7 @@ pub mod math;
 pub mod memoization;
 pub mod minimax;
 pub mod ordered_map;
+pub mod other;
 pub mod queue;
 pub mod random;
 pub mod recursion;

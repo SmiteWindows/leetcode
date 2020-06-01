@@ -16,7 +16,7 @@ pub fn number_of_lines(widths: Vec<i32>, s: String) -> Vec<i32> {
     vec![lines + 1, start]
 }
 #[test]
-fn test1_806() {
+fn test806() {
     assert_eq!(
         number_of_lines(
             vec![
