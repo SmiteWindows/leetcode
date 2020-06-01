@@ -3,7 +3,7 @@
 // Memory Usage: 2 MB
 use std::iter::repeat;
 pub fn generate_the_string(n: i32) -> String {
-    let mut s: String = repeat('a').take((n - 1) as usize).collect();
+    let mut s = repeat('a').take((n - 1) as usize).collect::<String>();
     s.push(if n % 2 == 0 { 'b' } else { 'a' });
     s
 }

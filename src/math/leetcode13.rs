@@ -3,7 +3,7 @@
 // Memory Usage: 2.1 MB
 use std::collections::HashMap;
 pub fn roman_to_int(s: String) -> i32 {
-    let map: HashMap<char, i32> = vec![
+    let map = vec![
         ('I', 1),
         ('V', 5),
         ('X', 10),
@@ -13,7 +13,7 @@ pub fn roman_to_int(s: String) -> i32 {
         ('M', 1000),
     ]
     .into_iter()
-    .collect();
+    .collect::<HashMap<_, _>>();
     let mut sum = 0;
     let mut last = 0;
     for c in s.chars() {

@@ -6,7 +6,7 @@ pub fn detect_capital_use(word: String) -> bool {
     if n <= 1 {
         return true;
     }
-    let word: Vec<char> = word.chars().collect();
+    let word = word.chars().collect::<Vec<_>>();
     let first_is_lowercase = word[0].is_lowercase();
     if first_is_lowercase {
         for (i, w) in word.iter().enumerate().skip(1) {

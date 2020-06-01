@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn max_length(arr: Vec<String>) -> i32 {
-    let arr: Vec<u32> = arr
+    let arr = arr
         .into_iter()
         .filter_map(|s| {
             let mut bitset = 0;
@@ -16,7 +16,7 @@ pub fn max_length(arr: Vec<String>) -> i32 {
             }
             Some(bitset)
         })
-        .collect();
+        .collect::<Vec<_>>();
     let n = arr.len();
     let mut res = 0;
     dfs(0, 0, &mut res, &arr, n);

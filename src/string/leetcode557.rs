@@ -2,12 +2,11 @@
 // Runtime: 4 ms
 // Memory Usage: 2.3 MB
 pub fn reverse_words(s: String) -> String {
-    let words: Vec<String> = s
+    let words = s
         .split_whitespace()
-        .map(|s| s.chars().rev().collect())
-        .collect();
-    let res: String = words.join(" ");
-    res
+        .map(|s| s.chars().rev().collect::<String>())
+        .collect::<Vec<_>>();
+    words.join(" ")
 }
 // string
 #[test]

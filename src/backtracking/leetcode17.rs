@@ -4,8 +4,8 @@ pub fn letter_combinations(digits: String) -> Vec<String> {
     if digits.is_empty() {
         return vec![];
     }
-    let digits: Vec<char> = digits.chars().collect();
-    let hm: HashMap<char, Vec<char>> = [
+    let digits = digits.chars().collect::<Vec<_>>();
+    let hm = [
         ('2', "abc"),
         ('3', "def"),
         ('4', "ghi"),
@@ -16,10 +16,10 @@ pub fn letter_combinations(digits: String) -> Vec<String> {
         ('9', "wxyz"),
     ]
     .iter()
-    .map(|(d, v)| (*d, v.chars().collect()))
-    .collect();
-    let mut s: Vec<char> = vec![];
-    let mut res: Vec<String> = vec![];
+    .map(|(d, v)| (*d, v.chars().collect::<Vec<_>>()))
+    .collect::<HashMap<_, _>>();
+    let mut s = vec![];
+    let mut res = vec![];
     dfs(&hm, &digits, &mut s, &mut res, 0);
     res
 }

@@ -16,7 +16,10 @@ pub fn find_words(words: Vec<String>) -> Vec<String> {
     }
     let mut res = vec![];
     for word in words {
-        let rows: Vec<usize> = word.chars().map(|c| *hm.get(&c).unwrap()).collect();
+        let rows = word
+            .chars()
+            .map(|c| *hm.get(&c).unwrap())
+            .collect::<Vec<_>>();
         if rows.windows(2).all(|w| w[0] == w[1]) {
             res.push(word);
         }

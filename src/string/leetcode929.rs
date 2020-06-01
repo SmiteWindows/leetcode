@@ -11,11 +11,11 @@ struct Email {
 impl Email {
     fn new(s: String) -> Self {
         let mut iter = s.split('@');
-        let left: String = iter.next().unwrap().to_string();
-        let domain_name: String = iter.next().unwrap().to_string();
-        let mut local_name: String = left.split('+').next().unwrap().to_string();
+        let left = iter.next().unwrap().to_string();
+        let domain_name = iter.next().unwrap().to_string();
+        let mut local_name = left.split('+').next().unwrap().to_string();
         local_name.retain(|c| c != '.');
-        Email {
+        Self {
             local_name,
             domain_name,
         }
@@ -23,11 +23,11 @@ impl Email {
 }
 
 pub fn num_unique_emails(emails: Vec<String>) -> i32 {
-    let mut hs: HashSet<Email> = HashSet::new();
-    let emails: Vec<Email> = emails
+    let mut hs = HashSet::new();
+    let emails = emails
         .iter()
         .map(|email| Email::new(email.to_string()))
-        .collect();
+        .collect::<Vec<_>>();
     for email in emails {
         hs.insert(email);
     }

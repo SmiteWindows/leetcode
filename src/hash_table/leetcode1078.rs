@@ -3,7 +3,7 @@
 // Memory Usage: 2 MB
 pub fn find_ocurrences(text: String, first: String, second: String) -> Vec<String> {
     let mut res = vec![];
-    let words: Vec<&str> = text.split_whitespace().collect();
+    let words = text.split_whitespace().collect::<Vec<_>>();
     words.windows(3).for_each(|v| {
         if v[0] == first && v[1] == second {
             res.push(v[2].to_string());

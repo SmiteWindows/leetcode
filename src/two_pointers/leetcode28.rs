@@ -2,8 +2,8 @@
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn str_str(haystack: String, needle: String) -> i32 {
-    let haystack: Vec<char> = haystack.chars().collect();
-    let needle: Vec<char> = needle.chars().collect();
+    let haystack = haystack.chars().collect::<Vec<_>>();
+    let needle = needle.chars().collect::<Vec<_>>();
     let h_len = haystack.len();
     let n_len = needle.len();
     if n_len == 0 {

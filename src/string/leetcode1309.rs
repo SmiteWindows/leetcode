@@ -3,7 +3,7 @@
 // Memory Usage: 2.1 MB
 pub fn freq_alphabets(s: String) -> String {
     let mut v = vec![];
-    let mut u: Vec<char> = s.chars().collect();
+    let mut u = s.chars().collect::<Vec<_>>();
     while let Some(c) = u.pop() {
         let d = match c {
             '#' => (u.pop().unwrap() as u8 - b'0') + 10 * (u.pop().unwrap() as u8 - b'0'),

@@ -3,15 +3,15 @@
 // Memory Usage: 2.2 MB
 use std::collections::HashSet;
 pub fn buddy_strings(a: String, b: String) -> bool {
-    let ac: Vec<char> = a.chars().collect();
-    let bc: Vec<char> = b.chars().collect();
+    let ac = a.chars().collect::<Vec<_>>();
+    let bc = b.chars().collect::<Vec<_>>();
     let a_len = ac.len();
     let b_len = bc.len();
     if a_len != b_len {
         return false;
     }
     if ac == bc {
-        let mut hs: HashSet<char> = HashSet::new();
+        let mut hs = HashSet::new();
         let mut sum = 0;
         for &c in &ac {
             if !hs.insert(c) {

@@ -3,7 +3,7 @@
 // Memory Usage: 2.3 MB
 pub fn letter_case_permutation(s: String) -> Vec<String> {
     let n = s.len();
-    let s: Vec<char> = s.chars().collect();
+    let s = s.chars().collect::<Vec<_>>();
     let mut res = vec![];
     let mut t = "".to_string();
     permutation(&s, n, 0, &mut t, &mut res);

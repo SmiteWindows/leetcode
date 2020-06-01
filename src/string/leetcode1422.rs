@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn max_score(s: String) -> i32 {
-    let s: Vec<char> = s.chars().collect();
+    let s = s.chars().collect::<Vec<_>>();
     let n = s.len();
     let mut zeros = vec![0; n + 1];
     for i in 0..n {

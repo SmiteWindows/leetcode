@@ -5,7 +5,7 @@ use std::collections::HashSet;
 pub fn fair_candy_swap(a: Vec<i32>, b: Vec<i32>) -> Vec<i32> {
     let sum_a: i32 = a.iter().sum();
     let sum_b: i32 = b.iter().sum();
-    let hs: HashSet<i32> = b.into_iter().collect();
+    let hs = b.into_iter().collect::<HashSet<_>>();
     for x in a {
         let y = x + (sum_b - sum_a) / 2;
         if hs.contains(&y) {

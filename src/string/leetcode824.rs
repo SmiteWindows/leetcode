@@ -2,8 +2,11 @@
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn to_goat_latin(s: String) -> String {
-    let words: Vec<&str> = s.split_whitespace().map(|s| s.chars().as_str()).collect();
-    let mut res: String = "".to_string();
+    let words = s
+        .split_whitespace()
+        .map(|s| s.chars().as_str())
+        .collect::<Vec<_>>();
+    let mut res = "".to_string();
     let mut n = 1;
     for word in words {
         if n > 1 {

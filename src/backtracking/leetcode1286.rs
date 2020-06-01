@@ -15,7 +15,7 @@ impl CombinationIterator {
         let n = characters.len();
         let mut indexes = vec![];
         let mut combinations = vec![];
-        let s: Vec<char> = characters.chars().collect();
+        let s = characters.chars().collect::<Vec<_>>();
         Self::dfs(
             0,
             &mut indexes,
@@ -39,7 +39,7 @@ impl CombinationIterator {
         n: usize,
     ) {
         if indexes.len() == m {
-            let t: String = indexes.iter().map(|&i| s[i]).collect();
+            let t = indexes.iter().map(|&i| s[i]).collect();
             combinations.push(t);
         } else {
             for i in start..n {

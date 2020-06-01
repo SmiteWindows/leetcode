@@ -18,7 +18,7 @@ pub fn days_between_dates(date1: String, date2: String) -> i32 {
 }
 
 fn parse(date: String) -> (usize, usize, usize) {
-    let a: Vec<&str> = date.split_terminator('-').collect();
+    let a = date.split_terminator('-').collect::<Vec<_>>();
     let year = a[0].parse::<usize>().unwrap();
     let month = a[1].parse::<usize>().unwrap();
     let day = a[2].parse::<usize>().unwrap();

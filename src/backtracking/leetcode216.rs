@@ -6,7 +6,7 @@ pub fn combination_sum3(k: i32, n: i32) -> Vec<Vec<i32>> {
     if k > 9 {
         return res;
     }
-    let nums: Vec<i32> = (1..=9).collect();
+    let nums = (1..=9).collect::<Vec<_>>();
     let mut cur = vec![];
     dfs(0, n, &mut cur, &mut res, &nums, k as usize);
     res

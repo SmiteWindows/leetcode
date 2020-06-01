@@ -3,11 +3,11 @@
 // Memory Usage: 2.2 MB
 use std::collections::HashMap;
 pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
-    let nums_map: HashMap<i32, usize> = nums
+    let nums_map = nums
         .iter()
         .enumerate()
-        .map(|(index, value)| (target - value, index))
-        .collect();
+        .map(|(index, &value)| (target - value, index))
+        .collect::<HashMap<_, _>>();
     for (index, value) in nums.iter().enumerate() {
         if let Some(&j) = nums_map.get(value) {
             if index != j {

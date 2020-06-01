@@ -4,7 +4,7 @@
 pub fn di_string_match(s: String) -> Vec<i32> {
     let mut l = 0;
     let mut r = s.len() as i32;
-    let mut res: Vec<i32> = s
+    let mut res = s
         .chars()
         .map(|c| match c {
             'I' => {
@@ -19,7 +19,7 @@ pub fn di_string_match(s: String) -> Vec<i32> {
             }
             _ => unreachable!(),
         })
-        .collect();
+        .collect::<Vec<_>>();
     res.push(l);
     res
 }

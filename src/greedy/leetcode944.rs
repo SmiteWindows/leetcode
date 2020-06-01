@@ -3,7 +3,7 @@
 // Memory Usage: 2.3 MB
 pub fn min_deletion_size(a: Vec<String>) -> i32 {
     let mut d = 0;
-    let a: Vec<&[u8]> = a.iter().map(|s| s.as_bytes()).collect();
+    let a = a.iter().map(|s| s.as_bytes()).collect::<Vec<_>>();
     let n = a.len();
     let m = a[0].len();
     for i in 0..m {

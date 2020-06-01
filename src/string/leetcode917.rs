@@ -6,7 +6,7 @@ pub fn reverse_only_letters(s: String) -> String {
     if n == 0 {
         return "".to_string();
     }
-    let mut res: Vec<char> = s.chars().collect();
+    let mut res = s.chars().collect::<Vec<_>>();
     let mut i = 0;
     let mut j = n - 1;
     while i < j {

@@ -3,7 +3,7 @@
 // Memory Usage: 2.9 MB
 pub fn partition(s: String) -> Vec<Vec<String>> {
     let mut res = vec![];
-    let s: Vec<char> = s.chars().collect();
+    let s = s.chars().collect::<Vec<_>>();
     let n = s.len();
     let mut indexes = vec![];
     dfs(0, &s, &mut indexes, &mut res, n);
