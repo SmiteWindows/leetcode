@@ -3,14 +3,6 @@
 // Memory Usage: 2.1 MB
 use std::collections::HashMap;
 pub fn has_groups_size_x(deck: Vec<i32>) -> bool {
-    fn gcd(a: i32, b: i32) -> i32 {
-        if a == 0 {
-            b
-        } else {
-            gcd(b % a, a)
-        }
-    }
-
     let mut hm = HashMap::new();
     let mut max = 0;
     for x in deck {
@@ -20,6 +12,14 @@ pub fn has_groups_size_x(deck: Vec<i32>) -> bool {
         max = gcd(max, v);
     }
     max >= 2
+}
+
+fn gcd(a: i32, b: i32) -> i32 {
+    if a == 0 {
+        b
+    } else {
+        gcd(b % a, a)
+    }
 }
 // math array
 #[test]
