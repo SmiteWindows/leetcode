@@ -38,6 +38,6 @@ fn test1_345() {
     assert_eq!(reverse_vowels(String::from("hello")), String::from("holle"));
     assert_eq!(
         reverse_vowels(String::from("leetcode")),
-        String::from("leetcode")
+        String::from("leotcede")
     );
 }
