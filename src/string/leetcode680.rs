@@ -1,10 +1,29 @@
 // https://leetcode.com/problems/valid-palindrome-ii/
+// Runtime: 4 ms
+// Memory Usage: 3.8 MB
 pub fn valid_palindrome(s: String) -> bool {
-    todo!()
+    if let Some(s) = is_palidrome(&s) {
+        let sl = &s[1..];
+        let sr = &s[..s.len() - 1];
+        is_palidrome(sl).is_none() || is_palidrome(sr).is_none()
+    } else {
+        true
+    }
+}
+
+fn is_palidrome(v: &str) -> Option<&str> {
+    let n = v.len();
+    if n <= 1 {
+        return None;
+    }
+    if v.chars().next() != v.chars().last() {
+        Some(v)
+    } else {
+        is_palidrome(&v[1..n - 1])
+    }
 }
 // string
 #[test]
-#[ignore]
 fn test1_680() {
     assert_eq!(valid_palindrome(String::from("aba")), true);
     assert_eq!(valid_palindrome(String::from("abca")), true);
