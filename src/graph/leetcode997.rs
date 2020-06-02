@@ -10,8 +10,8 @@ pub fn find_judge(n: i32, trust: Vec<Vec<i32>>) -> i32 {
         degree[v] += 1;
         degree[u] -= 1;
     }
-    for i in 0..n {
-        if degree[i] as usize == n - 1 {
+    for (i, &d) in degree.iter().enumerate().take(n) {
+        if d as usize == n - 1 {
             return (i + 1) as i32;
         }
     }
