@@ -7,33 +7,33 @@ pub fn four_sum(nums: Vec<i32>, target: i32) -> Vec<Vec<i32>> {
     let n = nums.len();
     let mut res = vec![];
     nums.sort();
-    let mut index = 0;
-    while index + 3 < n {
-        if index > 0 && nums[index - 1] == nums[index] {
-            index += 1;
+    let mut i = 0;
+    while i + 3 < n {
+        if i > 0 && nums[i - 1] == nums[i] {
+            i += 1;
             continue;
         }
-        if nums[index] + nums[index + 1] + nums[index + 2] + nums[index + 3] > target {
+        if nums[i] + nums[i + 1] + nums[i + 2] + nums[i + 3] > target {
             break;
         }
-        if nums[n - 3] + nums[n - 2] + nums[n - 1] + nums[index] < target {
-            index += 1;
+        if nums[n - 3] + nums[n - 2] + nums[n - 1] + nums[i] < target {
+            i += 1;
             continue;
         }
-        let mut j = index + 1;
+        let mut j = i + 1;
         while j + 2 < n {
-            if j > index + 1 && nums[j - 1] == nums[j] {
+            if j > i + 1 && nums[j - 1] == nums[j] {
                 j += 1;
                 continue;
             }
-            if nums[index] + nums[j] + nums[j + 1] + nums[j + 2] > target {
+            if nums[i] + nums[j] + nums[j + 1] + nums[j + 2] > target {
                 break;
             }
-            if nums[n - 2] + nums[n - 1] + nums[index] + nums[j] < target {
+            if nums[n - 2] + nums[n - 1] + nums[i] + nums[j] < target {
                 j += 1;
                 continue;
             }
-            let sum2 = nums[index] + nums[j];
+            let sum2 = nums[i] + nums[j];
             let mut l = j + 1;
             let mut r = n - 1;
             while l < r {
@@ -46,7 +46,7 @@ pub fn four_sum(nums: Vec<i32>, target: i32) -> Vec<Vec<i32>> {
                         r -= 1;
                     }
                     Equal => {
-                        res.push(vec![nums[index], nums[j], nums[l], nums[r]]);
+                        res.push(vec![nums[i], nums[j], nums[l], nums[r]]);
                         l += 1;
                         r -= 1;
                         while l < r && nums[l - 1] == nums[l] {
@@ -60,7 +60,7 @@ pub fn four_sum(nums: Vec<i32>, target: i32) -> Vec<Vec<i32>> {
             }
             j += 1
         }
-        index += 1
+        i += 1
     }
     res
 }
