@@ -31,8 +31,8 @@ fn number_of_primes(n: usize) -> i32 {
         i += 1;
     }
     let mut res = 0;
-    for k in 0..=n {
-        if a[k] {
+    for &k in a.iter().take(n + 1) {
+        if k {
             res += 1;
         }
     }
