@@ -1,10 +1,24 @@
 // https://leetcode.com/problems/maximum-number-of-balloons/
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
+use std::collections::HashMap;
 pub fn max_number_of_balloons(text: String) -> i32 {
-    todo!()
+    let mut text_count: HashMap<char, usize> = HashMap::new();
+    let mut ballon_count: HashMap<char, usize> = HashMap::new();
+    for c in "balloon".chars() {
+        *ballon_count.entry(c).or_default() += 1;
+    }
+    for c in text.chars() {
+        *text_count.entry(c).or_default() += 1;
+    }
+    let mut min = text.len();
+    for (c, v) in ballon_count {
+        min = min.min(text_count.get(&c).unwrap_or(&0) / v);
+    }
+    min as i32
 }
 // hash_table string
 #[test]
-#[ignore]
 fn test1_1189() {
     assert_eq!(max_number_of_balloons(String::from("nlaebolko")), 1);
     assert_eq!(max_number_of_balloons(String::from("loonbalxballpoon")), 2);
