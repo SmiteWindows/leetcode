@@ -29,7 +29,10 @@ jobs:
         use-tool-cache: true
 
     - run: cargo audit
-
+    - name: Run cargo bloat
+      uses: orf/cargo-bloat-action@v1
+      with:
+          token: ${{ secrets.GITHUB_TOKEN }}
   rust:
     name: Rust
     runs-on: ${{ matrix.os }}
