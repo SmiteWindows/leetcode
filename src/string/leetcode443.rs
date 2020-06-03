@@ -32,7 +32,7 @@ fn write_pair(chars: &mut Vec<char>, mut index: usize, c: char, mut count: usize
     if count == 1 {
         return 1;
     }
-    let mut size: usize = 0;
+    let mut size = 0;
     while count > 0 {
         let d = count as u8 % 10_u8 + b'0';
         chars[index + size] = d as char;
