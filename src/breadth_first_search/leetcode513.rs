@@ -25,7 +25,7 @@ pub fn find_bottom_left_value(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     queue.push_back(root);
     let mut res = 0;
     while !queue.is_empty() {
-        let cur = queue.pop_front().unwrap().unwrap();
+        let cur = queue.pop_front().expect("exist").expect("exist");
         let cur = cur.borrow();
         if cur.right.is_some() {
             queue.push_back(cur.right.clone());

@@ -30,13 +30,13 @@ pub fn merge_trees(
     if t2.is_none() {
         return t1;
     }
-    t1.as_deref().unwrap().borrow_mut().val += t2.as_deref().unwrap().borrow().val;
-    let t1_left = t1.as_deref().unwrap().borrow().left.clone();
-    let t2_left = t2.as_deref().unwrap().borrow().left.clone();
-    let t1_right = t1.as_deref().unwrap().borrow().right.clone();
-    let t2_right = t2.as_deref().unwrap().borrow().right.clone();
-    t1.as_deref().unwrap().borrow_mut().left = merge_trees(t1_left, t2_left);
-    t1.as_deref().unwrap().borrow_mut().right = merge_trees(t1_right, t2_right);
+    t1.as_deref().expect("exist").borrow_mut().val += t2.as_deref().expect("exist").borrow().val;
+    let t1_left = t1.as_deref().expect("exist").borrow().left.clone();
+    let t2_left = t2.as_deref().expect("exist").borrow().left.clone();
+    let t1_right = t1.as_deref().expect("exist").borrow().right.clone();
+    let t2_right = t2.as_deref().expect("exist").borrow().right.clone();
+    t1.as_deref().expect("exist").borrow_mut().left = merge_trees(t1_left, t2_left);
+    t1.as_deref().expect("exist").borrow_mut().right = merge_trees(t1_right, t2_right);
     t1
 }
 // tree

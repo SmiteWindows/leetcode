@@ -7,13 +7,13 @@ pub fn min_window(s: String, t: String) -> String {
     }
     let mut dict_t: HashMap<char, i32> = HashMap::new();
     for i in 0..t.len() {
-        let c = t.chars().nth(i).unwrap();
+        let c = t.chars().nth(i).expect("exist");
         *dict_t.entry(c).or_default() += 1;
     }
     let required = dict_t.len();
     let mut filtered_s = Vec::new();
     for i in 0..s.len() {
-        let c = s.chars().nth(i).unwrap();
+        let c = s.chars().nth(i).expect("exist");
         if dict_t.contains_key(&c) {
             filtered_s.push((i, c));
         }

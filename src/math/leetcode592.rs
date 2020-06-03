@@ -38,7 +38,7 @@ impl Fraction {
             denominator,
         }
     }
-    
+
     fn reduce(self) -> Self {
         let sign = self.sign;
         let mut denominator = self.denominator;
@@ -85,7 +85,7 @@ pub fn fraction_addition(expression: String) -> String {
                 while let Some(p) = c_it.peek() {
                     if p.is_digit(10) {
                         val *= 10;
-                        val += (c_it.next().unwrap() as u8 - b'0') as i32;
+                        val += (c_it.next().expect("exist") as u8 - b'0') as i32;
                     } else {
                         break;
                     }
@@ -101,22 +101,22 @@ pub fn fraction_addition(expression: String) -> String {
         let numerator;
         let denominator;
         if let Some(Tok::Op('-')) = t_it.peek() {
-            t_it.next().unwrap();
+            t_it.next().expect("exist");
             sign = -1;
         }
         if let Some(Tok::Op('+')) = t_it.peek() {
-            t_it.next().unwrap();
+            t_it.next().expect("exist");
         }
-        if let Tok::Num(x) = t_it.next().unwrap() {
+        if let Tok::Num(x) = t_it.next().expect("exist") {
             numerator = x;
         } else {
             panic!();
         }
-        if let Tok::Op('/') = t_it.next().unwrap() {
+        if let Tok::Op('/') = t_it.next().expect("exist") {
         } else {
             panic!();
         }
-        if let Tok::Num(y) = t_it.next().unwrap() {
+        if let Tok::Num(y) = t_it.next().expect("exist") {
             denominator = y;
         } else {
             panic!();
@@ -124,12 +124,12 @@ pub fn fraction_addition(expression: String) -> String {
         fractions.push(Fraction::new(sign, numerator, denominator));
     }
     while fractions.len() > 1 {
-        let a = fractions.pop().unwrap();
-        let b = fractions.pop().unwrap();
+        let a = fractions.pop().expect("exist");
+        let b = fractions.pop().expect("exist");
         let c = a.add(b);
         fractions.push(c);
     }
-    let mut res = fractions.pop().unwrap();
+    let mut res = fractions.pop().expect("exist");
     res = res.reduce();
     res.to_string()
 }

@@ -49,7 +49,7 @@ impl Twitter {
             }
         }
         while !pq.is_empty() {
-            let earliest = pq.pop().unwrap();
+            let earliest = pq.pop().expect("exist");
             res.push(earliest.1);
         }
         res.reverse();

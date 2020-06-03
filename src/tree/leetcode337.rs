@@ -22,7 +22,7 @@ impl TreeNode {
 use std::{cell::RefCell, rc::Rc};
 pub fn rob(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     let res = walk(root.as_deref());
-    *res.iter().max().unwrap()
+    *res.iter().max().expect("exist")
 }
 
 fn walk(root: Option<&RefCell<TreeNode>>) -> Vec<i32> {
@@ -31,7 +31,7 @@ fn walk(root: Option<&RefCell<TreeNode>>) -> Vec<i32> {
         let node = node.borrow();
         let left = walk(node.left.as_deref());
         let right = walk(node.right.as_deref());
-        res[0] = left.iter().max().unwrap() + right.iter().max().unwrap();
+        res[0] = left.iter().max().expect("exist") + right.iter().max().expect("exist");
         res[1] = left[0] + right[0] + node.val;
     }
     res

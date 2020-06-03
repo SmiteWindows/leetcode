@@ -28,10 +28,10 @@ fn helper(root: Option<&RefCell<TreeNode>>, lower: Option<i32>, upper: Option<i3
     if let Some(node) = root {
         let node = node.borrow();
         let val = node.val;
-        if lower.is_some() && val <= lower.unwrap() {
+        if lower.is_some() && val <= lower.expect("exist") {
             return false;
         }
-        if upper.is_some() && val >= upper.unwrap() {
+        if upper.is_some() && val >= upper.expect("exist") {
             return false;
         }
         if !helper(node.left.as_deref(), lower, Some(val)) {

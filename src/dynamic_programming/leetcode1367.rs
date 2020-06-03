@@ -45,8 +45,8 @@ fn helper(head: Option<&ListNode>, root: Option<&RefCell<TreeNode>>) -> bool {
         return false;
     }
     is_sub(head, root)
-        || helper(head, root.unwrap().borrow().left.as_deref())
-        || helper(head, root.unwrap().borrow().right.as_deref())
+        || helper(head, root.expect("exist").borrow().left.as_deref())
+        || helper(head, root.expect("exist").borrow().right.as_deref())
 }
 
 fn is_sub(head: Option<&ListNode>, root: Option<&RefCell<TreeNode>>) -> bool {
@@ -56,15 +56,15 @@ fn is_sub(head: Option<&ListNode>, root: Option<&RefCell<TreeNode>>) -> bool {
     if root.is_none() {
         return false;
     }
-    if head.unwrap().val != root.unwrap().borrow().val {
+    if head.expect("exist").val != root.expect("exist").borrow().val {
         return false;
     }
     is_sub(
-        head.unwrap().next.as_deref(),
-        root.unwrap().borrow().left.as_deref(),
+        head.expect("exist").next.as_deref(),
+        root.expect("exist").borrow().left.as_deref(),
     ) || is_sub(
-        head.unwrap().next.as_deref(),
-        root.unwrap().borrow().right.as_deref(),
+        head.expect("exist").next.as_deref(),
+        root.expect("exist").borrow().right.as_deref(),
     )
 }
 // tree linked_list dynamic_programming

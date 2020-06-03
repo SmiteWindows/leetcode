@@ -47,7 +47,7 @@ fn walk(
         *index += 1;
         if *index < voyage.len()
             && node.left.is_some()
-            && node.left.as_ref().unwrap().borrow().val != voyage[*index]
+            && node.left.as_ref().expect("exist").borrow().val != voyage[*index]
         {
             flipped.push(node.val);
             walk(node.right.as_deref(), voyage, index, flipped);

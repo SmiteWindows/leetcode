@@ -15,7 +15,7 @@ pub fn find_repeated_dna_sequences(s: String) -> Vec<String> {
     to_int.insert('T', 3);
     let mut nums = vec![0; n];
     for i in 0..n {
-        nums[i] = to_int[&s.chars().nth(i).unwrap()];
+        nums[i] = to_int[&s.chars().nth(i).expect("exist")];
     }
     let mut bitmask = 0;
     let mut seen = HashSet::new();

@@ -25,8 +25,8 @@ fn test() {
     let l = as_list(v.clone());
     let mut cur = &l;
     for i in v {
-        assert_eq!(i, cur.as_deref().unwrap().val);
-        cur = &cur.as_deref().unwrap().next;
+        assert_eq!(i, cur.as_deref().expect("exist").val);
+        cur = &cur.as_deref().expect("exist").next;
     }
 }
 
@@ -51,20 +51,22 @@ impl TreeNode {
 }
 
 pub fn as_tree(v: Vec<Option<i32>>) -> Option<Rc<RefCell<TreeNode>>> {
-    let head = Some(Rc::new(RefCell::new(TreeNode::new(v[0].unwrap()))));
+    let head = Some(Rc::new(RefCell::new(TreeNode::new(v[0].expect("exist")))));
     let mut deq = VecDeque::new();
-    deq.push_back(head.as_ref().unwrap().clone());
+    deq.push_back(head.as_ref().expect("exist").clone());
     for children in v[1..].chunks(2) {
-        let parent = deq.pop_front().unwrap();
+        let parent = deq.pop_front().expect("exist");
         if let Some(v) = children[0] {
             let tmp = Some(Rc::new(RefCell::new(TreeNode::new(v))));
             parent.borrow_mut().left = tmp;
-            deq.push_back(parent.borrow().left.as_ref().unwrap().clone());
+            deq.push_back(parent.borrow().left.as_ref().expect("exist").clone());
         }
         if children.len() > 1 && children[1].is_some() {
-            let tmp = Some(Rc::new(RefCell::new(TreeNode::new(children[1].unwrap()))));
+            let tmp = Some(Rc::new(RefCell::new(TreeNode::new(
+                children[1].expect("exist"),
+            ))));
             parent.borrow_mut().right = tmp;
-            deq.push_back(parent.borrow().right.as_ref().unwrap().clone());
+            deq.push_back(parent.borrow().right.as_ref().expect("exist").clone());
         }
     }
     head

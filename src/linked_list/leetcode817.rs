@@ -24,7 +24,7 @@ pub fn num_components(head: Option<Box<ListNode>>, g: Vec<i32>) -> i32 {
     let mut cur = head.as_deref();
     while let Some(x) = cur {
         if gset.contains(&x.val)
-            && (x.next.is_none() || !gset.contains(&x.next.as_deref().unwrap().val))
+            && (x.next.is_none() || !gset.contains(&x.next.as_deref().expect("exist").val))
         {
             res += 1;
         }

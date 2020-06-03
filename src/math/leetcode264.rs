@@ -11,7 +11,7 @@ pub fn nth_ugly_number(n: i32) -> i32 {
         let min = vec![ugly[i] * 2, ugly[j] * 3, ugly[k] * 5]
             .into_iter()
             .min()
-            .unwrap();
+            .expect("exist");
         ugly.push(min);
         if ugly[i] * 2 == min {
             i += 1;

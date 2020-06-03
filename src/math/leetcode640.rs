@@ -3,8 +3,8 @@
 // Memory Usage: 2.1 MB
 pub fn solve_equation(equation: String) -> String {
     let mut it = equation.split('=');
-    let left = it.next().unwrap();
-    let right = it.next().unwrap();
+    let left = it.next().expect("exist");
+    let right = it.next().expect("exist");
     let (a, b) = parse(left);
     let (c, d) = parse(right);
     if a == c {
@@ -71,9 +71,9 @@ fn parse(s: &str) -> (i32, i32) {
         if val.is_none() {
             val = Some(1);
         }
-        a += sign * val.unwrap();
+        a += sign * val.expect("exist");
     } else {
-        b += sign * val.unwrap();
+        b += sign * val.expect("exist");
     }
     (a, b)
 }

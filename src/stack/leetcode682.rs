@@ -9,21 +9,21 @@ pub fn cal_points(ops: Vec<String>) -> i32 {
                 stack.pop();
             }
             "D" => {
-                let top = stack.pop().unwrap();
+                let top = stack.pop().expect("exist");
                 let double = top * 2;
                 stack.push(top);
                 stack.push(double);
             }
             "+" => {
-                let b = stack.pop().unwrap();
-                let a = stack.pop().unwrap();
+                let b = stack.pop().expect("exist");
+                let a = stack.pop().expect("exist");
                 let plus = a + b;
                 stack.push(a);
                 stack.push(b);
                 stack.push(plus);
             }
             _ => {
-                stack.push(s.parse::<i32>().unwrap());
+                stack.push(s.parse::<i32>().expect("exist"));
             }
         }
     }

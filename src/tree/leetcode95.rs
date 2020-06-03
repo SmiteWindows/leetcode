@@ -40,8 +40,8 @@ fn helper(start: i32, end: i32) -> Vec<Option<Rc<RefCell<TreeNode>>>> {
         for lt in left_trees.iter() {
             for rt in right_trees.iter() {
                 let curr_tree = Some(Rc::new(RefCell::new(TreeNode::new(i))));
-                curr_tree.as_deref().unwrap().borrow_mut().left = lt.clone();
-                curr_tree.as_deref().unwrap().borrow_mut().right = rt.clone();
+                curr_tree.as_deref().expect("exist").borrow_mut().left = lt.clone();
+                curr_tree.as_deref().expect("exist").borrow_mut().right = rt.clone();
                 res.push(curr_tree);
             }
         }

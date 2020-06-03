@@ -29,12 +29,12 @@ pub fn is_complete_tree(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
     let mut flag = false;
     while !queue.is_empty() {
         for i in 0..queue.len() {
-            let curr = queue.pop_front().unwrap();
+            let curr = queue.pop_front().expect("exist");
             if curr.is_some() {
                 if flag {
                     return false;
                 }
-                let curr = curr.as_ref().unwrap().borrow();
+                let curr = curr.as_ref().expect("exist").borrow();
                 queue.push_back(curr.left.clone());
                 queue.push_back(curr.right.clone());
             } else {

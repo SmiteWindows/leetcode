@@ -24,7 +24,7 @@ pub fn network_delay_time(times: Vec<Vec<i32>>, n: i32, k: i32) -> i32 {
             }
         }
     }
-    let max = visited.into_iter().max().unwrap();
+    let max = visited.into_iter().max().expect("exist");
     if max == i32::MAX {
         -1
     } else {

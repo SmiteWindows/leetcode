@@ -29,12 +29,19 @@ pub fn is_palindrome(head: Option<Box<ListNode>>) -> bool {
     let mut second;
     let mid = len / 2;
     for _ in 1..mid {
-        first = &mut first.as_mut().unwrap().next;
+        first = &mut first.as_mut().expect("exist").next;
     }
     if len % 2 == 0 {
-        second = first.as_mut().unwrap().next.take();
+        second = first.as_mut().expect("exist").next.take();
     } else {
-        second = first.as_mut().unwrap().next.take().unwrap().next.take();
+        second = first
+            .as_mut()
+            .expect("exist")
+            .next
+            .take()
+            .expect("exist")
+            .next
+            .take();
     }
     let mut prev = None;
     let mut cur = head;

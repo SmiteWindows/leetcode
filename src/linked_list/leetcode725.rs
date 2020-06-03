@@ -32,14 +32,15 @@ pub fn split_list_to_parts(root: Option<Box<ListNode>>, k: i32) -> Vec<Option<Bo
         let mut write = head.as_deref_mut();
         let mut j = 0;
         while j < width + if i < rem { 1 } else { 0 } {
-            write.as_mut().unwrap().next = Some(Box::new(ListNode::new(cur.unwrap().val)));
-            write = write.unwrap().next.as_deref_mut();
+            write.as_mut().expect("exist").next =
+                Some(Box::new(ListNode::new(cur.expect("exist").val)));
+            write = write.expect("exist").next.as_deref_mut();
             if let Some(x) = cur {
                 cur = x.next.as_deref();
             }
             j += 1;
         }
-        res.push(head.unwrap().next);
+        res.push(head.expect("exist").next);
         i += 1;
     }
     res

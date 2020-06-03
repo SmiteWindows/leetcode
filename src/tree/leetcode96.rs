@@ -8,7 +8,7 @@ pub fn num_trees(n: i32) -> i32 {
     for i in 0..n {
         catalan = catalan * 2 * (2 * i + 1) / (i + 2);
     }
-    catalan.try_into().unwrap()
+    catalan.try_into().expect("exist")
 }
 // tree dynamic_programming
 #[test]

@@ -28,7 +28,7 @@ impl MyQueue {
         while let Some(x) = self.stack.pop() {
             self.temp.push(x);
         }
-        let res = self.temp.pop().unwrap();
+        let res = self.temp.pop().expect("exist");
         while let Some(x) = self.temp.pop() {
             self.stack.push(x)
         }
@@ -40,7 +40,7 @@ impl MyQueue {
         while let Some(x) = self.stack.pop() {
             self.temp.push(x);
         }
-        let res = self.temp.pop().unwrap();
+        let res = self.temp.pop().expect("exist");
         self.stack.push(res);
         while let Some(x) = self.temp.pop() {
             self.stack.push(x)

@@ -26,7 +26,7 @@ pub fn find_frequent_tree_sum(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
     let mut res = Vec::new();
     walk(root.as_deref(), &mut map, &mut max_value);
     for i in map.keys() {
-        if map.get(i).unwrap() == &max_value {
+        if map.get(i).expect("exist") == &max_value {
             res.push(*i);
         }
     }
@@ -40,7 +40,7 @@ fn walk(root: Option<&RefCell<TreeNode>>, map: &mut HashMap<i32, i32>, max_value
         let right = walk(node.right.as_deref(), map, max_value);
         let sum = node.val + left + right;
         *map.entry(sum).or_default() += 1;
-        *max_value = i32::max(*max_value, *map.get(&sum).unwrap());
+        *max_value = i32::max(*max_value, *map.get(&sum).expect("exist"));
         sum
     } else {
         0

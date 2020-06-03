@@ -36,7 +36,7 @@ fn walk(
     if let Some(node) = root {
         if let Some(n) = par.as_ref() {
             let val = n.borrow().val;
-            depth.insert(node.borrow().val, 1 + depth.get(&val).unwrap());
+            depth.insert(node.borrow().val, 1 + depth.get(&val).expect("exist"));
         } else {
             depth.insert(node.borrow().val, 0);
         }

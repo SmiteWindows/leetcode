@@ -21,25 +21,25 @@ impl TreeNode {
 // Memory Usage: 3.1 MB
 use std::{cell::RefCell, cmp::Ordering, rc::Rc};
 pub fn kth_smallest(root: Option<Rc<RefCell<TreeNode>>>, k: i32) -> i32 {
-    helper(root.as_ref(), k)
+    helper(root.as_deref(), k)
 }
 
-fn count(root: Option<&Rc<RefCell<TreeNode>>>) -> i32 {
+fn count(root: Option<&RefCell<TreeNode>>) -> i32 {
     if let Some(node) = root {
         let node = node.borrow();
-        1 + count(node.left.as_ref()) + count(node.right.as_ref())
+        1 + count(node.left.as_deref()) + count(node.right.as_deref())
     } else {
         0
     }
 }
 
-fn helper(root: Option<&Rc<RefCell<TreeNode>>>, k: i32) -> i32 {
-    let node = root.unwrap().borrow();
-    let n = count(node.left.as_ref());
+fn helper(root: Option<&RefCell<TreeNode>>, k: i32) -> i32 {
+    let node = root.expect("exist").borrow();
+    let n = count(node.left.as_deref());
     match (n + 1).cmp(&k) {
         Ordering::Equal => node.val,
-        Ordering::Less => helper(node.right.as_ref(), k - n - 1),
-        Ordering::Greater => helper(node.left.as_ref(), k),
+        Ordering::Less => helper(node.right.as_deref(), k - n - 1),
+        Ordering::Greater => helper(node.left.as_deref(), k),
     }
 }
 // tree binary_search

@@ -41,10 +41,10 @@ fn insert(root: Option<&RefCell<TreeNode>>, value: i32, depth: i32, n: i32) {
         if depth == n - 1 {
             let mut t = node.left.take();
             node.left = Some(Rc::new(RefCell::new(TreeNode::new(value))));
-            node.left.as_deref().unwrap().borrow_mut().left = t;
+            node.left.as_deref().expect("exist").borrow_mut().left = t;
             t = node.right.take();
             node.right = Some(Rc::new(RefCell::new(TreeNode::new(value))));
-            node.right.as_deref().unwrap().borrow_mut().right = t;
+            node.right.as_deref().expect("exist").borrow_mut().right = t;
         }
         insert(node.left.as_deref(), value, depth + 1, n);
         insert(node.right.as_deref(), value, depth + 1, n);

@@ -28,7 +28,7 @@ impl KthLargest {
         if self.pq.len() > self.k {
             self.pq.pop();
         }
-        let x = *self.pq.peek().unwrap();
+        let x = *self.pq.peek().expect("exist");
         x.0
     }
 }

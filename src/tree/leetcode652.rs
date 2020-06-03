@@ -42,7 +42,7 @@ fn walk(
             + ","
             + &walk(node.right.as_ref(), count, ans);
         *count.entry(serial.clone()).or_default() += 1;
-        if count.get(&serial).unwrap() == &2 {
+        if count.get(&serial).expect("exist") == &2 {
             ans.push(Some(n.clone()));
         }
         serial

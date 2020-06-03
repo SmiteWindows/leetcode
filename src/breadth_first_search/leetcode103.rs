@@ -29,7 +29,7 @@ pub fn zigzag_level_order(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<i32>> 
         let mut level_list = Vec::new();
         let mut is_order_left = true;
         while !queue.is_empty() {
-            if let Some(curr) = queue.pop_front().unwrap() {
+            if let Some(curr) = queue.pop_front().expect("exist") {
                 let curr = curr.borrow();
                 if is_order_left {
                     level_list.push(curr.val);

@@ -8,7 +8,7 @@ pub fn length_of_longest_substring(s: String) -> i32 {
     let mut map = HashMap::new();
     let mut i = 0;
     for j in 0..n {
-        let ch = s.chars().nth(j).unwrap();
+        let ch = s.chars().nth(j).expect("exist");
         if map.contains_key(&ch) {
             i = i.max(map[&ch]);
         }

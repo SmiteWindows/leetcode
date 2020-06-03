@@ -9,9 +9,9 @@ pub fn length_of_longest_substring(s: String) -> i32 {
     let mut i = 0;
     let mut j = 0;
     while i < n && j < n {
-        let ch = s.chars().nth(j).unwrap();
+        let ch = s.chars().nth(j).expect("exist");
         if set.contains(&ch) {
-            let ch = s.chars().nth(i).unwrap();
+            let ch = s.chars().nth(i).expect("exist");
             set.remove(&ch);
             i += 1;
         } else {

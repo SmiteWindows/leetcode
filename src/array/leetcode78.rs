@@ -6,12 +6,12 @@ pub fn subsets(nums: Vec<i32>) -> Vec<Vec<i32>> {
     if nums.is_empty() {
         return vec![vec![]];
     }
-    let n = nums.pop().unwrap();
+    let n = nums.pop().expect("exist");
     let mut res = subsets(nums);
     let len = res.len();
     for i in 0..len {
         res.push(res[i].clone());
-        res.last_mut().unwrap().push(n);
+        res.last_mut().expect("exist").push(n);
     }
     res
 }

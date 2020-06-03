@@ -4,7 +4,7 @@
 use std::collections::HashSet;
 pub fn intersection(nums1: Vec<i32>, nums2: Vec<i32>) -> Vec<i32> {
     let h1 = nums1.into_iter().collect::<HashSet<_>>();
-    let h2= nums2.into_iter().collect::<HashSet<_>>();
+    let h2 = nums2.into_iter().collect::<HashSet<_>>();
     let bitand = &h1 & &h2;
     bitand.into_iter().collect()
 }

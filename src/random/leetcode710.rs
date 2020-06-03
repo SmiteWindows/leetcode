@@ -24,7 +24,7 @@ impl Solution {
         }
         for &x in blacklist.iter() {
             if x < wlen {
-                m.insert(x, *w.iter().next().unwrap());
+                m.insert(x, *w.iter().next().expect("exist"));
             }
         }
         Self { rng, m, wlen }

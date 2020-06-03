@@ -34,8 +34,8 @@ fn helper(root1: Option<&RefCell<TreeNode>>, root2: Option<&RefCell<TreeNode>>) 
     if root1.is_none() || root2.is_none() {
         return false;
     }
-    let node1 = root1.unwrap().borrow();
-    let node2 = root2.unwrap().borrow();
+    let node1 = root1.expect("exist").borrow();
+    let node2 = root2.expect("exist").borrow();
     if node1.val != node2.val {
         return false;
     }
