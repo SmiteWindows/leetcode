@@ -1,2 +1,9 @@
 pub mod leetcode1360;
+pub mod leetcode412;
+pub mod leetcode482;
+pub mod leetcode492;
+pub mod leetcode504;
+pub mod leetcode506;
+pub mod leetcode796;
 pub mod leetcode806;
+pub mod leetcode821;
