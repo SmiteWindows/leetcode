@@ -3,7 +3,7 @@
 // Memory Usage: 2.1 MB
 pub fn check_record(s: String) -> bool {
     let s = s.chars().collect::<Vec<_>>();
-    if s.iter().filter(|&c| c == &'A').count() > 1 {
+    if s.iter().filter(|&&c| c == 'A').count() > 1 {
         return false;
     }
     if s.windows(3).filter(|&w| w == ['L', 'L', 'L']).count() > 0 {

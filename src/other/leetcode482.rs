@@ -1,9 +1,25 @@
 // https://leetcode.com/problems/license-key-formatting/
+// Runtime: 0 ms
+// Memory Usage: 2.5 MB
 pub fn license_key_formatting(s: String, k: i32) -> String {
-    todo!()
+    let mut res = vec![];
+    let mut i = 0;
+    for c in s.chars().rev() {
+        if c != '-' {
+            res.push(c);
+            i += 1;
+            if i == k {
+                i = 0;
+                res.push('-');
+            }
+        }
+    }
+    if let Some(&'-') = res.last() {
+        res.pop();
+    }
+    res.iter().rev().collect::<String>().to_ascii_uppercase()
 }
 #[test]
-#[ignore]
 fn test482() {
     assert_eq!(
         license_key_formatting("5F3Z-2e-9-w".to_string(), 4),
