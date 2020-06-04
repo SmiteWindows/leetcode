@@ -10,10 +10,10 @@ pub fn matrix_reshape(nums: Vec<Vec<i32>>, r: i32, c: i32) -> Vec<Vec<i32>> {
         return nums;
     }
     let mut res = vec![vec![0; c]; r];
-    for i in 0..n {
-        for j in 0..m {
+    for (i, row) in nums.iter().enumerate().take(n) {
+        for (j, &col) in row.iter().enumerate().take(m) {
             let k = i * m + j;
-            res[k / c][k % c] = nums[i][j];
+            res[k / c][k % c] = col;
         }
     }
     res

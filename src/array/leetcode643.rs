@@ -5,8 +5,8 @@ pub fn find_max_average(nums: Vec<i32>, k: i32) -> f64 {
     let n = nums.len();
     let k = k as usize;
     let mut sum = 0;
-    for i in 0..k {
-        sum += nums[i];
+    for num in nums.iter().take(k) {
+        sum += num;
     }
     let mut max = sum;
     for i in k..n {

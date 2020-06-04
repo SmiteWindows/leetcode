@@ -5,9 +5,9 @@ pub fn image_smoother(m: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
     let h = m.len();
     let w = m[0].len();
     let mut res = vec![vec![0; w]; h];
-    for i in 0..h {
-        for j in 0..w {
-            res[i][j] = smooth(&m, i, j, h, w);
+    for (i, row) in res.iter_mut().enumerate().take(h) {
+        for (j, col) in row.iter_mut().enumerate().take(w) {
+            *col = smooth(&m, i, j, h, w);
         }
     }
     res
