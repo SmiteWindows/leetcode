@@ -8,7 +8,7 @@ pub fn longest_word(words: Vec<String>) -> String {
     let mut set = HashSet::new();
     words.sort();
     for word in words {
-        if word.len() == 1 || set.contains(&word[..word.len()-1]) {
+        if word.len() == 1 || set.contains(&word[..word.len() - 1]) {
             if word.len() > res.len() {
                 res = word.to_string();
             }
