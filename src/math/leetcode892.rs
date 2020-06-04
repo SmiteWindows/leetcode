@@ -4,10 +4,10 @@
 pub fn surface_area(grid: Vec<Vec<i32>>) -> i32 {
     let n = grid.len();
     let mut res = 0;
-    for i in 0..n {
-        for j in 0..n {
-            if grid[i][j] > 0 {
-                res += 2 + 4 * grid[i][j];
+    for gi in grid.iter().take(n) {
+        for &gj in gi.iter().take(n) {
+            if gj > 0 {
+                res += 2 + 4 * gj;
             }
         }
     }
