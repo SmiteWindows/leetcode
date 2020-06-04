@@ -7,13 +7,13 @@ pub fn projection_area(grid: Vec<Vec<i32>>) -> i32 {
     let mut x = vec![0; n];
     let mut y = vec![0; m];
     let mut sum_z = 0;
-    for i in 0..n {
-        for j in 0..m {
+    for (i, xi) in x.iter_mut().enumerate().take(n) {
+        for (j, yj) in y.iter_mut().enumerate().take(m) {
             if grid[i][j] != 0 {
                 sum_z += 1;
             }
-            x[i] = x[i].max(grid[i][j]);
-            y[j] = y[j].max(grid[i][j]);
+            *xi = (*xi).max(grid[i][j]);
+            *yj = (*yj).max(grid[i][j]);
         }
     }
     let sum_x = x.iter().sum::<i32>();
