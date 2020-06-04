@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/projection-area-of-3d-shapes/
 // Runtime: 0 ms
-// Memory Usage: 2.1 MB
+// Memory Usage: 2.2 MB
 pub fn projection_area(grid: Vec<Vec<i32>>) -> i32 {
     let n = grid.len();
     let m = grid[0].len();
