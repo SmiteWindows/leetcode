@@ -1,4 +1,10 @@
 // https://leetcode.com/problems/remove-zero-sum-consecutive-nodes-from-linked-list/
+
+// use std::collections::HashMap;
+pub fn remove_zero_sum_sublists(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+    todo!()
+}
+
 // Definition for singly-linked list.
 #[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {
@@ -11,10 +17,6 @@ impl ListNode {
     fn new(val: i32) -> Self {
         Self { next: None, val }
     }
-}
-// use std::collections::HashMap;
-pub fn remove_zero_sum_sublists(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
-    todo!()
 }
 // linked_list
 #[test]

@@ -1,4 +1,21 @@
 // https://leetcode.com/problems/binary-search-tree-to-greater-sum-tree/
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
+use std::{cell::RefCell, rc::Rc};
+pub fn bst_to_gst(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
+    helper(root.as_deref(), &mut 0);
+    root
+}
+
+fn helper(root: Option<&RefCell<TreeNode>>, sum: &mut i32) {
+    if let Some(node) = root {
+        helper(node.borrow().right.as_deref(), sum);
+        *sum += node.borrow().val;
+        node.borrow_mut().val = *sum;
+        helper(node.borrow().left.as_deref(), sum);
+    }
+}
+
 // Definition for a binary tree node.
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
@@ -15,22 +32,6 @@ impl TreeNode {
             left: None,
             right: None,
         }
-    }
-}
-// Runtime: 0 ms
-// Memory Usage: 2.1 MB
-use std::{cell::RefCell, rc::Rc};
-pub fn bst_to_gst(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
-    helper(root.as_deref(), &mut 0);
-    root
-}
-
-fn helper(root: Option<&RefCell<TreeNode>>, sum: &mut i32) {
-    if let Some(node) = root {
-        helper(node.borrow().right.as_deref(), sum);
-        *sum += node.borrow().val;
-        node.borrow_mut().val = *sum;
-        helper(node.borrow().left.as_deref(), sum);
     }
 }
 // binary_search_tree

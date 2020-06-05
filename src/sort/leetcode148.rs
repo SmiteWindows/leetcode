@@ -1,4 +1,9 @@
 // https://leetcode.com/problems/sort-list/
+
+pub fn sort_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+    todo!()
+}
+
 // Definition for singly-linked list.
 #[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {
@@ -11,10 +16,6 @@ impl ListNode {
     fn new(val: i32) -> Self {
         Self { next: None, val }
     }
-}
-
-pub fn sort_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
-    todo!()
 }
 // linked_list sort
 #[test]

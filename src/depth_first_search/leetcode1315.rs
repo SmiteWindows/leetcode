@@ -1,22 +1,4 @@
 // https://leetcode.com/problems/sum-of-nodes-with-even-valued-grandparent/
-// Definition for a binary tree node.
-#[derive(Debug, PartialEq, Eq)]
-pub struct TreeNode {
-    pub val: i32,
-    pub left: Option<Rc<RefCell<Self>>>,
-    pub right: Option<Rc<RefCell<Self>>>,
-}
-
-impl TreeNode {
-    #[inline]
-    pub fn new(val: i32) -> Self {
-        Self {
-            val,
-            left: None,
-            right: None,
-        }
-    }
-}
 // Runtime: 4 ms
 // Memory Usage: 3 MB
 use std::{cell::RefCell, rc::Rc};
@@ -34,6 +16,25 @@ fn walk(root: Option<&RefCell<TreeNode>>, gp_val: i32, p_val: i32, res: &mut i32
         }
         walk(node.left.as_deref(), p_val, node.val, res);
         walk(node.right.as_deref(), p_val, node.val, res);
+    }
+}
+
+// Definition for a binary tree node.
+#[derive(Debug, PartialEq, Eq)]
+pub struct TreeNode {
+    pub val: i32,
+    pub left: Option<Rc<RefCell<Self>>>,
+    pub right: Option<Rc<RefCell<Self>>>,
+}
+
+impl TreeNode {
+    #[inline]
+    pub fn new(val: i32) -> Self {
+        Self {
+            val,
+            left: None,
+            right: None,
+        }
     }
 }
 // tree depth_first_search

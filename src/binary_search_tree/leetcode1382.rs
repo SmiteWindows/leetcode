@@ -1,22 +1,4 @@
 // https://leetcode.com/problems/balance-a-binary-search-tree/
-// Definition for a binary tree node.
-#[derive(Debug, PartialEq, Eq)]
-pub struct TreeNode {
-    pub val: i32,
-    pub left: Option<Rc<RefCell<Self>>>,
-    pub right: Option<Rc<RefCell<Self>>>,
-}
-
-impl TreeNode {
-    #[inline]
-    pub fn new(val: i32) -> Self {
-        Self {
-            val,
-            left: None,
-            right: None,
-        }
-    }
-}
 // Runtime: 16 ms
 // Memory Usage: 3.3 MB
 use std::{cell::RefCell, rc::Rc};
@@ -45,6 +27,25 @@ fn build_tree(sort_list: &[i32]) -> Option<Rc<RefCell<TreeNode>>> {
     node.left = build_tree(&sort_list[0..m]);
     node.right = build_tree(&sort_list[m + 1..n]);
     Some(Rc::new(RefCell::new(node)))
+}
+
+// Definition for a binary tree node.
+#[derive(Debug, PartialEq, Eq)]
+pub struct TreeNode {
+    pub val: i32,
+    pub left: Option<Rc<RefCell<Self>>>,
+    pub right: Option<Rc<RefCell<Self>>>,
+}
+
+impl TreeNode {
+    #[inline]
+    pub fn new(val: i32) -> Self {
+        Self {
+            val,
+            left: None,
+            right: None,
+        }
+    }
 }
 // binary_search_tree
 #[test]

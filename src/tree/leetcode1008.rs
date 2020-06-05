@@ -1,4 +1,10 @@
 // https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/
+
+use std::{cell::RefCell, rc::Rc};
+pub fn bst_from_preorder(preorder: Vec<i32>) -> Option<Rc<RefCell<TreeNode>>> {
+    todo!()
+}
+
 // Definition for a binary tree node.
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
@@ -16,11 +22,6 @@ impl TreeNode {
             right: None,
         }
     }
-}
-
-use std::{cell::RefCell, rc::Rc};
-pub fn bst_from_preorder(preorder: Vec<i32>) -> Option<Rc<RefCell<TreeNode>>> {
-    todo!()
 }
 // tree
 #[test]

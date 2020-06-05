@@ -1,4 +1,13 @@
 // https://leetcode.com/problems/insufficient-nodes-in-root-to-leaf-paths/
+
+use std::{cell::RefCell, rc::Rc};
+pub fn sufficient_subset(
+    root: Option<Rc<RefCell<TreeNode>>>,
+    limit: i32,
+) -> Option<Rc<RefCell<TreeNode>>> {
+    todo!()
+}
+
 // Definition for a binary tree node.
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
@@ -16,14 +25,6 @@ impl TreeNode {
             right: None,
         }
     }
-}
-
-use std::{cell::RefCell, rc::Rc};
-pub fn sufficient_subset(
-    root: Option<Rc<RefCell<TreeNode>>>,
-    limit: i32,
-) -> Option<Rc<RefCell<TreeNode>>> {
-    todo!()
 }
 // depth_first_search
 #[test]

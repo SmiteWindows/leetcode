@@ -1,17 +1,4 @@
 // https://leetcode.com/problems/reverse-nodes-in-k-group/
-// Definition for singly-linked list.
-#[derive(PartialEq, Eq, Clone, Debug)]
-pub struct ListNode {
-    pub val: i32,
-    pub next: Option<Box<Self>>,
-}
-
-impl ListNode {
-    #[inline]
-    fn new(val: i32) -> Self {
-        Self { next: None, val }
-    }
-}
 // Runtime: 0 ms
 // Memory Usage: 2.3 MB
 pub fn reverse_k_group(head: Option<Box<ListNode>>, k: i32) -> Option<Box<ListNode>> {
@@ -51,6 +38,20 @@ fn reverse(
         head = next;
     }
     tail
+}
+
+// Definition for singly-linked list.
+#[derive(PartialEq, Eq, Clone, Debug)]
+pub struct ListNode {
+    pub val: i32,
+    pub next: Option<Box<Self>>,
+}
+
+impl ListNode {
+    #[inline]
+    fn new(val: i32) -> Self {
+        Self { next: None, val }
+    }
 }
 // linked_list
 #[test]

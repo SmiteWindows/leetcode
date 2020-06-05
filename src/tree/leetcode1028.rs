@@ -1,4 +1,10 @@
 // https://leetcode.com/problems/recover-a-tree-from-preorder-traversal/
+
+use std::{cell::RefCell, rc::Rc};
+pub fn recover_from_preorder(s: String) -> Option<Rc<RefCell<TreeNode>>> {
+    todo!()
+}
+
 // Definition for a binary tree node.
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
@@ -16,11 +22,6 @@ impl TreeNode {
             right: None,
         }
     }
-}
-
-use std::{cell::RefCell, rc::Rc};
-pub fn recover_from_preorder(s: String) -> Option<Rc<RefCell<TreeNode>>> {
-    todo!()
 }
 // tree depth_first_search
 #[test]

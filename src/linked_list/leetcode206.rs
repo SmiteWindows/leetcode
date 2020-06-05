@@ -1,4 +1,17 @@
 // https://leetcode.com/problems/reverse-linked-list/
+// Runtime: 0 ms
+// Memory Usage: 2.3 MB
+pub fn reverse_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+    let mut head = head;
+    let mut prev = None;
+    while let Some(mut node) = head {
+        head = node.next.take();
+        node.next = prev;
+        prev = Some(node);
+    }
+    prev
+}
+
 // Definition for singly-linked list.
 #[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {
@@ -11,18 +24,6 @@ impl ListNode {
     fn new(val: i32) -> Self {
         Self { next: None, val }
     }
-}
-// Runtime: 0 ms
-// Memory Usage: 2.3 MB
-pub fn reverse_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
-    let mut head = head;
-    let mut prev = None;
-    while let Some(mut node) = head {
-        head = node.next.take();
-        node.next = prev;
-        prev = Some(node);
-    }
-    prev
 }
 // linked_list
 #[test]

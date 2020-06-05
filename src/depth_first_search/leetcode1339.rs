@@ -1,22 +1,4 @@
 // https://leetcode.com/problems/maximum-product-of-splitted-binary-tree/
-// Definition for a binary tree node.
-#[derive(Debug, PartialEq, Eq)]
-pub struct TreeNode {
-    pub val: i32,
-    pub left: Option<Rc<RefCell<Self>>>,
-    pub right: Option<Rc<RefCell<Self>>>,
-}
-
-impl TreeNode {
-    #[inline]
-    pub fn new(val: i32) -> Self {
-        Self {
-            val,
-            left: None,
-            right: None,
-        }
-    }
-}
 // Runtime: 20 ms
 // Memory Usage: 10.9 MB
 use std::{cell::RefCell, rc::Rc};
@@ -50,6 +32,25 @@ fn helper(root: Option<&RefCell<TreeNode>>, sum: &mut i32, best: &mut i32) -> i3
         curr
     } else {
         0
+    }
+}
+
+// Definition for a binary tree node.
+#[derive(Debug, PartialEq, Eq)]
+pub struct TreeNode {
+    pub val: i32,
+    pub left: Option<Rc<RefCell<Self>>>,
+    pub right: Option<Rc<RefCell<Self>>>,
+}
+
+impl TreeNode {
+    #[inline]
+    pub fn new(val: i32) -> Self {
+        Self {
+            val,
+            left: None,
+            right: None,
+        }
     }
 }
 // tree depth_first_search dynamic_programming

@@ -1,22 +1,4 @@
 // https://leetcode.com/problems/find-largest-value-in-each-tree-row/
-// Definition for a binary tree node.
-#[derive(Debug, PartialEq, Eq)]
-pub struct TreeNode {
-    pub val: i32,
-    pub left: Option<Rc<RefCell<Self>>>,
-    pub right: Option<Rc<RefCell<Self>>>,
-}
-
-impl TreeNode {
-    #[inline]
-    pub fn new(val: i32) -> Self {
-        Self {
-            val,
-            left: None,
-            right: None,
-        }
-    }
-}
 // Runtime: 0 ms
 // Memory Usage: 2.9 MB
 use std::{cell::RefCell, rc::Rc};
@@ -41,6 +23,25 @@ fn walk(root: Option<&RefCell<TreeNode>>, res: &mut Vec<i32>, level: usize) {
         }
         if node.right.is_some() {
             walk(node.right.as_deref(), res, level + 1);
+        }
+    }
+}
+
+// Definition for a binary tree node.
+#[derive(Debug, PartialEq, Eq)]
+pub struct TreeNode {
+    pub val: i32,
+    pub left: Option<Rc<RefCell<Self>>>,
+    pub right: Option<Rc<RefCell<Self>>>,
+}
+
+impl TreeNode {
+    #[inline]
+    pub fn new(val: i32) -> Self {
+        Self {
+            val,
+            left: None,
+            right: None,
         }
     }
 }

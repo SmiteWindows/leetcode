@@ -1,22 +1,4 @@
 // https://leetcode.com/problems/subtree-of-another-tree/
-// Definition for a binary tree node.
-#[derive(Debug, PartialEq, Eq)]
-pub struct TreeNode {
-    pub val: i32,
-    pub left: Option<Rc<RefCell<Self>>>,
-    pub right: Option<Rc<RefCell<Self>>>,
-}
-
-impl TreeNode {
-    #[inline]
-    pub fn new(val: i32) -> Self {
-        Self {
-            val,
-            left: None,
-            right: None,
-        }
-    }
-}
 // Runtime: 4 ms
 // Memory Usage: 2 MB
 use std::{cell::RefCell, rc::Rc};
@@ -49,6 +31,25 @@ fn helper(s: Option<&RefCell<TreeNode>>, t: Option<&RefCell<TreeNode>>) -> bool 
     } else {
         let sn = s.expect("exist").borrow();
         helper(sn.left.as_deref(), t) || helper(sn.right.as_deref(), t)
+    }
+}
+
+// Definition for a binary tree node.
+#[derive(Debug, PartialEq, Eq)]
+pub struct TreeNode {
+    pub val: i32,
+    pub left: Option<Rc<RefCell<Self>>>,
+    pub right: Option<Rc<RefCell<Self>>>,
+}
+
+impl TreeNode {
+    #[inline]
+    pub fn new(val: i32) -> Self {
+        Self {
+            val,
+            left: None,
+            right: None,
+        }
     }
 }
 // tree

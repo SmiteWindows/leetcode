@@ -1,22 +1,4 @@
 // https://leetcode.com/problems/binary-tree-maximum-path-sum/
-// Definition for a binary tree node.
-#[derive(Debug, PartialEq, Eq)]
-pub struct TreeNode {
-    pub val: i32,
-    pub left: Option<Rc<RefCell<Self>>>,
-    pub right: Option<Rc<RefCell<Self>>>,
-}
-
-impl TreeNode {
-    #[inline]
-    pub fn new(val: i32) -> Self {
-        Self {
-            val,
-            left: None,
-            right: None,
-        }
-    }
-}
 // Runtime: 4 ms
 // Memory Usage: 4.2 MB
 use std::{cell::RefCell, rc::Rc};
@@ -36,6 +18,25 @@ fn max_gain(root: Option<&RefCell<TreeNode>>, max_sum: &mut i32) -> i32 {
         val + left_gain.max(right_gain)
     } else {
         0
+    }
+}
+
+// Definition for a binary tree node.
+#[derive(Debug, PartialEq, Eq)]
+pub struct TreeNode {
+    pub val: i32,
+    pub left: Option<Rc<RefCell<Self>>>,
+    pub right: Option<Rc<RefCell<Self>>>,
+}
+
+impl TreeNode {
+    #[inline]
+    pub fn new(val: i32) -> Self {
+        Self {
+            val,
+            left: None,
+            right: None,
+        }
     }
 }
 // tree depth_first_search

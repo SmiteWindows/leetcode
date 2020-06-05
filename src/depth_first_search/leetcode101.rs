@@ -1,22 +1,4 @@
 // https://leetcode.com/problems/symmetric-tree/
-// Definition for a binary tree node.
-#[derive(Debug, PartialEq, Eq)]
-pub struct TreeNode {
-    pub val: i32,
-    pub left: Option<Rc<RefCell<Self>>>,
-    pub right: Option<Rc<RefCell<Self>>>,
-}
-
-impl TreeNode {
-    #[inline]
-    pub fn new(val: i32) -> Self {
-        Self {
-            val,
-            left: None,
-            right: None,
-        }
-    }
-}
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 use std::{cell::RefCell, rc::Rc};
@@ -33,6 +15,25 @@ fn is_mirror(p: Option<&RefCell<TreeNode>>, q: Option<&RefCell<TreeNode>>) -> bo
             (pr.val == qr.val)
                 && is_mirror(pr.right.as_deref(), qr.left.as_deref())
                 && is_mirror(pr.left.as_deref(), qr.right.as_deref())
+        }
+    }
+}
+
+// Definition for a binary tree node.
+#[derive(Debug, PartialEq, Eq)]
+pub struct TreeNode {
+    pub val: i32,
+    pub left: Option<Rc<RefCell<Self>>>,
+    pub right: Option<Rc<RefCell<Self>>>,
+}
+
+impl TreeNode {
+    #[inline]
+    pub fn new(val: i32) -> Self {
+        Self {
+            val,
+            left: None,
+            right: None,
         }
     }
 }

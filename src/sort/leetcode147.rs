@@ -1,4 +1,30 @@
 // https://leetcode.com/problems/insertion-sort-list/
+
+pub fn insertion_sort_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+    let mut head = head;
+    let mut prev = None;
+    while let Some(mut node) = head {
+        head = node.next.take();
+        prev = insert(prev, Some(node));
+    }
+    prev
+}
+
+fn insert(prev: Option<Box<ListNode>>, mut link: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+    let val = link.as_deref()?.val;
+    if let Some(mut node) = prev {
+        if node.val > val {
+            link.as_deref_mut()?.next = Some(node);
+            link
+        } else {
+            node.next = insert(node.next.take(), link);
+            Some(node)
+        }
+    } else {
+        link
+    }
+}
+
 // Definition for singly-linked list.
 #[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {
@@ -12,13 +38,8 @@ impl ListNode {
         Self { next: None, val }
     }
 }
-
-pub fn insertion_sort_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
-    todo!()
-}
 // linked_list sort
 #[test]
-#[ignore]
 fn test2_147() {
     let l1 = Some(Box::new(ListNode {
         val: 4,

@@ -1,4 +1,22 @@
 //https://leetcode.com/problems/count-complete-tree-nodes/
+// Runtime: 4 ms
+// Memory Usage: 4.8 MB
+use std::{cell::RefCell, rc::Rc};
+pub fn count_nodes(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
+    walk(root.as_deref())
+}
+
+fn walk(root: Option<&RefCell<TreeNode>>) -> i32 {
+    if let Some(node) = root {
+        let node = node.borrow();
+        let left = walk(node.left.as_deref());
+        let right = walk(node.right.as_deref());
+        1 + left + right
+    } else {
+        0
+    }
+}
+
 // Definition for a binary tree node.
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
@@ -15,23 +33,6 @@ impl TreeNode {
             left: None,
             right: None,
         }
-    }
-}
-// Runtime: 4 ms
-// Memory Usage: 4.8 MB
-use std::{cell::RefCell, rc::Rc};
-pub fn count_nodes(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    walk(root.as_deref())
-}
-
-fn walk(root: Option<&RefCell<TreeNode>>) -> i32 {
-    if let Some(node) = root {
-        let node = node.borrow();
-        let left = walk(node.left.as_deref());
-        let right = walk(node.right.as_deref());
-        1 + left + right
-    } else {
-        0
     }
 }
 // tree binary_search

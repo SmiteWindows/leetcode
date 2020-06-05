@@ -1,17 +1,4 @@
 // https://leetcode.com/problems/palindrome-linked-list/
-// Definition for singly-linked list.
-#[derive(PartialEq, Eq, Clone, Debug)]
-pub struct ListNode {
-    pub val: i32,
-    pub next: Option<Box<Self>>,
-}
-
-impl ListNode {
-    #[inline]
-    fn new(val: i32) -> Self {
-        Self { next: None, val }
-    }
-}
 // Runtime: 4 ms
 // Memory Usage: 4.3 MB
 pub fn is_palindrome(head: Option<Box<ListNode>>) -> bool {
@@ -61,6 +48,20 @@ pub fn is_palindrome(head: Option<Box<ListNode>>) -> bool {
         }
     }
     true
+}
+
+// Definition for singly-linked list.
+#[derive(PartialEq, Eq, Clone, Debug)]
+pub struct ListNode {
+    pub val: i32,
+    pub next: Option<Box<Self>>,
+}
+
+impl ListNode {
+    #[inline]
+    fn new(val: i32) -> Self {
+        Self { next: None, val }
+    }
 }
 // linked_list two_pointers
 #[test]

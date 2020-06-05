@@ -1,22 +1,4 @@
 // https://leetcode.com/problems/unique-binary-search-trees-ii/
-// Definition for a binary tree node.
-#[derive(Debug, PartialEq, Eq)]
-pub struct TreeNode {
-    pub val: i32,
-    pub left: Option<Rc<RefCell<Self>>>,
-    pub right: Option<Rc<RefCell<Self>>>,
-}
-
-impl TreeNode {
-    #[inline]
-    pub fn new(val: i32) -> Self {
-        Self {
-            val,
-            left: None,
-            right: None,
-        }
-    }
-}
 // Runtime: 0 ms
 // Memory Usage: 2.6 MB
 use std::{cell::RefCell, rc::Rc};
@@ -47,6 +29,25 @@ fn helper(start: i32, end: i32) -> Vec<Option<Rc<RefCell<TreeNode>>>> {
         }
     }
     res
+}
+
+// Definition for a binary tree node.
+#[derive(Debug, PartialEq, Eq)]
+pub struct TreeNode {
+    pub val: i32,
+    pub left: Option<Rc<RefCell<Self>>>,
+    pub right: Option<Rc<RefCell<Self>>>,
+}
+
+impl TreeNode {
+    #[inline]
+    pub fn new(val: i32) -> Self {
+        Self {
+            val,
+            left: None,
+            right: None,
+        }
+    }
 }
 // tree dynamic_programming
 #[test]

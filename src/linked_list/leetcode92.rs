@@ -1,17 +1,4 @@
 // https://leetcode.com/problems/reverse-linked-list-ii/
-// Definition for singly-linked list.
-#[derive(PartialEq, Eq, Clone, Debug)]
-pub struct ListNode {
-    pub val: i32,
-    pub next: Option<Box<Self>>,
-}
-
-impl ListNode {
-    #[inline]
-    fn new(val: i32) -> Self {
-        Self { next: None, val }
-    }
-}
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn reverse_between(head: Option<Box<ListNode>>, m: i32, n: i32) -> Option<Box<ListNode>> {
@@ -46,6 +33,20 @@ pub fn reverse_between(head: Option<Box<ListNode>>, m: i32, n: i32) -> Option<Bo
     }
     ptr.next = prev;
     header_node?.next
+}
+
+// Definition for singly-linked list.
+#[derive(PartialEq, Eq, Clone, Debug)]
+pub struct ListNode {
+    pub val: i32,
+    pub next: Option<Box<Self>>,
+}
+
+impl ListNode {
+    #[inline]
+    fn new(val: i32) -> Self {
+        Self { next: None, val }
+    }
 }
 // linked_list
 #[test]

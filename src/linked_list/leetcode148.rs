@@ -1,17 +1,4 @@
 // https://leetcode.com/problems/sort-list/
-// Definition for singly-linked list.
-#[derive(PartialEq, Eq, Clone, Debug)]
-pub struct ListNode {
-    pub val: i32,
-    pub next: Option<Box<Self>>,
-}
-
-impl ListNode {
-    #[inline]
-    fn new(val: i32) -> Self {
-        ListNode { next: None, val }
-    }
-}
 // Runtime: 4 ms
 // Memory Usage: 4 MB
 pub fn sort_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
@@ -30,6 +17,20 @@ pub fn sort_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
         }));
     }
     prev
+}
+
+// Definition for singly-linked list.
+#[derive(PartialEq, Eq, Clone, Debug)]
+pub struct ListNode {
+    pub val: i32,
+    pub next: Option<Box<Self>>,
+}
+
+impl ListNode {
+    #[inline]
+    fn new(val: i32) -> Self {
+        ListNode { next: None, val }
+    }
 }
 // linked_list sort
 #[test]

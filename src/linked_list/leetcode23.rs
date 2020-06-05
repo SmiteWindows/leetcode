@@ -1,30 +1,4 @@
 // https://leetcode.com/problems/merge-k-sorted-lists/
-// Definition for singly-linked list.
-#[derive(PartialEq, Eq, Clone, Debug)]
-pub struct ListNode {
-    pub val: i32,
-    pub next: Option<Box<Self>>,
-}
-
-impl ListNode {
-    #[inline]
-    fn new(val: i32) -> Self {
-        Self { next: None, val }
-    }
-}
-
-impl Ord for ListNode {
-    fn cmp(&self, other: &ListNode) -> Ordering {
-        self.val.cmp(&other.val)
-    }
-}
-
-impl PartialOrd for ListNode {
-    fn partial_cmp(&self, other: &ListNode) -> Option<Ordering> {
-        Some(self.val.cmp(&other.val))
-    }
-}
-
 // Runtime: 208 ms
 // Memory Usage: 3.2 MB
 use std::cmp::Ordering;
@@ -61,6 +35,33 @@ pub fn merge_k_lists(lists: Vec<Option<Box<ListNode>>>) -> Option<Box<ListNode>>
     }
     head.next
 }
+
+// Definition for singly-linked list.
+#[derive(PartialEq, Eq, Clone, Debug)]
+pub struct ListNode {
+    pub val: i32,
+    pub next: Option<Box<Self>>,
+}
+
+impl ListNode {
+    #[inline]
+    fn new(val: i32) -> Self {
+        Self { next: None, val }
+    }
+}
+
+impl Ord for ListNode {
+    fn cmp(&self, other: &ListNode) -> Ordering {
+        self.val.cmp(&other.val)
+    }
+}
+
+impl PartialOrd for ListNode {
+    fn partial_cmp(&self, other: &ListNode) -> Option<Ordering> {
+        Some(self.val.cmp(&other.val))
+    }
+}
+
 // linked_list divide_and_conquer heap
 #[test]
 fn test1_23() {

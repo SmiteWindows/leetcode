@@ -1,4 +1,27 @@
 // https://leetcode.com/problems/merge-two-binary-trees/
+// Runtime: 4 ms
+// Memory Usage: 2.1 MB
+use std::{cell::RefCell, rc::Rc};
+pub fn merge_trees(
+    t1: Option<Rc<RefCell<TreeNode>>>,
+    t2: Option<Rc<RefCell<TreeNode>>>,
+) -> Option<Rc<RefCell<TreeNode>>> {
+    if t1.is_none() {
+        return t2;
+    }
+    if t2.is_none() {
+        return t1;
+    }
+    t1.as_deref()?.borrow_mut().val += t2.as_deref()?.borrow().val;
+    let t1_left = t1.as_deref()?.borrow().left.clone();
+    let t2_left = t2.as_deref()?.borrow().left.clone();
+    let t1_right = t1.as_deref()?.borrow().right.clone();
+    let t2_right = t2.as_deref()?.borrow().right.clone();
+    t1.as_deref()?.borrow_mut().left = merge_trees(t1_left, t2_left);
+    t1.as_deref()?.borrow_mut().right = merge_trees(t1_right, t2_right);
+    t1
+}
+
 // Definition for a binary tree node.
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
@@ -16,28 +39,6 @@ impl TreeNode {
             right: None,
         }
     }
-}
-// Runtime: 4 ms
-// Memory Usage: 2.1 MB
-use std::{cell::RefCell, rc::Rc};
-pub fn merge_trees(
-    t1: Option<Rc<RefCell<TreeNode>>>,
-    t2: Option<Rc<RefCell<TreeNode>>>,
-) -> Option<Rc<RefCell<TreeNode>>> {
-    if t1.is_none() {
-        return t2;
-    }
-    if t2.is_none() {
-        return t1;
-    }
-    t1.as_deref().expect("exist").borrow_mut().val += t2.as_deref().expect("exist").borrow().val;
-    let t1_left = t1.as_deref().expect("exist").borrow().left.clone();
-    let t2_left = t2.as_deref().expect("exist").borrow().left.clone();
-    let t1_right = t1.as_deref().expect("exist").borrow().right.clone();
-    let t2_right = t2.as_deref().expect("exist").borrow().right.clone();
-    t1.as_deref().expect("exist").borrow_mut().left = merge_trees(t1_left, t2_left);
-    t1.as_deref().expect("exist").borrow_mut().right = merge_trees(t1_right, t2_right);
-    t1
 }
 // tree
 #[test]

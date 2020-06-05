@@ -1,17 +1,4 @@
 // https://leetcode.com/problems/odd-even-linked-list/
-// Definition for singly-linked list.
-#[derive(PartialEq, Eq, Clone, Debug)]
-pub struct ListNode {
-    pub val: i32,
-    pub next: Option<Box<Self>>,
-}
-
-impl ListNode {
-    #[inline]
-    fn new(val: i32) -> Self {
-        Self { next: None, val }
-    }
-}
 // Runtime: 0 ms
 // Memory Usage: 2.3 MB
 pub fn odd_even_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
@@ -34,6 +21,20 @@ pub fn odd_even_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
     }
     odd_tail.as_mut()?.next = even_list?.next.take();
     odd_list?.next
+}
+
+// Definition for singly-linked list.
+#[derive(PartialEq, Eq, Clone, Debug)]
+pub struct ListNode {
+    pub val: i32,
+    pub next: Option<Box<Self>>,
+}
+
+impl ListNode {
+    #[inline]
+    fn new(val: i32) -> Self {
+        Self { next: None, val }
+    }
 }
 // linked_list
 #[test]

@@ -1,4 +1,22 @@
 // https://leetcode.com/problems/binary-tree-preorder-traversal/
+// Runtime: 0 ms
+// Memory Usage: 2.2 MB
+use std::{cell::RefCell, rc::Rc};
+pub fn preorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
+    let mut res = vec![];
+    preorder(root.as_deref(), &mut res);
+    res
+}
+
+fn preorder(root: Option<&RefCell<TreeNode>>, res: &mut Vec<i32>) {
+    if let Some(node) = root {
+        let node = node.borrow();
+        res.push(node.val);
+        preorder(node.left.as_deref(), res);
+        preorder(node.right.as_deref(), res);
+    }
+}
+
 // Definition for a binary tree node.
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
@@ -15,23 +33,6 @@ impl TreeNode {
             left: None,
             right: None,
         }
-    }
-}
-// Runtime: 0 ms
-// Memory Usage: 2.2 MB
-use std::{cell::RefCell, rc::Rc};
-pub fn preorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
-    let mut res = vec![];
-    preorder(root.as_deref(), &mut res);
-    res
-}
-
-fn preorder(root: Option<&RefCell<TreeNode>>, res: &mut Vec<i32>) {
-    if let Some(node) = root {
-        let node = node.borrow();
-        res.push(node.val);
-        preorder(node.left.as_deref(), res);
-        preorder(node.right.as_deref(), res);
     }
 }
 // tree stack

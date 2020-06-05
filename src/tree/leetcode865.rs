@@ -1,4 +1,12 @@
 // https://leetcode.com/problems/smallest-subtree-with-all-the-deepest-nodes/
+
+use std::{cell::RefCell, rc::Rc};
+pub fn subtree_with_all_deepest(
+    root: Option<Rc<RefCell<TreeNode>>>,
+) -> Option<Rc<RefCell<TreeNode>>> {
+    todo!()
+}
+
 // Definition for a binary tree node.
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
@@ -16,13 +24,6 @@ impl TreeNode {
             right: None,
         }
     }
-}
-
-use std::{cell::RefCell, rc::Rc};
-pub fn subtree_with_all_deepest(
-    root: Option<Rc<RefCell<TreeNode>>>,
-) -> Option<Rc<RefCell<TreeNode>>> {
-    todo!()
 }
 // tree
 #[test]

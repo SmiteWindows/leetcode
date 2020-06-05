@@ -1,4 +1,22 @@
 // https://leetcode.com/problems/search-in-a-binary-search-tree/
+// Runtime: 4 ms
+// Memory Usage: 2.5 MB
+use std::{cell::RefCell, cmp::Ordering, rc::Rc};
+pub fn search_bst(root: Option<Rc<RefCell<TreeNode>>>, val: i32) -> Option<Rc<RefCell<TreeNode>>> {
+    search(root.as_ref(), val)
+}
+
+fn search(root: Option<&Rc<RefCell<TreeNode>>>, val: i32) -> Option<Rc<RefCell<TreeNode>>> {
+    match root {
+        Some(node) => match node.as_ref().borrow().val.cmp(&val) {
+            Ordering::Equal => Some(node.clone()),
+            Ordering::Less => search(node.as_ref().borrow().right.as_ref(), val),
+            Ordering::Greater => search(node.as_ref().borrow().left.as_ref(), val),
+        },
+        None => None,
+    }
+}
+
 // Definition for a binary tree node.
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
@@ -15,23 +33,6 @@ impl TreeNode {
             left: None,
             right: None,
         }
-    }
-}
-// Runtime: 4 ms
-// Memory Usage: 2.5 MB
-use std::{cell::RefCell, cmp::Ordering, rc::Rc};
-pub fn search_bst(root: Option<Rc<RefCell<TreeNode>>>, val: i32) -> Option<Rc<RefCell<TreeNode>>> {
-    search(root.as_ref(), val)
-}
-
-fn search(root: Option<&Rc<RefCell<TreeNode>>>, val: i32) -> Option<Rc<RefCell<TreeNode>>> {
-    match root {
-        Some(node) => match node.as_ref().borrow().val.cmp(&val) {
-            Ordering::Equal => Some(node.clone()),
-            Ordering::Less => search(node.as_ref().borrow().right.as_ref(), val),
-            Ordering::Greater => search(node.as_ref().borrow().left.as_ref(), val),
-        },
-        None => None,
     }
 }
 // tree

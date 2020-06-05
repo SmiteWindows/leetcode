@@ -1,4 +1,10 @@
 // https://leetcode.com/problems/smallest-string-starting-from-leaf/
+
+use std::{cell::RefCell, rc::Rc};
+pub fn smallest_from_leaf(root: Option<Rc<RefCell<TreeNode>>>) -> String {
+    todo!()
+}
+
 // Definition for a binary tree node.
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
@@ -16,11 +22,6 @@ impl TreeNode {
             right: None,
         }
     }
-}
-
-use std::{cell::RefCell, rc::Rc};
-pub fn smallest_from_leaf(root: Option<Rc<RefCell<TreeNode>>>) -> String {
-    todo!()
 }
 // tree depth_first_search
 #[test]
