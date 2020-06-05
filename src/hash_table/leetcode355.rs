@@ -42,7 +42,7 @@ impl Twitter {
         for &user in followers.iter() {
             let tweets = self.tweets.entry(user).or_default();
             for tweet in tweets {
-                pq.push(tweet.clone());
+                pq.push(*tweet);
                 if pq.len() > self.limit {
                     pq.pop();
                 }
