@@ -2,17 +2,17 @@
 // Runtime: 4 ms
 // Memory Usage: 2.3 MB
 pub fn matrix_reshape(nums: Vec<Vec<i32>>, r: i32, c: i32) -> Vec<Vec<i32>> {
-    let n = nums.len();
-    let m = nums[0].len();
+    let nr = nums.len();
+    let mc = nums[0].len();
     let r = r as usize;
     let c = c as usize;
-    if n * m != r * c {
+    if nr * mc != r * c {
         return nums;
     }
     let mut res = vec![vec![0; c]; r];
-    for (i, row) in nums.iter().enumerate().take(n) {
-        for (j, &col) in row.iter().enumerate().take(m) {
-            let k = i * m + j;
+    for (i, row) in nums.iter().enumerate().take(nr) {
+        for (j, &col) in row.iter().enumerate().take(mc) {
+            let k = i * mc + j;
             res[k / c][k % c] = col;
         }
     }

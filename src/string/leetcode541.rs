@@ -7,9 +7,9 @@ pub fn reverse_str(s: String, k: i32) -> String {
     let n = s.len();
     let mut i = 0;
     while i * 2 * k < n {
-        let r = (i + 1) * 2 * k;
-        if r < n {
-            let ss = &mut s[i * 2 * k..r];
+        let left = (i + 1) * 2 * k;
+        if left < n {
+            let ss = &mut s[i * 2 * k..left];
             rev_half(ss, k);
         } else {
             let ss = &mut s[i * 2 * k..n];
