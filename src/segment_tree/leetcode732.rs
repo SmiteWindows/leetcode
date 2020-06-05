@@ -6,10 +6,7 @@ struct MyCalendarThree {}
  * let obj = MyCalendarThree::new();
  * let ret_1: i32 = obj.book(start, end);
  */
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl MyCalendarThree {
     fn new() -> Self {
         todo!()

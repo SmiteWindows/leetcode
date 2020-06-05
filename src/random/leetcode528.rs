@@ -6,10 +6,7 @@ struct Solution {
     dist: WeightedIndex<i32>,
     rng: ThreadRng,
 }
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl Solution {
     fn new(w: Vec<i32>) -> Self {
         let rng = rand::thread_rng();

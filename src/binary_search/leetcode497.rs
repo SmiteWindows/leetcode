@@ -9,10 +9,7 @@ struct Solution {
     len: usize,
     dist: WeightedIndex<i32>,
 }
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl Solution {
     fn new(rects: Vec<Vec<i32>>) -> Self {
         let rng = thread_rng();

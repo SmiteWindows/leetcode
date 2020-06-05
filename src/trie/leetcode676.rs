@@ -6,10 +6,7 @@ use std::collections::HashMap;
 struct MagicDictionary {
     data: HashMap<Vec<char>, Vec<(char, usize)>>,
 }
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl MagicDictionary {
     /** Initialize your data structure here. */
     fn new() -> Self {

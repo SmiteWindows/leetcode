@@ -5,10 +5,7 @@ use std::collections::VecDeque;
 struct RecentCounter {
     queue: VecDeque<i32>,
 }
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl RecentCounter {
     fn new() -> Self {
         Self {

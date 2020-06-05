@@ -7,10 +7,7 @@ struct LFUCache {}
  * let ret_1: i32 = obj.get(key);
  * obj.put(key, value);
  */
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl LFUCache {
     fn new(capacity: i32) -> Self {
         todo!()

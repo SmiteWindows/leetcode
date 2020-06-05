@@ -8,10 +8,6 @@ struct MedianFinder {
     hi: BinaryHeap<Reverse<i32>>,
 }
 
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
 impl MedianFinder {
     /** initialize your data structure here. */
     fn new() -> Self {

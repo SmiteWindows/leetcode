@@ -2,11 +2,6 @@
 struct MapSum {}
 
 /**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
-
-/**
  * Your MapSum object will be instantiated and called as such:
  * let obj = MapSum::new();
  * obj.insert(key, val);

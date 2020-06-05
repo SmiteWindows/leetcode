@@ -7,10 +7,7 @@ struct FindElements {
     root: Option<Rc<RefCell<TreeNode>>>,
     hs: HashSet<i32>,
 }
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl FindElements {
     fn new(root: Option<Rc<RefCell<TreeNode>>>) -> Self {
         let mut root = root;

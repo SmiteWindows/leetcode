@@ -7,10 +7,7 @@ struct TweetCounts {}
  * obj.record_tweet(tweetName, time);
  * let ret_2: Vec<i32> = obj.get_tweet_counts_per_frequency(freq, tweetName, startTime, endTime);
  */
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl TweetCounts {
     fn new() -> Self {
         todo!()

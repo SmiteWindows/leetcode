@@ -5,10 +5,7 @@ use std::collections::BTreeMap;
 struct MyCalendar {
     calendar: BTreeMap<i32, (i32, i32)>,
 }
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl MyCalendar {
     fn new() -> Self {
         Self {

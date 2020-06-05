@@ -7,10 +7,7 @@ struct RLEIterator {
     index: usize,
     size: usize,
 }
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl RLEIterator {
     fn new(a: Vec<i32>) -> Self {
         let mut prefix = vec![];

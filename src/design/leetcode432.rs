@@ -9,10 +9,6 @@ struct AllOne {}
  * let ret_4: String = obj.get_min_key();
  */
 
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
 impl AllOne {
     /** Initialize your data structure here. */
     fn new() -> Self {

@@ -7,10 +7,7 @@ struct UndergroundSystem {
     time: HashMap<String, HashMap<String, (i32, i32)>>,
     customer: HashMap<i32, (String, i32)>,
 }
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl UndergroundSystem {
     fn new() -> Self {
         Self::default()

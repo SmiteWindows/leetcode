@@ -5,10 +5,7 @@ struct CombinationIterator {
     combinations: Vec<String>,
     index: usize,
 }
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl CombinationIterator {
     fn new(characters: String, combination_length: i32) -> Self {
         let combination_length = combination_length as usize;

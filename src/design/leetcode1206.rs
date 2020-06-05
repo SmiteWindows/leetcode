@@ -8,10 +8,7 @@ struct Skiplist {}
  * obj.add(num);
  * let ret_3: bool = obj.erase(num);
  */
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl Skiplist {
     fn new() -> Self {
         todo!()

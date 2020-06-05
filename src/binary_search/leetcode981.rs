@@ -6,10 +6,7 @@ use std::collections::HashMap;
 struct TimeMap {
     map: HashMap<String, Vec<(String, i32)>>,
 }
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl TimeMap {
     /** Initialize your data structure here. */
     fn new() -> Self {

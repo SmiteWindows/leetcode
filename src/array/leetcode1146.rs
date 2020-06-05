@@ -6,10 +6,7 @@ struct SnapshotArray {
     data: Vec<Vec<(usize, i32)>>,
     snap_id: usize,
 }
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl SnapshotArray {
     fn new(length: i32) -> Self {
         let length = length as usize;

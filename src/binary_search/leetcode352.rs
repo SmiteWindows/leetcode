@@ -7,10 +7,7 @@ struct SummaryRanges {}
  * obj.add_num(val);
  * let ret_2: Vec<Vec<i32>> = obj.get_intervals();
  */
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl SummaryRanges {
     /** Initialize your data structure here. */
     fn new() -> Self {

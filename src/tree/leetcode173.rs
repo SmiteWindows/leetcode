@@ -5,10 +5,7 @@ use std::{cell::RefCell, rc::Rc};
 struct BSTIterator {
     stack: Vec<Rc<RefCell<TreeNode>>>,
 }
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl BSTIterator {
     fn new(root: Option<Rc<RefCell<TreeNode>>>) -> Self {
         let mut obj = Self { stack: Vec::new() };

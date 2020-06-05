@@ -6,10 +6,7 @@ struct Solution {
     m: HashMap<i32, i32>,
     wlen: i32,
 }
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl Solution {
     fn new(n: i32, blacklist: Vec<i32>) -> Self {
         let rng = thread_rng();

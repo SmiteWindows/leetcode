@@ -2,10 +2,7 @@
 
 use std::{cell::RefCell, rc::Rc};
 struct CBTInserter {}
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl CBTInserter {
     fn new(root: Option<Rc<RefCell<TreeNode>>>) -> Self {
         todo!()

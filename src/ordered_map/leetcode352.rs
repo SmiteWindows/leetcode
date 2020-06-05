@@ -2,11 +2,6 @@
 struct SummaryRanges {}
 
 /**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
-
-/**
  * Your SummaryRanges object will be instantiated and called as such:
  * let obj = SummaryRanges::new();
  * obj.add_num(val);

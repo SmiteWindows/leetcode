@@ -4,10 +4,7 @@
 struct StockSpanner {
     stack: Vec<(i32, usize)>,
 }
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl StockSpanner {
     fn new() -> Self {
         Self { stack: vec![] }

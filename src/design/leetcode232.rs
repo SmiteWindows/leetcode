@@ -5,10 +5,7 @@ struct MyQueue {
     stack: Vec<i32>,
     temp: Vec<i32>,
 }
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl MyQueue {
     /** Initialize your data structure here. */
     fn new() -> Self {

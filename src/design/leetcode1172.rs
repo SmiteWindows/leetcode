@@ -8,10 +8,7 @@ struct DinnerPlates {}
  * let ret_2: i32 = obj.pop();
  * let ret_3: i32 = obj.pop_at_stack(index);
  */
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl DinnerPlates {
     fn new(capacity: i32) -> Self {
         todo!()

@@ -4,10 +4,7 @@
 struct NumArray {
     prefix_sums: Vec<i32>,
 }
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl NumArray {
     fn new(nums: Vec<i32>) -> Self {
         let mut nums = nums;

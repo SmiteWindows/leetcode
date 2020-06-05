@@ -6,10 +6,7 @@ struct NumMatrix {}
  * let obj = NumMatrix::new(matrix);
  * let ret_1: i32 = obj.sum_region(row1, col1, row2, col2);
  */
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl NumMatrix {
     fn new(matrix: Vec<Vec<i32>>) -> Self {
         todo!()

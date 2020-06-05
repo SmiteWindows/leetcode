@@ -11,10 +11,7 @@ struct RandomizedSet {
     indexes: HashMap<i32, usize>,
     values: Vec<i32>,
 }
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl RandomizedSet {
     /** Initialize your data structure here. */
     fn new() -> Self {

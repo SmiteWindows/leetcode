@@ -8,10 +8,7 @@ struct RangeModule {}
  * let ret_2: bool = obj.query_range(left, right);
  * obj.remove_range(left, right);
  */
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl RangeModule {
     fn new() -> Self {
         todo!()

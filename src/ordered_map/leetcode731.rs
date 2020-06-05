@@ -5,10 +5,7 @@ use std::collections::BTreeMap;
 struct MyCalendarTwo {
     overlaps: Vec<(i32, i32)>,
 }
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl MyCalendarTwo {
     fn new() -> Self {
         Self { overlaps: vec![] }
@@ -31,10 +28,7 @@ impl MyCalendarTwo {
 struct MyCalendar {
     calendar: BTreeMap<i32, (i32, i32)>,
 }
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl MyCalendar {
     fn new() -> Self {
         Self {

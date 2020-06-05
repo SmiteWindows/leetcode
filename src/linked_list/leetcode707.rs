@@ -8,10 +8,7 @@ struct Node {
     val: i32,
     next: Option<Box<Node>>,
 }
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl MyLinkedList {
     /** Initialize your data structure here. */
     fn new() -> Self {

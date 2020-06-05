@@ -2,11 +2,6 @@
 struct NumArray {}
 
 /**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
-
-/**
  * Your NumArray object will be instantiated and called as such:
  * let obj = NumArray::new(nums);
  * obj.update(i, val);

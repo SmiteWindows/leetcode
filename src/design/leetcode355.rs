@@ -11,10 +11,7 @@ struct Twitter {
     tweets: HashMap<i32, Vec<(Reverse<usize>, i32)>>,
     limit: usize,
 }
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl Twitter {
     /** Initialize your data structure here. */
     fn new() -> Self {

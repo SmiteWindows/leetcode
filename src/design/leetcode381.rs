@@ -9,10 +9,6 @@ struct RandomizedCollection {}
  * let ret_3: i32 = obj.get_random();
  */
 
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
 impl RandomizedCollection {
     /** Initialize your data structure here. */
     fn new() -> Self {

@@ -18,10 +18,6 @@ impl Element {
     }
 }
 
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
 impl LRUCache {
     fn new(capacity: i32) -> Self {
         let capacity = capacity as usize;

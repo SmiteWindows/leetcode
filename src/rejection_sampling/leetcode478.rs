@@ -8,10 +8,7 @@ struct Solution {
     y_center: f64,
     rng: ThreadRng,
 }
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl Solution {
     fn new(radius: f64, x_center: f64, y_center: f64) -> Self {
         let rng = rand::thread_rng();

@@ -4,10 +4,7 @@
 struct ProductOfNumbers {
     prefix: Vec<i32>,
 }
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl ProductOfNumbers {
     fn new() -> Self {
         Self { prefix: vec![1] }

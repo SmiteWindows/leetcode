@@ -8,10 +8,7 @@ struct Solution {
     rows: usize,
     cols: usize,
 }
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl Solution {
     fn new(n_rows: i32, n_cols: i32) -> Self {
         let rows = n_rows as usize;

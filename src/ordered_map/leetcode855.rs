@@ -11,10 +11,7 @@ struct ExamRoom {
     l_indexes: HashMap<i32, i32>,
     r_indexes: HashMap<i32, i32>,
 }
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl ExamRoom {
     fn new(n: i32) -> Self {
         let mut segments = BTreeSet::new();

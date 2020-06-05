@@ -8,10 +8,7 @@ struct MyCircularQueue {
     data: Vec<i32>,
     count: usize,
 }
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl MyCircularQueue {
     /** Initialize your data structure here. Set the size of the queue to be k. */
     fn new(k: i32) -> Self {

@@ -2,11 +2,6 @@
 struct RangeModule {}
 
 /**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
-
-/**
  * Your RangeModule object will be instantiated and called as such:
  * let obj = RangeModule::new();
  * obj.add_range(left, right);

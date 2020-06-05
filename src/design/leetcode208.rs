@@ -7,10 +7,7 @@ struct Trie {
     children: HashMap<char, Self>,
     end: bool,
 }
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
+
 impl Trie {
     /** Initialize your data structure here. */
     fn new() -> Self {

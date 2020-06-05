@@ -8,10 +8,6 @@ struct WordDictionary {
     is_word: bool,
 }
 
-/**
- * `&self` means the method takes an immutable reference.
- * If you need a mutable reference, change it to `&mut self` instead.
- */
 impl WordDictionary {
     /** Initialize your data structure here. */
     fn new() -> Self {
