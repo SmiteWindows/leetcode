@@ -2,22 +2,22 @@
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn is_long_pressed_name(name: String, typed: String) -> bool {
-    let n = name.len();
-    let m = typed.len();
+    let nl = name.len();
+    let ml = typed.len();
     let mut i = 0;
     let mut j = 0;
-    let s = name.chars().collect::<Vec<_>>();
-    let t = typed.chars().collect::<Vec<_>>();
-    while i < n && j < m {
-        if s[i] == t[j] {
+    let nc = name.chars().collect::<Vec<_>>();
+    let tc = typed.chars().collect::<Vec<_>>();
+    while i < nl && j < ml {
+        if nc[i] == tc[j] {
             let mut a = 0;
-            while i + 1 < n && s[i + 1] == s[i] {
+            while i + 1 < nl && nc[i + 1] == nc[i] {
                 i += 1;
                 a += 1;
             }
             i += 1;
             let mut b = 0;
-            while j + 1 < m && t[j + 1] == t[j] {
+            while j + 1 < ml && tc[j + 1] == tc[j] {
                 j += 1;
                 b += 1;
             }
@@ -29,7 +29,7 @@ pub fn is_long_pressed_name(name: String, typed: String) -> bool {
             return false;
         }
     }
-    i == n && j == m
+    i == nl && j == ml
 }
 // two_pointers string
 #[test]
