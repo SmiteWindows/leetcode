@@ -45,28 +45,25 @@ jobs:
         os: [ubuntu-latest, windows-latest]
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - uses: actions/checkout@v1
+      - uses: actions-rs/toolchain@v1
+        with:
+            toolchain: nightly
+            components: clippy
+            override: true
+      - uses: actions-rs/clippy-check@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          args: --all-features
+          
+      - name: Format
+        run: cargo fmt
+        
+      - name: Compile
+        run: cargo test --no-run
 
-    - name: Install Rust toolchain
-      uses: actions-rs/toolchain@v1
-      with:
-        toolchain: stable
-        profile: default
-        override: true
-        components: rust-src
-
-    - name: Format
-      run: cargo fmt
-      
-    - name: Clippy
-      run: cargo clippy
-      
-    - name: Compile
-      run: cargo test --no-run
-
-    - name: Test
-      run: cargo test
-      
-    - name: Run
-      run: cargo run
+      - name: Test
+        run: cargo test
+        
+      - name: Run
+        run: cargo run
