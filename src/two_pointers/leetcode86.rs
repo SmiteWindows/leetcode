@@ -1,17 +1,4 @@
 // https://leetcode.com/problems/partition-list/
-// Definition for singly-linked list.
-#[derive(PartialEq, Eq, Clone, Debug)]
-pub struct ListNode {
-    pub val: i32,
-    pub next: Option<Box<Self>>,
-}
-
-impl ListNode {
-    #[inline]
-    fn new(val: i32) -> Self {
-        Self { next: None, val }
-    }
-}
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn partition(head: Option<Box<ListNode>>, x: i32) -> Option<Box<ListNode>> {
@@ -33,6 +20,20 @@ pub fn partition(head: Option<Box<ListNode>>, x: i32) -> Option<Box<ListNode>> {
     }
     lower_tail.as_deref_mut()?.next = higher?.next.take();
     lower?.next.take()
+}
+
+// Definition for singly-linked list.
+#[derive(PartialEq, Eq, Clone, Debug)]
+pub struct ListNode {
+    pub val: i32,
+    pub next: Option<Box<Self>>,
+}
+
+impl ListNode {
+    #[inline]
+    fn new(val: i32) -> Self {
+        Self { next: None, val }
+    }
 }
 // linked_list two_pointers
 #[test]
