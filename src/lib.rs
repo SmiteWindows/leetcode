@@ -1,4 +1,3 @@
-#![allow(clippy::many_single_char_names)]
 #![allow(dead_code)]
 #![allow(non_snake_case)]
 #![allow(unused_variables)]
