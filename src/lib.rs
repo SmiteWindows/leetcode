@@ -1,7 +1,7 @@
-#![allow(dead_code)]
-#![allow(unused_variables)]
-#![allow(non_snake_case)]
 #![allow(clippy::many_single_char_names)]
+#![allow(dead_code)]
+#![allow(non_snake_case)]
+#![allow(unused_variables)]
 pub mod array;
 pub mod backtracking;
 pub mod binary_indexed_tree;
