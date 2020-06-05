@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/number-of-1-bits/
+#![allow(non_snake_case)]
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn hammingWeight(n: u32) -> i32 {
