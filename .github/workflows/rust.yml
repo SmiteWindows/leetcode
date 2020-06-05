@@ -26,7 +26,7 @@ jobs:
     - uses: actions-rs/install@v0.1
       with:
         crate: cargo-audit
-        use-tool-cache: false
+        use-tool-cache: true
 
     - run: cargo audit
     - name: Run cargo bloat
