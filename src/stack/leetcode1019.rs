@@ -1,4 +1,9 @@
 // https://leetcode.com/problems/next-greater-node-in-linked-list/
+
+pub fn next_larger_nodes(head: Option<Box<ListNode>>) -> Vec<i32> {
+    todo!()
+}
+
 // Definition for singly-linked list.
 #[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {
@@ -11,10 +16,6 @@ impl ListNode {
     fn new(val: i32) -> Self {
         Self { next: None, val }
     }
-}
-
-pub fn next_larger_nodes(head: Option<Box<ListNode>>) -> Vec<i32> {
-    todo!()
 }
 // linked_list stack
 #[test]

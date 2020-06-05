@@ -1,4 +1,28 @@
 // https://leetcode.com/problems/merge-k-sorted-lists/
+// Runtime: 4 ms
+// Memory Usage: 3 MB
+use std::{cmp::Ordering, collections::BinaryHeap};
+pub fn merge_k_lists(lists: Vec<Option<Box<ListNode>>>) -> Option<Box<ListNode>> {
+    let mut h = BinaryHeap::with_capacity(lists.len());
+    for x in lists.iter() {
+        h.push(x.clone())
+    }
+    let mut head = Some(Box::new(ListNode::new(0)));
+    let mut current = head.as_deref_mut();
+    while let Some(n) = h.pop() {
+        if n.is_none() {
+            continue;
+        }
+        let l = n?;
+        let next = ListNode::new(l.val);
+        let v = current?;
+        v.next = Some(Box::new(next));
+        current = v.next.as_deref_mut();
+        h.push(l.next)
+    }
+    head?.next
+}
+
 // Definition for singly-linked list.
 #[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {
@@ -23,29 +47,6 @@ impl PartialOrd for ListNode {
     fn partial_cmp(&self, other: &ListNode) -> Option<Ordering> {
         Some(other.val.cmp(&self.val))
     }
-}
-// Runtime: 4 ms
-// Memory Usage: 3 MB
-use std::{cmp::Ordering, collections::BinaryHeap};
-pub fn merge_k_lists(lists: Vec<Option<Box<ListNode>>>) -> Option<Box<ListNode>> {
-    let mut h = BinaryHeap::with_capacity(lists.len());
-    for x in lists.iter() {
-        h.push(x.clone())
-    }
-    let mut head = Some(Box::new(ListNode::new(0)));
-    let mut current = head.as_deref_mut();
-    while let Some(n) = h.pop() {
-        if n.is_none() {
-            continue;
-        }
-        let l = n?;
-        let next = ListNode::new(l.val);
-        let v = current?;
-        v.next = Some(Box::new(next));
-        current = v.next.as_deref_mut();
-        h.push(l.next)
-    }
-    head?.next
 }
 // linked_list divide_and_conquer heap
 #[test]

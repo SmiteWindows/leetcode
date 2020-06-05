@@ -2,11 +2,6 @@
 // Runtime: 4 ms
 // Memory Usage: 2.6 MB
 use std::collections::HashMap;
-struct Degree {
-    left: usize,
-    right: usize,
-    count: usize,
-}
 pub fn find_shortest_sub_array(nums: Vec<i32>) -> i32 {
     let mut hm = HashMap::new();
     let mut max_degree = 0;
@@ -28,6 +23,12 @@ pub fn find_shortest_sub_array(nums: Vec<i32>) -> i32 {
         }
     }
     min_width as i32
+}
+
+struct Degree {
+    left: usize,
+    right: usize,
+    count: usize,
 }
 // array
 #[test]

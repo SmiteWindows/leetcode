@@ -1,4 +1,10 @@
 // https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree/
+
+use std::{cell::RefCell, rc::Rc};
+pub fn max_level_sum(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
+    todo!()
+}
+
 // Definition for a binary tree node.
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
@@ -16,11 +22,6 @@ impl TreeNode {
             right: None,
         }
     }
-}
-
-use std::{cell::RefCell, rc::Rc};
-pub fn max_level_sum(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    todo!()
 }
 // graph
 #[test]

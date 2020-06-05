@@ -1,4 +1,10 @@
 // https://leetcode.com/problems/longest-zigzag-path-in-a-binary-tree/
+
+use std::{cell::RefCell, rc::Rc};
+pub fn longest_zig_zag(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
+    todo!()
+}
+
 // Definition for a binary tree node.
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
@@ -16,11 +22,6 @@ impl TreeNode {
             right: None,
         }
     }
-}
-
-use std::{cell::RefCell, rc::Rc};
-pub fn longest_zig_zag(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    todo!()
 }
 // tree dynamic_programming
 #[test]

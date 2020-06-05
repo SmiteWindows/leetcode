@@ -1,4 +1,10 @@
 // https://leetcode.com/problems/construct-string-from-binary-tree/
+
+use std::{cell::RefCell, rc::Rc};
+pub fn tree2str(t: Option<Rc<RefCell<TreeNode>>>) -> String {
+    todo!()
+}
+
 // Definition for a binary tree node.
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
@@ -16,11 +22,6 @@ impl TreeNode {
             right: None,
         }
     }
-}
-
-use std::{cell::RefCell, rc::Rc};
-pub fn tree2str(t: Option<Rc<RefCell<TreeNode>>>) -> String {
-    todo!()
 }
 // tree string
 #[test]

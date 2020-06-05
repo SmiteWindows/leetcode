@@ -1,4 +1,10 @@
 // https://leetcode.com/problems/unique-binary-search-trees-ii/
+
+use std::{cell::RefCell, rc::Rc};
+pub fn generate_trees(n: i32) -> Vec<Option<Rc<RefCell<TreeNode>>>> {
+    todo!()
+}
+
 // Definition for a binary tree node.
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
@@ -16,11 +22,6 @@ impl TreeNode {
             right: None,
         }
     }
-}
-
-use std::{cell::RefCell, rc::Rc};
-pub fn generate_trees(n: i32) -> Vec<Option<Rc<RefCell<TreeNode>>>> {
-    todo!()
 }
 // tree dynamic_programming
 #[test]

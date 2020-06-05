@@ -2,6 +2,18 @@
 // Runtime: 4 ms
 // Memory Usage: 2.2 MB
 use std::collections::HashSet;
+pub fn num_unique_emails(emails: Vec<String>) -> i32 {
+    let mut hs = HashSet::new();
+    let emails = emails
+        .iter()
+        .map(|email| Email::new(email.to_string()))
+        .collect::<Vec<_>>();
+    for email in emails {
+        hs.insert(email);
+    }
+    hs.len() as i32
+}
+
 #[derive(PartialEq, Eq, Hash)]
 struct Email {
     local_name: String,
@@ -22,17 +34,6 @@ impl Email {
     }
 }
 
-pub fn num_unique_emails(emails: Vec<String>) -> i32 {
-    let mut hs = HashSet::new();
-    let emails = emails
-        .iter()
-        .map(|email| Email::new(email.to_string()))
-        .collect::<Vec<_>>();
-    for email in emails {
-        hs.insert(email);
-    }
-    hs.len() as i32
-}
 // string
 #[test]
 fn test1_929() {

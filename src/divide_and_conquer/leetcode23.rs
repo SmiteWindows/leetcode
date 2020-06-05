@@ -1,17 +1,4 @@
 // https://leetcode.com/problems/merge-k-sorted-lists/
-// Definition for singly-linked list.
-#[derive(PartialEq, Eq, Clone, Debug)]
-pub struct ListNode {
-    pub val: i32,
-    pub next: Option<Box<Self>>,
-}
-
-impl ListNode {
-    #[inline]
-    fn new(val: i32) -> Self {
-        Self { next: None, val }
-    }
-}
 // Runtime: 4 ms
 // Memory Usage: 3.3 MB
 pub fn merge_k_lists(lists: Vec<Option<Box<ListNode>>>) -> Option<Box<ListNode>> {
@@ -42,6 +29,20 @@ fn merge_two_lists(l1: Option<Box<ListNode>>, l2: Option<Box<ListNode>>) -> Opti
                 Some(p2)
             }
         }
+    }
+}
+
+// Definition for singly-linked list.
+#[derive(PartialEq, Eq, Clone, Debug)]
+pub struct ListNode {
+    pub val: i32,
+    pub next: Option<Box<Self>>,
+}
+
+impl ListNode {
+    #[inline]
+    fn new(val: i32) -> Self {
+        Self { next: None, val }
     }
 }
 // linked_list divide_and_conquer heap

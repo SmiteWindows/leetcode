@@ -49,6 +49,7 @@ impl CombinationIterator {
             }
         }
     }
+
     fn next(&mut self) -> String {
         let res = self.combinations[self.index].to_string();
         self.index += 1;

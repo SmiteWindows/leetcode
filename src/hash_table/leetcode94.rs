@@ -1,4 +1,10 @@
 // https://leetcode.com/problems/binary-tree-inorder-traversal/
+
+use std::{cell::RefCell, rc::Rc};
+pub fn inorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
+    todo!()
+}
+
 // Definition for a binary tree node.
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
@@ -16,11 +22,6 @@ impl TreeNode {
             right: None,
         }
     }
-}
-
-use std::{cell::RefCell, rc::Rc};
-pub fn inorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
-    todo!()
 }
 // tree hash_table stack
 #[test]

@@ -1,6 +1,22 @@
 // https://leetcode.com/problems/available-captures-for-rook/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
+pub fn num_rook_captures(board: Vec<Vec<char>>) -> i32 {
+    let mut sum = 0;
+    let rook = search_rook(&board);
+    for direction in vec![
+        Direction::Right,
+        Direction::Down,
+        Direction::Left,
+        Direction::Up,
+    ] {
+        if search_pawn(&board, &rook, direction) {
+            sum += 1;
+        }
+    }
+    sum
+}
+
 struct Chess {
     r: usize,
     c: usize,
@@ -13,72 +29,55 @@ enum Direction {
     Up,
 }
 
-pub fn num_rook_captures(board: Vec<Vec<char>>) -> i32 {
-    fn search_rook(board: &[Vec<char>]) -> Chess {
-        for (r, row) in board.iter().enumerate().take(8) {
-            for (c, &col) in row.iter().enumerate().take(8) {
-                if col == 'R' {
-                    return Chess { r, c };
+fn search_rook(board: &[Vec<char>]) -> Chess {
+    for (r, row) in board.iter().enumerate().take(8) {
+        for (c, &col) in row.iter().enumerate().take(8) {
+            if col == 'R' {
+                return Chess { r, c };
+            }
+        }
+    }
+    unreachable!()
+}
+
+fn search_pawn(board: &[Vec<char>], rook: &Chess, direction: Direction) -> bool {
+    let mut r = rook.r;
+    let mut c = rook.c;
+    match direction {
+        Direction::Right => {
+            while c + 1 < 8 && board[r][c + 1] != 'B' {
+                c += 1;
+                if board[r][c] == 'p' {
+                    return true;
                 }
             }
         }
-        unreachable!()
-    }
-
-    fn search_pawn(board: &[Vec<char>], rook: &Chess, direction: Direction) -> bool {
-        let mut r = rook.r;
-        let mut c = rook.c;
-
-        match direction {
-            Direction::Right => {
-                while c + 1 < 8 && board[r][c + 1] != 'B' {
-                    c += 1;
-                    if board[r][c] == 'p' {
-                        return true;
-                    }
-                }
-            }
-            Direction::Down => {
-                while r + 1 < 8 && board[r + 1][c] != 'B' {
-                    r += 1;
-                    if board[r][c] == 'p' {
-                        return true;
-                    }
-                }
-            }
-            Direction::Left => {
-                while c > 0 && board[r][c - 1] != 'B' {
-                    c -= 1;
-                    if board[r][c] == 'p' {
-                        return true;
-                    }
-                }
-            }
-            Direction::Up => {
-                while r > 0 && board[r - 1][c] != 'B' {
-                    r -= 1;
-                    if board[r][c] == 'p' {
-                        return true;
-                    }
+        Direction::Down => {
+            while r + 1 < 8 && board[r + 1][c] != 'B' {
+                r += 1;
+                if board[r][c] == 'p' {
+                    return true;
                 }
             }
         }
-        false
-    }
-
-    let mut sum = 0;
-    let rook: Chess = search_rook(&board);
-    for direction in vec![
-        Direction::Right,
-        Direction::Down,
-        Direction::Left,
-        Direction::Up,
-    ] {
-        if search_pawn(&board, &rook, direction) {
-            sum += 1;
+        Direction::Left => {
+            while c > 0 && board[r][c - 1] != 'B' {
+                c -= 1;
+                if board[r][c] == 'p' {
+                    return true;
+                }
+            }
+        }
+        Direction::Up => {
+            while r > 0 && board[r - 1][c] != 'B' {
+                r -= 1;
+                if board[r][c] == 'p' {
+                    return true;
+                }
+            }
         }
     }
-    sum
+    false
 }
 // array
 #[test]

@@ -1,22 +1,4 @@
 // https://leetcode.com/problems/count-complete-tree-nodes/
-// Definition for a binary tree node.
-#[derive(Debug, PartialEq, Eq)]
-pub struct TreeNode {
-    pub val: i32,
-    pub left: Option<Rc<RefCell<Self>>>,
-    pub right: Option<Rc<RefCell<Self>>>,
-}
-
-impl TreeNode {
-    #[inline]
-    pub fn new(val: i32) -> Self {
-        Self {
-            val,
-            left: None,
-            right: None,
-        }
-    }
-}
 // Runtime: 4 ms
 // Memory Usage: 4.8 MB
 use std::{cell::RefCell, rc::Rc};
@@ -70,6 +52,25 @@ fn exists(mut root: Option<Rc<RefCell<TreeNode>>>, idx: usize, d: u32) -> bool {
         }
     }
     root.is_some()
+}
+
+// Definition for a binary tree node.
+#[derive(Debug, PartialEq, Eq)]
+pub struct TreeNode {
+    pub val: i32,
+    pub left: Option<Rc<RefCell<Self>>>,
+    pub right: Option<Rc<RefCell<Self>>>,
+}
+
+impl TreeNode {
+    #[inline]
+    pub fn new(val: i32) -> Self {
+        Self {
+            val,
+            left: None,
+            right: None,
+        }
+    }
 }
 // tree binary_search
 #[test]
