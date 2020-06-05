@@ -29,6 +29,7 @@ jobs:
         use-tool-cache: true
 
     - run: cargo audit
+    - run: cargo tree -d
 
   rust:
     name: Rust
