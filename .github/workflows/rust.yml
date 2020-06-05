@@ -48,7 +48,7 @@ jobs:
       - uses: actions-rs/toolchain@v1
         with:
             toolchain: nightly
-            components: clippy
+            components: clippy rust-fmt
             override: true
       - uses: actions-rs/clippy-check@v1
         with:
