@@ -1,4 +1,9 @@
 // https://leetcode.com/problems/palindrome-linked-list/
+
+pub fn is_palindrome(head: Option<Box<ListNode>>) -> bool {
+    todo!()
+}
+
 // Definition for singly-linked list.
 #[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {
@@ -11,10 +16,6 @@ impl ListNode {
     fn new(val: i32) -> Self {
         ListNode { next: None, val }
     }
-}
-
-pub fn is_palindrome(head: Option<Box<ListNode>>) -> bool {
-    todo!()
 }
 // linked_list two_pointers
 #[test]
