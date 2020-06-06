@@ -16,9 +16,7 @@ fn preorder(root: Option<&RefCell<TreeNode>>, cur: &mut Vec<char>, min: &mut Str
         cur.push(val);
         if node.left.is_none() && node.right.is_none() {
             let s = cur.iter().rev().copied().collect::<String>();
-            if min == "" {
-                *min = s;
-            } else if s < *min {
+            if min == "" || s < *min {
                 *min = s;
             }
         }
