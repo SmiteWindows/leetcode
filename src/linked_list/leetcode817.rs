@@ -80,18 +80,3 @@ fn test1_817() {
     assert_eq!(num_components(l1, vec![0, 1, 3]), 2);
     assert_eq!(num_components(l2, vec![0, 3, 1, 4]), 2);
 }
-// let mut gset = HashSet::new();
-// let mut res = 0;
-// for x in g {
-//     gset.insert(x);
-// }
-// let mut cur = head.as_deref();
-// while let Some(x) = cur {
-//     if gset.contains(&x.val)
-//         && (x.next.is_none() || !gset.contains(&x.next.as_deref().expect("exist").val))
-//     {
-//         res += 1;
-//     }
-//     cur = x.next.as_deref();
-// }
-// res
