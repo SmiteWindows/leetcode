@@ -1,8 +1,8 @@
 // https://leetcode.com/problems/video-stitching/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
+use std::cmp::Reverse;
 pub fn video_stitching(clips: Vec<Vec<i32>>, t: i32) -> i32 {
-    use std::cmp::Reverse;
     let mut clips = clips;
     clips.sort_by_key(|v| (v[0], Reverse(v[1])));
     let n = clips.len();
