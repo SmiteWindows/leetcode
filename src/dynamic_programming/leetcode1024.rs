@@ -1,10 +1,40 @@
 // https://leetcode.com/problems/video-stitching/
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
 pub fn video_stitching(clips: Vec<Vec<i32>>, t: i32) -> i32 {
-    todo!()
+    use std::cmp::Reverse;
+    let mut clips = clips;
+    clips.sort_by_key(|v| (v[0], Reverse(v[1])));
+    let n = clips.len();
+    let mut res = 0;
+    let mut left = 0;
+    let mut right = 0;
+    for clip in clips.iter() {
+        if clip[0] >= t {
+            break;
+        }
+        if clip[0] < left {
+            right = right.max(clip[1]);
+        } else if clip[0] <= right {
+            right = right.max(clip[1]);
+            left = right;
+            res += 1;
+        } else {
+            return -1;
+        }
+    }
+    if right < t {
+        -1
+    } else {
+        if left < t {
+            res + 1
+        } else {
+            res
+        }
+    }
 }
 // dynamic_programming
 #[test]
-#[ignore]
 fn test1_1024() {
     assert_eq!(
         video_stitching(
