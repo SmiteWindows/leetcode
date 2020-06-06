@@ -12,11 +12,9 @@ pub fn num_components(head: Option<Box<ListNode>>, g: Vec<i32>) -> i32 {
             if !open {
                 open = true;
             }
-        } else {
-            if open {
-                open = false;
-                res += 1;
-            }
+        } else if open {
+            open = false;
+            res += 1;
         }
         p = node.next;
     }
