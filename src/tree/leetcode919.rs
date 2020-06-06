@@ -1,19 +1,45 @@
 // https://leetcode.com/problems/complete-binary-tree-inserter/
-
+// Runtime: 4 ms
+// Memory Usage: 2.6 MB
 use std::{cell::RefCell, rc::Rc};
-struct CBTInserter {}
+struct CBTInserter {
+    stack: Vec<Option<Rc<RefCell<TreeNode>>>>,
+}
 
 impl CBTInserter {
     fn new(root: Option<Rc<RefCell<TreeNode>>>) -> Self {
-        todo!()
+        let mut stack = vec![];
+        stack.push(root);
+        let mut i = 0;
+        while i < stack.len() {
+            let left = stack[i].as_deref().unwrap().borrow_mut().left.clone();
+            let right = stack[i].as_deref().unwrap().borrow_mut().right.clone();
+            if left.is_some() {
+                stack.push(left);
+            }
+            if right.is_some() {
+                stack.push(right);
+            }
+            i += 1;
+        }
+        Self { stack }
     }
 
-    fn insert(&self, v: i32) -> i32 {
-        todo!()
+    fn insert(&mut self, v: i32) -> i32 {
+        let link = Some(Rc::new(RefCell::new(TreeNode::new(v))));
+        let n = self.stack.len();
+        self.stack.push(link.clone());
+        let mut parent = self.stack[(n - 1) / 2].as_deref().unwrap().borrow_mut();
+        if n % 2 == 1 {
+            parent.left = link;
+        } else {
+            parent.right = link;
+        }
+        parent.val
     }
 
     fn get_root(&self) -> Option<Rc<RefCell<TreeNode>>> {
-        todo!()
+        self.stack[0].clone()
     }
 }
 
@@ -43,7 +69,50 @@ impl TreeNode {
  */
 // tree
 #[test]
-#[ignore]
 fn test1_199() {
-    todo!()
+    let mut obj = CBTInserter::new(Some(Rc::new(RefCell::new(TreeNode::new(1)))));
+    assert_eq!(obj.insert(2), 1);
+    assert_eq!(
+        obj.get_root(),
+        Some(Rc::new(RefCell::new(TreeNode {
+            val: 1,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
+            right: None,
+        })))
+    );
+    let mut obj = CBTInserter::new(Some(Rc::new(RefCell::new(TreeNode {
+        val: 1,
+        left: Some(Rc::new(RefCell::new(TreeNode {
+            val: 2,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
+            right: Some(Rc::new(RefCell::new(TreeNode::new(5)))),
+        }))),
+        right: Some(Rc::new(RefCell::new(TreeNode {
+            val: 3,
+            left: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
+            right: None,
+        }))),
+    }))));
+    assert_eq!(obj.insert(7), 3);
+    assert_eq!(obj.insert(8), 4);
+    assert_eq!(
+        obj.get_root(),
+        Some(Rc::new(RefCell::new(TreeNode {
+            val: 1,
+            left: Some(Rc::new(RefCell::new(TreeNode {
+                val: 2,
+                left: Some(Rc::new(RefCell::new(TreeNode {
+                    val: 4,
+                    left: Some(Rc::new(RefCell::new(TreeNode::new(8)))),
+                    right: None,
+                }))),
+                right: Some(Rc::new(RefCell::new(TreeNode::new(5)))),
+            }))),
+            right: Some(Rc::new(RefCell::new(TreeNode {
+                val: 3,
+                left: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
+                right: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
+            }))),
+        })))
+    );
 }
