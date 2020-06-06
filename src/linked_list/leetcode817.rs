@@ -1,21 +1,27 @@
 // https://leetcode.com/problems/linked-list-components/
-// Runtime: 8 ms
-// Memory Usage: 2.8 MB
-use std::collections::HashSet;
+// Runtime: 4 ms
+// Memory Usage: 2.5 MB
+use std::{collections::HashSet, iter::FromIterator};
 pub fn num_components(head: Option<Box<ListNode>>, g: Vec<i32>) -> i32 {
-    let mut gset = HashSet::new();
+    let mut p = head;
+    let hs: HashSet<i32> = HashSet::from_iter(g);
+    let mut open = false;
     let mut res = 0;
-    for x in g {
-        gset.insert(x);
-    }
-    let mut cur = head.as_deref();
-    while let Some(x) = cur {
-        if gset.contains(&x.val)
-            && (x.next.is_none() || !gset.contains(&x.next.as_deref().expect("exist").val))
-        {
-            res += 1;
+    while let Some(node) = p {
+        if hs.contains(&node.val) {
+            if !open {
+                open = true;
+            }
+        } else {
+            if open {
+                open = false;
+                res += 1;
+            }
         }
-        cur = x.next.as_deref();
+        p = node.next;
+    }
+    if open {
+        res += 1;
     }
     res
 }
@@ -76,3 +82,18 @@ fn test1_817() {
     assert_eq!(num_components(l1, vec![0, 1, 3]), 2);
     assert_eq!(num_components(l2, vec![0, 3, 1, 4]), 2);
 }
+// let mut gset = HashSet::new();
+// let mut res = 0;
+// for x in g {
+//     gset.insert(x);
+// }
+// let mut cur = head.as_deref();
+// while let Some(x) = cur {
+//     if gset.contains(&x.val)
+//         && (x.next.is_none() || !gset.contains(&x.next.as_deref().expect("exist").val))
+//     {
+//         res += 1;
+//     }
+//     cur = x.next.as_deref();
+// }
+// res
