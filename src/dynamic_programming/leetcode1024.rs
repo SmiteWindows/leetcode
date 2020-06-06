@@ -25,12 +25,10 @@ pub fn video_stitching(clips: Vec<Vec<i32>>, t: i32) -> i32 {
     }
     if right < t {
         -1
+    } else if left < t {
+        res + 1
     } else {
-        if left < t {
-            res + 1
-        } else {
-            res
-        }
+        res
     }
 }
 // dynamic_programming
