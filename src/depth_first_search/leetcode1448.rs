@@ -1,10 +1,24 @@
 // https://leetcode.com/problems/count-good-nodes-in-binary-tree/
-
+// Runtime: 20 ms
+// Memory Usage: 6.8 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn good_nodes(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    todo!()
+    let mut res = 0;
+    preorder(root.as_deref(), i32::MIN, &mut res);
+    res
 }
 
+fn preorder(root: Option<&RefCell<TreeNode>>, max: i32, count: &mut i32) {
+    if let Some(node) = root {
+        let node = node.borrow();
+        let val = node.val;
+        if val >= max {
+            *count += 1;
+        }
+        preorder(node.left.as_deref(), max.max(val), count);
+        preorder(node.right.as_deref(), max.max(val), count);
+    }
+}
 // Definition for a binary tree node.
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
@@ -25,7 +39,6 @@ impl TreeNode {
 }
 // tree depth_first_search
 #[test]
-#[ignore]
 fn test2_1448() {
     let t1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 3,
