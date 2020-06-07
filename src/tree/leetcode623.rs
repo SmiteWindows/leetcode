@@ -12,24 +12,37 @@ pub fn add_one_row(
         n.left = root;
         return Some(Rc::new(RefCell::new(n)));
     }
-    let root = root;
-    insert(root.as_deref(), v, 1, d);
-    root
+    postorder(root.as_deref(), 1, v, d)
 }
 
-fn insert(root: Option<&RefCell<TreeNode>>, value: i32, depth: i32, n: i32) {
+fn postorder(
+    root: Option<&RefCell<TreeNode>>,
+    depth: i32,
+    v: i32,
+    d: i32,
+) -> Option<Rc<RefCell<TreeNode>>> {
     if let Some(node) = root {
         let mut node = node.borrow_mut();
-        if depth == n - 1 {
-            let mut t = node.left.take();
-            node.left = Some(Rc::new(RefCell::new(TreeNode::new(value))));
-            node.left.as_deref().expect("exist").borrow_mut().left = t;
-            t = node.right.take();
-            node.right = Some(Rc::new(RefCell::new(TreeNode::new(value))));
-            node.right.as_deref().expect("exist").borrow_mut().right = t;
+        let val = node.val;
+        let left = node.left.take();
+        let right = node.right.take();
+        let mut left = postorder(left.as_deref(), depth + 1, v, d);
+        let mut right = postorder(right.as_deref(), depth + 1, v, d);
+        if depth == d - 1 {
+            left = Some(Rc::new(RefCell::new(TreeNode {
+                val: v,
+                left,
+                right: None,
+            })));
+            right = Some(Rc::new(RefCell::new(TreeNode {
+                val: v,
+                left: None,
+                right,
+            })));
         }
-        insert(node.left.as_deref(), value, depth + 1, n);
-        insert(node.right.as_deref(), value, depth + 1, n);
+        Some(Rc::new(RefCell::new(TreeNode { val, left, right })))
+    } else {
+        None
     }
 }
 
