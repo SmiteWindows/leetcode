@@ -1,8 +1,7 @@
 // https://leetcode.com/problems/find-elements-in-a-contaminated-binary-tree/
-// Runtime: 8 ms
-// Memory Usage: 4.5 MB
+// Runtime: 4 ms
+// Memory Usage: 4.6 MB
 use std::{cell::RefCell, collections::HashSet, rc::Rc};
-
 struct FindElements {
     root: Option<Rc<RefCell<TreeNode>>>,
     hs: HashSet<i32>,
@@ -18,9 +17,10 @@ impl FindElements {
     fn recover(root: Option<&RefCell<TreeNode>>, x: i32, hs: &mut HashSet<i32>) {
         if let Some(node) = root {
             hs.insert(x);
-            node.borrow_mut().val = x;
-            Self::recover(node.borrow_mut().left.as_deref(), 2 * x + 1, hs);
-            Self::recover(node.borrow_mut().right.as_deref(), 2 * x + 2, hs);
+            let mut node = node.borrow_mut();
+            node.val = x;
+            Self::recover(node.left.as_deref(), 2 * x + 1, hs);
+            Self::recover(node.right.as_deref(), 2 * x + 2, hs);
         }
     }
 
