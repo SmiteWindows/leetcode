@@ -52,7 +52,6 @@ impl TreeNode {
         }
     }
 }
-
 /**
  * Your BSTIterator object will be instantiated and called as such:
  * let obj = BSTIterator::new(root);

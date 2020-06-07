@@ -1,43 +1,39 @@
 // https://leetcode.com/problems/reverse-nodes-in-k-group/
 // Runtime: 0 ms
 // Memory Usage: 2.3 MB
+use std::collections::VecDeque;
 pub fn reverse_k_group(head: Option<Box<ListNode>>, k: i32) -> Option<Box<ListNode>> {
-    let mut dummy_head = Some(Box::new(ListNode { val: 0, next: head }));
-    let mut head = dummy_head.as_deref_mut();
-    'a: loop {
-        let mut start = head.as_deref_mut()?.next.take();
-        if start.is_none() {
+    let mut p = head;
+    let mut count = 0;
+    let mut queue = VecDeque::new();
+    let k = k as usize;
+    while let Some(mut node) = p {
+        p = node.next.take();
+        queue.push_back(Some(node));
+        count += 1;
+        if count == k {
             break;
         }
-        let mut end = start.as_deref_mut();
-        for _ in 0..k - 1 {
-            end = end?.next.as_deref_mut();
-            if end.is_none() {
-                head.as_deref_mut()?.next = start;
-                break 'a;
+    }
+    if queue.len() == k {
+        let mut prev = reverse_k_group(p, k as i32);
+        while let Some(link) = queue.pop_front() {
+            if let Some(mut node) = link {
+                node.next = prev;
+                prev = Some(node);
             }
         }
-        let tail = end.as_deref_mut()?.next.take();
-        let end = reverse(start, tail);
-        head.as_deref_mut()?.next = end;
-        for _ in 0..k {
-            head = head?.next.as_deref_mut();
+        prev
+    } else {
+        let mut prev = None;
+        while let Some(link) = queue.pop_back() {
+            if let Some(mut node) = link {
+                node.next = prev;
+                prev = Some(node);
+            }
         }
+        prev
     }
-    dummy_head?.next
-}
-
-fn reverse(
-    mut head: Option<Box<ListNode>>,
-    mut tail: Option<Box<ListNode>>,
-) -> Option<Box<ListNode>> {
-    while let Some(mut current) = head {
-        let next = current.next.take();
-        current.next = tail.take();
-        tail = Some(current);
-        head = next;
-    }
-    tail
 }
 
 // Definition for singly-linked list.

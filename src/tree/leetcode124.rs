@@ -3,21 +3,41 @@
 // Memory Usage: 4.2 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn max_path_sum(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    let mut max_sum = i32::MIN;
-    max_gain(root.as_deref(), &mut max_sum);
-    max_sum
+    let mut res = i32::MIN;
+    postorder(root.as_deref(), &mut res);
+    res
 }
-
-fn max_gain(root: Option<&RefCell<TreeNode>>, max_sum: &mut i32) -> i32 {
+fn postorder(root: Option<&RefCell<TreeNode>>, max: &mut i32) -> Option<i32> {
     if let Some(node) = root {
         let node = node.borrow();
         let val = node.val;
-        let left_gain = max_gain(node.left.as_deref(), max_sum).max(0);
-        let right_gain = max_gain(node.right.as_deref(), max_sum).max(0);
-        *max_sum = (val + left_gain + right_gain).max(*max_sum);
-        val + left_gain.max(right_gain)
+        let left_max = postorder(node.left.as_deref(), max);
+        let right_max = postorder(node.right.as_deref(), max);
+        match (left_max, right_max) {
+            (Some(left_max), Some(right_max)) => {
+                *max = (*max).max(val);
+                *max = (*max).max(val + left_max);
+                *max = (*max).max(val + right_max);
+                *max = (*max).max(val + left_max + right_max);
+                Some(val + 0.max(left_max.max(right_max)))
+            }
+            (Some(left_max), None) => {
+                *max = (*max).max(val);
+                *max = (*max).max(val + left_max);
+                Some(val + 0.max(left_max))
+            }
+            (None, Some(right_max)) => {
+                *max = (*max).max(val);
+                *max = (*max).max(val + right_max);
+                Some(val + 0.max(right_max))
+            }
+            (None, None) => {
+                *max = (*max).max(val);
+                Some(val)
+            }
+        }
     } else {
-        0
+        None
     }
 }
 

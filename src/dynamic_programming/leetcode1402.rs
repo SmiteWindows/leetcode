@@ -1,10 +1,24 @@
 // https://leetcode.com/problems/reducing-dishes/
+// Runtime: 0 ms
+// Memory Usage: 2 MB
 pub fn max_satisfaction(satisfaction: Vec<i32>) -> i32 {
-    todo!()
+    let mut satisfaction = satisfaction;
+    satisfaction.sort_unstable();
+    let n = satisfaction.len();
+    let mut total = 0;
+    let mut res = 0;
+    for s in satisfaction.iter().rev() {
+        if s + total < 0 {
+            break;
+        } else {
+            total += s;
+            res += total;
+        }
+    }
+    res
 }
 // dynamic_programming
 #[test]
-#[ignore]
 fn test1_1402() {
     assert_eq!(max_satisfaction(vec![-1, -8, 0, 5, -9]), 14);
     assert_eq!(max_satisfaction(vec![4, 3, 2]), 20);
