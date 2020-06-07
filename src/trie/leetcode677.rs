@@ -1,45 +1,28 @@
 // https://leetcode.com/problems/map-sum-pairs/
 // Runtime: 0 ms
-// Memory Usage: 2.2 MB
-use std::{collections::hash_map::DefaultHasher, collections::HashMap, hash::Hasher};
+// Memory Usage: 2.1 MB
+use std::collections::HashMap;
 struct MapSum {
-    sum: HashMap<u64, i32>,
-    val: HashMap<u64, i32>,
+    map: HashMap<String, i32>,
 }
 
 impl MapSum {
-    /** Initialize your data structure here. */
     fn new() -> Self {
-        let sum = HashMap::new();
-        let val = HashMap::new();
-        Self { sum, val }
+        Self {
+            map: HashMap::new(),
+        }
     }
 
     fn insert(&mut self, key: String, val: i32) {
-        let mut hasher = DefaultHasher::new();
-        for b in key.bytes() {
-            hasher.write_u8(b);
-            let k = hasher.finish();
-            *self.sum.entry(k).or_default() += val;
-        }
-        let k = hasher.finish();
-        if let Some(prev) = self.val.insert(k, val) {
-            let mut hasher = DefaultHasher::new();
-            for b in key.bytes() {
-                hasher.write_u8(b);
-                let k = hasher.finish();
-                *self.sum.entry(k).or_default() -= prev;
-            }
-        }
+        self.map.insert(key, val);
     }
 
-    fn sum(&mut self, prefix: String) -> i32 {
-        let mut hasher = DefaultHasher::new();
-        for b in prefix.bytes() {
-            hasher.write_u8(b);
-        }
-        let k = hasher.finish();
-        *self.sum.entry(k).or_default()
+    fn sum(&self, prefix: String) -> i32 {
+        self.map
+            .keys()
+            .filter(|&s| s.starts_with(&prefix))
+            .map(|s| self.map[s])
+            .sum()
     }
 }
 /**
