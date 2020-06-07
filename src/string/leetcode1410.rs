@@ -1,10 +1,16 @@
 // https://leetcode.com/problems/html-entity-parser/
+// Runtime: 8 ms
+// Memory Usage: 2.5 MB
 pub fn entity_parser(text: String) -> String {
-    todo!()
+    text.replace("&quot;", "\"")
+        .replace("&apos;", "'")
+        .replace("&frasl;", "/")
+        .replace("&lt;", "<")
+        .replace("&gt;", ">")
+        .replace("&amp;", "&")
 }
 // string stack
 #[test]
-#[ignore]
 fn test1_1410() {
     assert_eq!(
         entity_parser(String::from(
