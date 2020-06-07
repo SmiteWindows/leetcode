@@ -18,8 +18,8 @@ pub fn largest_divisible_subset(nums: Vec<i32>) -> Vec<i32> {
         }
     }
     let mut res = vec![];
-    for i in 0..n {
-        if size[i] == max_size {
+    for (i, &s) in size.iter().enumerate().take(n) {
+        if s == max_size {
             let mut j = i;
             while index[j] != j {
                 res.push(nums[j]);
