@@ -30,28 +30,23 @@ fn is_match_dp(
             } else {
                 false
             }
+        } else if s[n - 1] == p[m - 1] {
+            is_match_dp(n - 1, m - 1, memo, s, p)
         } else {
-            if s[n - 1] == p[m - 1] {
-                is_match_dp(n - 1, m - 1, memo, s, p)
-            } else {
-                match p[m - 1] {
-                    '*' => match p[m - 2] {
-                        '*' => false,
-                        '.' => {
+            match p[m - 1] {
+                '*' => match p[m - 2] {
+                    '*' => false,
+                    '.' => is_match_dp(n - 1, m, memo, s, p) || is_match_dp(n, m - 2, memo, s, p),
+                    _ => {
+                        if s[n - 1] != p[m - 2] {
+                            is_match_dp(n, m - 2, memo, s, p)
+                        } else {
                             is_match_dp(n - 1, m, memo, s, p) || is_match_dp(n, m - 2, memo, s, p)
                         }
-                        _ => {
-                            if s[n - 1] != p[m - 2] {
-                                is_match_dp(n, m - 2, memo, s, p)
-                            } else {
-                                is_match_dp(n - 1, m, memo, s, p)
-                                    || is_match_dp(n, m - 2, memo, s, p)
-                            }
-                        }
-                    },
-                    '.' => is_match_dp(n - 1, m - 1, memo, s, p),
-                    _ => false,
-                }
+                    }
+                },
+                '.' => is_match_dp(n - 1, m - 1, memo, s, p),
+                _ => false,
             }
         };
         memo[n][m] = Some(res);

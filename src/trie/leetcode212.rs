@@ -28,8 +28,8 @@ fn dfs(
     n: usize,
     m: usize,
 ) {
-    let c = board[i][j];
-    if let Some(trie) = trie.children.get_mut(&c) {
+    let bc = board[i][j];
+    if let Some(trie) = trie.children.get_mut(&bc) {
         board[i][j] = ' ';
         if trie.end.is_some() {
             all.push(trie.end.take().unwrap());
@@ -46,7 +46,7 @@ fn dfs(
         if j > 0 {
             dfs(i, j - 1, board, all, trie, n, m);
         }
-        board[i][j] = c;
+        board[i][j] = bc;
     }
 }
 
