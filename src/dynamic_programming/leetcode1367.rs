@@ -3,38 +3,29 @@
 // Memory Usage: 2.3 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn is_sub_path(head: Option<Box<ListNode>>, root: Option<Rc<RefCell<TreeNode>>>) -> bool {
-    helper(head.as_deref(), root.as_deref())
+    let mut head = head;
+    let mut path = vec![];
+    while let Some(node) = head {
+        path.push(node.val);
+        head = node.next;
+    }
+    let mut cur = vec![];
+    let mut res = false;
+    preorder(root.as_deref(), &mut cur, &mut res, &path);
+    res
 }
 
-fn helper(head: Option<&ListNode>, root: Option<&RefCell<TreeNode>>) -> bool {
-    if head.is_none() {
-        return true;
+fn preorder(root: Option<&RefCell<TreeNode>>, cur: &mut Vec<i32>, found: &mut bool, path: &[i32]) {
+    if let Some(node) = root {
+        let node = node.borrow();
+        cur.push(node.val);
+        if cur.ends_with(path) {
+            *found = true;
+        }
+        preorder(node.left.as_deref(), cur, found, path);
+        preorder(node.right.as_deref(), cur, found, path);
+        cur.pop();
     }
-    if root.is_none() {
-        return false;
-    }
-    is_sub(head, root)
-        || helper(head, root.expect("exist").borrow().left.as_deref())
-        || helper(head, root.expect("exist").borrow().right.as_deref())
-}
-
-fn is_sub(head: Option<&ListNode>, root: Option<&RefCell<TreeNode>>) -> bool {
-    if head.is_none() {
-        return true;
-    }
-    if root.is_none() {
-        return false;
-    }
-    if head.expect("exist").val != root.expect("exist").borrow().val {
-        return false;
-    }
-    is_sub(
-        head.expect("exist").next.as_deref(),
-        root.expect("exist").borrow().left.as_deref(),
-    ) || is_sub(
-        head.expect("exist").next.as_deref(),
-        root.expect("exist").borrow().right.as_deref(),
-    )
 }
 
 // Definition for singly-linked list.
