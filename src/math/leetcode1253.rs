@@ -39,12 +39,15 @@ fn test1_1253() {
         reconstruct_matrix(2, 1, vec![1, 1, 1]),
         vec![vec![1, 1, 0], vec![0, 0, 1]]
     );
-    assert_eq!(reconstruct_matrix(2, 3, vec![2, 2, 1, 1]), vec![vec![]]);
+    assert_eq!(
+        reconstruct_matrix(2, 3, vec![2, 2, 1, 1]),
+        vec![] as Vec<Vec<i32>>
+    );
     assert_eq!(
         reconstruct_matrix(5, 5, vec![2, 1, 2, 0, 1, 0, 1, 2, 0, 1]),
         vec![
-            vec![1, 1, 1, 0, 1, 0, 0, 1, 0, 0],
-            vec![1, 0, 1, 0, 0, 0, 1, 1, 0, 1]
+            vec![1, 1, 1, 0, 0, 0, 1, 1, 0, 0],
+            vec![1, 0, 1, 0, 1, 0, 0, 1, 0, 1]
         ]
     );
 }
