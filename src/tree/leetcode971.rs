@@ -3,41 +3,45 @@
 // Memory Usage: 2.1 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn flip_match_voyage(root: Option<Rc<RefCell<TreeNode>>>, voyage: Vec<i32>) -> Vec<i32> {
-    let mut flipped = Vec::new();
-    let mut index = 0;
-    walk(root.as_deref(), &voyage, &mut index, &mut flipped);
-    if !flipped.is_empty() && flipped[0] == -1 {
-        flipped.clear();
-        flipped.push(-1);
+    let mut nodes = vec![];
+    let mut size = 0;
+    if preorder(root.as_deref(), &mut size, &mut nodes, &voyage) {
+        nodes
+    } else {
+        vec![-1]
     }
-    flipped
 }
 
-fn walk(
+fn preorder(
     root: Option<&RefCell<TreeNode>>,
+    size: &mut usize,
+    nodes: &mut Vec<i32>,
     voyage: &[i32],
-    index: &mut usize,
-    flipped: &mut Vec<i32>,
-) {
+) -> bool {
     if let Some(node) = root {
         let node = node.borrow();
-        if node.val != voyage[*index] {
-            flipped.clear();
-            flipped.push(-1);
-            return;
+        let val = node.val;
+        if voyage[*size] != val {
+            return false;
         }
-        *index += 1;
-        if *index < voyage.len()
-            && node.left.is_some()
-            && node.left.as_ref().expect("exist").borrow().val != voyage[*index]
-        {
-            flipped.push(node.val);
-            walk(node.right.as_deref(), voyage, index, flipped);
-            walk(node.left.as_deref(), voyage, index, flipped);
+        *size += 1;
+        if node.left.is_none() && node.right.is_none() {
+            return true;
+        }
+        if node.left.is_some() {
+            if node.left.as_deref().unwrap().borrow().val == voyage[*size] {
+                preorder(node.left.as_deref(), size, nodes, voyage)
+                    && preorder(node.right.as_deref(), size, nodes, voyage)
+            } else {
+                nodes.push(val);
+                preorder(node.right.as_deref(), size, nodes, voyage)
+                    && preorder(node.left.as_deref(), size, nodes, voyage)
+            }
         } else {
-            walk(node.left.as_deref(), voyage, index, flipped);
-            walk(node.right.as_deref(), voyage, index, flipped);
+            preorder(node.right.as_deref(), size, nodes, voyage)
         }
+    } else {
+        true
     }
 }
 
