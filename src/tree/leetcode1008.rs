@@ -1,10 +1,30 @@
 // https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/
-
+// Runtime: 0 ms
+// Memory Usage: 2 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn bst_from_preorder(preorder: Vec<i32>) -> Option<Rc<RefCell<TreeNode>>> {
-    todo!()
+    let mut inorder = preorder.clone();
+    inorder.sort_unstable();
+    from_vec(&preorder, &inorder)
 }
 
+fn from_vec(preorder: &[i32], inorder: &[i32]) -> Option<Rc<RefCell<TreeNode>>> {
+    let n = preorder.len();
+    if n == 0 {
+        None
+    } else {
+        if n == 1 {
+            Some(Rc::new(RefCell::new(TreeNode::new(preorder[0]))))
+        } else {
+            let i = inorder.binary_search(&preorder[0]).unwrap();
+            Some(Rc::new(RefCell::new(TreeNode {
+                val: preorder[0],
+                left: from_vec(&preorder[1..=i], &inorder[0..i]),
+                right: from_vec(&preorder[i + 1..], &inorder[i + 1..]),
+            })))
+        }
+    }
+}
 // Definition for a binary tree node.
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
@@ -25,7 +45,6 @@ impl TreeNode {
 }
 // tree
 #[test]
-#[ignore]
 fn test1_1008() {
     let res = Some(Rc::new(RefCell::new(TreeNode {
         val: 8,
