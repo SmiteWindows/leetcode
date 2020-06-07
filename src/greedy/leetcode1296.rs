@@ -16,9 +16,9 @@ pub fn is_possible_divide(nums: Vec<i32>, k: i32) -> bool {
     for (val, size) in btm {
         queue.push_back((val, size));
         if queue.len() == k {
-            let (first_val, first_size) = queue.pop_front().unwrap();
+            let (first_val, first_size) = queue.pop_front().expect("exist");
             for i in 1..k {
-                let (next_val, next_size) = queue.pop_front().unwrap();
+                let (next_val, next_size) = queue.pop_front().expect("exist");
                 if next_val != first_val + i as i32 {
                     return false;
                 }

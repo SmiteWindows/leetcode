@@ -18,7 +18,7 @@ pub fn remove_zero_sum_sublists(head: Option<Box<ListNode>>) -> Option<Box<ListN
         if let Some(&size) = hm.get(&sum) {
             sum -= val;
             while stack.len() > size {
-                let top = stack.pop().unwrap();
+                let top = stack.pop().expect("exist");
                 hm.remove(&sum);
                 sum -= top;
             }

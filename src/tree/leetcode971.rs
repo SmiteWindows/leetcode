@@ -29,7 +29,7 @@ fn preorder(
             return true;
         }
         if node.left.is_some() {
-            if node.left.as_deref().unwrap().borrow().val == voyage[*size] {
+            if node.left.as_deref().expect("exist").borrow().val == voyage[*size] {
                 preorder(node.left.as_deref(), size, nodes, voyage)
                     && preorder(node.right.as_deref(), size, nodes, voyage)
             } else {
