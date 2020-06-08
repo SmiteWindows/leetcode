@@ -49,6 +49,9 @@ jobs:
             components: rustfmt, clippy
             override: true
 
+      - name: Run cargo fmt
+        run: cargo fmt
+        
       - uses: actions-rs/clippy-check@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -57,7 +60,7 @@ jobs:
       - name: Run cargo check
         uses: actions-rs/cargo@v1
         with:
-          command: check, fmt
+          command: check
       
       - name: Run cargo test
         uses: actions-rs/cargo@v1
