@@ -18,13 +18,12 @@ pub fn del_nodes(
     res
 }
 
-fn postorder(
-    root: Option<Rc<RefCell<TreeNode>>>,
-    nodes: &HashSet<i32>,
-) -> (
+type RootForest = (
     Option<Rc<RefCell<TreeNode>>>,
     Vec<Option<Rc<RefCell<TreeNode>>>>,
-) {
+);
+
+fn postorder(root: Option<Rc<RefCell<TreeNode>>>, nodes: &HashSet<i32>) -> RootForest {
     if let Some(node) = root {
         let val = node.borrow_mut().val;
         let left = node.borrow_mut().left.take();
