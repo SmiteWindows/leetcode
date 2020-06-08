@@ -63,6 +63,6 @@ fn test1_1026() {
                 right: None,
             }))),
         }))),
-    })));
+    }))); // [8,3,10,1,6,null,14,null,null,4,7,13]
     assert_eq!(max_ancestor_diff(root), 7);
 }
