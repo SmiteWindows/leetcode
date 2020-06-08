@@ -1,30 +1,27 @@
 // https://leetcode.com/problems/validate-binary-search-tree/
 // Runtime: 0 ms
-// Memory Usage: 3 MB
+// Memory Usage: 2.9 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn is_valid_bst(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
-    helper(root.as_deref(), None, None)
+    let mut prev = None;
+    let mut res = true;
+    inorder(root.as_deref(), &mut |x| {
+        if let Some(y) = prev {
+            if x <= y {
+                res = false;
+            }
+        }
+        prev = Some(x);
+    });
+    res
 }
 
-fn helper(root: Option<&RefCell<TreeNode>>, lower: Option<i32>, upper: Option<i32>) -> bool {
+fn inorder(root: Option<&RefCell<TreeNode>>, visit: &mut dyn FnMut(i32)) {
     if let Some(node) = root {
         let node = node.borrow();
-        let val = node.val;
-        if lower.is_some() && val <= lower.expect("exist") {
-            return false;
-        }
-        if upper.is_some() && val >= upper.expect("exist") {
-            return false;
-        }
-        if !helper(node.left.as_deref(), lower, Some(val)) {
-            return false;
-        }
-        if !helper(node.right.as_deref(), Some(val), upper) {
-            return false;
-        }
-        true
-    } else {
-        true
+        inorder(node.left.as_deref(), visit);
+        visit(node.val);
+        inorder(node.right.as_deref(), visit);
     }
 }
 
@@ -53,7 +50,8 @@ fn test1_98() {
         val: 2,
         left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
         right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-    })));
+    }))); // [2,1,3]
+    assert_eq!(true, is_valid_bst(t1));
     let t2 = Some(Rc::new(RefCell::new(TreeNode {
         val: 5,
         left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
@@ -62,7 +60,6 @@ fn test1_98() {
             left: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
             right: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
         }))),
-    })));
-    assert_eq!(true, is_valid_bst(t1));
+    }))); // [5,1,4,null,null,3,6]
     assert_eq!(false, is_valid_bst(t2));
 }
