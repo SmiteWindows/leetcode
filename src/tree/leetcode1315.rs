@@ -4,18 +4,19 @@
 use std::{cell::RefCell, rc::Rc};
 pub fn sum_even_grandparent(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     let mut res = 0;
-    walk(root.as_deref(), 1, 1, &mut res);
+    preorder(root.as_deref(), false, false, &mut res);
     res
 }
 
-fn walk(root: Option<&RefCell<TreeNode>>, gp_val: i32, p_val: i32, res: &mut i32) {
+fn preorder(root: Option<&RefCell<TreeNode>>, parent: bool, grandparent: bool, sum: &mut i32) {
     if let Some(node) = root {
         let node = node.borrow();
-        if gp_val % 2 == 0 {
-            *res += node.val;
+        let val = node.val;
+        if grandparent {
+            *sum += val;
         }
-        walk(node.left.as_deref(), p_val, node.val, res);
-        walk(node.right.as_deref(), p_val, node.val, res);
+        preorder(node.left.as_deref(), val % 2 == 0, parent, sum);
+        preorder(node.right.as_deref(), val % 2 == 0, parent, sum);
     }
 }
 
@@ -64,6 +65,6 @@ fn test1_1315() {
                 right: Some(Rc::new(RefCell::new(TreeNode::new(5)))),
             }))),
         }))),
-    })));
+    }))); // [6,7,8,2,7,1,3,9,null,1,4,null,null,null,5]
     assert_eq!(sum_even_grandparent(root), 18);
 }

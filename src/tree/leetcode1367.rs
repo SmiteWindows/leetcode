@@ -93,7 +93,8 @@ fn test1_1367() {
             }))),
             right: None,
         }))),
-    })));
+    }))); // [1,4,4,null,2,2,null,1,null,6,8,null,null,null,null,1,3]
+    assert_eq!(is_sub_path(l1, t1), true);
     let l2 = Some(Box::new(ListNode {
         val: 1,
         next: Some(Box::new(ListNode {
@@ -128,7 +129,8 @@ fn test1_1367() {
             }))),
             right: None,
         }))),
-    })));
+    }))); // [1,4,4,null,2,2,null,1,null,6,8,null,null,null,null,1,3]
+    assert_eq!(is_sub_path(l2, t2), true);
     let l3 = Some(Box::new(ListNode {
         val: 1,
         next: Some(Box::new(ListNode {
@@ -166,8 +168,6 @@ fn test1_1367() {
             }))),
             right: None,
         }))),
-    })));
-    assert_eq!(is_sub_path(l1, t1), true);
-    assert_eq!(is_sub_path(l2, t2), true);
+    }))); // [1,4,4,null,2,2,null,1,null,6,8,null,null,null,null,1,3]
     assert_eq!(is_sub_path(l3, t3), false);
 }

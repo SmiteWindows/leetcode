@@ -52,7 +52,8 @@ fn test1_1448() {
             left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
             right: Some(Rc::new(RefCell::new(TreeNode::new(5)))),
         }))),
-    })));
+    }))); // [3,1,4,3,null,1,5]
+    assert_eq!(good_nodes(t1), 4);
     let t2 = Some(Rc::new(RefCell::new(TreeNode {
         val: 3,
         left: Some(Rc::new(RefCell::new(TreeNode {
@@ -61,9 +62,8 @@ fn test1_1448() {
             right: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
         }))),
         right: None,
-    })));
-    let t3 = Some(Rc::new(RefCell::new(TreeNode::new(1))));
-    assert_eq!(good_nodes(t1), 4);
+    }))); // [3,3,null,4,2]
     assert_eq!(good_nodes(t2), 3);
+    let t3 = Some(Rc::new(RefCell::new(TreeNode::new(1))));
     assert_eq!(good_nodes(t3), 1);
 }

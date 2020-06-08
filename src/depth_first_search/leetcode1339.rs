@@ -1,35 +1,35 @@
 // https://leetcode.com/problems/maximum-product-of-splitted-binary-tree/
 // Runtime: 20 ms
-// Memory Usage: 10.9 MB
+// Memory Usage: 10.2 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn max_product(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    let mut sum = 0;
-    let mut best = 0;
-    walk(root.as_deref(), &mut sum);
-    helper(root.as_deref(), &mut sum, &mut best);
-    let res = best as i64 * (sum as i64 - best as i64) % 1_000_000_007;
-    res as i32
+    let sum = postorder_sum(root.as_deref());
+    let mut res = 0;
+    postorder_product(root.as_deref(), &mut res, sum);
+    (res % 1_000_000_007) as i32
 }
 
-fn walk(root: Option<&RefCell<TreeNode>>, sum: &mut i32) {
+fn postorder_sum(root: Option<&RefCell<TreeNode>>) -> i32 {
     if let Some(node) = root {
         let node = node.borrow();
-        *sum += node.val;
-        walk(node.left.as_deref(), sum);
-        walk(node.right.as_deref(), sum);
+        let val = node.val;
+        let left = postorder_sum(node.left.as_deref());
+        let right = postorder_sum(node.right.as_deref());
+        val + left + right
+    } else {
+        0
     }
 }
 
-fn helper(root: Option<&RefCell<TreeNode>>, sum: &mut i32, best: &mut i32) -> i32 {
+fn postorder_product(root: Option<&RefCell<TreeNode>>, max: &mut i64, sum: i32) -> i32 {
     if let Some(node) = root {
         let node = node.borrow();
-        let curr = node.val
-            + helper(node.left.as_deref(), sum, best)
-            + helper(node.right.as_deref(), sum, best);
-        if (curr * 2 - *sum).abs() < (*best * 2 - *sum).abs() {
-            *best = curr;
-        }
-        curr
+        let val = node.val;
+        let left = postorder_product(node.left.as_deref(), max, sum);
+        let right = postorder_product(node.right.as_deref(), max, sum);
+        let res = val + left + right;
+        *max = (*max).max((sum - res) as i64 * res as i64);
+        res
     } else {
         0
     }

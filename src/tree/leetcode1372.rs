@@ -64,7 +64,8 @@ fn test1_1372() {
                 right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
             }))),
         }))),
-    })));
+    }))); // [1,null,1,1,1,null,null,1,1,null,1,null,null,null,1,null,1]
+    assert_eq!(longest_zig_zag(t1), 3);
     let t2 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
         left: Some(Rc::new(RefCell::new(TreeNode {
@@ -81,9 +82,8 @@ fn test1_1372() {
             }))),
         }))),
         right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-    })));
-    let t3 = Some(Rc::new(RefCell::new(TreeNode::new(1))));
-    assert_eq!(longest_zig_zag(t1), 3);
+    }))); // [1,1,1,null,1,null,null,1,1,null,1]
     assert_eq!(longest_zig_zag(t2), 4);
+    let t3 = Some(Rc::new(RefCell::new(TreeNode::new(1))));
     assert_eq!(longest_zig_zag(t3), 0);
 }
