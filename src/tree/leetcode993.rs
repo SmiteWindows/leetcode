@@ -1,40 +1,37 @@
 // https://leetcode.com/problems/cousins-in-binary-tree/
 // Runtime: 0 ms
-// Memory Usage: 2 MB
-use std::{cell::RefCell, collections::HashMap, rc::Rc};
+// Memory Usage: 2.1 MB
+use std::{cell::RefCell, rc::Rc};
 pub fn is_cousins(root: Option<Rc<RefCell<TreeNode>>>, x: i32, y: i32) -> bool {
-    let mut depth = HashMap::new();
-    let mut parent = HashMap::new();
-    walk(root.as_ref(), None, &mut depth, &mut parent);
-    depth.get(&x) == depth.get(&y) && parent.get(&x) != parent.get(&y)
+    let mut rx = None;
+    let mut ry = None;
+    preorder(root.as_deref(), 0, 0, &mut rx, x);
+    preorder(root.as_deref(), 0, 0, &mut ry, y);
+    if let (Some((dx, px)), Some((dy, py))) = (rx, ry) {
+        dx == dy && px != py
+    } else {
+        false
+    }
 }
 
-fn walk(
-    root: Option<&Rc<RefCell<TreeNode>>>,
-    par: Option<Rc<RefCell<TreeNode>>>,
-    depth: &mut HashMap<i32, i32>,
-    parent: &mut HashMap<i32, Option<Rc<RefCell<TreeNode>>>>,
+fn preorder(
+    root: Option<&RefCell<TreeNode>>,
+    depth: usize,
+    parent: i32,
+    res: &mut Option<(usize, i32)>,
+    v: i32,
 ) {
+    if res.is_some() {
+        return;
+    }
     if let Some(node) = root {
-        if let Some(n) = par.as_ref() {
-            let val = n.borrow().val;
-            depth.insert(node.borrow().val, 1 + depth.get(&val).expect("exist"));
-        } else {
-            depth.insert(node.borrow().val, 0);
+        let node = node.borrow();
+        let val = node.val;
+        if v == val {
+            *res = Some((depth, parent));
         }
-        parent.insert(node.borrow().val, par);
-        walk(
-            node.borrow().left.as_ref(),
-            Some(node.clone()),
-            depth,
-            parent,
-        );
-        walk(
-            node.borrow().right.as_ref(),
-            Some(node.clone()),
-            depth,
-            parent,
-        );
+        preorder(node.left.as_deref(), depth + 1, val, res, v);
+        preorder(node.right.as_deref(), depth + 1, val, res, v);
     }
 }
 
