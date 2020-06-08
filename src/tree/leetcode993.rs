@@ -64,7 +64,8 @@ fn test1_993() {
             right: None,
         }))),
         right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-    })));
+    }))); // [1,2,3,4]
+    assert_eq!(is_cousins(t1, 4, 3), false);
     let t2 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
         left: Some(Rc::new(RefCell::new(TreeNode {
@@ -77,7 +78,8 @@ fn test1_993() {
             left: None,
             right: Some(Rc::new(RefCell::new(TreeNode::new(5)))),
         }))),
-    })));
+    }))); // [1,2,3,null,4,null,5]
+    assert_eq!(is_cousins(t2, 5, 4), true);
     let t3 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
         left: Some(Rc::new(RefCell::new(TreeNode {
@@ -86,8 +88,6 @@ fn test1_993() {
             right: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
         }))),
         right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-    })));
-    assert_eq!(is_cousins(t1, 4, 3), false);
-    assert_eq!(is_cousins(t2, 5, 4), true);
+    }))); // [1,2,3,null,4]
     assert_eq!(is_cousins(t3, 2, 3), false);
 }

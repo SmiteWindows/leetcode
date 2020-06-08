@@ -71,17 +71,17 @@ fn test1_971() {
         left: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
         right: None,
     })));
+    assert_eq!(flip_match_voyage(t1, vec![2, 1]), vec![-1]);
     let t2 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
         left: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
         right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
     })));
+    assert_eq!(flip_match_voyage(t2, vec![1, 3, 2]), vec![1]);
     let t3 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
         left: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
         right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
     })));
-    assert_eq!(flip_match_voyage(t1, vec![2, 1]), vec![-1]);
-    assert_eq!(flip_match_voyage(t2, vec![1, 3, 2]), vec![1]);
     assert_eq!(flip_match_voyage(t3, vec![1, 2, 3]), vec![]);
 }

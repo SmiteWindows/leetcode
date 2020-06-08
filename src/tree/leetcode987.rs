@@ -76,8 +76,9 @@ fn test1_987() {
             left: Some(Rc::new(RefCell::new(TreeNode::new(15)))),
             right: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
         }))),
-    })));
+    }))); // [3,9,20,null,null,15,7]
     let res1 = vec![vec![9], vec![3, 15], vec![20], vec![7]];
+    assert_eq!(vertical_traversal(t1), res1);
     let t2 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
         left: Some(Rc::new(RefCell::new(TreeNode {
@@ -90,8 +91,7 @@ fn test1_987() {
             left: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
             right: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
         }))),
-    })));
+    }))); // [1,2,3,4,5,6,7]
     let res2 = vec![vec![4], vec![2], vec![1, 5, 6], vec![3], vec![7]];
-    assert_eq!(vertical_traversal(t1), res1);
     assert_eq!(vertical_traversal(t2), res2);
 }

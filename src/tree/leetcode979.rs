@@ -4,17 +4,19 @@
 use std::{cell::RefCell, rc::Rc};
 pub fn distribute_coins(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     let mut res = 0;
-    walk(root.as_deref(), &mut res);
+    postorder(root.as_deref(), &mut res);
     res
 }
 
-fn walk(root: Option<&RefCell<TreeNode>>, res: &mut i32) -> i32 {
+fn postorder(root: Option<&RefCell<TreeNode>>, sum: &mut i32) -> i32 {
     if let Some(node) = root {
         let node = node.borrow();
-        let left = walk(node.left.as_deref(), res);
-        let right = walk(node.right.as_deref(), res);
-        *res += left.abs() + right.abs();
-        node.val + left + right - 1
+        let val = node.val;
+        let left = postorder(node.left.as_deref(), sum);
+        let right = postorder(node.right.as_deref(), sum);
+        let m = val + left + right - 1;
+        *sum += m.abs();
+        m
     } else {
         0
     }
@@ -45,17 +47,20 @@ fn test1_979() {
         val: 3,
         left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
         right: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-    })));
+    }))); // [3,0,0]
+    assert_eq!(distribute_coins(t1), 2);
     let t2 = Some(Rc::new(RefCell::new(TreeNode {
         val: 0,
         left: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
         right: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-    })));
+    }))); // [0,3,0]
+    assert_eq!(distribute_coins(t2), 3);
     let t3 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
         left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
         right: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
-    })));
+    }))); // [1,0,2]
+    assert_eq!(distribute_coins(t3), 2);
     let t4 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
         left: Some(Rc::new(RefCell::new(TreeNode {
@@ -64,9 +69,6 @@ fn test1_979() {
             right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
         }))),
         right: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-    })));
-    assert_eq!(distribute_coins(t1), 2);
-    assert_eq!(distribute_coins(t2), 3);
-    assert_eq!(distribute_coins(t3), 2);
+    }))); // [1,0,0,null,3]
     assert_eq!(distribute_coins(t4), 4);
 }

@@ -4,17 +4,19 @@
 use std::{cell::RefCell, rc::Rc};
 pub fn distribute_coins(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     let mut res = 0;
-    walk(root.as_deref(), &mut res);
+    postorder(root.as_deref(), &mut res);
     res
 }
 
-fn walk(root: Option<&RefCell<TreeNode>>, res: &mut i32) -> i32 {
+fn postorder(root: Option<&RefCell<TreeNode>>, sum: &mut i32) -> i32 {
     if let Some(node) = root {
         let node = node.borrow();
-        let left = walk(node.left.as_deref(), res);
-        let right = walk(node.right.as_deref(), res);
-        *res += left.abs() + right.abs();
-        node.val + left + right - 1
+        let val = node.val;
+        let left = postorder(node.left.as_deref(), sum);
+        let right = postorder(node.right.as_deref(), sum);
+        let m = val + left + right - 1;
+        *sum += m.abs();
+        m
     } else {
         0
     }
