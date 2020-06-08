@@ -46,7 +46,7 @@ jobs:
       - uses: actions-rs/toolchain@v1
         with:
             toolchain: stable
-            components: rustfmt, clippy
+            components: clippy
             override: true
 
       - uses: actions-rs/clippy-check@v1
@@ -63,10 +63,7 @@ jobs:
         uses: actions-rs/cargo@v1
         with:
           command: test
-       
-      - name: Run cargo fmt
-        run: cargo fmt
-        
+
       - name: Run
         run: cargo run
             

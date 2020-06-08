@@ -4,7 +4,7 @@
 use std::collections::HashMap;
 pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
     let mut hm = HashMap::new();
-        for (i, &e) in nums.iter().enumerate() {
+    for (i, &e) in nums.iter().enumerate() {
         if let Some(&v) = hm.get(&(target - e)) {
             return vec![v, i as i32];
         }
