@@ -48,17 +48,17 @@ jobs:
             toolchain: stable
             components: rustfmt, clippy
             override: true
+
       - uses: actions-rs/clippy-check@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           args: --all-features -- -W clippy::all
-          
-      - name: Format
-        run: cargo fmt
-        
-      - name: Compile
-        run: cargo test --no-run
 
+      - name: Run cargo check
+        uses: actions-rs/cargo@v1
+        with:
+          command: check
+      
       - name: Run cargo test
         uses: actions-rs/cargo@v1
         with:
