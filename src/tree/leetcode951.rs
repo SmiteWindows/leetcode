@@ -24,10 +24,8 @@ fn flip_eq(root1: Option<&RefCell<TreeNode>>, root2: Option<&RefCell<TreeNode>>)
         } else {
             false
         }
-    } else if root2.is_none() {
-        true
     } else {
-        false
+        root2.is_none()
     }
 }
 
