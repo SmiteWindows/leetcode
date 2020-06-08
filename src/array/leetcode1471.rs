@@ -1,10 +1,29 @@
 // https://leetcode.com/problems/the-k-strongest-values-in-an-array/
+// Runtime: 60 ms
+// Memory Usage: 3 MB
 pub fn get_strongest(arr: Vec<i32>, k: i32) -> Vec<i32> {
-    todo!()
+    let mut arr = arr;
+    let mut k = k;
+    arr.sort_unstable();
+    let n = arr.len();
+    let median = arr[(n - 1) / 2];
+    let mut l = 0;
+    let mut r = n - 1;
+    let mut res = vec![];
+    while k > 0 {
+        if (arr[l] - median).abs() <= (arr[r] - median).abs() {
+            res.push(arr[r]);
+            r -= 1;
+        } else {
+            res.push(arr[l]);
+            l += 1;
+        }
+        k -= 1;
+    }
+    res
 }
 // array sort
 #[test]
-#[ignore]
 fn test1_1471() {
     assert_eq!(get_strongest(vec![1, 2, 3, 4, 5], 2), vec![5, 1]);
     assert_eq!(get_strongest(vec![1, 1, 3, 5, 5], 2), vec![5, 5]);

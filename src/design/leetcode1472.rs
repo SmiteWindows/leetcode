@@ -1,21 +1,40 @@
 // https://leetcode.com/problems/design-browser-history/
-struct BrowserHistory {}
+// Runtime: 44 ms
+// Memory Usage: 3.7 MB
+struct BrowserHistory {
+    backward: Vec<String>,
+    forward: Vec<String>,
+}
 
 impl BrowserHistory {
     fn new(homepage: String) -> Self {
-        todo!()
+        Self {
+            backward: vec![homepage],
+            forward: vec![],
+        }
     }
 
-    fn visit(&self, url: String) {
-        todo!()
+    fn visit(&mut self, url: String) {
+        self.backward.push(url);
+        self.forward = vec![];
     }
 
-    fn back(&self, steps: i32) -> String {
-        todo!()
+    fn back(&mut self, steps: i32) -> String {
+        for _ in 0..steps {
+            if self.backward.len() > 1 {
+                self.forward.push(self.backward.pop().unwrap());
+            }
+        }
+        self.backward.last().unwrap().to_string()
     }
 
-    fn forward(&self, steps: i32) -> String {
-        todo!()
+    fn forward(&mut self, steps: i32) -> String {
+        for _ in 0..steps {
+            if !self.forward.is_empty() {
+                self.backward.push(self.forward.pop().unwrap());
+            }
+        }
+        self.backward.last().unwrap().to_string()
     }
 }
 /**
@@ -27,17 +46,16 @@ impl BrowserHistory {
  */
 // design
 #[test]
-#[ignore]
 fn test1_1472() {
-    // let obj = BrowserHistory::new("leetcode.com".to_string());
-    // browserHistory.visit("google.com"); // You are in "leetcode.com". Visit "google.com"
-    // browserHistory.visit("facebook.com"); // You are in "google.com". Visit "facebook.com"
-    // browserHistory.visit("youtube.com"); // You are in "facebook.com". Visit "youtube.com"
-    // assert_eq!(browserHistory.back(1), "facebook.com".to_string()); // You are in "youtube.com", move back to "facebook.com" return "facebook.com"
-    // assert_eq!(browserHistory.back(1), "google.com".to_string()); // You are in "facebook.com", move back to "google.com" return "google.com"
-    // assert_eq!(browserHistory.forward(1), "facebook.com".to_string()); // You are in "google.com", move forward to "facebook.com" return "facebook.com"
-    // browserHistory.visit("linkedin.com"); // You are in "facebook.com". Visit "linkedin.com"
-    // assert_eq!(browserHistory.forward(2), "".to_string()); // You are in "linkedin.com", you cannot move forward any steps.
-    // assert_eq!(browserHistory.back(2), "google.com".to_string()); // You are in "linkedin.com", move back two steps to "facebook.com" then to "google.com". return "google.com"
-    // assert_eq!(browserHistory.back(7), "leetcode.com".to_string()); // You are in "google.com", you can move back only one step to "leetcode.com". return "leetcode.com"
+    let mut obj = BrowserHistory::new("leetcode.com".to_string());
+    obj.visit("google.com".to_string()); // You are in "leetcode.com". Visit "google.com"
+    obj.visit("facebook.com".to_string()); // You are in "google.com". Visit "facebook.com"
+    obj.visit("youtube.com".to_string()); // You are in "facebook.com". Visit "youtube.com"
+    assert_eq!(obj.back(1), "facebook.com".to_string()); // You are in "youtube.com", move back to "facebook.com" return "facebook.com"
+    assert_eq!(obj.back(1), "google.com".to_string()); // You are in "facebook.com", move back to "google.com" return "google.com"
+    assert_eq!(obj.forward(1), "facebook.com".to_string()); // You are in "google.com", move forward to "facebook.com" return "facebook.com"
+    obj.visit("linkedin.com".to_string()); // You are in "facebook.com". Visit "linkedin.com"
+    assert_eq!(obj.forward(2), "linkedin.com".to_string()); // You are in "linkedin.com", you cannot move forward any steps.
+    assert_eq!(obj.back(2), "google.com".to_string()); // You are in "linkedin.com", move back two steps to "facebook.com" then to "google.com". return "google.com"
+    assert_eq!(obj.back(7), "leetcode.com".to_string()); // You are in "google.com", you can move back only one step to "leetcode.com". return "leetcode.com"
 }
