@@ -3,30 +3,24 @@
 // Memory Usage: 2 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn is_unival_tree(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
-    is_unival(root.as_deref())
+    let mut val = None;
+    preorder(root.as_deref(), &mut val)
 }
 
-fn is_unival(root: Option<&RefCell<TreeNode>>) -> bool {
-    match root {
-        Some(node) => {
-            let node = node.borrow();
-            let left_unival = match node.left.as_deref() {
-                Some(left_node) => {
-                    let left_node = left_node.borrow();
-                    (node.val == left_node.val) && is_unival(node.left.as_deref())
-                }
-                None => true,
-            };
-            let right_unival = match node.right.as_deref() {
-                Some(right_node) => {
-                    let right_node = right_node.borrow();
-                    (node.val == right_node.val) && is_unival(node.right.as_deref())
-                }
-                None => true,
-            };
-            left_unival && right_unival
+fn preorder(root: Option<&RefCell<TreeNode>>, val: &mut Option<i32>) -> bool {
+    if let Some(node) = root {
+        let node = node.borrow();
+        let node_val = node.val;
+        if let Some(val) = val {
+            if *val != node_val {
+                return false;
+            }
+        } else {
+            *val = Some(node_val);
         }
-        _ => true,
+        preorder(node.left.as_deref(), val) && preorder(node.right.as_deref(), val)
+    } else {
+        true
     }
 }
 
@@ -63,7 +57,8 @@ fn test1_965() {
             left: None,
             right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
         }))),
-    })));
+    }))); // [1,1,1,1,1,null,1]
+    assert_eq!(is_unival_tree(t1), true);
     let t2 = Some(Rc::new(RefCell::new(TreeNode {
         val: 2,
         left: Some(Rc::new(RefCell::new(TreeNode {
@@ -72,7 +67,6 @@ fn test1_965() {
             right: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
         }))),
         right: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
-    })));
-    assert_eq!(is_unival_tree(t1), true);
+    }))); // [2,2,2,5,2]
     assert_eq!(is_unival_tree(t2), false);
 }
