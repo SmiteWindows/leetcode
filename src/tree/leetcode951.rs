@@ -6,25 +6,29 @@ pub fn flip_equiv(
     root1: Option<Rc<RefCell<TreeNode>>>,
     root2: Option<Rc<RefCell<TreeNode>>>,
 ) -> bool {
-    helper(root1.as_deref(), root2.as_deref())
+    flip_eq(root1.as_deref(), root2.as_deref())
 }
 
-fn helper(root1: Option<&RefCell<TreeNode>>, root2: Option<&RefCell<TreeNode>>) -> bool {
-    if root1 == root2 {
-        return true;
+fn flip_eq(root1: Option<&RefCell<TreeNode>>, root2: Option<&RefCell<TreeNode>>) -> bool {
+    if let Some(node1) = root1 {
+        if let Some(node2) = root2 {
+            let node1 = node1.borrow();
+            let node2 = node2.borrow();
+            if node1.val != node2.val {
+                return false;
+            }
+            flip_eq(node1.left.as_deref(), node2.left.as_deref())
+                && flip_eq(node1.right.as_deref(), node2.right.as_deref())
+                || flip_eq(node1.left.as_deref(), node2.right.as_deref())
+                    && flip_eq(node1.right.as_deref(), node2.left.as_deref())
+        } else {
+            false
+        }
+    } else if root2.is_none() {
+        true
+    } else {
+        false
     }
-    if root1.is_none() || root2.is_none() {
-        return false;
-    }
-    let node1 = root1.expect("exist").borrow();
-    let node2 = root2.expect("exist").borrow();
-    if node1.val != node2.val {
-        return false;
-    }
-    helper(node1.left.as_deref(), node2.left.as_deref())
-        && helper(node1.right.as_deref(), node2.right.as_deref())
-        || helper(node1.left.as_deref(), node2.right.as_deref())
-            && helper(node1.right.as_deref(), node2.left.as_deref())
 }
 
 // Definition for a binary tree node.
@@ -64,7 +68,7 @@ fn test1_951() {
             left: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
             right: None,
         }))),
-    })));
+    }))); // [1,2,3,4,5,6,null,null,null,7,8]
     let t2 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
         left: Some(Rc::new(RefCell::new(TreeNode {
@@ -81,6 +85,6 @@ fn test1_951() {
                 right: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
             }))),
         }))),
-    })));
+    }))); // [1,3,2,null,6,4,5,null,null,null,null,8,7]
     assert_eq!(flip_equiv(t1, t2), true);
 }
