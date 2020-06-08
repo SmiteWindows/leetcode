@@ -50,8 +50,8 @@ jobs:
             override: true
 
       - name: Run cargo fmt
-        run: cargo fmt
-        
+        run: rustup fmt
+
       - uses: actions-rs/clippy-check@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
