@@ -3,18 +3,18 @@
 // Memory Usage: 2.1 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn increasing_bst(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
-    walk(root.as_ref(), None)
+    inorder(root, None)
 }
 
-fn walk(
-    root: Option<&Rc<RefCell<TreeNode>>>,
+fn inorder(
+    root: Option<Rc<RefCell<TreeNode>>>,
     next: Option<Rc<RefCell<TreeNode>>>,
 ) -> Option<Rc<RefCell<TreeNode>>> {
-    if let Some(node) = root {
+    if let Some(node) = root.as_deref() {
         let left = node.borrow_mut().left.take();
         let right = node.borrow_mut().right.take();
-        let res = walk(left.as_ref(), Some(node.clone()));
-        node.borrow_mut().right = walk(right.as_ref(), next);
+        let res = inorder(left, root.clone());
+        node.borrow_mut().right = inorder(right, next);
         res
     } else {
         next
