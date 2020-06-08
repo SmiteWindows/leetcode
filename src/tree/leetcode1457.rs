@@ -13,10 +13,8 @@ fn preorder(root: Option<&RefCell<TreeNode>>, mut path: u32, all: &mut i32) {
         let node = node.borrow();
         let val = node.val;
         path ^= 1 << val;
-        if node.left.is_none() && node.right.is_none() {
-            if path.count_ones() < 2 {
-                *all += 1;
-            }
+        if node.left.is_none() && node.right.is_none() && path.count_ones() < 2 {
+            *all += 1;
         }
         preorder(node.left.as_deref(), path, all);
         preorder(node.right.as_deref(), path, all);
