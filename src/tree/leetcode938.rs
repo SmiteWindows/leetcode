@@ -3,26 +3,25 @@
 // Memory Usage: 4 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn range_sum_bst(root: Option<Rc<RefCell<TreeNode>>>, l: i32, r: i32) -> i32 {
-    walk(root.as_deref(), l, r, 0)
+    let mut sum = 0;
+    preorder(root.as_deref(), l, r, &mut sum);
+    sum
 }
 
-fn walk(root: Option<&RefCell<TreeNode>>, l: i32, r: i32, mut res: i32) -> i32 {
+fn preorder(root: Option<&RefCell<TreeNode>>, l: i32, r: i32, sum: &mut i32) {
     if let Some(node) = root {
         let node = node.borrow();
         let val = node.val;
-        if val > r {
-            res = walk(node.left.as_deref(), l, r, res);
+        if val >= l && val <= r {
+            *sum += val;
         }
-        if val < l {
-            res = walk(node.right.as_deref(), l, r, res);
+        if val > l {
+            preorder(node.left.as_deref(), l, r, sum)
         }
-        if l <= val && r >= val {
-            res += val
-                + walk(node.left.as_deref(), l, r, res)
-                + walk(node.right.as_deref(), l, r, res);
+        if val < r {
+            preorder(node.right.as_deref(), l, r, sum);
         }
     }
-    res
 }
 
 // Definition for a binary tree node.
@@ -58,7 +57,8 @@ fn test1_938() {
             left: None,
             right: Some(Rc::new(RefCell::new(TreeNode::new(18)))),
         }))),
-    })));
+    }))); // [10,5,15,3,7,null,18]
+    assert_eq!(range_sum_bst(t1, 7, 15), 32);
     let t2 = Some(Rc::new(RefCell::new(TreeNode {
         val: 10,
         left: Some(Rc::new(RefCell::new(TreeNode {
@@ -79,7 +79,6 @@ fn test1_938() {
             left: Some(Rc::new(RefCell::new(TreeNode::new(13)))),
             right: Some(Rc::new(RefCell::new(TreeNode::new(18)))),
         }))),
-    })));
-    assert_eq!(range_sum_bst(t1, 7, 15), 32);
+    }))); // [10,5,15,3,7,13,18,1,null,6]
     assert_eq!(range_sum_bst(t2, 6, 10), 23);
 }
