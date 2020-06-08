@@ -1,8 +1,26 @@
 // https://leetcode.com/problems/pseudo-palindromic-paths-in-a-binary-tree/
-
+// Runtime: 28 ms
+// Memory Usage: 11.8 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn pseudo_palindromic_paths(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    todo!()
+    let mut res = 0;
+    preorder(root.as_deref(), 0, &mut res);
+    res
+}
+
+fn preorder(root: Option<&RefCell<TreeNode>>, mut path: u32, all: &mut i32) {
+    if let Some(node) = root {
+        let node = node.borrow();
+        let val = node.val;
+        path ^= 1 << val;
+        if node.left.is_none() && node.right.is_none() {
+            if path.count_ones() < 2 {
+                *all += 1;
+            }
+        }
+        preorder(node.left.as_deref(), path, all);
+        preorder(node.right.as_deref(), path, all);
+    }
 }
 
 // Definition for a binary tree node.
@@ -25,7 +43,6 @@ impl TreeNode {
 }
 // tree depth_first_search bit_manipulation
 #[test]
-#[ignore]
 fn test3_1457() {
     let t1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 2,
