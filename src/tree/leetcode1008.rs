@@ -56,6 +56,6 @@ fn test1_1008() {
             left: None,
             right: Some(Rc::new(RefCell::new(TreeNode::new(12)))),
         }))),
-    })));
+    }))); // [8,5,10,1,7,null,12]
     assert_eq!(bst_from_preorder(vec![8, 5, 1, 7, 10, 12]), res);
 }
