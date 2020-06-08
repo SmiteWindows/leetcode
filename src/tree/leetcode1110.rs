@@ -1,48 +1,59 @@
 // https://leetcode.com/problems/delete-nodes-and-return-forest/
 // Runtime: 4 ms
 // Memory Usage: 2.1 MB
-use std::{cell::RefCell, collections::HashSet, rc::Rc};
+use std::{cell::RefCell, collections::HashSet, iter::FromIterator, rc::Rc};
 pub fn del_nodes(
     root: Option<Rc<RefCell<TreeNode>>>,
     to_delete: Vec<i32>,
 ) -> Vec<Option<Rc<RefCell<TreeNode>>>> {
-    let mut res = Vec::new();
-    let mut delete_set = HashSet::with_capacity(to_delete.len());
-    for delete in to_delete {
-        delete_set.insert(delete);
+    let mut res = vec![];
+    let nodes = HashSet::from_iter(to_delete);
+    let (root, forest) = postorder(root, &nodes);
+    if root.is_some() {
+        res.push(root);
     }
-    helper(root.as_ref(), true, &mut delete_set, &mut res);
+    for t in forest {
+        res.push(t);
+    }
     res
 }
 
-fn helper(
-    root: Option<&Rc<RefCell<TreeNode>>>,
-    is_add: bool,
-    delete_set: &mut HashSet<i32>,
-    res: &mut Vec<Option<Rc<RefCell<TreeNode>>>>,
-) -> bool {
+fn postorder(
+    root: Option<Rc<RefCell<TreeNode>>>,
+    nodes: &HashSet<i32>,
+) -> (
+    Option<Rc<RefCell<TreeNode>>>,
+    Vec<Option<Rc<RefCell<TreeNode>>>>,
+) {
     if let Some(node) = root {
-        if delete_set.contains(&node.borrow().val) {
-            if helper(node.borrow().left.as_ref(), true, delete_set, res) {
-                node.borrow_mut().left = None;
+        let val = node.borrow_mut().val;
+        let left = node.borrow_mut().left.take();
+        let right = node.borrow_mut().right.take();
+        let (left_root, left_forest) = postorder(left, nodes);
+        let (right_root, right_forest) = postorder(right, nodes);
+        let mut forest = vec![];
+        for t in left_forest {
+            forest.push(t);
+        }
+        for t in right_forest {
+            forest.push(t);
+        }
+        if nodes.contains(&val) {
+            if left_root.is_some() {
+                forest.push(left_root);
             }
-            if helper(node.borrow().right.as_ref(), true, delete_set, res) {
-                node.borrow_mut().right = None;
+            if right_root.is_some() {
+                forest.push(right_root);
             }
-            return true;
+            (None, forest)
+        } else {
+            node.borrow_mut().left = left_root;
+            node.borrow_mut().right = right_root;
+            (Some(node), forest)
         }
-        if is_add {
-            res.push(Some(node.clone()));
-        }
-        if helper(node.borrow().left.as_ref(), false, delete_set, res) {
-            dbg!();
-            node.borrow_mut().left = None;
-        }
-        if helper(node.borrow().right.as_ref(), false, delete_set, res) {
-            node.borrow_mut().right = None;
-        }
+    } else {
+        (None, vec![])
     }
-    false
 }
 
 // Definition for a binary tree node.
@@ -78,7 +89,7 @@ fn test1_1110() {
             left: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
             right: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
         }))),
-    })));
+    }))); // [1,2,3,4,5,6,7]
     let s1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
         left: Some(Rc::new(RefCell::new(TreeNode {
@@ -87,7 +98,7 @@ fn test1_1110() {
             right: None,
         }))),
         right: None,
-    })));
+    }))); // [1,2,null,4]
     let s2 = Some(Rc::new(RefCell::new(TreeNode::new(6))));
     let s3 = Some(Rc::new(RefCell::new(TreeNode::new(7))));
     assert_eq!(del_nodes(root, vec![3, 5]), vec![s1, s2, s3]);

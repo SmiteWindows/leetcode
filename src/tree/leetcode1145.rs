@@ -66,6 +66,6 @@ fn test1_1145() {
             left: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
             right: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
         }))),
-    })));
+    }))); // [1,2,3,4,5,6,7,8,9,10,11]
     assert_eq!(btree_game_winning_move(root, 11, 3), true);
 }

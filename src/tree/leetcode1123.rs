@@ -1,19 +1,23 @@
 // https://leetcode.com/problems/lowest-common-ancestor-of-deepest-leaves/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
-use std::{cell::RefCell, cmp::Ordering, rc::Rc};
+use std::{
+    cell::RefCell,
+    cmp::Ordering::{Equal, Greater, Less},
+    rc::Rc,
+};
 pub fn lca_deepest_leaves(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
-    helper(root.as_ref()).1
+    postorder(&root).1
 }
 
-fn helper(root: Option<&Rc<RefCell<TreeNode>>>) -> (usize, Option<Rc<RefCell<TreeNode>>>) {
+fn postorder(root: &Option<Rc<RefCell<TreeNode>>>) -> (usize, Option<Rc<RefCell<TreeNode>>>) {
     if let Some(node) = root {
-        let left = helper(node.borrow().left.as_ref());
-        let right = helper(node.borrow().right.as_ref());
-        match left.0.cmp(&right.0) {
-            Ordering::Equal => (left.0 + 1, Some(node.clone())),
-            Ordering::Less => (right.0 + 1, right.1),
-            Ordering::Greater => (left.0 + 1, left.1),
+        let (left, left_lca) = postorder(&node.borrow().left);
+        let (right, right_lca) = postorder(&node.borrow().right);
+        match left.cmp(&right) {
+            Equal => (left + 1, root.clone()),
+            Greater => (left + 1, left_lca),
+            Less => (right + 1, right_lca),
         }
     } else {
         (0, None)
@@ -45,12 +49,13 @@ fn test1_1123() {
         val: 1,
         left: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
         right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-    })));
+    }))); // [1,2,3]
     let res1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
         left: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
         right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-    })));
+    }))); // [1,2,3]
+    assert_eq!(lca_deepest_leaves(t1), res1);
     let t2 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
         left: Some(Rc::new(RefCell::new(TreeNode {
@@ -59,8 +64,9 @@ fn test1_1123() {
             right: None,
         }))),
         right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-    })));
+    }))); // [1,2,3,4]
     let res2 = Some(Rc::new(RefCell::new(TreeNode::new(4))));
+    assert_eq!(lca_deepest_leaves(t2), res2);
     let t3 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
         left: Some(Rc::new(RefCell::new(TreeNode {
@@ -69,13 +75,11 @@ fn test1_1123() {
             right: Some(Rc::new(RefCell::new(TreeNode::new(5)))),
         }))),
         right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-    })));
+    }))); // [1,2,3,4,5]
     let res3 = Some(Rc::new(RefCell::new(TreeNode {
         val: 2,
         left: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
         right: Some(Rc::new(RefCell::new(TreeNode::new(5)))),
-    })));
-    assert_eq!(lca_deepest_leaves(t1), res1);
-    assert_eq!(lca_deepest_leaves(t2), res2);
+    }))); // [2,4,5]
     assert_eq!(lca_deepest_leaves(t3), res3);
 }

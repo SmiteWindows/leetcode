@@ -1,19 +1,23 @@
 // https://leetcode.com/problems/lowest-common-ancestor-of-deepest-leaves/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
-use std::{cell::RefCell, cmp::Ordering, rc::Rc};
+use std::{
+    cell::RefCell,
+    cmp::Ordering::{Equal, Greater, Less},
+    rc::Rc,
+};
 pub fn lca_deepest_leaves(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
-    helper(root.as_ref()).1
+    postorder(&root).1
 }
 
-fn helper(root: Option<&Rc<RefCell<TreeNode>>>) -> (usize, Option<Rc<RefCell<TreeNode>>>) {
+fn postorder(root: &Option<Rc<RefCell<TreeNode>>>) -> (usize, Option<Rc<RefCell<TreeNode>>>) {
     if let Some(node) = root {
-        let left = helper(node.borrow().left.as_ref());
-        let right = helper(node.borrow().right.as_ref());
-        match left.0.cmp(&right.0) {
-            Ordering::Equal => (left.0 + 1, Some(node.clone())),
-            Ordering::Less => (right.0 + 1, right.1),
-            Ordering::Greater => (left.0 + 1, left.1),
+        let (left, left_lca) = postorder(&node.borrow().left);
+        let (right, right_lca) = postorder(&node.borrow().right);
+        match left.cmp(&right) {
+            Equal => (left + 1, root.clone()),
+            Greater => (left + 1, left_lca),
+            Less => (right + 1, right_lca),
         }
     } else {
         (0, None)
