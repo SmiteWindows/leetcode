@@ -3,29 +3,23 @@
 // Memory Usage: 2.1 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn btree_game_winning_move(root: Option<Rc<RefCell<TreeNode>>>, n: i32, x: i32) -> bool {
-    let (mut left_count, mut right_count) = (0, 0);
-    postorder(root.as_deref(), x, &mut left_count, &mut right_count);
-    (n - left_count - right_count - 1)
-        .max(right_count)
-        .max(left_count)
-        > n / 2
+    let mut left = 0;
+    let mut right = 0;
+    postorder(root.as_deref(), x, &mut left, &mut right);
+    (n - left - right - 1).max(right).max(left) > n / 2
 }
 
-fn postorder(
-    root: Option<&RefCell<TreeNode>>,
-    x: i32,
-    left_count: &mut i32,
-    right_count: &mut i32,
-) -> i32 {
+fn postorder(root: Option<&RefCell<TreeNode>>, x: i32, left: &mut i32, right: &mut i32) -> i32 {
     if let Some(node) = root {
         let node = node.borrow();
-        let left = postorder(node.left.as_deref(), x, left_count, right_count);
-        let right = postorder(node.right.as_deref(), x, left_count, right_count);
-        if node.val == x {
-            *left_count = left;
-            *right_count = right;
+        let val = node.val;
+        let l = postorder(node.left.as_deref(), x, left, right);
+        let r = postorder(node.right.as_deref(), x, left, right);
+        if val == x {
+            *left = l;
+            *right = r;
         }
-        left + right + 1
+        l + r + 1
     } else {
         0
     }

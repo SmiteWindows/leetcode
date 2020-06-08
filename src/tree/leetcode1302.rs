@@ -1,27 +1,32 @@
 // https://leetcode.com/problems/deepest-leaves-sum/
 // Runtime: 4 ms
 // Memory Usage: 3 MB
-use std::{cell::RefCell, cmp::Ordering, rc::Rc};
+use std::{
+    cell::RefCell,
+    cmp::Ordering::{Equal, Greater, Less},
+    rc::Rc,
+};
 pub fn deepest_leaves_sum(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    let mut max_depth = 0;
-    let mut total = 0;
-    walk(root.as_deref(), 0, &mut max_depth, &mut total);
-    total
+    let mut max = 0;
+    let mut res = 0;
+    preorder_dfs(root.as_deref(), 0, &mut max, &mut res);
+    res
 }
 
-fn walk(root: Option<&RefCell<TreeNode>>, depth: i32, max_depth: &mut i32, total: &mut i32) {
+fn preorder_dfs(root: Option<&RefCell<TreeNode>>, level: usize, max: &mut usize, sum: &mut i32) {
     if let Some(node) = root {
         let node = node.borrow();
-        match depth.cmp(max_depth) {
-            Ordering::Equal => *total += node.val,
-            Ordering::Greater => {
-                *max_depth = depth;
-                *total = node.val;
+        let val = node.val;
+        match level.cmp(max) {
+            Equal => *sum += val,
+            Greater => {
+                *max = level;
+                *sum = val;
             }
-            Ordering::Less => {}
+            Less => {}
         }
-        walk(node.left.as_deref(), depth + 1, max_depth, total);
-        walk(node.right.as_deref(), depth + 1, max_depth, total);
+        preorder_dfs(node.left.as_deref(), level + 1, max, sum);
+        preorder_dfs(node.right.as_deref(), level + 1, max, sum);
     }
 }
 
@@ -66,6 +71,6 @@ fn test1_1302() {
                 right: Some(Rc::new(RefCell::new(TreeNode::new(8)))),
             }))),
         }))),
-    })));
+    }))); // [1,2,3,4,5,null,6,7,null,null,null,null,8]
     assert_eq!(deepest_leaves_sum(root), 15);
 }
