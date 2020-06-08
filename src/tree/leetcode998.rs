@@ -1,24 +1,26 @@
 // https://leetcode.com/problems/maximum-binary-tree-ii/
 // Runtime: 0 ms
-// Memory Usage: 2 MB
+// Memory Usage: 2.1 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn insert_into_max_tree(
     root: Option<Rc<RefCell<TreeNode>>>,
     val: i32,
 ) -> Option<Rc<RefCell<TreeNode>>> {
-    helper(root.as_ref(), val)
+    insert(root, val)
 }
 
-fn helper(root: Option<&Rc<RefCell<TreeNode>>>, val: i32) -> Option<Rc<RefCell<TreeNode>>> {
+fn insert(root: Option<Rc<RefCell<TreeNode>>>, val: i32) -> Option<Rc<RefCell<TreeNode>>> {
     if let Some(node) = root {
         if node.borrow().val > val {
-            let tmp = helper(node.borrow().right.as_ref(), val);
-            node.borrow_mut().right = tmp;
-            Some(node.clone())
+            let right = node.borrow_mut().right.take();
+            node.borrow_mut().right = insert(right, val);
+            Some(node)
         } else {
-            let mut tmp = TreeNode::new(val);
-            tmp.left = Some(node.clone());
-            Some(Rc::new(RefCell::new(tmp)))
+            Some(Rc::new(RefCell::new(TreeNode {
+                val,
+                left: Some(node),
+                right: None,
+            })))
         }
     } else {
         Some(Rc::new(RefCell::new(TreeNode::new(val))))
@@ -54,7 +56,7 @@ fn test1_998() {
             left: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
             right: None,
         }))),
-    })));
+    }))); // [4,1,3,null,null,2]
     let res1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 5,
         left: Some(Rc::new(RefCell::new(TreeNode {
@@ -67,7 +69,8 @@ fn test1_998() {
             }))),
         }))),
         right: None,
-    })));
+    }))); // [5,4,null,1,3,null,null,2]
+    assert_eq!(insert_into_max_tree(t1, 5), res1);
     let t2 = Some(Rc::new(RefCell::new(TreeNode {
         val: 5,
         left: Some(Rc::new(RefCell::new(TreeNode {
@@ -76,7 +79,7 @@ fn test1_998() {
             right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
         }))),
         right: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
-    })));
+    }))); // [5,2,4,null,1]
     let res2 = Some(Rc::new(RefCell::new(TreeNode {
         val: 5,
         left: Some(Rc::new(RefCell::new(TreeNode {
@@ -89,7 +92,8 @@ fn test1_998() {
             left: None,
             right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
         }))),
-    })));
+    }))); // [5,2,4,null,1,null,3]
+    assert_eq!(insert_into_max_tree(t2, 3), res2);
     let t3 = Some(Rc::new(RefCell::new(TreeNode {
         val: 5,
         left: Some(Rc::new(RefCell::new(TreeNode {
@@ -98,7 +102,7 @@ fn test1_998() {
             right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
         }))),
         right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-    })));
+    }))); // [5,2,3,null,1]
     let res3 = Some(Rc::new(RefCell::new(TreeNode {
         val: 5,
         left: Some(Rc::new(RefCell::new(TreeNode {
@@ -111,8 +115,6 @@ fn test1_998() {
             left: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
             right: None,
         }))),
-    })));
-    assert_eq!(insert_into_max_tree(t1, 5), res1);
-    assert_eq!(insert_into_max_tree(t2, 3), res2);
+    }))); // [5,2,4,null,1,3]
     assert_eq!(insert_into_max_tree(t3, 4), res3);
 }

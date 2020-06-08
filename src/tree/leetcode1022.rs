@@ -3,21 +3,22 @@
 // Memory Usage: 2.1 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn sum_root_to_leaf(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    helper(root.as_deref(), 0, 0)
+    let mut res = 0;
+    sum_rtl(root.as_deref(), 0, &mut res);
+    res
 }
 
-fn helper(root: Option<&RefCell<TreeNode>>, mut sum: i32, val: i32) -> i32 {
+fn sum_rtl(root: Option<&RefCell<TreeNode>>, parent_val: i32, sum: &mut i32) {
     if let Some(node) = root {
         let node = node.borrow();
-        let new_val = val << 1 | node.val;
+        let val = parent_val << 1 | node.val;
         if node.left.is_none() && node.right.is_none() {
-            sum += new_val;
+            *sum += val;
         } else {
-            sum = helper(node.left.as_deref(), sum, new_val);
-            sum = helper(node.right.as_deref(), sum, new_val);
+            sum_rtl(node.left.as_deref(), val, sum);
+            sum_rtl(node.right.as_deref(), val, sum);
         }
     }
-    sum
 }
 
 // Definition for a binary tree node.
@@ -53,6 +54,6 @@ fn test1_1022() {
             left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
             right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
         }))),
-    })));
+    }))); // [1,0,1,0,1,0,1]
     assert_eq!(sum_root_to_leaf(root), 22);
 }
