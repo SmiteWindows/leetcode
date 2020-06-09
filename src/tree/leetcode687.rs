@@ -3,33 +3,25 @@
 // Memory Usage: 3 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn longest_univalue_path(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    arrow_length(root.as_deref(), 0).1
+    let mut max = 0;
+    lup(root.as_deref(), &mut max, 0);
+    max
 }
 
-fn arrow_length(root: Option<&RefCell<TreeNode>>, res: i32) -> (i32, i32) {
+fn lup(root: Option<&RefCell<TreeNode>>, max: &mut i32, parent_val: i32) -> i32 {
     if let Some(node) = root {
         let node = node.borrow();
-        let (left, res) = arrow_length(node.left.as_deref(), res);
-        let (right, res) = arrow_length(node.right.as_deref(), res);
-        let (mut arrow_left, mut arrow_right) = (0, 0);
-        if let Some(left_node) = node.left.as_deref() {
-            let left_node = left_node.borrow();
-            if left_node.val == node.val {
-                arrow_left += left + 1;
-            }
+        let val = node.val;
+        let left = lup(node.left.as_deref(), max, val);
+        let right = lup(node.right.as_deref(), max, val);
+        *max = (*max).max(left + right);
+        if parent_val == val {
+            left.max(right) + 1
+        } else {
+            0
         }
-        if let Some(right_node) = node.right.as_deref() {
-            let right_node = right_node.borrow();
-            if right_node.val == node.val {
-                arrow_right += right + 1;
-            }
-        }
-        (
-            arrow_left.max(arrow_right),
-            (arrow_left + arrow_right).max(res),
-        )
     } else {
-        (0, res)
+        0
     }
 }
 

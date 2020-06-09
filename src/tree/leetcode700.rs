@@ -1,17 +1,21 @@
 // https://leetcode.com/problems/search-in-a-binary-search-tree/
 // Runtime: 4 ms
-// Memory Usage: 2.5 MB
-use std::{cell::RefCell, cmp::Ordering, rc::Rc};
+// Memory Usage: 2.6 MB
+use std::{
+    cell::RefCell,
+    cmp::Ordering::{Equal, Greater, Less},
+    rc::Rc,
+};
 pub fn search_bst(root: Option<Rc<RefCell<TreeNode>>>, val: i32) -> Option<Rc<RefCell<TreeNode>>> {
-    search(root.as_ref(), val)
+    search(&root, val)
 }
 
-fn search(root: Option<&Rc<RefCell<TreeNode>>>, val: i32) -> Option<Rc<RefCell<TreeNode>>> {
+fn search(root: &Option<Rc<RefCell<TreeNode>>>, val: i32) -> Option<Rc<RefCell<TreeNode>>> {
     match root {
-        Some(node) => match node.as_ref().borrow().val.cmp(&val) {
-            Ordering::Equal => Some(node.clone()),
-            Ordering::Less => search(node.as_ref().borrow().right.as_ref(), val),
-            Ordering::Greater => search(node.as_ref().borrow().left.as_ref(), val),
+        Some(node) => match node.borrow().val.cmp(&val) {
+            Equal => root.clone(),
+            Less => search(&node.borrow().right, val),
+            Greater => search(&node.borrow().left, val),
         },
         None => None,
     }

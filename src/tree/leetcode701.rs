@@ -6,10 +6,13 @@ pub fn insert_into_bst(
     root: Option<Rc<RefCell<TreeNode>>>,
     val: i32,
 ) -> Option<Rc<RefCell<TreeNode>>> {
-    insert(root, val)
+    postorder_insert(root, val)
 }
 
-fn insert(root: Option<Rc<RefCell<TreeNode>>>, val: i32) -> Option<Rc<RefCell<TreeNode>>> {
+fn postorder_insert(
+    root: Option<Rc<RefCell<TreeNode>>>,
+    val: i32,
+) -> Option<Rc<RefCell<TreeNode>>> {
     if let Some(node) = root {
         let node_val = node.borrow().val;
         let left = node.borrow_mut().left.take();
@@ -18,12 +21,12 @@ fn insert(root: Option<Rc<RefCell<TreeNode>>>, val: i32) -> Option<Rc<RefCell<Tr
             Some(Rc::new(RefCell::new(TreeNode {
                 val: node_val,
                 left,
-                right: insert(right, val),
+                right: postorder_insert(right, val),
             })))
         } else {
             Some(Rc::new(RefCell::new(TreeNode {
                 val: node_val,
-                left: insert(left, val),
+                left: postorder_insert(left, val),
                 right,
             })))
         }
