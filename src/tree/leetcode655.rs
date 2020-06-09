@@ -14,10 +14,7 @@ pub fn print_tree(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<String>> {
 fn get_height(root: Option<&RefCell<TreeNode>>) -> usize {
     if let Some(node) = root {
         let node = node.borrow();
-        1 + usize::max(
-            get_height(node.left.as_deref()),
-            get_height(node.right.as_deref()),
-        )
+        1 + get_height(node.left.as_deref()).max(get_height(node.right.as_deref()))
     } else {
         0
     }
