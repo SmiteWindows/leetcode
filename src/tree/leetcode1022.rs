@@ -4,20 +4,19 @@
 use std::{cell::RefCell, rc::Rc};
 pub fn sum_root_to_leaf(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     let mut res = 0;
-    sum_rtl(root.as_deref(), 0, &mut res);
+    preorder(root.as_deref(), 0, &mut res);
     res
 }
 
-fn sum_rtl(root: Option<&RefCell<TreeNode>>, parent_val: i32, sum: &mut i32) {
+fn preorder(root: Option<&RefCell<TreeNode>>, parent_val: i32, sum: &mut i32) {
     if let Some(node) = root {
         let node = node.borrow();
         let val = parent_val << 1 | node.val;
         if node.left.is_none() && node.right.is_none() {
             *sum += val;
-        } else {
-            sum_rtl(node.left.as_deref(), val, sum);
-            sum_rtl(node.right.as_deref(), val, sum);
         }
+        preorder(node.left.as_deref(), val, sum);
+        preorder(node.right.as_deref(), val, sum);
     }
 }
 
