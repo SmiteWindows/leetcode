@@ -3,22 +3,23 @@
 // Memory Usage: 2.1 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn min_diff_in_bst(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    let (mut prev, res) = (None, i32::MAX);
-    walk(root.as_ref(), &mut prev, res)
+    let mut prev = None;
+    let min = i32::MAX;
+    inorder(root.as_deref(), &mut prev, min)
 }
 
-fn walk(root: Option<&Rc<RefCell<TreeNode>>>, prev: &mut Option<i32>, mut res: i32) -> i32 {
+fn inorder(root: Option<&RefCell<TreeNode>>, prev: &mut Option<i32>, mut min: i32) -> i32 {
     if let Some(node) = root {
         let node = node.borrow();
-        res = walk(node.left.as_ref(), prev, res);
+        min = inorder(node.left.as_deref(), prev, min);
         let val = node.val;
-        if let Some(n) = prev {
-            res = res.min(val - *n);
+        if let Some(prev_val) = prev {
+            min = min.min(val - *prev_val);
         }
         *prev = Some(val);
-        res = walk(node.right.as_ref(), prev, res);
+        min = inorder(node.right.as_deref(), prev, min);
     }
-    res
+    min
 }
 
 // Definition for a binary tree node.

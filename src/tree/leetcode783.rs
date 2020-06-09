@@ -1,24 +1,27 @@
 // https://leetcode.com/problems/minimum-distance-between-bst-nodes/
 // Runtime: 0 ms
-// Memory Usage: 2.1 MB
+// Memory Usage: 1.9 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn min_diff_in_bst(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    let (mut prev, res) = (None, i32::MAX);
-    walk(root.as_deref(), &mut prev, res)
+    let mut prev = None;
+    let mut min = i32::MAX;
+    inorder(root.as_deref(), &mut prev, &mut min);
+    min
 }
 
-fn walk(root: Option<&RefCell<TreeNode>>, prev: &mut Option<i32>, mut res: i32) -> i32 {
+fn inorder(root: Option<&RefCell<TreeNode>>, prev: &mut Option<i32>, min: &mut i32) {
     if let Some(node) = root {
         let node = node.borrow();
-        res = walk(node.left.as_deref(), prev, res);
+        inorder(node.left.as_deref(), prev, min);
         let val = node.val;
-        if let Some(n) = prev {
-            res = res.min(val - *n);
+        if let Some(prev_val) = prev.as_mut() {
+            *min = (*min).min(val - *prev_val);
+            *prev_val = val;
+        } else {
+            *prev = Some(val);
         }
-        *prev = Some(val);
-        res = walk(node.right.as_deref(), prev, res);
+        inorder(node.right.as_deref(), prev, min);
     }
-    res
 }
 
 // Definition for a binary tree node.
@@ -50,7 +53,7 @@ fn test1_783() {
             right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
         }))),
         right: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
-    })));
+    }))); // [4,2,6,1,3,null,null]
     assert_eq!(1, min_diff_in_bst(t1));
     let t2 = Some(Rc::new(RefCell::new(TreeNode {
         val: 5,
