@@ -7,13 +7,13 @@ pub fn trim_bst(
     l: i32,
     r: i32,
 ) -> Option<Rc<RefCell<TreeNode>>> {
-    helper(root.as_ref(), l, r)
+    helper(&root, l, r)
 }
 
-fn helper(root: Option<&Rc<RefCell<TreeNode>>>, l: i32, r: i32) -> Option<Rc<RefCell<TreeNode>>> {
+fn helper(root: &Option<Rc<RefCell<TreeNode>>>, l: i32, r: i32) -> Option<Rc<RefCell<TreeNode>>> {
     if let Some(node) = root {
-        let left = helper(node.borrow().left.as_ref(), l, r);
-        let right = helper(node.borrow().right.clone().as_ref(), l, r);
+        let left = helper(&node.borrow().left, l, r);
+        let right = helper(&node.borrow().right, l, r);
         let val = node.borrow().val;
         if val > r {
             return left;
@@ -23,7 +23,7 @@ fn helper(root: Option<&Rc<RefCell<TreeNode>>>, l: i32, r: i32) -> Option<Rc<Ref
             node.borrow_mut().left = left;
             node.borrow_mut().right = right;
         }
-        Some(node.clone())
+        root.clone()
     } else {
         None
     }

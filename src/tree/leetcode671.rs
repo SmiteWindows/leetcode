@@ -13,8 +13,9 @@ pub fn find_second_minimum_value(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
 fn walk(root: Option<&RefCell<TreeNode>>, min: i32) -> i32 {
     if let Some(node) = root {
         let node = node.borrow();
-        if node.val > min {
-            return node.val;
+        let val = node.val;
+        if val > min {
+            return val;
         }
         let left = walk(node.left.as_deref(), min);
         let right = walk(node.right.as_deref(), min);
