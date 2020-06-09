@@ -3,27 +3,21 @@
 // Memory Usage: 2.1 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn prune_tree(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
-    if contains_one(root.as_deref()) {
-        root
-    } else {
-        None
-    }
+    postorder(root)
 }
 
-fn contains_one(root: Option<&RefCell<TreeNode>>) -> bool {
+fn postorder(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
     if let Some(node) = root {
-        let a1 = contains_one(node.borrow().left.as_deref());
-        let a2 = contains_one(node.borrow().right.as_deref());
-        let node_val = node.borrow().val;
-        if !a1 {
-            node.borrow_mut().left = None;
+        let val = node.borrow().val;
+        let left = postorder(node.borrow_mut().left.take());
+        let right = postorder(node.borrow_mut().right.take());
+        if left.is_none() && right.is_none() && val == 0 {
+            None
+        } else {
+            Some(Rc::new(RefCell::new(TreeNode { val, left, right })))
         }
-        if !a2 {
-            node.borrow_mut().right = None;
-        }
-        node_val == 1 || a1 || a2
     } else {
-        false
+        None
     }
 }
 
@@ -56,7 +50,7 @@ fn test1_814() {
             left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
             right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
         }))),
-    })));
+    }))); // [1,null,0,0,1]
     let res1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
         left: None,
@@ -65,7 +59,7 @@ fn test1_814() {
             left: None,
             right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
         }))),
-    })));
+    }))); // [1,null,0,null,1]
     assert_eq!(prune_tree(t1), res1);
     let t2 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
@@ -79,7 +73,7 @@ fn test1_814() {
             left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
             right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
         }))),
-    })));
+    }))); // [1,0,1,0,0,0,1]
     let res2 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
         left: None,
@@ -88,7 +82,7 @@ fn test1_814() {
             left: None,
             right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
         }))),
-    })));
+    }))); // [1,null,1,null,1]
     assert_eq!(prune_tree(t2), res2);
     let t3 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
@@ -106,7 +100,7 @@ fn test1_814() {
             left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
             right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
         }))),
-    })));
+    }))); // [1,1,0,1,1,0,1,0]
     let res3 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
         left: Some(Rc::new(RefCell::new(TreeNode {
@@ -119,6 +113,6 @@ fn test1_814() {
             left: None,
             right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
         }))),
-    })));
+    }))); // [1,1,0,1,1,null,1]
     assert_eq!(prune_tree(t3), res3);
 }
