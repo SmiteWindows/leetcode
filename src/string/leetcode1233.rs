@@ -19,10 +19,8 @@ pub fn remove_subfolders(folder: Vec<String>) -> Vec<String> {
 fn is_subfolder(s: &str, hs: &HashSet<String>) -> bool {
     let n = s.len();
     for i in 0..n {
-        if &s[i..=i] == "/" {
-            if hs.contains(&s[0..i]) {
-                return true;
-            }
+        if &s[i..=i] == "/" && hs.contains(&s[0..i]) {
+            return true;
         }
     }
     false
