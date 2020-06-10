@@ -48,7 +48,7 @@ fn test1_1462() {
         vec![false, true]
     );
     assert_eq!(
-        check_if_prerequisite(2, vec![vec![]], vec![vec![1, 0], vec![0, 1]]),
+        check_if_prerequisite(2, vec![], vec![vec![1, 0], vec![0, 1]]),
         vec![false, false]
     );
     assert_eq!(
