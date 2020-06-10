@@ -29,6 +29,6 @@ pub fn check_valid_string(s: String) -> bool {
 #[test]
 fn test1_678() {
     assert_eq!(check_valid_string(String::from("()")), true);
-    assert_eq!(check_valid_string(String::from("(*)")), false);
+    assert_eq!(check_valid_string(String::from("(*)")), true);
     assert_eq!(check_valid_string(String::from("(*))")), true);
 }
