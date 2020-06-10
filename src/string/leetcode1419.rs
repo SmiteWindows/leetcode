@@ -1,34 +1,46 @@
 // https://leetcode.com/problems/minimum-number-of-frogs-croaking/
-
-use std::collections::HashMap;
+// Runtime: 4 ms
+// Memory Usage: 2.2 MB
 pub fn min_number_of_frogs(croak_of_frogs: String) -> i32 {
-    if croak_of_frogs.len() % 5 != 0 {
-        return -1;
-    }
-    let mut id = HashMap::new();
-    for &c in &['c', 'r', 'o', 'a', 'k'] {
-        id.insert(c, id.len());
-    }
+    let mut result = 0;
     let mut count = vec![0; 5];
-    let mut frogs = 0;
-    let mut res = 0;
     for c in croak_of_frogs.chars() {
-        let i = id[&c];
-        count[i] += 1;
-        if i == 0 {
-            frogs += 1;
-            res = res.max(frogs);
-        }
-        if i > 0 {
-            if count[i - 1] < count[i] {
-                return -1;
+        match c {
+            'c' => {
+                count[0] += 1;
+                if count[0] > result {
+                    result = count[0];
+                }
+            }
+            _ => {
+                let index = get_index(c);
+                count[index] += 1;
+                if count[index] > count[index - 1] {
+                    return -1;
+                }
+                if c == 'k' {
+                    for v in count.iter_mut() {
+                        *v -= 1;
+                    }
+                }
             }
         }
-        if i == 4 {
-            frogs -= 1;
-        }
     }
-    res
+    if count[0] == 0 {
+        result
+    } else {
+        -1
+    }
+}
+
+fn get_index(c: char) -> usize {
+    match c {
+        'r' => 1,
+        'o' => 2,
+        'a' => 3,
+        'k' => 4,
+        _ => 0,
+    }
 }
 // string
 #[test]
