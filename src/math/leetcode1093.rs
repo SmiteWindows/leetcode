@@ -1,10 +1,46 @@
 // https://leetcode.com/problems/statistics-from-a-large-sample/
+// Runtime: 0 ms
+// Memory Usage: 1.9 MB
 pub fn sample_stats(count: Vec<i32>) -> Vec<f64> {
-    todo!()
+    let mut min = i32::MAX;
+    let mut max = i32::MIN;
+    let total_count = count.iter().copied().sum::<i32>();
+    let m1 = (total_count + 1) / 2;
+    let m2 = if total_count % 2 == 0 { m1 + 1 } else { m1 };
+    let mut cur_count = 0;
+    let mut mode_count = 0;
+    let mut mode = i32::MAX;
+    let mut sum = 0.0;
+    let n = count.len();
+    let mut median = 0;
+    for i in 0..n {
+        if count[i] > 0 {
+            min = min.min(i as i32);
+            max = max.max(i as i32);
+            if cur_count < m1 && cur_count + count[i] >= m1 {
+                median += i;
+            }
+            if cur_count < m2 && cur_count + count[i] >= m2 {
+                median += i;
+            }
+            cur_count += count[i];
+            sum += i as f64 * count[i] as f64;
+            if count[i] > mode_count {
+                mode_count = count[i];
+                mode = i as i32;
+            }
+        }
+    }
+    vec![
+        min as f64,
+        max as f64,
+        sum / total_count as f64,
+        median as f64 / 2.0,
+        mode as f64,
+    ]
 }
 // math two_pointers
 #[test]
-#[ignore]
 fn test1_1093() {
     assert_eq!(
         sample_stats(vec![
@@ -32,6 +68,6 @@ fn test1_1093() {
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
             0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
         ]),
-        vec![1.00000, 4.00000, 2.18182, 2.00000, 1.00000]
+        vec![1.00000, 4.00000, 2.1818181818181817, 2.00000, 1.00000]
     );
 }
