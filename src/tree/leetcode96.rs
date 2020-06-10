@@ -1,14 +1,13 @@
 // https://leetcode.com/problems/unique-binary-search-trees/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
-use std::convert::TryInto;
 pub fn num_trees(n: i32) -> i32 {
     let mut catalan = 1 as i64;
     let n = n as i64;
     for i in 0..n {
         catalan = catalan * 2 * (2 * i + 1) / (i + 2);
     }
-    catalan.try_into().expect("exist")
+    catalan as i32
 }
 // tree dynamic_programming
 #[test]
