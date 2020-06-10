@@ -1,10 +1,26 @@
 // https://leetcode.com/problems/search-suggestions-system/
+// Runtime: 8 ms
+// Memory Usage: 4.5 MB
 pub fn suggested_products(products: Vec<String>, search_word: String) -> Vec<Vec<String>> {
-    todo!()
+    let mut products = products;
+    products.sort();
+    let n = search_word.len();
+    let mut res = Vec::with_capacity(n);
+    for i in 0..n {
+        let w = &search_word[0..i + 1];
+        products = products.into_iter().filter(|p| p.starts_with(w)).collect();
+        res.push(
+            products
+                .iter()
+                .take(3)
+                .map(|p| p.to_string())
+                .collect::<Vec<_>>(),
+        );
+    }
+    res
 }
 // string
 #[test]
-#[ignore]
 fn test1_1268() {
     assert_eq!(
         suggested_products(
@@ -73,13 +89,13 @@ fn test1_1268() {
     assert_eq!(
         suggested_products(vec![String::from("havana")], String::from("tatiana")),
         vec![
-            vec![String::new()],
-            vec![String::new()],
-            vec![String::new()],
-            vec![String::new()],
-            vec![String::new()],
-            vec![String::new()],
-            vec![String::new()]
+            vec![] as Vec<String>,
+            vec![] as Vec<String>,
+            vec![] as Vec<String>,
+            vec![] as Vec<String>,
+            vec![] as Vec<String>,
+            vec![] as Vec<String>,
+            vec![] as Vec<String>
         ]
     );
 }
