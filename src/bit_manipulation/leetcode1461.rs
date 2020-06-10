@@ -8,11 +8,11 @@ pub fn has_all_codes(s: String, k: i32) -> bool {
     let mut x = 0;
     let n = s.len();
     let mask = m as u32 - 1;
-    for (i, c) in s.char_indices().rev() {
+    for (index, c) in s.char_indices().rev() {
         x <<= 1;
         x |= (c as u8 - b'0') as u32;
         x &= mask;
-        if i + k <= n {
+        if index + k <= n {
             set[x as usize] = true;
         }
     }
