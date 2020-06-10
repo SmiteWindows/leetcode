@@ -9,10 +9,8 @@ pub fn find_lu_slength(strs: Vec<String>) -> i32 {
     for i in 0..n {
         let mut count = 0;
         for j in 0..n {
-            if i != j {
-                if !is_subsequence_of(&strs[i], &strs[j]) {
-                    count += 1;
-                }
+            if i != j && !is_subsequence_of(&strs[i], &strs[j]) {
+                count += 1;
             }
         }
         if count == n - 1 {

@@ -14,10 +14,8 @@ fn query_match(query: Vec<char>, pattern: Vec<char>) -> bool {
     for &q in &query {
         if i < n && q == pattern[i] {
             i += 1;
-        } else {
-            if q.is_uppercase() {
-                return false;
-            }
+        } else if q.is_uppercase() {
+            return false;
         }
     }
     i == n

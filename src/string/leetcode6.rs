@@ -19,12 +19,10 @@ pub fn convert(s: String, num_rows: i32) -> String {
         } else if row == n - 1 {
             direction = false;
             row -= 1;
+        } else if direction {
+            row += 1;
         } else {
-            if direction {
-                row += 1;
-            } else {
-                row -= 1;
-            }
+            row -= 1;
         }
     }
     for t in v {

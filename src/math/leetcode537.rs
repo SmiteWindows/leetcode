@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/complex-number-multiplication/
+#![allow(clippy::many_single_char_names)]
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 use std::fmt;
