@@ -8,10 +8,9 @@ pub fn find_replace_string(
     targets: Vec<String>,
 ) -> String {
     let mut s = s;
-    let n = indexes.len();
     let mut v = vec![];
-    for i in 0..n {
-        v.push((indexes[i] as usize, i));
+    for (i, &index) in indexes.iter().enumerate() {
+        v.push((index as usize, i));
     }
     v.sort_unstable();
     for (i, j) in v.into_iter().rev() {

@@ -20,8 +20,8 @@ pub fn find_min_difference(time_points: Vec<String>) -> i32 {
     let mut last = None;
     let mut prev = None;
     let mut min = M;
-    for i in 0..M {
-        if a[i] {
+    for (i, &ai) in a.iter().enumerate().take(M) {
+        if ai {
             if first == None {
                 prev = Some(i);
                 first = Some(i);

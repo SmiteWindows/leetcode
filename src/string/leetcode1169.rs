@@ -3,11 +3,9 @@
 // Memory Usage: 2.4 MB
 use std::collections::{HashMap, HashSet};
 pub fn invalid_transactions(transactions: Vec<String>) -> Vec<String> {
-    let n = transactions.len();
     let mut hm: HashMap<String, Vec<(i32, String, String)>> = HashMap::new();
     let mut hs = HashSet::new();
-    for i in 0..n {
-        let transaction = &transactions[i];
+    for transaction in transactions.iter() {
         let mut v = transaction
             .split_terminator(',')
             .map(|s| s.to_string())
@@ -20,7 +18,7 @@ pub fn invalid_transactions(transactions: Vec<String>) -> Vec<String> {
             .or_default()
             .push((time, city, transaction.to_string()));
         if amount > 1000 {
-            hs.insert(transactions[i].to_string());
+            hs.insert(transaction.to_string());
         }
     }
     for transactions in hm.values() {
