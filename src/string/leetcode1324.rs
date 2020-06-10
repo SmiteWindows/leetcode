@@ -1,10 +1,24 @@
 // https://leetcode.com/problems/print-words-vertically/
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
 pub fn print_vertically(s: String) -> Vec<String> {
-    todo!()
+    let v = s.split_whitespace().collect::<Vec<_>>();
+    let mut res = vec![];
+    for (j, s) in v.iter().enumerate() {
+        for (i, c) in s.char_indices() {
+            if i == res.len() {
+                res.push("".to_string());
+            }
+            while res[i].len() < j {
+                res[i].push(' ');
+            }
+            res[i].push(c);
+        }
+    }
+    res
 }
 // string
 #[test]
-#[ignore]
 fn test1_1324() {
     assert_eq!(
         print_vertically(String::from("HOW ARE YOU")),
