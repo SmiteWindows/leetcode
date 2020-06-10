@@ -1,10 +1,26 @@
 // https://leetcode.com/problems/masking-personal-information/
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
 pub fn mask_pii(s: String) -> String {
-    todo!()
+    if let Some(i) = s.find('@') {
+        let s = s.to_lowercase();
+        format!("{}*****{}", &s[0..1], &s[i - 1..])
+    } else {
+        let digits = s
+            .chars()
+            .filter(|&c| c >= '0' && c <= '9')
+            .collect::<String>();
+        let n = digits.len();
+        match digits.len() {
+            13 => format!("+***-***-***-{}", &digits[n - 4..]),
+            12 => format!("+**-***-***-{}", &digits[n - 4..]),
+            11 => format!("+*-***-***-{}", &digits[n - 4..]),
+            _ => format!("***-***-{}", &digits[n - 4..]),
+        }
+    }
 }
 // string
 #[test]
-#[ignore]
 fn test1_831() {
     assert_eq!(
         mask_pii(String::from("LeetCode@LeetCode.com")),

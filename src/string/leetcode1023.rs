@@ -1,10 +1,29 @@
 // https://leetcode.com/problems/camelcase-matching/
+// Runtime: 0 ms
+// Memory Usage: 2 MB
 pub fn camel_match(queries: Vec<String>, pattern: String) -> Vec<bool> {
-    todo!()
+    queries
+        .into_iter()
+        .map(|query| query_match(query.chars().collect(), pattern.chars().collect()))
+        .collect()
+}
+
+fn query_match(query: Vec<char>, pattern: Vec<char>) -> bool {
+    let mut i = 0;
+    let n = pattern.len();
+    for &q in &query {
+        if i < n && q == pattern[i] {
+            i += 1;
+        } else {
+            if q.is_uppercase() {
+                return false;
+            }
+        }
+    }
+    i == n
 }
 // string trie
 #[test]
-#[ignore]
 fn test2_1023() {
     assert_eq!(
         camel_match(

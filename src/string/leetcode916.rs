@@ -1,10 +1,34 @@
 // https://leetcode.com/problems/word-subsets/
+// Runtime: 36 ms
+// Memory Usage: 3.3 MB
 pub fn word_subsets(a: Vec<String>, b: Vec<String>) -> Vec<String> {
-    todo!()
+    let mut max_count = [0; 26];
+    for s in b {
+        let mut count = [0; 26];
+        for b in s.bytes() {
+            count[(b - b'a') as usize] += 1;
+        }
+        for i in 0..26 {
+            max_count[i] = max_count[i].max(count[i]);
+        }
+    }
+    let mut res = vec![];
+    'a: for s in a {
+        let mut count = [0; 26];
+        for b in s.bytes() {
+            count[(b - b'a') as usize] += 1;
+        }
+        for i in 0..26 {
+            if count[i] < max_count[i] {
+                continue 'a;
+            };
+        }
+        res.push(s)
+    }
+    res
 }
 // string
 #[test]
-#[ignore]
 fn test1_916() {
     assert_eq!(
         word_subsets(

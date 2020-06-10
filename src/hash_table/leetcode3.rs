@@ -1,21 +1,18 @@
 // https://leetcode.com/problems/longest-substring-without-repeating-characters/
-// Runtime: 252 ms
+// Runtime: 4 ms
 // Memory Usage: 2.2 MB
 use std::collections::HashMap;
 pub fn length_of_longest_substring(s: String) -> i32 {
-    let n = s.len();
-    let mut res = 0;
-    let mut map = HashMap::new();
-    let mut i = 0;
-    for j in 0..n {
-        let ch = s.chars().nth(j).expect("exist");
-        if map.contains_key(&ch) {
-            i = i.max(map[&ch]);
+    let mut hm = HashMap::new();
+    let mut max = 0;
+    let mut l = 0;
+    for (r, c) in s.char_indices() {
+        if let Some(end) = hm.insert(c, r) {
+            l = l.max(end + 1);
         }
-        res = res.max(j - i + 1);
-        map.insert(ch, j + 1);
+        max = max.max(r - l + 1);
     }
-    res as i32
+    max as i32
 }
 // hash_table two_pointers string sliding_window
 #[test]

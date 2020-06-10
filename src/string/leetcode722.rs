@@ -1,10 +1,44 @@
 // https://leetcode.com/problems/remove-comments/
 pub fn remove_comments(source: Vec<String>) -> Vec<String> {
-    todo!()
+    let mut in_block = false;
+    let mut line = "".to_string();
+    let mut res = vec![];
+    for s in source {
+        let mut it = s.chars().peekable();
+        while let Some(c) = it.next() {
+            if in_block {
+                if c == '*' {
+                    if let Some(&'/') = it.peek() {
+                        it.next();
+                        in_block = false;
+                    }
+                }
+            } else {
+                if c == '/' {
+                    match it.peek() {
+                        Some(&'/') => {
+                            break;
+                        }
+                        Some(&'*') => {
+                            it.next();
+                            in_block = true;
+                            continue;
+                        }
+                        _ => {}
+                    }
+                }
+                line.push(c);
+            }
+        }
+        if !in_block && !line.is_empty() {
+            res.push(line);
+            line = "".to_string();
+        }
+    }
+    res
 }
 // string
 #[test]
-#[ignore]
 fn test1_722() {
     assert_eq!(
         remove_comments(vec![

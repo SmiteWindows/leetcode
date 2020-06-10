@@ -1,4 +1,6 @@
 // https://leetcode.com/problems/letter-combinations-of-a-phone-number/
+// Runtime: 0 ms
+// Memory Usage: 2 MB
 use std::collections::HashMap;
 pub fn letter_combinations(digits: String) -> Vec<String> {
     if digits.is_empty() {
@@ -18,8 +20,8 @@ pub fn letter_combinations(digits: String) -> Vec<String> {
     .iter()
     .map(|(d, v)| (*d, v.chars().collect::<Vec<_>>()))
     .collect::<HashMap<_, _>>();
-    let mut s: Vec<char> = vec![];
-    let mut res: Vec<String> = vec![];
+    let mut s = vec![];
+    let mut res = vec![];
     dfs(&hm, &digits, &mut s, &mut res, 0);
     res
 }

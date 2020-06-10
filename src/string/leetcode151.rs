@@ -1,10 +1,11 @@
 // https://leetcode.com/problems/reverse-words-in-a-string/
+// Runtime: 4 ms
+// Memory Usage: 2.2 MB
 pub fn reverse_words(s: String) -> String {
-    todo!()
+    s.split_whitespace().rev().collect::<Vec<_>>().join(" ")
 }
 // string
 #[test]
-#[ignore]
 fn test1_151() {
     assert_eq!(
         reverse_words(String::from("the sky is blue")),

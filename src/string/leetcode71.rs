@@ -1,10 +1,33 @@
 // https://leetcode.com/problems/simplify-path/
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
 pub fn simplify_path(path: String) -> String {
-    todo!()
+    let mut stack = vec![];
+    let mut res = "".to_string();
+    for s in path.split_terminator('/') {
+        match s {
+            ".." => {
+                stack.pop();
+            }
+            "" | "." => {
+                continue;
+            }
+            _ => {
+                stack.push(s);
+            }
+        }
+    }
+    for s in stack {
+        res += "/";
+        res += s;
+    }
+    if res.is_empty() {
+        res += "/";
+    }
+    res
 }
 // stack string
 #[test]
-#[ignore]
 fn test2_71() {
     assert_eq!(simplify_path(String::from("/home/")), String::from("/home"));
     assert_eq!(simplify_path(String::from("/../")), String::from("/"));
