@@ -13,20 +13,20 @@ pub fn sample_stats(count: Vec<i32>) -> Vec<f64> {
     let mut sum = 0.0;
     let n = count.len();
     let mut median = 0;
-    for i in 0..n {
-        if count[i] > 0 {
+    for (i, &count) in count.iter().enumerate().take(n) {
+        if count > 0 {
             min = min.min(i as i32);
             max = max.max(i as i32);
-            if cur_count < m1 && cur_count + count[i] >= m1 {
+            if cur_count < m1 && cur_count + count >= m1 {
                 median += i;
             }
-            if cur_count < m2 && cur_count + count[i] >= m2 {
+            if cur_count < m2 && cur_count + count >= m2 {
                 median += i;
             }
-            cur_count += count[i];
-            sum += i as f64 * count[i] as f64;
-            if count[i] > mode_count {
-                mode_count = count[i];
+            cur_count += count;
+            sum += i as f64 * count as f64;
+            if count > mode_count {
+                mode_count = count;
                 mode = i as i32;
             }
         }
