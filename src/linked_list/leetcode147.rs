@@ -1,29 +1,19 @@
 // https://leetcode.com/problems/insertion-sort-list/
-// Runtime: 40 ms
-// Memory Usage: 2.4 MB
+// Runtime: 24 ms
+// Memory Usage: 2.5 MB
 pub fn insertion_sort_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
-    let mut head = head;
-    let head = head.as_deref_mut()?;
-    let mut curr = head.next.take();
-    let mut res = Some(Box::new(ListNode {
-        val: 0,
-        next: Some(Box::new(ListNode::new(head.val))),
-    }));
-    while curr.is_some() {
-        let mut prev = res.as_deref_mut()?;
-        let curr_val = curr.as_deref()?.val;
-        while prev.next.is_some() {
-            if prev.next.as_deref()?.val >= curr_val {
-                break;
-            }
-            prev = prev.next.as_deref_mut()?;
+    let mut cursor = head;
+    let mut guard = ListNode::new(0);
+    while let Some(mut target) = cursor {
+        cursor = target.next.take();
+        let mut current = &mut guard;
+        while current.next.is_some() && current.next.as_deref()?.val < target.val {
+            current = current.next.as_deref_mut()?;
         }
-        let mut data = ListNode::new(curr_val);
-        data.next = prev.next.take();
-        prev.next = Some(Box::new(data));
-        curr = curr?.next.take();
+        target.next = current.next.take();
+        current.next = Some(target);
     }
-    res?.next
+    guard.next
 }
 
 // Definition for singly-linked list.
