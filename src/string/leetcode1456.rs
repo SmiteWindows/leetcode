@@ -11,10 +11,8 @@ pub fn max_vowels(s: String, k: i32) -> i32 {
         if is_vowel(s[i]) {
             cur += 1;
         }
-        if i >= k {
-            if is_vowel(s[i - k]) {
-                cur -= 1;
-            }
+        if i >= k && is_vowel(s[i - k]) {
+            cur -= 1;
         }
         res = res.max(cur);
     }
