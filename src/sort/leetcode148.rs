@@ -1,10 +1,9 @@
 // https://leetcode.com/problems/sort-list/
-
+// Runtime: 8 ms
+// Memory Usage: 4.2 MB
 pub fn sort_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
     let mut head = head;
-    if head.is_none() {
-        return None;
-    }
+    head.as_ref()?;
     let mut len = 1;
     loop {
         let mut new_head = None;
@@ -12,7 +11,6 @@ pub fn sort_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
         let mut loop_count = 0;
         loop {
             loop_count += 1;
-            dbg!(loop_count, len);
             let mut take_head = None;
             let mut take_tail = None;
             for _ in 0..len {
@@ -33,7 +31,6 @@ pub fn sort_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
             }
             let mut count = len;
             loop {
-                dbg!(count);
                 let mut pick = None;
                 if take_head.is_some() && head.is_some() && count > 0 {
                     if take_head.as_deref()?.val <= head.as_deref()?.val {
@@ -70,7 +67,7 @@ pub fn sort_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
             }
         }
         head = new_head;
-        len = len * 2;
+        len *= 2;
         if loop_count <= 1 {
             break;
         }
