@@ -1,7 +1,81 @@
 // https://leetcode.com/problems/sort-list/
 
 pub fn sort_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
-    todo!()
+    let mut head = head;
+    if head.is_none() {
+        return None;
+    }
+    let mut len = 1;
+    loop {
+        let mut new_head = None;
+        let mut new_tail = None;
+        let mut loop_count = 0;
+        loop {
+            loop_count += 1;
+            dbg!(loop_count, len);
+            let mut take_head = None;
+            let mut take_tail = None;
+            for _ in 0..len {
+                if let Some(mut t) = head {
+                    head = t.next.take();
+                    if take_tail.is_none() {
+                        take_head = Some(t);
+                        take_tail = take_head.as_deref_mut();
+                    } else {
+                        take_tail = take_tail.map(|p| {
+                            p.next = Some(t);
+                            p.next.as_deref_mut().unwrap()
+                        });
+                    }
+                } else {
+                    break;
+                }
+            }
+            let mut count = len;
+            loop {
+                dbg!(count);
+                let mut pick = None;
+                if take_head.is_some() && head.is_some() && count > 0 {
+                    if take_head.as_deref()?.val <= head.as_deref()?.val {
+                        pick = take_head;
+                        take_head = pick.as_deref_mut()?.next.take();
+                    } else {
+                        count -= 1;
+                        pick = head;
+                        head = pick.as_deref_mut()?.next.take();
+                    }
+                } else if take_head.is_some() {
+                    pick = take_head;
+                    take_head = pick.as_deref_mut()?.next.take();
+                } else if head.is_some() && count > 0 {
+                    count -= 1;
+                    pick = head;
+                    head = pick.as_deref_mut()?.next.take();
+                }
+                if pick.is_none() {
+                    break;
+                }
+                if new_tail.is_none() {
+                    new_head = pick;
+                    new_tail = new_head.as_deref_mut();
+                } else {
+                    new_tail = new_tail.map(|p| {
+                        p.next = pick;
+                        p.next.as_deref_mut().unwrap()
+                    });
+                }
+            }
+            if count > 0 {
+                break;
+            }
+        }
+        head = new_head;
+        len = len * 2;
+        if loop_count <= 1 {
+            break;
+        }
+    }
+    head
 }
 
 // Definition for singly-linked list.
