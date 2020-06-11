@@ -116,6 +116,7 @@ fn test2_148() {
             })),
         })),
     }));
+    assert_eq!(l2, sort_list(l1));
     let l3 = Some(Box::new(ListNode {
         val: -1,
         next: Some(Box::new(ListNode {
@@ -142,6 +143,5 @@ fn test2_148() {
             })),
         })),
     }));
-    // assert_eq!(l2, sort_list(l1));
     assert_eq!(l4, sort_list(l3));
 }
