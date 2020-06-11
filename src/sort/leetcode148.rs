@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/sort-list/
 // Runtime: 8 ms
-// Memory Usage: 4.2 MB
+// Memory Usage: 4 MB
 pub fn sort_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
     let mut head = head;
     head.as_ref()?;
@@ -14,19 +14,22 @@ pub fn sort_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
             let mut take_head = None;
             let mut take_tail = None;
             for _ in 0..len {
-                if let Some(mut t) = head {
-                    head = t.next.take();
-                    if take_tail.is_none() {
-                        take_head = Some(t);
-                        take_tail = take_head.as_deref_mut();
-                    } else {
-                        take_tail = take_tail.map(|p| {
-                            p.next = Some(t);
-                            p.next.as_deref_mut().unwrap()
-                        });
+                match head {
+                    Some(mut t) => {
+                        head = t.next.take();
+                        if take_tail.is_none() {
+                            take_head = Some(t);
+                            take_tail = take_head.as_deref_mut();
+                        } else {
+                            take_tail = take_tail
+                                .map(|p| {
+                                    p.next = Some(t);
+                                    p.next.as_deref_mut()
+                                })
+                                .flatten();
+                        }
                     }
-                } else {
-                    break;
+                    None => break,
                 }
             }
             let mut count = len;
@@ -56,10 +59,12 @@ pub fn sort_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
                     new_head = pick;
                     new_tail = new_head.as_deref_mut();
                 } else {
-                    new_tail = new_tail.map(|p| {
-                        p.next = pick;
-                        p.next.as_deref_mut().unwrap()
-                    });
+                    new_tail = new_tail
+                        .map(|p| {
+                            p.next = pick;
+                            p.next.as_deref_mut()
+                        })
+                        .flatten();
                 }
             }
             if count > 0 {
