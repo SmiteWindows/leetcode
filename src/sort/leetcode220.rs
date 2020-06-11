@@ -11,8 +11,8 @@ pub fn contains_nearby_almost_duplicate(nums: Vec<i32>, k: i32, t: i32) -> bool 
         return false;
     }
     for i in 0..n {
-        let l = nums[i].checked_sub(t).unwrap_or(std::i32::MIN);
-        let r = nums[i].checked_add(t).unwrap_or(std::i32::MAX);
+        let l = nums[i].checked_sub(t).unwrap_or(i32::MIN);
+        let r = nums[i].checked_add(t).unwrap_or(i32::MAX);
         if bts.range(l..=r).next().is_none() {
             bts.insert(nums[i]);
         } else {
