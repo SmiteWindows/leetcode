@@ -19,9 +19,9 @@ pub fn nums_same_consec_diff(n: i32, k: i32) -> Vec<i32> {
 fn dfs(start: usize, cur: &mut Vec<i32>, all: &mut Vec<i32>, k: i32, n: usize) {
     if start == n {
         let mut x = 0;
-        for i in 0..n {
+        for c in cur.iter().take(n) {
             x *= 10;
-            x += cur[i];
+            x += c;
         }
         all.push(x);
     } else {
