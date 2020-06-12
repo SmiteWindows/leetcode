@@ -17,40 +17,44 @@ fn is_match_dp(
     s: &[char],
     p: &[char],
 ) -> bool {
-    if let Some(ans) = memo[n][m] {
-        ans
-    } else {
-        let res = if n == 0 && m == 0 {
-            true
-        } else if n != 0 && m == 0 {
-            false
-        } else if n == 0 && m != 0 {
-            if p[m - 1] == '*' {
-                is_match_dp(n, m - 2, memo, s, p)
-            } else {
+    match memo[n][m] {
+        Some(ans) => ans,
+        None => {
+            let res = if n == 0 && m == 0 {
+                true
+            } else if n != 0 && m == 0 {
                 false
-            }
-        } else if s[n - 1] == p[m - 1] {
-            is_match_dp(n - 1, m - 1, memo, s, p)
-        } else {
-            match p[m - 1] {
-                '*' => match p[m - 2] {
-                    '*' => false,
-                    '.' => is_match_dp(n - 1, m, memo, s, p) || is_match_dp(n, m - 2, memo, s, p),
-                    _ => {
-                        if s[n - 1] != p[m - 2] {
-                            is_match_dp(n, m - 2, memo, s, p)
-                        } else {
+            } else if n == 0 && m != 0 {
+                if p[m - 1] == '*' {
+                    is_match_dp(n, m - 2, memo, s, p)
+                } else {
+                    false
+                }
+            } else if s[n - 1] == p[m - 1] {
+                is_match_dp(n - 1, m - 1, memo, s, p)
+            } else {
+                match p[m - 1] {
+                    '*' => match p[m - 2] {
+                        '*' => false,
+                        '.' => {
                             is_match_dp(n - 1, m, memo, s, p) || is_match_dp(n, m - 2, memo, s, p)
                         }
-                    }
-                },
-                '.' => is_match_dp(n - 1, m - 1, memo, s, p),
-                _ => false,
-            }
-        };
-        memo[n][m] = Some(res);
-        res
+                        _ => {
+                            if s[n - 1] != p[m - 2] {
+                                is_match_dp(n, m - 2, memo, s, p)
+                            } else {
+                                is_match_dp(n - 1, m, memo, s, p)
+                                    || is_match_dp(n, m - 2, memo, s, p)
+                            }
+                        }
+                    },
+                    '.' => is_match_dp(n - 1, m - 1, memo, s, p),
+                    _ => false,
+                }
+            };
+            memo[n][m] = Some(res);
+            res
+        }
     }
 }
 // string dynamic_programming backtracking
