@@ -3,13 +3,11 @@
 // Memory Usage: 5.1 MB
 use std::collections::{BTreeMap, BTreeSet, HashMap};
 pub fn accounts_merge(accounts: Vec<Vec<String>>) -> Vec<Vec<String>> {
-    let n = accounts.len();
     let mut btm: BTreeMap<&str, &str> = BTreeMap::new();
-    for i in 0..n {
-        let m = accounts[i].len();
-        let name = &accounts[i][0];
-        for j in 1..m {
-            let email = &accounts[i][j];
+    for account in accounts.iter() {
+        let name = &account[0];
+        for a in account.iter().skip(1) {
+            let email = &a;
             btm.insert(email, name);
         }
     }
@@ -24,11 +22,11 @@ pub fn accounts_merge(accounts: Vec<Vec<String>>) -> Vec<Vec<String>> {
         ids.insert(email.to_string(), i);
     }
 
-    for i in 0..n {
-        let m = accounts[i].len();
+    for account in accounts.iter() {
+        let m = account.len();
         for j in 2..m {
-            let email_a = &accounts[i][j - 1];
-            let email_b = &accounts[i][j];
+            let email_a = &account[j - 1];
+            let email_b = &account[j];
             let id_a = ids[email_a];
             let id_b = ids[email_b];
             uf.union(id_a, id_b);
@@ -42,7 +40,7 @@ pub fn accounts_merge(accounts: Vec<Vec<String>>) -> Vec<Vec<String>> {
     }
     for (group_id, ids) in hm.into_iter() {
         let mut v = vec![];
-        v.push(owners[group_id].clone());
+        v.push(owners[group_id].to_string());
         for id in ids {
             v.push(emails[id].to_string());
         }

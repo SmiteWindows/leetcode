@@ -6,9 +6,9 @@ pub fn remove_stones(stones: Vec<Vec<i32>>) -> i32 {
     let n = stones.len();
     let mut row: HashMap<i32, Vec<usize>> = HashMap::new();
     let mut col: HashMap<i32, Vec<usize>> = HashMap::new();
-    for i in 0..n {
-        let r = stones[i][0];
-        let c = stones[i][1];
+    for (i, stone) in stones.iter().enumerate().take(n) {
+        let r = stone[0];
+        let c = stone[1];
         row.entry(r).or_default().push(i);
         col.entry(c).or_default().push(i);
     }

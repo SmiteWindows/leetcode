@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/regions-cut-by-slashes/
+#![allow(clippy::many_single_char_names)]
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn regions_by_slashes(grid: Vec<String>) -> i32 {
@@ -9,7 +10,7 @@ pub fn regions_by_slashes(grid: Vec<String>) -> i32 {
     let n = grid.len();
     let m = a[0].len();
     let mut uf = UnionFind::new(n * m * 4);
-    for i in 0..n {
+    for (i, ai) in a.iter().enumerate().take(n) {
         for j in 0..m {
             let k0 = id(0, i, j, n, m);
             let k1 = id(1, i, j, n, m);

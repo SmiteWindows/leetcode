@@ -14,7 +14,7 @@ pub fn group_anagrams(strs: Vec<String>) -> Vec<Vec<String>> {
         v.sort_unstable();
         res.push(v.to_vec());
     }
-    res.sort_by(|a, b| a.len().cmp(&b.len()));
+    res.sort_by_key(|a| a.len());
     res
 }
 // hash_table string

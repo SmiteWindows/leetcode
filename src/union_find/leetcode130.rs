@@ -10,10 +10,11 @@ pub fn solve(board: &mut Vec<Vec<char>>) {
     let mut visited = vec![vec![false; m]; n];
     for i in 0..n {
         for j in 0..m {
-            if i == 0 || j == 0 || i == n - 1 || j == m - 1 {
-                if board[i][j] == 'O' && !visited[i][j] {
-                    dfs(i, j, &mut visited, &board, n, m);
-                }
+            if (i == 0 || j == 0 || i == n - 1 || j == m - 1)
+                && board[i][j] == 'O'
+                && !visited[i][j]
+            {
+                dfs(i, j, &mut visited, &board, n, m);
             }
         }
     }
