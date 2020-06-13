@@ -60,7 +60,10 @@ fn test1_1202() {
         String::from("bacd")
     );
     assert_eq!(
-        smallest_string_with_swaps(String::from("dcab"), vec![vec![0, 3], vec![1, 2]]),
+        smallest_string_with_swaps(
+            String::from("dcab"),
+            vec![vec![0, 3], vec![1, 2], vec![0, 2]]
+        ),
         String::from("abcd")
     );
     assert_eq!(
