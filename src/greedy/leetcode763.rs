@@ -1,10 +1,30 @@
 // https://leetcode.com/problems/partition-labels/
+// Runtime: 0 ms
+// Memory Usage: 2 MB
+use std::collections::HashMap;
 pub fn partition_labels(s: String) -> Vec<i32> {
-    todo!()
+    let mut res = vec![];
+    let mut last = HashMap::new();
+    for (i, c) in s.char_indices() {
+        last.insert(c, i);
+    }
+    let mut start = 0;
+    let mut end = 0;
+    for (i, c) in s.char_indices() {
+        let j = last[&c];
+        if j > end {
+            end = j;
+        }
+        if i == end {
+            res.push((end - start + 1) as i32);
+            start = last[&c] + 1;
+            end = last[&c] + 1;
+        }
+    }
+    res
 }
 // greedy two_pointers
 #[test]
-#[ignore]
 fn test2_763() {
     assert_eq!(
         partition_labels(String::from("ababcbacadefegdehijhklij")),
