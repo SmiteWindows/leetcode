@@ -1,34 +1,42 @@
 // https://leetcode.com/problems/rotate-list/
-
+// Runtime: 0 ms
+// Memory Usage: 2 MB
 pub fn rotate_right(head: Option<Box<ListNode>>, k: i32) -> Option<Box<ListNode>> {
-    todo!()
-    // let mut head = head;
-    // let mut k = k;
-    // if head.is_none() {
-    //     return head;
-    // }
-    // let mut current = &mut head;
-    // let mut len = 0;
-    // while let Some(a) = current {
-    //     current = &mut a.next;
-    //     len += 1;
-    // }
-    // k %= len;
-    // if k == 0 {
-    //     head
-    // } else {
-    //     current = &mut head;
-    //     for _ in 0..len - k {
-    //         current = &mut current.as_mut()?.next;
-    //     }
-    //     let mut new_head = std::mem::replace(current, None);
-    //     let mut new_tail = &mut new_head;
-    //     while let Some(b) = new_tail {
-    //         new_tail = &mut b.next;
-    //     }
-    //     std::mem::replace(new_tail, head); // 衔接
-    //     new_head
-    // }
+    let mut head = head;
+    let mut p = head.as_deref();
+    let mut n = 0;
+    while let Some(node) = p {
+        p = node.next.as_deref();
+        n += 1;
+    }
+    if n < 2 {
+        return head;
+    }
+    let k = k as usize % n;
+    if k == 0 {
+        return head;
+    }
+    let mut i = 0;
+    let mut p = head.as_deref_mut();
+    let mut new_head = None;
+    while let Some(node) = p {
+        if i + k == n - 1 {
+            new_head = node.next.take();
+            break;
+        } else {
+            p = node.next.as_deref_mut();
+        }
+        i += 1;
+    }
+    let mut p = new_head.as_deref_mut();
+    while let Some(node) = p {
+        if node.next.is_none() {
+            node.next = head;
+            break;
+        }
+        p = node.next.as_deref_mut();
+    }
+    new_head
 }
 
 // Definition for singly-linked list.
@@ -46,7 +54,6 @@ impl ListNode {
 }
 // linked_list two_pointers
 #[test]
-#[ignore]
 fn test2_61() {
     let l1 = Some(Box::new(ListNode {
         val: 1,

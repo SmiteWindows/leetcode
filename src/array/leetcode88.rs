@@ -1,4 +1,6 @@
 // https://leetcode.com/problems/merge-sorted-array/
+// Runtime: 0 ms
+// Memory Usage: 2 MB
 pub fn merge(nums1: &mut Vec<i32>, m: i32, nums2: &mut Vec<i32>, n: i32) {
     nums1.truncate(m as usize);
     nums2.truncate(n as usize);
