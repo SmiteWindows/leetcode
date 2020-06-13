@@ -1,10 +1,32 @@
 // https://leetcode.com/problems/rank-teams-by-votes/
+use std::cmp::Ordering::{Equal, Greater, Less};
 pub fn rank_teams(votes: Vec<String>) -> String {
-    todo!()
+    let n = votes[0].len();
+    let mut count = vec![vec![0; n]; 26];
+    for s in &votes {
+        for (i, c) in s.bytes().enumerate() {
+            count[(c - b'A') as usize][i] += 1;
+        }
+    }
+    let mut v = votes[0].bytes().map(|b| b - b'A').collect::<Vec<_>>();
+    v.sort_by(|&a, &b| {
+        for i in 0..n {
+            match &count[a as usize][i].cmp(&count[b as usize][i]) {
+                Equal => {}
+                Less => {
+                    return Greater;
+                }
+                Greater => {
+                    return Less;
+                }
+            }
+        }
+        a.cmp(&b)
+    });
+    v.into_iter().map(|b| (b'A' + b) as char).collect()
 }
 // sort array
 #[test]
-#[ignore]
 fn test1_1366() {
     assert_eq!(
         rank_teams(vec![

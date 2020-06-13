@@ -1,10 +1,22 @@
 // https://leetcode.com/problems/diagonal-traverse-ii/
+// Runtime: 48 ms
+// Memory Usage: 10.4 MB
 pub fn find_diagonal_order(nums: Vec<Vec<i32>>) -> Vec<i32> {
-    todo!()
+    let n = nums.len();
+    let mut rows = vec![];
+    for (i, num) in nums.iter().enumerate().take(n) {
+        for (j, &v) in num.iter().enumerate() {
+            let k = i + j;
+            if rows.len() == k {
+                rows.push(vec![]);
+            }
+            rows[k].push(v);
+        }
+    }
+    rows.into_iter().flat_map(|q| q.into_iter().rev()).collect()
 }
 // array sort
 #[test]
-#[ignore]
 fn test2_1424() {
     assert_eq!(
         find_diagonal_order(vec![vec![1, 2, 3], vec![4, 5, 6], vec![7, 8, 9]]),

@@ -1,10 +1,26 @@
 // https://leetcode.com/problems/people-whose-list-of-favorite-companies-is-not-a-subset-of-another-list/
+// Runtime: 72 ms
+// Memory Usage: 7.2 MB
+use std::{collections::HashSet, iter::FromIterator};
 pub fn people_indexes(favorite_companies: Vec<Vec<String>>) -> Vec<i32> {
-    todo!()
+    let people = favorite_companies
+        .into_iter()
+        .map(|v| HashSet::from_iter(v.into_iter()))
+        .collect::<Vec<HashSet<_>>>();
+    let n = people.len();
+    let mut res = vec![];
+    'outer: for i in 0..n {
+        for j in 0..n {
+            if i != j && people[i].is_subset(&people[j]) {
+                continue 'outer;
+            }
+        }
+        res.push(i as i32);
+    }
+    res
 }
 // string sort
 #[test]
-#[ignore]
 fn test2_1452() {
     assert_eq!(
         people_indexes(vec![

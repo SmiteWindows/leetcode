@@ -1,7 +1,10 @@
 // https://leetcode.com/problems/relative-sort-array/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
-use std::{cmp::Ordering, collections::HashMap};
+use std::{
+    cmp::Ordering::{Greater, Less},
+    collections::HashMap,
+};
 pub fn relative_sort_array(arr1: Vec<i32>, arr2: Vec<i32>) -> Vec<i32> {
     let mut arr1 = arr1;
     let mut hm = HashMap::new();
@@ -10,8 +13,8 @@ pub fn relative_sort_array(arr1: Vec<i32>, arr2: Vec<i32>) -> Vec<i32> {
     }
     arr1.sort_by(|a, b| match (hm.get(a), hm.get(b)) {
         (Some(i), Some(j)) => i.cmp(&j),
-        (Some(_), None) => Ordering::Less,
-        (None, Some(_)) => Ordering::Greater,
+        (Some(_), None) => Less,
+        (None, Some(_)) => Greater,
         (None, None) => a.cmp(&b),
     });
     arr1
