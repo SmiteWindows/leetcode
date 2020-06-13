@@ -1,10 +1,31 @@
 // https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/
-
+// Runtime: 0 ms
+// Memory Usage: 2.2 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn zigzag_level_order(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<i32>> {
-    todo!()
+    let mut levels = vec![];
+    preorder(root.as_deref(), 0, &mut levels);
+    for (i, level) in levels.iter_mut().enumerate() {
+        if i % 2 == 1 {
+            level.reverse();
+        }
+    }
+    levels
 }
 
+fn preorder(root: Option<&RefCell<TreeNode>>, level: usize, levels: &mut Vec<Vec<i32>>) {
+    if let Some(node) = root {
+        let node = node.borrow();
+        let val = node.val;
+        if level == levels.len() {
+            levels.push(vec![val]);
+        } else {
+            levels[level].push(val);
+        }
+        preorder(node.left.as_deref(), level + 1, levels);
+        preorder(node.right.as_deref(), level + 1, levels);
+    }
+}
 // Definition for a binary tree node.
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
@@ -25,7 +46,6 @@ impl TreeNode {
 }
 // tree breadth_first_search stack
 #[test]
-#[ignore]
 fn test3_103() {
     let root = Some(Rc::new(RefCell::new(TreeNode {
         val: 3,

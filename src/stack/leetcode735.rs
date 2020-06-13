@@ -1,10 +1,41 @@
 // https://leetcode.com/problems/asteroid-collision/
+// Runtime: 0 ms
+// Memory Usage: 2.3 MB
+use std::cmp::Ordering::{Equal, Greater, Less};
 pub fn asteroid_collision(asteroids: Vec<i32>) -> Vec<i32> {
-    todo!()
+    let mut res = vec![];
+    for x in asteroids {
+        if x > 0 {
+            res.push(x);
+        } else {
+            collide(&mut res, x);
+        }
+    }
+    res
+}
+
+fn collide(stack: &mut Vec<i32>, asteroid: i32) {
+    if let Some(&top) = stack.last() {
+        if top < 0 {
+            stack.push(asteroid);
+        } else {
+            match top.cmp(&-asteroid) {
+                Less => {
+                    stack.pop();
+                    collide(stack, asteroid);
+                }
+                Equal => {
+                    stack.pop();
+                }
+                Greater => {}
+            }
+        }
+    } else {
+        stack.push(asteroid);
+    }
 }
 // stack
 #[test]
-#[ignore]
 fn test1_735() {
     assert_eq!(asteroid_collision(vec![5, 10, -5]), vec![5, 10]);
     assert_eq!(asteroid_collision(vec![8, -8]), vec![]);

@@ -1,10 +1,28 @@
 // https://leetcode.com/problems/daily-temperatures/
+// Runtime: 20 ms
+// Memory Usage: 2.5 MB
 pub fn daily_temperatures(t: Vec<i32>) -> Vec<i32> {
-    todo!()
+    let mut res = vec![];
+    let mut stack = vec![];
+    let n = t.len();
+    for i in (0..n).rev() {
+        while let Some(j) = stack.pop() {
+            if t[j] > t[i] {
+                stack.push(j);
+                break;
+            }
+        }
+        if let Some(j) = stack.last() {
+            res.push((j - i) as i32);
+        } else {
+            res.push(0);
+        }
+        stack.push(i)
+    }
+    res.into_iter().rev().collect()
 }
 // stack hash_table
 #[test]
-#[ignore]
 fn test1_739() {
     assert_eq!(
         daily_temperatures(vec![73, 74, 75, 71, 69, 72, 76, 73]),

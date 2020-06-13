@@ -99,7 +99,6 @@ impl NestedIntegerParser {
 }
 // stack string
 #[test]
-#[ignore]
 fn test2_385() {
     use self::NestedInteger::*;
     assert_eq!(deserialize(String::from("324")), Int(324));
