@@ -8,8 +8,8 @@ pub fn number_of_subarrays(nums: Vec<i32>, k: i32) -> i32 {
     count[0] = 1;
     let mut prev = 0;
     let mut res = 0;
-    for i in 0..n {
-        if nums[i] % 2 == 1 {
+    for num in nums.iter().take(n) {
+        if num % 2 == 1 {
             prev += 1;
         }
         count[prev] += 1;

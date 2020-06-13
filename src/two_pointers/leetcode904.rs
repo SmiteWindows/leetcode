@@ -3,12 +3,11 @@
 // Memory Usage: 2.5 MB
 use std::collections::HashMap;
 pub fn total_fruit(tree: Vec<i32>) -> i32 {
-    let n = tree.len();
     let mut last: HashMap<i32, usize> = HashMap::new();
     let mut start = 0;
     let mut res = 0;
-    for end in 0..n {
-        *last.entry(tree[end]).or_default() = end;
+    for (end, &t_end) in tree.iter().enumerate() {
+        *last.entry(t_end).or_default() = end;
         if last.len() == 3 {
             let (index, key) = last.iter().map(|(&k, &v)| (v, k)).min().unwrap();
             start = index + 1;

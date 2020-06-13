@@ -10,9 +10,9 @@ pub fn find_longest_word(s: String, d: Vec<String>) -> String {
         .collect::<BinaryHeap<(usize, Reverse<String>)>>();
     while let Some((_, r)) = queue.pop() {
         let mut it = r.0.chars().peekable();
-        for i in 0..s.len() {
+        for &si in &s {
             if let Some(&c) = it.peek() {
-                if c == s[i] {
+                if c == si {
                     it.next();
                 }
             } else {
