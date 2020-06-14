@@ -47,7 +47,7 @@ jobs:
         uses: raftario/setup-rust-action@v1.0.0
         with:
           # Rust channel (version) to use (defaults to stable)
-          rust-channel: nightly
+          rust-channel: stable
           # Rust host to use (defaults to current platform)
           rust-host: ${{ matrix.os }}
           # Rust target to compile for (defaults to none)
