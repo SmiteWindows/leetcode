@@ -55,9 +55,9 @@ jobs:
           # Enable caching (anything but 'true' defaults to 'false')
           cache: true
           # Install rustfmt (anything but 'true' defaults to 'false')
-          install-rustfmt: true
+          # install-rustfmt: true
           # Install clippy (anything but 'true' defaults to 'false')
-          install-clippy: true
+          # install-clippy: true
 
       - uses: actions-rs/clippy-check@v1
         with:
