@@ -49,9 +49,9 @@ jobs:
           # Rust channel (version) to use (defaults to stable)
           rust-channel: stable
           # Rust host to use (defaults to current platform)
-          rust-host: ${{ matrix.os }}
+          # rust-host: ${{ matrix.os }}
           # Rust target to compile for (defaults to none)
-          rust-target: none
+          # rust-target: none
           # Enable caching (anything but 'true' defaults to 'false')
           cache: true
           # Install rustfmt (anything but 'true' defaults to 'false')
