@@ -39,7 +39,7 @@ jobs:
     strategy:
       matrix:
         os: [windows-latest]
-        rust: [nightly, beta, stable]
+        rust: [stable]
 
     steps:
       - uses: actions/checkout@v2
@@ -51,7 +51,7 @@ jobs:
 
       - uses: actions-rs/clippy-check@v1
         with:
-          toolchain: nightly
+          toolchain: stable
           token: ${{ secrets.GITHUB_TOKEN }}
           args: --all-features -- -W clippy::all
 
