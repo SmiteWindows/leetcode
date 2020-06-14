@@ -46,8 +46,8 @@ jobs:
       - name: Install rust
         uses: hecrj/setup-rust-action@v1
         with:
-          rust-version: 1.44.0
           profile: default
+          rust-version: 1.44.0
 
       - uses: actions-rs/clippy-check@v1
         with:
