@@ -61,6 +61,7 @@ jobs:
 
       - uses: actions-rs/clippy-check@v1
         with:
+          rust-channel: nightly
           token: ${{ secrets.GITHUB_TOKEN }}
           args: --all-features -- -W clippy::all
 
