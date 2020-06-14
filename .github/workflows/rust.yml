@@ -51,7 +51,7 @@ jobs:
 
       - uses: actions-rs/clippy-check@v1
         with:
-          toolchain: stable
+          toolchain: stable, nightly
           token: ${{ secrets.GITHUB_TOKEN }}
           args: --all-features -- -W clippy::all
 
