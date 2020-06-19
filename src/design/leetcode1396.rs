@@ -1,7 +1,6 @@
 // https://leetcode.com/problems/design-underground-system/
 // Runtime: 36 ms
 // Memory Usage: 16.9 MB
-use crate::assert_approx_eq;
 use std::collections::HashMap;
 #[derive(Default)]
 struct UndergroundSystem {
@@ -50,6 +49,7 @@ impl UndergroundSystem {
 // design
 #[test]
 fn test1_1396() {
+    use crate::assert_approx_eq;
     let mut obj = UndergroundSystem::new();
     obj.check_in(45, "Leyton".to_string(), 3);
     obj.check_in(32, "Paradise".to_string(), 8);
