@@ -103,3 +103,32 @@ fn tree_test() {
         })))
     );
 }
+
+#[macro_export]
+macro_rules! assert_approx_eq {
+    ($a:expr,$b:expr) => {
+        let eps = f64::EPSILON;
+        let (a, b) = ($a as f64, $b as f64);
+        assert!(
+            (a - b).abs() <= eps,
+            "assertion failed: `(left !== right)` \
+             (left: `{:?}`, right: `{:?}`, expect diff: `{:?}`, real diff: `{:?}`)",
+            a,
+            b,
+            eps,
+            (a - b).abs()
+        );
+    };
+    ($a:expr,$b:expr,$eps:expr) => {
+        let (a, b, expr) = ($a as f64, $b as f64, $expr as f64);
+        assert!(
+            (a - b).abs() <= eps,
+            "assertion failed: `(left !== right)` \
+             (left: `{:?}`, right: `{:?}`, expect diff: `{:?}`, real diff: `{:?}`)",
+            a,
+            b,
+            eps,
+            (a - b).abs()
+        );
+    };
+}

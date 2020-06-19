@@ -1,6 +1,7 @@
 // https://leetcode.com/problems/design-underground-system/
 // Runtime: 36 ms
 // Memory Usage: 16.9 MB
+use crate::assert_approx_eq;
 use std::collections::HashMap;
 #[derive(Default)]
 struct UndergroundSystem {
@@ -57,26 +58,33 @@ fn test1_1396() {
     obj.check_out(27, "Waterloo".to_string(), 20);
     obj.check_out(32, "Cambridge".to_string(), 22);
     let t = obj.get_average_time("Paradise".to_string(), "Cambridge".to_string());
-    assert!((t - 14.0).abs() <= f64::EPSILON);
+    // assert!((t - 14.0).abs() <= f64::EPSILON);
+    assert_approx_eq!(t, 14.0);
     let t = obj.get_average_time("Leyton".to_string(), "Waterloo".to_string());
-    assert!((t - 11.0).abs() <= f64::EPSILON);
+    // assert!((t - 11.0).abs() <= f64::EPSILON);
+    assert_approx_eq!(t, 11.0);
     obj.check_in(10, "Leyton".to_string(), 24);
     let t = obj.get_average_time("Leyton".to_string(), "Waterloo".to_string());
-    assert!((t - 11.0).abs() <= f64::EPSILON);
+    // assert!((t - 11.0).abs() <= f64::EPSILON);
+    assert_approx_eq!(t, 11.0);
     obj.check_out(10, "Waterloo".to_string(), 38);
     let t = obj.get_average_time("Leyton".to_string(), "Waterloo".to_string());
-    assert!((t - 12.0).abs() <= f64::EPSILON);
+    // assert!((t - 12.0).abs() <= f64::EPSILON);
+    assert_approx_eq!(t, 12.0);
     let mut obj = UndergroundSystem::new();
     obj.check_in(10, "Leyton".to_string(), 3);
     obj.check_out(10, "Paradise".to_string(), 8);
     let t = obj.get_average_time("Leyton".to_string(), "Paradise".to_string());
-    assert!((t - 5.0).abs() <= f64::EPSILON);
+    // assert!((t - 5.0).abs() <= f64::EPSILON);
+    assert_approx_eq!(t, 5.0);
     obj.check_in(5, "Leyton".to_string(), 10);
     obj.check_out(5, "Paradise".to_string(), 16);
     let t = obj.get_average_time("Leyton".to_string(), "Paradise".to_string());
-    assert!((t - 5.5).abs() <= f64::EPSILON);
-    // obj.check_in(2, "Leyton".to_string(), 21);
-    // obj.check_out(2, "Paradise".to_string(), 30);
-    // let t = obj.get_average_time("Leyton".to_string(), "Paradise".to_string());
+    // assert!((t - 5.5).abs() <= f64::EPSILON);
+    assert_approx_eq!(t, 5.5);
+    obj.check_in(2, "Leyton".to_string(), 21);
+    obj.check_out(2, "Paradise".to_string(), 30);
+    let t = obj.get_average_time("Leyton".to_string(), "Paradise".to_string());
     // assert!((t - 6.66667).abs() <= f64::EPSILON);
+    assert_approx_eq!(t, 6.666666666666667);
 }
