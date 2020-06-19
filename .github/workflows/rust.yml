@@ -47,6 +47,7 @@ jobs:
         uses: raftario/setup-rust-action@v1.0.0
         with:
           rust-channel: stable
+          profile: default
           cache: true
 
       - uses: actions-rs/clippy-check@v1
