@@ -14,8 +14,8 @@ pub fn min_days(bloom_day: Vec<i32>, m: i32, k: i32) -> i32 {
         let mid = left + (right - left) / 2;
         let mut group = 0;
         let mut count = 0;
-        for i in 0..n {
-            if bloom_day[i] > mid {
+       for &bd in bloom_day.iter() {
+            if bd > mid {
                 count = 0;
             } else {
                 count += 1;
