@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/out-of-boundary-paths/
+#![allow(clippy::many_single_char_names)]
 // Runtime: 12 ms
 // Memory Usage: 3.9 MB
 use std::collections::HashMap;
