@@ -16,20 +16,6 @@ env:
   RUSTUP_MAX_RETRIES: 10
 
 jobs:
-  rust-audit:
-    name: Audit Rust vulnerabilities
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - uses: actions-rs/install@v0.1
-        with:
-          crate: cargo-audit
-          use-tool-cache: true
-
-      - run: cargo audit
-
   rust:
     name: Rust
     runs-on: ${{ matrix.os }}
@@ -49,12 +35,6 @@ jobs:
           rust-channel: stable
           profile: default
           cache: true
-
-      - uses: actions-rs/clippy-check@v1
-        with:
-          toolchain: stable
-          token: ${{ secrets.GITHUB_TOKEN }}
-          args: --all-features -- -W clippy::all
 
       - name: Run cargo check
         uses: actions-rs/cargo@v1
