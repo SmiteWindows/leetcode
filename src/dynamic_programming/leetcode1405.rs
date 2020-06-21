@@ -52,7 +52,9 @@ pub fn longest_diverse_string(a: i32, b: i32, c: i32) -> String {
 // dynamic_programming greedy
 #[test]
 fn test2_1405() {
-    assert_eq!(longest_diverse_string(1, 1, 7), String::from("ccaccbcc"));
-    assert_eq!(longest_diverse_string(2, 2, 1), String::from("aabbc"));
+    // assert_eq!(longest_diverse_string(1, 1, 7), String::from("ccaccbcc"));
+    assert_eq!(longest_diverse_string(1, 1, 7), String::from("ccbccacc"));
+    // assert_eq!(longest_diverse_string(2, 2, 1), String::from("aabbc"));
+    assert_eq!(longest_diverse_string(2, 2, 1), String::from("bbaac"));
     assert_eq!(longest_diverse_string(7, 1, 0), String::from("aabaa"));
 }

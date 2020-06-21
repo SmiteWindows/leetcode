@@ -31,5 +31,6 @@ fn dp(left: i32, right: i32, memo: &mut HashMap<(i32, i32), i32>) -> i32 {
 // dynamic_programming minimax
 #[test]
 fn test2_375() {
-    assert_eq!(get_money_amount(10), 21);
+    // assert_eq!(get_money_amount(10), 21);
+    assert_eq!(get_money_amount(10), 16);
 }
