@@ -1,0 +1,81 @@
+// https://leetcode.com/problems/making-file-names-unique/
+pub fn get_folder_names(names: Vec<String>) -> Vec<String> {
+    todo!()
+}
+// hast_table string
+#[test]
+#[ignore]
+fn test2_1487() {
+    assert_eq!(
+        get_folder_names(vec![
+            "pes".to_string(),
+            "fifa".to_string(),
+            "gta".to_string(),
+            "pes(2019)".to_string()
+        ]),
+        vec![
+            "pes".to_string(),
+            "fifa".to_string(),
+            "gta".to_string(),
+            "pes(2019)".to_string()
+        ]
+    );
+    assert_eq!(
+        get_folder_names(vec![
+            "gta".to_string(),
+            "gta(1)".to_string(),
+            "gta".to_string(),
+            "avalon".to_string()
+        ]),
+        vec![
+            "gta".to_string(),
+            "gta(1)".to_string(),
+            "gta(2)".to_string(),
+            "avalon".to_string()
+        ]
+    );
+    assert_eq!(
+        get_folder_names(vec![
+            "onepiece".to_string(),
+            "onepiece(1)".to_string(),
+            "onepiece(2)".to_string(),
+            "onepiece(3)".to_string(),
+            "onepiece".to_string()
+        ]),
+        vec![
+            "onepiece".to_string(),
+            "onepiece(1)".to_string(),
+            "onepiece(2)".to_string(),
+            "onepiece(3)".to_string(),
+            "onepiece(4)".to_string()
+        ]
+    );
+    assert_eq!(
+        get_folder_names(vec![
+            "wano".to_string(),
+            "wano".to_string(),
+            "wano".to_string(),
+            "wano".to_string()
+        ]),
+        vec![
+            "wano".to_string(),
+            "wano(1)".to_string(),
+            "wano(2)".to_string(),
+            "wano(3)".to_string()
+        ]
+    );
+    assert_eq!(
+        get_folder_names(vec![
+            "kaido".to_string(),
+            "kaido(1)".to_string(),
+            "kaido".to_string(),
+            "kaido(1)".to_string()
+        ]),
+        vec![
+            "kaido".to_string(),
+            "kaido(1)".to_string(),
+            "kaido(2)".to_string(),
+            "kaido(1)(1)".to_string()
+        ]
+    );
+}
