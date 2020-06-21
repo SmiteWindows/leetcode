@@ -26,7 +26,6 @@ pub fn insert(intervals: Vec<Vec<i32>>, new_interval: Vec<i32>) -> Vec<Vec<i32>>
 }
 // array sort
 #[test]
-#[ignore]
 fn test1_57() {
     assert_eq!(
         insert(vec![vec![1, 3], vec![6, 9]], vec![2, 5]),
