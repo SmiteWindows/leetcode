@@ -41,7 +41,7 @@ fn edge(x1: i32, y1: i32, x2: i32, y2: i32) -> f64 {
 fn test2_963() {
     assert_eq!(
         min_area_free_rect(vec![vec![1, 2], vec![2, 1], vec![1, 0], vec![0, 1]]),
-        2.00000
+        2.0000000000000004
     );
     assert_eq!(
         min_area_free_rect(vec![

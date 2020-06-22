@@ -25,16 +25,20 @@ fn gcd(mut a: i32, mut b: i32) -> i32 {
 #[test]
 fn test1_1447() {
     assert_eq!(simplified_fractions(2), vec![String::from("1/2")]);
+    let mut a = simplified_fractions(3);
+    a.sort();
     assert_eq!(
-        simplified_fractions(3),
+        a,
         vec![
             String::from("1/2"),
             String::from("1/3"),
             String::from("2/3")
         ]
     );
+    let mut b = simplified_fractions(4);
+    b.sort();
     assert_eq!(
-        simplified_fractions(4),
+        b,
         vec![
             String::from("1/2"),
             String::from("1/3"),
@@ -43,5 +47,5 @@ fn test1_1447() {
             String::from("3/4")
         ]
     );
-    assert_eq!(simplified_fractions(1), vec![String::new()]);
+    assert_eq!(simplified_fractions(1), vec![] as Vec<String>);
 }
