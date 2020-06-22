@@ -1,10 +1,40 @@
 // https://leetcode.com/problems/find-k-pairs-with-smallest-sums/
+// Runtime: 0 ms
+// Memory Usage: 2.2 MB
+use std::{
+    cmp::Reverse,
+    collections::{BinaryHeap, HashSet},
+};
 pub fn k_smallest_pairs(nums1: Vec<i32>, nums2: Vec<i32>, k: i32) -> Vec<Vec<i32>> {
-    todo!()
+    let mut k = k;
+    let n1 = nums1.len();
+    let n2 = nums2.len();
+    let mut visited = HashSet::new();
+    let mut queue = BinaryHeap::new();
+    if 0 < n1 && 0 < n2 && visited.insert((0, 0)) {
+        queue.push((Reverse(nums1[0] + nums2[0]), 0, 0));
+    } else {
+        return vec![];
+    }
+    let mut res = vec![];
+    while k > 0 {
+        if let Some((_, i, j)) = queue.pop() {
+            res.push(vec![nums1[i], nums2[j]]);
+            if i + 1 < n1 && visited.insert((i + 1, j)) {
+                queue.push((Reverse(nums1[i + 1] + nums2[j]), i + 1, j));
+            }
+            if j + 1 < n2 && visited.insert((i, j + 1)) {
+                queue.push((Reverse(nums1[i] + nums2[j + 1]), i, j + 1));
+            }
+            k -= 1;
+        } else {
+            break;
+        }
+    }
+    res
 }
 // heap
 #[test]
-#[ignore]
 fn test1_373() {
     assert_eq!(
         k_smallest_pairs(vec![1, 7, 11], vec![2, 4, 6], 3),

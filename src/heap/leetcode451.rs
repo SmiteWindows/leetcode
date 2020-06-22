@@ -1,10 +1,18 @@
 // https://leetcode.com/problems/sort-characters-by-frequency/
+// Runtime: 24 ms
+// Memory Usage: 2.6 MB
+use std::{cmp::Reverse, collections::HashMap};
 pub fn frequency_sort(s: String) -> String {
-    todo!()
+    let mut s = s.chars().collect::<Vec<_>>();
+    let mut hm: HashMap<char, usize> = HashMap::new();
+    for &c in &s {
+        *hm.entry(c).or_default() += 1;
+    }
+    s.sort_unstable_by_key(|&c| (Reverse(hm[&c]), Reverse(c)));
+    s.into_iter().collect()
 }
 // hash_table heap
 #[test]
-#[ignore]
 fn test2_451() {
     assert_eq!(frequency_sort(String::from("tree")), String::from("eert"));
     assert_eq!(
