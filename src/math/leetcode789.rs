@@ -1,10 +1,21 @@
 // https://leetcode.com/problems/escape-the-ghosts/
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
 pub fn escape_ghosts(ghosts: Vec<Vec<i32>>, target: Vec<i32>) -> bool {
-    todo!()
+    let min = dist(&target, &[0, 0]);
+    for ghost in &ghosts {
+        if dist(ghost, &target) <= min {
+            return false;
+        }
+    }
+    true
+}
+
+fn dist(a: &[i32], b: &[i32]) -> i32 {
+    (a[0] - b[0]).abs() + (a[1] - b[1]).abs()
 }
 // math
 #[test]
-#[ignore]
 fn test1_789() {
     assert_eq!(
         escape_ghosts(vec![vec![1, 0], vec![0, 3]], vec![0, 1]),

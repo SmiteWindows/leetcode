@@ -2,8 +2,7 @@
 #![allow(clippy::many_single_char_names)]
 // Runtime: 0 ms
 // Memory Usage: 2 MB
-use std::fmt;
-use std::ops::Mul;
+use std::{fmt, ops::Mul};
 pub fn complex_number_multiply(a: String, b: String) -> String {
     (Complex::from_string(a) * Complex::from_string(b)).to_string()
 }

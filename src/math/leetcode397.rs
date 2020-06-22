@@ -4,6 +4,7 @@
 pub fn integer_replacement(n: i32) -> i32 {
     dfs(n as u32)
 }
+
 fn dfs(mut n: u32) -> i32 {
     if n == 1 {
         0

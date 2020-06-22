@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 1.9 MB
 pub fn smallest_repunit_div_by_k(k: i32) -> i32 {
-    let mut x: i32 = 0;
+    let mut x = 0;
     for i in 0..k {
         x *= 10;
         x += 1;

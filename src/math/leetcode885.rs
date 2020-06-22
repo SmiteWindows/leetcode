@@ -1,10 +1,35 @@
 // https://leetcode.com/problems/spiral-matrix-iii/
+// Runtime: 8 ms
+// Memory Usage: 2.3 MB
 pub fn spiral_matrix_iii(r: i32, c: i32, r0: i32, c0: i32) -> Vec<Vec<i32>> {
-    todo!()
+    let mut res = vec![];
+    let total = (r * c) as usize;
+    let directions = vec![(0, 1), (1, 0), (0, -1), (-1, 0)];
+    let mut d = 0;
+    let mut step = 1;
+    let mut i = r0;
+    let mut j = c0;
+    let mut k = 0;
+    while res.len() < total {
+        if i >= 0 && i < r && j >= 0 && j < c {
+            res.push(vec![i, j]);
+        }
+        i += directions[d].0;
+        j += directions[d].1;
+        k += 1;
+        if k == step {
+            d += 1;
+            d %= 4;
+            k = 0;
+            if d % 2 == 0 {
+                step += 1;
+            }
+        }
+    }
+    res
 }
 // math
 #[test]
-#[ignore]
 fn test1_885() {
     assert_eq!(
         spiral_matrix_iii(1, 4, 0, 0),

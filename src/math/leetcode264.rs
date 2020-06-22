@@ -3,7 +3,7 @@
 // Memory Usage: 2.1 MB
 pub fn nth_ugly_number(n: i32) -> i32 {
     let n = n as usize;
-    let mut ugly: Vec<i32> = vec![1];
+    let mut ugly = vec![1];
     let mut i = 0;
     let mut j = 0;
     let mut k = 0;
