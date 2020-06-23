@@ -41,7 +41,6 @@ pub fn rearrange_barcodes(barcodes: Vec<i32>) -> Vec<i32> {
 }
 // sort heap
 #[test]
-#[ignore]
 fn test1_1054() {
     assert_eq!(
         rearrange_barcodes(vec![1, 1, 1, 2, 2, 2]),
