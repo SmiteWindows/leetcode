@@ -1,7 +1,8 @@
 // https://leetcode.com/problems/new-21-game/
-// FIX
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
 pub fn new21_game(n: i32, k: i32, w: i32) -> f64 {
-    if n == 0 || n > k + w {
+    if k == 0 || n > k + w {
         return 1.0;
     }
     let n = n as usize;
@@ -26,7 +27,6 @@ pub fn new21_game(n: i32, k: i32, w: i32) -> f64 {
 }
 // dynamic_programming
 #[test]
-#[ignore]
 fn test1_837() {
     assert_eq!(new21_game(10, 1, 10), 1.00000);
     assert_eq!(new21_game(6, 1, 10), 0.60000);
