@@ -1,10 +1,34 @@
 // https://leetcode.com/problems/reconstruct-itinerary/
+// Runtime: 4 ms
+// Memory Usage: 2.1 MB
+use std::{
+    cmp::Reverse,
+    collections::{BinaryHeap, HashMap},
+};
 pub fn find_itinerary(tickets: Vec<Vec<String>>) -> Vec<String> {
-    todo!()
+    let mut res = vec![];
+    let mut g: HashMap<String, BinaryHeap<Reverse<String>>> = HashMap::new();
+    for ticket in tickets {
+        g.entry(ticket[0].clone())
+            .or_default()
+            .push(Reverse(ticket[1].clone()));
+    }
+    let mut stack = vec![];
+    stack.push("JFK".to_string());
+    while !stack.is_empty() {
+        while g.contains_key(stack.last().unwrap())
+            && !g.get(stack.last().unwrap()).unwrap().is_empty()
+        {
+            let airports = g.get_mut(stack.last().unwrap()).unwrap();
+            let airport = airports.pop().unwrap().0;
+            stack.push(airport);
+        }
+        res.insert(0, stack.pop().unwrap());
+    }
+    res
 }
 // graph depth_first_search
 #[test]
-#[ignore]
 fn test1_332() {
     assert_eq!(
         find_itinerary(vec![

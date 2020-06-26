@@ -1,10 +1,37 @@
 // https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/
+// Runtime: 12 ms
+// Memory Usage: 2.4 MB
 pub fn find_the_city(n: i32, edges: Vec<Vec<i32>>, distance_threshold: i32) -> i32 {
-    todo!()
+    let n = n as usize;
+    let mut dist = vec![vec![i32::MAX >> 2; n]; n];
+    for i in 0..n {
+        dist[i][i] = 0;
+    }
+    for e in edges {
+        let i = e[0] as usize;
+        let j = e[1] as usize;
+        let d = e[2];
+        dist[i][j] = d;
+        dist[j][i] = d;
+    }
+    for k in 0..n {
+        for i in 0..n {
+            for j in 0..n {
+                dist[i][j] = dist[i][j].min(dist[i][k] + dist[k][j]);
+            }
+        }
+    }
+    let mut min = (n, 0);
+    for i in 0..n {
+        let count = dist[i].iter().filter(|&&d| d <= distance_threshold).count() - 1;
+        if count <= min.0 {
+            min = (count, i);
+        }
+    }
+    min.1 as i32
 }
 // graph
 #[test]
-#[ignore]
 fn test1_1334() {
     assert_eq!(
         find_the_city(

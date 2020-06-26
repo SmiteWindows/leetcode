@@ -1,10 +1,50 @@
 // https://leetcode.com/problems/minimum-height-trees/
+// Runtime: 8 ms
+// Memory Usage: 2.9 MB
+use std::collections::VecDeque;
 pub fn find_min_height_trees(n: i32, edges: Vec<Vec<i32>>) -> Vec<i32> {
-    todo!()
+    let n = n as usize;
+    if n == 1 {
+        return vec![0];
+    }
+    let mut graph = vec![vec![]; n];
+    let mut visited = vec![false; n];
+    let mut degree = vec![0; n];
+    for e in edges {
+        let u = e[0] as usize;
+        let v = e[1] as usize;
+        graph[u].push(v);
+        graph[v].push(u);
+        degree[u] += 1;
+        degree[v] += 1;
+    }
+
+    let mut leaves = VecDeque::new();
+    for i in 0..n {
+        if graph[i].len() == 1 {
+            leaves.push_back(i);
+        }
+    }
+    let mut m = n;
+    while m > 2 {
+        m -= leaves.len();
+        for _ in 0..leaves.len() {
+            let u = leaves.pop_front().unwrap();
+            visited[u] = true;
+            for &v in &graph[u] {
+                if !visited[v] {
+                    degree[v] -= 1;
+                    if degree[v] == 1 {
+                        leaves.push_back(v);
+                    }
+                }
+            }
+        }
+    }
+    leaves.into_iter().map(|x| x as i32).collect()
 }
 // graph breadth_first_search
 #[test]
-#[ignore]
 fn test1_310() {
     assert_eq!(
         find_min_height_trees(4, vec![vec![1, 0], vec![1, 2], vec![1, 3]]),
