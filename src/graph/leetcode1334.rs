@@ -4,8 +4,8 @@
 pub fn find_the_city(n: i32, edges: Vec<Vec<i32>>, distance_threshold: i32) -> i32 {
     let n = n as usize;
     let mut dist = vec![vec![i32::MAX >> 2; n]; n];
-    for i in 0..n {
-        dist[i][i] = 0;
+    for (i, di) in dist.iter_mut().enumerate().take(n) {
+        di[i] = 0;
     }
     for e in edges {
         let i = e[0] as usize;
@@ -22,8 +22,8 @@ pub fn find_the_city(n: i32, edges: Vec<Vec<i32>>, distance_threshold: i32) -> i
         }
     }
     let mut min = (n, 0);
-    for i in 0..n {
-        let count = dist[i].iter().filter(|&&d| d <= distance_threshold).count() - 1;
+    for (i, di) in dist.iter().enumerate().take(n) {
+        let count = di.iter().filter(|&&d| d <= distance_threshold).count() - 1;
         if count <= min.0 {
             min = (count, i);
         }

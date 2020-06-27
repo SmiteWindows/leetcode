@@ -21,9 +21,9 @@ pub fn multiply(num1: String, num2: String) -> String {
         }
     }
     let mut carry = 0;
-    for i in 0..n3 {
-        v4.push((v3[i] + carry) % 10);
-        carry = (v3[i] + carry) / 10;
+    for vi in v3.iter().take(n3) {
+        v4.push((vi + carry) % 10);
+        carry = (vi + carry) / 10;
     }
     if carry != 0 {
         v4.push(carry);

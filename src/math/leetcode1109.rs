@@ -13,9 +13,9 @@ pub fn corp_flight_bookings(bookings: Vec<Vec<i32>>, n: i32) -> Vec<i32> {
         }
     }
     let mut prev = 0;
-    for i in 0..n {
-        prev += res[i];
-        res[i] = prev;
+    for ri in res.iter_mut().take(n) {
+        prev += *ri;
+        *ri = prev;
     }
     res
 }

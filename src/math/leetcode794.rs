@@ -29,10 +29,10 @@ fn win(board: &[Vec<char>], c: char) -> i32 {
     let mut cols = vec![0; 3];
     let mut diagonals = vec![0; 2];
     for i in 0..3 {
-        for j in 0..3 {
+        for (j, cj) in cols.iter_mut().enumerate().take(3) {
             let v = if board[i][j] == c { 1 } else { 0 };
             rows[i] += v;
-            cols[j] += v;
+            *cj += v;
             if i == j {
                 diagonals[0] += v;
             }

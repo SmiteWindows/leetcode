@@ -7,9 +7,9 @@ pub fn max_distance(grid: Vec<Vec<i32>>) -> i32 {
     let n = grid.len();
     let m = grid[0].len();
     let mut queue = VecDeque::new();
-    for i in 0..n {
+    for (i, gi) in grid.iter().enumerate().take(n) {
         for j in 0..m {
-            if grid[i][j] == 1 {
+            if gi[j] == 1 {
                 queue.push_back((i, j, 0));
             }
         }

@@ -14,8 +14,8 @@ pub fn last_stone_weight_ii(stones: Vec<i32>) -> i32 {
         }
     }
     let mut res = sum;
-    for i in 0..=sum / 2 {
-        if dp[i] {
+    for (i, &di) in dp.iter().enumerate().take(sum / 2 + 1) {
+        if di {
             res = res.min(sum - 2 * i);
         }
     }

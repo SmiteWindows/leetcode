@@ -14,8 +14,8 @@ pub fn find_order(num_courses: i32, prerequisites: Vec<Vec<i32>>) -> Vec<i32> {
         edges[u].push(v);
         indegrees[v] += 1;
     }
-    for u in 0..n {
-        if indegrees[u] == 0 {
+    for (u, &indegree) in indegrees.iter().enumerate().take(n) {
+        if indegree == 0 {
             queue.push_back(u);
         }
     }

@@ -7,17 +7,17 @@ pub fn count_servers(grid: Vec<Vec<i32>>) -> i32 {
     let mut rows = vec![0; n];
     let mut cols = vec![0; m];
     for i in 0..n {
-        for j in 0..m {
+        for (j, col) in cols.iter_mut().enumerate().take(m) {
             if grid[i][j] == 1 {
                 rows[i] += 1;
-                cols[j] += 1;
+                *col += 1;
             }
         }
     }
     let mut res = 0;
     for i in 0..n {
-        for j in 0..m {
-            if grid[i][j] == 1 && (rows[i] > 1 || cols[j] > 1) {
+        for (j, &col) in cols.iter().enumerate().take(m) {
+            if grid[i][j] == 1 && (rows[i] > 1 || col > 1) {
                 res += 1;
             }
         }

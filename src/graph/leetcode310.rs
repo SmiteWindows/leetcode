@@ -20,8 +20,8 @@ pub fn find_min_height_trees(n: i32, edges: Vec<Vec<i32>>) -> Vec<i32> {
     }
 
     let mut leaves = VecDeque::new();
-    for i in 0..n {
-        if graph[i].len() == 1 {
+    for (i, gi) in graph.iter().enumerate().take(n) {
+        if gi.len() == 1 {
             leaves.push_back(i);
         }
     }

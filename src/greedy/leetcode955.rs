@@ -14,8 +14,8 @@ pub fn min_deletion_size(a: Vec<String>) -> i32 {
             sorted[i].push(a[i][j]);
         }
         if sorted.windows(2).any(|w| w[0] > w[1]) {
-            for i in 0..n {
-                sorted[i].pop();
+            for si in sorted.iter_mut().take(n) {
+                si.pop();
             }
         }
     }

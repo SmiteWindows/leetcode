@@ -13,8 +13,7 @@ pub fn can_finish(num_courses: i32, prerequisites: Vec<Vec<i32>>) -> bool {
         indegrees[v] += 1;
         edges[u].push(v);
     }
-    for u in 0..n {
-        let indegree = indegrees[u];
+    for (u, &indegree) in indegrees.iter().enumerate().take(n) {
         if indegree == 0 {
             queue.push(u);
         }

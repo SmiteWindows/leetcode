@@ -22,8 +22,7 @@ pub fn num_squares(n: i32) -> i32 {
     // 3
     let n = n as usize;
     let largest_root = (n as f32).sqrt() as usize;
-    let mut dp = Vec::with_capacity(n + 1);
-    dp.resize(n + 1, 0);
+    let mut dp = vec![0; n + 1];
     for i in 1..=largest_root {
         dp[i * i] = 1;
     }
