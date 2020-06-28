@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/contains-duplicate-iii/
+#![allow(clippy::many_single_char_names)]
 // Runtime: 4 ms
 // Memory Usage: 2.2 MB
 use std::collections::BTreeSet;

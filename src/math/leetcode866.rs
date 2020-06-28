@@ -1,4 +1,7 @@
 // https://leetcode.com/problems/prime-palindrome/
+#![allow(clippy::many_single_char_names)]
+// Runtime: 36 ms
+// Memory Usage: 2.1 MB
 pub fn prime_palindrome(n: i32) -> i32 {
     if 8 <= n && n <= 11 {
         return 11;

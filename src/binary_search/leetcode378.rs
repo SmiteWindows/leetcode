@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/
+#![allow(clippy::many_single_char_names)]
 // Runtime: 4 ms
 // Memory Usage: 2.7 MB
 pub fn kth_smallest(matrix: Vec<Vec<i32>>, k: i32) -> i32 {
@@ -9,8 +10,8 @@ pub fn kth_smallest(matrix: Vec<Vec<i32>>, k: i32) -> i32 {
         let m = l + (h - l) / 2;
         let mut count = 0;
         let mut i = n as i32 - 1;
-        for j in 0..n {
-            while i >= 0 && matrix[j][i as usize] > m {
+        for mj in matrix.iter().take(n) {
+            while i >= 0 && mj[i as usize] > m {
                 i -= 1;
             }
             count += i + 1;

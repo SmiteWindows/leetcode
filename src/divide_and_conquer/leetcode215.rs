@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/kth-largest-element-in-an-array/
+#![allow(clippy::many_single_char_names)]
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::cmp::Ordering::{Equal, Greater, Less};

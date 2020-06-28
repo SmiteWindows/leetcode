@@ -11,12 +11,10 @@ pub fn reach_number(target: i32) -> i32 {
         let diff = sum - target;
         if diff % 2 == 0 {
             n
+        } else if n % 2 == 0 {
+            n + 1
         } else {
-            if n % 2 == 0 {
-                n + 1
-            } else {
-                n + 2
-            }
+            n + 2
         }
     }
 }

@@ -17,11 +17,9 @@ pub fn can_measure_water(x: i32, y: i32, z: i32) -> bool {
             let next = front + diff;
             if next == z {
                 return true;
-            } else {
-                if next < x + y && next > 0 && !visited[next as usize] {
-                    visited[next as usize] = true;
-                    queue.push_back(next);
-                }
+            } else if next < x + y && next > 0 && !visited[next as usize] {
+                visited[next as usize] = true;
+                queue.push_back(next);
             }
         }
     }

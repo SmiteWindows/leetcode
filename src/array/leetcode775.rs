@@ -2,9 +2,8 @@
 // Runtime: 4 ms
 // Memory Usage: 2.1 MB
 pub fn is_ideal_permutation(a: Vec<i32>) -> bool {
-    let n = a.len();
-    for i in 0..n {
-        if (a[i] - i as i32).abs() > 1 {
+    for (i, ai) in a.iter().enumerate() {
+        if (ai - i as i32).abs() > 1 {
             return false;
         }
     }

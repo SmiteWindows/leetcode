@@ -4,8 +4,8 @@
 pub fn is_bipartite(graph: Vec<Vec<i32>>) -> bool {
     let n = graph.len();
     let mut g = Graph::new(n);
-    for u in 0..n {
-        for &v in &graph[u] {
+    for (u, gu) in graph.iter().enumerate().take(n) {
+        for &v in gu {
             g.insert_edge(u, v as usize);
         }
     }
