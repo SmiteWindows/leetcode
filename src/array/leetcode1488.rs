@@ -7,24 +7,22 @@ pub fn avoid_flood(rains: Vec<i32>) -> Vec<i32> {
     let mut lakes = HashMap::new();
     let mut dry_days = BTreeSet::new();
     let mut res = vec![-1; n];
-    for i in 0..n {
-        if rains[i] == 0 {
+    for (i, &rain) in rains.iter().enumerate().take(n) {
+        if rain == 0 {
             dry_days.insert(i);
-        } else {
-            if let Some(j) = lakes.insert(rains[i], i) {
-                let mut pick_a_day = None;
-                for &k in &dry_days {
-                    if j < k {
-                        pick_a_day = Some(k);
-                        break;
-                    }
+        } else if let Some(j) = lakes.insert(rain, i) {
+            let mut pick_a_day = None;
+            for &k in &dry_days {
+                if j < k {
+                    pick_a_day = Some(k);
+                    break;
                 }
-                if let Some(k) = pick_a_day {
-                    res[k] = rains[i];
-                    dry_days.remove(&k);
-                } else {
-                    return vec![];
-                }
+            }
+            if let Some(k) = pick_a_day {
+                res[k] = rain;
+                dry_days.remove(&k);
+            } else {
+                return vec![];
             }
         }
     }
