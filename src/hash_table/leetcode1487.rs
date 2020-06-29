@@ -1,10 +1,31 @@
 // https://leetcode.com/problems/making-file-names-unique/
+// Runtime: 76 ms
+// Memory Usage: 10.6 MB
+use std::collections::{HashMap, HashSet};
 pub fn get_folder_names(names: Vec<String>) -> Vec<String> {
-    todo!()
+    let mut hs = HashSet::new();
+    let mut hm = HashMap::new();
+    let mut res = vec![];
+    'outer: for name in names {
+        if !hs.insert(name.to_string()) {
+            let mut i = *hm.get(&name).unwrap_or(&1);
+            loop {
+                let new_name = format!("{}({})", name, i);
+                if hs.insert(new_name.to_string()) {
+                    res.push(new_name);
+                    hm.insert(name, i + 1);
+                    continue 'outer;
+                }
+                i += 1;
+            }
+        } else {
+            res.push(name);
+        }
+    }
+    res
 }
 // hast_table string
 #[test]
-#[ignore]
 fn test1_1487() {
     assert_eq!(
         get_folder_names(vec![

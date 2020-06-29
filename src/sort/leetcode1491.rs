@@ -1,10 +1,18 @@
 // https://leetcode.com/problems/average-salary-excluding-the-minimum-and-maximum-salary/
+// Runtime: 0 ms
+// Memory Usage: 2 MB
 pub fn average(salary: Vec<i32>) -> f64 {
-    todo!()
+    let n = salary.len();
+    let min = *salary.iter().min().unwrap();
+    let max = *salary.iter().max().unwrap();
+    let sum = salary
+        .into_iter()
+        .filter(|&x| x > min && x < max)
+        .sum::<i32>();
+    sum as f64 / (n - 2) as f64
 }
 // array sort
 #[test]
-#[ignore]
 fn test2_1491() {
     assert_eq!(average(vec![4000, 3000, 1000, 2000]), 2500.00000);
     assert_eq!(average(vec![1000, 2000, 3000]), 2000.00000);
