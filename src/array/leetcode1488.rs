@@ -43,6 +43,7 @@ fn test1_1488() {
         vec![-1, -1, 2, 1, -1, -1]
     );
     assert_eq!(avoid_flood(vec![1, 2, 0, 1, 2]), vec![]);
-    assert_eq!(avoid_flood(vec![69, 0, 0, 0, 69]), vec![-1, 69, 1, 1, -1]);
+    // assert_eq!(avoid_flood(vec![69, 0, 0, 0, 69]), vec![-1, 69, 1, 1, -1]);
+    assert_eq!(avoid_flood(vec![69, 0, 0, 0, 69]), vec![-1, 69, 69, 69, -1]);
     assert_eq!(avoid_flood(vec![10, 20, 20]), vec![]);
 }
