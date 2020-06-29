@@ -9,6 +9,7 @@ pub fn sequential_digits(low: i32, high: i32) -> Vec<i32> {
     res.sort_unstable();
     res
 }
+
 fn dfs(last_digit: i32, cur: i32, res: &mut Vec<i32>, low: i32, high: i32) {
     if cur >= low && cur <= high {
         res.push(cur);

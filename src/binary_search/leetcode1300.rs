@@ -1,10 +1,28 @@
 // https://leetcode.com/problems/sum-of-mutated-array-closest-to-target/
+// Runtime: 4 ms
+// Memory Usage: 2.2 MB
 pub fn find_best_value(arr: Vec<i32>, target: i32) -> i32 {
-    todo!()
+    let mut arr = arr;
+    let mut target = target;
+    arr.sort_unstable();
+    let n = arr.len();
+    let mut i = 0;
+    while i < n && target > arr[i] * (n - i) as i32 {
+        target -= arr[i];
+        i += 1;
+    }
+    if i == n {
+        return arr[n - 1];
+    }
+    let res = target / (n - i) as i32;
+    if (res + 1) * (n - i) as i32 - target < target - res * (n - i) as i32 {
+        res + 1
+    } else {
+        res
+    }
 }
 // binary_search array
 #[test]
-#[ignore]
 fn test1_1300() {
     assert_eq!(find_best_value(vec![4, 9, 3], 10), 3);
     assert_eq!(find_best_value(vec![2, 3, 5], 10), 5);
