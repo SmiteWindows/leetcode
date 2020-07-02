@@ -1,10 +1,58 @@
 // https://leetcode.com/problems/maximum-score-words-formed-by-letters/
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
 pub fn max_score_words(words: Vec<String>, letters: Vec<char>, score: Vec<i32>) -> i32 {
-    todo!()
+    let mut count = vec![0; 26];
+    for c in letters {
+        count[(c as u8 - b'a') as usize] += 1;
+    }
+    let n = words.len();
+    let scores: Vec<i32> = words
+        .iter()
+        .map(|s| s.bytes().map(|b| score[(b - b'a') as usize]).sum())
+        .collect();
+    let mut res = 0;
+    dfs(0, 0, &mut count, &mut res, &words, &scores, n);
+    res
+}
+
+fn dfs(
+    start: usize,
+    sum: i32,
+    count: &mut Vec<i32>,
+    max: &mut i32,
+    words: &[String],
+    scores: &[i32],
+    n: usize,
+) {
+    if start == n {
+        *max = (*max).max(sum);
+    } else {
+        dfs(start + 1, sum, count, max, words, scores, n);
+        update(count, &words[start], -1);
+        if check(count, &words[start]) {
+            dfs(start + 1, sum + scores[start], count, max, words, scores, n);
+        }
+        update(count, &words[start], 1);
+    }
+}
+
+fn update(count: &mut Vec<i32>, s: &str, val: i32) {
+    for c in s.chars() {
+        count[(c as u8 - b'a') as usize] += val;
+    }
+}
+
+fn check(count: &mut Vec<i32>, s: &str) -> bool {
+    for c in s.chars() {
+        if count[(c as u8 - b'a') as usize] < 0 {
+            return false;
+        }
+    }
+    true
 }
 // bit_manipulation
 #[test]
-#[ignore]
 fn test1_1255() {
     assert_eq!(
         max_score_words(

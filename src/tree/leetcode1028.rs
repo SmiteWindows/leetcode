@@ -1,8 +1,74 @@
 // https://leetcode.com/problems/recover-a-tree-from-preorder-traversal/
-
-use std::{cell::RefCell, rc::Rc};
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
+use std::{cell::RefCell, iter::Peekable, rc::Rc, str::Chars, vec::IntoIter};
 pub fn recover_from_preorder(s: String) -> Option<Rc<RefCell<TreeNode>>> {
-    todo!()
+    let toks = parse_tokens(&mut s.chars().peekable());
+    parse_root(&mut toks.into_iter().peekable())
+}
+
+fn parse_tokens(it: &mut Peekable<Chars>) -> Vec<Tok> {
+    let mut toks = vec![];
+    while let Some(c) = it.next() {
+        match c {
+            '-' => {
+                let mut d = 1;
+                while let Some('-') = it.peek() {
+                    it.next();
+                    d += 1;
+                }
+                toks.push(Tok::D(d));
+            }
+            '0'..='9' => {
+                let mut n = (c as u8 - b'0') as i32;
+                while let Some('0'..='9') = it.peek() {
+                    n *= 10;
+                    n += (it.next().unwrap() as u8 - b'0') as i32;
+                }
+                toks.push(Tok::N(n));
+            }
+            _ => {}
+        }
+    }
+    toks
+}
+
+fn parse(it: &mut Peekable<IntoIter<Tok>>, depth: usize) -> Option<Rc<RefCell<TreeNode>>> {
+    if let Some(&Tok::D(d)) = it.peek() {
+        if d == depth {
+            it.next();
+            if let Some(Tok::N(n)) = it.next() {
+                Some(Rc::new(RefCell::new(TreeNode {
+                    val: n,
+                    left: parse(it, d + 1),
+                    right: parse(it, d + 1),
+                })))
+            } else {
+                None
+            }
+        } else {
+            None
+        }
+    } else {
+        None
+    }
+}
+
+fn parse_root(it: &mut Peekable<IntoIter<Tok>>) -> Option<Rc<RefCell<TreeNode>>> {
+    if let Some(Tok::N(n)) = it.next() {
+        Some(Rc::new(RefCell::new(TreeNode {
+            val: n,
+            left: parse(it, 1),
+            right: parse(it, 1),
+        })))
+    } else {
+        None
+    }
+}
+
+enum Tok {
+    N(i32),
+    D(usize),
 }
 
 // Definition for a binary tree node.
@@ -25,7 +91,6 @@ impl TreeNode {
 }
 // tree depth_first_search
 #[test]
-#[ignore]
 fn test1_1028() {
     let res1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
