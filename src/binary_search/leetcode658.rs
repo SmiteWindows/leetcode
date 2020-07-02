@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/find-k-closest-elements/
+#![allow(clippy::many_single_char_names)]
 // Runtime: 8 ms
 // Memory Usage: 2.3 MB
 pub fn find_closest_elements(arr: Vec<i32>, k: i32, x: i32) -> Vec<i32> {

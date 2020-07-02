@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/minimum-number-of-flips-to-convert-binary-matrix-to-zero-matrix/
+#![allow(clippy::many_single_char_names)]
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn min_flips(mat: Vec<Vec<i32>>) -> i32 {
@@ -47,9 +48,9 @@ fn flip(i: usize, j: usize, mat: &mut Vec<Vec<i32>>, n: usize, m: usize) {
 
 fn ones(mat: &[Vec<i32>], n: usize, m: usize) -> usize {
     let mut res = 0;
-    for i in 0..n {
-        for j in 0..m {
-            if mat[i][j] == 1 {
+    for mi in mat.iter().take(n) {
+        for &m in mi.iter().take(m) {
+            if m == 1 {
                 res += 1;
             }
         }

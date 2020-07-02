@@ -6,8 +6,8 @@ pub fn find_right_interval(intervals: Vec<Vec<i32>>) -> Vec<i32> {
     let n = intervals.len();
     let mut res = vec![-1; n];
     let mut btm = BTreeMap::new();
-    for i in 0..n {
-        let l = intervals[i][0];
+    for (i, interval) in intervals.iter().enumerate().take(n) {
+        let l = interval[0];
         btm.insert(l, i);
     }
     for i in 0..n {

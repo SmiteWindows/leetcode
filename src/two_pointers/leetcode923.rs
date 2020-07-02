@@ -46,12 +46,12 @@ pub fn three_sum_multi(a: Vec<i32>, target: i32) -> i32 {
             }
         }
     }
-    for x in 0..101 {
+    for (x, &cx) in count.iter().enumerate().take(101) {
         if x + x + x != target as usize {
             continue;
         }
-        if count[x] > 2 {
-            res += count[x] * (count[x] - 1) * (count[x] - 2) / 6;
+        if cx > 2 {
+            res += cx * (cx - 1) * (cx - 2) / 6;
             res %= MOD;
         }
     }

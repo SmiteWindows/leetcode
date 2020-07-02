@@ -61,8 +61,8 @@ impl NumArray {
     fn new(nums: Vec<i32>) -> Self {
         let n = nums.len();
         let mut bit_tree = BitTree::new(n);
-        for i in 0..n {
-            bit_tree.add(i, nums[i]);
+        for (i, &num) in nums.iter().enumerate().take(n) {
+            bit_tree.add(i, num);
         }
         Self { bit_tree }
     }
@@ -90,7 +90,7 @@ impl NumArray {
  */
 // binary_indexed_tree segment_tree
 #[test]
-fn test1_307() {
+fn test2_307() {
     let mut obj = NumArray::new(vec![1, 3, 5]);
     assert_eq!(obj.sum_range(0, 2), 9);
     obj.update(1, 2);
