@@ -8,9 +8,9 @@ pub fn num_submat(mat: Vec<Vec<i32>>) -> i32 {
     for i in 0..n {
         for j in 0..m {
             let mut limit = m;
-            for r in i..n {
+            for mr in mat.iter().take(n).skip(i) {
                 for c in j..m.min(limit) {
-                    if mat[r][c] == 1 {
+                    if mr[c] == 1 {
                         res += 1;
                     } else {
                         limit = c;
