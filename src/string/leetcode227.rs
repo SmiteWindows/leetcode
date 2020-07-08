@@ -11,7 +11,7 @@ pub fn calculate(s: String) -> i32 {
     }
 }
 
-fn parse_expr(it: &mut Peekable<Iter<Tok>>) -> Option<i32> {
+fn parse_expr(it: &mut Peekable<Iter<'_, Tok>>) -> Option<i32> {
     let mut lhs = parse_factor(it)?;
     while let Some(&tok) = it.peek() {
         if tok.is_expr_op() {
@@ -25,7 +25,7 @@ fn parse_expr(it: &mut Peekable<Iter<Tok>>) -> Option<i32> {
     Some(lhs)
 }
 
-fn parse_factor(it: &mut Peekable<Iter<Tok>>) -> Option<i32> {
+fn parse_factor(it: &mut Peekable<Iter<'_, Tok>>) -> Option<i32> {
     let mut lhs = parse_num(it)?;
     while let Some(&tok) = it.peek() {
         if tok.is_factor_op() {
@@ -39,7 +39,7 @@ fn parse_factor(it: &mut Peekable<Iter<Tok>>) -> Option<i32> {
     Some(lhs)
 }
 
-fn parse_num(it: &mut Peekable<Iter<Tok>>) -> Option<i32> {
+fn parse_num(it: &mut Peekable<Iter<'_, Tok>>) -> Option<i32> {
     match it.next() {
         Some(Tok::Num(x)) => Some(*x),
         _ => None,

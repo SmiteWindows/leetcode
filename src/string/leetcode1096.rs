@@ -57,7 +57,7 @@ fn eat(it: &mut Peekable<IntoIter<Tok>>, c: char) -> bool {
     }
 }
 
-fn parse_tokens(it: &mut Peekable<Chars>) -> Vec<Tok> {
+fn parse_tokens(it: &mut Peekable<Chars<'_>>) -> Vec<Tok> {
     let mut res = vec![];
     while let Some(c) = it.next() {
         match c {

@@ -7,7 +7,7 @@ pub fn recover_from_preorder(s: String) -> Option<Rc<RefCell<TreeNode>>> {
     parse_root(&mut toks.into_iter().peekable())
 }
 
-fn parse_tokens(it: &mut Peekable<Chars>) -> Vec<Tok> {
+fn parse_tokens(it: &mut Peekable<Chars<'_>>) -> Vec<Tok> {
     let mut toks = vec![];
     while let Some(c) = it.next() {
         match c {
