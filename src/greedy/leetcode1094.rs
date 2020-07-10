@@ -1,10 +1,22 @@
 // https://leetcode.com/problems/car-pooling/
+
 pub fn car_pooling(trips: Vec<Vec<i32>>, capacity: i32) -> bool {
-    todo!()
+    let mut pairs = vec![];
+    for trip in trips {
+        pairs.push((trip[1], trip[0]));
+        pairs.push((trip[2], -trip[0]));
+    }
+    pairs.sort_unstable();
+    let mut max = 0;
+    let mut count = 0;
+    for pair in pairs {
+        count += pair.1;
+        max = max.max(count);
+    }
+    max <= capacity
 }
 // greedy
 #[test]
-#[ignore]
 fn test1_1094() {
     assert_eq!(car_pooling(vec![vec![2, 1, 5], vec![3, 3, 7]], 4), false);
     assert_eq!(car_pooling(vec![vec![2, 1, 5], vec![3, 3, 7]], 5), true);

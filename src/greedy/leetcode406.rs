@@ -1,10 +1,22 @@
 // https://leetcode.com/problems/queue-reconstruction-by-height/
+// Runtime: 4 ms
+// Memory Usage: 2.1 MB
+use std::cmp::Reverse;
+type People = (Reverse<i32>, i32);
 pub fn reconstruct_queue(people: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
-    todo!()
+    let mut people = people
+        .iter()
+        .map(|v| (Reverse(v[0]), v[1]))
+        .collect::<Vec<People>>();
+    people.sort_unstable();
+    let mut res = vec![];
+    for p in people {
+        res.insert(p.1 as usize, vec![(p.0).0, p.1]);
+    }
+    res
 }
 // greedy
 #[test]
-#[ignore]
 fn test1_406() {
     assert_eq!(
         reconstruct_queue(vec![
