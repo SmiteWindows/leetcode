@@ -1,8 +1,8 @@
 // https://leetcode.com/problems/wiggle-subsequence/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
+use std::cmp::Ordering::{Equal, Greater, Less};
 pub fn wiggle_max_length(nums: Vec<i32>) -> i32 {
-    use std::cmp::Ordering::{Equal, Greater, Less};
     let n = nums.len();
     if n == 0 {
         return 0;
