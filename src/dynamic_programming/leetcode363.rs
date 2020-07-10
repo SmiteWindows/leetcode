@@ -17,8 +17,8 @@ pub fn max_sum_submatrix(matrix: Vec<Vec<i32>>, k: i32) -> i32 {
             let mut bts = BTreeSet::new();
             bts.insert(0);
             let mut sum = 0;
-            for i in 0..n {
-                sum += prefix[i][end] - prefix[i][start];
+            for p in prefix.iter().take(n) {
+                sum += p[end] - p[start];
                 if let Some(prev) = bts.range(sum - k..).take(1).next() {
                     res = res.max(sum - prev);
                 }

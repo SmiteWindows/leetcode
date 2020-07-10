@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/minimum-window-substring/
+#![allow(clippy::many_single_char_names)]
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn min_window(s: String, t: String) -> String {
@@ -28,18 +29,16 @@ pub fn min_window(s: String, t: String) -> String {
                 freq[v[start] as usize] -= 1;
             }
             start += 1;
+        } else if end == n {
+            break;
         } else {
-            if end == n {
-                break;
-            } else {
-                if limit[v[end] as usize] != 0 {
-                    freq[v[end] as usize] += 1;
-                    if freq[v[end] as usize] == limit[v[end] as usize] {
-                        k -= 1;
-                    }
+            if limit[v[end] as usize] != 0 {
+                freq[v[end] as usize] += 1;
+                if freq[v[end] as usize] == limit[v[end] as usize] {
+                    k -= 1;
                 }
-                end += 1;
             }
+            end += 1;
         }
     }
     res.1.to_string()
