@@ -1,55 +1,48 @@
 // https://leetcode.com/problems/minimum-window-substring/
-#![allow(clippy::many_single_char_names)]
-use std::collections::HashMap;
+// Runtime: 0 ms
+// Memory Usage: 2.2 MB
 pub fn min_window(s: String, t: String) -> String {
-    if s.is_empty() || t.is_empty() {
-        return String::from("");
-    }
-    let mut dict_t: HashMap<char, i32> = HashMap::new();
-    for i in 0..t.len() {
-        let c = t.chars().nth(i).expect("exist");
-        *dict_t.entry(c).or_default() += 1;
-    }
-    let required = dict_t.len();
-    let mut filtered_s = Vec::new();
-    for i in 0..s.len() {
-        let c = s.chars().nth(i).expect("exist");
-        if dict_t.contains_key(&c) {
-            filtered_s.push((i, c));
+    let mut freq = vec![0_usize; 256];
+    let mut limit = vec![0_usize; 256];
+    let mut k = 0;
+    let n = s.len();
+    for b in t.bytes() {
+        if limit[b as usize] == 0 {
+            k += 1;
         }
+        limit[b as usize] += 1;
     }
-    let (mut l, mut r) = (0, 0);
-    let mut formed = 0;
-    let mut window_counts: HashMap<char, i32> = HashMap::new();
-    let mut res = [usize::MAX, 0, 0];
-    while r < filtered_s.len() {
-        let mut c = filtered_s[r].1;
-        *window_counts.entry(c).or_default() += 1;
-        if dict_t.contains_key(&c) && window_counts[&c] == dict_t[&c] {
-            formed += 1;
-        }
-        while l <= r && formed == required {
-            c = filtered_s[l].1;
-            let end = filtered_s[r].0;
-            let start = filtered_s[l].0;
-            if end - start + 1 < res[0] {
-                res[0] = end - start + 1;
-                res[1] = start;
-                res[2] = end;
+    let v = s.bytes().collect::<Vec<_>>();
+    let mut start = 0;
+    let mut end = 0;
+    let mut res = (usize::MAX, "");
+    loop {
+        if k == 0 {
+            if end - start < res.0 {
+                res = (end - start, &s[start..end]);
             }
-            *window_counts.entry(c).or_default() -= 1; // TODO
-            if dict_t.contains_key(&c) && window_counts[&c] < dict_t[&c] {
-                formed -= 1;
+            if limit[v[start] as usize] != 0 {
+                if freq[v[start] as usize] == limit[v[start] as usize] {
+                    k += 1;
+                }
+                freq[v[start] as usize] -= 1;
             }
-            l += 1;
+            start += 1;
+        } else {
+            if end == n {
+                break;
+            } else {
+                if limit[v[end] as usize] != 0 {
+                    freq[v[end] as usize] += 1;
+                    if freq[v[end] as usize] == limit[v[end] as usize] {
+                        k -= 1;
+                    }
+                }
+                end += 1;
+            }
         }
-        r += 1;
     }
-    if res[0] == usize::MAX {
-        String::from("")
-    } else {
-        s[res[1]..=res[2]].to_string()
-    }
+    res.1.to_string()
 }
 // hash_table two_pointers string sliding_window
 #[test]
