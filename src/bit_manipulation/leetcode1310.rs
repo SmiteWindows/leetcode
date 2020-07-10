@@ -1,10 +1,23 @@
 // https://leetcode.com/problems/xor-queries-of-a-subarray/
+// Runtime: 24 ms
+// Memory Usage: 3.8 MB
 pub fn xor_queries(arr: Vec<i32>, queries: Vec<Vec<i32>>) -> Vec<i32> {
-    todo!()
+    let mut arr = arr;
+    let n = arr.len();
+    for i in 1..n {
+        arr[i] ^= arr[i - 1];
+    }
+    let mut res = vec![];
+    for query in queries {
+        let l = query[0] as usize;
+        let r = query[1] as usize;
+        let x = if l > 0 { arr[r] ^ arr[l - 1] } else { arr[r] };
+        res.push(x);
+    }
+    res
 }
 // bit_manipulation
 #[test]
-#[ignore]
 fn test1_1310() {
     assert_eq!(
         xor_queries(

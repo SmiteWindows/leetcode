@@ -1,10 +1,19 @@
 // https://leetcode.com/problems/queries-on-a-permutation-with-key/
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
 pub fn process_queries(queries: Vec<i32>, m: i32) -> Vec<i32> {
-    todo!()
+    let mut v = (1..=m).collect::<Vec<i32>>();
+    let mut res = vec![];
+    for q in queries {
+        let p = v.iter().position(|&x| x == q).unwrap();
+        v.remove(p);
+        v.insert(0, q);
+        res.push(p as i32);
+    }
+    res
 }
 // array
 #[test]
-#[ignore]
 fn test1_1409() {
     assert_eq!(process_queries(vec![3, 1, 2, 1], 5), vec![2, 1, 2, 1]);
     assert_eq!(process_queries(vec![4, 1, 2, 2], 4), vec![3, 1, 2, 0]);

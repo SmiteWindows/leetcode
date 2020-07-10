@@ -1,10 +1,20 @@
 // https://leetcode.com/problems/bulb-switcher-iii/
+// Runtime: 4 ms
+// Memory Usage: 2.3 MB
 pub fn num_times_all_blue(light: Vec<i32>) -> i32 {
-    todo!()
+    let n = light.len();
+    let mut res = 0;
+    let mut max = usize::MIN;
+    for i in 0..n {
+        max = max.max((light[i] - 1) as usize);
+        if max == i {
+            res += 1;
+        }
+    }
+    res
 }
 // array
 #[test]
-#[ignore]
 fn test1_1375() {
     assert_eq!(num_times_all_blue(vec![2, 1, 3, 5, 4]), 3);
     assert_eq!(num_times_all_blue(vec![3, 2, 4, 1, 5]), 2);

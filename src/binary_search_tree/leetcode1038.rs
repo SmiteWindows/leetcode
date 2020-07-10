@@ -3,16 +3,16 @@
 // Memory Usage: 2.1 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn bst_to_gst(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
-    helper(root.as_deref(), &mut 0);
+    inorder(root.as_deref(), &mut 0);
     root
 }
 
-fn helper(root: Option<&RefCell<TreeNode>>, sum: &mut i32) {
+fn inorder(root: Option<&RefCell<TreeNode>>, sum: &mut i32) {
     if let Some(node) = root {
-        helper(node.borrow().right.as_deref(), sum);
+        inorder(node.borrow().right.as_deref(), sum);
         *sum += node.borrow().val;
         node.borrow_mut().val = *sum;
-        helper(node.borrow().left.as_deref(), sum);
+        inorder(node.borrow().left.as_deref(), sum);
     }
 }
 

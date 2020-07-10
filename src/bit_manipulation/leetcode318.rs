@@ -1,11 +1,30 @@
 // https://leetcode.com/problems/maximum-product-of-word-lengths/
+// Runtime: 4 ms
+// Memory Usage: 2.1 MB
+use std::collections::HashMap;
 pub fn max_product(words: Vec<String>) -> i32 {
-    todo!()
+    let mut hm: HashMap<u32, usize> = HashMap::new();
+    for word in words {
+        let mut mask = 0_u32;
+        for c in word.bytes() {
+            mask |= 1 << (c - b'a');
+        }
+        let size = hm.entry(mask).or_default();
+        *size = word.len().max(*size);
+    }
+    let mut res = 0;
+    for (&ka, &va) in &hm {
+        for (&kb, &vb) in &hm {
+            if ka & kb == 0 {
+                res = res.max(va * vb);
+            }
+        }
+    }
+    res as i32
 }
 // bit_manipulation
 #[test]
-#[ignore]
-fn test1_268() {
+fn test1_318() {
     assert_eq!(
         max_product(vec![
             String::from("abcw"),

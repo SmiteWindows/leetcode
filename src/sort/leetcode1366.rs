@@ -1,4 +1,6 @@
 // https://leetcode.com/problems/rank-teams-by-votes/
+// Runtime: 0 ms
+// Memory Usage: 2.2 MB
 use std::cmp::Ordering::{Equal, Greater, Less};
 pub fn rank_teams(votes: Vec<String>) -> String {
     let n = votes[0].len();
