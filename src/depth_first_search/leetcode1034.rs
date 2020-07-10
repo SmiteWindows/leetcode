@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/coloring-a-border/
+#![allow(clippy::too-many-arguments)]
 #![allow(clippy::many_single_char_names)]
 // Runtime: 8 ms
 // Memory Usage: 2 MB
