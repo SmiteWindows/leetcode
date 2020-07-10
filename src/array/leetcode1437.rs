@@ -4,9 +4,8 @@
 pub fn k_length_apart(nums: Vec<i32>, k: i32) -> bool {
     let mut prev = None;
     let k = k as usize;
-    let n = nums.len();
-    for i in 0..n {
-        if nums[i] == 1 {
+    for (i, &num) in nums.iter().enumerate() {
+        if num == 1 {
             if let Some(j) = prev {
                 if i - j <= k {
                     return false;

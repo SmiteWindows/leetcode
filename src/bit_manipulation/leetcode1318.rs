@@ -14,10 +14,8 @@ pub fn min_flips(a: i32, b: i32, c: i32) -> i32 {
             if bb == 1 {
                 res += 1;
             }
-        } else {
-            if aa == 0 && bb == 0 {
-                res += 1;
-            }
+        } else if aa == 0 && bb == 0 {
+            res += 1;
         }
     }
     res

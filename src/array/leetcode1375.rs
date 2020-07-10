@@ -2,11 +2,10 @@
 // Runtime: 4 ms
 // Memory Usage: 2.3 MB
 pub fn num_times_all_blue(light: Vec<i32>) -> i32 {
-    let n = light.len();
     let mut res = 0;
     let mut max = usize::MIN;
-    for i in 0..n {
-        max = max.max((light[i] - 1) as usize);
+    for (i, &li) in light.iter().enumerate() {
+        max = max.max((li - 1) as usize);
         if max == i {
             res += 1;
         }

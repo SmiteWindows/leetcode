@@ -6,8 +6,8 @@ pub fn max_score_sightseeing_pair(a: Vec<i32>) -> i32 {
     let mut maxs = vec![];
     let mut prev_max = 0;
     let mut res = 0;
-    for i in 0..n {
-        prev_max = prev_max.max(i as i32 + a[i]);
+    for (i, ai) in a.iter().enumerate().take(n) {
+        prev_max = prev_max.max(i as i32 + ai);
         maxs.push(prev_max);
     }
     for i in 1..n {
