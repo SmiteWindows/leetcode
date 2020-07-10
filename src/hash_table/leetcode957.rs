@@ -1,8 +1,8 @@
 // https://leetcode.com/problems/prison-cells-after-n-days/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
+use std::collections::HashMap;
 pub fn prison_after_n_days(cells: Vec<i32>, n: i32) -> Vec<i32> {
-    use std::collections::HashMap;
     // let mut cells = cells;
     // let mut n = n;
     // let mut hm: HashMap<Vec<i32>, i32> = HashMap::new();

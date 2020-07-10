@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/minimum-falling-path-sum/
+#![allow(clippy::many_single_char_names)]
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn min_falling_path_sum(a: Vec<Vec<i32>>) -> i32 {

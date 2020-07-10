@@ -14,10 +14,8 @@ pub fn find_repeated_dna_sequences(s: String) -> Vec<String> {
         if i + 10 < n {
             hash -= val(s[i + 10]) << 20;
         }
-        if i + 10 <= n {
-            if !once.insert(hash) {
-                twice.insert(hash);
-            }
+        if i + 10 <= n && !once.insert(hash) {
+            twice.insert(hash);
         }
     }
     twice.into_iter().map(decode).collect()

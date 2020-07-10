@@ -28,12 +28,10 @@ fn num_of_families(row_bitset: u16) -> usize {
     } else {
         if row_bitset & mid == 0 {
             1
+        } else if row_bitset & left == 0 || row_bitset & right == 0 {
+            1
         } else {
-            if row_bitset & left == 0 || row_bitset & right == 0 {
-                1
-            } else {
-                0
-            }
+            0
         }
     }
 }
