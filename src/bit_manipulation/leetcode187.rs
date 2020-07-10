@@ -1,42 +1,49 @@
 // https://leetcode.com/problems/repeated-dna-sequences/
-use std::collections::{HashMap, HashSet};
+// Runtime: 8 ms
+// Memory Usage: 3.6 MB
+use std::collections::HashSet;
 pub fn find_repeated_dna_sequences(s: String) -> Vec<String> {
-    let l = 10;
     let n = s.len();
-    if n <= l {
-        return vec![];
-    }
-    let a: usize = 4;
-    let al = a.pow(l as u32);
-    let mut to_int = HashMap::new();
-    to_int.insert('A', 0);
-    to_int.insert('C', 1);
-    to_int.insert('G', 2);
-    to_int.insert('T', 3);
-    let mut nums = vec![0; n];
-    for i in 0..n {
-        nums[i] = to_int[&s.chars().nth(i).expect("exist")];
-    }
-    let mut bitmask = 0;
-    let mut seen = HashSet::new();
-    let mut output = HashSet::new();
-    for start in 0..n - l + 1 {
-        if start != 0 {
-            bitmask <<= 2;
-            bitmask |= nums[start + l - 1];
-            bitmask &= !(3 << (2 * l));
-        } else {
-            for i in nums.iter().take(l) {
-                bitmask <<= 2;
-                bitmask |= i;
+    let mut hash = 0;
+    let mut once = HashSet::new();
+    let mut twice = HashSet::new();
+    let s = s.chars().collect::<Vec<_>>();
+    for i in (0..n).rev() {
+        hash <<= 2;
+        hash |= val(s[i]);
+        if i + 10 < n {
+            hash -= val(s[i + 10]) << 20;
+        }
+        if i + 10 <= n {
+            if !once.insert(hash) {
+                twice.insert(hash);
             }
         }
-        if seen.contains(&bitmask) {
-            output.insert(s[start..start + l].to_string());
-        }
-        seen.insert(bitmask);
     }
-    output.into_iter().collect()
+    twice.into_iter().map(decode).collect()
+}
+
+fn val(c: char) -> u32 {
+    match c {
+        'A' => 0,
+        'C' => 1,
+        'G' => 2,
+        _ => 3,
+    }
+}
+
+fn decode(mut hash: u32) -> String {
+    let mut res = "".to_string();
+    for _ in 0..10 {
+        res.push(match hash & 3 {
+            0 => 'A',
+            1 => 'C',
+            2 => 'G',
+            _ => 'T',
+        });
+        hash >>= 2;
+    }
+    res
 }
 // bit_manipulation hash_table
 #[test]

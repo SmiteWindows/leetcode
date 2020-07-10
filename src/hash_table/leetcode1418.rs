@@ -1,10 +1,41 @@
 // https://leetcode.com/problems/display-table-of-food-orders-in-a-restaurant/
+// Runtime: 120 ms
+// Memory Usage: 18.6 MB
+use std::collections::{BTreeSet, HashMap};
 pub fn display_table(orders: Vec<Vec<String>>) -> Vec<Vec<String>> {
-    todo!()
+    let mut tables = BTreeSet::new();
+    let mut foods: BTreeSet<&str> = BTreeSet::new();
+    let mut counts: HashMap<i32, HashMap<&str, usize>> = HashMap::new();
+    for order in &orders {
+        let table = order[1].parse::<i32>().unwrap();
+        let food = &order[2];
+        tables.insert(table);
+        foods.insert(food);
+        *counts.entry(table).or_default().entry(food).or_default() += 1;
+    }
+    let mut res = vec![vec!["Table".to_string()]];
+    for food in foods.iter() {
+        res[0].push((*food).to_string());
+    }
+    for table in tables {
+        let mut row = vec![table.to_string()];
+        for food in &foods {
+            if let Some(counts) = counts.get(&table) {
+                if let Some(count) = counts.get(food) {
+                    row.push(count.to_string());
+                } else {
+                    row.push("0".to_string());
+                }
+            } else {
+                row.push("0".to_string());
+            }
+        }
+        res.push(row);
+    }
+    res
 }
 // hash_table
 #[test]
-#[ignore]
 fn test1_1418() {
     assert_eq!(
         display_table(vec![
