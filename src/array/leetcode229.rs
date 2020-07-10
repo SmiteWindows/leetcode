@@ -10,13 +10,11 @@ pub fn majority_element(nums: Vec<i32>) -> Vec<i32> {
                 .into_iter()
                 .map(|p| (p.0, if p.0 == x { p.1 + 1 } else { p.1 }))
                 .collect();
+        } else if pairs.len() < 2 {
+            pairs.push((x, 1));
         } else {
-            if pairs.len() < 2 {
-                pairs.push((x, 1));
-            } else {
-                pairs = pairs.into_iter().map(|p| (p.0, p.1 - 1)).collect();
-                pairs = pairs.into_iter().filter(|p| p.1 > 0).collect();
-            }
+            pairs = pairs.into_iter().map(|p| (p.0, p.1 - 1)).collect();
+            pairs = pairs.into_iter().filter(|p| p.1 > 0).collect();
         }
     }
     let mut res = vec![];

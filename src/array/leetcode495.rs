@@ -8,8 +8,8 @@ pub fn find_poisoned_duration(time_series: Vec<i32>, duration: i32) -> i32 {
     }
     let mut start = time_series[0];
     let mut res = 0;
-    for i in 1..n {
-        let end = time_series[i];
+    for &time_serie in time_series.iter().take(n).skip(1) {
+        let end = time_serie;
         if start + duration > end {
             res += end - start;
         } else {

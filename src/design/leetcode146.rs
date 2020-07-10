@@ -85,7 +85,7 @@ impl List {
                 self.head = None;
                 self.tail = None;
             }
-            node.element.clone()
+            node.element
         })
     }
 
@@ -101,7 +101,7 @@ impl List {
             Some(next_node_ref) => next_node_ref.borrow_mut().prev = prev,
             None => self.tail = prev,
         }
-        node.element.clone()
+        node.element
     }
     fn iter(&self) -> ListIter {
         ListIter::new(self.head.clone(), self.tail.clone())
@@ -137,7 +137,7 @@ impl Iterator for ListIter {
         self.head.clone().map(|node_ref| {
             let node = node_ref.borrow();
             self.head = node.next.clone();
-            node.element.clone()
+            node.element
         })
     }
 }

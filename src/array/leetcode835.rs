@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/image-overlap/
+#![allow(clippy::many_single_char_names)]
 // Runtime: 8 ms
 // Memory Usage: 2.1 MB
 pub fn largest_overlap(a: Vec<Vec<i32>>, b: Vec<Vec<i32>>) -> i32 {

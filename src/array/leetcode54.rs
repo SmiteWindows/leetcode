@@ -25,53 +25,45 @@ pub fn spiral_order(matrix: Vec<Vec<i32>>) -> Vec<i32> {
             Right => {
                 if j < right {
                     j += 1;
+                } else if top < bottom {
+                    top += 1;
+                    direction = Down;
+                    i += 1;
                 } else {
-                    if top < bottom {
-                        top += 1;
-                        direction = Down;
-                        i += 1;
-                    } else {
-                        break;
-                    }
+                    break;
                 }
             }
             Down => {
                 if i < bottom {
                     i += 1;
+                } else if left < right {
+                    right -= 1;
+                    direction = Left;
+                    j -= 1;
                 } else {
-                    if left < right {
-                        right -= 1;
-                        direction = Left;
-                        j -= 1;
-                    } else {
-                        break;
-                    }
+                    break;
                 }
             }
             Left => {
                 if j > left {
                     j -= 1;
+                } else if top < bottom {
+                    bottom -= 1;
+                    direction = Up;
+                    i -= 1;
                 } else {
-                    if top < bottom {
-                        bottom -= 1;
-                        direction = Up;
-                        i -= 1;
-                    } else {
-                        break;
-                    }
+                    break;
                 }
             }
             Up => {
                 if i > top {
                     i -= 1;
+                } else if left < right {
+                    left += 1;
+                    direction = Right;
+                    j += 1;
                 } else {
-                    if left < right {
-                        left += 1;
-                        direction = Right;
-                        j += 1;
-                    } else {
-                        break;
-                    }
+                    break;
                 }
             }
         }

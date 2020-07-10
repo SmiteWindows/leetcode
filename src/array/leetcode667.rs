@@ -18,14 +18,12 @@ pub fn construct_array(n: i32, k: i32) -> Vec<i32> {
             }
             forward = !forward;
             k -= 1;
+        } else if forward {
+            res.push(l);
+            l += 1;
         } else {
-            if forward {
-                res.push(l);
-                l += 1;
-            } else {
-                res.push(r);
-                r -= 1;
-            }
+            res.push(r);
+            r -= 1;
         }
     }
     res

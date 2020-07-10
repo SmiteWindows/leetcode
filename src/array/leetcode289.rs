@@ -35,9 +35,9 @@ pub fn game_of_life(board: &mut Vec<Vec<i32>>) {
             board[i][j] = current.next(neighbors).to_i32();
         }
     }
-    for i in 0..n {
-        for j in 0..m {
-            board[i][j] = State::from_i32(board[i][j]).next(0).to_i32()
+    for bi in board.iter_mut().take(n) {
+        for bij in bi.iter_mut().take(m) {
+            *bij = State::from_i32(board[i][j]).next(0).to_i32()
         }
     }
 }

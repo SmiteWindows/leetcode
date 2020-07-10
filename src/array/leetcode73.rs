@@ -7,18 +7,18 @@ pub fn set_zeroes(matrix: &mut Vec<Vec<i32>>) {
     let mut col = HashSet::new();
     let n = matrix.len();
     let m = matrix[0].len();
-    for i in 0..n {
-        for j in 0..m {
-            if matrix[i][j] == 0 {
+    for (i, mi) in matrix.iter().enumerate().take(n) {
+        for (j, &mij) in mi.iter().enumerate().take(m) {
+            if mij == 0 {
                 row.insert(i);
                 col.insert(j);
             }
         }
     }
-    for i in 0..n {
-        for j in 0..m {
+    for (i, mi) in matrix.iter_mut().enumerate().take(n) {
+        for (j, mij) in mi.iter_mut().enumerate().take(m) {
             if row.contains(&i) || col.contains(&j) {
-                matrix[i][j] = 0;
+                *mij = 0;
             }
         }
     }
