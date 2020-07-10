@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/pyramid-transition-matrix/
+#[allow(clippy::many_single_char_names)]
 // Runtime: 4 ms
 // Memory Usage: 2.1 MB
 use std::collections::HashSet;

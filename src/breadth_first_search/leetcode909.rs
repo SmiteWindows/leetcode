@@ -27,15 +27,11 @@ pub fn snakes_and_ladders(board: Vec<Vec<i32>>) -> i32 {
         if i == n * n - 1 {
             return visited[i] as i32 - 1;
         } else {
-            for j in i + 1..=i + 6 {
+            for (j, &mj) in moves.iter().enumerate().take(i + 6 + 1).skip(i + 1) {
                 if j >= n * n {
                     break;
                 }
-                let k = if moves[j] == -1 {
-                    j
-                } else {
-                    (moves[j] - 1) as usize
-                };
+                let k = if mj == -1 { j } else { (mj - 1) as usize };
                 if visited[k] == 0 {
                     visited[k] = visited[i] + 1;
                     queue.push_back(k);

@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/coloring-a-border/
+#![allow(clippy::many_single_char_names)]
 // Runtime: 8 ms
 // Memory Usage: 2 MB
 pub fn color_border(grid: Vec<Vec<i32>>, r0: i32, c0: i32, color: i32) -> Vec<Vec<i32>> {
@@ -27,51 +28,43 @@ fn dfs(
     visited[i][j] = true;
     let top = if i == 0 {
         true
+    } else if grid[i - 1][j] != c_color {
+        !visited[i - 1][j]
     } else {
-        if grid[i - 1][j] != c_color {
-            !visited[i - 1][j]
-        } else {
-            if !visited[i - 1][j] {
-                dfs(i - 1, j, visited, grid, b_color, c_color, n, m);
-            }
-            false
+        if !visited[i - 1][j] {
+            dfs(i - 1, j, visited, grid, b_color, c_color, n, m);
         }
+        false
     };
     let left = if j == 0 {
         true
+    } else if grid[i][j - 1] != c_color {
+        !visited[i][j - 1]
     } else {
-        if grid[i][j - 1] != c_color {
-            !visited[i][j - 1]
-        } else {
-            if !visited[i][j - 1] {
-                dfs(i, j - 1, visited, grid, b_color, c_color, n, m);
-            }
-            false
+        if !visited[i][j - 1] {
+            dfs(i, j - 1, visited, grid, b_color, c_color, n, m);
         }
+        false
     };
     let down = if i + 1 == n {
         true
+    } else if grid[i + 1][j] != c_color {
+        !visited[i + 1][j]
     } else {
-        if grid[i + 1][j] != c_color {
-            !visited[i + 1][j]
-        } else {
-            if !visited[i + 1][j] {
-                dfs(i + 1, j, visited, grid, b_color, c_color, n, m);
-            }
-            false
+        if !visited[i + 1][j] {
+            dfs(i + 1, j, visited, grid, b_color, c_color, n, m);
         }
+        false
     };
     let right = if j + 1 == m {
         true
+    } else if grid[i][j + 1] != c_color {
+        !visited[i][j + 1]
     } else {
-        if grid[i][j + 1] != c_color {
-            !visited[i][j + 1]
-        } else {
-            if !visited[i][j + 1] {
-                dfs(i, j + 1, visited, grid, b_color, c_color, n, m);
-            }
-            false
+        if !visited[i][j + 1] {
+            dfs(i, j + 1, visited, grid, b_color, c_color, n, m);
         }
+        false
     };
     if top || left || down || right {
         grid[i][j] = b_color;

@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/number-of-enclaves/
+#![allow(clippy::many_single_char_names)]
 // Runtime: 16 ms
 // Memory Usage: 2.4 MB
 pub fn num_enclaves(a: Vec<Vec<i32>>) -> i32 {
@@ -13,9 +14,9 @@ pub fn num_enclaves(a: Vec<Vec<i32>>) -> i32 {
             }
         }
     }
-    for i in 0..n {
-        for j in 0..m {
-            if a[i][j] == 1 {
+    for ai in a.iter().take(n) {
+        for &aij in ai.iter().take(m) {
+            if aij == 1 {
                 res += 1;
             }
         }

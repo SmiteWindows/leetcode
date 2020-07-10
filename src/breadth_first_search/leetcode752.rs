@@ -45,8 +45,8 @@ fn s2x(s: String) -> u32 {
 
 fn x2s(x: u32) -> String {
     let mut v = vec![0_u8; 4];
-    for i in 0..4 {
-        v[i] = ((x >> (i * 8)) & 0xff) as u8;
+    for (i, vi) in v.iter_mut().enumerate().take(4) {
+        *vi = ((x >> (i * 8)) & 0xff) as u8;
     }
     v.into_iter().map(|b| (b + b'0') as char).collect()
 }

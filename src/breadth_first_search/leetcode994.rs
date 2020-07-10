@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/rotting-oranges/
+#![allow(clippy::many_single_char_names)]
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 use std::collections::VecDeque;
@@ -7,9 +8,9 @@ pub fn oranges_rotting(grid: Vec<Vec<i32>>) -> i32 {
     let n = grid.len();
     let m = grid[0].len();
     let mut queue = VecDeque::new();
-    for i in 0..n {
-        for j in 0..m {
-            if grid[i][j] == 2 {
+    for (i, gi) in grid.iter().enumerate().take(n) {
+        for (j, &gij) in gi.iter().enumerate().take(m) {
+            if gij == 2 {
                 queue.push_back(Orange { r: i, c: j, t: 0 });
             }
         }
@@ -56,9 +57,9 @@ pub fn oranges_rotting(grid: Vec<Vec<i32>>) -> i32 {
             });
         }
     }
-    for i in 0..n {
-        for j in 0..m {
-            if grid[i][j] == 1 {
+    for gi in grid.iter().take(n) {
+        for &gij in gi.iter().take(m) {
+            if gij == 1 {
                 return -1;
             }
         }

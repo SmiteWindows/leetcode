@@ -8,9 +8,9 @@ pub fn update_matrix(matrix: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
     let m = matrix[0].len();
     let mut visited = vec![vec![false; m]; n];
     let mut queue = VecDeque::new();
-    for i in 0..n {
-        for j in 0..m {
-            if matrix[i][j] == 0 {
+    for (i, mi) in matrix.iter().enumerate().take(n) {
+        for (j, &mij) in mi.iter().enumerate().take(m) {
+            if mij == 0 {
                 queue.push_back((i, j, 0));
             }
         }

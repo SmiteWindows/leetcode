@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/shortest-path-in-binary-matrix/
+#![allow(clippy::many_single_char_names)]
 // Runtime: 16 ms
 // Memory Usage: 2.1 MB
 use std::collections::VecDeque;
