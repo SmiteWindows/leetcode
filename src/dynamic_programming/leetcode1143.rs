@@ -7,9 +7,9 @@ pub fn longest_common_subsequence(text1: String, text2: String) -> i32 {
     let n1 = s1.len();
     let n2 = s2.len();
     let mut dp = vec![vec![0_usize; n2 + 1]; n1 + 1];
-    for i in 0..n1 {
-        for j in 0..n2 {
-            if s1[i] == s2[j] {
+    for (i, &s1i) in s1.iter().enumerate().take(n1) {
+        for (j, &s2j) in s2.iter().enumerate().take(n2) {
+            if s1i == s2j {
                 dp[i + 1][j + 1] = dp[i][j] + 1;
             } else {
                 dp[i + 1][j + 1] = dp[i][j + 1].max(dp[i + 1][j]);

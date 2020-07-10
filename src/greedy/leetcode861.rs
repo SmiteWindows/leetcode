@@ -15,8 +15,8 @@ pub fn matrix_score(a: Vec<Vec<i32>>) -> i32 {
 
 fn sum_col(j: usize, a: &[Vec<i32>], n: usize) -> usize {
     let mut res = 0;
-    for i in 0..n {
-        res += if a[i][j] == a[i][0] { 1 } else { 0 };
+    for ai in a.iter().take(n) {
+        res += if ai[j] == ai[0] { 1 } else { 0 };
     }
     res as usize
 }

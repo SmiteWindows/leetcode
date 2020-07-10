@@ -35,6 +35,7 @@ pub fn prison_after_n_days(cells: Vec<i32>, n: i32) -> Vec<i32> {
             } else {
                 seen.insert(state_bitmap, n);
             }
+            // seen.entry(state_bitmap).or_insert(n);
         }
         if n > 0 {
             state_bitmap = !(state_bitmap << 1) ^ (state_bitmap >> 1);

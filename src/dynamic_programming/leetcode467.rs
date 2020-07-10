@@ -5,8 +5,8 @@ pub fn find_substring_in_wrapround_string(p: String) -> i32 {
     let mut count = [0_usize; 26];
     let p = p.bytes().collect::<Vec<u8>>();
     let n = p.len();
-    for i in 0..n {
-        let j = (p[i] - b'a') as usize;
+    for &pi in p.iter().take(n) {
+        let j = (pi - b'a') as usize;
         count[j] = 1;
     }
     let mut l = 1;

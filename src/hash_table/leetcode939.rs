@@ -5,8 +5,8 @@ use std::collections::HashSet;
 pub fn min_area_rect(points: Vec<Vec<i32>>) -> i32 {
     let n = points.len();
     let mut hs = HashSet::new();
-    for i in 0..n {
-        hs.insert((points[i][0], points[i][1]));
+    for point in points.iter().take(n) {
+        hs.insert((point[0], point[1]));
     }
     let mut min = i32::MAX;
     for i in 0..n - 1 {

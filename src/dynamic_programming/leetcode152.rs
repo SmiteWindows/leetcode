@@ -6,9 +6,8 @@ pub fn max_product(nums: Vec<i32>) -> i32 {
     let mut res = nums[0];
     let mut min = res;
     let mut max = res;
-    let n = nums.len();
-    for i in 1..n {
-        let x = nums[i];
+    for &num in nums.iter().skip(1) {
+        let x = num;
         if x < 0 {
             swap(&mut min, &mut max);
         }

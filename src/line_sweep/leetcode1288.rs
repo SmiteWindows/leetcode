@@ -5,11 +5,10 @@ use std::cmp::Reverse;
 pub fn remove_covered_intervals(intervals: Vec<Vec<i32>>) -> i32 {
     let mut intervals = intervals;
     intervals.sort_by_key(|v| (v[0], Reverse(v[1])));
-    let n = intervals.len();
     let mut r = -1;
     let mut res = 0;
-    for i in 0..n {
-        let interval = &intervals[i];
+    for interval in intervals {
+        let interval = &interval;
         if interval[1] <= r {
             continue;
         } else {

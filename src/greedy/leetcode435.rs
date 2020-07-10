@@ -6,15 +6,14 @@ pub fn erase_overlap_intervals(intervals: Vec<Vec<i32>>) -> i32 {
     if intervals.is_empty() {
         return 0;
     }
-    let n = intervals.len();
     intervals.sort_by_key(|v| v[1]);
     let mut end = intervals[0][1];
     let mut res = 0;
-    for i in 1..n {
-        if intervals[i][0] < end {
+    for interval in intervals.iter().skip(1) {
+        if interval[0] < end {
             res += 1;
         } else {
-            end = intervals[i][1];
+            end = interval[1];
         }
     }
     res

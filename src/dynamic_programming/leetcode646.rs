@@ -3,13 +3,12 @@
 // Memory Usage: 2.2 MB
 pub fn find_longest_chain(pairs: Vec<Vec<i32>>) -> i32 {
     let mut pairs = pairs;
-    let n = pairs.len();
     pairs.sort_by_key(|p| p[1]);
     let mut res = 0;
     let mut cur = i32::MIN;
-    for i in 0..n {
-        if cur < pairs[i][0] {
-            cur = pairs[i][1];
+    for pair in pairs.iter() {
+        if cur < pair[0] {
+            cur = pair[1];
             res += 1;
         }
     }

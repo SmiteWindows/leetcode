@@ -16,8 +16,8 @@ fn rob_slice(v: &[i32]) -> i32 {
     let n = v.len();
     let mut prev = 0;
     let mut curr = 0;
-    for i in 0..n {
-        let temp = curr.max(v[i] + prev);
+    for vi in v.iter().take(n) {
+        let temp = curr.max(vi + prev);
         prev = curr;
         curr = temp;
     }

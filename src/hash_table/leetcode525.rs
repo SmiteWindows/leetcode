@@ -6,10 +6,9 @@ pub fn find_max_length(nums: Vec<i32>) -> i32 {
     let mut res = 0;
     let mut hm: HashMap<i32, usize> = HashMap::new();
     let mut diff = 0;
-    let n = nums.len();
     hm.entry(0).or_default();
-    for i in 0..n {
-        if nums[i] == 1 {
+    for (i, &num) in nums.iter().enumerate() {
+        if num == 1 {
             diff += 1;
         } else {
             diff -= 1;

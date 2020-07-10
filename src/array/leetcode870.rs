@@ -11,12 +11,12 @@ pub fn advantage_count(a: Vec<i32>, b: Vec<i32>) -> Vec<i32> {
     a.sort_unstable();
     b.sort_unstable_by_key(|p| p.1);
     let mut res = vec![0; n];
-    for i in 0..n {
-        if a[i] <= b[l].1 {
-            res[b[r].0] = a[i];
+    for &ai in a.iter().take(n) {
+        if ai <= b[l].1 {
+            res[b[r].0] = ai;
             r -= 1;
         } else {
-            res[b[l].0] = a[i];
+            res[b[l].0] = ai;
             l += 1;
         }
     }

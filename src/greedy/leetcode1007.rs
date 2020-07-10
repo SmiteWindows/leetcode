@@ -13,9 +13,9 @@ pub fn min_domino_rotations(a: Vec<i32>, b: Vec<i32>) -> i32 {
             count[x][2] += 1;
         }
     }
-    for i in 0..6 {
-        if count[i][0] + count[i][1] - count[i][2] >= n {
-            return (count[i][0].min(count[i][1]) - count[i][2]) as i32;
+    for ci in count.iter().take(6) {
+        if ci[0] + ci[1] - ci[2] >= n {
+            return (ci[0].min(ci[1]) - ci[2]) as i32;
         }
     }
     -1

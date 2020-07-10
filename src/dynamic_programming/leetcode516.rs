@@ -5,8 +5,8 @@ pub fn longest_palindrome_subseq(s: String) -> i32 {
     let s = s.chars().collect::<Vec<char>>();
     let n = s.len();
     let mut dp = vec![vec![0; n + 1]; n];
-    for i in 0..n {
-        dp[i][i + 1] = 1;
+    for (i, dpi) in dp.iter_mut().enumerate().take(n) {
+        dpi[i + 1] = 1;
     }
     for w in 2..=n {
         for i in 0..=n - w {

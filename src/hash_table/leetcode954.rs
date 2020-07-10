@@ -21,21 +21,21 @@ pub fn can_reorder_doubled(a: Vec<i32>) -> bool {
     if zero % 2 != 0 || nonzero[0].len() % 2 != 0 || nonzero[1].len() % 2 != 0 {
         return false;
     }
-    for i in 0..2 {
-        nonzero[i].sort_unstable();
-        let size = nonzero[i].len();
+    for nz in nonzero.iter_mut().take(2) {
+        nz.sort_unstable();
+        let size = nz.len();
         let mut fast = 0;
         for slow in 0..size {
-            if nonzero[i][slow] == 0 {
+            if nz[slow] == 0 {
                 continue;
             } else {
-                while fast < size && nonzero[i][fast] != 2 * nonzero[i][slow] {
+                while fast < size && nz[fast] != 2 * nz[slow] {
                     fast += 1;
                 }
                 if fast == size {
                     return false;
                 } else {
-                    nonzero[i][fast] = 0;
+                    nz[fast] = 0;
                 }
             }
         }

@@ -20,7 +20,7 @@ pub fn matrix_block_sum(mat: Vec<Vec<i32>>, k: i32) -> Vec<Vec<i32>> {
             }
         }
     }
-    for i in 0..n {
+    for (i, resi) in res.iter_mut().enumerate().take(n) {
         for j in 0..m {
             let l = j as i32 - k;
             let r = j as i32 + k;
@@ -30,7 +30,7 @@ pub fn matrix_block_sum(mat: Vec<Vec<i32>>, k: i32) -> Vec<Vec<i32>> {
             let r = if r >= m as i32 { m - 1 } else { r as usize };
             let t = if t < 0 { 0 } else { t as usize };
             let b = if b >= n as i32 { n - 1 } else { b as usize };
-            res[i][j] = sum(t, l, b, r, &prefix);
+            resi[j] = sum(t, l, b, r, &prefix);
         }
     }
     res

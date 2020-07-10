@@ -23,9 +23,9 @@ pub fn knight_dialer(n: i32) -> i32 {
     let mut res = 10;
     for i in 1..n {
         res = 0;
-        for j in 0..10 {
+        for (j, mj) in map.iter().enumerate().take(10) {
             let mut sum = 0;
-            for &k in &map[j] {
+            for &k in mj {
                 sum += dp[(i - 1) % 2][k];
                 sum %= max;
             }
