@@ -68,21 +68,12 @@ impl Connect for i32 {
 // depth_first_search breadth_first_search
 #[test]
 fn test1_1391() {
+    assert_eq!(has_valid_path(vec![vec![2, 4, 3], vec![6, 5, 2]]), true);
+    assert_eq!(has_valid_path(vec![vec![1, 2, 1], vec![1, 2, 1]]), false);
+    assert_eq!(has_valid_path(vec![vec![1, 1, 2]]), false);
+    assert_eq!(has_valid_path(vec![vec![1, 1, 1, 1, 1, 1, 3]]), true);
     assert_eq!(
-        Solution::has_valid_path(vec![vec![2, 4, 3], vec![6, 5, 2]]),
-        true
-    );
-    assert_eq!(
-        Solution::has_valid_path(vec![vec![1, 2, 1], vec![1, 2, 1]]),
-        false
-    );
-    assert_eq!(Solution::has_valid_path(vec![vec![1, 1, 2]]), false);
-    assert_eq!(
-        Solution::has_valid_path(vec![vec![1, 1, 1, 1, 1, 1, 3]]),
-        true
-    );
-    assert_eq!(
-        Solution::has_valid_path(vec![
+        has_valid_path(vec![
             vec![2],
             vec![2],
             vec![2],

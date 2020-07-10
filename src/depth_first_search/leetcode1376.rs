@@ -7,14 +7,14 @@ pub fn num_of_minutes(n: i32, head_id: i32, manager: Vec<i32>, inform_time: Vec<
     let n = n as usize;
     let mut res = 0;
     for i in 0..n {
-        res = res.max(Self::dfs(i, &mut manager, &mut inform_time));
+        res = res.max(dfs(i, &mut manager, &mut inform_time));
     }
     res
 }
 
 fn dfs(i: usize, manager: &mut Vec<i32>, inform_time: &mut Vec<i32>) -> i32 {
     if manager[i] != -1 {
-        inform_time[i] += Self::dfs(manager[i] as usize, manager, inform_time);
+        inform_time[i] += dfs(manager[i] as usize, manager, inform_time);
         manager[i] = -1;
     }
     inform_time[i]
