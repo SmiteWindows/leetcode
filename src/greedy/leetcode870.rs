@@ -1,12 +1,12 @@
 // https://leetcode.com/problems/advantage-shuffle/
-#[allow(clippy::many_single_char_names)]
+#![allow(clippy::many_single_char_names)]
 // Runtime: 24 ms
 // Memory Usage: 2.5 MB
 type Pair = (usize, i32);
 pub fn advantage_count(a: Vec<i32>, b: Vec<i32>) -> Vec<i32> {
     let mut a = a;
     let n = a.len();
-    let mut b: Vec<Pair> = b.into_iter().enumerate().collect();
+    let mut b = b.into_iter().enumerate().collect::<Vec<Pair>>();
     let mut l = 0;
     let mut r = n - 1;
     a.sort_unstable();
