@@ -25,14 +25,10 @@ fn num_of_families(row_bitset: u16) -> usize {
     let right = 0b0000011110;
     if row_bitset & two == 0 {
         2
+    } else if row_bitset & mid == 0 || row_bitset & left == 0 || row_bitset & right == 0 {
+        1
     } else {
-        if row_bitset & mid == 0 {
-            1
-        } else if row_bitset & left == 0 || row_bitset & right == 0 {
-            1
-        } else {
-            0
-        }
+        0
     }
 }
 // greedy array
