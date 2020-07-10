@@ -1,10 +1,30 @@
 // https://leetcode.com/problems/next-permutation/
+// Runtime: 0 ms
+// Memory Usage: 1.9 MB
 pub fn next_permutation(nums: &mut Vec<i32>) {
-    todo!()
+    let n = nums.len();
+    let mut i = n - 1;
+    while i > 0 && nums[i - 1] >= nums[i] {
+        i -= 1;
+    }
+    let mut j = i;
+    let mut k = n - 1;
+    while j < k {
+        nums.swap(j, k);
+        j += 1;
+        k -= 1;
+    }
+    if i > 0 {
+        k = i;
+        i -= 1;
+        while nums[k] <= nums[i] {
+            k += 1;
+        }
+        nums.swap(i, k)
+    }
 }
 // array
 #[test]
-#[ignore]
 fn test1_31() {
     let mut nums1 = vec![1, 2, 3];
     next_permutation(&mut nums1);

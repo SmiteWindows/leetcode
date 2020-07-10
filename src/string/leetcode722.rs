@@ -1,4 +1,6 @@
 // https://leetcode.com/problems/remove-comments/
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
 pub fn remove_comments(source: Vec<String>) -> Vec<String> {
     let mut in_block = false;
     let mut line = "".to_string();

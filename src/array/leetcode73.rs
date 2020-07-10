@@ -1,10 +1,30 @@
 // https://leetcode.com/problems/set-matrix-zeroes/
+// Runtime: 8 ms
+// Memory Usage: 2.4 MB
+use std::collections::HashSet;
 pub fn set_zeroes(matrix: &mut Vec<Vec<i32>>) {
-    todo!()
+    let mut row = HashSet::new();
+    let mut col = HashSet::new();
+    let n = matrix.len();
+    let m = matrix[0].len();
+    for i in 0..n {
+        for j in 0..m {
+            if matrix[i][j] == 0 {
+                row.insert(i);
+                col.insert(j);
+            }
+        }
+    }
+    for i in 0..n {
+        for j in 0..m {
+            if row.contains(&i) || col.contains(&j) {
+                matrix[i][j] = 0;
+            }
+        }
+    }
 }
 // array
 #[test]
-#[ignore]
 fn test1_73() {
     let mut nums1 = vec![vec![1, 1, 1], vec![1, 0, 1], vec![1, 1, 1]];
     set_zeroes(&mut nums1);
