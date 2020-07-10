@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/prison-cells-after-n-days/
 // Runtime: 0 ms
-// Memory Usage: 2 MB
+// Memory Usage: 2.1 MB
 use std::collections::HashMap;
 pub fn prison_after_n_days(cells: Vec<i32>, n: i32) -> Vec<i32> {
     // let mut cells = cells;
@@ -29,13 +29,12 @@ pub fn prison_after_n_days(cells: Vec<i32>, n: i32) -> Vec<i32> {
     }
     while n > 0 {
         if !fast_forwarded {
-            if seen.contains_key(&state_bitmap) {
-                n %= seen[&state_bitmap] - n;
-                fast_forwarded = true;
-            } else {
-                seen.insert(state_bitmap, n);
-            }
-            // seen.entry(state_bitmap).or_insert(n);
+            seen.entry(state_bitmap)
+                .and_modify(|e| {
+                    n %= *e - n;
+                    fast_forwarded = true;
+                })
+                .or_insert(n);
         }
         if n > 0 {
             state_bitmap = !(state_bitmap << 1) ^ (state_bitmap >> 1);
