@@ -41,8 +41,8 @@ fn dfs(
         let mut words = vec![];
         for &(l, r) in cur.iter() {
             let mut word = "".to_string();
-            for i in l..=r {
-                word.push(s[i] as char);
+            for &si in s.iter().take(r + 1).skip(l) {
+                word.push(si as char);
             }
             words.push(word);
         }
