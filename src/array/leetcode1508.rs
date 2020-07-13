@@ -1,10 +1,29 @@
 // https://leetcode.com/problems/range-sum-of-sorted-subarray-sums/
+// Runtime: 52 ms
+// Memory Usage: 4.1 MB
+const MOD: i64 = 1_000_000_007;
 pub fn range_sum(nums: Vec<i32>, n: i32, left: i32, right: i32) -> i32 {
-    todo!()
+    let mut sums = vec![];
+    let n = n as usize;
+    for i in 0..n {
+        let k = sums.len();
+        for j in 0..i {
+            sums.push(sums[k - 1 - j] + nums[i]);
+        }
+        sums.push(nums[i]);
+    }
+    sums.sort_unstable();
+    let mut res = 0;
+    let start = left as usize - 1;
+    let end = right as usize;
+    for i in start..end {
+        res += sums[i] as i64;
+        res %= MOD;
+    }
+    res as i32
 }
 // array sort
 #[test]
-#[ignore]
 fn test1_1508() {
     assert_eq!(range_sum(vec![1, 2, 3, 4], 4, 1, 5), 13);
     assert_eq!(range_sum(vec![1, 2, 3, 4], 4, 3, 4), 6);
