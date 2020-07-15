@@ -154,6 +154,6 @@ fn test4_126() {
                 String::from("log")
             ]
         ),
-        vec![vec![String::new()]]
+        vec![] as Vec<Vec<String>>
     );
 }
