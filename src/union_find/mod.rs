@@ -20,5 +20,3 @@ pub mod leetcode947;
 pub mod leetcode952;
 pub mod leetcode959;
 pub mod leetcode990;
-// hard:128 305 685 765 778 803 839 924 928 952 1168
-// medium:130 200 261 323 399 547 684 721 737 947 959 990 1061 1101 1102 1135 1202 1319

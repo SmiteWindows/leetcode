@@ -22,7 +22,7 @@ struct UnionFind {
 impl UnionFind {
     fn new(n: usize) -> Self {
         let parents = (0..n).collect();
-        UnionFind { parents, n }
+        Self { parents, n }
     }
 
     fn find(&mut self, i: usize) -> usize {
