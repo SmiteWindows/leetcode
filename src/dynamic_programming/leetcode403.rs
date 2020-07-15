@@ -25,18 +25,16 @@ fn dp(
     }
     let res = if start + k == end {
         true
-    } else {
-        if stones.contains(&(start + k)) {
-            if k - 1 > 0 {
-                dp(start + k, k + 1, memo, stones, end)
-                    || dp(start + k, k, memo, stones, end)
-                    || dp(start + k, k - 1, memo, stones, end)
-            } else {
-                dp(start + k, k + 1, memo, stones, end) || dp(start + k, k, memo, stones, end)
-            }
+    } else if stones.contains(&(start + k)) {
+        if k - 1 > 0 {
+            dp(start + k, k + 1, memo, stones, end)
+                || dp(start + k, k, memo, stones, end)
+                || dp(start + k, k - 1, memo, stones, end)
         } else {
-            false
+            dp(start + k, k + 1, memo, stones, end) || dp(start + k, k, memo, stones, end)
         }
+    } else {
+        false
     };
     memo.insert((start, k), res);
     res

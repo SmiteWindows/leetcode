@@ -84,13 +84,11 @@ fn dfs(
 ) {
     if start == end {
         all.push(path.to_vec());
-    } else {
-        if let Some(nei) = map.get(start) {
-            for next in nei.iter() {
-                path.push(next.to_string());
-                dfs(next, path, all, map, end);
-                path.pop();
-            }
+    } else if let Some(nei) = map.get(start) {
+        for next in nei.iter() {
+            path.push(next.to_string());
+            dfs(next, path, all, map, end);
+            path.pop();
         }
     }
 }
