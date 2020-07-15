@@ -112,19 +112,21 @@ fn connected_words(word: &str) -> Vec<String> {
 // string backtracking array breadth_first_search
 #[test]
 fn test4_126() {
-    assert_eq!(
-        find_ladders(
-            String::from("hit"),
+    let mut a = find_ladders(
+        String::from("hit"),
+        String::from("cog"),
+        vec![
+            String::from("hot"),
+            String::from("dot"),
+            String::from("dog"),
+            String::from("lot"),
+            String::from("log"),
             String::from("cog"),
-            vec![
-                String::from("hot"),
-                String::from("dot"),
-                String::from("dog"),
-                String::from("lot"),
-                String::from("log"),
-                String::from("cog")
-            ]
-        ),
+        ],
+    );
+    a.sort();
+    assert_eq!(
+        a,
         vec![
             vec![
                 String::from("hit"),
@@ -139,7 +141,7 @@ fn test4_126() {
                 String::from("lot"),
                 String::from("log"),
                 String::from("cog")
-            ]
+            ],
         ]
     );
     assert_eq!(
