@@ -24,18 +24,16 @@ fn dp(
     }
     let res = if d == 1 {
         *jobs[start..n].iter().max().unwrap()
+    } else if start + d == n {
+        jobs[start..start + d].iter().sum()
     } else {
-        if start + d == n {
-            jobs[start..start + d].iter().sum()
-        } else {
-            let mut min = i32::MAX;
-            let mut max = 0;
-            for i in start..=(n - d) {
-                max = max.max(jobs[i]);
-                min = min.min(max + dp(i + 1, d - 1, memo, jobs, n));
-            }
-            min
+        let mut min = i32::MAX;
+        let mut max = 0;
+        for i in start..=(n - d) {
+            max = max.max(jobs[i]);
+            min = min.min(max + dp(i + 1, d - 1, memo, jobs, n));
         }
+        min
     };
     memo.insert((start, d), res);
     res
