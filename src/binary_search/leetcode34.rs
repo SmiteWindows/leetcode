@@ -11,7 +11,7 @@ pub fn search_range(nums: Vec<i32>, target: i32) -> Vec<i32> {
                 l -= 1;
             }
             while r + 1 < n && nums[r + 1] == target {
-                r -= 1;
+                r += 1;
             }
             vec![l as i32, r as i32]
         }
