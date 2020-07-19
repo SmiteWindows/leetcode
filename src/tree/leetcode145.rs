@@ -1,28 +1,21 @@
 // https://leetcode.com/problems/binary-tree-postorder-traversal/
 // Runtime: 0 ms
-// Memory Usage: 1.9 MB
+// Memory Usage: 2.1 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn postorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
-    let mut stack = Vec::new();
-    let mut res = Vec::new();
-    if root.is_none() {
-        return res;
-    }
-    stack.push(root);
-    while !stack.is_empty() {
-        let node = stack.pop().expect("exist").expect("exist");
-        let node = node.borrow();
-        res.insert(0, node.val);
-        if node.left.is_some() {
-            stack.push(node.left.clone());
-        }
-        if node.right.is_some() {
-            stack.push(node.right.clone());
-        }
-    }
+    let mut res = vec![];
+    postorder(root.as_deref(), &mut res);
     res
 }
 
+fn postorder(root: Option<&RefCell<TreeNode>>, nodes: &mut Vec<i32>) {
+    if let Some(node) = root {
+        let node = node.borrow();
+        postorder(node.left.as_deref(), nodes);
+        postorder(node.right.as_deref(), nodes);
+        nodes.push(node.val);
+    }
+}
 // Definition for a binary tree node.
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
