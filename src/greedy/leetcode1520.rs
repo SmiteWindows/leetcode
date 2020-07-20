@@ -50,6 +50,6 @@ fn test1_1520() {
     );
     assert_eq!(
         max_num_of_substrings("abbaccd".to_string()),
-        vec!["d".to_string(), "bb".to_string(), "cc".to_string()]
+        vec![ "bb".to_string(), "cc".to_string(), "d".to_string()]
     );
 }
