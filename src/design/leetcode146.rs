@@ -103,6 +103,7 @@ impl List {
         }
         node.element
     }
+
     fn iter(&self) -> ListIter {
         ListIter::new(self.head.clone(), self.tail.clone())
     }

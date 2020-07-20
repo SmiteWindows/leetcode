@@ -5,8 +5,8 @@ pub fn two_city_sched_cost(costs: Vec<Vec<i32>>) -> i32 {
     let n = costs.len();
     let mut diffs = costs.iter().map(|v| v[0] - v[1]).collect::<Vec<_>>();
     diffs.sort_unstable();
-    let sum_of_b = costs.iter().fold(0, |sum, v| sum + v[1]);
-    let sum_of_diff: i32 = diffs.iter().take(n / 2).sum();
+    let sum_of_b = costs.iter().map(|v| v[1]).sum::<i32>();
+    let sum_of_diff = diffs.iter().take(n / 2).sum::<i32>();
     sum_of_b + sum_of_diff
 }
 // greedy

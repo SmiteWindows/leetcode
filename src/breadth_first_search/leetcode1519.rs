@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/number-of-nodes-in-the-sub-tree-with-the-same-label/
-// Runtime: 116 ms
-// Memory Usage: 43 MB
+// Runtime: 84 ms
+// Memory Usage: 22.6 MB
 pub fn count_sub_trees(n: i32, edges: Vec<Vec<i32>>, labels: String) -> Vec<i32> {
     let n = n as usize;
     let mut adj = vec![vec![]; n];
@@ -11,33 +11,31 @@ pub fn count_sub_trees(n: i32, edges: Vec<Vec<i32>>, labels: String) -> Vec<i32>
         adj[v].push(u);
     }
     let mut visited = vec![false; n];
+    let mut counts: Vec<usize> = vec![0; 26];
     let mut res = vec![0; n];
     let labels = labels.bytes().collect::<Vec<u8>>();
-    visited[0] = true;
-    dfs(0, &mut visited, &mut res, &adj, &labels);
+    dfs(0, &mut visited, &mut counts, &mut res, &adj, &labels);
     res
 }
 
 fn dfs(
     u: usize,
     visited: &mut Vec<bool>,
+    counts: &mut Vec<usize>,
     sizes: &mut Vec<i32>,
     adj: &[Vec<usize>],
     labels: &[u8],
-) -> [i32; 26] {
-    let mut count = [0; 26];
-    count[(labels[u] - b'a') as usize] = 1;
+) {
+    visited[u] = true;
+    let i = (labels[u] - b'a') as usize;
+    let last_count = counts[i];
+    counts[i] += 1;
     for &v in adj[u].iter() {
         if !visited[v] {
-            visited[v] = true;
-            let subtree = dfs(v, visited, sizes, adj, labels);
-            for i in 0..26 {
-                count[i] += subtree[i];
-            }
+            dfs(v, visited, counts, sizes, adj, labels);
         }
     }
-    sizes[u] = count[(labels[u] - b'a') as usize];
-    count
+    sizes[u] = (counts[i] - last_count) as i32;
 }
 // breadth_first_search depth_first_search
 #[test]
