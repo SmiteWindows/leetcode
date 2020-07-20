@@ -3,11 +3,11 @@
 // Memory Usage: 2.1 MB
 pub fn total_n_queens(n: i32) -> i32 {
     let n = n as usize;
-    let mut colum: u32 = 0;
+    let mut column: u32 = 0;
     let mut diagonal1: u32 = 0;
     let mut diagonal2: u32 = 0;
     let mut res = 0;
-    dfs(0, &mut colum, &mut diagonal1, &mut diagonal2, &mut res, n);
+    dfs(0, &mut column, &mut diagonal1, &mut diagonal2, &mut res, n);
     res
 }
 

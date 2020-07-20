@@ -1,10 +1,46 @@
 // https://leetcode.com/problems/number-of-nodes-in-the-sub-tree-with-the-same-label/
+// Runtime: 116 ms
+// Memory Usage: 43 MB
 pub fn count_sub_trees(n: i32, edges: Vec<Vec<i32>>, labels: String) -> Vec<i32> {
-    todo!()
+    let n = n as usize;
+    let mut adj = vec![vec![]; n];
+    for e in edges {
+        let u = e[0] as usize;
+        let v = e[1] as usize;
+        adj[u].push(v);
+        adj[v].push(u);
+    }
+    let mut visited = vec![false; n];
+    let mut res = vec![0; n];
+    let labels = labels.bytes().collect::<Vec<u8>>();
+    visited[0] = true;
+    dfs(0, &mut visited, &mut res, &adj, &labels);
+    res
+}
+
+fn dfs(
+    u: usize,
+    visited: &mut Vec<bool>,
+    sizes: &mut Vec<i32>,
+    adj: &[Vec<usize>],
+    labels: &[u8],
+) -> [i32; 26] {
+    let mut count = [0; 26];
+    count[(labels[u] - b'a') as usize] = 1;
+    for &v in adj[u].iter() {
+        if !visited[v] {
+            visited[v] = true;
+            let subtree = dfs(v, visited, sizes, adj, labels);
+            for i in 0..26 {
+                count[i] += subtree[i];
+            }
+        }
+    }
+    sizes[u] = count[(labels[u] - b'a') as usize];
+    count
 }
 // breadth_first_search depth_first_search
 #[test]
-#[ignore]
 fn test2_1519() {
     assert_eq!(
         count_sub_trees(
