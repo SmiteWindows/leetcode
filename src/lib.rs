@@ -23,7 +23,6 @@ pub mod graph;
 pub mod greedy;
 pub mod hash_table;
 pub mod heap;
-pub mod helper;
 pub mod line_sweep;
 pub mod linked_list;
 pub mod math;

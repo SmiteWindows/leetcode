@@ -47,7 +47,7 @@ impl Cashier {
 // design
 #[test]
 fn test() {
-    use crate::assert_approx_eq;
+    use leetcode_prelude::assert_approx_eq;
     let mut cashier = Cashier::new(
         3,
         50,

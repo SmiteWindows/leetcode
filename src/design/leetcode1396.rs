@@ -49,7 +49,7 @@ impl UndergroundSystem {
 // design
 #[test]
 fn test1_1396() {
-    use crate::assert_approx_eq;
+    use leetcode_prelude::assert_approx_eq;
     let mut obj = UndergroundSystem::new();
     obj.check_in(45, "Leyton".to_string(), 3);
     obj.check_in(32, "Paradise".to_string(), 8);

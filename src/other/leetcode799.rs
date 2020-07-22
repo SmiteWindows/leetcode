@@ -20,7 +20,7 @@ pub fn champagne_tower(poured: i32, query_row: i32, query_glass: i32) -> f64 {
 }
 #[test]
 fn test799() {
-    use crate::assert_approx_eq;
+    use leetcode_prelude::assert_approx_eq;
     assert_approx_eq!(champagne_tower(1, 1, 1), 0.0);
     assert_approx_eq!(champagne_tower(2, 1, 1), 0.5);
 }
