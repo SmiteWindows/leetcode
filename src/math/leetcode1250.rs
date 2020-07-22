@@ -4,8 +4,8 @@
 pub fn is_good_array(nums: Vec<i32>) -> bool {
     let mut res = nums[0];
     let n = nums.len();
-    for i in 0..n {
-        res = gcd(res, nums[i]);
+    for &num in nums.iter().take(n) {
+        res = gcd(res, num);
         if res == 1 {
             return true;
         }

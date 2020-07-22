@@ -39,8 +39,8 @@ fn dp(
 fn distance(start: usize, end: usize, houses: &[i32]) -> i32 {
     let mut sum = 0;
     let median = (houses[(start + end - 1) / 2] + houses[(start + end) / 2]) / 2;
-    for i in start..end {
-        sum += (houses[i] - median).abs();
+    for house in houses.iter().take(end).skip(start) {
+        sum += (house - median).abs();
     }
     sum
 }

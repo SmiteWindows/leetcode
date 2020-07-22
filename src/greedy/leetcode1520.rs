@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/maximum-number-of-non-overlapping-substrings/
+#[allow(clippy::many_single_char_names)]
 // Runtime: 16 ms
 // Memory Usage: 2.3 MB
 pub fn max_num_of_substrings(s: String) -> Vec<String> {
@@ -6,8 +7,8 @@ pub fn max_num_of_substrings(s: String) -> Vec<String> {
     let s = s.bytes().collect::<Vec<u8>>();
     let mut l = vec![usize::MAX; 26];
     let mut r = vec![usize::MIN; 26];
-    for i in 0..n {
-        let j = (s[i] - b'a') as usize;
+    for (i, si) in s.iter().enumerate().take(n) {
+        let j = (si - b'a') as usize;
         l[j] = l[j].min(i);
         r[j] = r[j].max(i);
     }
@@ -50,6 +51,6 @@ fn test1_1520() {
     );
     assert_eq!(
         max_num_of_substrings("abbaccd".to_string()),
-        vec![ "bb".to_string(), "cc".to_string(), "d".to_string()]
+        vec!["bb".to_string(), "cc".to_string(), "d".to_string()]
     );
 }

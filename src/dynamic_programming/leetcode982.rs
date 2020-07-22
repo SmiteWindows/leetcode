@@ -11,9 +11,9 @@ pub fn count_triplets(a: Vec<i32>) -> i32 {
         }
     }
     let mut res = 0;
-    for i in 0..n {
+    for &ai in a.iter().take(n) {
         for (&k, &v) in hm.iter() {
-            if a[i] & k == 0 {
+            if ai & k == 0 {
                 res += v;
             }
         }
