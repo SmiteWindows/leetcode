@@ -15,7 +15,7 @@ impl BSTIterator {
 
     /** @return the next smallest number */
     fn next(&mut self) -> i32 {
-        let curr = self.stack.pop().expect("exist");
+        let curr = self.stack.pop().unwrap();
         let val = curr.borrow().val;
         self.push_all_left(curr.borrow().right.as_ref().map(Rc::clone));
         val

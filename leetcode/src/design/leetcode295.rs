@@ -16,18 +16,18 @@ impl MedianFinder {
 
     fn add_num(&mut self, num: i32) {
         self.hi.push(Reverse(num));
-        let smallest = self.hi.pop().expect("exist").0;
+        let smallest = self.hi.pop().unwrap().0;
         self.lo.push(smallest);
         if self.lo.len() > self.hi.len() + 1 {
-            self.hi.push(Reverse(self.lo.pop().expect("exist")));
+            self.hi.push(Reverse(self.lo.pop().unwrap()));
         }
     }
 
     fn find_median(&self) -> f64 {
         if (self.hi.len() + self.lo.len()) % 2 == 0 {
-            (self.hi.peek().expect("exist").0 + *self.lo.peek().expect("exist")) as f64 / 2.0
+            (self.hi.peek().unwrap().0 + *self.lo.peek().unwrap()) as f64 / 2.0
         } else {
-            *self.lo.peek().expect("exist") as f64
+            *self.lo.peek().unwrap() as f64
         }
     }
 }

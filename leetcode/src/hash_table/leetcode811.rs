@@ -6,12 +6,12 @@ pub fn subdomain_visits(cpdomains: Vec<String>) -> Vec<String> {
     fn parse(s: String) -> (Vec<String>, usize) {
         let mut domains: Vec<String> = vec![];
         let mut iter = s.split_whitespace();
-        let count: usize = iter.next().expect("exist").parse::<usize>().expect("exist");
+        let count: usize = iter.next().unwrap().parse::<usize>().unwrap();
         let domain: String = iter
             .next()
-            .expect("exist")
+            .unwrap()
             .parse::<String>()
-            .expect("exist");
+            .unwrap();
         for (i, c) in domain.chars().enumerate() {
             if c == '.' {
                 let subdomain = &domain[i + 1..];

@@ -21,12 +21,12 @@ impl MyStack {
 
     /** Removes the element on top of the stack and returns that element. */
     fn pop(&mut self) -> i32 {
-        self.queue.pop_back().expect("exist")
+        self.queue.pop_back().unwrap()
     }
 
     /** Get the top element. */
     fn top(&self) -> i32 {
-        *self.queue.back().expect("exist")
+        *self.queue.back().unwrap()
     }
 
     /** Returns whether the stack is empty. */

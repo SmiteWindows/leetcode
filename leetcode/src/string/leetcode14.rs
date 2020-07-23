@@ -9,7 +9,7 @@ pub fn longest_common_prefix(strs: Vec<String>) -> String {
         .iter()
         .map(|s| s.chars().collect::<Vec<_>>())
         .collect::<Vec<_>>();
-    let n = ss.iter().map(|s| s.len()).min().expect("exist");
+    let n = ss.iter().map(|s| s.len()).min().unwrap();
     let mut prefix = vec![];
     for i in 0..n {
         let c = ss[0][i];

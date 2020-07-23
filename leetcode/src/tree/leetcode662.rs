@@ -19,7 +19,7 @@ fn preorder(
     if let Some(node) = root {
         let node = node.borrow();
         left_map.entry(depth).or_insert(pos);
-        *res = (pos - left_map.get(&depth).expect("exist") + 1).max(*res);
+        *res = (pos - left_map.get(&depth).unwrap() + 1).max(*res);
         preorder(node.left.as_deref(), depth + 1, pos * 2, res, left_map);
         preorder(node.right.as_deref(), depth + 1, pos * 2 + 1, res, left_map);
     }

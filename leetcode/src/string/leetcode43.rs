@@ -10,9 +10,9 @@ pub fn multiply(num1: String, num2: String) -> String {
     let n3 = n1 + n2;
     let mut res = vec![0; n3];
     for (i, c1) in num1.char_indices().rev() {
-        let c1 = c1.to_digit(10).expect("exist");
+        let c1 = c1.to_digit(10).unwrap();
         for (j, c2) in num2.char_indices().rev() {
-            let c2 = c2.to_digit(10).expect("exist");
+            let c2 = c2.to_digit(10).unwrap();
             let sum = res[i + j + 1] + c1 * c2;
             res[i + j + 1] = sum % 10;
             res[i + j] += sum / 10;

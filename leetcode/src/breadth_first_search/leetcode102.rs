@@ -12,7 +12,7 @@ pub fn level_order(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<i32>> {
             res.push(Vec::new());
             let level_length = queue.len();
             for i in 0..level_length {
-                let n = queue.pop_front().expect("exist").expect("exist");
+                let n = queue.pop_front().unwrap().unwrap();
                 let n = n.borrow();
                 res[level].push(n.val);
                 if n.left.is_some() {

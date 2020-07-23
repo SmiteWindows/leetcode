@@ -22,8 +22,8 @@ impl FreqStack {
     }
 
     fn pop(&mut self) -> i32 {
-        let max_stack: &mut Vec<i32> = self.stacks.get_mut(&self.max_freq).expect("exist");
-        let x = max_stack.pop().expect("exist");
+        let max_stack: &mut Vec<i32> = self.stacks.get_mut(&self.max_freq).unwrap();
+        let x = max_stack.pop().unwrap();
         *self.freq.entry(x).or_default() -= 1;
         if max_stack.is_empty() {
             self.max_freq -= 1;

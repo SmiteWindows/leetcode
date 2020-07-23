@@ -13,15 +13,15 @@ pub fn reorder_list(head: &mut Option<Box<ListNode>>) {
     let mut direction = true;
     while !deque.is_empty() {
         if direction {
-            stack.push(deque.pop_front().expect("exist"));
+            stack.push(deque.pop_front().unwrap());
         } else {
-            stack.push(deque.pop_back().expect("exist"));
+            stack.push(deque.pop_back().unwrap());
         }
         direction = !direction;
     }
     let mut prev: Option<Box<ListNode>> = None;
     while let Some(last) = stack.pop() {
-        let mut node = last.expect("exist");
+        let mut node = last.unwrap();
         node.next = prev;
         prev = Some(node);
     }

@@ -11,9 +11,9 @@ pub fn min_depth(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     }
     let mut current_depth = 0;
     while !stack.is_empty() {
-        let (node, depth) = stack.pop_front().expect("exist");
+        let (node, depth) = stack.pop_front().unwrap();
         current_depth = depth;
-        let node = node.expect("exist");
+        let node = node.unwrap();
         let node = node.borrow();
         if node.left.is_none() && node.right.is_none() {
             break;

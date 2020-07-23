@@ -23,9 +23,9 @@ struct Email {
 impl Email {
     fn new(s: String) -> Self {
         let mut iter = s.split('@');
-        let left = iter.next().expect("exist").to_string();
-        let domain_name = iter.next().expect("exist").to_string();
-        let mut local_name = left.split('+').next().expect("exist").to_string();
+        let left = iter.next().unwrap().to_string();
+        let domain_name = iter.next().unwrap().to_string();
+        let mut local_name = left.split('+').next().unwrap().to_string();
         local_name.retain(|c| c != '.');
         Self {
             local_name,

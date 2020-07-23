@@ -7,7 +7,7 @@ pub fn freq_alphabets(s: String) -> String {
     while let Some(c) = u.pop() {
         let d = match c {
             '#' => {
-                (u.pop().expect("exist") as u8 - b'0') + 10 * (u.pop().expect("exist") as u8 - b'0')
+                (u.pop().unwrap() as u8 - b'0') + 10 * (u.pop().unwrap() as u8 - b'0')
             }
             _ => c as u8 - b'0',
         } - 1;

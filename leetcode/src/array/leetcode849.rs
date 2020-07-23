@@ -19,8 +19,8 @@ pub fn max_dist_to_closest(seats: Vec<i32>) -> i32 {
             last = Some(i);
         }
     }
-    max = max.max(first.expect("exist"));
-    max = max.max(n - 1 - last.expect("exist"));
+    max = max.max(first.unwrap());
+    max = max.max(n - 1 - last.unwrap());
     max as i32
 }
 // array

@@ -16,7 +16,7 @@ fn count(root: Option<&RefCell<TreeNode>>) -> i32 {
 }
 
 fn helper(root: Option<&RefCell<TreeNode>>, k: i32) -> i32 {
-    let node = root.expect("exist").borrow();
+    let node = root.unwrap().borrow();
     let n = count(node.left.as_deref());
     match (n + 1).cmp(&k) {
         Ordering::Equal => node.val,

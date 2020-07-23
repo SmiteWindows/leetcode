@@ -2,8 +2,8 @@
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn smallest_range_i(a: Vec<i32>, k: i32) -> i32 {
-    let max = a.iter().max().expect("exist");
-    let min = a.iter().min().expect("exist");
+    let max = a.iter().max().unwrap();
+    let min = a.iter().min().unwrap();
     (max - min - 2 * k).max(0)
 }
 // math

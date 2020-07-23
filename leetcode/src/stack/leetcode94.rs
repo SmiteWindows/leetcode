@@ -12,7 +12,7 @@ pub fn inorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
             stack.push(Some(node));
             curr = left;
         }
-        let node = stack.pop().expect("exist").expect("exist");
+        let node = stack.pop().unwrap().unwrap();
         res.push(node.borrow_mut().val);
         curr = node.borrow_mut().right.take();
     }

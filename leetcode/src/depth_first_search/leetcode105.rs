@@ -15,7 +15,7 @@ fn helper(preorder: &[i32], inorder: &[i32]) -> Option<Rc<RefCell<TreeNode>>> {
     let i = inorder
         .iter()
         .position(|&x| x == preorder[0])
-        .expect("exist");
+        .unwrap();
     root.as_deref()?.borrow_mut().left = helper(&preorder[1..=i], &inorder[0..i]);
     root.as_deref()?.borrow_mut().right = helper(&preorder[i + 1..len], &inorder[i + 1..len]);
     root

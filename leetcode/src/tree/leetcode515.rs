@@ -13,7 +13,7 @@ pub fn largest_values(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
         let len = queue.len();
         let mut max_value = i32::MIN;
         for i in 0..len {
-            let tmp = queue.pop_front().expect("exist").expect("exist");
+            let tmp = queue.pop_front().unwrap().unwrap();
             let tmp = tmp.borrow();
             max_value = tmp.val.max(max_value);
             if tmp.left.is_some() {

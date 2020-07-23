@@ -7,15 +7,15 @@ pub fn is_symmetric(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
     queue.push(root.clone());
     queue.push(root);
     while !queue.is_empty() {
-        let t1 = queue.pop().expect("exist");
-        let t2 = queue.pop().expect("exist");
+        let t1 = queue.pop().unwrap();
+        let t2 = queue.pop().unwrap();
         if t1.is_none() && t2.is_none() {
             continue;
         }
         if t1.is_none() || t2.is_none() {
             return false;
         }
-        let (t1, t2) = (t1.expect("exist"), t2.expect("exist"));
+        let (t1, t2) = (t1.unwrap(), t2.unwrap());
         let (t1, t2) = (t1.borrow(), t2.borrow());
         if t1.val != t2.val {
             return false;

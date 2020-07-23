@@ -18,7 +18,7 @@ impl Solution {
             .iter()
             .map(|v| (v[2] - v[0] + 1) * (v[3] - v[1] + 1))
             .collect::<Vec<_>>();
-        let dist = WeightedIndex::new(weights).expect("exist");
+        let dist = WeightedIndex::new(weights).unwrap();
         Self {
             rects,
             rng,

@@ -13,7 +13,7 @@ fn is_same(s: Option<&RefCell<TreeNode>>, t: Option<&RefCell<TreeNode>>) -> bool
     if s.is_none() || t.is_none() {
         return false;
     }
-    let (sn, tn) = (s.expect("exist").borrow(), t.expect("exist").borrow());
+    let (sn, tn) = (s.unwrap().borrow(), t.unwrap().borrow());
     if sn.val != tn.val {
         false
     } else {
@@ -29,7 +29,7 @@ fn helper(s: Option<&RefCell<TreeNode>>, t: Option<&RefCell<TreeNode>>) -> bool 
     if is_same(s, t) {
         true
     } else {
-        let sn = s.expect("exist").borrow();
+        let sn = s.unwrap().borrow();
         helper(sn.left.as_deref(), t) || helper(sn.right.as_deref(), t)
     }
 }

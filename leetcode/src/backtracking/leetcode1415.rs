@@ -10,7 +10,7 @@ pub fn get_happy_string(n: i32, k: i32) -> String {
     if all.len() < k {
         "".to_string()
     } else {
-        all.pop().expect("exist")
+        all.pop().unwrap()
     }
 }
 

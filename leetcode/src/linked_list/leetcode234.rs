@@ -16,17 +16,17 @@ pub fn is_palindrome(head: Option<Box<ListNode>>) -> bool {
     let mut second;
     let mid = len / 2;
     for _ in 1..mid {
-        first = &mut first.as_mut().expect("exist").next;
+        first = &mut first.as_mut().unwrap().next;
     }
     if len % 2 == 0 {
-        second = first.as_mut().expect("exist").next.take();
+        second = first.as_mut().unwrap().next.take();
     } else {
         second = first
             .as_mut()
-            .expect("exist")
+            .unwrap()
             .next
             .take()
-            .expect("exist")
+            .unwrap()
             .next
             .take();
     }

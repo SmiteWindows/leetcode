@@ -13,7 +13,7 @@ pub fn is_n_straight_hand(hand: Vec<i32>, w: i32) -> bool {
     let w = w as usize;
     let mut queue: VecDeque<(i32, usize)> = VecDeque::from_iter(btm);
     while !queue.is_empty() {
-        let first = queue.pop_front().expect("exist");
+        let first = queue.pop_front().unwrap();
         let mut stack = vec![];
         for i in 1..w {
             if let Some(front) = queue.pop_front() {

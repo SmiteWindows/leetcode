@@ -3,9 +3,9 @@
 // Memory Usage: 2.1 MB
 pub fn day_of_year(date: String) -> i32 {
     let a = date.split_terminator('-').collect::<Vec<_>>();
-    let year = a[0].parse::<usize>().expect("exist");
-    let month = a[1].parse::<usize>().expect("exist");
-    let day = a[2].parse::<usize>().expect("exist");
+    let year = a[0].parse::<usize>().unwrap();
+    let month = a[1].parse::<usize>().unwrap();
+    let day = a[2].parse::<usize>().unwrap();
     let mut days = vec![31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
     let mut sum = 0;
     if is_leap(year) {

@@ -11,7 +11,7 @@ pub fn dominant_index(nums: Vec<i32>) -> i32 {
     if copy[n - 1] < 2 * copy[n - 2] {
         -1
     } else {
-        nums.iter().position(|&x| x == copy[n - 1]).expect("exist") as i32
+        nums.iter().position(|&x| x == copy[n - 1]).unwrap() as i32
     }
 }
 // array

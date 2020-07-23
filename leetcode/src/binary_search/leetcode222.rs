@@ -27,8 +27,8 @@ pub fn count_nodes(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
 
 fn compute_depth(mut root: Option<Rc<RefCell<TreeNode>>>) -> u32 {
     let mut d = 0;
-    while root.as_ref().expect("exist").borrow().left.is_some() {
-        let left = root.as_ref().expect("exist").borrow().left.clone();
+    while root.as_ref().unwrap().borrow().left.is_some() {
+        let left = root.as_ref().unwrap().borrow().left.clone();
         root = left;
         d += 1;
     }

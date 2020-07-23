@@ -10,7 +10,7 @@ pub fn preorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
     }
     stack.push(root);
     while !stack.is_empty() {
-        let node = stack.pop().expect("exist").expect("exist");
+        let node = stack.pop().unwrap().unwrap();
         let node = node.borrow();
         res.push(node.val);
         if node.right.is_some() {

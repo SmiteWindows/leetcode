@@ -20,7 +20,7 @@ pub fn shortest_completing_word(license_plate: String, words: Vec<String>) -> St
             }
         }
     }
-    min.expect("exist")
+    min.unwrap()
 }
 
 struct Count {

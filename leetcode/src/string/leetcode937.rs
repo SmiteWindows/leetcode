@@ -5,12 +5,12 @@ use std::cmp::Ordering::{Equal, Greater, Less};
 pub fn reorder_log_files(logs: Vec<String>) -> Vec<String> {
     let mut logs = logs;
     logs.sort_by(|a, b| {
-        let i = a.find(' ').expect("exist");
-        let j = b.find(' ').expect("exist");
+        let i = a.find(' ').unwrap();
+        let j = b.find(' ').unwrap();
         let ar = &a[i + 1..];
         let br = &b[j + 1..];
-        let ac = a.chars().last().expect("exist");
-        let bc = b.chars().last().expect("exist");
+        let ac = a.chars().last().unwrap();
+        let bc = b.chars().last().unwrap();
         match (ac.is_digit(10), bc.is_digit(10)) {
             (true, true) => Equal,
             (true, false) => Greater,

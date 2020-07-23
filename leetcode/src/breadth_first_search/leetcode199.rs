@@ -12,7 +12,7 @@ pub fn right_side_view(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
     while !queue.is_empty() {
         let len = queue.len();
         for i in 0..len {
-            let node = queue.pop_front().expect("exist").expect("exist");
+            let node = queue.pop_front().unwrap().unwrap();
             let node = node.borrow();
             if node.left.is_some() {
                 queue.push_back(node.left.clone());

@@ -12,18 +12,8 @@ impl CBTInserter {
         stack.push(root);
         let mut i = 0;
         while i < stack.len() {
-            let left = stack[i]
-                .as_deref()
-                .expect("exist")
-                .borrow_mut()
-                .left
-                .clone();
-            let right = stack[i]
-                .as_deref()
-                .expect("exist")
-                .borrow_mut()
-                .right
-                .clone();
+            let left = stack[i].as_deref().unwrap().borrow_mut().left.clone();
+            let right = stack[i].as_deref().unwrap().borrow_mut().right.clone();
             if left.is_some() {
                 stack.push(left);
             }
@@ -39,10 +29,7 @@ impl CBTInserter {
         let link = Some(Rc::new(RefCell::new(TreeNode::new(v))));
         let n = self.stack.len();
         self.stack.push(link.clone());
-        let mut parent = self.stack[(n - 1) / 2]
-            .as_deref()
-            .expect("exist")
-            .borrow_mut();
+        let mut parent = self.stack[(n - 1) / 2].as_deref().unwrap().borrow_mut();
         if n % 2 == 1 {
             parent.left = link;
         } else {

@@ -13,7 +13,7 @@ pub fn level_order_bottom(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<i32>> 
         let mut tmp = Vec::new();
         let len = queue.len();
         for i in 0..len {
-            let node = queue.pop_front().expect("exist").expect("exist");
+            let node = queue.pop_front().unwrap().unwrap();
             let node = node.borrow();
             tmp.push(node.val);
             if node.left.is_some() {
