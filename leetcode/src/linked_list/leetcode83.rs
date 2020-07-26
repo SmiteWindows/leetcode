@@ -30,37 +30,40 @@ impl ListNode {
 // linked_list
 #[test]
 fn test1_83() {
-    let l1 = Some(Box::new(ListNode {
-        val: 1,
-        next: Some(Box::new(ListNode {
-            val: 1,
-            next: Some(Box::new(ListNode {
-                val: 2,
-                next: Some(Box::new(ListNode {
-                    val: 3,
-                    next: Some(Box::new(ListNode { val: 3, next: None })),
-                })),
-            })),
-        })),
-    }));
-    let l2 = Some(Box::new(ListNode {
-        val: 1,
-        next: Some(Box::new(ListNode {
-            val: 2,
-            next: Some(Box::new(ListNode { val: 3, next: None })),
-        })),
-    }));
-    let l3 = Some(Box::new(ListNode {
-        val: 1,
-        next: Some(Box::new(ListNode {
-            val: 1,
-            next: Some(Box::new(ListNode { val: 2, next: None })),
-        })),
-    }));
-    let l4 = Some(Box::new(ListNode {
-        val: 1,
-        next: Some(Box::new(ListNode { val: 2, next: None })),
-    }));
-    assert_eq!(l2, delete_duplicates(l1));
-    assert_eq!(l4, delete_duplicates(l3));
+    use leetcode_prelude::list;
+    assert_eq!(delete_duplicates(list![1, 1, 2]), list![1, 2]);
+    assert_eq!(delete_duplicates(list![1, 1, 2, 3, 3]), list![1, 2, 3]);
+    // let l1 = Some(Box::new(ListNode {
+    //     val: 1,
+    //     next: Some(Box::new(ListNode {
+    //         val: 1,
+    //         next: Some(Box::new(ListNode {
+    //             val: 2,
+    //             next: Some(Box::new(ListNode {
+    //                 val: 3,
+    //                 next: Some(Box::new(ListNode { val: 3, next: None })),
+    //             })),
+    //         })),
+    //     })),
+    // }));
+    // let l2 = Some(Box::new(ListNode {
+    //     val: 1,
+    //     next: Some(Box::new(ListNode {
+    //         val: 2,
+    //         next: Some(Box::new(ListNode { val: 3, next: None })),
+    //     })),
+    // }));
+    // let l3 = Some(Box::new(ListNode {
+    //     val: 1,
+    //     next: Some(Box::new(ListNode {
+    //         val: 1,
+    //         next: Some(Box::new(ListNode { val: 2, next: None })),
+    //     })),
+    // }));
+    // let l4 = Some(Box::new(ListNode {
+    //     val: 1,
+    //     next: Some(Box::new(ListNode { val: 2, next: None })),
+    // }));
+    // assert_eq!(l2, delete_duplicates(l1));
+    // assert_eq!(l4, delete_duplicates(l3));
 }
