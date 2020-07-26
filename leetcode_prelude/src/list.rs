@@ -36,13 +36,13 @@ impl fmt::Debug for ListNode {
 /// # Example
 ///
 /// ```rust
-/// use leetcode_prelude::linked_list;
+/// use leetcode_prelude::list;
 /// use leetcode_prelude::ListNode;
 ///
-/// let list = linked_list![1, 2, 3];
+/// let list = slist![1, 2, 3];
 /// ```
 #[macro_export]
-macro_rules! linked_list {
+macro_rules! list {
     () => {
         None
     };

@@ -1,13 +1,14 @@
-pub use btree::TreeNode;
-pub use linked_list::ListNode;
+#![warn(rust_2018_idioms)]
+pub use list::ListNode;
+pub use tree::TreeNode;
 
-mod btree;
-mod linked_list;
+mod list;
+mod tree;
 
 /// Create a Vec<String>
 #[macro_export]
 macro_rules! vec_string {
-    ($($e:expr), *) => {vec![$($e.to_owned()), *]};
+    ($($e:expr), *) => {vec![$($e.to_string()), *]};
 }
 
 #[macro_export]

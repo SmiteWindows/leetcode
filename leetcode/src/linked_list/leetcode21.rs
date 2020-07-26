@@ -35,35 +35,40 @@ impl ListNode {
 // linked_list
 #[test]
 fn test1_21() {
-    let l1 = Some(Box::new(ListNode {
-        val: 1,
-        next: Some(Box::new(ListNode {
-            val: 2,
-            next: Some(Box::new(ListNode { val: 4, next: None })),
-        })),
-    }));
-    let l2 = Some(Box::new(ListNode {
-        val: 1,
-        next: Some(Box::new(ListNode {
-            val: 3,
-            next: Some(Box::new(ListNode { val: 4, next: None })),
-        })),
-    }));
-    let res = Some(Box::new(ListNode {
-        val: 1,
-        next: Some(Box::new(ListNode {
-            val: 1,
-            next: Some(Box::new(ListNode {
-                val: 2,
-                next: Some(Box::new(ListNode {
-                    val: 3,
-                    next: Some(Box::new(ListNode {
-                        val: 4,
-                        next: Some(Box::new(ListNode { val: 4, next: None })),
-                    })),
-                })),
-            })),
-        })),
-    }));
-    assert_eq!(merge_two_lists(l1, l2), res);
+    use leetcode_prelude::list;
+    assert_eq!(
+        merge_two_lists(list![1, 2, 4], list![1, 3, 4]),
+        list![1, 1, 2, 3, 4, 4]
+    );
+    // let l1 = Some(Box::new(ListNode {
+    //     val: 1,
+    //     next: Some(Box::new(ListNode {
+    //         val: 2,
+    //         next: Some(Box::new(ListNode { val: 4, next: None })),
+    //     })),
+    // }));
+    // let l2 = Some(Box::new(ListNode {
+    //     val: 1,
+    //     next: Some(Box::new(ListNode {
+    //         val: 3,
+    //         next: Some(Box::new(ListNode { val: 4, next: None })),
+    //     })),
+    // }));
+    // let res = Some(Box::new(ListNode {
+    //     val: 1,
+    //     next: Some(Box::new(ListNode {
+    //         val: 1,
+    //         next: Some(Box::new(ListNode {
+    //             val: 2,
+    //             next: Some(Box::new(ListNode {
+    //                 val: 3,
+    //                 next: Some(Box::new(ListNode {
+    //                     val: 4,
+    //                     next: Some(Box::new(ListNode { val: 4, next: None })),
+    //                 })),
+    //             })),
+    //         })),
+    //     })),
+    // }));
+    // assert_eq!(merge_two_lists(l1, l2), res);
 }

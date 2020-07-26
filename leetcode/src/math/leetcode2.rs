@@ -80,10 +80,10 @@ impl ListNode {
 // linked_list math
 #[test]
 fn test2_2() {
-    use leetcode_prelude::linked_list;
+    use leetcode_prelude::list;
     assert_eq!(
-        add_two_numbers(linked_list![2, 4, 3], linked_list![5, 6, 4]),
-        linked_list![7, 0, 8]
+        add_two_numbers(list![2, 4, 3], list![5, 6, 4]),
+        list![7, 0, 8]
     );
     // let l1 = Some(Box::new(ListNode {
     //     val: 2,
