@@ -1,5 +1,5 @@
 fn main() {
     println!("Hello, Rust!");
     println!("Hello, LeetCode!");
-    println!("1527");
+    println!("1531");
 }

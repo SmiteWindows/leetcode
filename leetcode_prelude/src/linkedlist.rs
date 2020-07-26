@@ -50,13 +50,10 @@ macro_rules! linkedlist {
         {
             let mut head = Box::new(ListNode::new(0));
             let mut ref_head = &mut head;
-
             $(
             ref_head.next = Some(Box::new(ListNode::new($e)));
             ref_head = ref_head.next.as_mut().unwrap();
             )*
-
-            // let _ = ref_head; // 避免 `unused_assignments`
             head.next
         }
     };

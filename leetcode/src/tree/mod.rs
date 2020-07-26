@@ -38,6 +38,7 @@ pub mod leetcode1448;
 pub mod leetcode145;
 pub mod leetcode1457;
 pub mod leetcode1466;
+pub mod leetcode1530;
 pub mod leetcode173;
 pub mod leetcode199;
 pub mod leetcode222;
