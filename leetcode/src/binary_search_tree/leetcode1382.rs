@@ -50,27 +50,33 @@ impl TreeNode {
 // binary_search_tree
 #[test]
 fn test1_1382() {
-    let root = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: None,
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 2,
-            left: None,
-            right: Some(Rc::new(RefCell::new(TreeNode {
-                val: 3,
-                left: None,
-                right: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
-            }))),
-        }))),
-    })));
-    let res = Some(Rc::new(RefCell::new(TreeNode {
-        val: 3,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 2,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-            right: None,
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
-    })));
-    assert_eq!(res, balance_bst(root));
+    use leetcode_prelude::btree;
+    assert_eq!(
+        balance_bst(btree![1, null, 2, null, 3, null, 4, null, null]),
+        btree![3, 2, 4, 1] // btree![2, 1, 3, null, null, null, 4]
+                           // btree![3, 1, 4, null, 2, null, null]
+    );
+    // let root = Some(Rc::new(RefCell::new(TreeNode {
+    //     val: 1,
+    //     left: None,
+    //     right: Some(Rc::new(RefCell::new(TreeNode {
+    //         val: 2,
+    //         left: None,
+    //         right: Some(Rc::new(RefCell::new(TreeNode {
+    //             val: 3,
+    //             left: None,
+    //             right: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
+    //         }))),
+    //     }))),
+    // })));
+    // let res = Some(Rc::new(RefCell::new(TreeNode {
+    //     val: 3,
+    //     left: Some(Rc::new(RefCell::new(TreeNode {
+    //         val: 2,
+    //         left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
+    //         right: None,
+    //     }))),
+    //     right: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
+    // })));
+    // assert_eq!(res, balance_bst(root));
 }

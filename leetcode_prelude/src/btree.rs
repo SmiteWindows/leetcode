@@ -72,8 +72,22 @@ mod tests {
     use super::*;
     #[test]
     fn test() {
-        let btree = btree![-1, 2, 3, null];
-        println!("{:#?}", btree);
+        assert_eq!(
+            btree![1, null, 2, null, 3, null, 4, null, null],
+            Some(Rc::new(RefCell::new(TreeNode {
+                val: 1,
+                left: None,
+                right: Some(Rc::new(RefCell::new(TreeNode {
+                    val: 2,
+                    left: None,
+                    right: Some(Rc::new(RefCell::new(TreeNode {
+                        val: 3,
+                        left: None,
+                        right: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
+                    }))),
+                }))),
+            })))
+        );
         assert_eq!(
             btree![1, null, 2],
             Some(Rc::new(RefCell::new(TreeNode {
@@ -90,6 +104,22 @@ mod tests {
             btree![1, 2, 3],
             Some(Rc::new(RefCell::new(TreeNode {
                 val: 1,
+                left: Some(Rc::new(RefCell::new(TreeNode {
+                    val: 2,
+                    left: None,
+                    right: None,
+                }))),
+                right: Some(Rc::new(RefCell::new(TreeNode {
+                    val: 3,
+                    left: None,
+                    right: None,
+                })))
+            })))
+        );
+        assert_eq!(
+            btree![-1, 2, 3, null],
+            Some(Rc::new(RefCell::new(TreeNode {
+                val: -1,
                 left: Some(Rc::new(RefCell::new(TreeNode {
                     val: 2,
                     left: None,

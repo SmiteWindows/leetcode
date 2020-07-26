@@ -43,6 +43,11 @@ impl ListNode {
 // linked_list math
 #[test]
 fn test1_2() {
+    use leetcode_prelude::linked_list;
+    assert_eq!(
+        add_two_numbers(linked_list![2, 4, 3], linked_list![5, 6, 4]),
+        linked_list![7, 0, 8]
+    );
     // let l1 = Some(Box::new(ListNode {
     //     val: 2,
     //     next: Some(Box::new(ListNode {
@@ -65,9 +70,4 @@ fn test1_2() {
     //     })),
     // }));
     // assert_eq!(res, add_two_numbers(l1, l2));
-    use leetcode_prelude::linkedlist;
-    assert_eq!(
-        add_two_numbers(linkedlist![2, 4, 3], linkedlist![5, 6, 4]),
-        linkedlist![7, 0, 8]
-    );
 }

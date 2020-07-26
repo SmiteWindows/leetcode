@@ -1,8 +1,8 @@
 pub use btree::TreeNode;
-pub use linkedlist::ListNode;
+pub use linked_list::ListNode;
 
 mod btree;
-mod linkedlist;
+mod linked_list;
 
 /// Create a Vec<String>
 #[macro_export]

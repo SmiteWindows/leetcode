@@ -35,6 +35,8 @@ impl ListNode {
 // linked_list two_pointers
 #[test]
 fn test1_19() {
+    // use leetcode_prelude::linked_list;
+    // assert_eq!(remove_nth_from_end(linked_list!))
     let l1 = Some(Box::new(ListNode {
         val: 1,
         next: Some(Box::new(ListNode {
