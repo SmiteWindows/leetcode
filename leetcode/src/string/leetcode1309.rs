@@ -6,9 +6,7 @@ pub fn freq_alphabets(s: String) -> String {
     let mut u = s.chars().collect::<Vec<_>>();
     while let Some(c) = u.pop() {
         let d = match c {
-            '#' => {
-                (u.pop().unwrap() as u8 - b'0') + 10 * (u.pop().unwrap() as u8 - b'0')
-            }
+            '#' => (u.pop().unwrap() as u8 - b'0') + 10 * (u.pop().unwrap() as u8 - b'0'),
             _ => c as u8 - b'0',
         } - 1;
         v.insert(0, (b'a' + d) as char);

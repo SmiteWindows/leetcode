@@ -7,11 +7,7 @@ pub fn subdomain_visits(cpdomains: Vec<String>) -> Vec<String> {
         let mut domains: Vec<String> = vec![];
         let mut iter = s.split_whitespace();
         let count: usize = iter.next().unwrap().parse::<usize>().unwrap();
-        let domain: String = iter
-            .next()
-            .unwrap()
-            .parse::<String>()
-            .unwrap();
+        let domain: String = iter.next().unwrap().parse::<String>().unwrap();
         for (i, c) in domain.chars().enumerate() {
             if c == '.' {
                 let subdomain = &domain[i + 1..];

@@ -21,14 +21,7 @@ pub fn is_palindrome(head: Option<Box<ListNode>>) -> bool {
     if len % 2 == 0 {
         second = first.as_mut().unwrap().next.take();
     } else {
-        second = first
-            .as_mut()
-            .unwrap()
-            .next
-            .take()
-            .unwrap()
-            .next
-            .take();
+        second = first.as_mut().unwrap().next.take().unwrap().next.take();
     }
     let mut prev = None;
     let mut cur = head;
