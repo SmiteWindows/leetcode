@@ -39,7 +39,7 @@ impl fmt::Debug for ListNode {
 /// use leetcode_prelude::list;
 /// use leetcode_prelude::ListNode;
 ///
-/// let list = slist![1, 2, 3];
+/// let list = list![1, 2, 3];
 /// ```
 #[macro_export]
 macro_rules! list {
