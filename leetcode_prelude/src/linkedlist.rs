@@ -23,7 +23,7 @@ impl fmt::Debug for ListNode {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         let mut v = vec![self.val];
         let mut p = self;
-        while let Some(next) = p.next.as_ref() {
+        while let Some(next) = p.next.as_deref() {
             v.push(next.val);
             p = next;
         }
@@ -37,6 +37,7 @@ impl fmt::Debug for ListNode {
 ///
 /// ```rust
 /// use leetcode_prelude::linkedlist;
+/// use leetcode_prelude::ListNode;
 ///
 /// let list = linkedlist![1, 2, 3];
 /// ```
@@ -47,15 +48,15 @@ macro_rules! linkedlist {
     };
     ($($e:expr), *) => {
         {
-            let mut head = Box::new($crate::ListNode::new(0));
+            let mut head = Box::new(ListNode::new(0));
             let mut ref_head = &mut head;
 
             $(
-            ref_head.next = Some(Box::new($crate::ListNode::new($e)));
+            ref_head.next = Some(Box::new(ListNode::new($e)));
             ref_head = ref_head.next.as_mut().unwrap();
             )*
 
-            let _ = ref_head; // 避免 `unused_assignments`
+            // let _ = ref_head; // 避免 `unused_assignments`
             head.next
         }
     };
