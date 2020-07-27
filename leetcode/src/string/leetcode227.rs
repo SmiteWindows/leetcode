@@ -82,17 +82,11 @@ enum Tok {
 
 impl Tok {
     fn is_expr_op(self) -> bool {
-        match self {
-            Op('+') | Op('-') => true, // TODO
-            _ => false,
-        }
+        matches!(self, Op('+') | Op('-'))
     }
 
     fn is_factor_op(self) -> bool {
-        match self {
-            Op('*') | Op('/') => true, // TODO
-            _ => false,
-        }
+        matches!(self, Op('*') | Op('/'))
     }
 
     fn val(self) -> Option<i32> {

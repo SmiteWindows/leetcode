@@ -27,10 +27,7 @@ pub fn reverse_vowels(s: String) -> String {
 }
 
 fn is_vowel(c: char) -> bool {
-    match c {
-        'a' | 'e' | 'i' | 'o' | 'u' | 'A' | 'E' | 'I' | 'O' | 'U' => true,
-        _ => false,
-    }
+    matches!(c, 'a' | 'e' | 'i' | 'o' | 'u' | 'A' | 'E' | 'I' | 'O' | 'U')
 }
 // string two_pointers
 #[test]

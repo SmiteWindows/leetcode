@@ -20,11 +20,7 @@ pub fn max_vowels(s: String, k: i32) -> i32 {
 }
 
 fn is_vowel(c: char) -> bool {
-    if let 'a' | 'e' | 'i' | 'o' | 'u' = c {
-        true
-    } else {
-        false
-    }
+    matches!(c, 'a' | 'e' | 'i' | 'o' | 'u')
 }
 // string sliding_window
 #[test]

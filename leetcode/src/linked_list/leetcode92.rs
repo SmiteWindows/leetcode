@@ -51,58 +51,63 @@ impl ListNode {
 // linked_list
 #[test]
 fn test1_92() {
-    let l1 = Some(Box::new(ListNode {
-        val: 1,
-        next: Some(Box::new(ListNode {
-            val: 2,
-            next: Some(Box::new(ListNode {
-                val: 3,
-                next: Some(Box::new(ListNode {
-                    val: 4,
-                    next: Some(Box::new(ListNode { val: 5, next: None })),
-                })),
-            })),
-        })),
-    }));
-    let l2 = Some(Box::new(ListNode {
-        val: 1,
-        next: Some(Box::new(ListNode {
-            val: 4,
-            next: Some(Box::new(ListNode {
-                val: 3,
-                next: Some(Box::new(ListNode {
-                    val: 2,
-                    next: Some(Box::new(ListNode { val: 5, next: None })),
-                })),
-            })),
-        })),
-    }));
-    let l3 = Some(Box::new(ListNode {
-        val: 1,
-        next: Some(Box::new(ListNode {
-            val: 2,
-            next: Some(Box::new(ListNode {
-                val: 3,
-                next: Some(Box::new(ListNode {
-                    val: 4,
-                    next: Some(Box::new(ListNode { val: 5, next: None })),
-                })),
-            })),
-        })),
-    }));
-    let l4 = Some(Box::new(ListNode {
-        val: 1,
-        next: Some(Box::new(ListNode {
-            val: 2,
-            next: Some(Box::new(ListNode {
-                val: 3,
-                next: Some(Box::new(ListNode {
-                    val: 4,
-                    next: Some(Box::new(ListNode { val: 5, next: None })),
-                })),
-            })),
-        })),
-    }));
-    assert_eq!(l2, reverse_between(l1, 2, 4));
-    assert_eq!(l4, reverse_between(l3, 2, 2));
+    use leetcode_prelude::list;
+    assert_eq!(
+        reverse_between(list![1, 2, 3, 4, 5], 2, 4),
+        list![1, 4, 3, 2, 5]
+    );
+    // let l1 = Some(Box::new(ListNode {
+    //     val: 1,
+    //     next: Some(Box::new(ListNode {
+    //         val: 2,
+    //         next: Some(Box::new(ListNode {
+    //             val: 3,
+    //             next: Some(Box::new(ListNode {
+    //                 val: 4,
+    //                 next: Some(Box::new(ListNode { val: 5, next: None })),
+    //             })),
+    //         })),
+    //     })),
+    // }));
+    // let l2 = Some(Box::new(ListNode {
+    //     val: 1,
+    //     next: Some(Box::new(ListNode {
+    //         val: 4,
+    //         next: Some(Box::new(ListNode {
+    //             val: 3,
+    //             next: Some(Box::new(ListNode {
+    //                 val: 2,
+    //                 next: Some(Box::new(ListNode { val: 5, next: None })),
+    //             })),
+    //         })),
+    //     })),
+    // }));
+    // let l3 = Some(Box::new(ListNode {
+    //     val: 1,
+    //     next: Some(Box::new(ListNode {
+    //         val: 2,
+    //         next: Some(Box::new(ListNode {
+    //             val: 3,
+    //             next: Some(Box::new(ListNode {
+    //                 val: 4,
+    //                 next: Some(Box::new(ListNode { val: 5, next: None })),
+    //             })),
+    //         })),
+    //     })),
+    // }));
+    // let l4 = Some(Box::new(ListNode {
+    //     val: 1,
+    //     next: Some(Box::new(ListNode {
+    //         val: 2,
+    //         next: Some(Box::new(ListNode {
+    //             val: 3,
+    //             next: Some(Box::new(ListNode {
+    //                 val: 4,
+    //                 next: Some(Box::new(ListNode { val: 5, next: None })),
+    //             })),
+    //         })),
+    //     })),
+    // }));
+    // assert_eq!(l2, reverse_between(l1, 2, 4));
+    // assert_eq!(l4, reverse_between(l3, 2, 2));
 }

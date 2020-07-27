@@ -22,10 +22,10 @@ fn postorder(root: Option<Rc<RefCell<TreeNode>>>, all: &mut usize, distance: i32
         } else {
             let l = postorder(left, all, distance);
             let r = postorder(right, all, distance);
-            for i in 0..9 {
-                for j in 0..9 {
+            for (i, &li) in l.iter().enumerate().take(9) {
+                for (j, &rj) in r.iter().enumerate().take(9) {
                     if i + j <= (distance - 2) as usize {
-                        *all += l[i] * r[j];
+                        *all += li * rj;
                     }
                 }
             }
