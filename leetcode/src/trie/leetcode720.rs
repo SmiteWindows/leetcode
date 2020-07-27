@@ -54,26 +54,15 @@ impl Trie {
 // hash_table trie
 #[test]
 fn test1_720() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
-        longest_word(vec![
-            String::from("w"),
-            String::from("wo"),
-            String::from("wor"),
-            String::from("worl"),
-            String::from("world"),
-        ]),
-        String::from("world")
+        longest_word(vec_string!["w", "wo", "wor", "worl", "world"]),
+        ("world").to_string()
     );
     assert_eq!(
-        longest_word(vec![
-            String::from("a"),
-            String::from("banana"),
-            String::from("app"),
-            String::from("appl"),
-            String::from("ap"),
-            String::from("apply"),
-            String::from("apple"),
+        longest_word(vec_string![
+            "a", "banana", "app", "appl", "ap", "apply", "apple"
         ]),
-        String::from("apple"),
+        ("apple").to_string()
     );
 }

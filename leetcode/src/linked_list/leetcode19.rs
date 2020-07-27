@@ -40,28 +40,4 @@ fn test1_19() {
         remove_nth_from_end(list![1, 2, 3, 4, 5], 2),
         list![1, 2, 3, 5]
     );
-    // let l1 = Some(Box::new(ListNode {
-    //     val: 1,
-    //     next: Some(Box::new(ListNode {
-    //         val: 2,
-    //         next: Some(Box::new(ListNode {
-    //             val: 3,
-    //             next: Some(Box::new(ListNode {
-    //                 val: 4,
-    //                 next: Some(Box::new(ListNode { val: 5, next: None })),
-    //             })),
-    //         })),
-    //     })),
-    // }));
-    // let res = Some(Box::new(ListNode {
-    //     val: 1,
-    //     next: Some(Box::new(ListNode {
-    //         val: 2,
-    //         next: Some(Box::new(ListNode {
-    //             val: 3,
-    //             next: Some(Box::new(ListNode { val: 5, next: None })),
-    //         })),
-    //     })),
-    // }));
-    // assert_eq!(res, remove_nth_from_end(l1, 2));
 }

@@ -21,27 +21,24 @@ fn translate(s: String, mapping: &[char]) -> String {
 // hash_table
 #[test]
 fn test1_953() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
         is_alien_sorted(
-            vec![String::from("hello"), String::from("leetcode")],
+            vec_string!["hello", "leetcode"],
             String::from("hlabcdefgijkmnopqrstuvwxyz")
         ),
         true
     );
     assert_eq!(
         is_alien_sorted(
-            vec![
-                String::from("word"),
-                String::from("world"),
-                String::from("row")
-            ],
+            vec_string!["word", "world", "row"],
             String::from("worldabcefghijkmnpqstuvxyz")
         ),
         false
     );
     assert_eq!(
         is_alien_sorted(
-            vec![String::from("apple"), String::from("app")],
+            vec_string!["apple", "app"],
             String::from("abcdefghijklmnopqrstuvwxyz")
         ),
         false

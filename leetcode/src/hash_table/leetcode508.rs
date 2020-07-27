@@ -54,20 +54,7 @@ impl TreeNode {
 // tree hash_table
 #[test]
 fn test2_508() {
-    let t1 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 5,
-        left: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
-        right: Some(Rc::new(RefCell::new(TreeNode::new(-3)))),
-    })));
-    let mut s1 = find_frequent_tree_sum(t1);
-    s1.sort();
-    let res = vec![-3, 2, 4];
-    assert_eq!(res, s1);
-    let t2 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 5,
-        left: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
-        right: Some(Rc::new(RefCell::new(TreeNode::new(-5)))),
-    })));
-    let res = vec![2];
-    assert_eq!(res, find_frequent_tree_sum(t2));
+    use leetcode_prelude::{assert_eq_sorted, btree};
+    assert_eq_sorted!(find_frequent_tree_sum(btree![5, 2, -3]), vec![2, -3, 4]);
+    assert_eq_sorted!(find_frequent_tree_sum(btree![5, 2, -5]), vec![2]);
 }

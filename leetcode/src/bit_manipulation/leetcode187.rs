@@ -51,10 +51,4 @@ fn test1_187() {
         find_repeated_dna_sequences("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT".to_string()),
         vec_string!["AAAAACCCCC", "CCCCCAAAAA"]
     );
-    // let mut res = find_repeated_dna_sequences(String::from("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"));
-    // res.sort();
-    // assert_eq!(
-    //     res,
-    //     vec![String::from("AAAAACCCCC"), String::from("CCCCCAAAAA")]
-    // );
 }

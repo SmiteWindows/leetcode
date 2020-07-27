@@ -24,28 +24,12 @@ fn gcd(mut a: i32, mut b: i32) -> i32 {
 // math
 #[test]
 fn test1_1447() {
-    assert_eq!(simplified_fractions(2), vec![String::from("1/2")]);
-    let mut a = simplified_fractions(3);
-    a.sort();
-    assert_eq!(
-        a,
-        vec![
-            String::from("1/2"),
-            String::from("1/3"),
-            String::from("2/3")
-        ]
-    );
-    let mut b = simplified_fractions(4);
-    b.sort();
-    assert_eq!(
-        b,
-        vec![
-            String::from("1/2"),
-            String::from("1/3"),
-            String::from("1/4"),
-            String::from("2/3"),
-            String::from("3/4")
-        ]
+    use leetcode_prelude::{assert_eq_sorted, vec_string};
+    assert_eq!(simplified_fractions(2), vec_string!["1/2"]);
+    assert_eq_sorted!(simplified_fractions(3), vec_string!["1/2", "1/3", "2/3"]);
+    assert_eq_sorted!(
+        simplified_fractions(4),
+        vec_string!["1/2", "1/3", "1/4", "2/3", "3/4"]
     );
     assert_eq!(simplified_fractions(1), vec![] as Vec<String>);
 }

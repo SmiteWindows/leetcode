@@ -4,10 +4,10 @@
 use std::collections::HashMap;
 pub fn subdomain_visits(cpdomains: Vec<String>) -> Vec<String> {
     fn parse(s: String) -> (Vec<String>, usize) {
-        let mut domains: Vec<String> = vec![];
+        let mut domains = vec![];
         let mut iter = s.split_whitespace();
-        let count: usize = iter.next().unwrap().parse::<usize>().unwrap();
-        let domain: String = iter.next().unwrap().parse::<String>().unwrap();
+        let count = iter.next().unwrap().parse::<usize>().unwrap();
+        let domain = iter.next().unwrap().parse::<String>().unwrap();
         for (i, c) in domain.chars().enumerate() {
             if c == '.' {
                 let subdomain = &domain[i + 1..];
@@ -34,33 +34,26 @@ pub fn subdomain_visits(cpdomains: Vec<String>) -> Vec<String> {
 // hash_table
 #[test]
 fn test1_811() {
-    let mut res1 = subdomain_visits(vec![String::from("9001 discuss.leetcode.com")]);
-    res1.sort();
-    assert_eq!(
-        res1,
-        vec![
-            String::from("9001 com"),
-            String::from("9001 discuss.leetcode.com"),
-            String::from("9001 leetcode.com")
-        ]
+    use leetcode_prelude::{assert_eq_sorted, vec_string};
+    assert_eq_sorted!(
+        subdomain_visits(vec_string!["9001 discuss.leetcode.com"]),
+        vec_string!["9001 discuss.leetcode.com", "9001 leetcode.com", "9001 com"]
     );
-    let mut res2 = subdomain_visits(vec![
-        String::from("900 google.mail.com"),
-        String::from("50 yahoo.com"),
-        String::from("1 intel.mail.com"),
-        String::from("5 wiki.org"),
-    ]);
-    res2.sort();
-    assert_eq!(
-        res2,
-        vec![
-            String::from("1 intel.mail.com"),
-            String::from("5 org"),
-            String::from("5 wiki.org"),
-            String::from("50 yahoo.com"),
-            String::from("900 google.mail.com"),
-            String::from("901 mail.com"),
-            String::from("951 com")
+    assert_eq_sorted!(
+        subdomain_visits(vec_string![
+            "900 google.mail.com",
+            "50 yahoo.com",
+            "1 intel.mail.com",
+            "5 wiki.org"
+        ]),
+        vec_string![
+            "901 mail.com",
+            "50 yahoo.com",
+            "900 google.mail.com",
+            "5 wiki.org",
+            "5 org",
+            "1 intel.mail.com",
+            "951 com"
         ]
     );
 }

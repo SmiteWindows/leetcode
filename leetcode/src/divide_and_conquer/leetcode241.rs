@@ -70,16 +70,4 @@ fn test1_241() {
         diff_ways_to_compute("2*3-4*5".to_string()),
         vec![-34, -14, -10, -10, 10]
     );
-    // let input = "2-1-1".to_string();
-    // let mut res = vec![0, 2];
-    // let mut ans = diff_ways_to_compute(input);
-    // res.sort();
-    // ans.sort();
-    // assert_eq!(ans, res);
-    // let input = "2*3-4*5".to_string();
-    // let mut res = vec![-34, -14, -10, -10, 10];
-    // let mut ans = diff_ways_to_compute(input);
-    // res.sort();
-    // ans.sort();
-    // assert_eq!(ans, res);
 }

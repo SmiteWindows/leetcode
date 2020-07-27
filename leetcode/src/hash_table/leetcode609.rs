@@ -23,22 +23,17 @@ pub fn find_duplicate(paths: Vec<String>) -> Vec<Vec<String>> {
 // hash_table string
 #[test]
 fn test1_609() {
-    let mut a = find_duplicate(vec![
-        String::from("root/a 1.txt(abcd) 2.txt(efgh)"),
-        String::from("root/c 3.txt(abcd)"),
-        String::from("root/c/d 4.txt(efgh)"),
-        String::from("root 4.txt(efgh)"),
-    ]);
-    a.sort();
-    assert_eq!(
-        a,
-        vec![
-            vec![String::from("root/a/1.txt"), String::from("root/c/3.txt")],
-            vec![
-                String::from("root/a/2.txt"),
-                String::from("root/c/d/4.txt"),
-                String::from("root/4.txt")
-            ],
+    use leetcode_prelude::{assert_eq_sorted, vec2_string, vec_string};
+    assert_eq_sorted!(
+        find_duplicate(vec_string![
+            "root/a 1.txt(abcd) 2.txt(efgh)",
+            "root/c 3.txt(abcd)",
+            "root/c/d 4.txt(efgh)",
+            "root 4.txt(efgh)"
+        ]),
+        vec2_string![
+            ["root/a/2.txt", "root/c/d/4.txt", "root/4.txt"],
+            ["root/a/1.txt", "root/c/3.txt"]
         ]
     );
 }

@@ -43,43 +43,4 @@ fn test1_817() {
     use leetcode_prelude::list;
     assert_eq!(num_components(list![0, 1, 2, 3], vec![0, 1, 3]), 2);
     assert_eq!(num_components(list![0, 1, 2, 3, 4], vec![0, 3, 1, 4]), 2);
-    // let l1 = Some(Box::new(ListNode {
-    //     val: 0,
-    //     next: Some(Box::new(ListNode {
-    //         val: 1,
-    //         next: Some(Box::new(ListNode {
-    //             val: 2,
-    //             next: Some(Box::new(ListNode { val: 3, next: None })),
-    //         })),
-    //     })),
-    // }));
-    // let l2 = Some(Box::new(ListNode {
-    //     val: 0,
-    //     next: Some(Box::new(ListNode {
-    //         val: 1,
-    //         next: Some(Box::new(ListNode {
-    //             val: 2,
-    //             next: Some(Box::new(ListNode {
-    //                 val: 3,
-    //                 next: Some(Box::new(ListNode { val: 4, next: None })),
-    //             })),
-    //         })),
-    //     })),
-    // }));
-    // let l3 = Some(Box::new(ListNode {
-    //     val: 3,
-    //     next: Some(Box::new(ListNode {
-    //         val: 4,
-    //         next: Some(Box::new(ListNode {
-    //             val: 0,
-    //             next: Some(Box::new(ListNode {
-    //                 val: 2,
-    //                 next: Some(Box::new(ListNode { val: 1, next: None })),
-    //             })),
-    //         })),
-    //     })),
-    // }));
-    // assert_eq!(num_components(l3, vec![4]), 1);
-    // assert_eq!(num_components(l1, vec![0, 1, 3]), 2);
-    // assert_eq!(num_components(l2, vec![0, 3, 1, 4]), 2);
 }

@@ -35,39 +35,6 @@ fn test1_203() {
         remove_elements(list![1, 2, 6, 3, 4, 5, 6], 6),
         list![1, 2, 3, 4, 5]
     );
-    // let l1 = Some(Box::new(ListNode {
-    //     val: 1,
-    //     next: Some(Box::new(ListNode {
-    //         val: 2,
-    //         next: Some(Box::new(ListNode {
-    //             val: 6,
-    //             next: Some(Box::new(ListNode {
-    //                 val: 3,
-    //                 next: Some(Box::new(ListNode {
-    //                     val: 4,
-    //                     next: Some(Box::new(ListNode {
-    //                         val: 5,
-    //                         next: Some(Box::new(ListNode { val: 6, next: None })),
-    //                     })),
-    //                 })),
-    //             })),
-    //         })),
-    //     })),
-    // }));
-    // let l2 = Some(Box::new(ListNode {
-    //     val: 1,
-    //     next: Some(Box::new(ListNode {
-    //         val: 2,
-    //         next: Some(Box::new(ListNode {
-    //             val: 3,
-    //             next: Some(Box::new(ListNode {
-    //                 val: 4,
-    //                 next: Some(Box::new(ListNode { val: 5, next: None })),
-    //             })),
-    //         })),
-    //     })),
-    // }));
-    // assert_eq!(remove_elements(l1, 6), l2);
 }
 // let mut sentinel = Some(Box::new(ListNode { val: 0, next: head }));
 // let mut p = &mut sentinel;

@@ -42,19 +42,4 @@ fn test1_491() {
             [4, 7, 7]
         ],
     );
-    // let nums = vec![4, 6, 7, 7];
-    // let mut res = vec![
-    //     vec![4, 6],
-    //     vec![4, 7],
-    //     vec![4, 6, 7],
-    //     vec![4, 6, 7, 7],
-    //     vec![6, 7],
-    //     vec![6, 7, 7],
-    //     vec![7, 7],
-    //     vec![4, 7, 7],
-    // ];
-    // let mut ans = find_subsequences(nums);
-    // res.sort();
-    // ans.sort();
-    // assert_eq!(ans, res);
 }

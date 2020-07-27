@@ -43,37 +43,4 @@ fn test1_86() {
         partition(list![1, 4, 3, 2, 5, 2], 3),
         list![1, 2, 2, 4, 3, 5]
     );
-    // let l1 = Some(Box::new(ListNode {
-    //     val: 1,
-    //     next: Some(Box::new(ListNode {
-    //         val: 4,
-    //         next: Some(Box::new(ListNode {
-    //             val: 3,
-    //             next: Some(Box::new(ListNode {
-    //                 val: 2,
-    //                 next: Some(Box::new(ListNode {
-    //                     val: 5,
-    //                     next: Some(Box::new(ListNode { val: 2, next: None })),
-    //                 })),
-    //             })),
-    //         })),
-    //     })),
-    // }));
-    // let l2 = Some(Box::new(ListNode {
-    //     val: 1,
-    //     next: Some(Box::new(ListNode {
-    //         val: 2,
-    //         next: Some(Box::new(ListNode {
-    //             val: 2,
-    //             next: Some(Box::new(ListNode {
-    //                 val: 4,
-    //                 next: Some(Box::new(ListNode {
-    //                     val: 3,
-    //                     next: Some(Box::new(ListNode { val: 5, next: None })),
-    //                 })),
-    //             })),
-    //         })),
-    //     })),
-    // }));
-    // assert_eq!(l2, partition(l1, 3));
 }

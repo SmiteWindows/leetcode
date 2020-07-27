@@ -53,45 +53,4 @@ fn test3_23() {
         merge_k_lists(vec![list![1, 4, 5], list![1, 3, 4], list![2, 6]]),
         list![1, 1, 2, 3, 4, 4, 5, 6]
     );
-    // let l1 = Some(Box::new(ListNode {
-    //     val: 1,
-    //     next: Some(Box::new(ListNode {
-    //         val: 4,
-    //         next: Some(Box::new(ListNode { val: 5, next: None })),
-    //     })),
-    // }));
-    // let l2 = Some(Box::new(ListNode {
-    //     val: 1,
-    //     next: Some(Box::new(ListNode {
-    //         val: 3,
-    //         next: Some(Box::new(ListNode { val: 4, next: None })),
-    //     })),
-    // }));
-    // let l3 = Some(Box::new(ListNode {
-    //     val: 2,
-    //     next: Some(Box::new(ListNode { val: 6, next: None })),
-    // }));
-    // let res = Some(Box::new(ListNode {
-    //     val: 1,
-    //     next: Some(Box::new(ListNode {
-    //         val: 1,
-    //         next: Some(Box::new(ListNode {
-    //             val: 2,
-    //             next: Some(Box::new(ListNode {
-    //                 val: 3,
-    //                 next: Some(Box::new(ListNode {
-    //                     val: 4,
-    //                     next: Some(Box::new(ListNode {
-    //                         val: 4,
-    //                         next: Some(Box::new(ListNode {
-    //                             val: 5,
-    //                             next: Some(Box::new(ListNode { val: 6, next: None })),
-    //                         })),
-    //                     })),
-    //                 })),
-    //             })),
-    //         })),
-    //     })),
-    // }));
-    // assert_eq!(merge_k_lists(vec![l1, l2, l3]), res);
 }

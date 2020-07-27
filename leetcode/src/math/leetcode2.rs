@@ -85,26 +85,4 @@ fn test2_2() {
         add_two_numbers(list![2, 4, 3], list![5, 6, 4]),
         list![7, 0, 8]
     );
-    // let l1 = Some(Box::new(ListNode {
-    //     val: 2,
-    //     next: Some(Box::new(ListNode {
-    //         val: 4,
-    //         next: Some(Box::new(ListNode { val: 3, next: None })),
-    //     })),
-    // }));
-    // let l2 = Some(Box::new(ListNode {
-    //     val: 5,
-    //     next: Some(Box::new(ListNode {
-    //         val: 6,
-    //         next: Some(Box::new(ListNode { val: 4, next: None })),
-    //     })),
-    // }));
-    // let res = Some(Box::new(ListNode {
-    //     val: 7,
-    //     next: Some(Box::new(ListNode {
-    //         val: 0,
-    //         next: Some(Box::new(ListNode { val: 8, next: None })),
-    //     })),
-    // }));
-    // assert_eq!(res, add_two_numbers(l1, l2));
 }
