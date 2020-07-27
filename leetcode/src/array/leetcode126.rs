@@ -110,21 +110,20 @@ fn connected_words(word: &str) -> Vec<String> {
 // string backtracking array breadth_first_search
 #[test]
 fn test2_126() {
-    let mut a = find_ladders(
-        String::from("hit"),
-        String::from("cog"),
-        vec![
-            String::from("hot"),
-            String::from("dot"),
-            String::from("dog"),
-            String::from("lot"),
-            String::from("log"),
+    use leetcode_prelude::assert_eq_sorted;
+    assert_eq_sorted!(
+        find_ladders(
+            String::from("hit"),
             String::from("cog"),
-        ],
-    );
-    a.sort();
-    assert_eq!(
-        a,
+            vec![
+                String::from("hot"),
+                String::from("dot"),
+                String::from("dog"),
+                String::from("lot"),
+                String::from("log"),
+                String::from("cog"),
+            ],
+        ),
         vec![
             vec![
                 String::from("hit"),
@@ -156,4 +155,36 @@ fn test2_126() {
         ),
         vec![] as Vec<Vec<String>>
     );
+    // let mut a = find_ladders(
+    //     String::from("hit"),
+    //     String::from("cog"),
+    //     vec![
+    //         String::from("hot"),
+    //         String::from("dot"),
+    //         String::from("dog"),
+    //         String::from("lot"),
+    //         String::from("log"),
+    //         String::from("cog"),
+    //     ],
+    // );
+    // a.sort();
+    // assert_eq!(
+    //     a,
+    //     vec![
+    //         vec![
+    //             String::from("hit"),
+    //             String::from("hot"),
+    //             String::from("dot"),
+    //             String::from("dog"),
+    //             String::from("cog")
+    //         ],
+    //         vec![
+    //             String::from("hit"),
+    //             String::from("hot"),
+    //             String::from("lot"),
+    //             String::from("log"),
+    //             String::from("cog")
+    //         ],
+    //     ]
+    // );
 }
