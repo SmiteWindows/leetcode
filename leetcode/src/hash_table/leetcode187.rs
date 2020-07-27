@@ -46,10 +46,15 @@ fn decode(mut hash: u32) -> String {
 // bit_manipulation hash_table
 #[test]
 fn test2_187() {
-    let mut res = find_repeated_dna_sequences(String::from("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"));
-    res.sort();
-    assert_eq!(
-        res,
-        vec![String::from("AAAAACCCCC"), String::from("CCCCCAAAAA")]
+    use leetcode_prelude::{assert_eq_sorted, vec_string};
+    assert_eq_sorted!(
+        find_repeated_dna_sequences("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT".to_string()),
+        vec_string!["AAAAACCCCC", "CCCCCAAAAA"]
     );
+    // let mut res = find_repeated_dna_sequences(String::from("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"));
+    // res.sort();
+    // assert_eq!(
+    //     res,
+    //     vec![String::from("AAAAACCCCC"), String::from("CCCCCAAAAA")]
+    // );
 }

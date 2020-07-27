@@ -28,19 +28,33 @@ fn dfs(start: usize, cur: &mut Vec<i32>, all: &mut Vec<Vec<i32>>, nums: &[i32], 
 // depth_first_search
 #[test]
 fn test1_491() {
-    let nums = vec![4, 6, 7, 7];
-    let mut res = vec![
-        vec![4, 6],
-        vec![4, 7],
-        vec![4, 6, 7],
-        vec![4, 6, 7, 7],
-        vec![6, 7],
-        vec![6, 7, 7],
-        vec![7, 7],
-        vec![4, 7, 7],
-    ];
-    let mut ans = find_subsequences(nums);
-    res.sort();
-    ans.sort();
-    assert_eq!(ans, res);
+    use leetcode_prelude::{assert_eq_sorted, vec2};
+    assert_eq_sorted!(
+        find_subsequences(vec![4, 6, 7, 7]),
+        vec2![
+            [4, 6],
+            [4, 7],
+            [4, 6, 7],
+            [4, 6, 7, 7],
+            [6, 7],
+            [6, 7, 7],
+            [7, 7],
+            [4, 7, 7]
+        ],
+    );
+    // let nums = vec![4, 6, 7, 7];
+    // let mut res = vec![
+    //     vec![4, 6],
+    //     vec![4, 7],
+    //     vec![4, 6, 7],
+    //     vec![4, 6, 7, 7],
+    //     vec![6, 7],
+    //     vec![6, 7, 7],
+    //     vec![7, 7],
+    //     vec![4, 7, 7],
+    // ];
+    // let mut ans = find_subsequences(nums);
+    // res.sort();
+    // ans.sort();
+    // assert_eq!(ans, res);
 }

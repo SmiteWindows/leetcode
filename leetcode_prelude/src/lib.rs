@@ -7,7 +7,19 @@ pub use crate::tree::TreeNode;
 /// Create a Vec<String>
 #[macro_export]
 macro_rules! vec_string {
-    ($($e:expr), *) => {vec![$($e.to_string()), *]};
+    ($($e:tt), *) => {vec![$($e.to_string()), *]};
+}
+
+/// Create a Vec<Vec<String>>
+#[macro_export]
+macro_rules! vec2_string {
+    ($($e:tt), *) => {vec![$($crate::vec_string!$e), *]};
+}
+
+/// Create a Vec<Vec<char>>
+#[macro_export]
+macro_rules! vec2_char {
+    ($($e:tt), *) => {vec![$(vec!$e), *]};
 }
 
 /// Create a Vec<Vec<i32>>
@@ -70,7 +82,52 @@ mod tests {
 
     #[test]
     fn test_vec_string() {
-        assert_eq!(vec!["a".to_owned(), "b".to_owned()], vec_string!["a", "b"]);
+        assert_eq!(
+            vec!["a".to_string(), "b".to_string()],
+            vec_string!["a", "b"]
+        );
+    }
+
+    #[test]
+    fn test_vec2_char() {
+        assert_eq!(
+            vec![
+                vec!['A', 'B', 'C', 'E'],
+                vec!['S', 'F', 'C', 'S'],
+                vec!['A', 'D', 'E', 'E'],
+            ],
+            vec2_char![
+                ['A', 'B', 'C', 'E'],
+                ['S', 'F', 'C', 'S'],
+                ['A', 'D', 'E', 'E']
+            ]
+        );
+    }
+
+    #[test]
+    fn test_vec2_string() {
+        assert_eq!(
+            vec![
+                vec![
+                    ("John").to_string(),
+                    ("johnsmith@mail.com").to_string(),
+                    ("john00@mail.com").to_string(),
+                ],
+                vec![("John").to_string(), ("johnnybravo@mail.com").to_string()],
+                vec![
+                    ("John").to_string(),
+                    ("johnsmith@mail.com").to_string(),
+                    ("john_newyork@mail.com").to_string(),
+                ],
+                vec![("Mary").to_string(), ("mary@mail.com").to_string()],
+            ],
+            vec2_string![
+                ["John", "johnsmith@mail.com", "john00@mail.com"],
+                ["John", "johnnybravo@mail.com"],
+                ["John", "johnsmith@mail.com", "john_newyork@mail.com"],
+                ["Mary", "mary@mail.com"]
+            ]
+        );
     }
 
     #[test]
