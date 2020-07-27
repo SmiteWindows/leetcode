@@ -28,41 +28,17 @@ fn is_subfolder(s: &str, hs: &HashSet<String>) -> bool {
 // array string
 #[test]
 fn test1_1233() {
-    let mut a = remove_subfolders(vec![
-        String::from("/a"),
-        String::from("/a/b"),
-        String::from("/c/d"),
-        String::from("/c/d/e"),
-        String::from("/c/f"),
-    ]);
-    a.sort();
-    assert_eq!(
-        a,
-        vec![
-            String::from("/a"),
-            String::from("/c/d"),
-            String::from("/c/f")
-        ]
+    use leetcode_prelude::{assert_eq_sorted, vec_string};
+    assert_eq_sorted!(
+        remove_subfolders(vec_string!["/a", "/a/b", "/c/d", "/c/d/e", "/c/f"]),
+        vec_string!["/a", "/c/d", "/c/f"]
     );
-    let mut b = remove_subfolders(vec![
-        String::from("/a"),
-        String::from("/a/b/c"),
-        String::from("/a/b/d"),
-    ]);
-    b.sort();
-    assert_eq!(b, vec![String::from("/a")]);
-    let mut c = remove_subfolders(vec![
-        String::from("/a/b/c"),
-        String::from("/a/b/ca"),
-        String::from("/a/b/d"),
-    ]);
-    c.sort();
-    assert_eq!(
-        c,
-        vec![
-            String::from("/a/b/c"),
-            String::from("/a/b/ca"),
-            String::from("/a/b/d")
-        ]
+    assert_eq_sorted!(
+        remove_subfolders(vec_string!["/a", "/a/b/c", "/a/b/d"]),
+        vec_string!["/a"]
+    );
+    assert_eq_sorted!(
+        remove_subfolders(vec_string!["/a/b/c", "/a/b/ca", "/a/b/d"]),
+        vec_string!["/a/b/c", "/a/b/ca", "/a/b/d"]
     );
 }

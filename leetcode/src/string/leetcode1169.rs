@@ -39,28 +39,17 @@ pub fn invalid_transactions(transactions: Vec<String>) -> Vec<String> {
 // array string
 #[test]
 fn test1_1169() {
-    let mut a = invalid_transactions(vec![
-        String::from("alice,20,800,mtv"),
-        String::from("alice,50,100,beijing"),
-    ]);
-    a.sort();
-    assert_eq!(
-        a,
-        vec![
-            String::from("alice,20,800,mtv"),
-            String::from("alice,50,100,beijing")
-        ]
+    use leetcode_prelude::{assert_eq_sorted, vec_string};
+    assert_eq_sorted!(
+        invalid_transactions(vec_string!["alice,20,800,mtv", "alice,50,100,beijing"]),
+        vec_string!["alice,20,800,mtv", "alice,50,100,beijing"]
     );
-    let mut b = invalid_transactions(vec![
-        String::from("alice,20,800,mtv"),
-        String::from("alice,50,1200,mtv"),
-    ]);
-    b.sort();
-    assert_eq!(b, vec![String::from("alice,50,1200,mtv")]);
-    let mut c = invalid_transactions(vec![
-        String::from("alice,20,800,mtv"),
-        String::from("bob,50,1200,mtv"),
-    ]);
-    c.sort();
-    assert_eq!(c, vec![String::from("bob,50,1200,mtv")]);
+    assert_eq_sorted!(
+        invalid_transactions(vec_string!["alice,20,800,mtv", "alice,50,1200,mtv"]),
+        vec_string!["alice,50,1200,mtv"]
+    );
+    assert_eq_sorted!(
+        invalid_transactions(vec_string!["alice,20,800,mtv", "bob,50,1200,mtv"]),
+        vec_string!["bob,50,1200,mtv"]
+    );
 }
