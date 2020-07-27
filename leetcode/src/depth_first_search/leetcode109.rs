@@ -67,31 +67,36 @@ impl TreeNode {
 // linked_list depth_first_search
 #[test]
 fn test2_109() {
-    let head = Some(Box::new(ListNode {
-        val: -10,
-        next: Some(Box::new(ListNode {
-            val: -3,
-            next: Some(Box::new(ListNode {
-                val: 0,
-                next: Some(Box::new(ListNode {
-                    val: 5,
-                    next: Some(Box::new(ListNode { val: 9, next: None })),
-                })),
-            })),
-        })),
-    }));
-    let res = Some(Rc::new(RefCell::new(TreeNode {
-        val: 0,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: -3,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(-10)))),
-            right: None,
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 9,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(5)))),
-            right: None,
-        }))),
-    })));
-    assert_eq!(res, sorted_list_to_bst(head));
+    use leetcode_prelude::{btree, list};
+    assert_eq!(
+        sorted_list_to_bst(list![-10, -3, 0, 5, 9]),
+        btree![0, -3, 9, -10, null, 5]
+    );
+    // let head = Some(Box::new(ListNode {
+    //     val: -10,
+    //     next: Some(Box::new(ListNode {
+    //         val: -3,
+    //         next: Some(Box::new(ListNode {
+    //             val: 0,
+    //             next: Some(Box::new(ListNode {
+    //                 val: 5,
+    //                 next: Some(Box::new(ListNode { val: 9, next: None })),
+    //             })),
+    //         })),
+    //     })),
+    // }));
+    // let res = Some(Rc::new(RefCell::new(TreeNode {
+    //     val: 0,
+    //     left: Some(Rc::new(RefCell::new(TreeNode {
+    //         val: -3,
+    //         left: Some(Rc::new(RefCell::new(TreeNode::new(-10)))),
+    //         right: None,
+    //     }))),
+    //     right: Some(Rc::new(RefCell::new(TreeNode {
+    //         val: 9,
+    //         left: Some(Rc::new(RefCell::new(TreeNode::new(5)))),
+    //         right: None,
+    //     }))),
+    // })));
+    // assert_eq!(res, sorted_list_to_bst(head));
 }

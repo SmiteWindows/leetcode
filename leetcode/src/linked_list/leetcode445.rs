@@ -53,32 +53,37 @@ impl ListNode {
 // linked_list
 #[test]
 fn test1_445() {
-    let l1 = Some(Box::new(ListNode {
-        val: 7,
-        next: Some(Box::new(ListNode {
-            val: 2,
-            next: Some(Box::new(ListNode {
-                val: 4,
-                next: Some(Box::new(ListNode { val: 3, next: None })),
-            })),
-        })),
-    }));
-    let l2 = Some(Box::new(ListNode {
-        val: 5,
-        next: Some(Box::new(ListNode {
-            val: 6,
-            next: Some(Box::new(ListNode { val: 4, next: None })),
-        })),
-    }));
-    let res = Some(Box::new(ListNode {
-        val: 7,
-        next: Some(Box::new(ListNode {
-            val: 8,
-            next: Some(Box::new(ListNode {
-                val: 0,
-                next: Some(Box::new(ListNode { val: 7, next: None })),
-            })),
-        })),
-    }));
-    assert_eq!(res, add_two_numbers(l1, l2));
+    use leetcode_prelude::list;
+    assert_eq!(
+        add_two_numbers(list![7, 2, 4, 3], list![5, 6, 4]),
+        list![7, 8, 0, 7]
+    );
+    // let l1 = Some(Box::new(ListNode {
+    //     val: 7,
+    //     next: Some(Box::new(ListNode {
+    //         val: 2,
+    //         next: Some(Box::new(ListNode {
+    //             val: 4,
+    //             next: Some(Box::new(ListNode { val: 3, next: None })),
+    //         })),
+    //     })),
+    // }));
+    // let l2 = Some(Box::new(ListNode {
+    //     val: 5,
+    //     next: Some(Box::new(ListNode {
+    //         val: 6,
+    //         next: Some(Box::new(ListNode { val: 4, next: None })),
+    //     })),
+    // }));
+    // let res = Some(Box::new(ListNode {
+    //     val: 7,
+    //     next: Some(Box::new(ListNode {
+    //         val: 8,
+    //         next: Some(Box::new(ListNode {
+    //             val: 0,
+    //             next: Some(Box::new(ListNode { val: 7, next: None })),
+    //         })),
+    //     })),
+    // }));
+    // assert_eq!(res, add_two_numbers(l1, l2));
 }

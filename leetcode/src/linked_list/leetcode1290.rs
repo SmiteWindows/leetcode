@@ -27,68 +27,77 @@ impl ListNode {
 // linked_list bit_manipulation
 #[test]
 fn test1_1290() {
-    let l1 = Some(Box::new(ListNode {
-        val: 1,
-        next: Some(Box::new(ListNode {
-            val: 0,
-            next: Some(Box::new(ListNode { val: 1, next: None })),
-        })),
-    }));
-    let l2 = Some(Box::new(ListNode { val: 0, next: None }));
-    let l3 = Some(Box::new(ListNode { val: 1, next: None }));
-    let l4 = Some(Box::new(ListNode {
-        val: 1,
-        next: Some(Box::new(ListNode {
-            val: 0,
-            next: Some(Box::new(ListNode {
-                val: 0,
-                next: Some(Box::new(ListNode {
-                    val: 1,
-                    next: Some(Box::new(ListNode {
-                        val: 0,
-                        next: Some(Box::new(ListNode {
-                            val: 0,
-                            next: Some(Box::new(ListNode {
-                                val: 1,
-                                next: Some(Box::new(ListNode {
-                                    val: 1,
-                                    next: Some(Box::new(ListNode {
-                                        val: 1,
-                                        next: Some(Box::new(ListNode {
-                                            val: 0,
-                                            next: Some(Box::new(ListNode {
-                                                val: 0,
-                                                next: Some(Box::new(ListNode {
-                                                    val: 0,
-                                                    next: Some(Box::new(ListNode {
-                                                        val: 0,
-                                                        next: Some(Box::new(ListNode {
-                                                            val: 0,
-                                                            next: Some(Box::new(ListNode {
-                                                                val: 0,
-                                                                next: None,
-                                                            })),
-                                                        })),
-                                                    })),
-                                                })),
-                                            })),
-                                        })),
-                                    })),
-                                })),
-                            })),
-                        })),
-                    })),
-                })),
-            })),
-        })),
-    }));
-    let l5 = Some(Box::new(ListNode {
-        val: 0,
-        next: Some(Box::new(ListNode { val: 0, next: None })),
-    }));
-    assert_eq!(get_decimal_value(l1), 5);
-    assert_eq!(get_decimal_value(l2), 0);
-    assert_eq!(get_decimal_value(l3), 1);
-    assert_eq!(get_decimal_value(l4), 18880);
-    assert_eq!(get_decimal_value(l5), 0);
+    use leetcode_prelude::list;
+    assert_eq!(get_decimal_value(list![1, 0, 1]), 5);
+    assert_eq!(get_decimal_value(list![0]), 0);
+    assert_eq!(get_decimal_value(list![1]), 1);
+    assert_eq!(
+        get_decimal_value(list![1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0]),
+        18880
+    );
+    assert_eq!(get_decimal_value(list![0, 0]), 0);
+    // let l1 = Some(Box::new(ListNode {
+    //     val: 1,
+    //     next: Some(Box::new(ListNode {
+    //         val: 0,
+    //         next: Some(Box::new(ListNode { val: 1, next: None })),
+    //     })),
+    // }));
+    // let l2 = Some(Box::new(ListNode { val: 0, next: None }));
+    // let l3 = Some(Box::new(ListNode { val: 1, next: None }));
+    // let l4 = Some(Box::new(ListNode {
+    //     val: 1,
+    //     next: Some(Box::new(ListNode {
+    //         val: 0,
+    //         next: Some(Box::new(ListNode {
+    //             val: 0,
+    //             next: Some(Box::new(ListNode {
+    //                 val: 1,
+    //                 next: Some(Box::new(ListNode {
+    //                     val: 0,
+    //                     next: Some(Box::new(ListNode {
+    //                         val: 0,
+    //                         next: Some(Box::new(ListNode {
+    //                             val: 1,
+    //                             next: Some(Box::new(ListNode {
+    //                                 val: 1,
+    //                                 next: Some(Box::new(ListNode {
+    //                                     val: 1,
+    //                                     next: Some(Box::new(ListNode {
+    //                                         val: 0,
+    //                                         next: Some(Box::new(ListNode {
+    //                                             val: 0,
+    //                                             next: Some(Box::new(ListNode {
+    //                                                 val: 0,
+    //                                                 next: Some(Box::new(ListNode {
+    //                                                     val: 0,
+    //                                                     next: Some(Box::new(ListNode {
+    //                                                         val: 0,
+    //                                                         next: Some(Box::new(ListNode {
+    //                                                             val: 0,
+    //                                                             next: None,
+    //                                                         })),
+    //                                                     })),
+    //                                                 })),
+    //                                             })),
+    //                                         })),
+    //                                     })),
+    //                                 })),
+    //                             })),
+    //                         })),
+    //                     })),
+    //                 })),
+    //             })),
+    //         })),
+    //     })),
+    // }));
+    // let l5 = Some(Box::new(ListNode {
+    //     val: 0,
+    //     next: Some(Box::new(ListNode { val: 0, next: None })),
+    // }));
+    // assert_eq!(get_decimal_value(l1), 5);
+    // assert_eq!(get_decimal_value(l2), 0);
+    // assert_eq!(get_decimal_value(l3), 1);
+    // assert_eq!(get_decimal_value(l4), 18880);
+    // assert_eq!(get_decimal_value(l5), 0);
 }

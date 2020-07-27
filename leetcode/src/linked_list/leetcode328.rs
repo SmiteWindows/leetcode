@@ -39,70 +39,76 @@ impl ListNode {
 // linked_list
 #[test]
 fn test1_328() {
-    let l1 = Some(Box::new(ListNode {
-        val: 1,
-        next: Some(Box::new(ListNode {
-            val: 2,
-            next: Some(Box::new(ListNode {
-                val: 3,
-                next: Some(Box::new(ListNode {
-                    val: 4,
-                    next: Some(Box::new(ListNode { val: 5, next: None })),
-                })),
-            })),
-        })),
-    }));
-    let l2 = Some(Box::new(ListNode {
-        val: 1,
-        next: Some(Box::new(ListNode {
-            val: 3,
-            next: Some(Box::new(ListNode {
-                val: 5,
-                next: Some(Box::new(ListNode {
-                    val: 2,
-                    next: Some(Box::new(ListNode { val: 4, next: None })),
-                })),
-            })),
-        })),
-    }));
-    let l3 = Some(Box::new(ListNode {
-        val: 2,
-        next: Some(Box::new(ListNode {
-            val: 1,
-            next: Some(Box::new(ListNode {
-                val: 3,
-                next: Some(Box::new(ListNode {
-                    val: 5,
-                    next: Some(Box::new(ListNode {
-                        val: 6,
-                        next: Some(Box::new(ListNode {
-                            val: 4,
-                            next: Some(Box::new(ListNode { val: 7, next: None })),
-                        })),
-                    })),
-                })),
-            })),
-        })),
-    }));
-    let l4 = Some(Box::new(ListNode {
-        val: 2,
-        next: Some(Box::new(ListNode {
-            val: 3,
-            next: Some(Box::new(ListNode {
-                val: 6,
-                next: Some(Box::new(ListNode {
-                    val: 7,
-                    next: Some(Box::new(ListNode {
-                        val: 1,
-                        next: Some(Box::new(ListNode {
-                            val: 5,
-                            next: Some(Box::new(ListNode { val: 4, next: None })),
-                        })),
-                    })),
-                })),
-            })),
-        })),
-    }));
-    assert_eq!(odd_even_list(l1), l2);
-    assert_eq!(odd_even_list(l3), l4);
+    use leetcode_prelude::list;
+    assert_eq!(odd_even_list(list![1, 2, 3, 4, 5]), list![1, 3, 5, 2, 4]);
+    assert_eq!(
+        odd_even_list(list![2, 1, 3, 5, 6, 4, 7]),
+        list![2, 3, 6, 7, 1, 5, 4]
+    );
+    // let l1 = Some(Box::new(ListNode {
+    //     val: 1,
+    //     next: Some(Box::new(ListNode {
+    //         val: 2,
+    //         next: Some(Box::new(ListNode {
+    //             val: 3,
+    //             next: Some(Box::new(ListNode {
+    //                 val: 4,
+    //                 next: Some(Box::new(ListNode { val: 5, next: None })),
+    //             })),
+    //         })),
+    //     })),
+    // }));
+    // let l2 = Some(Box::new(ListNode {
+    //     val: 1,
+    //     next: Some(Box::new(ListNode {
+    //         val: 3,
+    //         next: Some(Box::new(ListNode {
+    //             val: 5,
+    //             next: Some(Box::new(ListNode {
+    //                 val: 2,
+    //                 next: Some(Box::new(ListNode { val: 4, next: None })),
+    //             })),
+    //         })),
+    //     })),
+    // }));
+    // let l3 = Some(Box::new(ListNode {
+    //     val: 2,
+    //     next: Some(Box::new(ListNode {
+    //         val: 1,
+    //         next: Some(Box::new(ListNode {
+    //             val: 3,
+    //             next: Some(Box::new(ListNode {
+    //                 val: 5,
+    //                 next: Some(Box::new(ListNode {
+    //                     val: 6,
+    //                     next: Some(Box::new(ListNode {
+    //                         val: 4,
+    //                         next: Some(Box::new(ListNode { val: 7, next: None })),
+    //                     })),
+    //                 })),
+    //             })),
+    //         })),
+    //     })),
+    // }));
+    // let l4 = Some(Box::new(ListNode {
+    //     val: 2,
+    //     next: Some(Box::new(ListNode {
+    //         val: 3,
+    //         next: Some(Box::new(ListNode {
+    //             val: 6,
+    //             next: Some(Box::new(ListNode {
+    //                 val: 7,
+    //                 next: Some(Box::new(ListNode {
+    //                     val: 1,
+    //                     next: Some(Box::new(ListNode {
+    //                         val: 5,
+    //                         next: Some(Box::new(ListNode { val: 4, next: None })),
+    //                     })),
+    //                 })),
+    //             })),
+    //         })),
+    //     })),
+    // }));
+    // assert_eq!(odd_even_list(l1), l2);
+    // assert_eq!(odd_even_list(l3), l4);
 }

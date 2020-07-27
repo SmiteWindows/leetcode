@@ -44,54 +44,61 @@ impl ListNode {
 // linked_list
 #[test]
 fn test1_143() {
-    let mut l1 = Some(Box::new(ListNode {
-        val: 1,
-        next: Some(Box::new(ListNode {
-            val: 2,
-            next: Some(Box::new(ListNode {
-                val: 3,
-                next: Some(Box::new(ListNode {
-                    val: 4,
-                    next: Some(Box::new(ListNode { val: 5, next: None })),
-                })),
-            })),
-        })),
-    }));
-    let l2 = Some(Box::new(ListNode {
-        val: 1,
-        next: Some(Box::new(ListNode {
-            val: 5,
-            next: Some(Box::new(ListNode {
-                val: 2,
-                next: Some(Box::new(ListNode {
-                    val: 4,
-                    next: Some(Box::new(ListNode { val: 3, next: None })),
-                })),
-            })),
-        })),
-    }));
-    let mut l3 = Some(Box::new(ListNode {
-        val: 1,
-        next: Some(Box::new(ListNode {
-            val: 2,
-            next: Some(Box::new(ListNode {
-                val: 3,
-                next: Some(Box::new(ListNode { val: 4, next: None })),
-            })),
-        })),
-    }));
-    let l4 = Some(Box::new(ListNode {
-        val: 1,
-        next: Some(Box::new(ListNode {
-            val: 4,
-            next: Some(Box::new(ListNode {
-                val: 2,
-                next: Some(Box::new(ListNode { val: 3, next: None })),
-            })),
-        })),
-    }));
+    use leetcode_prelude::list;
+    let mut l1 = list![1, 2, 3, 4];
     reorder_list(&mut l1);
-    assert_eq!(l2, l1);
-    reorder_list(&mut l3);
-    assert_eq!(l4, l3);
+    assert_eq!(l1, list![1, 4, 2, 3]);
+    let mut l2 = list![1, 2, 3, 4, 5];
+    reorder_list(&mut l2);
+    assert_eq!(l2, list![1, 5, 2, 4, 3]);
+    // let mut l1 = Some(Box::new(ListNode {
+    //     val: 1,
+    //     next: Some(Box::new(ListNode {
+    //         val: 2,
+    //         next: Some(Box::new(ListNode {
+    //             val: 3,
+    //             next: Some(Box::new(ListNode {
+    //                 val: 4,
+    //                 next: Some(Box::new(ListNode { val: 5, next: None })),
+    //             })),
+    //         })),
+    //     })),
+    // }));
+    // let l2 = Some(Box::new(ListNode {
+    //     val: 1,
+    //     next: Some(Box::new(ListNode {
+    //         val: 5,
+    //         next: Some(Box::new(ListNode {
+    //             val: 2,
+    //             next: Some(Box::new(ListNode {
+    //                 val: 4,
+    //                 next: Some(Box::new(ListNode { val: 3, next: None })),
+    //             })),
+    //         })),
+    //     })),
+    // }));
+    // let mut l3 = Some(Box::new(ListNode {
+    //     val: 1,
+    //     next: Some(Box::new(ListNode {
+    //         val: 2,
+    //         next: Some(Box::new(ListNode {
+    //             val: 3,
+    //             next: Some(Box::new(ListNode { val: 4, next: None })),
+    //         })),
+    //     })),
+    // }));
+    // let l4 = Some(Box::new(ListNode {
+    //     val: 1,
+    //     next: Some(Box::new(ListNode {
+    //         val: 4,
+    //         next: Some(Box::new(ListNode {
+    //             val: 2,
+    //             next: Some(Box::new(ListNode { val: 3, next: None })),
+    //         })),
+    //     })),
+    // }));
+    // reorder_list(&mut l1);
+    // assert_eq!(l2, l1);
+    // reorder_list(&mut l3);
+    // assert_eq!(l4, l3);
 }

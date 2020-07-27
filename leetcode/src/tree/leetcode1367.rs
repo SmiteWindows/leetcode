@@ -62,112 +62,134 @@ impl TreeNode {
 // tree linked_list dynamic_programming
 #[test]
 fn test1_1367() {
-    let l1 = Some(Box::new(ListNode {
-        val: 4,
-        next: Some(Box::new(ListNode {
-            val: 2,
-            next: Some(Box::new(ListNode { val: 8, next: None })),
-        })),
-    }));
-    let t1 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 4,
-            left: None,
-            right: Some(Rc::new(RefCell::new(TreeNode {
-                val: 2,
-                left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-                right: None,
-            }))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 4,
-            left: Some(Rc::new(RefCell::new(TreeNode {
-                val: 2,
-                left: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
-                right: Some(Rc::new(RefCell::new(TreeNode {
-                    val: 8,
-                    left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-                    right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-                }))),
-            }))),
-            right: None,
-        }))),
-    }))); // [1,4,4,null,2,2,null,1,null,6,8,null,null,null,null,1,3]
-    assert_eq!(is_sub_path(l1, t1), true);
-    let l2 = Some(Box::new(ListNode {
-        val: 1,
-        next: Some(Box::new(ListNode {
-            val: 4,
-            next: Some(Box::new(ListNode {
-                val: 2,
-                next: Some(Box::new(ListNode { val: 6, next: None })),
-            })),
-        })),
-    }));
-    let t2 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 4,
-            left: None,
-            right: Some(Rc::new(RefCell::new(TreeNode {
-                val: 2,
-                left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-                right: None,
-            }))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 4,
-            left: Some(Rc::new(RefCell::new(TreeNode {
-                val: 2,
-                left: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
-                right: Some(Rc::new(RefCell::new(TreeNode {
-                    val: 8,
-                    left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-                    right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-                }))),
-            }))),
-            right: None,
-        }))),
-    }))); // [1,4,4,null,2,2,null,1,null,6,8,null,null,null,null,1,3]
-    assert_eq!(is_sub_path(l2, t2), true);
-    let l3 = Some(Box::new(ListNode {
-        val: 1,
-        next: Some(Box::new(ListNode {
-            val: 4,
-            next: Some(Box::new(ListNode {
-                val: 2,
-                next: Some(Box::new(ListNode {
-                    val: 6,
-                    next: Some(Box::new(ListNode { val: 8, next: None })),
-                })),
-            })),
-        })),
-    }));
-    let t3 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 4,
-            left: None,
-            right: Some(Rc::new(RefCell::new(TreeNode {
-                val: 2,
-                left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-                right: None,
-            }))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 4,
-            left: Some(Rc::new(RefCell::new(TreeNode {
-                val: 2,
-                left: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
-                right: Some(Rc::new(RefCell::new(TreeNode {
-                    val: 8,
-                    left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-                    right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-                }))),
-            }))),
-            right: None,
-        }))),
-    }))); // [1,4,4,null,2,2,null,1,null,6,8,null,null,null,null,1,3]
-    assert_eq!(is_sub_path(l3, t3), false);
+    use leetcode_prelude::{btree, list};
+    assert_eq!(
+        is_sub_path(
+            list![4, 2, 8],
+            btree![1, 4, 4, null, 2, 2, null, 1, null, 6, 8, null, null, null, null, 1, 3]
+        ),
+        true
+    );
+    assert_eq!(
+        is_sub_path(
+            list![1, 4, 2, 6],
+            btree![1, 4, 4, null, 2, 2, null, 1, null, 6, 8, null, null, null, null, 1, 3]
+        ),
+        true
+    );
+    assert_eq!(
+        is_sub_path(
+            list![1, 4, 2, 6, 8],
+            btree![1, 4, 4, null, 2, 2, null, 1, null, 6, 8, null, null, null, null, 1, 3]
+        ),
+        false
+    );
+    // let l1 = Some(Box::new(ListNode {
+    //     val: 4,
+    //     next: Some(Box::new(ListNode {
+    //         val: 2,
+    //         next: Some(Box::new(ListNode { val: 8, next: None })),
+    //     })),
+    // }));
+    // let t1 = Some(Rc::new(RefCell::new(TreeNode {
+    //     val: 1,
+    //     left: Some(Rc::new(RefCell::new(TreeNode {
+    //         val: 4,
+    //         left: None,
+    //         right: Some(Rc::new(RefCell::new(TreeNode {
+    //             val: 2,
+    //             left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
+    //             right: None,
+    //         }))),
+    //     }))),
+    //     right: Some(Rc::new(RefCell::new(TreeNode {
+    //         val: 4,
+    //         left: Some(Rc::new(RefCell::new(TreeNode {
+    //             val: 2,
+    //             left: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
+    //             right: Some(Rc::new(RefCell::new(TreeNode {
+    //                 val: 8,
+    //                 left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
+    //                 right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
+    //             }))),
+    //         }))),
+    //         right: None,
+    //     }))),
+    // }))); // [1,4,4,null,2,2,null,1,null,6,8,null,null,null,null,1,3]
+    // assert_eq!(is_sub_path(l1, t1), true);
+    // let l2 = Some(Box::new(ListNode {
+    //     val: 1,
+    //     next: Some(Box::new(ListNode {
+    //         val: 4,
+    //         next: Some(Box::new(ListNode {
+    //             val: 2,
+    //             next: Some(Box::new(ListNode { val: 6, next: None })),
+    //         })),
+    //     })),
+    // }));
+    // let t2 = Some(Rc::new(RefCell::new(TreeNode {
+    //     val: 1,
+    //     left: Some(Rc::new(RefCell::new(TreeNode {
+    //         val: 4,
+    //         left: None,
+    //         right: Some(Rc::new(RefCell::new(TreeNode {
+    //             val: 2,
+    //             left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
+    //             right: None,
+    //         }))),
+    //     }))),
+    //     right: Some(Rc::new(RefCell::new(TreeNode {
+    //         val: 4,
+    //         left: Some(Rc::new(RefCell::new(TreeNode {
+    //             val: 2,
+    //             left: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
+    //             right: Some(Rc::new(RefCell::new(TreeNode {
+    //                 val: 8,
+    //                 left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
+    //                 right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
+    //             }))),
+    //         }))),
+    //         right: None,
+    //     }))),
+    // }))); // [1,4,4,null,2,2,null,1,null,6,8,null,null,null,null,1,3]
+    // assert_eq!(is_sub_path(l2, t2), true);
+    // let l3 = Some(Box::new(ListNode {
+    //     val: 1,
+    //     next: Some(Box::new(ListNode {
+    //         val: 4,
+    //         next: Some(Box::new(ListNode {
+    //             val: 2,
+    //             next: Some(Box::new(ListNode {
+    //                 val: 6,
+    //                 next: Some(Box::new(ListNode { val: 8, next: None })),
+    //             })),
+    //         })),
+    //     })),
+    // }));
+    // let t3 = Some(Rc::new(RefCell::new(TreeNode {
+    //     val: 1,
+    //     left: Some(Rc::new(RefCell::new(TreeNode {
+    //         val: 4,
+    //         left: None,
+    //         right: Some(Rc::new(RefCell::new(TreeNode {
+    //             val: 2,
+    //             left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
+    //             right: None,
+    //         }))),
+    //     }))),
+    //     right: Some(Rc::new(RefCell::new(TreeNode {
+    //         val: 4,
+    //         left: Some(Rc::new(RefCell::new(TreeNode {
+    //             val: 2,
+    //             left: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
+    //             right: Some(Rc::new(RefCell::new(TreeNode {
+    //                 val: 8,
+    //                 left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
+    //                 right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
+    //             }))),
+    //         }))),
+    //         right: None,
+    //     }))),
+    // }))); // [1,4,4,null,2,2,null,1,null,6,8,null,null,null,null,1,3]
+    // assert_eq!(is_sub_path(l3, t3), false);
 }

@@ -67,67 +67,72 @@ impl TreeNode {
 // linked_list depth_first_search
 #[test]
 fn test1_109() {
-    let head1 = Some(Box::new(ListNode {
-        val: -10,
-        next: Some(Box::new(ListNode {
-            val: -3,
-            next: Some(Box::new(ListNode {
-                val: 0,
-                next: Some(Box::new(ListNode {
-                    val: 5,
-                    next: Some(Box::new(ListNode { val: 9, next: None })),
-                })),
-            })),
-        })),
-    }));
-    let res1 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 0,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: -3,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(-10)))),
-            right: None,
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 9,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(5)))),
-            right: None,
-        }))),
-    })));
-    let head2 = Some(Box::new(ListNode {
-        val: -20,
-        next: Some(Box::new(ListNode {
-            val: -9,
-            next: Some(Box::new(ListNode {
-                val: 4,
-                next: Some(Box::new(ListNode {
-                    val: 8,
-                    next: Some(Box::new(ListNode {
-                        val: 10,
-                        next: Some(Box::new(ListNode {
-                            val: 12,
-                            next: Some(Box::new(ListNode {
-                                val: 20,
-                                next: None,
-                            })),
-                        })),
-                    })),
-                })),
-            })),
-        })),
-    }));
-    let res2 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 8,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: -9,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(-20)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 12,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(10)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(20)))),
-        }))),
-    })));
-    assert_eq!(res1, sorted_list_to_bst(head1));
-    assert_eq!(res2, sorted_list_to_bst(head2));
+    use leetcode_prelude::{btree, list};
+    assert_eq!(
+        sorted_list_to_bst(list![-10, -3, 0, 5, 9]),
+        btree![0, -3, 9, -10, null, 5]
+    );
+    // let head1 = Some(Box::new(ListNode {
+    //     val: -10,
+    //     next: Some(Box::new(ListNode {
+    //         val: -3,
+    //         next: Some(Box::new(ListNode {
+    //             val: 0,
+    //             next: Some(Box::new(ListNode {
+    //                 val: 5,
+    //                 next: Some(Box::new(ListNode { val: 9, next: None })),
+    //             })),
+    //         })),
+    //     })),
+    // }));
+    // let res1 = Some(Rc::new(RefCell::new(TreeNode {
+    //     val: 0,
+    //     left: Some(Rc::new(RefCell::new(TreeNode {
+    //         val: -3,
+    //         left: Some(Rc::new(RefCell::new(TreeNode::new(-10)))),
+    //         right: None,
+    //     }))),
+    //     right: Some(Rc::new(RefCell::new(TreeNode {
+    //         val: 9,
+    //         left: Some(Rc::new(RefCell::new(TreeNode::new(5)))),
+    //         right: None,
+    //     }))),
+    // })));
+    // let head2 = Some(Box::new(ListNode {
+    //     val: -20,
+    //     next: Some(Box::new(ListNode {
+    //         val: -9,
+    //         next: Some(Box::new(ListNode {
+    //             val: 4,
+    //             next: Some(Box::new(ListNode {
+    //                 val: 8,
+    //                 next: Some(Box::new(ListNode {
+    //                     val: 10,
+    //                     next: Some(Box::new(ListNode {
+    //                         val: 12,
+    //                         next: Some(Box::new(ListNode {
+    //                             val: 20,
+    //                             next: None,
+    //                         })),
+    //                     })),
+    //                 })),
+    //             })),
+    //         })),
+    //     })),
+    // }));
+    // let res2 = Some(Rc::new(RefCell::new(TreeNode {
+    //     val: 8,
+    //     left: Some(Rc::new(RefCell::new(TreeNode {
+    //         val: -9,
+    //         left: Some(Rc::new(RefCell::new(TreeNode::new(-20)))),
+    //         right: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
+    //     }))),
+    //     right: Some(Rc::new(RefCell::new(TreeNode {
+    //         val: 12,
+    //         left: Some(Rc::new(RefCell::new(TreeNode::new(10)))),
+    //         right: Some(Rc::new(RefCell::new(TreeNode::new(20)))),
+    //     }))),
+    // })));
+    // assert_eq!(res1, sorted_list_to_bst(head1));
+    // assert_eq!(res2, sorted_list_to_bst(head2));
 }

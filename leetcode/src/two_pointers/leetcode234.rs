@@ -62,21 +62,24 @@ impl ListNode {
 }
 // linked_list two_pointers
 #[test]
-fn test1_234() {
-    let l1 = Some(Box::new(ListNode {
-        val: 1,
-        next: Some(Box::new(ListNode { val: 2, next: None })),
-    }));
-    let l2 = Some(Box::new(ListNode {
-        val: 1,
-        next: Some(Box::new(ListNode {
-            val: 2,
-            next: Some(Box::new(ListNode {
-                val: 2,
-                next: Some(Box::new(ListNode { val: 1, next: None })),
-            })),
-        })),
-    }));
-    assert_eq!(is_palindrome(l1), false);
-    assert_eq!(is_palindrome(l2), true);
+fn test2_234() {
+    use leetcode_prelude::list;
+    assert_eq!(is_palindrome(list![1, 2]), false);
+    assert_eq!(is_palindrome(list![1, 2, 2, 1]), true);
+    // let l1 = Some(Box::new(ListNode {
+    //     val: 1,
+    //     next: Some(Box::new(ListNode { val: 2, next: None })),
+    // }));
+    // let l2 = Some(Box::new(ListNode {
+    //     val: 1,
+    //     next: Some(Box::new(ListNode {
+    //         val: 2,
+    //         next: Some(Box::new(ListNode {
+    //             val: 2,
+    //             next: Some(Box::new(ListNode { val: 1, next: None })),
+    //         })),
+    //     })),
+    // }));
+    // assert_eq!(is_palindrome(l1), false);
+    // assert_eq!(is_palindrome(l2), true);
 }
