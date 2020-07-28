@@ -52,46 +52,57 @@ impl TreeNode {
 // tree dynamic_programming
 #[test]
 fn test1_95() {
-    let s1 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: None,
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 2,
-            left: None,
-            right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-        }))),
-    })));
-    let s2 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: None,
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 3,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
-            right: None,
-        }))),
-    })));
-    let s3 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 2,
-        left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-        right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-    })));
-    let s4 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 3,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 1,
-            left: None,
-            right: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
-        }))),
-        right: None,
-    })));
-    let s5 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 3,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 2,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-            right: None,
-        }))),
-        right: None,
-    })));
-    assert_eq!(vec![s1, s2, s3, s4, s5], generate_trees(3));
+    use leetcode_prelude::vec_btree;
+    assert_eq!(
+        generate_trees(3),
+        vec_btree![
+            [1, null, 2, null, 3],
+            [1, null, 3, 2],
+            [2, 1, 3],
+            [3, 1, null, null, 2],
+            [3, 2, null, 1]
+        ]
+    );
+    // let s1 = Some(Rc::new(RefCell::new(TreeNode {
+    //     val: 1,
+    //     left: None,
+    //     right: Some(Rc::new(RefCell::new(TreeNode {
+    //         val: 2,
+    //         left: None,
+    //         right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
+    //     }))),
+    // })));
+    // let s2 = Some(Rc::new(RefCell::new(TreeNode {
+    //     val: 1,
+    //     left: None,
+    //     right: Some(Rc::new(RefCell::new(TreeNode {
+    //         val: 3,
+    //         left: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
+    //         right: None,
+    //     }))),
+    // })));
+    // let s3 = Some(Rc::new(RefCell::new(TreeNode {
+    //     val: 2,
+    //     left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
+    //     right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
+    // })));
+    // let s4 = Some(Rc::new(RefCell::new(TreeNode {
+    //     val: 3,
+    //     left: Some(Rc::new(RefCell::new(TreeNode {
+    //         val: 1,
+    //         left: None,
+    //         right: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
+    //     }))),
+    //     right: None,
+    // })));
+    // let s5 = Some(Rc::new(RefCell::new(TreeNode {
+    //     val: 3,
+    //     left: Some(Rc::new(RefCell::new(TreeNode {
+    //         val: 2,
+    //         left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
+    //         right: None,
+    //     }))),
+    //     right: None,
+    // })));
+    // assert_eq!(vec![s1, s2, s3, s4, s5], generate_trees(3));
 }

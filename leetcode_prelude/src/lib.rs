@@ -15,6 +15,16 @@ macro_rules! vec_string {
 macro_rules! vec2_string {
     ($($e:tt), *) => {vec![$($crate::vec_string!$e), *]};
 }
+/// Create a Vec<Option<Rc<RefCell<TreeNode>>>>
+#[macro_export]
+macro_rules! vec_btree {
+    ($($e:tt), *) => {vec![$($crate::btree!$e), *]};
+}
+/// Create a Vec<Option<Box<ListNode>>
+#[macro_export]
+macro_rules! vec_list {
+    ($($e:tt), *) => {vec![$($crate::list!$e), *]};
+}
 
 /// Create a Vec<Vec<char>>
 #[macro_export]
