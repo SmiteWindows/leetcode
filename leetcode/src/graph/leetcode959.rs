@@ -48,23 +48,23 @@ fn id(k: usize, i: usize, j: usize, n: usize, m: usize) -> usize {
     k * n * m + i * m + j
 }
 struct UnionFind {
-    parents: Vec<usize>,
+    parent: Vec<usize>,
     n: usize,
 }
 
 impl UnionFind {
     fn new(n: usize) -> Self {
-        let parents = (0..n).collect();
-        Self { parents, n }
+        let parent = (0..n).collect();
+        Self { parent, n }
     }
 
     fn find(&mut self, i: usize) -> usize {
-        let j = self.parents[i];
+        let j = self.parent[i];
         if i == j {
             i
         } else {
-            self.parents[i] = self.find(j);
-            self.parents[i]
+            self.parent[i] = self.find(j);
+            self.parent[i]
         }
     }
 
@@ -72,7 +72,7 @@ impl UnionFind {
         i = self.find(i);
         j = self.find(j);
         if i != j {
-            self.parents[i] = j;
+            self.parent[i] = j;
             self.n -= 1;
         }
     }

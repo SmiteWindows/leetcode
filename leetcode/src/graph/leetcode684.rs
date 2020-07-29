@@ -15,23 +15,23 @@ pub fn find_redundant_connection(edges: Vec<Vec<i32>>) -> Vec<i32> {
 }
 
 struct UnionFind {
-    parents: Vec<usize>,
+    parent: Vec<usize>,
     n: usize,
 }
 
 impl UnionFind {
     fn new(n: usize) -> Self {
-        let parents = (0..n).collect();
-        Self { parents, n }
+        let parent = (0..n).collect();
+        Self { parent, n }
     }
 
     fn find(&mut self, i: usize) -> usize {
-        let j = self.parents[i];
+        let j = self.parent[i];
         if i == j {
             i
         } else {
             let k = self.find(j);
-            self.parents[i] = k;
+            self.parent[i] = k;
             k
         }
     }
@@ -42,7 +42,7 @@ impl UnionFind {
         if i == j {
             true
         } else {
-            self.parents[i] = j;
+            self.parent[i] = j;
             false
         }
     }
