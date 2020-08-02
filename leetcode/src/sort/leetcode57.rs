@@ -1,26 +1,26 @@
 // https://leetcode.com/problems/insert-interval/
 // Runtime: 0 ms
-// Memory Usage: 2.6 MB
+// Memory Usage: 2.7 MB
 pub fn insert(intervals: Vec<Vec<i32>>, new_interval: Vec<i32>) -> Vec<Vec<i32>> {
-    let mut intervals = intervals;
-    intervals.push(new_interval);
-    intervals.sort_unstable_by_key(|a| a[0]);
+    let mut new_interval = new_interval;
     let mut res = vec![];
-    let mut temp: Option<Vec<i32>> = None;
-    for v in intervals {
-        if let Some(t) = temp {
-            if v[0] <= t[1] {
-                temp = Some(vec![t[0], t[1].max(v[1])]);
+    for interval in intervals {
+        if interval[0] < new_interval[0] {
+            if interval[1] < new_interval[0] {
+                res.push(interval);
             } else {
-                temp = Some(v);
-                res.push(t);
+                new_interval[0] = new_interval[0].min(interval[0]);
+                new_interval[1] = new_interval[1].max(interval[1]);
             }
+        } else if interval[0] > new_interval[1] {
+            res.push(interval);
         } else {
-            temp = Some(v);
+            new_interval[0] = new_interval[0].min(interval[0]);
+            new_interval[1] = new_interval[1].max(interval[1]);
         }
     }
-    if let Some(t) = temp {
-        res.push(t);
+    if let Err(i) = res.binary_search_by_key(&new_interval[0], |v| v[0]) {
+        res.insert(i, new_interval);
     }
     res
 }

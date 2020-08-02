@@ -113,6 +113,8 @@ pub mod leetcode1512;
 pub mod leetcode152;
 pub mod leetcode1524;
 pub mod leetcode153;
+pub mod leetcode1534;
+pub mod leetcode1535;
 pub mod leetcode154;
 pub mod leetcode16;
 pub mod leetcode162;
