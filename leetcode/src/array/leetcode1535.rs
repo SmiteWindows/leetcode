@@ -1,5 +1,6 @@
 // https://leetcode.com/problems/find-the-winner-of-an-array-game/
-
+// Runtime: 12 ms
+// Memory Usage: 3.4 MB
 use std::collections::VecDeque;
 pub fn get_winner(arr: Vec<i32>, k: i32) -> i32 {
     let mut queue = VecDeque::new();
@@ -36,7 +37,6 @@ pub fn get_winner(arr: Vec<i32>, k: i32) -> i32 {
     }
 }
 // array
-
 #[test]
 fn test1_1535() {
     assert_eq!(get_winner(vec![2, 1, 3, 5, 4, 6, 7], 2), 5);
