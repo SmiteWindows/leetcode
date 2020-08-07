@@ -1,8 +1,38 @@
 // https://leetcode.com/problems/recover-binary-search-tree/
-
-use std::{cell::RefCell, rc::Rc};
+// Runtime: 0 ms
+// Memory Usage: 2.2 MB
+use std::{cell::RefCell, mem::swap, rc::Rc};
 pub fn recover_tree(root: &mut Option<Rc<RefCell<TreeNode>>>) {
-    todo!()
+    let mut prev = None;
+    let mut first = None;
+    let mut second = None;
+    inorder(root, &mut prev, &mut first, &mut second);
+    swap(
+        &mut first.unwrap().borrow_mut().val,
+        &mut second.unwrap().borrow_mut().val,
+    )
+}
+
+fn inorder(
+    root: &Option<Rc<RefCell<TreeNode>>>,
+    prev: &mut Option<Rc<RefCell<TreeNode>>>,
+    first: &mut Option<Rc<RefCell<TreeNode>>>,
+    second: &mut Option<Rc<RefCell<TreeNode>>>,
+) {
+    if let Some(node) = root {
+        let node = node.borrow();
+        inorder(&node.left, prev, first, second);
+        if let Some(prev_val) = prev.clone() {
+            if prev_val.borrow().val >= node.val {
+                if first.is_none() {
+                    *first = prev.clone();
+                }
+                *second = root.clone();
+            }
+        }
+        *prev = root.clone();
+        inorder(&node.right, prev, first, second);
+    }
 }
 
 // Definition for a binary tree node.
@@ -25,46 +55,14 @@ impl TreeNode {
 }
 // tree depth_first_search
 #[test]
-#[ignore]
 fn test2_99() {
-    let mut t1 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 3,
-            left: None,
-            right: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
-        }))),
-        right: None,
-    })));
-    let res1 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 3,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 1,
-            left: None,
-            right: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
-        }))),
-        right: None,
-    })));
-    let mut t2 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 3,
-        left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 4,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
-            right: None,
-        }))),
-    })));
-    let res2 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 2,
-        left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 4,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-            right: None,
-        }))),
-    })));
+    use leetcode_prelude::btree;
+    let mut t1 = btree![1, 3, null, null, 2];
+    let res1 = btree![3, 1, null, null, 2];
     recover_tree(&mut t1);
     assert_eq!(res1, t1);
+    let mut t2 = btree![3, 1, 4, null, null, 2];
+    let res2 = btree![2, 1, 4, null, null, 3];
     recover_tree(&mut t2);
     assert_eq!(res2, t2);
 }

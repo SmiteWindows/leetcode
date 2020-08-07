@@ -7,18 +7,23 @@ pub fn three_sum_closest(nums: Vec<i32>, target: i32) -> i32 {
     let n = nums.len();
     let mut res = 0;
     let mut diff = i32::MAX;
+
     for i in 0..n - 2 {
         let mut l = i + 1;
         let mut r = n - 1;
+
         while l < r {
             let sum = nums[l] + nums[r] + nums[i];
+
             if sum == target {
                 return target;
             }
+
             if (sum - target).abs() < diff {
                 diff = (sum - target).abs();
                 res = sum;
             }
+
             if nums[l] + nums[r] > target - nums[i] {
                 r -= 1;
             } else {

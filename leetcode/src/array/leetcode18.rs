@@ -8,34 +8,43 @@ pub fn four_sum(nums: Vec<i32>, target: i32) -> Vec<Vec<i32>> {
     let mut res = vec![];
     nums.sort();
     let mut i = 0;
+
     while i + 3 < n {
         if i > 0 && nums[i - 1] == nums[i] {
             i += 1;
             continue;
         }
+
         if nums[i] + nums[i + 1] + nums[i + 2] + nums[i + 3] > target {
             break;
         }
+
         if nums[n - 3] + nums[n - 2] + nums[n - 1] + nums[i] < target {
             i += 1;
             continue;
         }
+
         let mut j = i + 1;
+
         while j + 2 < n {
             if j > i + 1 && nums[j - 1] == nums[j] {
                 j += 1;
                 continue;
             }
+
             if nums[i] + nums[j] + nums[j + 1] + nums[j + 2] > target {
                 break;
             }
+
             if nums[n - 2] + nums[n - 1] + nums[i] + nums[j] < target {
                 j += 1;
                 continue;
             }
+
             let sum2 = nums[i] + nums[j];
             let mut left = j + 1;
             let mut right = n - 1;
+
             while left < right {
                 let sum4 = sum2 + nums[left] + nums[right];
                 match sum4.cmp(&target) {

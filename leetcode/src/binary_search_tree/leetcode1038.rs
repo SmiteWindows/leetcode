@@ -44,47 +44,4 @@ fn test1_1038() {
         ]),
         btree![30, 36, 21, 36, 35, 26, 15, null, null, null, 33, null, null, null, 8]
     );
-    // let root = Some(Rc::new(RefCell::new(TreeNode {
-    //     val: 4,
-    //     left: Some(Rc::new(RefCell::new(TreeNode {
-    //         val: 1,
-    //         left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-    //         right: Some(Rc::new(RefCell::new(TreeNode {
-    //             val: 2,
-    //             left: None,
-    //             right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-    //         }))),
-    //     }))),
-    //     right: Some(Rc::new(RefCell::new(TreeNode {
-    //         val: 6,
-    //         left: Some(Rc::new(RefCell::new(TreeNode::new(5)))),
-    //         right: Some(Rc::new(RefCell::new(TreeNode {
-    //             val: 7,
-    //             left: None,
-    //             right: Some(Rc::new(RefCell::new(TreeNode::new(8)))),
-    //         }))),
-    //     }))),
-    // })));
-    // let res = Some(Rc::new(RefCell::new(TreeNode {
-    //     val: 30,
-    //     left: Some(Rc::new(RefCell::new(TreeNode {
-    //         val: 36,
-    //         left: Some(Rc::new(RefCell::new(TreeNode::new(36)))),
-    //         right: Some(Rc::new(RefCell::new(TreeNode {
-    //             val: 35,
-    //             left: None,
-    //             right: Some(Rc::new(RefCell::new(TreeNode::new(33)))),
-    //         }))),
-    //     }))),
-    //     right: Some(Rc::new(RefCell::new(TreeNode {
-    //         val: 21,
-    //         left: Some(Rc::new(RefCell::new(TreeNode::new(26)))),
-    //         right: Some(Rc::new(RefCell::new(TreeNode {
-    //             val: 15,
-    //             left: None,
-    //             right: Some(Rc::new(RefCell::new(TreeNode::new(8)))),
-    //         }))),
-    //     }))),
-    // })));
-    // assert_eq!(res, bst_to_gst(root));
 }

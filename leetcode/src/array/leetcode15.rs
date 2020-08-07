@@ -5,19 +5,24 @@ use std::cmp::Ordering::{Equal, Greater, Less};
 pub fn three_sum(nums: Vec<i32>) -> Vec<Vec<i32>> {
     let mut res = vec![];
     let n = nums.len();
+
     if n < 3 {
         return res;
     }
+
     let mut nums = nums;
     nums.sort_unstable();
+
     for i in 0..n - 2 {
         let ai = nums[i];
         if i > 0 && nums[i] == nums[i - 1] {
             continue;
         }
+
         if nums[i] > 0 {
             break;
         }
+
         let mut j = i + 1;
         let mut k = n - 1;
         while j < k {

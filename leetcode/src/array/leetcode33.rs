@@ -7,6 +7,7 @@ pub fn search(nums: Vec<i32>, target: i32) -> i32 {
     let mut r: i32 = n as i32 - 1;
     while l <= r {
         let m = (l + r) / 2;
+
         if target == nums[m as usize] {
             return m as i32;
         } else if nums[l as usize] <= nums[m as usize] {

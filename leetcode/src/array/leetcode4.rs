@@ -4,15 +4,19 @@
 pub fn find_median_sorted_arrays(nums1: Vec<i32>, nums2: Vec<i32>) -> f64 {
     let m = nums1.len();
     let n = nums2.len();
+
     if m > n {
         return find_median_sorted_arrays(nums2, nums1);
     }
+
     let mut i_min = 0;
     let mut i_max = m;
     let half_len = (m + n + 1) / 2;
+
     while i_min <= i_max {
         let i = (i_max + i_min) / 2;
         let j = half_len - i;
+
         if i < i_max && nums2[j - 1] > nums1[i] {
             i_min = i + 1;
         } else if i > i_min && nums1[i - 1] > nums2[j] {
@@ -25,9 +29,11 @@ pub fn find_median_sorted_arrays(nums1: Vec<i32>, nums2: Vec<i32>) -> f64 {
             } else {
                 nums1[i - 1].max(nums2[j - 1])
             };
+
             if (m + n) % 2 == 1 {
                 return max_left.into();
             }
+
             let min_right = if i == m {
                 nums2[j]
             } else if j == n {
@@ -35,6 +41,7 @@ pub fn find_median_sorted_arrays(nums1: Vec<i32>, nums2: Vec<i32>) -> f64 {
             } else {
                 nums2[j].min(nums1[i])
             };
+
             return (max_left + min_right) as f64 / 2.0;
         }
     }
