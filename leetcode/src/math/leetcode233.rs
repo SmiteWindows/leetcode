@@ -1,14 +1,14 @@
 // https://leetcode.com/problems/number-of-digit-one/
 // Runtime: 0 ms
-// Memory Usage: 2.1 MB
+// Memory Usage: 2 MB
 pub fn count_digit_one(n: i32) -> i32 {
-    let mut res = 0;
-    let mut i = 1_i64;
+    let mut m = 1i64;
+    let mut res = 0i64;
     let n = n as i64;
-    while i <= n {
-        let d = i * 10 as i64;
-        res += (n / d) * i + i64::min(i64::max(n % d - i + 1, 0), i);
-        i *= 10;
+    while m <= n {
+        let d = 10 * m;
+        res += n / d * m + m.min(0.max(n % d - m + 1));
+        m *= 10;
     }
     res as i32
 }
