@@ -1,10 +1,31 @@
 // https://leetcode.com/problems/can-convert-string-in-k-moves/
+// Runtime: 28 ms
+// Memory Usage: 3.1 MB
+#![allow(clippy::many_single_char_names)]
+use std::collections::HashMap;
 pub fn can_convert_string(s: String, t: String, k: i32) -> bool {
-    todo!()
+    let n = s.len();
+    let m = t.len();
+    if n != m {
+        return false;
+    }
+    let s: Vec<i32> = s.bytes().map(|b| (b - b'a') as i32).collect();
+    let t: Vec<i32> = t.bytes().map(|b| (b - b'a') as i32).collect();
+    let mut count: HashMap<i32, i32> = HashMap::new();
+    for i in 0..n {
+        if s[i] == t[i] {
+            continue;
+        }
+        *count.entry((26 + t[i] - s[i]) % 26).or_default() += 1;
+    }
+    let mut max = 0;
+    for (k, v) in count {
+        max = max.max((v - 1) * 26 + k);
+    }
+    max <= k
 }
 // string greedy
 #[test]
-#[ignore]
 fn test2_1540() {
     assert_eq!(
         can_convert_string("input".to_string(), "ouput".to_string(), 9),
