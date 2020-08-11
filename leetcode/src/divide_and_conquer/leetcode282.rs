@@ -32,23 +32,23 @@ fn dfs(num: &[u8], target: i64, v1: i64, v2: i64, path: &mut Vec<u8>, pathes: &m
     }
     let sign_idx = path.len();
     let mut v = num[0] as i64 - 48;
-    path.push('+' as u8);
+    path.push(b'+');
     path.push(num[0]);
 
     let mut try_ops = |path: &mut Vec<u8>, v, i| {
-        path[sign_idx] = '+' as u8;
+        path[sign_idx] = b'+';
         dfs(&num[i..], target, v1 + v2, v, path, pathes);
-        path[sign_idx] = '-' as u8;
+        path[sign_idx] = b'-';
         dfs(&num[i..], target, v1 + v2, -v, path, pathes);
-        path[sign_idx] = '*' as u8;
+        path[sign_idx] = b'*';
         dfs(&num[i..], target, v1, v2 * v, path, pathes);
     };
 
     try_ops(path, v, 1);
     if v != 0 {
-        for i in 1..len {
-            path.push(num[i]);
-            v = v * 10 + num[i] as i64 - 48;
+        for (i, &ni) in num.iter().enumerate().take(len).skip(1) {
+            path.push(ni);
+            v = v * 10 + ni as i64 - 48;
             try_ops(path, v, i + 1);
         }
     }
