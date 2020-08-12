@@ -41,22 +41,13 @@ fn is_palindrome(s: &str) -> bool {
 // hash_table string trie
 #[test]
 fn test1_336() {
-    assert_eq!(
-        palindrome_pairs(vec![
-            String::from("abcd"),
-            String::from("dcba"),
-            String::from("lls"),
-            String::from("s"),
-            String::from("sssll"),
-        ]),
-        vec![vec![0, 1], vec![1, 0], vec![3, 2], vec![2, 4]]
+    use leetcode_prelude::{assert_eq_sorted, vec2, vec_string};
+    assert_eq_sorted!(
+        palindrome_pairs(vec_string!["abcd", "dcba", "lls", "s", "sssll"]),
+        vec2![[0, 1], [1, 0], [3, 2], [2, 4]]
     );
-    assert_eq!(
-        palindrome_pairs(vec![
-            String::from("bat"),
-            String::from("tab"),
-            String::from("cat"),
-        ]),
-        vec![vec![0, 1], vec![1, 0]]
+    assert_eq_sorted!(
+        palindrome_pairs(vec_string!["bat", "tab", "cat"]),
+        vec2![[0, 1], [1, 0]]
     );
 }
