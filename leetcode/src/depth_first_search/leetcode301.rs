@@ -63,16 +63,17 @@ fn dfs(
 // depth_first_search breadth_first_search
 #[test]
 fn test1_301() {
-    assert_eq!(
+    use leetcode_prelude::{assert_eq_sorted, vec_string};
+    assert_eq_sorted!(
         remove_invalid_parentheses(String::from("()())()")),
-        vec![String::from("()()()"), String::from("(())()")]
+        vec_string!["()()()", "(())()"]
     );
-    assert_eq!(
+    assert_eq_sorted!(
         remove_invalid_parentheses(String::from("(a)())()")),
-        vec![String::from("(a)()()"), String::from("(a())()")]
+        vec_string!["(a)()()", "(a())()"]
     );
     assert_eq!(
         remove_invalid_parentheses(String::from(")(")),
-        vec![String::from("")]
+        vec_string![""]
     );
 }
