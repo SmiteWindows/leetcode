@@ -3,17 +3,17 @@
 // Memory Usage: 2.5 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn diameter_of_binary_tree(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    let mut depth = 1;
-    walk(root.as_deref(), &mut depth);
-    depth - 1
+    let mut max = 0;
+    walk(root.as_deref(), &mut max);
+    max
 }
 
-fn walk(root: Option<&RefCell<TreeNode>>, depth: &mut i32) -> i32 {
+fn walk(root: Option<&RefCell<TreeNode>>, max: &mut i32) -> i32 {
     if let Some(node) = root {
         let node = node.borrow();
-        let left = walk(node.left.as_deref(), depth);
-        let right = walk(node.right.as_deref(), depth);
-        *depth = (left + right + 1).max(*depth);
+        let left = walk(node.left.as_deref(), max);
+        let right = walk(node.right.as_deref(), max);
+        *max = (*max).max(left + right);
         left.max(right) + 1
     } else {
         0

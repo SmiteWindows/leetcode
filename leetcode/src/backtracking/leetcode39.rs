@@ -6,26 +6,26 @@ pub fn combination_sum(candidates: Vec<i32>, target: i32) -> Vec<Vec<i32>> {
     candidates.sort_unstable();
     let mut combination = vec![];
     let mut res = vec![];
-    backtrack(&mut res, &mut combination, &candidates, target, 0);
+    backtrack(0, target, &mut combination, &mut res, &candidates);
     res
 }
 
 fn backtrack(
-    res: &mut Vec<Vec<i32>>,
-    combination: &mut Vec<i32>,
-    candidates: &[i32],
+    start: usize,
     target: i32,
-    begin: usize,
+    combination: &mut Vec<i32>,
+    all: &mut Vec<Vec<i32>>,
+    candidates: &[i32],
 ) {
     if target == 0 {
-        res.push(combination.to_vec());
+        all.push(combination.to_vec());
     } else {
-        for (i, &candidate) in candidates.iter().enumerate().skip(begin) {
+        for (i, &candidate) in candidates.iter().enumerate().skip(start) {
             if candidate > target {
                 break;
             } else {
                 combination.push(candidate);
-                backtrack(res, combination, candidates, target - candidate, i);
+                backtrack(i, target - candidates[i], combination, all, candidates);
                 combination.pop();
             }
         }

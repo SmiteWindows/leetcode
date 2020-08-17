@@ -1,33 +1,28 @@
 // https://leetcode.com/problems/target-sum/
-// Runtime: 48 ms
+// Runtime: 40 ms
 // Memory Usage: 2.5 MB
 use std::collections::HashMap;
 pub fn find_target_sum_ways(nums: Vec<i32>, s: i32) -> i32 {
     let n = nums.len();
     let mut memo = HashMap::new();
-    dfs(0, s, &mut memo, &nums, n)
+    dp(n, s, &mut memo, &nums, n)
 }
 
-fn dfs(
-    start: usize,
-    sum: i32,
-    memo: &mut HashMap<(usize, i32), i32>,
-    nums: &[i32],
-    n: usize,
-) -> i32 {
-    if start == n {
+fn dp(end: usize, sum: i32, memo: &mut HashMap<(usize, i32), i32>, nums: &[i32], n: usize) -> i32 {
+    if end == 0 {
         if sum == 0 {
             1
         } else {
             0
         }
-    } else if let Some(&res) = memo.get(&(start, sum)) {
-        res
     } else {
-        let a = dfs(start + 1, sum + nums[start], memo, nums, n);
-        let b = dfs(start + 1, sum - nums[start], memo, nums, n);
+        if let Some(&res) = memo.get(&(end, sum)) {
+            return res;
+        }
+        let a = dp(end - 1, sum + nums[end - 1], memo, nums, n);
+        let b = dp(end - 1, sum - nums[end - 1], memo, nums, n);
         let res = a + b;
-        memo.insert((start, sum), res);
+        memo.insert((end, sum), res);
         res
     }
 }

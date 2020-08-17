@@ -37,11 +37,13 @@ impl RandomizedSet {
     /** Removes a value from the set. Returns true if the set contained the specified element. */
     fn remove(&mut self, val: i32) -> bool {
         if let Some(index) = self.indexes.remove(&val) {
-            let last = self.values[self.values.len() - 1];
-            self.indexes
-                .entry(last)
-                .and_modify(|old_index| *old_index = index);
-            self.values[index] = last;
+            let last_index = self.values.len() - 1;
+            let last_value = self.values[last_index];
+            if index != last_index {
+                self.values.swap(index, last_index);
+                let old_index = self.indexes.get_mut(&last_value).unwrap();
+                *old_index = index;
+            }
             self.values.pop();
             true
         } else {
