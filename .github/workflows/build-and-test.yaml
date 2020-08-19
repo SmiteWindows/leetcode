@@ -1,53 +1,57 @@
-name: Build and test
+name: Rust
 
 on:
   push:
     branches:
       - master
-  schedule:
-    - cron: "00 1 * * *" # every day at 1:00
   pull_request:
 
 jobs:
-  build_and_test:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest]
-        # os: [ubuntu-latest, windows-latest, macos-latest]
-        rust: [nightly, beta, stable]
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Install latest ${{ matrix.rust }}
-        uses: actions-rs/toolchain@v1
+      - name: Setup | Checkout
+        uses: actions/checkout@v2
+      - name: Setup | Rust
+        uses: ATiltedTree/setup-rust@v1
         with:
-          toolchain: ${{ matrix.rust }}
-          profile: default
-          override: true
-
-      - name: Run cargo check
-        uses: actions-rs/cargo@v1
+          rust-version: stable
+          components: clippy
+      - name: Build | Lint
+        run: cargo clippy
+  compile:
+    name: Compile
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup | Checkout
+        uses: actions/checkout@v2
+      - name: Setup | Rust
+        uses: ATiltedTree/setup-rust@v1
         with:
-          command: check
-          args: --all --benches --bins --examples --tests --all-features
-
-      - name: Run cargo check (without dev-dependencies to catch missing feature flags)
-        if: startsWith(matrix.rust, 'nightly')
-        uses: actions-rs/cargo@v1
+          rust-version: stable
+      - name: Build | Compile
+        run: cargo check
+  test:
+    name: Test
+    matrix:
+      strategy:
+        os:
+        - ubuntu-latest
+        - windows-latest
+        - macOS-latest
+        rust:
+          - stable
+          - beta
+          - nightly
+    runs-on: ${{ matrix.os }}
+    needs: [compile]
+    steps:
+      - name: Setup | Checkout
+        uses: actions/checkout@v2
+      - name: Setup | Rust
+        uses: ATiltedTree/setup-rust@v1
         with:
-          command: check
-          args: -Z features=dev_dep
-
-      - name: Run cargo test
-        uses: actions-rs/cargo@v1
-        with:
-          command: test
-
-      - uses: actions-rs/clippy-check@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          args: --all-features -- -W clippy::all
-
-      - run: cargo tree
+          rust-version: ${{ matrix.rust }}
+      - name: Build | Compile
+        run: cargo test
