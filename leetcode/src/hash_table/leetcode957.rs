@@ -47,6 +47,7 @@ pub fn prison_after_n_days(cells: Vec<i32>, n: i32) -> Vec<i32> {
         output.push(state_bitmap & 1);
         state_bitmap >>= 1;
     }
+    // output.resize(cells.len(), state_bitmap & 1);
     output.into_iter().rev().collect()
 }
 // hash_table

@@ -2,7 +2,6 @@
 // Runtime: 0 ms
 // Memory Usage: 2.3 MB
 pub fn num_smaller_by_frequency(queries: Vec<String>, words: Vec<String>) -> Vec<i32> {
-    let f_queries = queries.iter().map(|s| f(s)).collect::<Vec<_>>();
     let f_words = words.iter().map(|s| f(s)).collect::<Vec<_>>();
     let mut counts = vec![0; 12];
     for f in f_words {
@@ -11,7 +10,11 @@ pub fn num_smaller_by_frequency(queries: Vec<String>, words: Vec<String>) -> Vec
     for i in (1..10).rev() {
         counts[i] += counts[i + 1];
     }
-    f_queries.into_iter().map(|f| counts[f + 1]).collect()
+    queries
+        .iter()
+        .map(|s| f(s))
+        .map(|f| counts[f + 1])
+        .collect()
 }
 
 fn f(s: &str) -> usize {
