@@ -4,7 +4,7 @@
 pub fn num_rescue_boats(people: Vec<i32>, limit: i32) -> i32 {
     let mut people = people;
     let n = people.len();
-    people.sort();
+    people.sort_unstable();
     people.reverse();
     let mut i = 0;
     let mut j = n - 1;

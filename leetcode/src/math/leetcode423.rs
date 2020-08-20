@@ -35,9 +35,7 @@ pub fn original_digits(s: String) -> String {
             for (&c, &v) in &digits[i] {
                 *count.entry(c).or_default() -= min * v;
             }
-            for _ in 0..min {
-                res.push((b'0' + i as u8) as char);
-            }
+            res.resize(min + res.len(), (b'0' + i as u8) as char);
         }
     }
     res.sort_unstable();

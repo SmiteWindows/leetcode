@@ -3,7 +3,7 @@
 // Memory Usage: 2.6 MB
 pub fn sort_array(nums: Vec<i32>) -> Vec<i32> {
     let mut nums = nums;
-    nums.sort();
+    nums.sort_unstable();
     nums
 }
 #[test]

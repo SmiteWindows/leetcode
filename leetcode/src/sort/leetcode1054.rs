@@ -19,14 +19,10 @@ pub fn rearrange_barcodes(barcodes: Vec<i32>) -> Vec<i32> {
     let mut stack = vec![];
     for (k, v) in hm {
         if k != max.1 {
-            for _ in 0..v {
-                stack.push(k);
-            }
+            stack.resize(v, k);
         }
     }
-    for _ in 0..max.0 {
-        stack.push(max.1);
-    }
+    stack.resize(stack.len() + max.0, max.1);
     let mut res = vec![0; n];
     let m = if n % 2 == 0 { n / 2 } else { (n + 1) / 2 };
     for i in 0..m {

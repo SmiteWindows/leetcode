@@ -9,7 +9,7 @@ pub fn get_all_elements(
     let mut res = vec![];
     inorder(root1.as_deref(), &mut res);
     inorder(root2.as_deref(), &mut res);
-    res.sort();
+    res.sort_unstable();
     res
 }
 

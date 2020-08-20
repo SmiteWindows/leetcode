@@ -7,7 +7,7 @@ pub fn dominant_index(nums: Vec<i32>) -> i32 {
         return 0;
     }
     let mut copy = nums.clone();
-    copy.sort();
+    copy.sort_unstable();
     if copy[n - 1] < 2 * copy[n - 2] {
         -1
     } else {

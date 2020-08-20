@@ -3,7 +3,7 @@
 // Memory Usage: 2.3 MB
 pub fn sorted_squares(a: Vec<i32>) -> Vec<i32> {
     let mut squared = a.iter().map(|a| a * a).collect::<Vec<_>>();
-    squared.sort();
+    squared.sort_unstable();
     squared
 }
 // two_pointers array

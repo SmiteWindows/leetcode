@@ -6,9 +6,7 @@ pub fn decompress_rl_elist(nums: Vec<i32>) -> Vec<i32> {
     for p in nums.chunks(2) {
         let a = p[0] as usize;
         let b = p[1];
-        for _ in 0..a {
-            res.push(b);
-        }
+        res.resize(res.len() + a, b);
     }
     res
 }
