@@ -30,6 +30,7 @@ impl WordDictionary {
             wd.is_word = true;
         }
     }
+
     /** Returns if the word is in the data structure. A word could contain the dot character '.' to represent any one letter. */
     fn search(&self, word: String) -> bool {
         Self::find(self, &word)

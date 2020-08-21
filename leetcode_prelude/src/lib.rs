@@ -1,8 +1,7 @@
 #![warn(rust_2018_idioms)]
 mod list;
 mod tree;
-pub use crate::list::ListNode;
-pub use crate::tree::TreeNode;
+pub use crate::{list::ListNode, tree::TreeNode};
 
 /// Create a Vec<String>
 #[macro_export]

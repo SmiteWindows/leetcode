@@ -1,7 +1,12 @@
 // https://leetcode.com/problems/brace-expansion-ii/
 // Runtime: 8 ms
 // Memory Usage: 2.3 MB
-use std::{collections::HashSet, iter::FromIterator, iter::Peekable, str::Chars, vec::IntoIter};
+use std::{
+    collections::HashSet,
+    iter::{FromIterator, Peekable},
+    str::Chars,
+    vec::IntoIter,
+};
 pub fn brace_expansion_ii(expression: String) -> Vec<String> {
     let mut it = expression.chars().peekable();
     let toks = parse_tokens(&mut it);

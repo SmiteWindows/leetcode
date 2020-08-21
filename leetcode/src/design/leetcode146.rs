@@ -134,6 +134,7 @@ impl ListIter {
 
 impl Iterator for ListIter {
     type Item = Element;
+
     fn next(&mut self) -> Option<Self::Item> {
         self.head.clone().map(|node_ref| {
             let node = node_ref.borrow();

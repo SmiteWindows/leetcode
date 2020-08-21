@@ -2,7 +2,8 @@
 // Runtime: 40 ms
 // Memory Usage: 4.1 MB
 use std::{
-    collections::hash_map::DefaultHasher, collections::HashMap, collections::HashSet, hash::Hasher,
+    collections::{hash_map::DefaultHasher, HashMap, HashSet},
+    hash::Hasher,
 };
 pub fn spellchecker(wordlist: Vec<String>, queries: Vec<String>) -> Vec<String> {
     let dict = Dict::new(wordlist);

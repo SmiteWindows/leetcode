@@ -1,7 +1,10 @@
 // https://leetcode.com/problems/get-the-maximum-score/
 // Runtime: 84 ms
 // Memory Usage: 5.3 MB
-use std::{collections::BTreeSet, collections::HashSet, iter::FromIterator};
+use std::{
+    collections::{BTreeSet, HashSet},
+    iter::FromIterator,
+};
 const MOD: i64 = 1_000_000_007;
 pub fn max_sum(nums1: Vec<i32>, nums2: Vec<i32>) -> i32 {
     let set1: HashSet<i32> = HashSet::from_iter(nums1.iter().copied());

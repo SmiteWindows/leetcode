@@ -45,15 +45,19 @@ impl Time {
     fn new(hour: i32, minute: i32) -> Self {
         Self { hour, minute }
     }
+
     fn is_valid(&self) -> bool {
         self.hour < 24 && self.minute < 60
     }
+
     fn from_digits(a: &[i32]) -> Self {
         Self::new(a[0] * 10 + a[1], a[2] * 10 + a[3])
     }
+
     fn to_minutes(&self) -> i32 {
         self.hour * 60 + self.minute
     }
+
     fn to_digits(&self) -> Vec<i32> {
         vec![
             self.hour / 10,

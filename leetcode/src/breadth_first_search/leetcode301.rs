@@ -15,7 +15,7 @@ pub fn remove_invalid_parentheses(s: String) -> Vec<String> {
     res
 }
 
-fn helper(res: &mut Vec<String>, s: &String, last_i: usize, last_j: usize, par: [char; 2]) {
+fn helper(res: &mut Vec<String>, s: &str, last_i: usize, last_j: usize, par: [char; 2]) {
     let mut stack: i32 = 0;
 
     for i in last_i..s.len() {
@@ -38,7 +38,8 @@ fn helper(res: &mut Vec<String>, s: &String, last_i: usize, last_j: usize, par: 
             {
                 let mut s_vec: Vec<char> = s.chars().collect();
                 s_vec.remove(j);
-                helper(res, &(s_vec.into_iter().collect()), i, j, par);
+                let s_vec: String = s_vec.into_iter().collect();
+                helper(res, &s_vec, i, j, par);
             }
         }
 

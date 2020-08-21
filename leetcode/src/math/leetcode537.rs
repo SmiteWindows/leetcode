@@ -28,6 +28,7 @@ impl Complex {
 
 impl Mul for Complex {
     type Output = Self;
+
     fn mul(self, rhs: Self) -> Self::Output {
         Self::new(
             self.r * rhs.r - self.i * rhs.i,

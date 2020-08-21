@@ -1,8 +1,7 @@
 // https://leetcode.com/problems/validate-ip-address/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
-use std::net::Ipv4Addr;
-use std::net::Ipv6Addr;
+use std::net::{Ipv4Addr, Ipv6Addr};
 pub fn valid_ip_address(ip: String) -> String {
     if is_ipv4(&ip) {
         return "IPv4".to_string();
