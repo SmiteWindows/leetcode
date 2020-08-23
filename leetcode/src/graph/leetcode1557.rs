@@ -1,10 +1,15 @@
 // https://leetcode.com/problems/minimum-number-of-vertices-to-reach-all-nodes/
+// Runtime: 52 ms
+// Memory Usage: 8.7 MB
+// ✔
+use std::collections::HashSet;
 pub fn find_smallest_set_of_vertices(n: i32, edges: Vec<Vec<i32>>) -> Vec<i32> {
-    todo!()
+    let dependent: HashSet<_> = edges.into_iter().map(|x| x[1]).collect();
+    let result: HashSet<_> = (0..n).collect();
+    result.difference(&dependent).cloned().collect()
 }
 // graph
 #[test]
-#[ignore]
 fn test1_1557() {
     use leetcode_prelude::vec2;
     assert_eq!(

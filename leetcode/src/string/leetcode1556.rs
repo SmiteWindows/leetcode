@@ -1,6 +1,7 @@
 // https://leetcode.com/problems/thousand-separator/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
+// ✔
 pub fn thousand_separator(n: i32) -> String {
     let mut characters: Vec<_> = n.to_string().chars().rev().collect();
     let mut count = 0;
