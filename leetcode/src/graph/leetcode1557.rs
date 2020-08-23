@@ -21,3 +21,19 @@ fn test1_1557() {
         vec![0, 2, 3]
     );
 }
+
+pub fn _find_smallest_set_of_vertices(n: i32, edges: Vec<Vec<i32>>) -> Vec<i32> {
+    let n = n as usize;
+    let mut indegree = vec![0; n];
+    for e in edges {
+        let to = e[1] as usize;
+        indegree[to] += 1;
+    }
+    let mut res = vec![];
+    for (i, &a) in indegree.iter().enumerate().take(n) {
+        if a == 0 {
+            res.push(i as i32);
+        }
+    }
+    res
+}

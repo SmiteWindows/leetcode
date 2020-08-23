@@ -24,3 +24,20 @@ fn test1_1556() {
     assert_eq!(thousand_separator(123456789), "123.456.789");
     assert_eq!(thousand_separator(0), "0");
 }
+fn _thousand_separator(n: i32) -> String {
+    let mut n = n;
+    if n == 0 {
+        return "0".to_string();
+    }
+    let mut stack = vec![];
+    let mut count = 0;
+    while n > 0 {
+        if count % 3 == 0 && count > 0 {
+            stack.push('.');
+        }
+        stack.push((b'0' + (n % 10) as u8) as char);
+        n /= 10;
+        count += 1;
+    }
+    stack.into_iter().rev().collect()
+}

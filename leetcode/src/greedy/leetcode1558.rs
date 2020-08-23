@@ -1,9 +1,32 @@
 // https://leetcode.com/problems/minimum-numbers-of-function-calls-to-make-target-array/
-// Runtime: 32 ms
+// Runtime: 12 ms
 // Memory Usage: 3.1 MB
 // ✔
-use std::cmp::Reverse;
 pub fn min_operations(nums: Vec<i32>) -> i32 {
+    let mut ones = 0;
+    let mut max_width = 0;
+    for mut x in nums {
+        ones += x.count_ones();
+        let mut width = 0;
+        while x > 0 {
+            x >>= 1;
+            width += 1;
+        }
+        max_width = max_width.max(width);
+    }
+    (ones + max_width - 1) as i32
+}
+// greedy
+#[test]
+fn test1_1558() {
+    assert_eq!(min_operations(vec![1, 5]), 5);
+    assert_eq!(min_operations(vec![2, 2]), 3);
+    assert_eq!(min_operations(vec![4, 2, 5]), 6);
+    assert_eq!(min_operations(vec![3, 2, 2, 4]), 7);
+    assert_eq!(min_operations(vec![2, 4, 8, 16]), 8);
+}
+use std::cmp::Reverse;
+pub fn _min_operations(nums: Vec<i32>) -> i32 {
     let mut nums = nums;
     nums.sort_unstable_by_key(|&x| Reverse(x));
 
@@ -29,13 +52,4 @@ pub fn min_operations(nums: Vec<i32>) -> i32 {
         }
     }
     count
-}
-// greedy
-#[test]
-fn test1_1558() {
-    assert_eq!(min_operations(vec![1, 5]), 5);
-    assert_eq!(min_operations(vec![2, 2]), 3);
-    assert_eq!(min_operations(vec![4, 2, 5]), 6);
-    assert_eq!(min_operations(vec![3, 2, 2, 4]), 7);
-    assert_eq!(min_operations(vec![2, 4, 8, 16]), 8);
 }
