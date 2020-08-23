@@ -1,6 +1,8 @@
 // https://leetcode.com/problems/detect-cycles-in-2d-grid/
 // Runtime: 88 ms
 // Memory Usage: 33.3 MB
+#![allow(clippy::many_single_char_names)]
+#![allow(clippy::too_many_arguments)]
 pub fn contains_cycle(grid: Vec<Vec<char>>) -> bool {
     let n = grid.len();
     let m = grid[0].len();
@@ -46,25 +48,33 @@ fn dfs(
         return false;
     }
     visited[i][j] = true;
-    if i > 0 && grid[i - 1][j] == c && i - 1 != pi {
-        if dfs(i - 1, j, dist + 1, i, j, visited, grid, c, n, m) {
-            return true;
-        }
+    if i > 0
+        && grid[i - 1][j] == c
+        && i - 1 != pi
+        && dfs(i - 1, j, dist + 1, i, j, visited, grid, c, n, m)
+    {
+        return true;
     }
-    if j > 0 && grid[i][j - 1] == c && j - 1 != pj {
-        if dfs(i, j - 1, dist + 1, i, j, visited, grid, c, n, m) {
-            return true;
-        }
+    if j > 0
+        && grid[i][j - 1] == c
+        && j - 1 != pj
+        && dfs(i, j - 1, dist + 1, i, j, visited, grid, c, n, m)
+    {
+        return true;
     }
-    if i + 1 < n && grid[i + 1][j] == c && i + 1 != pi {
-        if dfs(i + 1, j, dist + 1, i, j, visited, grid, c, n, m) {
-            return true;
-        }
+    if i + 1 < n
+        && grid[i + 1][j] == c
+        && i + 1 != pi
+        && dfs(i + 1, j, dist + 1, i, j, visited, grid, c, n, m)
+    {
+        return true;
     }
-    if j + 1 < m && grid[i][j + 1] == c && j + 1 != pj {
-        if dfs(i, j + 1, dist + 1, i, j, visited, grid, c, n, m) {
-            return true;
-        }
+    if j + 1 < m
+        && grid[i][j + 1] == c
+        && j + 1 != pj
+        && dfs(i, j + 1, dist + 1, i, j, visited, grid, c, n, m)
+    {
+        return true;
     }
     false
 }
