@@ -1,6 +1,7 @@
 // https://leetcode.com/problems/container-with-most-water/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
+// ✔
 pub fn max_area(height: Vec<i32>) -> i32 {
     let mut l = 0;
     let mut r = height.len() - 1;
