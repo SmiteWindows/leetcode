@@ -1,18 +1,15 @@
 // https://leetcode.com/problems/consecutive-characters/
 // Runtime: 0 ms
-// Memory Usage: 2 MB
+// Memory Usage: 2.1 MB
 pub fn max_power(s: String) -> i32 {
-    let mut prev: (char, usize) = (' ', 0);
-    let mut res = 0;
-    for c in s.chars() {
-        if c == prev.0 {
-            prev.1 += 1;
-        } else {
-            prev = (c, 1);
-        }
-        res = res.max(prev.1);
-    }
-    res as i32
+    s.bytes()
+        .fold((0, 0, b'a'), |(mut count, max, last), l| {
+            if l != last {
+                count = 0;
+            }
+            (count + 1, max.max(count + 1), l)
+        })
+        .1
 }
 // string
 #[test]
