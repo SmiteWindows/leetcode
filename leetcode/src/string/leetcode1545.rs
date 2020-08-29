@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/find-kth-bit-in-nth-binary-string/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
-use std::cmp::Ordering::*;
+use std::cmp::Ordering;
 pub fn find_kth_bit(n: i32, k: i32) -> char {
     if find(n, k - 1) == 0 {
         '0'
@@ -16,9 +16,9 @@ fn find(n: i32, k: i32) -> i32 {
     } else {
         let size = (1 << n) - 1;
         match (size / 2).cmp(&k) {
-            Equal => 1,
-            Greater => find(n - 1, k),
-            Less => 1 - find(n - 1, size - 1 - k),
+            Ordering::Equal => 1,
+            Ordering::Greater => find(n - 1, k),
+            Ordering:: Less => 1 - find(n - 1, size - 1 - k),
         }
     }
 }

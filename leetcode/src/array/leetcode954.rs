@@ -1,19 +1,19 @@
 // https://leetcode.com/problems/array-of-doubled-pairs/
 // Runtime: 24 ms
 // Memory Usage: 2.3 MB
-use std::cmp::Ordering::*;
+use std::cmp::Ordering;
 pub fn can_reorder_doubled(a: Vec<i32>) -> bool {
     let mut nonzero = vec![vec![]; 2];
     let mut zero = 0_usize;
     for x in a {
         match x.cmp(&0) {
-            Equal => {
+            Ordering::Equal => {
                 zero += 1;
             }
-            Less => {
+            Ordering::Less => {
                 nonzero[0].push(-x);
             }
-            Greater => {
+            Ordering::Greater => {
                 nonzero[1].push(x);
             }
         }

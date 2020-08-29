@@ -1,7 +1,7 @@
 // https://leetcode.com/problems/3sum/
 // Runtime: 16 ms
 // Memory Usage: 3.4 MB
-use std::cmp::Ordering::{Equal, Greater, Less};
+use std::cmp::Ordering;
 pub fn three_sum(nums: Vec<i32>) -> Vec<Vec<i32>> {
     let mut res = vec![];
     let n = nums.len();
@@ -30,7 +30,7 @@ pub fn three_sum(nums: Vec<i32>) -> Vec<Vec<i32>> {
             let ck = nums[k];
             let sum = ai + bj + ck;
             match sum.cmp(&0) {
-                Equal => {
+                Ordering::Equal => {
                     res.push(vec![ai, bj, ck]);
                     j += 1;
                     k -= 1;
@@ -41,8 +41,8 @@ pub fn three_sum(nums: Vec<i32>) -> Vec<Vec<i32>> {
                         k -= 1;
                     }
                 }
-                Less => j += 1,
-                Greater => k -= 1,
+                Ordering::Less => j += 1,
+                Ordering::Greater => k -= 1,
             }
         }
     }
