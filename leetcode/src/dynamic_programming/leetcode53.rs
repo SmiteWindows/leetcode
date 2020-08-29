@@ -1,14 +1,10 @@
 // https://leetcode.com/problems/maximum-subarray/
 // Runtime: 0 ms
-// Memory Usage: 2.1 MB
+// Memory Usage: 2.2 MB
 pub fn max_sub_array(nums: Vec<i32>) -> i32 {
-    let mut prev = 0;
-    let mut max = i32::MIN;
-    for &val in nums.iter() {
-        prev = val.max(prev + val);
-        max = max.max(prev);
-    }
-    max
+    nums.iter().fold((0, std::i32::MIN), |(cur, mx), &num| {
+        (std::cmp::max(0, cur + num) ,std::cmp::max(mx, cur + num))
+    }).1
 }
 // divide_and_conquer array dynamic_programming
 #[test]
