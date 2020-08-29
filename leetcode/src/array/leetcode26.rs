@@ -1,24 +1,10 @@
 // https://leetcode.com/problems/remove-duplicates-from-sorted-array/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
+// ✔
 pub fn remove_duplicates(nums: &mut Vec<i32>) -> i32 {
-    let n = nums.len();
-
-    if n == 0 {
-        return 0;
-    }
-
-    let mut last = nums[0];
-    let mut size = 1;
-
-    for i in 1..n {
-        if nums[i] != last {
-            last = nums[i];
-            nums[size] = nums[i];
-            size += 1;
-        }
-    }
-    size as i32
+    nums.dedup();
+    nums.len() as i32
 }
 // array two_pointers
 #[test]

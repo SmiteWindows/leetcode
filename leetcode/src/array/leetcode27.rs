@@ -1,17 +1,9 @@
 // https://leetcode.com/problems/remove-element/
 // Runtime: 0 ms
-// Memory Usage: 2.1 MB
+// Memory Usage: 2 MB
 pub fn remove_element(nums: &mut Vec<i32>, val: i32) -> i32 {
-    let n = nums.len();
-    let mut size = 0_usize;
-
-    for i in 0..n {
-        if nums[i] != val {
-            nums[size] = nums[i];
-            size += 1;
-        }
-    }
-    size as i32
+    nums.retain(|&x| x != val);
+    nums.len() as i32
 }
 // array two_pointers
 #[test]
