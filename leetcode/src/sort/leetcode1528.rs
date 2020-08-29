@@ -1,14 +1,24 @@
 // https://leetcode.com/problems/shuffle-string/
 // Runtime: 0 ms
-// Memory Usage: 2.1 MB
+// Memory Usage: 2 MB
 pub fn restore_string(s: String, indices: Vec<i32>) -> String {
-    let n = s.len();
-    let s = s.chars().collect::<Vec<_>>();
-    let mut v = vec![' '; n];
-    for i in 0..n {
-        v[indices[i] as usize] = s[i];
+    let mut result = s.clone();
+        
+    for (i, &index) in indices.iter().enumerate() {
+        let index = index as usize;
+        unsafe {
+            result.as_bytes_mut()[index] = s.as_bytes()[i];
+        }
     }
-    v.into_iter().collect()
+    
+    result
+    // let n = s.len();
+    // let s = s.chars().collect::<Vec<_>>();
+    // let mut v = vec![' '; n];
+    // for i in 0..n {
+    //     v[indices[i] as usize] = s[i];
+    // }
+    // v.into_iter().collect()
 }
 // sort
 #[test]

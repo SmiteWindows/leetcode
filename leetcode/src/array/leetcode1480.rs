@@ -1,14 +1,14 @@
 // https://leetcode.com/problems/running-sum-of-1d-array/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
+// ✔
 pub fn running_sum(nums: Vec<i32>) -> Vec<i32> {
-    let mut res = vec![];
-    let mut prev = 0;
-    for &num in nums.iter() {
-        prev += num;
-        res.push(prev);
-    }
-    res
+    nums.iter()
+        .scan(0, |sum, &v| {
+            *sum += v;
+            Some(*sum)
+        })
+        .collect::<Vec<i32>>()
 }
 // array
 #[test]

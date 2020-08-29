@@ -19,7 +19,7 @@ pub fn longest_awesome(s: String) -> i32 {
         }
         hm.entry(mask).or_insert(i + 1);
     }
-    res
+    res as i32
 }
 // string bit_manipulation
 #[test]
