@@ -7,7 +7,7 @@ pub fn repeated_substring_pattern(s: String) -> bool {
         .map(|step| {
             (step..s.len())
                 .step_by(step)
-                .all(|front| &s[front..step + front] == &s[..step])
+                .all(|front| s[front..step + front] == s[..step])
         })
         .any(|x| x)
 }

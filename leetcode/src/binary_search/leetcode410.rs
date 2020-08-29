@@ -19,12 +19,12 @@ pub fn split_array(nums: Vec<i32>, m: i32) -> i32 {
 fn split(nums: &[i32], max: i32, n: usize) -> i32 {
     let mut sum = 0;
     let mut res = 1;
-    for i in 0..n {
-        if nums[i] + sum > max {
-            sum = nums[i];
+    for &num in nums.iter().take(n) {
+        if num + sum > max {
+            sum = num;
             res += 1;
         } else {
-            sum += nums[i];
+            sum += num;
         }
     }
     res

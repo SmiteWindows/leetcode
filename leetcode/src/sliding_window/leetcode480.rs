@@ -5,8 +5,8 @@ pub fn median_sliding_window(nums: Vec<i32>, k: i32) -> Vec<f64> {
     let k = k as usize;
     let n = nums.len();
     let mut w = vec![];
-    for i in 0..k {
-        w.push(nums[i]);
+    for &num in nums.iter().take(k) {
+        w.push(num);
     }
     w.sort_unstable();
     let mut res = vec![];
