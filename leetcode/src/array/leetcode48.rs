@@ -3,13 +3,10 @@
 // Memory Usage: 2 MB
 pub fn rotate(matrix: &mut Vec<Vec<i32>>) {
     matrix.reverse();
-    let n = matrix.len();
-    for i in 0..n {
-        for j in i + 1..n {
-            let a = matrix[i][j];
-            let b = matrix[j][i];
-            matrix[i][j] = b;
-            matrix[j][i] = a;
+    for i in 1..matrix.len() {
+        let (left, right) = matrix.split_at_mut(i);
+        for (j, left_item) in left.iter_mut().enumerate().take(i) {
+            std::mem::swap(&mut left_item[i], &mut right[0][j]);
         }
     }
 }
