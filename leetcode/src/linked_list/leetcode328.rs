@@ -1,26 +1,39 @@
 // https://leetcode-cn.com/problems/odd-even-linked-list/
 // Runtime: 0 ms
 // Memory Usage: 2.3 MB
-pub fn odd_even_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
-    let mut odd_list = Some(Box::new(ListNode::new(0)));
-    let mut even_list = Some(Box::new(ListNode::new(0)));
-    let mut odd_tail = &mut odd_list;
-    let mut even_tail = &mut even_list;
-    let mut curr = head;
-    let mut is_odd = true;
-    while let Some(mut curr_inner) = curr {
-        curr = curr_inner.next.take();
-        if is_odd {
-            odd_tail.as_mut()?.next = Some(curr_inner);
-            odd_tail = &mut odd_tail.as_mut()?.next;
-        } else {
-            even_tail.as_mut()?.next = Some(curr_inner);
-            even_tail = &mut even_tail.as_mut()?.next;
+pub fn odd_even_list(mut head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+    let mut odd = None;
+    let (mut odd_cur, mut even_cur) = (&mut odd, &mut head);
+    while odd_cur.is_some() || even_cur.is_some() {
+        *odd_cur = even_cur.take();
+        odd_cur = &mut odd_cur.as_deref_mut()?.next;
+        if odd_cur.is_none() {
+            break;
         }
-        is_odd = !is_odd;
+        *even_cur = odd_cur.take();
+        even_cur = &mut even_cur.as_deref_mut()?.next;
     }
-    odd_tail.as_mut()?.next = even_list?.next.take();
-    odd_list?.next
+    *odd_cur = head;
+    odd
+    // let mut odd_list = Some(Box::new(ListNode::new(0)));
+    // let mut even_list = Some(Box::new(ListNode::new(0)));
+    // let mut odd_tail = &mut odd_list;
+    // let mut even_tail = &mut even_list;
+    // let mut curr = head;
+    // let mut is_odd = true;
+    // while let Some(mut curr_inner) = curr {
+    //     curr = curr_inner.next.take();
+    //     if is_odd {
+    //         odd_tail.as_mut()?.next = Some(curr_inner);
+    //         odd_tail = &mut odd_tail.as_mut()?.next;
+    //     } else {
+    //         even_tail.as_mut()?.next = Some(curr_inner);
+    //         even_tail = &mut even_tail.as_mut()?.next;
+    //     }
+    //     is_odd = !is_odd;
+    // }
+    // odd_tail.as_mut()?.next = even_list?.next.take();
+    // odd_list?.next
 }
 
 // Definition for singly-linked list.
