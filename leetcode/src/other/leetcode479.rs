@@ -23,6 +23,6 @@ pub fn largest_palindrome(n: i32) -> i32 {
     0
 }
 #[test]
-fn test479(){
-    assert_eq!(largest_palindrome(2),987);
+fn test479() {
+    assert_eq!(largest_palindrome(2), 987);
 }

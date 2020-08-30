@@ -18,7 +18,7 @@ fn find(n: i32, k: i32) -> i32 {
         match (size / 2).cmp(&k) {
             Ordering::Equal => 1,
             Ordering::Greater => find(n - 1, k),
-            Ordering:: Less => 1 - find(n - 1, size - 1 - k),
+            Ordering::Less => 1 - find(n - 1, size - 1 - k),
         }
     }
 }

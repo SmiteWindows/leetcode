@@ -14,8 +14,8 @@ pub fn find_rotate_steps(ring: String, key: String) -> i32 {
         if size == m {
             return step;
         }
-        for j in 0..n {
-            if ring[j] == key[size] {
+        for (j, &rj) in ring.iter().enumerate().take(n) {
+            if rj == key[size] {
                 let d = step + rotate(i as i32, j as i32, n as i32) + 1;
                 if d < dist[size][j] {
                     dist[size][j] = d;

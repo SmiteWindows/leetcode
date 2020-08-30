@@ -7,10 +7,10 @@ pub fn poor_pigs(buckets: i32, minutes_to_die: i32, minutes_to_test: i32) -> i32
     while t.pow(pigs) < buckets {
         pigs += 1;
     }
-    pigs as i32    
+    pigs as i32
 }
 // math
 #[test]
-fn test1_458(){
-    assert_eq!(poor_pigs(1000, 15, 60),5);
+fn test1_458() {
+    assert_eq!(poor_pigs(1000, 15, 60), 5);
 }

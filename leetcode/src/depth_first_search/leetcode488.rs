@@ -39,8 +39,8 @@ fn dfs(start: usize, state: u32, board: Vec<char>, res: &mut i32, hand: &[char],
 }
 
 fn find_next_state(c: char, state: u32, hand: &[char], n: usize) -> Option<u32> {
-    for i in 0..n {
-        if hand[i] == c && state & 1 << i == 0 {
+    for (i, &hi) in hand.iter().enumerate().take(n) {
+        if hi == c && state & 1 << i == 0 {
             return Some(state | 1 << i);
         }
     }
@@ -54,12 +54,10 @@ fn dropable(board: &[char]) -> Option<Range<usize>> {
     while r < n {
         if board[l] == board[r] {
             r += 1;
+        } else if r - l >= 3 {
+            return Some(l..r);
         } else {
-            if r - l >= 3 {
-                return Some(l..r);
-            } else {
-                l = r;
-            }
+            l = r;
         }
     }
     if r - l >= 3 {
