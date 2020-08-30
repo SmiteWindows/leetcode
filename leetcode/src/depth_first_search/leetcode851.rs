@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/loud-and-rich/
+// https://leetcode-cn.com/problems/loud-and-rich/
 // Runtime: 24 ms
 // Memory Usage: 3.8 MB
 use std::collections::HashSet;

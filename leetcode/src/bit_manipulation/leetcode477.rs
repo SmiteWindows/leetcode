@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/total-hamming-distance/
+// https://leetcode-cn.com/problems/total-hamming-distance/
 // Runtime: 4 ms
 // Memory Usage: 2.3 MB
 pub fn total_hamming_distance(nums: Vec<i32>) -> i32 {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/maximum-of-absolute-value-expression/
+// https://leetcode-cn.com/problems/maximum-of-absolute-value-expression/
 // Runtime: 4 ms
 // Memory Usage: 2.6 MB
 pub fn max_abs_val_expr(arr1: Vec<i32>, arr2: Vec<i32>) -> i32 {

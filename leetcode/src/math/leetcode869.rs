@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/reordered-power-of-2/
+// https://leetcode-cn.com/problems/reordered-power-of-2/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::collections::HashSet;

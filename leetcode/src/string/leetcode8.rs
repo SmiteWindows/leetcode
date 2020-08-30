@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/string-to-integer-atoi/
+// https://leetcode-cn.com/problems/string-to-integer-atoi/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn my_atoi(str: String) -> i32 {

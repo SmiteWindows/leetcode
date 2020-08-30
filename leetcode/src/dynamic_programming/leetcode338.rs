@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/counting-bits/
+// https://leetcode-cn.com/problems/counting-bits/
 // Runtime: 4 ms
 // Memory Usage: 2.6 MB
 pub fn count_bits(num: i32) -> Vec<i32> {

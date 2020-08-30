@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/most-frequent-subtree-sum/
+// https://leetcode-cn.com/problems/most-frequent-subtree-sum/
 // Runtime: 0 ms
 // Memory Usage: 3 MB
 use std::{cell::RefCell, collections::HashMap, rc::Rc};

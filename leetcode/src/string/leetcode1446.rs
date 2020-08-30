@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/consecutive-characters/
+// https://leetcode-cn.com/problems/consecutive-characters/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn max_power(s: String) -> i32 {

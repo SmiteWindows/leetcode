@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/palindrome-partitioning-ii/
+// https://leetcode-cn.com/problems/palindrome-partitioning-ii/
 // Runtime: 72 ms
 // Memory Usage: 2.3 MB
 use std::collections::HashMap;

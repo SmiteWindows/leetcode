@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/triangle/
+// https://leetcode-cn.com/problems/triangle/
 // Runtime: 0 ms
 // Memory Usage: 2.3 MB
 pub fn minimum_total(triangle: Vec<Vec<i32>>) -> i32 {

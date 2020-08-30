@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/brace-expansion-ii/
+// https://leetcode-cn.com/problems/brace-expansion-ii/
 // Runtime: 8 ms
 // Memory Usage: 2.3 MB
 use std::{

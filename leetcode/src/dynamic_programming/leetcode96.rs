@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/unique-binary-search-trees/
+// https://leetcode-cn.com/problems/unique-binary-search-trees/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn num_trees(n: i32) -> i32 {

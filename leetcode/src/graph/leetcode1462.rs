@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/course-schedule-iv/
+// https://leetcode-cn.com/problems/course-schedule-iv/
 // Runtime: 60 ms
 // Memory Usage: 3 MB
 use std::collections::HashSet;

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/add-two-numbers-ii/
+// https://leetcode-cn.com/problems/add-two-numbers-ii/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn add_two_numbers(

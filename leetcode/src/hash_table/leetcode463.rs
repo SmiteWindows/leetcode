@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/island-perimeter/
+// https://leetcode-cn.com/problems/island-perimeter/
 // Runtime: 12 ms
 // Memory Usage: 2 MB
 pub fn island_perimeter(grid: Vec<Vec<i32>>) -> i32 {

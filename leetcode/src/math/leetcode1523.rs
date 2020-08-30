@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/count-odd-numbers-in-an-interval-range/
+// https://leetcode-cn.com/problems/count-odd-numbers-in-an-interval-range/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn count_odds(low: i32, high: i32) -> i32 {

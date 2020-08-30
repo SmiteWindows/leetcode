@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/cheapest-flights-within-k-stops/
+// https://leetcode-cn.com/problems/cheapest-flights-within-k-stops/
 // Runtime: 0 ms
 // Memory Usage: 3.4 MB
 use std::{cmp::Ordering, collections::BinaryHeap};

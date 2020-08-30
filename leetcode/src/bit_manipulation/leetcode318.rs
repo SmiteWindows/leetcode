@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/maximum-product-of-word-lengths/
+// https://leetcode-cn.com/problems/maximum-product-of-word-lengths/
 // Runtime: 4 ms
 // Memory Usage: 2.1 MB
 use std::collections::HashMap;

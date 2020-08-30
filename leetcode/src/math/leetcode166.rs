@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/fraction-to-recurring-decimal/
+// https://leetcode-cn.com/problems/fraction-to-recurring-decimal/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::{collections::HashMap, iter::FromIterator};

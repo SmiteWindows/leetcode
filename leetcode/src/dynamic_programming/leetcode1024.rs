@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/video-stitching/
+// https://leetcode-cn.com/problems/video-stitching/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::cmp::Reverse;

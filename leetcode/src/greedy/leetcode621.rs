@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/task-scheduler/
+// https://leetcode-cn.com/problems/task-scheduler/
 // Runtime: 20 ms
 // Memory Usage: 2.6 MB
 use std::collections::HashMap;

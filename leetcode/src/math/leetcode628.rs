@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/maximum-product-of-three-numbers/
+// https://leetcode-cn.com/problems/maximum-product-of-three-numbers/
 // Runtime: 4 ms
 // Memory Usage: 2.2 MB
 pub fn maximum_product(nums: Vec<i32>) -> i32 {

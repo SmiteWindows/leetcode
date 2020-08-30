@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/interval-list-intersections/
+// https://leetcode-cn.com/problems/interval-list-intersections/
 #![allow(clippy::many_single_char_names)]
 // Runtime: 4 ms
 // Memory Usage: 2.1 MB

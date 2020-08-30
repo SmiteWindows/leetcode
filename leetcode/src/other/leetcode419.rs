@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/battleships-in-a-board/
+// https://leetcode-cn.com/problems/battleships-in-a-board/
 // Runtime: 0 ms
 // Memory Usage: 3.9 MB
 pub fn count_battleships(board: Vec<Vec<char>>) -> i32 {

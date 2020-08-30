@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/4sum/
+// https://leetcode-cn.com/problems/4sum/
 pub fn four_sum(nums: Vec<i32>, target: i32) -> Vec<Vec<i32>> {
     todo!()
 }

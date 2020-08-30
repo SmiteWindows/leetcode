@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-number-of-steps-to-make-two-strings-anagram/
+// https://leetcode-cn.com/problems/minimum-number-of-steps-to-make-two-strings-anagram/
 // Runtime: 4 ms
 // Memory Usage: 2.2 MB
 pub fn min_steps(s: String, t: String) -> i32 {

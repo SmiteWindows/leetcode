@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/permutation-in-string/
+// https://leetcode-cn.com/problems/permutation-in-string/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn check_inclusion(s1: String, s2: String) -> bool {

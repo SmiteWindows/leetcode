@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/check-if-a-string-contains-all-binary-codes-of-size-k/
+// https://leetcode-cn.com/problems/check-if-a-string-contains-all-binary-codes-of-size-k/
 // Runtime: 4 ms
 // Memory Usage: 3.3 MB
 pub fn has_all_codes(s: String, k: i32) -> bool {

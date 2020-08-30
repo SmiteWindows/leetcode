@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/destination-city/
+// https://leetcode-cn.com/problems/destination-city/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::collections::HashSet;

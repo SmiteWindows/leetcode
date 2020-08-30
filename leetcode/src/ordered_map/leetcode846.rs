@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/hand-of-straights/
+// https://leetcode-cn.com/problems/hand-of-straights/
 // Runtime: 12 ms
 // Memory Usage: 2.5 MB
 use std::{

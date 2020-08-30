@@ -1,4 +1,4 @@
-// https://leetcode.com/tag/trie/
+// https://leetcode-cn.com/tag/trie/
 pub mod leetcode1023;
 pub mod leetcode1032;
 pub mod leetcode208;

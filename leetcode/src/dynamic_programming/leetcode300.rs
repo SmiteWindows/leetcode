@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/longest-increasing-subsequence/
+// https://leetcode-cn.com/problems/longest-increasing-subsequence/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn length_of_lis(nums: Vec<i32>) -> i32 {

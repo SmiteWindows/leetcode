@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/binary-search-tree-to-greater-sum-tree/
+// https://leetcode-cn.com/problems/binary-search-tree-to-greater-sum-tree/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::{cell::RefCell, rc::Rc};

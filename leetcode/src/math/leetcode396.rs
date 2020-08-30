@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/rotate-function
+// https://leetcode-cn.com/problems/rotate-function
 // Runtime: 4 ms
 // Memory Usage: 2.2 MB
 pub fn max_rotate_function(a: Vec<i32>) -> i32 {

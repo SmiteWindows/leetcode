@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/range-sum-query-2d-immutable/
+// https://leetcode-cn.com/problems/range-sum-query-2d-immutable/
 // Runtime: 12 ms
 // Memory Usage: 7.6 MB
 struct NumMatrix {

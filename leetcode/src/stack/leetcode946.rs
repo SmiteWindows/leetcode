@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/validate-stack-sequences/
+// https://leetcode-cn.com/problems/validate-stack-sequences/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn validate_stack_sequences(pushed: Vec<i32>, popped: Vec<i32>) -> bool {

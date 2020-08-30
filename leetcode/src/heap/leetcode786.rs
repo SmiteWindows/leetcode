@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/k-th-smallest-prime-fraction/
+// https://leetcode-cn.com/problems/k-th-smallest-prime-fraction/
 // Runtime: 292 ms
 // Memory Usage: 2 MB
 use std::{cmp::Ordering, collections::BinaryHeap};

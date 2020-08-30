@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/binary-tree-inorder-traversal/
+// https://leetcode-cn.com/problems/binary-tree-inorder-traversal/
 
 use std::{cell::RefCell, rc::Rc};
 pub fn inorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {

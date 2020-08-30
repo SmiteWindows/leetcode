@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-insertion-steps-to-make-a-string-palindrome/
+// https://leetcode-cn.com/problems/minimum-insertion-steps-to-make-a-string-palindrome/
 // Runtime: 200 ms
 // Memory Usage: 8.3 MB
 use std::collections::HashMap;

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/card-flipping-game/
+// https://leetcode-cn.com/problems/card-flipping-game/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::collections::HashSet;

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/remove-palindromic-subsequences/
+// https://leetcode-cn.com/problems/remove-palindromic-subsequences/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn remove_palindrome_sub(s: String) -> i32 {

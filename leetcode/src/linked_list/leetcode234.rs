@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/palindrome-linked-list/
+// https://leetcode-cn.com/problems/palindrome-linked-list/
 // Runtime: 4 ms
 // Memory Usage: 4.3 MB
 pub fn is_palindrome(head: Option<Box<ListNode>>) -> bool {

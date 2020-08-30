@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/next-greater-element-ii/
+// https://leetcode-cn.com/problems/next-greater-element-ii/
 // Runtime: 8 ms
 // Memory Usage: 2.1 MB
 pub fn next_greater_elements(nums: Vec<i32>) -> Vec<i32> {

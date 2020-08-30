@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/last-stone-weight/
+// https://leetcode-cn.com/problems/last-stone-weight/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 use std::collections::BinaryHeap;

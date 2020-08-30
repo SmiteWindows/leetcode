@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/find-eventual-safe-states/
+// https://leetcode-cn.com/problems/find-eventual-safe-states/
 // Runtime: 32 ms
 // Memory Usage: 2.6 MB
 pub fn eventual_safe_nodes(graph: Vec<Vec<i32>>) -> Vec<i32> {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/restore-the-array/
+// https://leetcode-cn.com/problems/restore-the-array/
 pub fn number_of_arrays(s: String, k: i32) -> i32 {
     todo!()
 }

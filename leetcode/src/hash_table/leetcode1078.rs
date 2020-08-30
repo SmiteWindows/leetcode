@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/occurrences-after-bigram/
+// https://leetcode-cn.com/problems/occurrences-after-bigram/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn find_ocurrences(text: String, first: String, second: String) -> Vec<String> {

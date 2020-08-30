@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/shopping-offers/
+// https://leetcode-cn.com/problems/shopping-offers/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 use std::collections::HashMap;

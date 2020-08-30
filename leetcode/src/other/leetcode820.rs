@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/short-encoding-of-words/
+// https://leetcode-cn.com/problems/short-encoding-of-words/
 // Runtime: 8 ms
 // Memory Usage: 2.3 MB
 use std::collections::HashSet;

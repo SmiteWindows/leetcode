@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/linked-list-components/
+// https://leetcode-cn.com/problems/linked-list-components/
 // Runtime: 4 ms
 // Memory Usage: 2.5 MB
 use std::{collections::HashSet, iter::FromIterator};

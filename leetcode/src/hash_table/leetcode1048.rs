@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/longest-string-chain/
+// https://leetcode-cn.com/problems/longest-string-chain/
 // Runtime: 16 ms
 // Memory Usage: 2.1 MB
 pub fn longest_str_chain(words: Vec<String>) -> i32 {

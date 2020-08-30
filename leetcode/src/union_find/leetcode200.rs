@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/number-of-islands/
+// https://leetcode-cn.com/problems/number-of-islands/
 // Runtime: 4 ms
 // Memory Usage: 5.5 MB
 pub fn num_islands(grid: Vec<Vec<char>>) -> i32 {

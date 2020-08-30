@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/critical-connections-in-a-network/
+// https://leetcode-cn.com/problems/critical-connections-in-a-network/
 // Runtime: 168 ms
 // Memory Usage: 19.6 MB
 pub fn critical_connections(n: i32, connections: Vec<Vec<i32>>) -> Vec<Vec<i32>> {

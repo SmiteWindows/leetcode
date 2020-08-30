@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/custom-sort-string/
+// https://leetcode-cn.com/problems/custom-sort-string/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn custom_sort_string(s: String, t: String) -> String {

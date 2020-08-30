@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/parallel-courses-ii/
+// https://leetcode-cn.com/problems/parallel-courses-ii/
 pub fn min_number_of_semesters(n: i32, dependencies: Vec<Vec<i32>>, k: i32) -> i32 {
     todo!()
 }

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/subdomain-visit-count/
+// https://leetcode-cn.com/problems/subdomain-visit-count/
 // Runtime: 4 ms
 // Memory Usage: 2.1 MB
 use std::collections::HashMap;

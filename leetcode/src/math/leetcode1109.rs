@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/corporate-flight-bookings/
+// https://leetcode-cn.com/problems/corporate-flight-bookings/
 // Runtime: 28 ms
 // Memory Usage: 3.7 MB
 pub fn corp_flight_bookings(bookings: Vec<Vec<i32>>, n: i32) -> Vec<i32> {

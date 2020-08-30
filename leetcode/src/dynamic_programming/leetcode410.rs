@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/split-array-largest-sum/
+// https://leetcode-cn.com/problems/split-array-largest-sum/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn split_array(nums: Vec<i32>, m: i32) -> i32 {

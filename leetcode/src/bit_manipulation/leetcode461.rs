@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/hamming-distance/
+// https://leetcode-cn.com/problems/hamming-distance/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn hamming_distance(x: i32, y: i32) -> i32 {

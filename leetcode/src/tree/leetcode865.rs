@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/smallest-subtree-with-all-the-deepest-nodes/
+// https://leetcode-cn.com/problems/smallest-subtree-with-all-the-deepest-nodes/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::{

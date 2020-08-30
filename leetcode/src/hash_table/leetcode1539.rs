@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/kth-missing-positive-number/
+// https://leetcode-cn.com/problems/kth-missing-positive-number/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn find_kth_positive(arr: Vec<i32>, k: i32) -> i32 {

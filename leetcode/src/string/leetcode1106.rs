@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/parsing-a-boolean-expression/
+// https://leetcode-cn.com/problems/parsing-a-boolean-expression/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 use std::{iter::Peekable, str::Chars, vec::IntoIter};

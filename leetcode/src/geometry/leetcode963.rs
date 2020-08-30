@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-area-rectangle-ii/
+// https://leetcode-cn.com/problems/minimum-area-rectangle-ii/
 // Runtime: 4 ms
 // Memory Usage: 2.2 MB
 use std::collections::HashMap;

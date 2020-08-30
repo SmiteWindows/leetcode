@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/probability-of-a-two-boxes-having-the-same-number-of-distinct-balls/
+// https://leetcode-cn.com/problems/probability-of-a-two-boxes-having-the-same-number-of-distinct-balls/
 pub fn get_probability(balls: Vec<i32>) -> f64 {
     todo!()
 }

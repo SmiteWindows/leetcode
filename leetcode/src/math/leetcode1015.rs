@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/smallest-integer-divisible-by-k/
+// https://leetcode-cn.com/problems/smallest-integer-divisible-by-k/
 // Runtime: 0 ms
 // Memory Usage: 1.9 MB
 pub fn smallest_repunit_div_by_k(k: i32) -> i32 {

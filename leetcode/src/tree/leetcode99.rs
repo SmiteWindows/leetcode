@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/recover-binary-search-tree/
+// https://leetcode-cn.com/problems/recover-binary-search-tree/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 use std::{cell::RefCell, mem::swap, rc::Rc};

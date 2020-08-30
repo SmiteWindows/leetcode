@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/guess-number-higher-or-lower-ii/
+// https://leetcode-cn.com/problems/guess-number-higher-or-lower-ii/
 // Runtime: 80 ms
 // Memory Usage: 2.7 MB
 use std::collections::HashMap;

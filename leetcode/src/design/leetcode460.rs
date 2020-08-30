@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/lfu-cache/
+// https://leetcode-cn.com/problems/lfu-cache/
 // Runtime: 48 ms
 // Memory Usage: 12.1 MB
 use std::{cell::RefCell, collections::HashMap, rc::Rc};

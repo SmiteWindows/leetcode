@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/number-of-substrings-containing-all-three-characters/
+// https://leetcode-cn.com/problems/number-of-substrings-containing-all-three-characters/
 // Runtime: 4 ms
 // Memory Usage: 2.2 MB
 pub fn number_of_substrings(s: String) -> i32 {

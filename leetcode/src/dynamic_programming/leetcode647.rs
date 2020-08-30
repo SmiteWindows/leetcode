@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/palindromic-substrings/
+// https://leetcode-cn.com/problems/palindromic-substrings/
 // Runtime: 8 ms
 // Memory Usage: 3.1 MB
 pub fn count_substrings(s: String) -> i32 {

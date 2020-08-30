@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/
+// https://leetcode-cn.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn max_length(arr: Vec<String>) -> i32 {

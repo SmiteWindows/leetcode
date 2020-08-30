@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/reverse-integer/
+// https://leetcode-cn.com/problems/reverse-integer/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn reverse(x: i32) -> i32 {

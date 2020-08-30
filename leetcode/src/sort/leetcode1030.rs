@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/matrix-cells-in-distance-order/
+// https://leetcode-cn.com/problems/matrix-cells-in-distance-order/
 // Runtime: 20 ms
 // Memory Usage: 2.6 MB
 pub fn all_cells_dist_order(r: i32, c: i32, r0: i32, c0: i32) -> Vec<Vec<i32>> {

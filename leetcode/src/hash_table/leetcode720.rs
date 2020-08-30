@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/longest-word-in-dictionary/
+// https://leetcode-cn.com/problems/longest-word-in-dictionary/
 // Runtime: 4 ms
 // Memory Usage: 2.3 MB
 use std::collections::HashSet;

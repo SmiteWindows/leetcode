@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/power-of-two/
+// https://leetcode-cn.com/problems/power-of-two/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn is_power_of_two(n: i32) -> bool {

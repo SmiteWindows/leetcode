@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/maximum-sum-of-3-non-overlapping-subarrays/
+// https://leetcode-cn.com/problems/maximum-sum-of-3-non-overlapping-subarrays/
 // Runtime: 12 ms
 // Memory Usage: 2.8 MB
 pub fn max_sum_of_three_subarrays(nums: Vec<i32>, k: i32) -> Vec<i32> {

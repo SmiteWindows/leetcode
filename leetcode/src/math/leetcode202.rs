@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/happy-number/
+// https://leetcode-cn.com/problems/happy-number/
 // Runtime: 0 ms
 // Memory Usage: 1.9 MB
 pub fn is_happy(n: i32) -> bool {

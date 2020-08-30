@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/longest-uncommon-subsequence-i/
+// https://leetcode-cn.com/problems/longest-uncommon-subsequence-i/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn find_lu_slength(a: String, b: String) -> i32 {

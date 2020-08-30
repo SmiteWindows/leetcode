@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/count-good-nodes-in-binary-tree/
+// https://leetcode-cn.com/problems/count-good-nodes-in-binary-tree/
 // Runtime: 20 ms
 // Memory Usage: 6.8 MB
 use std::{cell::RefCell, rc::Rc};

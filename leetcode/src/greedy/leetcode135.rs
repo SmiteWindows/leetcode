@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/candy/
+// https://leetcode-cn.com/problems/candy/
 // Runtime: 4 ms
 // Memory Usage: 2.3 MB
 pub fn candy(ratings: Vec<i32>) -> i32 {

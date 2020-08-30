@@ -1,4 +1,4 @@
-// https://leetcode.com/tag/depth-first-search/
+// https://leetcode-cn.com/tag/depth-first-search/
 pub mod leetcode100;
 pub mod leetcode101;
 pub mod leetcode1020;

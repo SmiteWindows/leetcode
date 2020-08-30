@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-number-of-days-to-eat-n-oranges/
+// https://leetcode-cn.com/problems/minimum-number-of-days-to-eat-n-oranges/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 use std::collections::HashMap;

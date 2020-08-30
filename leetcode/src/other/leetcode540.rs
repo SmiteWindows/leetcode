@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/single-element-in-a-sorted-array/
+// https://leetcode-cn.com/problems/single-element-in-a-sorted-array/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn single_non_duplicate(nums: Vec<i32>) -> i32 {

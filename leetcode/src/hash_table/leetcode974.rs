@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/subarray-sums-divisible-by-k/
+// https://leetcode-cn.com/problems/subarray-sums-divisible-by-k/
 // Runtime: 12 ms
 // Memory Usage: 2.4 MB
 pub fn subarrays_div_by_k(a: Vec<i32>, k: i32) -> i32 {

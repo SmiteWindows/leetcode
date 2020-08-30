@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/
+// https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn delete_duplicates(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {

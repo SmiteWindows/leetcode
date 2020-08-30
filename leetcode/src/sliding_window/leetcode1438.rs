@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/
+// https://leetcode-cn.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/
 // Runtime: 8 ms
 // Memory Usage: 4.2 MB
 use std::collections::VecDeque;

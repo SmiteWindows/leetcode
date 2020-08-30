@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/flood-fill/
+// https://leetcode-cn.com/problems/flood-fill/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn flood_fill(image: Vec<Vec<i32>>, sr: i32, sc: i32, new_color: i32) -> Vec<Vec<i32>> {

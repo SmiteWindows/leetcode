@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/excel-sheet-column-title/
+// https://leetcode-cn.com/problems/excel-sheet-column-title/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn convert_to_title(n: i32) -> String {

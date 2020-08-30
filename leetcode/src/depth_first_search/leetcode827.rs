@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/making-a-large-island/
+// https://leetcode-cn.com/problems/making-a-large-island/
 // Runtime: 4 ms
 // Memory Usage: 2.3 MB
 use std::collections::HashMap;

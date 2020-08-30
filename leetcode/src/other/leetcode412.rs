@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/fizz-buzz/
+// https://leetcode-cn.com/problems/fizz-buzz/
 // Runtime: 0 ms
 // Memory Usage: 2.7 MB
 pub fn fizz_buzz(n: i32) -> Vec<String> {

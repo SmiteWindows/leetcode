@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/nim-game/
+// https://leetcode-cn.com/problems/nim-game/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn can_win_nim(n: i32) -> bool {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/remove-element/
+// https://leetcode-cn.com/problems/remove-element/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn remove_element(nums: &mut Vec<i32>, val: i32) -> i32 {

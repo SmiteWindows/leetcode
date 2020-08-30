@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/redundant-connection/
+// https://leetcode-cn.com/problems/redundant-connection/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn find_redundant_connection(edges: Vec<Vec<i32>>) -> Vec<i32> {

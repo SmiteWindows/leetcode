@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/stone-game-iii/
+// https://leetcode-cn.com/problems/stone-game-iii/
 // Runtime: 148 ms
 // Memory Usage: 9.2 MB
 use std::{

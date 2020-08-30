@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/remove-outermost-parentheses/
+// https://leetcode-cn.com/problems/remove-outermost-parentheses/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn remove_outer_parentheses(s: String) -> String {

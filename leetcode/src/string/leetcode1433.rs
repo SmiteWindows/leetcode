@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/check-if-a-string-can-break-another-string/
+// https://leetcode-cn.com/problems/check-if-a-string-can-break-another-string/
 // Runtime: 12 ms
 // Memory Usage: 3.1 MB
 pub fn check_if_can_break(s1: String, s2: String) -> bool {

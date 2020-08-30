@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/max-difference-you-can-get-from-changing-an-integer/
+// https://leetcode-cn.com/problems/max-difference-you-can-get-from-changing-an-integer/
 // Runtime: 4 ms
 // Memory Usage: 2.1 MB
 pub fn max_diff(num: i32) -> i32 {

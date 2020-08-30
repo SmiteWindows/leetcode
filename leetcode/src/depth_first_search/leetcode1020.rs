@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/number-of-enclaves/
+// https://leetcode-cn.com/problems/number-of-enclaves/
 #![allow(clippy::many_single_char_names)]
 // Runtime: 16 ms
 // Memory Usage: 2.4 MB

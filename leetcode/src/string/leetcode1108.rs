@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/defanging-an-ip-address/
+// https://leetcode-cn.com/problems/defanging-an-ip-address/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn defang_i_paddr(address: String) -> String {

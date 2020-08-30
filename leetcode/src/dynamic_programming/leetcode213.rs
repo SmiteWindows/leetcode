@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/house-robber-ii/
+// https://leetcode-cn.com/problems/house-robber-ii/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn rob(nums: Vec<i32>) -> i32 {

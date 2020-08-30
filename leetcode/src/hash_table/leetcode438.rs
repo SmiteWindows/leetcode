@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/find-all-anagrams-in-a-string/
+// https://leetcode-cn.com/problems/find-all-anagrams-in-a-string/
 // Runtime: 4 ms
 // Memory Usage: 2.2 MB
 pub fn find_anagrams(s: String, p: String) -> Vec<i32> {

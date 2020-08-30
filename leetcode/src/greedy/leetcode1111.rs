@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/maximum-nesting-depth-of-two-valid-parentheses-strings/
+// https://leetcode-cn.com/problems/maximum-nesting-depth-of-two-valid-parentheses-strings/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn max_depth_after_split(seq: String) -> Vec<i32> {

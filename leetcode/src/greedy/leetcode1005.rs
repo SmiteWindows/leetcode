@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/maximize-sum-of-array-after-k-negations/
+// https://leetcode-cn.com/problems/maximize-sum-of-array-after-k-negations/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 use std::{cmp::Reverse, collections::BinaryHeap};

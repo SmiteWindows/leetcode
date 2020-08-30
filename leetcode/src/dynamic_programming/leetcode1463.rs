@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/cherry-pickup-ii/
+// https://leetcode-cn.com/problems/cherry-pickup-ii/
 #![allow(clippy::many_single_char_names)]
 // Runtime: 144 ms
 // Memory Usage: 10.3 MB

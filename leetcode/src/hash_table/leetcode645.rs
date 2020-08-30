@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/set-mismatch/
+// https://leetcode-cn.com/problems/set-mismatch/
 // Runtime: 12 ms
 // Memory Usage: 2.2 MB
 use std::collections::HashSet;

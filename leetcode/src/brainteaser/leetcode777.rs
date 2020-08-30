@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/swap-adjacent-in-lr-string/
+// https://leetcode-cn.com/problems/swap-adjacent-in-lr-string/
 pub fn can_transform(start: String, end: String) -> bool {
     let mut iter_a = start.chars();
     let mut iter_b = end.chars();

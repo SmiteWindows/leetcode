@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/race-car/
+// https://leetcode-cn.com/problems/race-car/
 // Runtime: 132 ms
 // Memory Usage: 8.5 MB
 use std::collections::{HashMap, VecDeque};

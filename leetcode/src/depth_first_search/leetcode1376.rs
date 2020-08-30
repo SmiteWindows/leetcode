@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/time-needed-to-inform-all-employees/
+// https://leetcode-cn.com/problems/time-needed-to-inform-all-employees/
 // Runtime: 40 ms
 // Memory Usage: 3.3 MB
 pub fn num_of_minutes(n: i32, head_id: i32, manager: Vec<i32>, inform_time: Vec<i32>) -> i32 {

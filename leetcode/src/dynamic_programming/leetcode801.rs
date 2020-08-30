@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-swaps-to-make-sequences-increasing/
+// https://leetcode-cn.com/problems/minimum-swaps-to-make-sequences-increasing/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn min_swap(a: Vec<i32>, b: Vec<i32>) -> i32 {

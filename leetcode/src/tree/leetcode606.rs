@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/construct-string-from-binary-tree/
+// https://leetcode-cn.com/problems/construct-string-from-binary-tree/
 // Runtime: 4 ms
 // Memory Usage: 2.7 MB
 use std::{cell::RefCell, rc::Rc};

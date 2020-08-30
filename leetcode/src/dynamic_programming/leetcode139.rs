@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/word-break/
+// https://leetcode-cn.com/problems/word-break/
 // Runtime: 4 ms
 // Memory Usage: 2.1 MB
 use std::{collections::HashSet, iter::FromIterator};

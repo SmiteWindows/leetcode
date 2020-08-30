@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/reformat-date/
+// https://leetcode-cn.com/problems/reformat-date/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::collections::HashMap;

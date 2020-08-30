@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/duplicate-zeros/
+// https://leetcode-cn.com/problems/duplicate-zeros/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn duplicate_zeros(arr: &mut Vec<i32>) {

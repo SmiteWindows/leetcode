@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/flower-planting-with-no-adjacent/
+// https://leetcode-cn.com/problems/flower-planting-with-no-adjacent/
 // Runtime: 24 ms
 // Memory Usage: 3.2 MB
 pub fn garden_no_adj(n: i32, paths: Vec<Vec<i32>>) -> Vec<i32> {

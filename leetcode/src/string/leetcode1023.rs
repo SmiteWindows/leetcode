@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/camelcase-matching/
+// https://leetcode-cn.com/problems/camelcase-matching/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn camel_match(queries: Vec<String>, pattern: String) -> Vec<bool> {

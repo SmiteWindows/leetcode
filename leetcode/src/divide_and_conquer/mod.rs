@@ -1,4 +1,4 @@
-// https://leetcode.com/tag/divide-and-conquer/
+// https://leetcode-cn.com/tag/divide-and-conquer/
 pub mod leetcode169;
 pub mod leetcode215;
 pub mod leetcode218;

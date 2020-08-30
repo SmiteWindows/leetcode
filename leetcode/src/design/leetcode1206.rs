@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/design-skiplist/
+// https://leetcode-cn.com/problems/design-skiplist/
 // Runtime: 28 ms
 // Memory Usage: 8.7 MB
 use std::collections::HashMap;

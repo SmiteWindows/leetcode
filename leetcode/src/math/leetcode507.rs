@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/perfect-number/
+// https://leetcode-cn.com/problems/perfect-number/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn check_perfect_number(num: i32) -> bool {

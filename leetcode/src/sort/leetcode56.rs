@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/merge-intervals/
+// https://leetcode-cn.com/problems/merge-intervals/
 // Runtime: 0 ms
 // Memory Usage: 2.6 MB
 pub fn merge(intervals: Vec<Vec<i32>>) -> Vec<Vec<i32>> {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/advantage-shuffle/
+// https://leetcode-cn.com/problems/advantage-shuffle/
 #![allow(clippy::many_single_char_names)]
 // Runtime: 24 ms
 // Memory Usage: 2.5 MB

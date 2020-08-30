@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/cinema-seat-allocation/
+// https://leetcode-cn.com/problems/cinema-seat-allocation/
 // Runtime: 36 ms
 // Memory Usage: 2.9 MB
 use std::collections::HashMap;

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/valid-tic-tac-toe-state/
+// https://leetcode-cn.com/problems/valid-tic-tac-toe-state/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn valid_tic_tac_toe(board: Vec<String>) -> bool {

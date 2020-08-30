@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/bitwise-ors-of-subarrays/
+// https://leetcode-cn.com/problems/bitwise-ors-of-subarrays/
 // Runtime: 288 ms
 // Memory Usage: 7.3 MB
 use std::collections::HashSet;

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/moving-stones-until-consecutive/
+// https://leetcode-cn.com/problems/moving-stones-until-consecutive/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn num_moves_stones(a: i32, b: i32, c: i32) -> Vec<i32> {

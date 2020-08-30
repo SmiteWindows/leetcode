@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/rotate-list/
+// https://leetcode-cn.com/problems/rotate-list/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 use std::mem::replace;

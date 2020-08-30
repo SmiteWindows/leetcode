@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/perfect-rectangle/
+// https://leetcode-cn.com/problems/perfect-rectangle/
 // Runtime: 36 ms
 // Memory Usage: 3.8 MB
 use std::collections::HashMap;

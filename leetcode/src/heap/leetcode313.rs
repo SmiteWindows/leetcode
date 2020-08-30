@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/super-ugly-number/
+// https://leetcode-cn.com/problems/super-ugly-number/
 // Runtime: 60 ms
 // Memory Usage: 7.1 MB
 use std::{

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/power-of-three/
+// https://leetcode-cn.com/problems/power-of-three/
 // Runtime: 0 ms
 // Memory Usage: 2.8 MB
 pub fn is_power_of_three(n: i32) -> bool {

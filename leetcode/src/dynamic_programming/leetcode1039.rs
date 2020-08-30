@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-score-triangulation-of-polygon/
+// https://leetcode-cn.com/problems/minimum-score-triangulation-of-polygon/
 // Runtime: 8 ms
 // Memory Usage: 2.1 MB
 use std::collections::HashMap;

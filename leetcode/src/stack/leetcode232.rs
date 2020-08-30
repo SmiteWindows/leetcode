@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/implement-queue-using-stacks/
+// https://leetcode-cn.com/problems/implement-queue-using-stacks/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 struct MyQueue {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/increasing-triplet-subsequence/
+// https://leetcode-cn.com/problems/increasing-triplet-subsequence/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn increasing_triplet(nums: Vec<i32>) -> bool {

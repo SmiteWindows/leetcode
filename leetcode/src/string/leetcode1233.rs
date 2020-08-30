@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/remove-sub-folders-from-the-filesystem/
+// https://leetcode-cn.com/problems/remove-sub-folders-from-the-filesystem/
 // Runtime: 56 ms
 // Memory Usage: 8 MB
 use std::collections::HashSet;

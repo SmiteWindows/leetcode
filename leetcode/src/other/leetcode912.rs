@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/sort-an-array/
+// https://leetcode-cn.com/problems/sort-an-array/
 // Runtime: 8 ms
 // Memory Usage: 2.6 MB
 pub fn sort_array(nums: Vec<i32>) -> Vec<i32> {

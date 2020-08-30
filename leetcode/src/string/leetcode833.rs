@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/find-and-replace-in-string/
+// https://leetcode-cn.com/problems/find-and-replace-in-string/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn find_replace_string(

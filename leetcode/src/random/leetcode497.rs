@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/random-point-in-non-overlapping-rectangles/
+// https://leetcode-cn.com/problems/random-point-in-non-overlapping-rectangles/
 // Runtime: 12 ms
 // Memory Usage: 4.6 MB
 use rand::{distributions::WeightedIndex, prelude::*};

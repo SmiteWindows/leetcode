@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/longest-increasing-path-in-a-matrix
+// https://leetcode-cn.com/problems/longest-increasing-path-in-a-matrix
 // Runtime: 8 ms
 // Memory Usage: 2.1 MB
 pub fn longest_increasing_path(matrix: Vec<Vec<i32>>) -> i32 {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/largest-palindrome-product/
+// https://leetcode-cn.com/problems/largest-palindrome-product/
 // Runtime: 196 ms
 // Memory Usage: 2.1 MB
 pub fn largest_palindrome(n: i32) -> i32 {

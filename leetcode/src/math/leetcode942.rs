@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/di-string-match/
+// https://leetcode-cn.com/problems/di-string-match/
 // Runtime: 4 ms
 // Memory Usage: 2.2 MB
 pub fn di_string_match(s: String) -> Vec<i32> {

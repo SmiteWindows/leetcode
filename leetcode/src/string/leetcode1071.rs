@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/greatest-common-divisor-of-strings/
+// https://leetcode-cn.com/problems/greatest-common-divisor-of-strings/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn gcd_of_strings(str1: String, str2: String) -> String {

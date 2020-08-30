@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/valid-square/
+// https://leetcode-cn.com/problems/valid-square/
 // Runtime: 0 ms
 // Memory Usage: 1.9 MB
 use crate::d;

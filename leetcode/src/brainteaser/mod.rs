@@ -1,4 +1,4 @@
-// https://leetcode.com/tag/brainteaser/
+// https://leetcode-cn.com/tag/brainteaser/
 pub mod leetcode1033;
 pub mod leetcode1227;
 pub mod leetcode1503;

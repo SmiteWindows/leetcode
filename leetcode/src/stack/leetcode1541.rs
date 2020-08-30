@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-insertions-to-balance-a-parentheses-string/
+// https://leetcode-cn.com/problems/minimum-insertions-to-balance-a-parentheses-string/
 // Runtime: 4 ms
 // Memory Usage: 2.4 MB
 pub fn min_insertions(s: String) -> i32 {

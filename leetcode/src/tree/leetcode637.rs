@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/average-of-levels-in-binary-tree/
+// https://leetcode-cn.com/problems/average-of-levels-in-binary-tree/
 // Runtime: 0 ms
 // Memory Usage: 3 MB
 use std::{cell::RefCell, rc::Rc};

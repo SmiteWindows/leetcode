@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/4sum/
+// https://leetcode-cn.com/problems/4sum/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 use std::cmp::Ordering::{Equal, Greater, Less};

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/valid-palindrome-ii/
+// https://leetcode-cn.com/problems/valid-palindrome-ii/
 // Runtime: 4 ms
 // Memory Usage: 3.8 MB
 pub fn valid_palindrome(s: String) -> bool {

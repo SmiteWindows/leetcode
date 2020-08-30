@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/decode-string/
+// https://leetcode-cn.com/problems/decode-string/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 #![allow(clippy::many_single_char_names)]

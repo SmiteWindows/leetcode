@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/find-the-duplicate-number/
+// https://leetcode-cn.com/problems/find-the-duplicate-number/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn find_duplicate(nums: Vec<i32>) -> i32 {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/longest-repeating-character-replacement/
+// https://leetcode-cn.com/problems/longest-repeating-character-replacement/
 // Runtime: 4 ms
 // Memory Usage: 2.1 MB
 pub fn character_replacement(s: String, k: i32) -> i32 {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/self-dividing-numbers/
+// https://leetcode-cn.com/problems/self-dividing-numbers/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn self_dividing_numbers(left: i32, right: i32) -> Vec<i32> {

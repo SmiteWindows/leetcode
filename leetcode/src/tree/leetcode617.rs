@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/merge-two-binary-trees/
+// https://leetcode-cn.com/problems/merge-two-binary-trees/
 // Runtime: 4 ms
 // Memory Usage: 2.1 MB
 use std::{cell::RefCell, rc::Rc};

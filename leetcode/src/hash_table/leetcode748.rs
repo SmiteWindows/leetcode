@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/shortest-completing-word/
+// https://leetcode-cn.com/problems/shortest-completing-word/
 // Runtime: 4 ms
 // Memory Usage: 2.2 MB
 pub fn shortest_completing_word(license_plate: String, words: Vec<String>) -> String {

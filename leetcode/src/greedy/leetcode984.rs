@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/string-without-aaa-or-bbb/
+// https://leetcode-cn.com/problems/string-without-aaa-or-bbb/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 use std::cmp::Ordering::{Equal, Greater, Less};

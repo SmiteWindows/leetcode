@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/build-an-array-with-stack-operations/
+// https://leetcode-cn.com/problems/build-an-array-with-stack-operations/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn build_array(target: Vec<i32>, n: i32) -> Vec<String> {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/subarray-sum-equals-k/
+// https://leetcode-cn.com/problems/subarray-sum-equals-k/
 // Runtime: 12 ms
 // Memory Usage: 2.6 MB
 use std::collections::HashMap;

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/find-kth-bit-in-nth-binary-string/
+// https://leetcode-cn.com/problems/find-kth-bit-in-nth-binary-string/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::cmp::Ordering;

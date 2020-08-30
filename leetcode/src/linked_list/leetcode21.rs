@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/merge-two-sorted-lists/
+// https://leetcode-cn.com/problems/merge-two-sorted-lists/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn merge_two_lists(

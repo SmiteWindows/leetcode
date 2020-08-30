@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/html-entity-parser/
+// https://leetcode-cn.com/problems/html-entity-parser/
 pub fn entity_parser(text: String) -> String {
     todo!()
 }

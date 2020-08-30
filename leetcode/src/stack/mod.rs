@@ -1,4 +1,4 @@
-// https://leetcode.com/tag/stack/
+// https://leetcode-cn.com/tag/stack/
 pub mod leetcode1003;
 pub mod leetcode1019;
 pub mod leetcode1021;

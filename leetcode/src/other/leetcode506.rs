@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/relative-ranks/
+// https://leetcode-cn.com/problems/relative-ranks/
 // Runtime: 4 ms
 // Memory Usage: 2.3 MB
 use std::cmp::Reverse;

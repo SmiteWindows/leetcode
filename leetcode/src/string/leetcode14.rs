@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/longest-common-prefix/
+// https://leetcode-cn.com/problems/longest-common-prefix/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn longest_common_prefix(strs: Vec<String>) -> String {

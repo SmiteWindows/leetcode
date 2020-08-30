@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/detect-capital/
+// https://leetcode-cn.com/problems/detect-capital/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn detect_capital_use(word: String) -> bool {

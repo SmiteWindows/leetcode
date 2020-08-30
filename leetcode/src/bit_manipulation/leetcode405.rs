@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/convert-a-number-to-hexadecimal/
+// https://leetcode-cn.com/problems/convert-a-number-to-hexadecimal/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn to_hex(num: i32) -> String {

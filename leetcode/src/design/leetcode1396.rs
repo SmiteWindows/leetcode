@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/design-underground-system/
+// https://leetcode-cn.com/problems/design-underground-system/
 // Runtime: 36 ms
 // Memory Usage: 16.9 MB
 use std::collections::HashMap;

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/ugly-number/
+// https://leetcode-cn.com/problems/ugly-number/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn is_ugly(num: i32) -> bool {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/add-strings/
+// https://leetcode-cn.com/problems/add-strings/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn add_strings(num1: String, num2: String) -> String {

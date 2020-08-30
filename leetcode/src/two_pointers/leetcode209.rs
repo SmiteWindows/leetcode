@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-size-subarray-sum/
+// https://leetcode-cn.com/problems/minimum-size-subarray-sum/
 // Runtime: 0 ms
 // Memory Usage: 2.4 MB
 pub fn min_sub_array_len(s: i32, nums: Vec<i32>) -> i32 {

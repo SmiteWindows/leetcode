@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/max-dot-product-of-two-subsequences/
+// https://leetcode-cn.com/problems/max-dot-product-of-two-subsequences/
 pub fn max_dot_product(nums1: Vec<i32>, nums2: Vec<i32>) -> i32 {
     todo!()
 }

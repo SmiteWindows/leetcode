@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/contiguous-array/
+// https://leetcode-cn.com/problems/contiguous-array/
 // Runtime: 32 ms
 // Memory Usage: 3.4 MB
 use std::collections::HashMap;

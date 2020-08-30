@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/making-file-names-unique/
+// https://leetcode-cn.com/problems/making-file-names-unique/
 // Runtime: 68 ms
 // Memory Usage: 10.6 MB
 use std::collections::{HashMap, HashSet};

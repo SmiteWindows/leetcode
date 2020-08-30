@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/letter-case-permutation/
+// https://leetcode-cn.com/problems/letter-case-permutation/
 // Runtime: 4 ms
 // Memory Usage: 2.4 MB
 pub fn letter_case_permutation(s: String) -> Vec<String> {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/alphabet-board-path/
+// https://leetcode-cn.com/problems/alphabet-board-path/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn alphabet_board_path(target: String) -> String {

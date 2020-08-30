@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/count-servers-that-communicate/
+// https://leetcode-cn.com/problems/count-servers-that-communicate/
 // Runtime: 12 ms
 // Memory Usage: 2.4 MB
 pub fn count_servers(grid: Vec<Vec<i32>>) -> i32 {

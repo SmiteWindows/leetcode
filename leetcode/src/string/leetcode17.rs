@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/letter-combinations-of-a-phone-number/
+// https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 use std::collections::HashMap;

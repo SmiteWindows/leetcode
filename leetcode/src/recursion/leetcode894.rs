@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/all-possible-full-binary-trees/
+// https://leetcode-cn.com/problems/all-possible-full-binary-trees/
 // Runtime: 16 ms
 // Memory Usage: 5.2 MB
 use std::{cell::RefCell, rc::Rc};

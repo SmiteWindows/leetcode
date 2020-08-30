@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/knight-probability-in-chessboard/
+// https://leetcode-cn.com/problems/knight-probability-in-chessboard/
 // Runtime: 8 ms
 // Memory Usage: 2.2 MB
 pub fn knight_probability(n: i32, k: i32, r: i32, c: i32) -> f64 {

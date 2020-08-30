@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/distribute-candies-to-people/
+// https://leetcode-cn.com/problems/distribute-candies-to-people/
 // Runtime: 0 ms
 // Memory Usage: 1.9 MB
 pub fn distribute_candies(candies: i32, num_people: i32) -> Vec<i32> {

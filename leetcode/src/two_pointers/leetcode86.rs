@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/partition-list/
+// https://leetcode-cn.com/problems/partition-list/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn partition(head: Option<Box<ListNode>>, x: i32) -> Option<Box<ListNode>> {

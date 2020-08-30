@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/number-of-boomerangs/
+// https://leetcode-cn.com/problems/number-of-boomerangs/
 // Runtime: 44 ms
 // Memory Usage: 2.1 MB
 use std::collections::HashMap;

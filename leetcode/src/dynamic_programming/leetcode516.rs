@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/longest-palindromic-subsequence/
+// https://leetcode-cn.com/problems/longest-palindromic-subsequence/
 // Runtime: 20 ms
 // Memory Usage: 5.8 MB
 pub fn longest_palindrome_subseq(s: String) -> i32 {

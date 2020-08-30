@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/linked-list-in-binary-tree/
+// https://leetcode-cn.com/problems/linked-list-in-binary-tree/
 // Runtime: 4 ms
 // Memory Usage: 2.3 MB
 use std::{cell::RefCell, rc::Rc};

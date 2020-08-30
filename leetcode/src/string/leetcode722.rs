@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/remove-comments/
+// https://leetcode-cn.com/problems/remove-comments/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn remove_comments(source: Vec<String>) -> Vec<String> {

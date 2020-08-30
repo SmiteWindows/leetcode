@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/course-schedule-iii/
+// https://leetcode-cn.com/problems/course-schedule-iii/
 // Runtime: 32 ms
 // Memory Usage: 2.8 MB
 use std::collections::BinaryHeap;

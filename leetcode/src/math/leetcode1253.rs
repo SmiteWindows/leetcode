@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/reconstruct-a-2-row-binary-matrix/
+// https://leetcode-cn.com/problems/reconstruct-a-2-row-binary-matrix/
 // Runtime: 36 ms
 // Memory Usage: 3.8 MB
 pub fn reconstruct_matrix(upper: i32, lower: i32, colsum: Vec<i32>) -> Vec<Vec<i32>> {

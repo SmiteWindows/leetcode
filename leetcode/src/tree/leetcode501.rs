@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/find-mode-in-binary-search-tree/
+// https://leetcode-cn.com/problems/find-mode-in-binary-search-tree/
 // Runtime: 0 ms
 // Memory Usage: 2.9 MB
 use std::{cell::RefCell, cmp::Ordering, rc::Rc};

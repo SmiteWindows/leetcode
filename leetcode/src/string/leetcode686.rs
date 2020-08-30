@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/repeated-string-match/
+// https://leetcode-cn.com/problems/repeated-string-match/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn repeated_string_match(a: String, b: String) -> i32 {

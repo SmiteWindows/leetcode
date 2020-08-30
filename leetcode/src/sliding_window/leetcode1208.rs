@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/get-equal-substrings-within-budget/
+// https://leetcode-cn.com/problems/get-equal-substrings-within-budget/
 // Runtime: 0 ms
 // Memory Usage: 3.5 MB
 pub fn equal_substring(s: String, t: String, max_cost: i32) -> i32 {

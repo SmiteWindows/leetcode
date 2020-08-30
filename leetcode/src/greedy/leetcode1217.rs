@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/play-with-chips/
+// https://leetcode-cn.com/problems/play-with-chips/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn min_cost_to_move_chips(chips: Vec<i32>) -> i32 {

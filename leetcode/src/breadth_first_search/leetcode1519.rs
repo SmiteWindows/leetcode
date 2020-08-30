@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/number-of-nodes-in-the-sub-tree-with-the-same-label/
+// https://leetcode-cn.com/problems/number-of-nodes-in-the-sub-tree-with-the-same-label/
 // Runtime: 84 ms
 // Memory Usage: 22.6 MB
 pub fn count_sub_trees(n: i32, edges: Vec<Vec<i32>>, labels: String) -> Vec<i32> {

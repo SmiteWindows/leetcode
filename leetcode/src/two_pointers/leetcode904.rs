@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/fruit-into-baskets/
+// https://leetcode-cn.com/problems/fruit-into-baskets/
 // Runtime: 20 ms
 // Memory Usage: 2.5 MB
 use std::collections::HashMap;

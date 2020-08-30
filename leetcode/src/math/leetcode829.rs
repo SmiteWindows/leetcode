@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/consecutive-numbers-sum/
+// https://leetcode-cn.com/problems/consecutive-numbers-sum/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn consecutive_numbers_sum(n: i32) -> i32 {

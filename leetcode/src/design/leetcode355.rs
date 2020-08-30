@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/design-twitter/
+// https://leetcode-cn.com/problems/design-twitter/
 // Runtime: 4 ms
 // Memory Usage: 9.4 MB
 use std::{

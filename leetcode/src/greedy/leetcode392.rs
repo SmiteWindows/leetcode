@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/is-subsequence/
+// https://leetcode-cn.com/problems/is-subsequence/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn is_subsequence(s: String, t: String) -> bool {

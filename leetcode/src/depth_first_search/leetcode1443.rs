@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-time-to-collect-all-apples-in-a-tree/
+// https://leetcode-cn.com/problems/minimum-time-to-collect-all-apples-in-a-tree/
 // Runtime: 48 ms
 // Memory Usage: 15.8 MB
 use std::collections::HashSet;

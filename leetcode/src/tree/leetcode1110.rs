@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/delete-nodes-and-return-forest/
+// https://leetcode-cn.com/problems/delete-nodes-and-return-forest/
 // Runtime: 4 ms
 // Memory Usage: 2.1 MB
 use std::{cell::RefCell, collections::HashSet, iter::FromIterator, rc::Rc};

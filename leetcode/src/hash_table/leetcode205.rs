@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/isomorphic-strings/
+// https://leetcode-cn.com/problems/isomorphic-strings/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 use std::collections::HashMap;

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/path-with-maximum-probability/
+// https://leetcode-cn.com/problems/path-with-maximum-probability/
 // Runtime: 40 ms
 // Memory Usage: 4.8 MB
 use std::{

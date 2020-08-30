@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/construct-string-from-binary-tree/
+// https://leetcode-cn.com/problems/construct-string-from-binary-tree/
 
 use std::{cell::RefCell, rc::Rc};
 pub fn tree2str(t: Option<Rc<RefCell<TreeNode>>>) -> String {

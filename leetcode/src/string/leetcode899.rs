@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/orderly-queue/
+// https://leetcode-cn.com/problems/orderly-queue/
 // Runtime: 4 ms
 // Memory Usage: 2 MB
 pub fn orderly_queue(s: String, k: i32) -> String {

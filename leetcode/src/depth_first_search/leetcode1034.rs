@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/coloring-a-border/
+// https://leetcode-cn.com/problems/coloring-a-border/
 #![allow(clippy::too_many_arguments)]
 #![allow(clippy::many_single_char_names)]
 // Runtime: 8 ms

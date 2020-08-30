@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/middle-of-the-linked-list/
+// https://leetcode-cn.com/problems/middle-of-the-linked-list/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn middle_node(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {

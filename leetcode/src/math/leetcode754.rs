@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/reach-a-number/
+// https://leetcode-cn.com/problems/reach-a-number/
 // Runtime: 0 ms
 // Memory Usage: 2.4 MB
 pub fn reach_number(target: i32) -> i32 {

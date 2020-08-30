@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/matchsticks-to-square/
+// https://leetcode-cn.com/problems/matchsticks-to-square/
 // Runtime: 12 ms
 // Memory Usage: 2 MB
 pub fn makesquare(nums: Vec<i32>) -> bool {

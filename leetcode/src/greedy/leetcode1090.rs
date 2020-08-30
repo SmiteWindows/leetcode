@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/largest-values-from-labels/
+// https://leetcode-cn.com/problems/largest-values-from-labels/
 // Runtime: 4 ms
 // Memory Usage: 2.8 MB
 use std::collections::HashMap;

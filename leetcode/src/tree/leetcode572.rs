@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/subtree-of-another-tree/
+// https://leetcode-cn.com/problems/subtree-of-another-tree/
 // Runtime: 4 ms
 // Memory Usage: 2 MB
 use std::{cell::RefCell, rc::Rc};

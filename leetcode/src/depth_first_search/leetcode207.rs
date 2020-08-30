@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/course-schedule/
+// https://leetcode-cn.com/problems/course-schedule/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn can_finish(num_courses: i32, prerequisites: Vec<Vec<i32>>) -> bool {

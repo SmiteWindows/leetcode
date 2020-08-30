@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/as-far-from-land-as-possible/
+// https://leetcode-cn.com/problems/as-far-from-land-as-possible/
 // Runtime: 8 ms
 // Memory Usage: 2.4 MB
 use std::collections::VecDeque;

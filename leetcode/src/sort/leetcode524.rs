@@ -1,4 +1,4 @@
-// // https://leetcode.com/problems/longest-word-in-dictionary-through-deleting/
+// // https://leetcode-cn.com/problems/longest-word-in-dictionary-through-deleting/
 // Runtime: 4 ms
 // Memory Usage: 2.8 MB
 use std::{cmp::Reverse, collections::BinaryHeap};

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/make-the-string-great/
+// https://leetcode-cn.com/problems/make-the-string-great/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn make_good(s: String) -> String {

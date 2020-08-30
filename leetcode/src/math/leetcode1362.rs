@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/closest-divisors/
+// https://leetcode-cn.com/problems/closest-divisors/
 // Runtime: 4 ms
 // Memory Usage: 2.1 MB
 pub fn closest_divisors(num: i32) -> Vec<i32> {

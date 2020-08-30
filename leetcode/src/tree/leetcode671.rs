@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/second-minimum-node-in-a-binary-tree/
+// https://leetcode-cn.com/problems/second-minimum-node-in-a-binary-tree/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 use std::{cell::RefCell, rc::Rc};

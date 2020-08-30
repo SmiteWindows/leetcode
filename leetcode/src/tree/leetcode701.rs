@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/insert-into-a-binary-search-tree/
+// https://leetcode-cn.com/problems/insert-into-a-binary-search-tree/
 // Runtime: 8 ms
 // Memory Usage: 2.5 MB
 use std::{cell::RefCell, rc::Rc};

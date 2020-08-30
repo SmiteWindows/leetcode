@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/string-compression/
+// https://leetcode-cn.com/problems/string-compression/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn compress(chars: &mut Vec<char>) -> i32 {

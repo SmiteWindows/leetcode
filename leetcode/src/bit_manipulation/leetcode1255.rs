@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/maximum-score-words-formed-by-letters/
+// https://leetcode-cn.com/problems/maximum-score-words-formed-by-letters/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn max_score_words(words: Vec<String>, letters: Vec<char>, score: Vec<i32>) -> i32 {

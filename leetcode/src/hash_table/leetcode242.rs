@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/valid-anagram/
+// https://leetcode-cn.com/problems/valid-anagram/
 // Runtime: 4 ms
 // Memory Usage: 2.3 MB
 use std::collections::HashMap;

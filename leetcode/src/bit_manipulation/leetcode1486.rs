@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/xor-operation-in-an-array/
+// https://leetcode-cn.com/problems/xor-operation-in-an-array/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 // ✔

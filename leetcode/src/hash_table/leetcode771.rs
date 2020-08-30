@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/jewels-and-stones/
+// https://leetcode-cn.com/problems/jewels-and-stones/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::collections::HashSet;

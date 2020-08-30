@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/word-ladder-ii/
+// https://leetcode-cn.com/problems/word-ladder-ii/
 // Runtime: 36 ms
 // Memory Usage: 2.8 MB
 use std::{

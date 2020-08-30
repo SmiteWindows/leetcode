@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/string-matching-in-an-array/
+// https://leetcode-cn.com/problems/string-matching-in-an-array/
 // Runtime: 4 ms
 // Memory Usage: 2.1 MB
 pub fn string_matching(words: Vec<String>) -> Vec<String> {

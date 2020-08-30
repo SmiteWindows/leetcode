@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-cost-for-tickets/
+// https://leetcode-cn.com/problems/minimum-cost-for-tickets/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn mincost_tickets(days: Vec<i32>, costs: Vec<i32>) -> i32 {

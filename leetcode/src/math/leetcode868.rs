@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/binary-gap/
+// https://leetcode-cn.com/problems/binary-gap/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn binary_gap(n: i32) -> i32 {

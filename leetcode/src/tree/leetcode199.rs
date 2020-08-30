@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/binary-tree-right-side-view/
+// https://leetcode-cn.com/problems/binary-tree-right-side-view/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::{cell::RefCell, collections::VecDeque, rc::Rc};

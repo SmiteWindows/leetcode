@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/smallest-string-with-swaps/
+// https://leetcode-cn.com/problems/smallest-string-with-swaps/
 // Runtime: 28 ms
 // Memory Usage: 9 MB
 use std::{cmp::Reverse, collections::HashMap};

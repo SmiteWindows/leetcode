@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended/
+// https://leetcode-cn.com/problems/maximum-number-of-events-that-can-be-attended/
 // Runtime: 56 ms
 // Memory Usage: 8.7 MB
 use std::{cmp::Reverse, collections::BinaryHeap};

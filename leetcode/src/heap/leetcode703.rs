@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/kth-largest-element-in-a-stream/
+// https://leetcode-cn.com/problems/kth-largest-element-in-a-stream/
 // Runtime: 8 ms
 // Memory Usage: 5.5 MB
 use std::{cmp::Reverse, collections::BinaryHeap};

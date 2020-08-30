@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/next-greater-node-in-linked-list/
+// https://leetcode-cn.com/problems/next-greater-node-in-linked-list/
 // Runtime: 32 ms
 // Memory Usage: 2.6 MB
 pub fn next_larger_nodes(head: Option<Box<ListNode>>) -> Vec<i32> {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/maximum-subarray/
+// https://leetcode-cn.com/problems/maximum-subarray/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn max_sub_array(nums: Vec<i32>) -> i32 {

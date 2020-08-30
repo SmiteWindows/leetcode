@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/divisor-game/
+// https://leetcode-cn.com/problems/divisor-game/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn divisor_game(n: i32) -> bool {

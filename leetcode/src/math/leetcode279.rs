@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/perfect-squares/
+// https://leetcode-cn.com/problems/perfect-squares/
 // Runtime: 16 ms
 // Memory Usage: 2.1 MB
 pub fn num_squares(n: i32) -> i32 {

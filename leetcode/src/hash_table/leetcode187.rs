@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/repeated-dna-sequences/
+// https://leetcode-cn.com/problems/repeated-dna-sequences/
 // Runtime: 8 ms
 // Memory Usage: 3.6 MB
 use std::collections::HashSet;

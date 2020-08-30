@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/swap-for-longest-repeated-character-substring/
+// https://leetcode-cn.com/problems/swap-for-longest-repeated-character-substring/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn max_rep_opt1(text: String) -> i32 {

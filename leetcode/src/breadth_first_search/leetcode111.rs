@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-depth-of-binary-tree/
+// https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/
 // Runtime: 0 ms
 // Memory Usage: 2.7 MB
 use std::{cell::RefCell, collections::VecDeque, rc::Rc};

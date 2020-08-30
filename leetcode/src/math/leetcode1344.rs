@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/angle-between-hands-of-a-clock/
+// https://leetcode-cn.com/problems/angle-between-hands-of-a-clock/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn angle_clock(hour: i32, minutes: i32) -> f64 {

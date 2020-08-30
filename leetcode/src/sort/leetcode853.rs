@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/car-fleet/
+// https://leetcode-cn.com/problems/car-fleet/
 // Runtime: 8 ms
 // Memory Usage: 2.4 MB
 use std::collections::BTreeMap;

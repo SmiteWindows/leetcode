@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/pancake-sorting/
+// https://leetcode-cn.com/problems/pancake-sorting/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn pancake_sort(a: Vec<i32>) -> Vec<i32> {

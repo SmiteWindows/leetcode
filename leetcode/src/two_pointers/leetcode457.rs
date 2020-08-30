@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/circular-array-loop/
+// https://leetcode-cn.com/problems/circular-array-loop/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn circular_array_loop(nums: Vec<i32>) -> bool {

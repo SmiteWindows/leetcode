@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/detect-cycles-in-2d-grid/
+// https://leetcode-cn.com/problems/detect-cycles-in-2d-grid/
 // Runtime: 88 ms
 // Memory Usage: 33.3 MB
 #![allow(clippy::many_single_char_names)]

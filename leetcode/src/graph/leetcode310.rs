@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-height-trees/
+// https://leetcode-cn.com/problems/minimum-height-trees/
 // Runtime: 8 ms
 // Memory Usage: 2.9 MB
 use std::collections::VecDeque;

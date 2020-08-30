@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/add-binary/
+// https://leetcode-cn.com/problems/add-binary/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn add_binary(a: String, b: String) -> String {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/delete-and-earn/
+// https://leetcode-cn.com/problems/delete-and-earn/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn delete_and_earn(nums: Vec<i32>) -> i32 {

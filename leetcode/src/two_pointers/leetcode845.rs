@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/longest-mountain-in-array/
+// https://leetcode-cn.com/problems/longest-mountain-in-array/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn longest_mountain(a: Vec<i32>) -> i32 {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/palindrome-partitioning/
+// https://leetcode-cn.com/problems/palindrome-partitioning/
 // Runtime: 4 ms
 // Memory Usage: 2.9 MB
 pub fn partition(s: String) -> Vec<Vec<String>> {

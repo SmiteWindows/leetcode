@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/divide-two-integers/
+// https://leetcode-cn.com/problems/divide-two-integers/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn divide(dividend: i32, divisor: i32) -> i32 {

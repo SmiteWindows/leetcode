@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/odd-even-linked-list/
+// https://leetcode-cn.com/problems/odd-even-linked-list/
 // Runtime: 0 ms
 // Memory Usage: 2.3 MB
 pub fn odd_even_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {

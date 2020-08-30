@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/design-linked-list/
+// https://leetcode-cn.com/problems/design-linked-list/
 // Runtime: 16 ms
 // Memory Usage: 2.3 MB
 struct MyLinkedList {

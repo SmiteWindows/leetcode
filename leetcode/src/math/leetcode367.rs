@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/valid-perfect-square/
+// https://leetcode-cn.com/problems/valid-perfect-square/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn is_perfect_square(num: i32) -> bool {

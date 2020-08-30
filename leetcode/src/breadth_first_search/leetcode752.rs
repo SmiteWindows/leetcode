@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/open-the-lock/
+// https://leetcode-cn.com/problems/open-the-lock/
 // Runtime: 12 ms
 // Memory Usage: 2.1 MB
 use std::collections::HashSet;

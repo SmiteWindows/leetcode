@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/monotone-increasing-digits/
+// https://leetcode-cn.com/problems/monotone-increasing-digits/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn monotone_increasing_digits(n: i32) -> i32 {

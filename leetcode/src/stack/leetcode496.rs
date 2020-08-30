@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/next-greater-element-i/
+// https://leetcode-cn.com/problems/next-greater-element-i/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::collections::HashMap;

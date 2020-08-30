@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/longest-zigzag-path-in-a-binary-tree/
+// https://leetcode-cn.com/problems/longest-zigzag-path-in-a-binary-tree/
 // Runtime: 20 ms
 // Memory Usage: 7.9 MB
 use std::{cell::RefCell, rc::Rc};

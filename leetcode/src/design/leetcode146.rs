@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/lru-cache/
+// https://leetcode-cn.com/problems/lru-cache/
 // Runtime: 56 ms
 // Memory Usage: 11.5 MB
 use std::{

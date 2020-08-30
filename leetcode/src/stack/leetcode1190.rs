@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/reverse-substrings-between-each-pair-of-parentheses/
+// https://leetcode-cn.com/problems/reverse-substrings-between-each-pair-of-parentheses/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::collections::VecDeque;

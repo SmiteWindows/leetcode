@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-time-difference/
+// https://leetcode-cn.com/problems/minimum-time-difference/
 // Runtime: 0 ms
 // Memory Usage: 3.1 MB
 pub fn find_min_difference(time_points: Vec<String>) -> i32 {

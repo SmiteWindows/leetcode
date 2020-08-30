@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/
+// https://leetcode-cn.com/problems/maximum-points-you-can-obtain-from-cards/
 // Runtime: 4 ms
 // Memory Usage: 3.2 MB
 pub fn max_score(card_points: Vec<i32>, k: i32) -> i32 {

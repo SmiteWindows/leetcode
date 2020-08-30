@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/trim-a-binary-search-tree/
+// https://leetcode-cn.com/problems/trim-a-binary-search-tree/
 // Runtime: 0 ms
 // Memory Usage: 3.1 MB
 use std::{cell::RefCell, rc::Rc};

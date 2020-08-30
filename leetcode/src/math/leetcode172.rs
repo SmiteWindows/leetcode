@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/factorial-trailing-zeroes/
+// https://leetcode-cn.com/problems/factorial-trailing-zeroes/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn trailing_zeroes(n: i32) -> i32 {

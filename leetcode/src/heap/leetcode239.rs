@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/sliding-window-maximum/
+// https://leetcode-cn.com/problems/sliding-window-maximum/
 // Runtime: 16 ms
 // Memory Usage: 3.1 MB
 use std::collections::VecDeque;

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/valid-parenthesis-string/
+// https://leetcode-cn.com/problems/valid-parenthesis-string/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn check_valid_string(s: String) -> bool {

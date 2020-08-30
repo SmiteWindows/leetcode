@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/groups-of-special-equivalent-strings/
+// https://leetcode-cn.com/problems/groups-of-special-equivalent-strings/
 // Runtime: 4 ms
 // Memory Usage: 2.4 MB
 use std::collections::{BTreeMap, HashSet};

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/random-pick-with-blacklist/
+// https://leetcode-cn.com/problems/random-pick-with-blacklist/
 use rand::{distributions::Uniform, prelude::*};
 use std::collections::{HashMap, HashSet};
 struct Solution {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/merge-k-sorted-lists/
+// https://leetcode-cn.com/problems/merge-k-sorted-lists/
 // Runtime: 4 ms
 // Memory Usage: 3.3 MB
 pub fn merge_k_lists(lists: Vec<Option<Box<ListNode>>>) -> Option<Box<ListNode>> {

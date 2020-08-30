@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/design-circular-queue/
+// https://leetcode-cn.com/problems/design-circular-queue/
 // Runtime: 8 ms
 // Memory Usage: 2.4 MB
 struct MyCircularQueue {

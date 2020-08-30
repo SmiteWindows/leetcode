@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/length-of-longest-fibonacci-subsequence/
+// https://leetcode-cn.com/problems/length-of-longest-fibonacci-subsequence/
 // Runtime: 12 ms
 // Memory Usage: 2.2 MB
 use std::collections::HashSet;

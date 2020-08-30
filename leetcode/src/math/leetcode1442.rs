@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/count-triplets-that-can-form-two-arrays-of-equal-xor/
+// https://leetcode-cn.com/problems/count-triplets-that-can-form-two-arrays-of-equal-xor/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn count_triplets(arr: Vec<i32>) -> i32 {

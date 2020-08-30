@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/word-subsets/
+// https://leetcode-cn.com/problems/word-subsets/
 // Runtime: 36 ms
 // Memory Usage: 3.3 MB
 pub fn word_subsets(a: Vec<String>, b: Vec<String>) -> Vec<String> {

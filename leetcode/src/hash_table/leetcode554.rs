@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/brick-wall/
+// https://leetcode-cn.com/problems/brick-wall/
 // Runtime: 12 ms
 // Memory Usage: 2.8 MB
 use std::collections::HashMap;

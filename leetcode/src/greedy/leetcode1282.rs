@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/group-the-people-given-the-group-size-they-belong-to/
+// https://leetcode-cn.com/problems/group-the-people-given-the-group-size-they-belong-to/
 // Runtime: 8 ms
 // Memory Usage: 2.1 MB
 type Person = (i32, usize);

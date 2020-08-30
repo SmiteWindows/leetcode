@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/reorder-data-in-log-files/
+// https://leetcode-cn.com/problems/reorder-data-in-log-files/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 use std::cmp::Ordering::{Equal, Greater, Less};

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/sudoku-solver/
+// https://leetcode-cn.com/problems/sudoku-solver/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn solve_sudoku(board: &mut Vec<Vec<char>>) {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/expressive-words/
+// https://leetcode-cn.com/problems/expressive-words/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn expressive_words(s: String, words: Vec<String>) -> i32 {

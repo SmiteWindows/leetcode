@@ -1,4 +1,4 @@
-// https://leetcode.com/tag/ordered-map/
+// https://leetcode-cn.com/tag/ordered-map/
 pub mod leetcode220;
 pub mod leetcode352;
 pub mod leetcode699;

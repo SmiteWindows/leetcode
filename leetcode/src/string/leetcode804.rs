@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/unique-morse-code-words/
+// https://leetcode-cn.com/problems/unique-morse-code-words/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 use std::collections::HashSet;

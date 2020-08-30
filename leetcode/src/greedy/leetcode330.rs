@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/patching-array/
+// https://leetcode-cn.com/problems/patching-array/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn min_patches(nums: Vec<i32>, n: i32) -> i32 {

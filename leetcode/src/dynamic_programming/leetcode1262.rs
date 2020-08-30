@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/greatest-sum-divisible-by-three/
+// https://leetcode-cn.com/problems/greatest-sum-divisible-by-three/
 // Runtime: 8 ms
 // Memory Usage: 2.5 MB
 pub fn max_sum_div_three(nums: Vec<i32>) -> i32 {

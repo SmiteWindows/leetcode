@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/complete-binary-tree-inserter/
+// https://leetcode-cn.com/problems/complete-binary-tree-inserter/
 // Runtime: 4 ms
 // Memory Usage: 2.6 MB
 use std::{cell::RefCell, rc::Rc};

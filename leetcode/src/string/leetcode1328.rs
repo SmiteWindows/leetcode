@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/break-a-palindrome/
+// https://leetcode-cn.com/problems/break-a-palindrome/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn break_palindrome(palindrome: String) -> String {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/most-stones-removed-with-same-row-or-column/
+// https://leetcode-cn.com/problems/most-stones-removed-with-same-row-or-column/
 // Runtime: 4 ms
 // Memory Usage: 2.4 MB
 use std::collections::HashMap;

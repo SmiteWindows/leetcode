@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/triples-with-bitwise-and-equal-to-zero/
+// https://leetcode-cn.com/problems/triples-with-bitwise-and-equal-to-zero/
 // Runtime: 168 ms
 // Memory Usage: 4.1 MB
 use std::collections::HashMap;

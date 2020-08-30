@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/median-of-two-sorted-arrays/
+// https://leetcode-cn.com/problems/median-of-two-sorted-arrays/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn find_median_sorted_arrays(nums1: Vec<i32>, nums2: Vec<i32>) -> f64 {

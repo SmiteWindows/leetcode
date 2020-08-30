@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/bag-of-tokens/
+// https://leetcode-cn.com/problems/bag-of-tokens/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn bag_of_tokens_score(tokens: Vec<i32>, p: i32) -> i32 {

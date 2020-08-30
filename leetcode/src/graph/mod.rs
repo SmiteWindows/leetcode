@@ -1,4 +1,4 @@
-// https://leetcode.com/tag/graph/
+// https://leetcode-cn.com/tag/graph/
 pub mod leetcode1042;
 pub mod leetcode1043;
 pub mod leetcode1129;

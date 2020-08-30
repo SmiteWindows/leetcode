@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/maximum-swap/
+// https://leetcode-cn.com/problems/maximum-swap/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn maximum_swap(num: i32) -> i32 {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/maximum-product-of-splitted-binary-tree/
+// https://leetcode-cn.com/problems/maximum-product-of-splitted-binary-tree/
 // Runtime: 20 ms
 // Memory Usage: 10.2 MB
 use std::{cell::RefCell, rc::Rc};

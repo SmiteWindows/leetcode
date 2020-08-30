@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/maximum-frequency-stack/
+// https://leetcode-cn.com/problems/maximum-frequency-stack/
 // Runtime: 48 ms
 // Memory Usage: 7.2 MB
 use std::collections::HashMap;

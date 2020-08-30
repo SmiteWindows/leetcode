@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/two-city-scheduling/
+// https://leetcode-cn.com/problems/two-city-scheduling/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn two_city_sched_cost(costs: Vec<Vec<i32>>) -> i32 {

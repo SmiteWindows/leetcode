@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/increasing-order-search-tree/
+// https://leetcode-cn.com/problems/increasing-order-search-tree/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::{cell::RefCell, rc::Rc};

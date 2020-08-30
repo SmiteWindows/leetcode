@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/possible-bipartition/
+// https://leetcode-cn.com/problems/possible-bipartition/
 // Runtime: 28 ms
 // Memory Usage: 3 MB
 pub fn possible_bipartition(n: i32, dislikes: Vec<Vec<i32>>) -> bool {

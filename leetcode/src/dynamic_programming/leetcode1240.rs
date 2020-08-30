@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/tiling-a-rectangle-with-the-fewest-squares/
+// https://leetcode-cn.com/problems/tiling-a-rectangle-with-the-fewest-squares/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 #![allow(clippy::many_single_char_names)]

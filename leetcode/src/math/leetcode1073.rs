@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/adding-two-negabinary-numbers/
+// https://leetcode-cn.com/problems/adding-two-negabinary-numbers/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn add_negabinary(arr1: Vec<i32>, arr2: Vec<i32>) -> Vec<i32> {

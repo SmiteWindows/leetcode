@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/print-words-vertically/
+// https://leetcode-cn.com/problems/print-words-vertically/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn print_vertically(s: String) -> Vec<String> {

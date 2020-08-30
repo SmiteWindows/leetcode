@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/maximum-length-of-repeated-subarray/
+// https://leetcode-cn.com/problems/maximum-length-of-repeated-subarray/
 // Runtime: 32 ms
 // Memory Usage: 5.8 MB
 pub fn find_length(a: Vec<i32>, b: Vec<i32>) -> i32 {

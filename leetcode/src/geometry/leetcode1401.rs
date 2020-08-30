@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/circle-and-rectangle-overlapping/
+// https://leetcode-cn.com/problems/circle-and-rectangle-overlapping/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn check_overlap(

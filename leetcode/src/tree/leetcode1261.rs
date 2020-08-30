@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/find-elements-in-a-contaminated-binary-tree/
+// https://leetcode-cn.com/problems/find-elements-in-a-contaminated-binary-tree/
 // Runtime: 4 ms
 // Memory Usage: 4.6 MB
 use std::{cell::RefCell, collections::HashSet, rc::Rc};

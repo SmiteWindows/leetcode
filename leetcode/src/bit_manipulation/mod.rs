@@ -1,4 +1,4 @@
-// https://leetcode.com/tag/bit-manipulation/
+// https://leetcode-cn.com/tag/bit-manipulation/
 pub mod leetcode1125;
 pub mod leetcode1131;
 pub mod leetcode1178;

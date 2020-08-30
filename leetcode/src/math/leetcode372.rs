@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/super-pow
+// https://leetcode-cn.com/problems/super-pow
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn super_pow(a: i32, b: Vec<i32>) -> i32 {

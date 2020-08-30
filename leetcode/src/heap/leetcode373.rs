@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/find-k-pairs-with-smallest-sums/
+// https://leetcode-cn.com/problems/find-k-pairs-with-smallest-sums/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 use std::{

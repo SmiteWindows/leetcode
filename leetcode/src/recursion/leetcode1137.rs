@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/n-th-tribonacci-number/
+// https://leetcode-cn.com/problems/n-th-tribonacci-number/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn tribonacci(n: i32) -> i32 {

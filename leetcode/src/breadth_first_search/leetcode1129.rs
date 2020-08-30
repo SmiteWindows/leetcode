@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/shortest-path-with-alternating-colors/
+// https://leetcode-cn.com/problems/shortest-path-with-alternating-colors/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 use std::collections::VecDeque;

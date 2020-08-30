@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/number-of-steps-to-reduce-a-number-in-binary-representation-to-one/
+// https://leetcode-cn.com/problems/number-of-steps-to-reduce-a-number-in-binary-representation-to-one/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn num_steps(s: String) -> i32 {

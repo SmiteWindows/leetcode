@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/check-if-there-is-a-valid-path-in-a-grid/
+// https://leetcode-cn.com/problems/check-if-there-is-a-valid-path-in-a-grid/
 // Runtime: 28 ms
 // Memory Usage: 2.6 MB
 use std::collections::VecDeque;

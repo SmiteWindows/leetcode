@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/best-position-for-a-service-centre/
+// https://leetcode-cn.com/problems/best-position-for-a-service-centre/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn get_min_dist_sum(positions: Vec<Vec<i32>>) -> f64 {

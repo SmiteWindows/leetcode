@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/lowest-common-ancestor-of-deepest-leaves/
+// https://leetcode-cn.com/problems/lowest-common-ancestor-of-deepest-leaves/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::{

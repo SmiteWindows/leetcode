@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/trapping-rain-water-ii/
+// https://leetcode-cn.com/problems/trapping-rain-water-ii/
 // Runtime: 4 ms
 // Memory Usage: 2.3 MB
 use std::{cmp::Reverse, collections::BinaryHeap};

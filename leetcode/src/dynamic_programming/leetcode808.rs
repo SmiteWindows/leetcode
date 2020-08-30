@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/soup-servings/
+// https://leetcode-cn.com/problems/soup-servings/
 // Runtime: 0 ms
 // Memory Usage: 2.3 MB
 use std::collections::HashMap;

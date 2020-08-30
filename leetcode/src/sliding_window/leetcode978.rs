@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/longest-turbulent-subarray/
+// https://leetcode-cn.com/problems/longest-turbulent-subarray/
 // Runtime: 8 ms
 // Memory Usage: 2.4 MB
 pub fn max_turbulence_size(a: Vec<i32>) -> i32 {

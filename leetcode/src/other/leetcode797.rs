@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/all-paths-from-source-to-target/
+// https://leetcode-cn.com/problems/all-paths-from-source-to-target/
 // Runtime: 8 ms
 // Memory Usage: 2.4 MB
 pub fn all_paths_source_target(graph: Vec<Vec<i32>>) -> Vec<Vec<i32>> {

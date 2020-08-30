@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/stone-game-iv/
+// https://leetcode-cn.com/problems/stone-game-iv/
 // Runtime: 4 ms
 // Memory Usage: 2.5 MB
 pub fn winner_square_game(n: i32) -> bool {

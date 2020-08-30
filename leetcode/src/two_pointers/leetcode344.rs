@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/reverse-string/
+// https://leetcode-cn.com/problems/reverse-string/
 // Runtime: 20 ms
 // Memory Usage: 5.3 MB
 pub fn reverse_string(s: &mut Vec<char>) {

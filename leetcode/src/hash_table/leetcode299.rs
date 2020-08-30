@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/bulls-and-cows/
+// https://leetcode-cn.com/problems/bulls-and-cows/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn get_hint(secret: String, guess: String) -> String {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/balanced-binary-tree/
+// https://leetcode-cn.com/problems/balanced-binary-tree/
 // Runtime: 0 ms
 // Memory Usage: 2.7 MB
 use std::{cell::RefCell, rc::Rc};

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/prime-arrangements/
+// https://leetcode-cn.com/problems/prime-arrangements/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn num_prime_arrangements(n: i32) -> i32 {

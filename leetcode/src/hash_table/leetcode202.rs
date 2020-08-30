@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/happy-number/
+// https://leetcode-cn.com/problems/happy-number/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::collections::HashSet;

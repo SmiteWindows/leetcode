@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/find-duplicate-subtrees/
+// https://leetcode-cn.com/problems/find-duplicate-subtrees/
 // Runtime: 12 ms
 // Memory Usage: 10.4 MB
 use std::{cell::RefCell, collections::HashMap, rc::Rc};

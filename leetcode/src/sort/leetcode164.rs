@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/maximum-gap/
+// https://leetcode-cn.com/problems/maximum-gap/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn maximum_gap(nums: Vec<i32>) -> i32 {

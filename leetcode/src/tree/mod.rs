@@ -1,4 +1,4 @@
-// https://leetcode.com/tag/tree/
+// https://leetcode-cn.com/tag/tree/
 pub mod leetcode100;
 pub mod leetcode1008;
 pub mod leetcode101;

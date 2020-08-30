@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/rotate-string/
+// https://leetcode-cn.com/problems/rotate-string/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn rotate_string(a: String, b: String) -> bool {

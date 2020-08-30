@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/min-stack/
+// https://leetcode-cn.com/problems/min-stack/
 // Runtime: 4 ms
 // Memory Usage: 5.4 MB
 struct MinStack {

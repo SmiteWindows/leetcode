@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/design-hashset/
+// https://leetcode-cn.com/problems/design-hashset/
 // Runtime: 20 ms
 // Memory Usage: 5.7 MB
 struct MyHashSet {

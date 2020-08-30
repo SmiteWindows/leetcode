@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/n-repeated-element-in-size-2n-array/
+// https://leetcode-cn.com/problems/n-repeated-element-in-size-2n-array/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::collections::HashSet;

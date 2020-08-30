@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minesweeper/
+// https://leetcode-cn.com/problems/minesweeper/
 // Runtime: 20 ms
 // Memory Usage: 2.2 MB
 use std::collections::VecDeque;

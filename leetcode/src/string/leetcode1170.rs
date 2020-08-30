@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/compare-strings-by-frequency-of-the-smallest-character/
+// https://leetcode-cn.com/problems/compare-strings-by-frequency-of-the-smallest-character/
 // Runtime: 0 ms
 // Memory Usage: 2.3 MB
 pub fn num_smaller_by_frequency(queries: Vec<String>, words: Vec<String>) -> Vec<i32> {

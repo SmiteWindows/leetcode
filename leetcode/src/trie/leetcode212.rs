@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/word-search-ii/
+// https://leetcode-cn.com/problems/word-search-ii/
 // Runtime: 24 ms
 // Memory Usage: 12.6 MB
 use std::collections::HashMap;

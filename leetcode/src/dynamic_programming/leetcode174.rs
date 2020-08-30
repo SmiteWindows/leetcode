@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/dungeon-game/
+// https://leetcode-cn.com/problems/dungeon-game/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn calculate_minimum_hp(dungeon: Vec<Vec<i32>>) -> i32 {

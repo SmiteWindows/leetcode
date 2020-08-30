@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/score-of-parentheses/
+// https://leetcode-cn.com/problems/score-of-parentheses/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn score_of_parentheses(s: String) -> i32 {

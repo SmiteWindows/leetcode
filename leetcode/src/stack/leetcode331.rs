@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/verify-preorder-serialization-of-a-binary-tree/
+// https://leetcode-cn.com/problems/verify-preorder-serialization-of-a-binary-tree/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn is_valid_serialization(preorder: String) -> bool {

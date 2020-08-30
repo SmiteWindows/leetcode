@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-distance-to-type-a-word-using-two-fingers/
+// https://leetcode-cn.com/problems/minimum-distance-to-type-a-word-using-two-fingers/
 // Runtime: 20 ms
 // Memory Usage: 3.3 MB
 pub fn minimum_distance(word: String) -> i32 {

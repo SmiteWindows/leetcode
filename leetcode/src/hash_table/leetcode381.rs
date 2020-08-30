@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed/
+// https://leetcode-cn.com/problems/insert-delete-getrandom-o1-duplicates-allowed/
 // Runtime: 12 ms
 // Memory Usage: 6 MB
 use rand::prelude::{thread_rng, Rng, ThreadRng};

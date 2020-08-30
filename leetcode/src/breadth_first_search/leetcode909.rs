@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/snakes-and-ladders/
+// https://leetcode-cn.com/problems/snakes-and-ladders/
 // Runtime: 4 ms
 // Memory Usage: 2.1 MB
 use std::collections::VecDeque;

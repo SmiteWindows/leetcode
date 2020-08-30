@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/unique-paths/
+// https://leetcode-cn.com/problems/unique-paths/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn unique_paths(m: i32, n: i32) -> i32 {

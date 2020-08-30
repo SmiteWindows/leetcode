@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/design-browser-history/
+// https://leetcode-cn.com/problems/design-browser-history/
 // Runtime: 44 ms
 // Memory Usage: 3.7 MB
 struct BrowserHistory {

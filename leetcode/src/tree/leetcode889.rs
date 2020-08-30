@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/
+// https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::{cell::RefCell, rc::Rc};

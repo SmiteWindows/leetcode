@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/invalid-transactions/
+// https://leetcode-cn.com/problems/invalid-transactions/
 // Runtime: 8 ms
 // Memory Usage: 2.4 MB
 use std::collections::{HashMap, HashSet};

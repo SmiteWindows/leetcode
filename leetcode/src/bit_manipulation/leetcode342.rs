@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/power-of-four/
+// https://leetcode-cn.com/problems/power-of-four/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn is_power_of_four(num: i32) -> bool {

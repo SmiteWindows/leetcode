@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/insufficient-nodes-in-root-to-leaf-paths/
+// https://leetcode-cn.com/problems/insufficient-nodes-in-root-to-leaf-paths/
 // Runtime: 8 ms
 // Memory Usage: 2.5 MB
 use std::{cell::RefCell, rc::Rc};

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/ones-and-zeroes/
+// https://leetcode-cn.com/problems/ones-and-zeroes/
 // Runtime: 308 ms
 // Memory Usage: 21.3 MB
 use std::collections::HashMap;

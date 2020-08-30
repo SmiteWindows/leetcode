@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-number-of-increments-on-subarrays-to-form-a-target-array/
+// https://leetcode-cn.com/problems/minimum-number-of-increments-on-subarrays-to-form-a-target-array/
 // Runtime: 12 ms
 // Memory Usage: 3.1 MB
 pub fn min_number_operations(target: Vec<i32>) -> i32 {

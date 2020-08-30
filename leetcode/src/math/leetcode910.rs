@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/smallest-range-ii/
+// https://leetcode-cn.com/problems/smallest-range-ii/
 // Runtime: 4 ms
 // Memory Usage: 2.1 MB
 pub fn smallest_range_ii(a: Vec<i32>, k: i32) -> i32 {

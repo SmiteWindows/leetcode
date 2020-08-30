@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/binary-tree-cameras/
+// https://leetcode-cn.com/problems/binary-tree-cameras/
 
 use std::{cell::RefCell, rc::Rc};
 pub fn min_camera_cover(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {

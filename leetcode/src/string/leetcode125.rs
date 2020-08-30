@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/valid-palindrome/
+// https://leetcode-cn.com/problems/valid-palindrome/
 // Runtime: 0 ms
 // Memory Usage: 2.6 MB
 pub fn is_palindrome(s: String) -> bool {

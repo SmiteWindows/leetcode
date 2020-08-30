@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/sort-the-matrix-diagonally/
+// https://leetcode-cn.com/problems/sort-the-matrix-diagonally/
 // Runtime: 4 ms
 // Memory Usage: 2.2 MB
 use std::{

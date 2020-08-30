@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/number-of-closed-islands/
+// https://leetcode-cn.com/problems/number-of-closed-islands/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn closed_island(grid: Vec<Vec<i32>>) -> i32 {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-window-substring/
+// https://leetcode-cn.com/problems/minimum-window-substring/
 #![allow(clippy::many_single_char_names)]
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/can-i-win/
+// https://leetcode-cn.com/problems/can-i-win/
 // Runtime: 36 ms
 // Memory Usage: 3.8 MB
 use std::collections::HashMap;

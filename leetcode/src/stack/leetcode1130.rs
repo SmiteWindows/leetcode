@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-cost-tree-from-leaf-values/
+// https://leetcode-cn.com/problems/minimum-cost-tree-from-leaf-values/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn mct_from_leaf_values(arr: Vec<i32>) -> i32 {

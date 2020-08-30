@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/unique-binary-search-trees-ii/
+// https://leetcode-cn.com/problems/unique-binary-search-trees-ii/
 
 use std::{cell::RefCell, rc::Rc};
 pub fn generate_trees(n: i32) -> Vec<Option<Rc<RefCell<TreeNode>>>> {

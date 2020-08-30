@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/valid-anagram/
+// https://leetcode-cn.com/problems/valid-anagram/
 // Runtime: 4 ms
 // Memory Usage: 2.5 MB
 pub fn is_anagram(s: String, t: String) -> bool {

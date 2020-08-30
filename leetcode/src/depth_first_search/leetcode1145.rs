@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/binary-tree-coloring-game/
+// https://leetcode-cn.com/problems/binary-tree-coloring-game/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::{cell::RefCell, rc::Rc};

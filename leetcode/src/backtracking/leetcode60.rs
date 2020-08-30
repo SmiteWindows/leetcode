@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/permutation-sequence/
+// https://leetcode-cn.com/problems/permutation-sequence/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn get_permutation(n: i32, k: i32) -> String {

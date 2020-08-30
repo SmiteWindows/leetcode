@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/two-sum-iv-input-is-a-bst/
+// https://leetcode-cn.com/problems/two-sum-iv-input-is-a-bst/
 // Runtime: 4 ms
 // Memory Usage: 3.1 MB
 use std::{cell::RefCell, collections::HashSet, rc::Rc};

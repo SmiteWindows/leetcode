@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/flatten-nested-list-iterator/
+// https://leetcode-cn.com/problems/flatten-nested-list-iterator/
 // Runtime: 4 ms
 // Memory Usage: 2.9 MB
 use std::{iter::Peekable, vec::IntoIter};

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/maximum-score-after-splitting-a-string/
+// https://leetcode-cn.com/problems/maximum-score-after-splitting-a-string/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn max_score(s: String) -> i32 {

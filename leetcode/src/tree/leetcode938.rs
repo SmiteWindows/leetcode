@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/range-sum-of-bst/
+// https://leetcode-cn.com/problems/range-sum-of-bst/
 // Runtime: 16 ms
 // Memory Usage: 4 MB
 use std::{cell::RefCell, rc::Rc};

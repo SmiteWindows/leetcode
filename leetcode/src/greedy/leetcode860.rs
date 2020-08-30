@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/lemonade-change/
+// https://leetcode-cn.com/problems/lemonade-change/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn lemonade_change(bills: Vec<i32>) -> bool {

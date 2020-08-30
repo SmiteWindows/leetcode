@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/xor-queries-of-a-subarray/
+// https://leetcode-cn.com/problems/xor-queries-of-a-subarray/
 // Runtime: 24 ms
 // Memory Usage: 3.8 MB
 pub fn xor_queries(arr: Vec<i32>, queries: Vec<Vec<i32>>) -> Vec<i32> {

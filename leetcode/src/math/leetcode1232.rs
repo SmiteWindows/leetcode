@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/check-if-it-is-a-straight-line/
+// https://leetcode-cn.com/problems/check-if-it-is-a-straight-line/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn check_straight_line(coordinates: Vec<Vec<i32>>) -> bool {

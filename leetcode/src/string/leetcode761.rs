@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/special-binary-string/
+// https://leetcode-cn.com/problems/special-binary-string/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::cmp::Reverse;

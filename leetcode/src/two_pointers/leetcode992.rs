@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/subarrays-with-k-different-integers/
+// https://leetcode-cn.com/problems/subarrays-with-k-different-integers/
 // Runtime: 24 ms
 // Memory Usage: 2.5 MB
 use std::collections::HashMap;

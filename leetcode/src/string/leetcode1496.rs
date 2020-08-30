@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/path-crossing/
+// https://leetcode-cn.com/problems/path-crossing/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 use std::collections::HashSet;

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/find-and-replace-pattern/
+// https://leetcode-cn.com/problems/find-and-replace-pattern/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::collections::HashMap;

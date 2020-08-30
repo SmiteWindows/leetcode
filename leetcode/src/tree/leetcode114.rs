@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/flatten-binary-tree-to-linked-list/
+// https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 use std::{cell::RefCell, rc::Rc};

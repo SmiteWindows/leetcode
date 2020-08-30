@@ -1,4 +1,4 @@
-// https://leetcode.com/tag/sort/
+// https://leetcode-cn.com/tag/sort/
 pub mod leetcode1030;
 pub mod leetcode1054;
 pub mod leetcode1122;

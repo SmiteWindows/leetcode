@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/permutations/
+// https://leetcode-cn.com/problems/permutations/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn permute(nums: Vec<i32>) -> Vec<Vec<i32>> {

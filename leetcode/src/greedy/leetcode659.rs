@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/split-array-into-consecutive-subsequences/
+// https://leetcode-cn.com/problems/split-array-into-consecutive-subsequences/
 // Runtime: 24 ms
 // Memory Usage: 2.2 MB
 use std::collections::HashMap;

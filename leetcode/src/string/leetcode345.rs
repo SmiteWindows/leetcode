@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/reverse-vowels-of-a-string/
+// https://leetcode-cn.com/problems/reverse-vowels-of-a-string/
 // Runtime: 0 ms
 // Memory Usage: 2.7 MB
 pub fn reverse_vowels(s: String) -> String {

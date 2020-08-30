@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/get-watched-videos-by-your-friends/
+// https://leetcode-cn.com/problems/get-watched-videos-by-your-friends/
 // Runtime: 28 ms
 // Memory Usage: 3.1 MB
 use std::collections::{HashMap, VecDeque};

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/edit-distance/
+// https://leetcode-cn.com/problems/edit-distance/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn min_distance(word1: String, word2: String) -> i32 {

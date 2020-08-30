@@ -1,4 +1,4 @@
-// https://leetcode.com/tag/random/
+// https://leetcode-cn.com/tag/random/
 pub mod leetcode470;
 pub mod leetcode478;
 pub mod leetcode497;

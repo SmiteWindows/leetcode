@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/airplane-seat-assignment-probability/
+// https://leetcode-cn.com/problems/airplane-seat-assignment-probability/
 // Runtime: 0 ms
 // Memory Usage: 1.9 MB
 pub fn nth_person_gets_nth_seat(n: i32) -> f64 {

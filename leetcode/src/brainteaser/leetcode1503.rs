@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/last-moment-before-all-ants-fall-out-of-a-plank/
+// https://leetcode-cn.com/problems/last-moment-before-all-ants-fall-out-of-a-plank/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn get_last_moment(n: i32, left: Vec<i32>, right: Vec<i32>) -> i32 {

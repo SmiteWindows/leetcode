@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/html-entity-parser/
+// https://leetcode-cn.com/problems/html-entity-parser/
 // Runtime: 8 ms
 // Memory Usage: 2.5 MB
 pub fn entity_parser(text: String) -> String {

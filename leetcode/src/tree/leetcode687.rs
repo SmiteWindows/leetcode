@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/longest-univalue-path/
+// https://leetcode-cn.com/problems/longest-univalue-path/
 // Runtime: 20 ms
 // Memory Usage: 3 MB
 use std::{cell::RefCell, rc::Rc};

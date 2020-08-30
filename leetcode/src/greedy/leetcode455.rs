@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/assign-cookies/
+// https://leetcode-cn.com/problems/assign-cookies/
 // Runtime: 4 ms
 // Memory Usage: 2.3 MB
 pub fn find_content_children(g: Vec<i32>, s: Vec<i32>) -> i32 {

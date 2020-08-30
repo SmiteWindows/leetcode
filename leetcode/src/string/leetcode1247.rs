@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-swaps-to-make-strings-equal/
+// https://leetcode-cn.com/problems/minimum-swaps-to-make-strings-equal/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn minimum_swap(s1: String, s2: String) -> i32 {

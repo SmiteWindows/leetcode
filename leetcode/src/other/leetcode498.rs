@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/diagonal-traverse/
+// https://leetcode-cn.com/problems/diagonal-traverse/
 #![allow(clippy::many_single_char_names)]
 // Runtime: 8 ms
 // Memory Usage: 2.6 MB

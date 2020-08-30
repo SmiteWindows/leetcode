@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/jump-game-ii/
+// https://leetcode-cn.com/problems/jump-game-ii/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn jump(nums: Vec<i32>) -> i32 {

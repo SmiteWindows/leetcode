@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-subsequence-in-non-increasing-order/
+// https://leetcode-cn.com/problems/minimum-subsequence-in-non-increasing-order/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn min_subsequence(nums: Vec<i32>) -> Vec<i32> {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/unique-paths-ii/
+// https://leetcode-cn.com/problems/unique-paths-ii/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn unique_paths_with_obstacles(obstacle_grid: Vec<Vec<i32>>) -> i32 {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/validate-binary-search-tree/
+// https://leetcode-cn.com/problems/validate-binary-search-tree/
 // Runtime: 0 ms
 // Memory Usage: 2.9 MB
 use std::{cell::RefCell, rc::Rc};

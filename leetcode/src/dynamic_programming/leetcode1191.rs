@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/k-concatenation-maximum-sum/
+// https://leetcode-cn.com/problems/k-concatenation-maximum-sum/
 // Runtime: 8 ms
 // Memory Usage: 2.9 MB
 const MOD: i32 = 1_000_000_007;

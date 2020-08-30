@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/max-consecutive-ones-iii/
+// https://leetcode-cn.com/problems/max-consecutive-ones-iii/
 // Runtime: 8 ms
 // Memory Usage: 2.2 MB
 pub fn longest_ones(a: Vec<i32>, k: i32) -> i32 {

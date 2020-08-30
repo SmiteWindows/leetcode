@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/length-of-last-word/
+// https://leetcode-cn.com/problems/length-of-last-word/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn length_of_last_word(s: String) -> i32 {

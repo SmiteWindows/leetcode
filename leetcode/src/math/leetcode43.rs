@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/multiply-strings/
+// https://leetcode-cn.com/problems/multiply-strings/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn multiply(num1: String, num2: String) -> String {

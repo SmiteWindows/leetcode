@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/number-of-ways-to-wear-different-hats-to-each-other/
+// https://leetcode-cn.com/problems/number-of-ways-to-wear-different-hats-to-each-other/
 pub fn number_ways(hats: Vec<Vec<i32>>) -> i32 {
     todo!()
 }

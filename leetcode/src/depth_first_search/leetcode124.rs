@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/binary-tree-maximum-path-sum/
+// https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/
 // Runtime: 4 ms
 // Memory Usage: 4.2 MB
 use std::{cell::RefCell, rc::Rc};

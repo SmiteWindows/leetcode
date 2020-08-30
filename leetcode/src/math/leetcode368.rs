@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/largest-divisible-subset/
+// https://leetcode-cn.com/problems/largest-divisible-subset/
 // Runtime: 12 ms
 // Memory Usage: 1.9 MB
 pub fn largest_divisible_subset(nums: Vec<i32>) -> Vec<i32> {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/split-array-into-fibonacci-sequence/
+// https://leetcode-cn.com/problems/split-array-into-fibonacci-sequence/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn split_into_fibonacci(s: String) -> Vec<i32> {

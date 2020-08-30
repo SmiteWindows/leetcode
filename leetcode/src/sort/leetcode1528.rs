@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/shuffle-string/
+// https://leetcode-cn.com/problems/shuffle-string/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn restore_string(s: String, indices: Vec<i32>) -> String {

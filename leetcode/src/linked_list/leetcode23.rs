@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/merge-k-sorted-lists/
+// https://leetcode-cn.com/problems/merge-k-sorted-lists/
 // Runtime: 208 ms
 // Memory Usage: 3.2 MB
 use std::cmp::Ordering;

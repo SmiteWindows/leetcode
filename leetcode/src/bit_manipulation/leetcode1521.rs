@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/find-a-value-of-a-mysterious-function-closest-to-target/
+// https://leetcode-cn.com/problems/find-a-value-of-a-mysterious-function-closest-to-target/
 // Runtime: 124 ms
 // Memory Usage: 3.1 MB
 use std::collections::HashSet;

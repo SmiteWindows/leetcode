@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/recover-a-tree-from-preorder-traversal/
+// https://leetcode-cn.com/problems/recover-a-tree-from-preorder-traversal/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::{cell::RefCell, iter::Peekable, rc::Rc, str::Chars, vec::IntoIter};

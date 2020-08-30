@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/keyboard-row/
+// https://leetcode-cn.com/problems/keyboard-row/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 use std::collections::HashMap;

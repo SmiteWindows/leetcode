@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/elimination-game/
+// https://leetcode-cn.com/problems/elimination-game/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn last_remaining(n: i32) -> i32 {

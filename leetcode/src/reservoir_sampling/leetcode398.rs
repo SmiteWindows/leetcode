@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/random-pick-index/
+// https://leetcode-cn.com/problems/random-pick-index/
 // Runtime: 12 ms
 // Memory Usage: 4.3 MB
 use rand::prelude::*;

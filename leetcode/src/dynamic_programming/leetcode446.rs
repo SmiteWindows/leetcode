@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/arithmetic-slices-ii-subsequence/
+// https://leetcode-cn.com/problems/arithmetic-slices-ii-subsequence/
 // Runtime: 116 ms
 // Memory Usage: 7.4 MB
 use std::collections::HashMap;

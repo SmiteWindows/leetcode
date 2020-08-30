@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/generate-parentheses/
+// https://leetcode-cn.com/problems/generate-parentheses/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn generate_parenthesis(n: i32) -> Vec<String> {

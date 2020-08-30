@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/sum-of-root-to-leaf-binary-numbers/
+// https://leetcode-cn.com/problems/sum-of-root-to-leaf-binary-numbers/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::{cell::RefCell, rc::Rc};

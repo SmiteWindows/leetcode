@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/pseudo-palindromic-paths-in-a-binary-tree/
+// https://leetcode-cn.com/problems/pseudo-palindromic-paths-in-a-binary-tree/
 // Runtime: 28 ms
 // Memory Usage: 11.8 MB
 use std::{cell::RefCell, rc::Rc};

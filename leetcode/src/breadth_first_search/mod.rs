@@ -1,4 +1,4 @@
-// https://leetcode.com/tag/breadth-first-search/
+// https://leetcode-cn.com/tag/breadth-first-search/
 pub mod leetcode101;
 pub mod leetcode102;
 pub mod leetcode103;

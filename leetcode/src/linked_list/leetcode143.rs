@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/reorder-list/
+// https://leetcode-cn.com/problems/reorder-list/
 // Runtime: 8 ms
 // Memory Usage: 4.1 MB
 use std::collections::VecDeque;

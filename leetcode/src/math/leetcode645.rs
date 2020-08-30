@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/set-mismatch/
+// https://leetcode-cn.com/problems/set-mismatch/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn find_error_nums(nums: Vec<i32>) -> Vec<i32> {

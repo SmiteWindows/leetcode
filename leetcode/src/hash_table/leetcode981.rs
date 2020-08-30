@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/time-based-key-value-store/
+// https://leetcode-cn.com/problems/time-based-key-value-store/
 // Runtime: 100 ms
 // Memory Usage: 85.5 MB
 use std::collections::HashMap;

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/global-and-local-inversions/
+// https://leetcode-cn.com/problems/global-and-local-inversions/
 // Runtime: 4 ms
 // Memory Usage: 2.1 MB
 pub fn is_ideal_permutation(a: Vec<i32>) -> bool {

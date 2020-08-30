@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/longest-arithmetic-sequence/
+// https://leetcode-cn.com/problems/longest-arithmetic-sequence/
 // Runtime: 616 ms
 // Memory Usage: 9.8 MB
 use std::collections::HashMap;

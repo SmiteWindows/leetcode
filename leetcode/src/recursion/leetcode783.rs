@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-distance-between-bst-nodes/
+// https://leetcode-cn.com/problems/minimum-distance-between-bst-nodes/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::{cell::RefCell, rc::Rc};

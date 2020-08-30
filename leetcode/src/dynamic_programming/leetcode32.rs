@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/longest-valid-parentheses/
+// https://leetcode-cn.com/problems/longest-valid-parentheses/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn longest_valid_parentheses(s: String) -> i32 {

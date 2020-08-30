@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-index-sum-of-two-lists/
+// https://leetcode-cn.com/problems/minimum-index-sum-of-two-lists/
 // Runtime: 12 ms
 // Memory Usage: 2.2 MB
 use std::collections::HashMap;

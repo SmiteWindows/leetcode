@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/rectangle-overlap/
+// https://leetcode-cn.com/problems/rectangle-overlap/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn is_rectangle_overlap(rec1: Vec<i32>, rec2: Vec<i32>) -> bool {

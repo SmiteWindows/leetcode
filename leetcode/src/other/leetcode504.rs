@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/base-7/
+// https://leetcode-cn.com/problems/base-7/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn convert_to_base7(num: i32) -> String {

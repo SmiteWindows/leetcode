@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/all-elements-in-two-binary-search-trees/
+// https://leetcode-cn.com/problems/all-elements-in-two-binary-search-trees/
 // Runtime: 32 ms
 // Memory Usage: 3 MB
 use std::{cell::RefCell, rc::Rc};

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/new-21-game/
+// https://leetcode-cn.com/problems/new-21-game/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn new21_game(n: i32, k: i32, w: i32) -> f64 {

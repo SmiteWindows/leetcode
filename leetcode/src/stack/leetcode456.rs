@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/132-pattern/
+// https://leetcode-cn.com/problems/132-pattern/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn find132pattern(nums: Vec<i32>) -> bool {

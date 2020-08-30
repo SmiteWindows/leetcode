@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/reconstruct-itinerary/
+// https://leetcode-cn.com/problems/reconstruct-itinerary/
 // Runtime: 4 ms
 // Memory Usage: 2.1 MB
 use std::{

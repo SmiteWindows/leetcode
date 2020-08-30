@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/couples-holding-hands/
+// https://leetcode-cn.com/problems/couples-holding-hands/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn min_swaps_couples(row: Vec<i32>) -> i32 {

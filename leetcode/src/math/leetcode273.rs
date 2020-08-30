@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/integer-to-english-words/
+// https://leetcode-cn.com/problems/integer-to-english-words/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn number_to_words(num: i32) -> String {

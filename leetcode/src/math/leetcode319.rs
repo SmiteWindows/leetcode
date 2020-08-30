@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/bulb-switcher/
+// https://leetcode-cn.com/problems/bulb-switcher/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn bulb_switch(n: i32) -> i32 {

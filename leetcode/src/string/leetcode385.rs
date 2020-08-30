@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/mini-parser/
+// https://leetcode-cn.com/problems/mini-parser/
 // Runtime: 0 ms
 // Memory Usage: 2.6 MB
 pub fn deserialize(s: String) -> NestedInteger {

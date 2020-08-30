@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/last-substring-in-lexicographical-order/
+// https://leetcode-cn.com/problems/last-substring-in-lexicographical-order/
 pub fn last_substring(s: String) -> String {
     todo!()
 }

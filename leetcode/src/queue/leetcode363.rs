@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/max-sum-of-rectangle-no-larger-than-k/
+// https://leetcode-cn.com/problems/max-sum-of-rectangle-no-larger-than-k/
 // Runtime: 96 ms
 // Memory Usage: 2.2 MB
 use std::collections::BTreeSet;

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/ambiguous-coordinates/
+// https://leetcode-cn.com/problems/ambiguous-coordinates/
 // Runtime: 4 ms
 // Memory Usage: 2.1 MB
 use std::iter::FromIterator;

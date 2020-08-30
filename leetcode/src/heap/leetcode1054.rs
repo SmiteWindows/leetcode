@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/distant-barcodes/
+// https://leetcode-cn.com/problems/distant-barcodes/
 // Runtime: 24 ms
 // Memory Usage: 2.2 MB
 use std::collections::HashMap;

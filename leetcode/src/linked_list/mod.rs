@@ -1,4 +1,4 @@
-// https://leetcode.com/tag/linked-list/
+// https://leetcode-cn.com/tag/linked-list/
 pub mod leetcode1019;
 pub mod leetcode109;
 pub mod leetcode1171;

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/queue-reconstruction-by-height/
+// https://leetcode-cn.com/problems/queue-reconstruction-by-height/
 // Runtime: 4 ms
 // Memory Usage: 2.1 MB
 use std::cmp::Reverse;

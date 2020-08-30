@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/repeated-substring-pattern/
+// https://leetcode-cn.com/problems/repeated-substring-pattern/
 // Runtime: 4 ms
 // Memory Usage: 2 MB
 pub fn repeated_substring_pattern(s: String) -> bool {

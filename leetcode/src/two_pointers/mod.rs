@@ -1,4 +1,4 @@
-// https://leetcode.com/tag/two-pointers/
+// https://leetcode-cn.com/tag/two-pointers/
 pub mod leetcode1004;
 pub mod leetcode1093;
 pub mod leetcode11;

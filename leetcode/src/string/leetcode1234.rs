@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/replace-the-substring-for-balanced-string/
+// https://leetcode-cn.com/problems/replace-the-substring-for-balanced-string/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn balanced_string(s: String) -> i32 {

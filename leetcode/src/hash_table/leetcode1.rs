@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/two-sum/
+// https://leetcode-cn.com/problems/two-sum/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 use std::collections::HashMap;

@@ -1,4 +1,4 @@
-// https://leetcode.com/tag/binary-indexed-tree/
+// https://leetcode-cn.com/tag/binary-indexed-tree/
 pub mod leetcode218;
 pub mod leetcode307;
 pub mod leetcode315;

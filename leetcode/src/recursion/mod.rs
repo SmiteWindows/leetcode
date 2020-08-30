@@ -1,4 +1,4 @@
-// https://leetcode.com/tag/recursion/
+// https://leetcode-cn.com/tag/recursion/
 pub mod leetcode1137;
 pub mod leetcode687;
 pub mod leetcode698;

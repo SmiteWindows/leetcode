@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/
+// https://leetcode-cn.com/problems/convert-binary-number-in-a-linked-list-to-integer/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn get_decimal_value(head: Option<Box<ListNode>>) -> i32 {

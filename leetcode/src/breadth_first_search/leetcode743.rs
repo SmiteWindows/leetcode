@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/network-delay-time/
+// https://leetcode-cn.com/problems/network-delay-time/
 #![allow(clippy::many_single_char_names)]
 // Runtime: 12 ms
 // Memory Usage: 2.5 MB

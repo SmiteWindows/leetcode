@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/
+// https://leetcode-cn.com/problems/vertical-order-traversal-of-a-binary-tree/
 // Runtime: 0 ms
 // Memory Usage: 2.3 MB
 use std::{

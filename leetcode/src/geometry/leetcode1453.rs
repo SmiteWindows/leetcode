@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/maximum-number-of-darts-inside-of-a-circular-dartboard/
+// https://leetcode-cn.com/problems/maximum-number-of-darts-inside-of-a-circular-dartboard/
 pub fn num_points(points: Vec<Vec<i32>>, r: i32) -> i32 {
     todo!()
 }

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/excel-sheet-column-number/
+// https://leetcode-cn.com/problems/excel-sheet-column-number/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn title_to_number(s: String) -> i32 {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/split-linked-list-in-parts/
+// https://leetcode-cn.com/problems/split-linked-list-in-parts/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn split_list_to_parts(root: Option<Box<ListNode>>, k: i32) -> Vec<Option<Box<ListNode>>> {

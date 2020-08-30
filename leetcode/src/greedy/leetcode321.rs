@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/create-maximum-number/
+// https://leetcode-cn.com/problems/create-maximum-number/
 // Runtime: 4 ms
 // Memory Usage: 2.1 MB
 pub fn max_number(nums1: Vec<i32>, nums2: Vec<i32>, k: i32) -> Vec<i32> {

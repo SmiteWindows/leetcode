@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/maximum-number-of-occurrences-of-a-substring/
+// https://leetcode-cn.com/problems/maximum-number-of-occurrences-of-a-substring/
 // Runtime: 8 ms
 // Memory Usage: 4 MB
 use std::collections::HashMap;

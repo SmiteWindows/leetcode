@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/count-all-valid-pickup-and-delivery-options/
+// https://leetcode-cn.com/problems/count-all-valid-pickup-and-delivery-options/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 const MOD: i64 = 1_000_000_007;

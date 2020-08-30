@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/sort-integers-by-the-number-of-1-bits/
+// https://leetcode-cn.com/problems/sort-integers-by-the-number-of-1-bits/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn sort_by_bits(arr: Vec<i32>) -> Vec<i32> {

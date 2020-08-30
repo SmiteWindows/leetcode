@@ -1,4 +1,4 @@
-// https://leetcode.com/tag/math/
+// https://leetcode-cn.com/tag/math/
 pub mod leetcode1006;
 pub mod leetcode1009;
 pub mod leetcode1012;

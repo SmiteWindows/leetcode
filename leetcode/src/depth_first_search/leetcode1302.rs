@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/deepest-leaves-sum/
+// https://leetcode-cn.com/problems/deepest-leaves-sum/
 // Runtime: 4 ms
 // Memory Usage: 3 MB
 use std::{

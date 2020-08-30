@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/
+// https://leetcode-cn.com/problems/minimum-number-of-days-to-make-m-bouquets/
 // Runtime: 28 ms
 // Memory Usage: 3.8 MB
 pub fn min_days(bloom_day: Vec<i32>, m: i32, k: i32) -> i32 {

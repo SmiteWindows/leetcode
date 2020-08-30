@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/sequential-digits/
+// https://leetcode-cn.com/problems/sequential-digits/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn sequential_digits(low: i32, high: i32) -> Vec<i32> {

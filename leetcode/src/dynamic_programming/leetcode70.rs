@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/climbing-stairs/
+// https://leetcode-cn.com/problems/climbing-stairs/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn climb_stairs(n: i32) -> i32 {

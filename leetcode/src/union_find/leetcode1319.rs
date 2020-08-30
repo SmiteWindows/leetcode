@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/number-of-operations-to-make-network-connected/
+// https://leetcode-cn.com/problems/number-of-operations-to-make-network-connected/
 // Runtime: 12 ms
 // Memory Usage: 5.4 MB
 pub fn make_connected(n: i32, connections: Vec<Vec<i32>>) -> i32 {

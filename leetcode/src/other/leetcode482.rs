@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/license-key-formatting/
+// https://leetcode-cn.com/problems/license-key-formatting/
 // Runtime: 0 ms
 // Memory Usage: 2.5 MB
 pub fn license_key_formatting(s: String, k: i32) -> String {

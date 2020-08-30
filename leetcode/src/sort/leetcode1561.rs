@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/maximum-number-of-coins-you-can-get/
+// https://leetcode-cn.com/problems/maximum-number-of-coins-you-can-get/
 // Runtime: 40 ms
 // Memory Usage: 3.1 MB
 pub fn max_coins(piles: Vec<i32>) -> i32 {

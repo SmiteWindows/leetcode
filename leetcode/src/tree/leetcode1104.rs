@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/path-in-zigzag-labelled-binary-tree/
+// https://leetcode-cn.com/problems/path-in-zigzag-labelled-binary-tree/
 // Runtime: 0 ms
 // Memory Usage: 1.9 MB
 pub fn path_in_zig_zag_tree(label: i32) -> Vec<i32> {

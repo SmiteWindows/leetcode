@@ -1,2 +1,2 @@
-// https://leetcode.com/tag/memoization/
+// https://leetcode-cn.com/tag/memoization/
 pub mod leetcode329;

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/delete-leaves-with-a-given-value/
+// https://leetcode-cn.com/problems/delete-leaves-with-a-given-value/
 // Runtime: 0 ms
 // Memory Usage: 2.3 MB
 use std::{cell::RefCell, rc::Rc};

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/get-the-maximum-score/
+// https://leetcode-cn.com/problems/get-the-maximum-score/
 // Runtime: 84 ms
 // Memory Usage: 5.3 MB
 use std::{

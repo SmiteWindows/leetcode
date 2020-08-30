@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/complement-of-base-10-integer/
+// https://leetcode-cn.com/problems/complement-of-base-10-integer/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn bitwise_complement(n: i32) -> i32 {

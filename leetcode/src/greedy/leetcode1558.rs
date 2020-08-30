@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-numbers-of-function-calls-to-make-target-array/
+// https://leetcode-cn.com/problems/minimum-numbers-of-function-calls-to-make-target-array/
 // Runtime: 12 ms
 // Memory Usage: 3.1 MB
 // ✔

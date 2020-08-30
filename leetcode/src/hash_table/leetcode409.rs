@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/longest-palindrome/
+// https://leetcode-cn.com/problems/longest-palindrome/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::collections::HashSet;

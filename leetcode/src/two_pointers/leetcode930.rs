@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/binary-subarrays-with-sum/
+// https://leetcode-cn.com/problems/binary-subarrays-with-sum/
 // Runtime: 4 ms
 // Memory Usage: 2.2 MB
 pub fn num_subarrays_with_sum(a: Vec<i32>, s: i32) -> i32 {

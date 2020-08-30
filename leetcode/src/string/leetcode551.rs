@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/student-attendance-record-i/
+// https://leetcode-cn.com/problems/student-attendance-record-i/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn check_record(s: String) -> bool {

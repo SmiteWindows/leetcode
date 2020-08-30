@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/nth-digit/
+// https://leetcode-cn.com/problems/nth-digit/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn find_nth_digit(n: i32) -> i32 {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/different-ways-to-add-parentheses/
+// https://leetcode-cn.com/problems/different-ways-to-add-parentheses/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn diff_ways_to_compute(input: String) -> Vec<i32> {

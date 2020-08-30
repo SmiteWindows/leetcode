@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/path-sum-ii/
+// https://leetcode-cn.com/problems/path-sum-ii/
 // Runtime: 0 ms
 // Memory Usage: 2.5 MB
 use std::{cell::RefCell, rc::Rc};

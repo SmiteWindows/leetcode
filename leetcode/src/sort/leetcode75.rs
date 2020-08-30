@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/sort-colors/
+// https://leetcode-cn.com/problems/sort-colors/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn sort_colors(nums: &mut Vec<i32>) {

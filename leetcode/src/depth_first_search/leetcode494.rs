@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/target-sum/
+// https://leetcode-cn.com/problems/target-sum/
 // Runtime: 40 ms
 // Memory Usage: 2.5 MB
 use std::collections::HashMap;

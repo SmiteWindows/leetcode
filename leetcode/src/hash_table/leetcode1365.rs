@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/
+// https://leetcode-cn.com/problems/how-many-numbers-are-smaller-than-the-current-number/
 // Runtime: 0 ms
 // Memory Usage: 1.9 MB
 pub fn smaller_numbers_than_current(nums: Vec<i32>) -> Vec<i32> {

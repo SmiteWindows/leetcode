@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/maximum-difference-between-node-and-ancestor/
+// https://leetcode-cn.com/problems/maximum-difference-between-node-and-ancestor/
 // Runtime: 0 ms
 // Memory Usage: 2.8 MB
 use std::{cell::RefCell, rc::Rc};

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/long-pressed-name/
+// https://leetcode-cn.com/problems/long-pressed-name/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn is_long_pressed_name(name: String, typed: String) -> bool {

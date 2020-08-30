@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-absolute-difference-in-bst/
+// https://leetcode-cn.com/problems/minimum-absolute-difference-in-bst/
 // Runtime: 0 ms
 // Memory Usage: 2.8 MB
 use std::{cell::RefCell, rc::Rc};

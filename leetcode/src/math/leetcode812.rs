@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/largest-triangle-area/
+// https://leetcode-cn.com/problems/largest-triangle-area/
 // Runtime: 4 ms
 // Memory Usage: 2.1 MB
 pub fn largest_triangle_area(points: Vec<Vec<i32>>) -> f64 {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/first-unique-character-in-a-string/
+// https://leetcode-cn.com/problems/first-unique-character-in-a-string/
 // Runtime: 16 ms
 // Memory Usage: 2.2 MB
 use std::collections::HashMap;

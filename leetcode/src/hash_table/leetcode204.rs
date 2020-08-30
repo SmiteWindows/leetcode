@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/count-primes/
+// https://leetcode-cn.com/problems/count-primes/
 // Runtime: 4 ms
 // Memory Usage: 3.3 MB
 pub fn count_primes(n: i32) -> i32 {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/arithmetic-slices/
+// https://leetcode-cn.com/problems/arithmetic-slices/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn number_of_arithmetic_slices(a: Vec<i32>) -> i32 {

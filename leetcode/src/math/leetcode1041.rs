@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/robot-bounded-in-circle/
+// https://leetcode-cn.com/problems/robot-bounded-in-circle/
 // TODO
 pub fn is_robot_bounded(instructions: String) -> bool {
     let mut x = 0;

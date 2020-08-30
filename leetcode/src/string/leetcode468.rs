@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/validate-ip-address/
+// https://leetcode-cn.com/problems/validate-ip-address/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::net::{Ipv4Addr, Ipv6Addr};

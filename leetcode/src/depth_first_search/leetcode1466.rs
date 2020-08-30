@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/
+// https://leetcode-cn.com/problems/reorder-routes-to-make-all-paths-lead-to-the-city-zero/
 // Runtime: 28 ms
 // Memory Usage: 6.8 MB
 pub fn min_reorder(n: i32, connections: Vec<Vec<i32>>) -> i32 {

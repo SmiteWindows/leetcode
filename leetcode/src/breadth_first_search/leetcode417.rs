@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/pacific-atlantic-water-flow/
+// https://leetcode-cn.com/problems/pacific-atlantic-water-flow/
 // Runtime: 4 ms
 // Memory Usage: 2.1 MB
 pub fn pacific_atlantic(matrix: Vec<Vec<i32>>) -> Vec<Vec<i32>> {

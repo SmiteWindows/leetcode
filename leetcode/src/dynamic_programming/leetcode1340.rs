@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/jump-game-v/
+// https://leetcode-cn.com/problems/jump-game-v/
 // Runtime: 92 ms
 // Memory Usage: 2.2 MB
 use std::collections::HashMap;

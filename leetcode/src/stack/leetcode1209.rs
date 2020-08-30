@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/
+// https://leetcode-cn.com/problems/remove-all-adjacent-duplicates-in-string-ii/
 // Runtime: 0 ms
 // Memory Usage: 2.3 MB
 pub fn remove_duplicates(s: String, k: i32) -> String {

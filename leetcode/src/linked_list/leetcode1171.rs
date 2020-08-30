@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/remove-zero-sum-consecutive-nodes-from-linked-list/
+// https://leetcode-cn.com/problems/remove-zero-sum-consecutive-nodes-from-linked-list/
 // Runtime: 4 ms
 // Memory Usage: 2 MB
 use std::collections::HashMap;

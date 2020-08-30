@@ -1,4 +1,4 @@
-// https://leetcode.com/tag/union-find/
+// https://leetcode-cn.com/tag/union-find/
 pub mod leetcode1202;
 pub mod leetcode128;
 pub mod leetcode130;

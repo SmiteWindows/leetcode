@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/binary-trees-with-factors/
+// https://leetcode-cn.com/problems/binary-trees-with-factors/
 // Runtime: 20 ms
 // Memory Usage: 2.2 MB
 use std::collections::HashMap;

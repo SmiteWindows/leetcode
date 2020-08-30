@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/sliding-window-median/
+// https://leetcode-cn.com/problems/sliding-window-median/
 // Runtime: 8 ms
 // Memory Usage: 2.2 MB
 pub fn median_sliding_window(nums: Vec<i32>, k: i32) -> Vec<f64> {

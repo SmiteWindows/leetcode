@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/range-module/
+// https://leetcode-cn.com/problems/range-module/
 struct RangeModule {}
 
 /**

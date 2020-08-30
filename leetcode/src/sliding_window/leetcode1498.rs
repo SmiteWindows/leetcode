@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/number-of-subsequences-that-satisfy-the-given-sum-condition/
+// https://leetcode-cn.com/problems/number-of-subsequences-that-satisfy-the-given-sum-condition/
 // Runtime: 32 ms
 // Memory Usage: 3.1 MB
 const MOD: i32 = 1_000_000_007;

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/sum-of-nodes-with-even-valued-grandparent/
+// https://leetcode-cn.com/problems/sum-of-nodes-with-even-valued-grandparent/
 // Runtime: 4 ms
 // Memory Usage: 3 MB
 use std::{cell::RefCell, rc::Rc};

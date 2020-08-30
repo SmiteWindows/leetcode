@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/decoded-string-at-index/
+// https://leetcode-cn.com/problems/decoded-string-at-index/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn decode_at_index(s: String, k: i32) -> String {

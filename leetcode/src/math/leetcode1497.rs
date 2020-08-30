@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/check-if-array-pairs-are-divisible-by-k/
+// https://leetcode-cn.com/problems/check-if-array-pairs-are-divisible-by-k/
 // Runtime: 16 ms
 // Memory Usage: 3.5 MB
 pub fn can_arrange(arr: Vec<i32>, k: i32) -> bool {

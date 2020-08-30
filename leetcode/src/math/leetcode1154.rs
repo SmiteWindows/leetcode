@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/day-of-the-year/
+// https://leetcode-cn.com/problems/day-of-the-year/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn day_of_year(date: String) -> i32 {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/jump-game-iii/
+// https://leetcode-cn.com/problems/jump-game-iii/
 // Runtime: 8 ms
 // Memory Usage: 2.6 MB
 use std::collections::VecDeque;

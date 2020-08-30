@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/range-sum-of-sorted-subarray-sums/
+// https://leetcode-cn.com/problems/range-sum-of-sorted-subarray-sums/
 // Runtime: 52 ms
 // Memory Usage: 4.1 MB
 const MOD: i64 = 1_000_000_007;

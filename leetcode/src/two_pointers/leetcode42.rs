@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/trapping-rain-water/
+// https://leetcode-cn.com/problems/trapping-rain-water/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn trap(height: Vec<i32>) -> i32 {

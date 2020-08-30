@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/single-number/
+// https://leetcode-cn.com/problems/single-number/
 // Runtime: 0 ms
 // Memory Usage: 2.4 MB
 use std::collections::HashMap;

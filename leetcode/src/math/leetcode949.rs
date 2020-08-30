@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/largest-time-for-given-digits/
+// https://leetcode-cn.com/problems/largest-time-for-given-digits/
 // Runtime: 0 ms
 // Memory Usage: 1.9 MB
 use std::{cmp::Ordering, fmt};

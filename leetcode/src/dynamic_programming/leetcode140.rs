@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/word-break-ii/
+// https://leetcode-cn.com/problems/word-break-ii/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 use std::{

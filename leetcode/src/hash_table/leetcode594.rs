@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/longest-harmonious-subsequence/
+// https://leetcode-cn.com/problems/longest-harmonious-subsequence/
 // Runtime: 12 ms
 // Memory Usage: 2.3 MB
 pub fn find_lhs(nums: Vec<i32>) -> i32 {

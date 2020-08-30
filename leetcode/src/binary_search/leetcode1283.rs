@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/
+// https://leetcode-cn.com/problems/find-the-smallest-divisor-given-a-threshold/
 // Runtime: 4 ms
 // Memory Usage: 2.5 MB
 pub fn smallest_divisor(nums: Vec<i32>, threshold: i32) -> i32 {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/next-greater-element-iii/
+// https://leetcode-cn.com/problems/next-greater-element-iii/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn next_greater_element(n: i32) -> i32 {

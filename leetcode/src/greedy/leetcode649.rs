@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/dota2-senate/
+// https://leetcode-cn.com/problems/dota2-senate/
 // Runtime: 0 ms
 // Memory Usage: 2.3 MB
 use std::collections::VecDeque;

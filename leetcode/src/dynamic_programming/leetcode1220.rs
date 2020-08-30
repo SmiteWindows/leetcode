@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/count-vowels-permutation/
+// https://leetcode-cn.com/problems/count-vowels-permutation/
 // Runtime: 0 ms
 // Memory Usage: 2.8 MB
 #![allow(clippy::many_single_char_names)]

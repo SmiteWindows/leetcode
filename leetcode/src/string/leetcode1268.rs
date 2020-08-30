@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/search-suggestions-system/
+// https://leetcode-cn.com/problems/search-suggestions-system/
 // Runtime: 8 ms
 // Memory Usage: 4.5 MB
 pub fn suggested_products(products: Vec<String>, search_word: String) -> Vec<Vec<String>> {

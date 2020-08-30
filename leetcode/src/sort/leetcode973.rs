@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/k-closest-points-to-origin/
+// https://leetcode-cn.com/problems/k-closest-points-to-origin/
 #![allow(clippy::many_single_char_names)]
 // Runtime: 28 ms
 // Memory Usage: 2.7 MB

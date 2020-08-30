@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/stream-of-characters/
+// https://leetcode-cn.com/problems/stream-of-characters/
 // Runtime: 104 ms
 // Memory Usage: 20.6 MB
 use std::collections::HashMap;

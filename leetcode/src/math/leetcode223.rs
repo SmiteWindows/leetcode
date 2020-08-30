@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/rectangle-area/
+// https://leetcode-cn.com/problems/rectangle-area/
 #[allow(clippy::too_many_arguments)]
 #[allow(clippy::many_single_char_names)]
 // Runtime: 0 ms

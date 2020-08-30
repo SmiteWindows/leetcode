@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/shortest-palindrome/
+// https://leetcode-cn.com/problems/shortest-palindrome/
 // Runtime: 0 ms
 // Memory Usage: 3 MB
 use std::iter::once;

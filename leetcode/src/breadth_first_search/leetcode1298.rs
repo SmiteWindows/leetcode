@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/maximum-candies-you-can-get-from-boxes/
+// https://leetcode-cn.com/problems/maximum-candies-you-can-get-from-boxes/
 pub fn max_candies(
     status: Vec<i32>,
     candies: Vec<i32>,

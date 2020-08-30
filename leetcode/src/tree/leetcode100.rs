@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/same-tree/
+// https://leetcode-cn.com/problems/same-tree/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 use std::{cell::RefCell, rc::Rc};

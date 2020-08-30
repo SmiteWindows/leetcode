@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/balance-a-binary-search-tree/
+// https://leetcode-cn.com/problems/balance-a-binary-search-tree/
 // Runtime: 16 ms
 // Memory Usage: 3.3 MB
 use std::{cell::RefCell, rc::Rc};

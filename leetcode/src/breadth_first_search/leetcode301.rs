@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/remove-invalid-parentheses/
+// https://leetcode-cn.com/problems/remove-invalid-parentheses/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 #![allow(clippy::too_many_arguments)]

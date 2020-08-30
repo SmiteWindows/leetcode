@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-swaps-to-arrange-a-binary-grid/
+// https://leetcode-cn.com/problems/minimum-swaps-to-arrange-a-binary-grid/
 // Runtime: 8 ms
 // Memory Usage: 2.3 MB
 pub fn min_swaps(grid: Vec<Vec<i32>>) -> i32 {

@@ -1,4 +1,4 @@
-// https://leetcode.com/tag/hash-table/
+// https://leetcode-cn.com/tag/hash-table/
 pub mod leetcode1;
 pub mod leetcode1001;
 pub mod leetcode1002;

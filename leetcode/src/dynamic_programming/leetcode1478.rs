@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/allocate-mailboxes/
+// https://leetcode-cn.com/problems/allocate-mailboxes/
 // Runtime: 20 ms
 // Memory Usage: 2.2 MB
 use std::collections::HashMap;

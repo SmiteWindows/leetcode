@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/display-table-of-food-orders-in-a-restaurant/
+// https://leetcode-cn.com/problems/display-table-of-food-orders-in-a-restaurant/
 // Runtime: 120 ms
 // Memory Usage: 18.6 MB
 use std::collections::{BTreeSet, HashMap};

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/design-hashmap/
+// https://leetcode-cn.com/problems/design-hashmap/
 // Runtime: 24 ms
 // Memory Usage: 8.6 MB
 struct MyHashMap {

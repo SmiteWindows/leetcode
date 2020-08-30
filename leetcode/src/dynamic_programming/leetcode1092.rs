@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/shortest-common-supersequence/
+// https://leetcode-cn.com/problems/shortest-common-supersequence/
 // Runtime: 4 ms
 // Memory Usage: 33.3 MB
 pub fn shortest_common_supersequence(str1: String, str2: String) -> String {

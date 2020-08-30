@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/3sum-closest/
+// https://leetcode-cn.com/problems/3sum-closest/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn three_sum_closest(nums: Vec<i32>, target: i32) -> i32 {

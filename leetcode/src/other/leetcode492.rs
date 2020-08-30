@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/construct-the-rectangle/
+// https://leetcode-cn.com/problems/construct-the-rectangle/
 // Runtime: 0 ms
 // Memory Usage: 2.3 MB
 pub fn construct_rectangle(area: i32) -> Vec<i32> {

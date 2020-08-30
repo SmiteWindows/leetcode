@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/shuffle-an-array/
+// https://leetcode-cn.com/problems/shuffle-an-array/
 // Runtime: 28 ms
 // Memory Usage: 5.4 MB
 use rand::prelude::*;

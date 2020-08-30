@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/maximum-sum-bst-in-binary-tree/
+// https://leetcode-cn.com/problems/maximum-sum-bst-in-binary-tree/
 // Runtime: 28 ms
 // Memory Usage: 10.7 MB
 use std::{cell::RefCell, rc::Rc};

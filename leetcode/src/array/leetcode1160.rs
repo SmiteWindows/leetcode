@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/find-words-that-can-be-formed-by-characters/
+// https://leetcode-cn.com/problems/find-words-that-can-be-formed-by-characters/
 // Runtime: 8 ms
 // Memory Usage: 2.1 MB
 use std::collections::HashMap;

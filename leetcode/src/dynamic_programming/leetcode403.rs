@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/frog-jump/
+// https://leetcode-cn.com/problems/frog-jump/
 // Runtime: 8 ms
 // Memory Usage: 3.5 MB
 use std::{

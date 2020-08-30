@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/goat-latin/
+// https://leetcode-cn.com/problems/goat-latin/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn to_goat_latin(s: String) -> String {

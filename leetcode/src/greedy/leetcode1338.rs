@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/reduce-array-size-to-the-half/
+// https://leetcode-cn.com/problems/reduce-array-size-to-the-half/
 // Runtime: 24 ms
 // Memory Usage: 7.1 MB
 use std::collections::{BinaryHeap, HashMap};

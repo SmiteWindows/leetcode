@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/wiggle-sort-ii/
+// https://leetcode-cn.com/problems/wiggle-sort-ii/
 // Runtime: 8 ms
 // Memory Usage: 2.1 MB
 pub fn wiggle_sort(nums: &mut Vec<i32>) {

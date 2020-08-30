@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/most-common-word/
+// https://leetcode-cn.com/problems/most-common-word/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::collections::{HashMap, HashSet};

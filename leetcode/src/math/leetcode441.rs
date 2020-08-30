@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/arranging-coins/
+// https://leetcode-cn.com/problems/arranging-coins/
 // Runtime: 0 ms
 // Memory Usage: 2.4 MB
 pub fn arrange_coins(n: i32) -> i32 {

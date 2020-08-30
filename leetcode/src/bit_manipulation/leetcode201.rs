@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/bitwise-and-of-numbers-range/
+// https://leetcode-cn.com/problems/bitwise-and-of-numbers-range/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn range_bitwise_and(m: i32, n: i32) -> i32 {

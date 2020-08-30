@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/predict-the-winner/
+// https://leetcode-cn.com/problems/predict-the-winner/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn predict_the_winner(nums: Vec<i32>) -> bool {

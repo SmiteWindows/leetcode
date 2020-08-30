@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/reverse-only-letters/
+// https://leetcode-cn.com/problems/reverse-only-letters/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn reverse_only_letters(s: String) -> String {

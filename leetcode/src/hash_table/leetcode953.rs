@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/verifying-an-alien-dictionary/
+// https://leetcode-cn.com/problems/verifying-an-alien-dictionary/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn is_alien_sorted(words: Vec<String>, order: String) -> bool {

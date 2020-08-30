@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/add-and-search-word-data-structure-design/
+// https://leetcode-cn.com/problems/add-and-search-word-data-structure-design/
 // Runtime: 28 ms
 // Memory Usage: 11.4 MB
 use std::collections::HashMap;

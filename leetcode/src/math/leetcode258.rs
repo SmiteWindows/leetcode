@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/add-digits/
+// https://leetcode-cn.com/problems/add-digits/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn add_digits(num: i32) -> i32 {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/domino-and-tromino-tiling/
+// https://leetcode-cn.com/problems/domino-and-tromino-tiling/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 const MOD: usize = 1_000_000_007;

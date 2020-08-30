@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/implement-magic-dictionary/
+// https://leetcode-cn.com/problems/implement-magic-dictionary/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 use std::collections::HashMap;

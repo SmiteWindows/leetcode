@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/stone-game-ii/
+// https://leetcode-cn.com/problems/stone-game-ii/
 #![allow(clippy::many_single_char_names)]
 // Runtime: 4 ms
 // Memory Usage: 2.2 MB

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/push-dominoes/
+// https://leetcode-cn.com/problems/push-dominoes/
 // Runtime: 4 ms
 // Memory Usage: 2.5 MB
 pub fn push_dominoes(dominoes: String) -> String {

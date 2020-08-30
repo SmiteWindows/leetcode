@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/simplified-fractions/
+// https://leetcode-cn.com/problems/simplified-fractions/
 // Runtime: 48 ms
 // Memory Usage: 2.4 MB
 use std::collections::HashSet;

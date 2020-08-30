@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/largest-1-bordered-square/
+// https://leetcode-cn.com/problems/largest-1-bordered-square/
 // Runtime: 8 ms
 // Memory Usage: 2.3 MB
 pub fn largest1_bordered_square(grid: Vec<Vec<i32>>) -> i32 {

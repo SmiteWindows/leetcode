@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/validate-binary-tree-nodes/
+// https://leetcode-cn.com/problems/validate-binary-tree-nodes/
 // Runtime: 4 ms
 // Memory Usage: 2.3 MB
 pub fn validate_binary_tree_nodes(n: i32, left_child: Vec<i32>, right_child: Vec<i32>) -> bool {

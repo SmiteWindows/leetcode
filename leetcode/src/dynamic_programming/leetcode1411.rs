@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/number-of-ways-to-paint-n-3-grid/
+// https://leetcode-cn.com/problems/number-of-ways-to-paint-n-3-grid/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 const MOD: i64 = 1_000_000_007;

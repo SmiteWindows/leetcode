@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/friend-circles/
+// https://leetcode-cn.com/problems/friend-circles/
 // Runtime: 0 ms
 // Memory Usage: 2.3 MB
 pub fn find_circle_num(m: Vec<Vec<i32>>) -> i32 {

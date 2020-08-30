@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/intersection-of-two-arrays/
+// https://leetcode-cn.com/problems/intersection-of-two-arrays/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::collections::HashSet;

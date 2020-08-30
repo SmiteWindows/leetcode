@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/stone-game-v/
+// https://leetcode-cn.com/problems/stone-game-v/
 // Runtime: 192 ms
 // Memory Usage: 5.1 MB
 use std::collections::HashMap;

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/count-submatrices-with-all-ones/
+// https://leetcode-cn.com/problems/count-submatrices-with-all-ones/
 // Runtime: 16 ms
 // Memory Usage: 2.3 MB
 pub fn num_submat(mat: Vec<Vec<i32>>) -> i32 {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/combination-sum-iv/
+// https://leetcode-cn.com/problems/combination-sum-iv/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn combination_sum4(nums: Vec<i32>, target: i32) -> i32 {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/score-after-flipping-matrix/
+// https://leetcode-cn.com/problems/score-after-flipping-matrix/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn matrix_score(a: Vec<Vec<i32>>) -> i32 {

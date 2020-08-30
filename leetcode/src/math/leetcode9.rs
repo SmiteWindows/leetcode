@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/palindrome-number/
+// https://leetcode-cn.com/problems/palindrome-number/
 // Runtime: 4 ms
 // Memory Usage: 2 MB
 pub fn is_palindrome(x: i32) -> bool {

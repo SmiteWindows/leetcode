@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/grumpy-bookstore-owner/
+// https://leetcode-cn.com/problems/grumpy-bookstore-owner/
 // Runtime: 4 ms
 // Memory Usage: 2.3 MB
 pub fn max_satisfied(customers: Vec<i32>, grumpy: Vec<i32>, x: i32) -> i32 {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/surface-area-of-3d-shapes/
+// https://leetcode-cn.com/problems/surface-area-of-3d-shapes/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn surface_area(grid: Vec<Vec<i32>>) -> i32 {

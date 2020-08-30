@@ -1,4 +1,4 @@
-// https://leetcode.com/tag/minimax/
+// https://leetcode-cn.com/tag/minimax/
 pub mod leetcode292;
 pub mod leetcode375;
 pub mod leetcode464;

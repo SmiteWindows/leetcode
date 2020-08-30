@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/prime-number-of-set-bits-in-binary-representation/
+// https://leetcode-cn.com/problems/prime-number-of-set-bits-in-binary-representation/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn count_prime_set_bits(l: i32, r: i32) -> i32 {

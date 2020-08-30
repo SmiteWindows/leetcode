@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/course-schedule-ii/
+// https://leetcode-cn.com/problems/course-schedule-ii/
 // Runtime: 0 ms
 // Memory Usage: 2.4 MB
 use std::collections::VecDeque;

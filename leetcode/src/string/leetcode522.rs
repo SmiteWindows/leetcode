@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/longest-uncommon-subsequence-ii/
+// https://leetcode-cn.com/problems/longest-uncommon-subsequence-ii/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 use std::cmp::Reverse;

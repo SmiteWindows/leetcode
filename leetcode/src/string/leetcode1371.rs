@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/find-the-longest-substring-containing-vowels-in-even-counts/
+// https://leetcode-cn.com/problems/find-the-longest-substring-containing-vowels-in-even-counts/
 // Runtime: 64 ms
 // Memory Usage: 3.1 MB
 use std::collections::HashMap;

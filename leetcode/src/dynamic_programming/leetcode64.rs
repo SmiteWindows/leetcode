@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-path-sum/
+// https://leetcode-cn.com/problems/minimum-path-sum/
 // Runtime: 0 ms
 // Memory Usage: 2.5 MB
 pub fn min_path_sum(grid: Vec<Vec<i32>>) -> i32 {

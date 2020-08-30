@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/sum-of-subarray-minimums/
+// https://leetcode-cn.com/problems/sum-of-subarray-minimums/
 // Runtime: 12 ms
 // Memory Usage: 2.7 MB
 pub fn sum_subarray_mins(a: Vec<i32>) -> i32 {

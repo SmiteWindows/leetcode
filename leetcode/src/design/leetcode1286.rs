@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/iterator-for-combination/
+// https://leetcode-cn.com/problems/iterator-for-combination/
 // Runtime: 4 ms
 // Memory Usage: 4 MB
 struct CombinationIterator {

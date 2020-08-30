@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/check-if-it-is-a-good-array/
+// https://leetcode-cn.com/problems/check-if-it-is-a-good-array/
 // Runtime: 12 ms
 // Memory Usage: 3.3 MB
 pub fn is_good_array(nums: Vec<i32>) -> bool {

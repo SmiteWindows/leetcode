@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/optimal-division/
+// https://leetcode-cn.com/problems/optimal-division/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn optimal_division(nums: Vec<i32>) -> String {

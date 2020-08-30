@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/relative-sort-array/
+// https://leetcode-cn.com/problems/relative-sort-array/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::{

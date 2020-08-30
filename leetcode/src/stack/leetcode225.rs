@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/implement-stack-using-queues/
+// https://leetcode-cn.com/problems/implement-stack-using-queues/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::collections::VecDeque;

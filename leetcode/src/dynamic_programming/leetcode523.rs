@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/continuous-subarray-sum/
+// https://leetcode-cn.com/problems/continuous-subarray-sum/
 // Runtime: 4 ms
 // Memory Usage: 2.2 MB
 use std::collections::HashSet;

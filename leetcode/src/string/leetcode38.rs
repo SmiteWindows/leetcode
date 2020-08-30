@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/count-and-say/
+// https://leetcode-cn.com/problems/count-and-say/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn count_and_say(n: i32) -> String {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/data-stream-as-disjoint-intervals/
+// https://leetcode-cn.com/problems/data-stream-as-disjoint-intervals/
 // Runtime: 20 ms
 // Memory Usage: 7 MB
 use std::collections::{BTreeMap, HashSet};

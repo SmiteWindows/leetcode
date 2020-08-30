@@ -1,4 +1,4 @@
-// https://leetcode.com/tag/dynamic-programming/
+// https://leetcode-cn.com/tag/dynamic-programming/
 pub mod leetcode10;
 pub mod leetcode1000;
 pub mod leetcode1012;

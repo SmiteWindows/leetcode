@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/longest-word-in-dictionary/
+// https://leetcode-cn.com/problems/longest-word-in-dictionary/
 // Runtime: 12 ms
 // Memory Usage: 3 MB
 use std::collections::BTreeMap;

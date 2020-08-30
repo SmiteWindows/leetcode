@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/avoid-flood-in-the-city/
+// https://leetcode-cn.com/problems/avoid-flood-in-the-city/
 // Runtime: 68 ms
 // Memory Usage: 5.1 MB
 use std::collections::{BTreeSet, HashMap};

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/paint-house-iii/
+// https://leetcode-cn.com/problems/paint-house-iii/
 // Runtime: 40 ms
 // Memory Usage: 4.1 MB
 use std::collections::HashMap;

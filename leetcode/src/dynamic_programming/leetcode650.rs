@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/2-keys-keyboard/
+// https://leetcode-cn.com/problems/2-keys-keyboard/
 // Runtime: 72 ms
 // Memory Usage: 2 MB
 pub fn min_steps(n: i32) -> i32 {

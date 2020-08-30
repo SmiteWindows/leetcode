@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/binary-string-with-substrings-representing-1-to-n/
+// https://leetcode-cn.com/problems/binary-string-with-substrings-representing-1-to-n/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn query_string(s: String, n: i32) -> bool {

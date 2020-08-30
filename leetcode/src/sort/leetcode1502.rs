@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/can-make-arithmetic-progression-from-sequence/
+// https://leetcode-cn.com/problems/can-make-arithmetic-progression-from-sequence/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn can_make_arithmetic_progression(arr: Vec<i32>) -> bool {

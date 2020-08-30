@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/leaf-similar-trees/
+// https://leetcode-cn.com/problems/leaf-similar-trees/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::{cell::RefCell, rc::Rc};

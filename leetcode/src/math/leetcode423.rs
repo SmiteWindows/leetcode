@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/reconstruct-original-digits-from-english/
+// https://leetcode-cn.com/problems/reconstruct-original-digits-from-english/
 // Runtime: 8 ms
 // Memory Usage: 2.2 MB
 use std::collections::HashMap;

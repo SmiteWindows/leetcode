@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/binary-tree-tilt/
+// https://leetcode-cn.com/problems/binary-tree-tilt/
 // Runtime: 0 ms
 // Memory Usage: 2.6 MB
 use std::{cell::RefCell, rc::Rc};

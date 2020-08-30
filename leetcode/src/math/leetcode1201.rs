@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/ugly-number-iii/
+// https://leetcode-cn.com/problems/ugly-number-iii/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn nth_ugly_number(n: i32, a: i32, b: i32, c: i32) -> i32 {

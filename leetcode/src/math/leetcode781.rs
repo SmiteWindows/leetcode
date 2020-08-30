@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/rabbits-in-forest/
+// https://leetcode-cn.com/problems/rabbits-in-forest/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::collections::HashMap;

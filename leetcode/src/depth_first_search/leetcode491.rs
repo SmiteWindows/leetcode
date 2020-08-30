@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/increasing-subsequences/
+// https://leetcode-cn.com/problems/increasing-subsequences/
 // Runtime: 36 ms
 // Memory Usage: 5 MB
 pub fn find_subsequences(nums: Vec<i32>) -> Vec<Vec<i32>> {

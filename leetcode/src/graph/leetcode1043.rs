@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/partition-array-for-maximum-sum/
+// https://leetcode-cn.com/problems/partition-array-for-maximum-sum/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn max_sum_after_partitioning(a: Vec<i32>, k: i32) -> i32 {

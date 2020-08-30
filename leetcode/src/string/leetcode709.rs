@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/to-lower-case/
+// https://leetcode-cn.com/problems/to-lower-case/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn to_lower_case(str: String) -> String {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/reverse-string-ii/
+// https://leetcode-cn.com/problems/reverse-string-ii/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn reverse_str(s: String, k: i32) -> String {

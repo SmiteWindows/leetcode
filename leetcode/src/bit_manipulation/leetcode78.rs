@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/subsets/
+// https://leetcode-cn.com/problems/subsets/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn subsets(nums: Vec<i32>) -> Vec<Vec<i32>> {

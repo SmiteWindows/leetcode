@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/delete-operation-for-two-strings/
+// https://leetcode-cn.com/problems/delete-operation-for-two-strings/
 // Runtime: 4 ms
 // Memory Usage: 3.8 MB
 pub fn min_distance(word1: String, word2: String) -> i32 {

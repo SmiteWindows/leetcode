@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/largest-sum-of-averages/
+// https://leetcode-cn.com/problems/largest-sum-of-averages/
 // Runtime: 16 ms
 // Memory Usage: 2.5 MB
 use std::collections::HashMap;

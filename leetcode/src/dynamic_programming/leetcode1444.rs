@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/number-of-ways-of-cutting-a-pizza/
+// https://leetcode-cn.com/problems/number-of-ways-of-cutting-a-pizza/
 // Runtime: 16 ms
 // Memory Usage: 3.7 MB
 #![allow(clippy::many_single_char_names)]

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/missing-number/
+// https://leetcode-cn.com/problems/missing-number/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn missing_number(nums: Vec<i32>) -> i32 {

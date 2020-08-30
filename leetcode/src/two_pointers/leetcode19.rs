@@ -1,4 +1,4 @@
-// https://leetcode.com/firstroblems/remove-nth-node-from-end-of-list/
+// https://leetcode-cn.com/firstroblems/remove-nth-node-from-end-of-list/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn remove_nth_from_end(head: Option<Box<ListNode>>, n: i32) -> Option<Box<ListNode>> {

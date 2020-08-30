@@ -1,4 +1,4 @@
-// https://leetcode.com/tag/segment-tree/
+// https://leetcode-cn.com/tag/segment-tree/
 pub mod leetcode1157;
 pub mod leetcode1353;
 pub mod leetcode1521;

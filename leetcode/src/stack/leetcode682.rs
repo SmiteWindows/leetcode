@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/baseball-game/
+// https://leetcode-cn.com/problems/baseball-game/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn cal_points(ops: Vec<String>) -> i32 {

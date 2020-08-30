@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/find-median-from-data-stream/
+// https://leetcode-cn.com/problems/find-median-from-data-stream/
 // Runtime: 28 ms
 // Memory Usage: 11 MB
 use std::{cmp::Reverse, collections::BinaryHeap};

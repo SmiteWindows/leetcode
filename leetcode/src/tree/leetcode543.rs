@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/diameter-of-binary-tree/
+// https://leetcode-cn.com/problems/diameter-of-binary-tree/
 // Runtime: 0 ms
 // Memory Usage: 2.5 MB
 use std::{cell::RefCell, rc::Rc};

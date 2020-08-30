@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/word-ladder/
+// https://leetcode-cn.com/problems/word-ladder/
 // Runtime: 12 ms
 // Memory Usage: 2.6 MB
 use std::{collections::HashSet, iter::FromIterator, mem::swap};

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/rotated-digits/
+// https://leetcode-cn.com/problems/rotated-digits/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn rotated_digits(n: i32) -> i32 {

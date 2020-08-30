@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/insert-interval/
+// https://leetcode-cn.com/problems/insert-interval/
 // Runtime: 0 ms
 // Memory Usage: 2.7 MB
 pub fn insert(intervals: Vec<Vec<i32>>, new_interval: Vec<i32>) -> Vec<Vec<i32>> {

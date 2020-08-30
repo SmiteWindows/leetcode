@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/most-profit-assigning-work/
+// https://leetcode-cn.com/problems/most-profit-assigning-work/
 // Runtime: 12 ms
 // Memory Usage: 2.4 MB
 use std::collections::BTreeMap;

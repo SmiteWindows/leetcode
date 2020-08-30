@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/maximum-binary-tree/
+// https://leetcode-cn.com/problems/maximum-binary-tree/
 // Runtime: 8 ms
 // Memory Usage: 2.1 MB
 use std::{cell::RefCell, rc::Rc};

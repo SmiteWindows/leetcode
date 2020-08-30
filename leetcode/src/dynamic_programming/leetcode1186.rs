@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/maximum-subarray-sum-with-one-deletion/
+// https://leetcode-cn.com/problems/maximum-subarray-sum-with-one-deletion/
 // Runtime: 4 ms
 // Memory Usage: 3.3 MB
 pub fn maximum_sum(arr: Vec<i32>) -> i32 {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/burst-balloons/
+// https://leetcode-cn.com/problems/burst-balloons/
 // Runtime: 12 ms
 // Memory Usage: 2 MB
 pub fn max_coins(nums: Vec<i32>) -> i32 {

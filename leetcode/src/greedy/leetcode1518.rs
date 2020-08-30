@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/water-bottles/
+// https://leetcode-cn.com/problems/water-bottles/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn num_water_bottles(num_bottles: i32, num_exchange: i32) -> i32 {

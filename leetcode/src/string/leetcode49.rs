@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/group-anagrams/
+// https://leetcode-cn.com/problems/group-anagrams/
 // Runtime: 8 ms
 // Memory Usage: 4.3 MB
 use std::collections::HashMap;

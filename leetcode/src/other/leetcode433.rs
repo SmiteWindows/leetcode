@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-genetic-mutation/
+// https://leetcode-cn.com/problems/minimum-genetic-mutation/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::collections::{HashMap, HashSet, VecDeque};

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/binary-search-tree-iterator/
+// https://leetcode-cn.com/problems/binary-search-tree-iterator/
 // Runtime: 12 ms
 // Memory Usage: 9.4 MB
 use std::{cell::RefCell, rc::Rc};

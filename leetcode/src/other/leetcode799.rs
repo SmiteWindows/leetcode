@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/champagne-tower/
+// https://leetcode-cn.com/problems/champagne-tower/
 // Runtime: 4 ms
 // Memory Usage: 2.2 MB
 pub fn champagne_tower(poured: i32, query_row: i32, query_glass: i32) -> f64 {

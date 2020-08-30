@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/binary-number-with-alternating-bits/
+// https://leetcode-cn.com/problems/binary-number-with-alternating-bits/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn has_alternating_bits(n: i32) -> bool {

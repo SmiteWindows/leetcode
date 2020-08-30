@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/string-compression-ii/
+// https://leetcode-cn.com/problems/string-compression-ii/
 pub fn get_length_of_optimal_compression(s: String, k: i32) -> i32 {
     todo!()
 }

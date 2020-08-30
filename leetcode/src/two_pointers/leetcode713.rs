@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/subarray-product-less-than-k/
+// https://leetcode-cn.com/problems/subarray-product-less-than-k/
 // Runtime: 12 ms
 // Memory Usage: 2.3 MB
 pub fn num_subarray_product_less_than_k(nums: Vec<i32>, k: i32) -> i32 {

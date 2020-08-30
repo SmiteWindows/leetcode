@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/range-sum-query-immutable/
+// https://leetcode-cn.com/problems/range-sum-query-immutable/
 // Runtime: 4 ms
 // Memory Usage: 7.5 MB
 struct NumArray {

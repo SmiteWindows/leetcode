@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/knight-dialer/
+// https://leetcode-cn.com/problems/knight-dialer/
 // Runtime: 16 ms
 // Memory Usage: 2.1 MB
 pub fn knight_dialer(n: i32) -> i32 {

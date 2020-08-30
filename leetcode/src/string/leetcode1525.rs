@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/number-of-good-ways-to-split-a-string/
+// https://leetcode-cn.com/problems/number-of-good-ways-to-split-a-string/
 // Runtime: 8 ms
 // Memory Usage: 2.1 MB
 pub fn num_splits(s: String) -> i32 {

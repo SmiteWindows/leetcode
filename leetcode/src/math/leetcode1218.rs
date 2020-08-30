@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/longest-arithmetic-subsequence-of-given-difference/
+// https://leetcode-cn.com/problems/longest-arithmetic-subsequence-of-given-difference/
 // Runtime: 28 ms
 // Memory Usage: 3.5 MB
 use std::collections::HashMap;

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/distinct-subsequences/
+// https://leetcode-cn.com/problems/distinct-subsequences/
 // Runtime: 40 ms
 // Memory Usage: 22.7 MB
 #![allow(clippy::many_single_char_names)]

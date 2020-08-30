@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/contains-duplicate/
+// https://leetcode-cn.com/problems/contains-duplicate/
 // Runtime: 4 ms
 // Memory Usage: 2.7 MB
 use std::collections::HashSet;

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/powx-n/
+// https://leetcode-cn.com/problems/powx-n/
 // Runtime: 0 ms
 // Memory Usage: 1.9 MB
 pub fn my_pow(x: f64, n: i32) -> f64 {

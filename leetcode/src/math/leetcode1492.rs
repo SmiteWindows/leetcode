@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/the-kth-factor-of-n/
+// https://leetcode-cn.com/problems/the-kth-factor-of-n/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn kth_factor(n: i32, k: i32) -> i32 {

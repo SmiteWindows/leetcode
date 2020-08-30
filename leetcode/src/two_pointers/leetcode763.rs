@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/partition-labels/
+// https://leetcode-cn.com/problems/partition-labels/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 use std::collections::HashMap;

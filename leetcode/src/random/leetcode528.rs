@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/random-pick-with-weight/
+// https://leetcode-cn.com/problems/random-pick-with-weight/
 // Runtime: 16 ms
 // Memory Usage: 4 MB
 use rand::{distributions::WeightedIndex, prelude::*};

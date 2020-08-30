@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/move-zeroes/
+// https://leetcode-cn.com/problems/move-zeroes/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn move_zeroes(nums: &mut Vec<i32>) {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/sqrtx/
+// https://leetcode-cn.com/problems/sqrtx/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn my_sqrt(x: i32) -> i32 {

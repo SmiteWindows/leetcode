@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/convert-bst-to-greater-tree/
+// https://leetcode-cn.com/problems/convert-bst-to-greater-tree/
 // Runtime: 4 ms
 // Memory Usage: 2.9 MB
 use std::{cell::RefCell, rc::Rc};

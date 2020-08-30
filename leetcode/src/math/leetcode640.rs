@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/solve-the-equation/
+// https://leetcode-cn.com/problems/solve-the-equation/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn solve_equation(equation: String) -> String {

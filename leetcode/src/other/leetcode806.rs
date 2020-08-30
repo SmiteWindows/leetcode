@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/number-of-lines-to-write-string/
+// https://leetcode-cn.com/problems/number-of-lines-to-write-string/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn number_of_lines(widths: Vec<i32>, s: String) -> Vec<i32> {

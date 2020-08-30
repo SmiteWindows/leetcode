@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-number-of-frogs-croaking/
+// https://leetcode-cn.com/problems/minimum-number-of-frogs-croaking/
 // Runtime: 4 ms
 // Memory Usage: 2.2 MB
 pub fn min_number_of_frogs(croak_of_frogs: String) -> i32 {

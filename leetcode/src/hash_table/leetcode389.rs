@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/find-the-difference/
+// https://leetcode-cn.com/problems/find-the-difference/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::collections::HashMap;

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/powerful-integers/
+// https://leetcode-cn.com/problems/powerful-integers/
 // Runtime: 4 ms
 // Memory Usage: 3 MB
 pub fn powerful_integers(x: i32, y: i32, bound: i32) -> Vec<i32> {

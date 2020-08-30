@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/binary-watch/
+// https://leetcode-cn.com/problems/binary-watch/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn read_binary_watch(num: i32) -> Vec<String> {

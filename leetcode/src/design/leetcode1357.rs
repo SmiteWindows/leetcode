@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/apply-discount-every-n-orders/
+// https://leetcode-cn.com/problems/apply-discount-every-n-orders/
 // Runtime: 84 ms
 // Memory Usage: 13.4 MB
 use std::collections::HashMap;

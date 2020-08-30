@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/buddy-strings/
+// https://leetcode-cn.com/problems/buddy-strings/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 use std::collections::HashSet;

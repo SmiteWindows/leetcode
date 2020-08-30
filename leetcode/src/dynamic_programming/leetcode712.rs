@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings/
+// https://leetcode-cn.com/problems/minimum-ascii-delete-sum-for-two-strings/
 // Runtime: 4 ms
 // Memory Usage: 2.3 MB
 pub fn minimum_delete_sum(s1: String, s2: String) -> i32 {

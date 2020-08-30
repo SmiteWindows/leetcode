@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/text-justification/
+// https://leetcode-cn.com/problems/text-justification/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 use std::collections::VecDeque;

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/find-the-kth-smallest-sum-of-a-matrix-with-sorted-rows/
+// https://leetcode-cn.com/problems/find-the-kth-smallest-sum-of-a-matrix-with-sorted-rows/
 // Runtime: 24 ms
 // Memory Usage: 4.6 MB
 use std::{

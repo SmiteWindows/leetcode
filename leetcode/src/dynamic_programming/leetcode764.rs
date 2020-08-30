@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/largest-plus-sign/
+// https://leetcode-cn.com/problems/largest-plus-sign/
 // Runtime: 60 ms
 // Memory Usage: 11.1 MB
 pub fn order_of_largest_plus_sign(n: i32, mines: Vec<Vec<i32>>) -> i32 {

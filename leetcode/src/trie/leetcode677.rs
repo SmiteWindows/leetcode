@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/map-sum-pairs/
+// https://leetcode-cn.com/problems/map-sum-pairs/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::collections::HashMap;

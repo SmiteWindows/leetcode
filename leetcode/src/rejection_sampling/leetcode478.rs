@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/generate-random-point-in-a-circle/
+// https://leetcode-cn.com/problems/generate-random-point-in-a-circle/
 // Runtime: 20 ms
 // Memory Usage: 9 MB
 use rand::prelude::*;

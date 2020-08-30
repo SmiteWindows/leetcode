@@ -1,4 +1,4 @@
-// https://leetcode.com/tag/greedy/
+// https://leetcode-cn.com/tag/greedy/
 pub mod leetcode1005;
 pub mod leetcode1007;
 pub mod leetcode1029;

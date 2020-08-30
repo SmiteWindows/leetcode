@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/
+// https://leetcode-cn.com/problems/smallest-range-covering-elements-from-k-lists/
 // Runtime: 8 ms
 // Memory Usage: 2.7 MB
 use std::{cmp::Reverse, collections::BinaryHeap};

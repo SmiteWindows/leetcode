@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/shifting-letters/
+// https://leetcode-cn.com/problems/shifting-letters/
 // Runtime: 4 ms
 // Memory Usage: 2.6 MB
 pub fn shifting_letters(s: String, shifts: Vec<i32>) -> String {

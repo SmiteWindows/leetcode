@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/number-of-good-leaf-nodes-pairs/
+// https://leetcode-cn.com/problems/number-of-good-leaf-nodes-pairs/
 // Runtime: 4 ms
 // Memory Usage: 2.6 MB
 use std::{cell::RefCell, rc::Rc};

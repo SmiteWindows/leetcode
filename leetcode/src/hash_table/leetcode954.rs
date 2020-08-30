@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/array-of-doubled-pairs/
+// https://leetcode-cn.com/problems/array-of-doubled-pairs/
 // Runtime: 24 ms
 // Memory Usage: 2.3 MB
 use std::cmp::Ordering;

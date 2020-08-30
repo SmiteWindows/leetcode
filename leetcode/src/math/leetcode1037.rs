@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/valid-boomerang/
+// https://leetcode-cn.com/problems/valid-boomerang/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn is_boomerang(points: Vec<Vec<i32>>) -> bool {

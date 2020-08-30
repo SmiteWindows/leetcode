@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/exclusive-time-of-functions/
+// https://leetcode-cn.com/problems/exclusive-time-of-functions/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn exclusive_time(n: i32, logs: Vec<String>) -> Vec<i32> {

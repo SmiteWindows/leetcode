@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/replace-words/
+// https://leetcode-cn.com/problems/replace-words/
 // Runtime: 4 ms
 // Memory Usage: 11.2 MB
 use std::collections::HashMap;

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/divide-array-in-sets-of-k-consecutive-numbers/
+// https://leetcode-cn.com/problems/divide-array-in-sets-of-k-consecutive-numbers/
 // Runtime: 32 ms
 // Memory Usage: 5.6 MB
 use std::collections::{BTreeMap, VecDeque};

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/
+// https://leetcode-cn.com/problems/minimum-remove-to-make-valid-parentheses/
 // Runtime: 8 ms
 // Memory Usage: 2.3 MB
 use std::collections::HashSet;

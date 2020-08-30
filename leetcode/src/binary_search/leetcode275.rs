@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/h-index-ii/
+// https://leetcode-cn.com/problems/h-index-ii/
 // Runtime: 0 ms
 // Memory Usage: 2.7 MB
 use std::cmp::Ordering::{Equal, Greater, Less};

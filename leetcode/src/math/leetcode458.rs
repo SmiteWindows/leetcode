@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/poor-pigs/
+// https://leetcode-cn.com/problems/poor-pigs/
 // Runtime: 0 ms
 // Memory Usage: 1.9 MB
 pub fn poor_pigs(buckets: i32, minutes_to_die: i32, minutes_to_test: i32) -> i32 {

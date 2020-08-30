@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/count-binary-substrings/
+// https://leetcode-cn.com/problems/count-binary-substrings/
 // Runtime: 4 ms
 // Memory Usage: 2.2 MB
 pub fn count_binary_substrings(s: String) -> i32 {

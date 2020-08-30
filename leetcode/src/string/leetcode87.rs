@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/scramble-string/
+// https://leetcode-cn.com/problems/scramble-string/
 // Runtime: 12 ms
 // Memory Usage: 2.4 MB
 use std::collections::HashMap;

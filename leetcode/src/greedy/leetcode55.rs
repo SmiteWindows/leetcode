@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/jump-game
+// https://leetcode-cn.com/problems/jump-game
 // Runtime: 0 ms
 // Memory Usage: 2.3 MB
 pub fn can_jump(nums: Vec<i32>) -> bool {

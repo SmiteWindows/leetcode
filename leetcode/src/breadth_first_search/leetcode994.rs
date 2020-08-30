@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/rotting-oranges/
+// https://leetcode-cn.com/problems/rotting-oranges/
 #![allow(clippy::many_single_char_names)]
 // Runtime: 0 ms
 // Memory Usage: 2 MB

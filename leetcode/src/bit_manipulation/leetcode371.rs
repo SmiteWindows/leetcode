@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/sum-of-two-integers/
+// https://leetcode-cn.com/problems/sum-of-two-integers/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn get_sum(a: i32, b: i32) -> i32 {

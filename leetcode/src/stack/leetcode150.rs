@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/evaluate-reverse-polish-notation/
+// https://leetcode-cn.com/problems/evaluate-reverse-polish-notation/
 // Runtime: 0 ms
 // Memory Usage: 2.7 MB
 pub fn eval_rpn(tokens: Vec<String>) -> i32 {

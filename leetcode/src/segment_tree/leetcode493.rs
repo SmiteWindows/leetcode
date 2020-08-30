@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/reverse-pairs/
+// https://leetcode-cn.com/problems/reverse-pairs/
 // Runtime: 64 ms
 // Memory Usage: 2.6 MB
 pub fn reverse_pairs(nums: Vec<i32>) -> i32 {

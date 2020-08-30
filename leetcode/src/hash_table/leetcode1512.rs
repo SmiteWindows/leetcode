@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/number-of-good-pairs/
+// https://leetcode-cn.com/problems/number-of-good-pairs/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 use std::collections::HashMap;

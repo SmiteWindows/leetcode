@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/backspace-string-compare/
+// https://leetcode-cn.com/problems/backspace-string-compare/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn backspace_compare(s: String, t: String) -> bool {

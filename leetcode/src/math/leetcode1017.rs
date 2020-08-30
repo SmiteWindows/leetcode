@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/convert-to-base-2/
+// https://leetcode-cn.com/problems/convert-to-base-2/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn base_neg2(n: i32) -> String {

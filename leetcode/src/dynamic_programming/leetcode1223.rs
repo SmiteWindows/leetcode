@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/dice-roll-simulation/
+// https://leetcode-cn.com/problems/dice-roll-simulation/
 // Runtime: 36 ms
 // Memory Usage: 4.3 MB
 const MOD: i32 = 1_000_000_007;

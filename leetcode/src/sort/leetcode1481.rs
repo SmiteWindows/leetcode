@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/least-number-of-unique-integers-after-k-removals/
+// https://leetcode-cn.com/problems/least-number-of-unique-integers-after-k-removals/
 // Runtime: 24 ms
 // Memory Usage: 7.1 MB
 use std::{

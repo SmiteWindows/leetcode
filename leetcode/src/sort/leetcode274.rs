@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/h-index/
+// https://leetcode-cn.com/problems/h-index/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn h_index(citations: Vec<i32>) -> i32 {

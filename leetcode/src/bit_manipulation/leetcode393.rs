@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/utf-8-validation/
+// https://leetcode-cn.com/problems/utf-8-validation/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn valid_utf8(data: Vec<i32>) -> bool {

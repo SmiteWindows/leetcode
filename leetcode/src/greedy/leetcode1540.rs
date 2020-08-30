@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/can-convert-string-in-k-moves/
+// https://leetcode-cn.com/problems/can-convert-string-in-k-moves/
 // Runtime: 28 ms
 // Memory Usage: 3.1 MB
 #![allow(clippy::many_single_char_names)]

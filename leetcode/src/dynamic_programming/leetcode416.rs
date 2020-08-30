@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/partition-equal-subset-sum/
+// https://leetcode-cn.com/problems/partition-equal-subset-sum/
 // Runtime: 4 ms
 // Memory Usage: 2.1 MB
 pub fn can_partition(nums: Vec<i32>) -> bool {

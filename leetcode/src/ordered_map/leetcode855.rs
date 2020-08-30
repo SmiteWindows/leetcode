@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/exam-room/
+// https://leetcode-cn.com/problems/exam-room/
 // Runtime: 4 ms
 // Memory Usage: 2.3 MB
 use std::{

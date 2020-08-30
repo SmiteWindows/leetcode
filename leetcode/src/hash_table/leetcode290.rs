@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/word-pattern/
+// https://leetcode-cn.com/problems/word-pattern/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::collections::HashMap;

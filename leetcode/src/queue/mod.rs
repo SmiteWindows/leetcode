@@ -1,4 +1,4 @@
-// https://leetcode.com/tag/queue/
+// https://leetcode-cn.com/tag/queue/
 pub mod leetcode363;
 pub mod leetcode621;
 pub mod leetcode622;

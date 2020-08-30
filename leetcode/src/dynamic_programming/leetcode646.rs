@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/maximum-length-of-pair-chain/
+// https://leetcode-cn.com/problems/maximum-length-of-pair-chain/
 // Runtime: 8 ms
 // Memory Usage: 2.2 MB
 pub fn find_longest_chain(pairs: Vec<Vec<i32>>) -> i32 {

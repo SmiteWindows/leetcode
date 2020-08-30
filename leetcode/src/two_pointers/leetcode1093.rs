@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/statistics-from-a-large-sample/
+// https://leetcode-cn.com/problems/statistics-from-a-large-sample/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn sample_stats(count: Vec<i32>) -> Vec<f64> {

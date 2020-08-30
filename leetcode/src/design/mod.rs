@@ -1,4 +1,4 @@
-// https://leetcode.com/tag/design/
+// https://leetcode-cn.com/tag/design/
 pub mod leetcode1172;
 pub mod leetcode1206;
 pub mod leetcode1286;

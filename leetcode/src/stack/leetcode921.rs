@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/
+// https://leetcode-cn.com/problems/minimum-add-to-make-parentheses-valid/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn min_add_to_make_valid(s: String) -> i32 {

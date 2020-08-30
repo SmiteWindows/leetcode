@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/find-longest-awesome-substring/
+// https://leetcode-cn.com/problems/find-longest-awesome-substring/
 // Runtime: 100 ms
 // Memory Usage: 2.3 MB
 use std::collections::HashMap;

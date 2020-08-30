@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/invert-binary-tree/
+// https://leetcode-cn.com/problems/invert-binary-tree/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::{cell::RefCell, rc::Rc};

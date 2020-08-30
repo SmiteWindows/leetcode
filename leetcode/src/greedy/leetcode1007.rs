@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-domino-rotations-for-equal-row/
+// https://leetcode-cn.com/problems/minimum-domino-rotations-for-equal-row/
 #[allow(clippy::many_single_char_names)]
 // Runtime: 28 ms
 // Memory Usage: 2.3 MB

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/boats-to-save-people/
+// https://leetcode-cn.com/problems/boats-to-save-people/
 // Runtime: 20 ms
 // Memory Usage: 2.3 MB
 pub fn num_rescue_boats(people: Vec<i32>, limit: i32) -> i32 {

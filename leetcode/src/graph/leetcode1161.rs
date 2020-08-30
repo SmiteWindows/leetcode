@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree/
+// https://leetcode-cn.com/problems/maximum-level-sum-of-a-binary-tree/
 // Runtime: 32 ms
 // Memory Usage: 3.2 MB
 use std::{cell::RefCell, collections::HashMap, rc::Rc};

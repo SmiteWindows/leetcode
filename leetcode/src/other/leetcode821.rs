@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/shortest-distance-to-a-character/
+// https://leetcode-cn.com/problems/shortest-distance-to-a-character/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn shortest_to_char(s: String, c: char) -> Vec<i32> {

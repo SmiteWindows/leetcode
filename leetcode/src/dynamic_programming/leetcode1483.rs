@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/kth-ancestor-of-a-tree-node/
+// https://leetcode-cn.com/problems/kth-ancestor-of-a-tree-node/
 struct TreeAncestor {}
 
 /**

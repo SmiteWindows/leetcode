@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/flip-equivalent-binary-trees/
+// https://leetcode-cn.com/problems/flip-equivalent-binary-trees/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::{cell::RefCell, rc::Rc};

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/height-checker/
+// https://leetcode-cn.com/problems/height-checker/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn height_checker(heights: Vec<i32>) -> i32 {

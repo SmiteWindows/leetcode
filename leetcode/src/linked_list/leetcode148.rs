@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/sort-list/
+// https://leetcode-cn.com/problems/sort-list/
 // Runtime: 4 ms
 // Memory Usage: 4 MB
 pub fn sort_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {

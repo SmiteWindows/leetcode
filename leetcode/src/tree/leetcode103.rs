@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/
+// https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::{cell::RefCell, rc::Rc};

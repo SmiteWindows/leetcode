@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/longest-absolute-file-path/
+// https://leetcode-cn.com/problems/longest-absolute-file-path/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn length_longest_path(input: String) -> i32 {

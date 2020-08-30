@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/robot-return-to-origin/
+// https://leetcode-cn.com/problems/robot-return-to-origin/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn judge_circle(moves: String) -> bool {

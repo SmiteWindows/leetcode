@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/bulb-switcher-ii/
+// https://leetcode-cn.com/problems/bulb-switcher-ii/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn flip_lights(n: i32, m: i32) -> i32 {

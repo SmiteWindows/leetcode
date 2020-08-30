@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/partition-to-k-equal-sum-subsets/
+// https://leetcode-cn.com/problems/partition-to-k-equal-sum-subsets/
 // Runtime: 0 ms
 // Memory Usage: 1.9 MB
 pub fn can_partition_k_subsets(nums: Vec<i32>, k: i32) -> bool {

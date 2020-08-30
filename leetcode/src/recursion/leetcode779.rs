@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/k-th-symbol-in-grammar/
+// https://leetcode-cn.com/problems/k-th-symbol-in-grammar/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn kth_grammar(n: i32, k: i32) -> i32 {

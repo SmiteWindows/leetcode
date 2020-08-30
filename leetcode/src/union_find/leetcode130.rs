@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/surrounded-regions/
+// https://leetcode-cn.com/problems/surrounded-regions/
 // Runtime: 12 ms
 // Memory Usage: 4.9 MB
 pub fn solve(board: &mut Vec<Vec<char>>) {

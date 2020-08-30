@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/people-whose-list-of-favorite-companies-is-not-a-subset-of-another-list/
+// https://leetcode-cn.com/problems/people-whose-list-of-favorite-companies-is-not-a-subset-of-another-list/
 // Runtime: 72 ms
 // Memory Usage: 7.2 MB
 use std::{collections::HashSet, iter::FromIterator};

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-falling-path-sum-ii/
+// https://leetcode-cn.com/problems/minimum-falling-path-sum-ii/
 // Runtime: 56 ms
 // Memory Usage: 2.5 MB
 pub fn min_falling_path_sum(arr: Vec<Vec<i32>>) -> i32 {

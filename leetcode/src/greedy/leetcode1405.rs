@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/longest-happy-string/
+// https://leetcode-cn.com/problems/longest-happy-string/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 use std::collections::BinaryHeap;

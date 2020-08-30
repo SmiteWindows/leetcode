@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/masking-personal-information/
+// https://leetcode-cn.com/problems/masking-personal-information/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn mask_pii(s: String) -> String {

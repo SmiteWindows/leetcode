@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/construct-k-palindrome-strings/
+// https://leetcode-cn.com/problems/construct-k-palindrome-strings/
 // Runtime: 4 ms
 // Memory Usage: 2.2 MB
 pub fn can_construct(s: String, k: i32) -> bool {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
+// https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::cmp::Ordering::{Equal, Greater, Less};

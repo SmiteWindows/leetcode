@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/regular-expression-matching/
+// https://leetcode-cn.com/problems/regular-expression-matching/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn is_match(s: String, p: String) -> bool {

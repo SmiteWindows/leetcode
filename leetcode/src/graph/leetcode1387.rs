@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/sort-integers-by-the-power-value/
+// https://leetcode-cn.com/problems/sort-integers-by-the-power-value/
 // Runtime: 8 ms
 // Memory Usage: 2.1 MB
 use std::collections::BinaryHeap;

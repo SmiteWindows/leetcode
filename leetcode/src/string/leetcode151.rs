@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/reverse-words-in-a-string/
+// https://leetcode-cn.com/problems/reverse-words-in-a-string/
 // Runtime: 4 ms
 // Memory Usage: 2.2 MB
 pub fn reverse_words(s: String) -> String {

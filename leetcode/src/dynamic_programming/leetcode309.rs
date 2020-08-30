@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/
+// https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn max_profit(prices: Vec<i32>) -> i32 {

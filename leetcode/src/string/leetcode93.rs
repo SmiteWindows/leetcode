@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/restore-ip-addresses/
+// https://leetcode-cn.com/problems/restore-ip-addresses/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn restore_ip_addresses(s: String) -> Vec<String> {

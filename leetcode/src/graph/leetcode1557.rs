@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-number-of-vertices-to-reach-all-nodes/
+// https://leetcode-cn.com/problems/minimum-number-of-vertices-to-reach-all-nodes/
 // Runtime: 52 ms
 // Memory Usage: 8.7 MB
 // ✔

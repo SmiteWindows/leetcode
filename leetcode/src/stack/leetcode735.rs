@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/asteroid-collision/
+// https://leetcode-cn.com/problems/asteroid-collision/
 // Runtime: 0 ms
 // Memory Usage: 2.3 MB
 use std::cmp::Ordering::{Equal, Greater, Less};

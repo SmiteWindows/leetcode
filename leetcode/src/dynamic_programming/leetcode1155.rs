@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/number-of-dice-rolls-with-target-sum/
+// https://leetcode-cn.com/problems/number-of-dice-rolls-with-target-sum/
 // Runtime: 44 ms
 // Memory Usage: 2.4 MB
 use std::collections::HashMap;

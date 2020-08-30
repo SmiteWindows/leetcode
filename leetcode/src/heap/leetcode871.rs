@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-number-of-refueling-stops/
+// https://leetcode-cn.com/problems/minimum-number-of-refueling-stops/
 // Runtime: 116 ms
 // Memory Usage: 3.6 MB
 use std::{

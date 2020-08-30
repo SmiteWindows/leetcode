@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/escape-the-ghosts/
+// https://leetcode-cn.com/problems/escape-the-ghosts/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn escape_ghosts(ghosts: Vec<Vec<i32>>, target: Vec<i32>) -> bool {

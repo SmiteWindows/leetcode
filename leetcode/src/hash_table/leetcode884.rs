@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/uncommon-words-from-two-sentences/
+// https://leetcode-cn.com/problems/uncommon-words-from-two-sentences/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::collections::BTreeMap;

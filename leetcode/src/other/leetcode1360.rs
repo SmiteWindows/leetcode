@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/number-of-days-between-two-dates/
+// https://leetcode-cn.com/problems/number-of-days-between-two-dates/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn days_between_dates(date1: String, date2: String) -> i32 {

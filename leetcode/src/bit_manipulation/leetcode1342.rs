@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/
+// https://leetcode-cn.com/problems/number-of-steps-to-reduce-a-number-to-zero/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn number_of_steps(num: i32) -> i32 {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/maximal-square/
+// https://leetcode-cn.com/problems/maximal-square/
 // Runtime: 4 ms
 // Memory Usage: 4.7 MB
 pub fn maximal_square(matrix: Vec<Vec<char>>) -> i32 {

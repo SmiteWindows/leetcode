@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/matrix-block-sum/
+// https://leetcode-cn.com/problems/matrix-block-sum/
 #![allow(clippy::many_single_char_names)]
 // Runtime: 4 ms
 // Memory Usage: 2.3 MB

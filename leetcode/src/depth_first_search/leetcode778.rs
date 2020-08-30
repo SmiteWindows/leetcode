@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/swim-in-rising-water/
+// https://leetcode-cn.com/problems/swim-in-rising-water/
 // Runtime: 4 ms
 // Memory Usage: 2.2 MB
 use std::{cmp::Reverse, collections::BinaryHeap};

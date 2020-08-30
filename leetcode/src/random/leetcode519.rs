@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/random-flip-matrix/
+// https://leetcode-cn.com/problems/random-flip-matrix/
 // Runtime: 4 ms
 // Memory Usage: 2.7 MB
 use rand::prelude::*;

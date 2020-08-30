@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/3sum-with-multiplicity/
+// https://leetcode-cn.com/problems/3sum-with-multiplicity/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 const MOD: usize = 1_000_000_007;

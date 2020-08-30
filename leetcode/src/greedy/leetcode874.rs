@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/walking-robot-simulation/
+// https://leetcode-cn.com/problems/walking-robot-simulation/
 // Runtime: 16 ms
 // Memory Usage: 2.9 MB
 use std::collections::HashSet;

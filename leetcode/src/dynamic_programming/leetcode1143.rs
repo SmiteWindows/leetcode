@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/longest-common-subsequence/
+// https://leetcode-cn.com/problems/longest-common-subsequence/
 // Runtime: 4 ms
 // Memory Usage: 9.8 MB
 pub fn longest_common_subsequence(text1: String, text2: String) -> i32 {

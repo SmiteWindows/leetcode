@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/fraction-addition-and-subtraction/
+// https://leetcode-cn.com/problems/fraction-addition-and-subtraction/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::fmt::{Display, Formatter, Result};

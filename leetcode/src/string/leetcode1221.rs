@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/split-a-string-in-balanced-strings/
+// https://leetcode-cn.com/problems/split-a-string-in-balanced-strings/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn balanced_string_split(s: String) -> i32 {

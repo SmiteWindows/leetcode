@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/count-number-of-nice-subarrays/
+// https://leetcode-cn.com/problems/count-number-of-nice-subarrays/
 // Runtime: 12 ms
 // Memory Usage: 2.5 MB
 pub fn number_of_subarrays(nums: Vec<i32>, k: i32) -> i32 {

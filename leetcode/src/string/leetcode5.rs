@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/longest-palindromic-substring/
+// https://leetcode-cn.com/problems/longest-palindromic-substring/
 // Runtime: 4 ms
 // Memory Usage: 2.1 MB
 use std::iter::FromIterator;

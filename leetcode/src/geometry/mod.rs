@@ -1,4 +1,4 @@
-// https://leetcode.com/tag/geometry/
+// https://leetcode-cn.com/tag/geometry/
 pub mod leetcode1232;
 pub mod leetcode1266;
 pub mod leetcode1401;

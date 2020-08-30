@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/maximum-number-of-balloons/
+// https://leetcode-cn.com/problems/maximum-number-of-balloons/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::collections::HashMap;

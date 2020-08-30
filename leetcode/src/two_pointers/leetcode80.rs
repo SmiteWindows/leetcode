@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/
+// https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array-ii/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn remove_duplicates(nums: &mut Vec<i32>) -> i32 {

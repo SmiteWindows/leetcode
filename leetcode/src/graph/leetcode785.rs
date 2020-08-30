@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/is-graph-bipartite/
+// https://leetcode-cn.com/problems/is-graph-bipartite/
 // Runtime: 12 ms
 // Memory Usage: 2.3 MB
 use std::collections::HashSet;

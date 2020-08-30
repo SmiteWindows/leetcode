@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/prime-palindrome/
+// https://leetcode-cn.com/problems/prime-palindrome/
 #![allow(clippy::many_single_char_names)]
 // Runtime: 36 ms
 // Memory Usage: 2.1 MB

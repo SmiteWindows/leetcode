@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/binary-prefix-divisible-by-5/
+// https://leetcode-cn.com/problems/binary-prefix-divisible-by-5/
 // Runtime: 4 ms
 // Memory Usage: 2.3 MB
 pub fn prefixes_div_by5(a: Vec<i32>) -> Vec<bool> {

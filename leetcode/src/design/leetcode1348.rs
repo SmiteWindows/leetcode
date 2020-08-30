@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/tweet-counts-per-frequency/
+// https://leetcode-cn.com/problems/tweet-counts-per-frequency/
 // Runtime: 124 ms
 // Memory Usage: 9.5 MB
 use std::collections::{BTreeMap, HashMap};

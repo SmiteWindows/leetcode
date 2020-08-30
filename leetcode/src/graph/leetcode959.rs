@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/regions-cut-by-slashes/
+// https://leetcode-cn.com/problems/regions-cut-by-slashes/
 #![allow(clippy::many_single_char_names)]
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB

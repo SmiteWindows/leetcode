@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/maximum-width-of-binary-tree/
+// https://leetcode-cn.com/problems/maximum-width-of-binary-tree/
 // Runtime: 0 ms
 // Memory Usage: 2.4 MB
 use std::{cell::RefCell, collections::HashMap, rc::Rc};

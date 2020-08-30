@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/zigzag-conversion/
+// https://leetcode-cn.com/problems/zigzag-conversion/
 // Runtime: 4 ms
 // Memory Usage: 2.2 MB
 pub fn convert(s: String, num_rows: i32) -> String {

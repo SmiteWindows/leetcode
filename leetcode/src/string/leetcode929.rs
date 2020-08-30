@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/unique-email-addresses/
+// https://leetcode-cn.com/problems/unique-email-addresses/
 // Runtime: 4 ms
 // Memory Usage: 2.2 MB
 use std::collections::HashSet;

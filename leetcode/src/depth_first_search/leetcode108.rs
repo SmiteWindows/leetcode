@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
+// https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree/
 // Runtime: 0 ms
 // Memory Usage: 2.9 MB
 use std::{cell::RefCell, rc::Rc};

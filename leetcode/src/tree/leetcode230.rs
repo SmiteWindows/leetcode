@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/kth-smallest-element-in-a-bst/
+// https://leetcode-cn.com/problems/kth-smallest-element-in-a-bst/
 // Runtime: 0 ms
 // Memory Usage: 3.1 MB
 use std::{cell::RefCell, rc::Rc};

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/increasing-decreasing-string/
+// https://leetcode-cn.com/problems/increasing-decreasing-string/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn sort_string(s: String) -> String {

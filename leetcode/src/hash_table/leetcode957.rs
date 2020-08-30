@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/prison-cells-after-n-days/
+// https://leetcode-cn.com/problems/prison-cells-after-n-days/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::collections::HashMap;

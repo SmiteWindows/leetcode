@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-time-visiting-all-points/
+// https://leetcode-cn.com/problems/minimum-time-visiting-all-points/
 // Runtime: 0 ms
 // Memory Usage: 1.9 MB
 pub fn min_time_to_visit_all_points(points: Vec<Vec<i32>>) -> i32 {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/decrypt-string-from-alphabet-to-integer-mapping/
+// https://leetcode-cn.com/problems/decrypt-string-from-alphabet-to-integer-mapping/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn freq_alphabets(s: String) -> String {

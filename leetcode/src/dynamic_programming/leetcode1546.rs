@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/maximum-number-of-non-overlapping-subarrays-with-sum-equals-target/
+// https://leetcode-cn.com/problems/maximum-number-of-non-overlapping-subarrays-with-sum-equals-target/
 // Runtime: 40 ms
 // Memory Usage: 6.9 MB
 use std::collections::HashMap;

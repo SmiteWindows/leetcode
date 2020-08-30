@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/smallest-subsequence-of-distinct-characters/
+// https://leetcode-cn.com/problems/smallest-subsequence-of-distinct-characters/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn smallest_subsequence(text: String) -> String {

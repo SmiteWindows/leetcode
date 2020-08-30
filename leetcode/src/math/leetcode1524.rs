@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/number-of-sub-arrays-with-odd-sum/
+// https://leetcode-cn.com/problems/number-of-sub-arrays-with-odd-sum/
 // Runtime: 20 ms
 // Memory Usage: 3 MB
 const MOD: i64 = 1_000_000_007;

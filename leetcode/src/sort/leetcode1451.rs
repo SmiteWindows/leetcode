@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/rearrange-words-in-a-sentence/
+// https://leetcode-cn.com/problems/rearrange-words-in-a-sentence/
 // Runtime: 12 ms
 // Memory Usage: 2.9 MB
 pub fn arrange_words(text: String) -> String {

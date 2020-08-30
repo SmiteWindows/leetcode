@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/sum-of-square-numbers/
+// https://leetcode-cn.com/problems/sum-of-square-numbers/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn judge_square_sum(c: i32) -> bool {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/coin-change/
+// https://leetcode-cn.com/problems/coin-change/
 // Runtime: 8 ms
 // Memory Usage: 2.1 MB
 pub fn coin_change(coins: Vec<i32>, amount: i32) -> i32 {

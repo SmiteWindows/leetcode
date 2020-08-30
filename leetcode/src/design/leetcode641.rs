@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/design-circular-deque/
+// https://leetcode-cn.com/problems/design-circular-deque/
 // Runtime: 12 ms
 // Memory Usage: 2.4 MB
 struct MyCircularDeque {

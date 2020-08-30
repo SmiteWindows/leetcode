@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/bulb-switcher-iv/
+// https://leetcode-cn.com/problems/bulb-switcher-iv/
 // Runtime: 4 ms
 // Memory Usage: 2.8 MB
 pub fn min_flips(target: String) -> i32 {

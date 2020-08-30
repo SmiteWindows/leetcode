@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/number-of-recent-calls/
+// https://leetcode-cn.com/problems/number-of-recent-calls/
 // Runtime: 36 ms
 // Memory Usage: 5.4 MB
 use std::collections::VecDeque;

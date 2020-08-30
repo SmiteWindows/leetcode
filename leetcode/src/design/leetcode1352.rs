@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/product-of-the-last-k-numbers/
+// https://leetcode-cn.com/problems/product-of-the-last-k-numbers/
 // Runtime: 32 ms
 // Memory Usage: 15.1 MB
 struct ProductOfNumbers {

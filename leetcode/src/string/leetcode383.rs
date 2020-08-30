@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/ransom-note/
+// https://leetcode-cn.com/problems/ransom-note/
 // Runtime: 8 ms
 // Memory Usage: 2.2 MB
 use std::collections::HashMap;

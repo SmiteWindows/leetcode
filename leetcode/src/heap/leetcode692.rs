@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/top-k-frequent-words/
+// https://leetcode-cn.com/problems/top-k-frequent-words/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::{cmp::Ordering, collections::HashMap};

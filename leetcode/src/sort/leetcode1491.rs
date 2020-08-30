@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/average-salary-excluding-the-minimum-and-maximum-salary/
+// https://leetcode-cn.com/problems/average-salary-excluding-the-minimum-and-maximum-salary/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn average(salary: Vec<i32>) -> f64 {

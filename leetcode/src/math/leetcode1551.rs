@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-operations-to-make-array-equal/
+// https://leetcode-cn.com/problems/minimum-operations-to-make-array-equal/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn min_operations(n: i32) -> i32 {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/accounts-merge/
+// https://leetcode-cn.com/problems/accounts-merge/
 // Runtime: 36 ms
 // Memory Usage: 5.1 MB
 use std::collections::{BTreeMap, BTreeSet, HashMap};

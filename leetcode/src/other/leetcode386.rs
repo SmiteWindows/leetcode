@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/lexicographical-numbers/
+// https://leetcode-cn.com/problems/lexicographical-numbers/
 // Runtime: 8 ms
 // Memory Usage: 2.6 MB
 pub fn lexical_order(n: i32) -> Vec<i32> {

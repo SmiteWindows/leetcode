@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/palindrome-pairs/
+// https://leetcode-cn.com/problems/palindrome-pairs/
 // Runtime: 92 ms
 // Memory Usage: 3 MB
 use std::collections::{HashMap, HashSet};

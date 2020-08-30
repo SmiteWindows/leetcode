@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/
+// https://leetcode-cn.com/problems/minimum-number-of-arrows-to-burst-balloons/
 // Runtime: 36 ms
 // Memory Usage: 2.8 MB
 pub fn find_min_arrow_shots(points: Vec<Vec<i32>>) -> i32 {

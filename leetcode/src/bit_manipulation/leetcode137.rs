@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/single-number-ii/
+// https://leetcode-cn.com/problems/single-number-ii/
 // Runtime: 0 ms
 // Memory Usage: 2.3 MB
 pub fn single_number(nums: Vec<i32>) -> i32 {

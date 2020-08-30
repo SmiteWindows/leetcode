@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/smallest-string-starting-from-leaf/
+// https://leetcode-cn.com/problems/smallest-string-starting-from-leaf/
 // Runtime: 0 ms
 // Memory Usage: 2.7 MB
 use std::{cell::RefCell, rc::Rc};

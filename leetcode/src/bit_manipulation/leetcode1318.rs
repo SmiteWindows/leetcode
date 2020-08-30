@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-flips-to-make-a-or-b-equal-to-c/
+// https://leetcode-cn.com/problems/minimum-flips-to-make-a-or-b-equal-to-c/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn min_flips(a: i32, b: i32, c: i32) -> i32 {

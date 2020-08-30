@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/compare-version-numbers/
+// https://leetcode-cn.com/problems/compare-version-numbers/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn compare_version(version1: String, version2: String) -> i32 {

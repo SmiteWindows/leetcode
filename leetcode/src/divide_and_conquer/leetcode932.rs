@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/beautiful-array/
+// https://leetcode-cn.com/problems/beautiful-array/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn beautiful_array(n: i32) -> Vec<i32> {

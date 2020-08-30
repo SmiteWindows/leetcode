@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/unique-substrings-in-wraparound-string/
+// https://leetcode-cn.com/problems/unique-substrings-in-wraparound-string/
 #![allow(clippy::many_single_char_names)]
 // Runtime: 4 ms
 // Memory Usage: 2.1 MB

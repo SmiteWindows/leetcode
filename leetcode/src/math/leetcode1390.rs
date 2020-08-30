@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/four-divisors/
+// https://leetcode-cn.com/problems/four-divisors/
 // Runtime: 16 ms
 // Memory Usage: 2.1 MB
 pub fn sum_four_divisors(nums: Vec<i32>) -> i32 {

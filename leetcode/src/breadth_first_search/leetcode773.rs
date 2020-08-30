@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/sliding-puzzle/
+// https://leetcode-cn.com/problems/sliding-puzzle/
 // Runtime: 4 ms
 // Memory Usage: 2.1 MB
 use std::collections::{HashSet, VecDeque};

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/vowel-spellchecker/
+// https://leetcode-cn.com/problems/vowel-spellchecker/
 // Runtime: 40 ms
 // Memory Usage: 4.1 MB
 use std::{

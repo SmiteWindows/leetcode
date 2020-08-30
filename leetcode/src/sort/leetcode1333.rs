@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/filter-restaurants-by-vegan-friendly-price-and-distance/
+// https://leetcode-cn.com/problems/filter-restaurants-by-vegan-friendly-price-and-distance/
 // Runtime: 8 ms
 // Memory Usage: 3 MB
 use std::cmp::Reverse;

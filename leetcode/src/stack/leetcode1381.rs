@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/design-a-stack-with-increment-operation/
+// https://leetcode-cn.com/problems/design-a-stack-with-increment-operation/
 // Runtime: 4 ms
 // Memory Usage: 2.9 MB
 struct CustomStack {

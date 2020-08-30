@@ -1,4 +1,4 @@
-// https://leetcode.com/tag/heap/
+// https://leetcode-cn.com/tag/heap/
 pub mod leetcode1046;
 pub mod leetcode1054;
 pub mod leetcode1439;

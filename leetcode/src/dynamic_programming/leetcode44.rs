@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/wildcard-matching/
+// https://leetcode-cn.com/problems/wildcard-matching/
 // Runtime: 12 ms
 // Memory Usage: 3 MB
 pub fn is_match(s: String, p: String) -> bool {

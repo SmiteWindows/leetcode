@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/valid-sudoku/
+// https://leetcode-cn.com/problems/valid-sudoku/
 // Runtime: 4 ms
 // Memory Usage: 2 MB
 use std::collections::HashSet;

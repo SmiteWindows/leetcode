@@ -1,4 +1,4 @@
-// https://leetcode.com/tag/string/
+// https://leetcode-cn.com/tag/string/
 pub mod leetcode10;
 pub mod leetcode1003;
 pub mod leetcode1016;

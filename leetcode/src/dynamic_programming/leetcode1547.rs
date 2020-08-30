@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-cost-to-cut-a-stick/
+// https://leetcode-cn.com/problems/minimum-cost-to-cut-a-stick/
 // Runtime: 156 ms
 // Memory Usage: 2.3 MB
 use std::collections::HashMap;

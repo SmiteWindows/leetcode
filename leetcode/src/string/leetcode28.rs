@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/implement-strstr/
+// https://leetcode-cn.com/problems/implement-strstr/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn str_str(haystack: String, needle: String) -> i32 {

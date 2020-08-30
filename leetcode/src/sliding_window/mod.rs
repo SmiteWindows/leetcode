@@ -1,4 +1,4 @@
-// https://leetcode.com/tag/sliding-window/
+// https://leetcode-cn.com/tag/sliding-window/
 pub mod leetcode1004;
 pub mod leetcode1040;
 pub mod leetcode1052;

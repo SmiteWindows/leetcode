@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/decode-ways/
+// https://leetcode-cn.com/problems/decode-ways/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn num_decodings(s: String) -> i32 {

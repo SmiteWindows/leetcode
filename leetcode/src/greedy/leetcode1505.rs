@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-possible-integer-after-at-most-k-adjacent-swaps-on-digits/
+// https://leetcode-cn.com/problems/minimum-possible-integer-after-at-most-k-adjacent-swaps-on-digits/
 pub fn min_integer(num: String, k: i32) -> String {
     todo!()
 }

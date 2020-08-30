@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/remove-duplicate-letters/
+// https://leetcode-cn.com/problems/remove-duplicate-letters/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn remove_duplicate_letters(s: String) -> String {

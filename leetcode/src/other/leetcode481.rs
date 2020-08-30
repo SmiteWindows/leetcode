@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/magical-string/
+// https://leetcode-cn.com/problems/magical-string/
 // Runtime: 0 ms
 // Memory Usage: 2.7 MB
 pub fn magical_string(n: i32) -> i32 {

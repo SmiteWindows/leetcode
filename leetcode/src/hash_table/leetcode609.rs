@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/find-duplicate-file-in-system/
+// https://leetcode-cn.com/problems/find-duplicate-file-in-system/
 // Runtime: 32 ms
 // Memory Usage: 6.2 MB
 use std::collections::HashMap;

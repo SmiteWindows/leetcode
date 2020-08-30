@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/delete-node-in-a-bst/
+// https://leetcode-cn.com/problems/delete-node-in-a-bst/
 // Runtime: 4 ms
 // Memory Usage: 3.1 MB
 use std::{cell::RefCell, cmp::Ordering, rc::Rc};

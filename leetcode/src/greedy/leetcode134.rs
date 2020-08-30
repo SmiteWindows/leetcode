@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/gas-station/
+// https://leetcode-cn.com/problems/gas-station/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn can_complete_circuit(gas: Vec<i32>, cost: Vec<i32>) -> i32 {

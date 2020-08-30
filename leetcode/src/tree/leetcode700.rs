@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/search-in-a-binary-search-tree/
+// https://leetcode-cn.com/problems/search-in-a-binary-search-tree/
 // Runtime: 4 ms
 // Memory Usage: 2.6 MB
 use std::{

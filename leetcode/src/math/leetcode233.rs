@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/number-of-digit-one/
+// https://leetcode-cn.com/problems/number-of-digit-one/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn count_digit_one(n: i32) -> i32 {

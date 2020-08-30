@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/longest-well-performing-interval/
+// https://leetcode-cn.com/problems/longest-well-performing-interval/
 // Runtime: 4 ms
 // Memory Usage: 2.4 MB
 use std::collections::HashMap;

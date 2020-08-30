@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/all-oone-data-structure/
+// https://leetcode-cn.com/problems/all-oone-data-structure/
 // Runtime: 8 ms
 // Memory Usage: 9.9 MB
 use std::collections::HashMap;

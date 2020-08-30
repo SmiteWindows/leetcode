@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/water-and-jug-problem
+// https://leetcode-cn.com/problems/water-and-jug-problem
 // Runtime: 4 ms
 // Memory Usage: 2.2 MB
 use std::collections::VecDeque;

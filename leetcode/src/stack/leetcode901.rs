@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/online-stock-span/
+// https://leetcode-cn.com/problems/online-stock-span/
 // Runtime: 32 ms
 // Memory Usage: 5.4 MB
 struct StockSpanner {

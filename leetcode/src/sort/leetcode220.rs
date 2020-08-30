@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/contains-duplicate-iii/
+// https://leetcode-cn.com/problems/contains-duplicate-iii/
 #![allow(clippy::many_single_char_names)]
 // Runtime: 4 ms
 // Memory Usage: 2.1 MB

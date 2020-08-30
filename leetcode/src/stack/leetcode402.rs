@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/remove-k-digits/
+// https://leetcode-cn.com/problems/remove-k-digits/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn remove_kdigits(num: String, k: i32) -> String {

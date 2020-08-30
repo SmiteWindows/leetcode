@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/implement-rand10-using-rand7/
+// https://leetcode-cn.com/problems/implement-rand10-using-rand7/
 // Runtime: 8 ms
 // Memory Usage: 3 MB
 use rand::{distributions::Uniform, prelude::*};

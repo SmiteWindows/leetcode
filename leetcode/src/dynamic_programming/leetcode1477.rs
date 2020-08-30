@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/find-two-non-overlapping-sub-arrays-each-with-target-sum/
+// https://leetcode-cn.com/problems/find-two-non-overlapping-sub-arrays-each-with-target-sum/
 // Runtime: 56 ms
 // Memory Usage: 5.1 MB
 use std::collections::HashMap;

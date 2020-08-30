@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/linked-list-random-node/
+// https://leetcode-cn.com/problems/linked-list-random-node/
 // Runtime: 8 ms
 // Memory Usage: 3.6 MB
 struct Solution {

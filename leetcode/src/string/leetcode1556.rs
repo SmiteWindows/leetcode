@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/thousand-separator/
+// https://leetcode-cn.com/problems/thousand-separator/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 // ✔

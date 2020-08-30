@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/implement-trie-prefix-tree/
+// https://leetcode-cn.com/problems/implement-trie-prefix-tree/
 // Runtime: 20 ms
 // Memory Usage: 11.7 MB
 use std::collections::HashMap;

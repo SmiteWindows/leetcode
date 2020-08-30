@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/build-array-where-you-can-find-the-maximum-exactly-k-comparisons/
+// https://leetcode-cn.com/problems/build-array-where-you-can-find-the-maximum-exactly-k-comparisons/
 // Runtime: 40 ms
 // Memory Usage: 7 MB
 use std::collections::HashMap;

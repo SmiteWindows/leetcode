@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/concatenated-words/
+// https://leetcode-cn.com/problems/concatenated-words/
 // Runtime: 76 ms
 // Memory Usage: 3.4 MB
 use std::{

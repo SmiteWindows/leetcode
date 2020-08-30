@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/satisfiability-of-equality-equations/
+// https://leetcode-cn.com/problems/satisfiability-of-equality-equations/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn equations_possible(equations: Vec<String>) -> bool {

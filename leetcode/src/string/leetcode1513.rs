@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/number-of-substrings-with-only-1s/
+// https://leetcode-cn.com/problems/number-of-substrings-with-only-1s/
 // Runtime: 4 ms
 // Memory Usage: 2.1 MB
 const MOD: i64 = 1_000_000_007;

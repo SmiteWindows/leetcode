@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/range-sum-query-mutable/
+// https://leetcode-cn.com/problems/range-sum-query-mutable/
 // Runtime: 0 ms
 // Memory Usage: 9.5 MB
 use std::iter::successors;

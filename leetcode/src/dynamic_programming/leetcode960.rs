@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/delete-columns-to-make-sorted-iii/
+// https://leetcode-cn.com/problems/delete-columns-to-make-sorted-iii/
 // Runtime: 4 ms
 // Memory Usage: 2.2 MB
 pub fn min_deletion_size(a: Vec<String>) -> i32 {

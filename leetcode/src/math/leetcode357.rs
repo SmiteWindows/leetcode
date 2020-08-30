@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/count-numbers-with-unique-digits/
+// https://leetcode-cn.com/problems/count-numbers-with-unique-digits/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn count_numbers_with_unique_digits(n: i32) -> i32 {

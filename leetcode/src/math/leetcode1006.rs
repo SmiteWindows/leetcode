@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/clumsy-factorial/
+// https://leetcode-cn.com/problems/clumsy-factorial/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn clumsy(n: i32) -> i32 {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/numbers-with-same-consecutive-differences/
+// https://leetcode-cn.com/problems/numbers-with-same-consecutive-differences/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn nums_same_consec_diff(n: i32, k: i32) -> Vec<i32> {

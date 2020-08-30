@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/max-points-on-a-line/
+// https://leetcode-cn.com/problems/max-points-on-a-line/
 // Runtime: 8 ms
 // Memory Usage: 2 MB
 use std::collections::HashMap;

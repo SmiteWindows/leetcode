@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/check-if-word-is-valid-after-substitutions/
+// https://leetcode-cn.com/problems/check-if-word-is-valid-after-substitutions/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn is_valid(s: String) -> bool {

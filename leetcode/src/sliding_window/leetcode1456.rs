@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/
+// https://leetcode-cn.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/
 // Runtime: 8 ms
 // Memory Usage: 2.7 MB
 pub fn max_vowels(s: String, k: i32) -> i32 {

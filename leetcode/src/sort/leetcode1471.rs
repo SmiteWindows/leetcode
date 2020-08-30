@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/the-k-strongest-values-in-an-array/
+// https://leetcode-cn.com/problems/the-k-strongest-values-in-an-array/
 // Runtime: 60 ms
 // Memory Usage: 3 MB
 pub fn get_strongest(arr: Vec<i32>, k: i32) -> Vec<i32> {

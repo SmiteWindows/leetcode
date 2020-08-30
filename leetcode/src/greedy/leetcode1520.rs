@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/maximum-number-of-non-overlapping-substrings/
+// https://leetcode-cn.com/problems/maximum-number-of-non-overlapping-substrings/
 #[allow(clippy::many_single_char_names)]
 // Runtime: 16 ms
 // Memory Usage: 2.3 MB
