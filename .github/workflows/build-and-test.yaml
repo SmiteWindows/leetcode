@@ -10,6 +10,7 @@ jobs:
   lint:
     name: Lint
     runs-on: ubuntu-latest
+    needs: [compile]
     steps:
       - name: Setup | Checkout
         uses: actions/checkout@v2
@@ -30,6 +31,10 @@ jobs:
         uses: ATiltedTree/setup-rust@v1
         with:
           rust-version: stable
+      - name: Update
+        run: cargo update
+      - name: Tree
+        run: cargo tree
       - name: Build | Compile
         run: cargo check
   test:
