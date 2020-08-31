@@ -1,6 +1,7 @@
 // https://leetcode-cn.com/problems/repeated-substring-pattern/
 // Runtime: 4 ms
-// Memory Usage: 2 MB
+// Memory Usage: 2.1 MB
+use std::convert::identity;
 pub fn repeated_substring_pattern(s: String) -> bool {
     (1..s.len())
         .filter(|&step| s.len() % step == 0)
@@ -9,7 +10,7 @@ pub fn repeated_substring_pattern(s: String) -> bool {
                 .step_by(step)
                 .all(|front| s[front..step + front] == s[..step])
         })
-        .any(|x| x)
+        .any(identity)
 }
 // string
 #[test]

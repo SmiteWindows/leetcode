@@ -1,12 +1,9 @@
 // https://leetcode-cn.com/problems/divide-two-integers/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
+use std::convert::identity;
 pub fn divide(dividend: i32, divisor: i32) -> i32 {
-    if let Some(res) = dividend.checked_div(divisor) {
-        res
-    } else {
-        i32::MAX
-    }
+    dividend.checked_div(divisor).map_or(i32::MAX, identity)
 }
 // math binary_search
 #[test]

@@ -1,8 +1,9 @@
 // https://leetcode-cn.com/problems/search-insert-position/
 // Runtime: 0 ms
-// Memory Usage: 2.2 MB
+// Memory Usage: 2 MB
+use std::convert::identity;
 pub fn search_insert(nums: Vec<i32>, target: i32) -> i32 {
-    nums.binary_search(&target).unwrap_or_else(|x| x) as i32
+    nums.binary_search(&target).unwrap_or_else(identity) as i32
 }
 // binary_search array
 #[test]
