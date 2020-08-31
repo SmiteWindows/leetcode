@@ -11,10 +11,9 @@ pub fn get_max_len(nums: Vec<i32>) -> i32 {
 fn max_length(v: &[i32]) -> i32 {
     let mut neg = 0;
     let mut res = 0;
-    let n = v.len();
     let mut first_neg: Option<usize> = None;
-    for i in 0..n {
-        if v[i] < 0 {
+    for (i, &vi) in v.iter().enumerate() {
+        if vi < 0 {
             neg += 1;
             if first_neg.is_none() {
                 first_neg = Some(i);
@@ -22,10 +21,8 @@ fn max_length(v: &[i32]) -> i32 {
         }
         if neg % 2 == 0 {
             res = res.max((i + 1) as i32);
-        } else {
-            if let Some(j) = first_neg {
-                res = res.max((i - j) as i32);
-            }
+        } else if let Some(j) = first_neg {
+            res = res.max((i - j) as i32);
         }
     }
     res
