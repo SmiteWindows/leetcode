@@ -34,12 +34,10 @@ fn backtrack(
 // array backtracking
 #[test]
 fn test2_39() {
-    assert_eq!(
-        combination_sum(vec![2, 3, 6, 7], 7),
-        vec![vec![2, 2, 3], vec![7]]
-    );
-    assert_eq!(
+    use leetcode_prelude::{assert_eq_sorted, vec2};
+    assert_eq_sorted!(combination_sum(vec![2, 3, 6, 7], 7), vec2![[7], [2, 2, 3]]);
+    assert_eq_sorted!(
         combination_sum(vec![2, 3, 5], 8),
-        vec![vec![2, 2, 2, 2], vec![2, 3, 3], vec![3, 5]]
+        vec2![[2, 2, 2, 2], [2, 3, 3], [3, 5]]
     );
 }

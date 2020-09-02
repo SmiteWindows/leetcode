@@ -28,15 +28,9 @@ fn dfs(start: usize, cur: &mut Vec<i32>, res: &mut Vec<Vec<i32>>, nums: &[i32], 
 // array backtracking
 #[test]
 fn test2_90() {
-    assert_eq!(
+    use leetcode_prelude::{assert_eq_sorted, vec2};
+    assert_eq_sorted!(
         subsets_with_dup(vec![1, 2, 2]),
-        vec![
-            vec![],
-            vec![1],
-            vec![1, 2],
-            vec![1, 2, 2],
-            vec![2],
-            vec![2, 2],
-        ]
+        vec2![[2], [1], [1, 2, 2], [2, 2], [1, 2], []]
     );
 }
