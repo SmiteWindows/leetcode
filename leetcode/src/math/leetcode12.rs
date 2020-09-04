@@ -36,8 +36,8 @@ pub fn int_to_roman(num: i32) -> String {
         (3000, "MMM"),
     ];
     let mut res = "".to_string();
-    for (x, s) in mapping.iter().rev() {
-        if num >= *x {
+    for &(x, s) in mapping.iter().rev() {
+        if num >= x {
             res += s;
             num -= x;
         } else {
