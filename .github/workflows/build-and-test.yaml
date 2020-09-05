@@ -19,24 +19,30 @@ jobs:
         with:
           rust-version: stable
           components: clippy
-      - name: Build | Lint
-        run: cargo clippy
-  compile:
-    name: Compile
-    runs-on: ubuntu-latest
-    steps:
-      - name: Setup | Checkout
-        uses: actions/checkout@v2
-      - name: Setup | Rust
-        uses: ATiltedTree/setup-rust@v1
-        with:
-          rust-version: stable
       - name: Update
         run: cargo update
       - name: Tree
         run: cargo tree
       - name: Build | Compile
         run: cargo check
+      - name: Build | Lint
+        run: cargo clippy
+#   compile:
+#     name: Compile
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Setup | Checkout
+#         uses: actions/checkout@v2
+#       - name: Setup | Rust
+#         uses: ATiltedTree/setup-rust@v1
+#         with:
+#           rust-version: stable
+#       - name: Update
+#         run: cargo update
+#       - name: Tree
+#         run: cargo tree
+#       - name: Build | Compile
+#         run: cargo check
   test:
     name: Test
     strategy:
@@ -49,7 +55,7 @@ jobs:
           - beta
           - nightly
     runs-on: ${{ matrix.os }}
-    needs: [compile]
+#     needs: [compile]
     steps:
       - name: Setup | Checkout
         uses: actions/checkout@v2
