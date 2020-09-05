@@ -64,8 +64,6 @@ jobs:
         with:
           rust-version: ${{ matrix.rust }}
           components: clippy
-      - name: Build | Compile
-        run: cargo test
       - name: Update
         run: cargo update
       - name: Tree
@@ -74,3 +72,5 @@ jobs:
         run: cargo check
       - name: Build | Lint
         run: cargo clippy
+      - name: Build | Compile
+        run: cargo test
