@@ -7,6 +7,7 @@ pub mod leetcode390;
 pub mod leetcode395;
 pub mod leetcode412;
 pub mod leetcode419;
+pub mod leetcode420;
 pub mod leetcode433;
 pub mod leetcode479;
 pub mod leetcode481;
