@@ -1,7 +1,7 @@
 // https://leetcode-cn.com/problems/reaching-points/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
-pub fn reaching_points(sx: i32, sy: i32,mut tx: i32,mut ty: i32) -> bool {
+pub fn reaching_points(sx: i32, sy: i32, mut tx: i32, mut ty: i32) -> bool {
     while sx < tx && sy < ty {
         if tx < ty {
             ty %= tx;

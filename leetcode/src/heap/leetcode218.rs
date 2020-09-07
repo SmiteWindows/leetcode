@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/the-skyline-problem/
 // Runtime: 0 ms
 // Memory Usage: 3.6 MB
-use std::cmp::Ordering::*;
-use std::collections::VecDeque;
+use std::{cmp::Ordering::*, collections::VecDeque};
 pub fn get_skyline(buildings: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
     if buildings.is_empty() {
         return vec![];

@@ -2,8 +2,8 @@
 // Runtime: 24 ms
 // Memory Usage: 4.4 MB
 const MOD: i64 = 1_000_000_007;
-pub fn check_record(n: i32) -> i32 {   
-     let n = n as usize;
+pub fn check_record(n: i32) -> i32 {
+    let n = n as usize;
     if n == 1 {
         return 3;
     }

@@ -28,9 +28,7 @@ fn dp(
     let mut res = dp(start + 1, end, 0, memo, boxes) + (k + 1) * (k + 1);
     for i in start + 1..end {
         if boxes[i] == boxes[start] {
-            res = res.max(
-                dp(i, end, k + 1, memo, boxes) + dp(start + 1, i, 0, memo, boxes),
-            );
+            res = res.max(dp(i, end, k + 1, memo, boxes) + dp(start + 1, i, 0, memo, boxes));
         }
     }
     memo.insert((start, end, k), res);

@@ -1,10 +1,36 @@
 // https://leetcode-cn.com/problems/minimum-number-of-taps-to-open-to-water-a-garden/
+// Runtime: 0 ms
+// Memory Usage: 2.3 MB
 pub fn min_taps(n: i32, ranges: Vec<i32>) -> i32 {
-    todo!()
+    let n = n as usize;
+    let mut jumps = vec![0; n + 1];
+    for i in 0..=n {
+        let d = ranges[i];
+        let l = 0.max(i as i32 - d) as usize;
+        let r = n.min(i + d as usize);
+        jumps[l] = jumps[l].max(r - l);
+    }
+    let mut end = 0;
+    let mut reach = 0;
+    let mut res = 0;
+    for i in 0..n {
+        if i > reach {
+            return -1;
+        }
+        reach = reach.max(i + jumps[i]);
+        if i == end {
+            res += 1;
+            end = reach;
+        }
+    }
+    if reach >= n as usize {
+        res
+    } else {
+        -1
+    }
 }
 // greedy dynamic_programming
 #[test]
-#[ignore]
 fn test1_1326() {
     assert_eq!(min_taps(5, vec![3, 4, 1, 1, 0, 0]), 1);
     assert_eq!(min_taps(3, vec![0, 0, 0, 0]), -1);

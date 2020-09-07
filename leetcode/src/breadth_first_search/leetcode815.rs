@@ -1,9 +1,7 @@
 // https://leetcode-cn.com/problems/bus-routes/
 // Runtime: 56 ms
 // Memory Usage: 17.7 MB
-use std::collections::HashMap;
-use std::collections::HashSet;
-use std::collections::VecDeque;
+use std::collections::{HashMap, HashSet, VecDeque};
 pub fn num_buses_to_destination(routes: Vec<Vec<i32>>, s: i32, t: i32) -> i32 {
     if s == t {
         return 0;
