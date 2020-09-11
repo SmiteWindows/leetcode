@@ -17,7 +17,7 @@ jobs:
       - name: Setup | Rust
         uses: ATiltedTree/setup-rust@v1.0.4
         with:
-          rust-version: stable
+          rust-version: nightly
           components: clippy
       - name: Update
         run: cargo update
