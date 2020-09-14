@@ -39,20 +39,13 @@ fn matches(word: &[char], pattern: &[char], n: usize) -> bool {
 }
 // string
 #[test]
-#[ignore]
 fn test1_890() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
         find_and_replace_pattern(
-            vec![
-                String::from("abc"),
-                String::from("deq"),
-                String::from("mee"),
-                String::from("aqq"),
-                String::from("dkd"),
-                String::from("ccc")
-            ],
-            String::from("abb")
+            vec_string!["abc", "deq", "mee", "aqq", "dkd", "ccc"],
+            "abb".to_string()
         ),
-        vec![String::from("mee"), String::from("aqq")]
+        vec_string!["mee", "aqq"]
     );
 }

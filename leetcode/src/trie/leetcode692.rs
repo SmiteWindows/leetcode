@@ -28,41 +28,19 @@ struct Pair<'a> {
 // hash_table trie heap
 #[test]
 fn test1_692() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
         top_k_frequent(
-            vec![
-                String::from("i"),
-                String::from("love"),
-                String::from("leetcode"),
-                String::from("i"),
-                String::from("love"),
-                String::from("coding"),
-            ],
+            vec_string!["i", "love", "leetcode", "i", "love", "coding"],
             2
         ),
-        vec![String::from("i"), String::from("love")]
+        vec_string!["i", "love"]
     );
     assert_eq!(
         top_k_frequent(
-            vec![
-                String::from("the"),
-                String::from("day"),
-                String::from("is"),
-                String::from("sunny"),
-                String::from("the"),
-                String::from("the"),
-                String::from("the"),
-                String::from("sunny"),
-                String::from("is"),
-                String::from("is"),
-            ],
+            vec_string!["the", "day", "is", "sunny", "the", "the", "the", "sunny", "is", "is"],
             4
         ),
-        vec![
-            String::from("the"),
-            String::from("is"),
-            String::from("sunny"),
-            String::from("day")
-        ]
+        vec_string!["the", "is", "sunny", "day"]
     );
 }

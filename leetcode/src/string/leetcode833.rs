@@ -26,22 +26,23 @@ pub fn find_replace_string(
 // string
 #[test]
 fn test1_833() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
         find_replace_string(
-            String::from("abcd"),
+            "abcd".to_string(),
             vec![0, 2],
-            vec![String::from("a"), String::from("cd")],
-            vec![String::from("eee"), String::from("ffff")]
+            vec_string!["a", "cd"],
+            vec_string!["eee", "ffff"]
         ),
-        String::from("eeebffff")
+        "eeebffff".to_string()
     );
     assert_eq!(
         find_replace_string(
-            String::from("abcd"),
+            "abcd".to_string(),
             vec![0, 2],
-            vec![String::from("ab"), String::from("ec")],
-            vec![String::from("eee"), String::from("ffff")]
+            vec_string!["ab", "ec"],
+            vec_string!["eee", "ffff"]
         ),
-        String::from("eeecd")
+        "eeecd".to_string()
     );
 }

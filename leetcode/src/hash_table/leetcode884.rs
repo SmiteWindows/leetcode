@@ -21,16 +21,17 @@ pub fn uncommon_from_sentences(a: String, b: String) -> Vec<String> {
 // hash_table
 #[test]
 fn test1_884() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
         uncommon_from_sentences(
-            String::from("this apple is sweet"),
-            String::from("this apple is sour")
+            "this apple is sweet".to_string(),
+            "this apple is sour".to_string()
         ),
-        // vec![String::from("sweet"), String::from("sour")]
-        vec![String::from("sour"), String::from("sweet")]
+        // vec!["sweet", "sour")]
+        vec_string!["sour", "sweet"]
     );
     assert_eq!(
-        uncommon_from_sentences(String::from("apple apple"), String::from("banana")),
-        vec![String::from("banana")]
+        uncommon_from_sentences("apple apple".to_string(), "banana".to_string()),
+        vec_string!["banana"]
     );
 }

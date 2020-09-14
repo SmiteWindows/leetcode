@@ -31,21 +31,17 @@ fn permutation(s: &[char], n: usize, i: usize, t: &mut String, res: &mut Vec<Str
 // backtracking bit_manipulation
 #[test]
 fn test1_784() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
         letter_case_permutation(String::from("a1b2")),
-        vec![
-            String::from("a1b2"),
-            String::from("a1B2"),
-            String::from("A1b2"),
-            String::from("A1B2")
-        ]
+        vec_string!["a1b2", "a1B2", "A1b2", "A1B2"]
     );
     assert_eq!(
         letter_case_permutation(String::from("3z4")),
-        vec![String::from("3z4"), String::from("3Z4")]
+        vec_string!["3z4", "3Z4"]
     );
     assert_eq!(
         letter_case_permutation(String::from("12345")),
-        vec![String::from("12345")]
+        vec_string!["12345"]
     );
 }

@@ -6,13 +6,13 @@ pub use crate::{list::ListNode, tree::TreeNode};
 /// Create a Vec<String>
 #[macro_export]
 macro_rules! vec_string {
-    ($($e:tt), *) => {vec![$($e.to_string()), *]};
+    ($($e:tt), *) => {vec![$($e.to_string()), *] as Vec<String>};
 }
 
 /// Create a Vec<Vec<String>>
 #[macro_export]
 macro_rules! vec2_string {
-    ($($e:tt), *) => {vec![$($crate::vec_string!$e), *]};
+    ($($e:tt), *) => {vec![$($crate::vec_string!$e), *] as Vec<Vec<String>>};
 }
 /// Create a Vec<Option<Rc<RefCell<TreeNode>>>>
 #[macro_export]
@@ -34,7 +34,7 @@ macro_rules! vec2_char {
 /// Create a Vec<Vec<i32>>
 #[macro_export]
 macro_rules! vec2 {
-    ($($e:tt), *) => {vec![$(vec!$e), *]};
+    ($($e:tt), *) => {vec![$(vec!$e), *] as Vec<Vec<i32>>};
 }
 
 #[macro_export]

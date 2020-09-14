@@ -30,77 +30,40 @@ pub fn word_subsets(a: Vec<String>, b: Vec<String>) -> Vec<String> {
 // string
 #[test]
 fn test1_916() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
         word_subsets(
-            vec![
-                String::from("amazon"),
-                String::from("apple"),
-                String::from("facebook"),
-                String::from("google"),
-                String::from("leetcode")
-            ],
-            vec![String::from("e"), String::from("o")]
+            vec_string!["amazon", "apple", "facebook", "google", "leetcode"],
+            vec_string!["e", "o"]
         ),
-        vec![
-            String::from("facebook"),
-            String::from("google"),
-            String::from("leetcode")
-        ]
+        vec_string!["facebook", "google", "leetcode"]
     );
     assert_eq!(
         word_subsets(
-            vec![
-                String::from("amazon"),
-                String::from("apple"),
-                String::from("facebook"),
-                String::from("google"),
-                String::from("leetcode")
-            ],
-            vec![String::from("l"), String::from("e")]
+            vec_string!["amazon", "apple", "facebook", "google", "leetcode"],
+            vec_string!["l", "e"]
         ),
-        vec![
-            String::from("apple"),
-            String::from("google"),
-            String::from("leetcode")
-        ]
+        vec_string!["apple", "google", "leetcode"]
     );
     assert_eq!(
         word_subsets(
-            vec![
-                String::from("amazon"),
-                String::from("apple"),
-                String::from("facebook"),
-                String::from("google"),
-                String::from("leetcode")
-            ],
-            vec![String::from("e"), String::from("oo")]
+            vec_string!["amazon", "apple", "facebook", "google", "leetcode"],
+            vec_string!["e", "oo"]
         ),
-        vec![String::from("facebook"), String::from("google")]
+        vec_string!["facebook", "google"]
     );
     assert_eq!(
         word_subsets(
-            vec![
-                String::from("amazon"),
-                String::from("apple"),
-                String::from("facebook"),
-                String::from("google"),
-                String::from("leetcode")
-            ],
-            vec![String::from("lo"), String::from("eo")]
+            vec_string!["amazon", "apple", "facebook", "google", "leetcode"],
+            vec_string!["lo", "eo"]
         ),
-        vec![String::from("google"), String::from("leetcode")]
+        vec_string!["google", "leetcode"]
     );
     assert_eq!(
         word_subsets(
-            vec![
-                String::from("amazon"),
-                String::from("apple"),
-                String::from("facebook"),
-                String::from("google"),
-                String::from("leetcode")
-            ],
-            vec![String::from("ec"), String::from("oc"), String::from("ceo")]
+            vec_string!["amazon", "apple", "facebook", "google", "leetcode"],
+            vec_string!["ec", "oc", "ceo"]
         ),
-        vec![String::from("facebook"), String::from("leetcode")]
+        vec_string!["facebook", "leetcode"]
     );
 }

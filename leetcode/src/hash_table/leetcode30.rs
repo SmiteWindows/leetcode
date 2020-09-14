@@ -42,22 +42,15 @@ pub fn find_substring(s: String, words: Vec<String>) -> Vec<i32> {
 // string two_pointers hash_table
 #[test]
 fn test3_30() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
-        find_substring(
-            String::from("barfoothefoobarman"),
-            vec![String::from("foo"), String::from("bar")]
-        ),
+        find_substring("barfoothefoobarman".to_string(), vec_string!["foo", "bar"]),
         vec![0, 9]
     );
     assert_eq!(
         find_substring(
-            String::from("wordgoodgoodgoodbestword"),
-            vec![
-                String::from("word"),
-                String::from("good"),
-                String::from("best"),
-                String::from("word")
-            ]
+            "wordgoodgoodgoodbestword".to_string(),
+            vec_string!["word", "good", "best", "word"]
         ),
         vec![]
     );

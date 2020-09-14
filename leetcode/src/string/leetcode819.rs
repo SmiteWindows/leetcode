@@ -35,11 +35,12 @@ pub fn most_common_word(paragraph: String, banned: Vec<String>) -> String {
 // string
 #[test]
 fn test1_819() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
         most_common_word(
-            String::from("Bob hit a ball, the hit BALL flew far after it was hit."),
-            vec![String::from("hit")]
+            "Bob hit a ball, the hit BALL flew far after it was hit.".to_string(),
+            vec_string!["hit"]
         ),
-        String::from("ball")
+        "ball".to_string()
     );
 }

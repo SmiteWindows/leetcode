@@ -19,24 +19,8 @@ pub fn min_deletion_size(a: Vec<String>) -> i32 {
 // greedy
 #[test]
 fn test1_944() {
-    assert_eq!(
-        min_deletion_size(vec![
-            String::from("cba"),
-            String::from("daf"),
-            String::from("ghi")
-        ]),
-        1
-    );
-    assert_eq!(
-        min_deletion_size(vec![String::from("a"), String::from("b")]),
-        0
-    );
-    assert_eq!(
-        min_deletion_size(vec![
-            String::from("zyx"),
-            String::from("wvu"),
-            String::from("tsr")
-        ]),
-        3
-    );
+    use leetcode_prelude::vec_string;
+    assert_eq!(min_deletion_size(vec_string!["cba", "daf", "ghi"]), 1);
+    assert_eq!(min_deletion_size(vec_string!["a", "b"]), 0);
+    assert_eq!(min_deletion_size(vec_string!["zyx", "wvu", "tsr"]), 3);
 }

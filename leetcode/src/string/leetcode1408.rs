@@ -13,29 +13,17 @@ pub fn string_matching(words: Vec<String>) -> Vec<String> {
 // string
 #[test]
 fn test1_1408() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
-        string_matching(vec![
-            String::from("mass"),
-            String::from("as"),
-            String::from("hero"),
-            String::from("superhero")
-        ]),
-        vec![String::from("as"), String::from("hero")]
+        string_matching(vec_string!["mass", "as", "hero", "superhero"]),
+        vec!["as", "hero"]
     );
     assert_eq!(
-        string_matching(vec![
-            String::from("leetcode"),
-            String::from("et"),
-            String::from("code")
-        ]),
-        vec![String::from("et"), String::from("code")]
+        string_matching(vec_string!["leetcode", "et", "code"]),
+        vec!["et", "code"]
     );
     assert_eq!(
-        string_matching(vec![
-            String::from("blue"),
-            String::from("green"),
-            String::from("bu")
-        ]),
-        vec![] as Vec<String>
+        string_matching(vec_string!["blue", "green", "bu"]),
+        vec_string![]
     );
 }

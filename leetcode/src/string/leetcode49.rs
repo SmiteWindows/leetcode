@@ -20,23 +20,9 @@ pub fn group_anagrams(strs: Vec<String>) -> Vec<Vec<String>> {
 // hash_table string
 #[test]
 fn test2_49() {
+    use leetcode_prelude::{vec2_string, vec_string};
     assert_eq!(
-        group_anagrams(vec![
-            String::from("eat"),
-            String::from("tea"),
-            String::from("tan"),
-            String::from("ate"),
-            String::from("nat"),
-            String::from("bat")
-        ]),
-        vec![
-            vec![String::from("bat")],
-            vec![String::from("nat"), String::from("tan")],
-            vec![
-                String::from("ate"),
-                String::from("eat"),
-                String::from("tea")
-            ],
-        ]
+        group_anagrams(vec_string!["eat", "tea", "tan", "ate", "nat", "bat"]),
+        vec2_string![["bat"], ["nat", "tan"], ["ate", "eat", "tea"]]
     );
 }

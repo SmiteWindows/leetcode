@@ -42,35 +42,25 @@ pub fn remove_comments(source: Vec<String>) -> Vec<String> {
 // string
 #[test]
 fn test1_722() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
-        remove_comments(vec![
-            String::from("/*Test program */"),
-            String::from("int main()"),
-            String::from("{ "),
-            String::from("  // variable declaration "),
-            String::from("int a, b, c;"),
-            String::from("/* This is a test"),
-            String::from("   multiline  "),
-            String::from("   comment for "),
-            String::from("   testing */"),
-            String::from("a = b + c;"),
-            String::from("}")
+        remove_comments(vec_string![
+            "/*Test program */",
+            "int main()",
+            "{ ",
+            "  // variable declaration ",
+            "int a, b, c;",
+            "/* This is a test",
+            "   multiline  ",
+            "   comment for ",
+            "   testing */",
+            "a = b + c;",
+            "}"
         ]),
-        vec![
-            String::from("int main()"),
-            String::from("{ "),
-            String::from("  "),
-            String::from("int a, b, c;"),
-            String::from("a = b + c;"),
-            String::from("}")
-        ]
+        vec_string!["int main()", "{ ", "  ", "int a, b, c;", "a = b + c;", "}"]
     );
     assert_eq!(
-        remove_comments(vec![
-            String::from("a/*comment"),
-            String::from("line"),
-            String::from("more_comment*/b")
-        ]),
-        vec![String::from("ab")]
+        remove_comments(vec_string!["a/*comment", "line", "more_comment*/b"]),
+        vec_string!["ab"]
     );
 }

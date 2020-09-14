@@ -5,7 +5,7 @@ use std::{cell::RefCell, rc::Rc};
 pub fn print_tree(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<String>> {
     let m = get_height(root.as_deref());
     let n = (1 << m) - 1;
-    let mut res = vec![vec![String::from(""); n]; m];
+    let mut res = vec![vec!["".to_string(); n]; m];
     let len = res[0].len();
     fill(&mut res, root.as_deref(), 0, 0, len);
     res

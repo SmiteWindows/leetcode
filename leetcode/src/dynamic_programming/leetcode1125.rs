@@ -6,50 +6,24 @@ pub fn smallest_sufficient_team(req_skills: Vec<String>, people: Vec<Vec<String>
 #[test]
 #[ignore]
 fn test2_1125() {
+    use leetcode_prelude::{vec2_string, vec_string};
     assert_eq!(
         smallest_sufficient_team(
-            vec![
-                String::from("java"),
-                String::from("nodejs"),
-                String::from("reactjs")
-            ],
-            vec![
-                vec![String::from("java")],
-                vec![String::from("nodejs")],
-                vec![String::from("nodejs"), String::from("reactjs")]
-            ]
+            vec_string!["java", "nodejs", "reactjs"],
+            vec2_string![["java"], ["nodejs"], ["nodejs", "reactjs"]]
         ),
         vec![0, 2]
     );
     assert_eq!(
         smallest_sufficient_team(
-            vec![
-                String::from("algorithms"),
-                String::from("math"),
-                String::from("java"),
-                String::from("reactjs"),
-                String::from("csharp"),
-                String::from("aws")
-            ],
-            vec![
-                vec![
-                    String::from("algorithms"),
-                    String::from("math"),
-                    String::from("java")
-                ],
-                vec![
-                    String::from("algorithms"),
-                    String::from("math"),
-                    String::from("reactjs")
-                ],
-                vec![
-                    String::from("java"),
-                    String::from("csharp"),
-                    String::from("aws")
-                ],
-                vec![String::from("reactjs"), String::from("csharp")],
-                vec![String::from("csharp"), String::from("math")],
-                vec![String::from("aws"), String::from("java")]
+            vec_string!["algorithms", "math", "java", "reactjs", "csharp", "aws"],
+            vec2_string![
+                ["algorithms", "math", "java"],
+                ["algorithms", "math", "reactjs"],
+                ["java", "csharp", "aws"],
+                ["reactjs", "csharp"],
+                ["csharp", "math"],
+                ["aws", "java"]
             ]
         ),
         vec![1, 2]

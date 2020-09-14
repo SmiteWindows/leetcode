@@ -30,36 +30,24 @@ pub fn find_itinerary(tickets: Vec<Vec<String>>) -> Vec<String> {
 // graph depth_first_search
 #[test]
 fn test2_332() {
+    use leetcode_prelude::{vec2_string, vec_string};
     assert_eq!(
-        find_itinerary(vec![
-            vec![String::from("MUC"), String::from("LHR")],
-            vec![String::from("JFK"), String::from("MUC")],
-            vec![String::from("SFO"), String::from("SJC")],
-            vec![String::from("LHR"), String::from("SFO")]
+        find_itinerary(vec2_string![
+            ["MUC", "LHR"],
+            ["JFK", "MUC"],
+            ["SFO", "SJC"],
+            ["LHR", "SFO"]
         ]),
-        vec![
-            String::from("JFK"),
-            String::from("MUC"),
-            String::from("LHR"),
-            String::from("SFO"),
-            String::from("SJC")
-        ]
+        vec_string!["JFK", "MUC", "LHR", "SFO", "SJC"]
     );
     assert_eq!(
-        find_itinerary(vec![
-            vec![String::from("JFK"), String::from("SFO")],
-            vec![String::from("JFK"), String::from("ATL")],
-            vec![String::from("SFO"), String::from("ATL")],
-            vec![String::from("ATL"), String::from("JFK")],
-            vec![String::from("ATL"), String::from("SFO")]
+        find_itinerary(vec2_string![
+            ["JFK", "SFO"],
+            ["JFK", "ATL"],
+            ["SFO", "ATL"],
+            ["ATL", "JFK"],
+            ["ATL", "SFO"]
         ]),
-        vec![
-            String::from("JFK"),
-            String::from("ATL"),
-            String::from("JFK"),
-            String::from("SFO"),
-            String::from("ATL"),
-            String::from("SFO")
-        ]
+        vec_string!["JFK", "ATL", "JFK", "SFO", "ATL", "SFO"]
     );
 }

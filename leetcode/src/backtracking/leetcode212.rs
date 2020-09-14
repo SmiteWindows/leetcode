@@ -68,21 +68,17 @@ impl Trie {
 // backtracking trie
 #[test]
 fn test2_212() {
+    use leetcode_prelude::{vec2_char, vec_string};
     assert_eq!(
         find_words(
-            vec![
-                vec!['o', 'a', 'a', 'n'],
-                vec!['e', 't', 'a', 'e'],
-                vec!['i', 'h', 'k', 'r'],
-                vec!['i', 'f', 'l', 'v']
+            vec2_char![
+                ['o', 'a', 'a', 'n'],
+                ['e', 't', 'a', 'e'],
+                ['i', 'h', 'k', 'r'],
+                ['i', 'f', 'l', 'v']
             ],
-            vec![
-                String::from("oath"),
-                String::from("pea"),
-                String::from("eat"),
-                String::from("rain")
-            ]
+            vec_string!["oath", "pea", "eat", "rain"]
         ),
-        vec![String::from("oath"), String::from("eat")]
+        vec_string!["oath", "eat"]
     );
 }

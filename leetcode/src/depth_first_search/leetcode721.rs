@@ -25,30 +25,4 @@ fn test2_721() {
             ["Mary", "mary@mail.com"]
         ]
     );
-    // assert_eq!(
-    //     accounts_merge(vec![
-    //         vec![
-    //             String::from("John"),
-    //             String::from("johnsmith@mail.com"),
-    //             String::from("john00@mail.com")
-    //         ],
-    //         vec![String::from("John"), String::from("johnnybravo@mail.com")],
-    //         vec![
-    //             String::from("John"),
-    //             String::from("johnsmith@mail.com"),
-    //             String::from("john_newyork@mail.com")
-    //         ],
-    //         vec![String::from("Mary"), String::from("mary@mail.com")],
-    //     ]),
-    //     vec![
-    //         vec![
-    //             String::from("John"),
-    //             String::from("john00@mail.com"),
-    //             String::from("john_newyork@mail.com"),
-    //             String::from("johnsmith@mail.com")
-    //         ],
-    //         vec![String::from("John"), String::from("johnnybravo@mail.com")],
-    //         vec![String::from("Mary"), String::from("mary@mail.com")]
-    //     ]
-    // );
 }

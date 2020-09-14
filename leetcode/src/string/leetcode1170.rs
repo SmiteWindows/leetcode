@@ -29,19 +29,15 @@ fn f(s: &str) -> usize {
 // array string
 #[test]
 fn test1_1170() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
-        num_smaller_by_frequency(vec![String::from("cbd")], vec![String::from("zaaaz")]),
+        num_smaller_by_frequency(vec_string!["cbd"], vec_string!["zaaaz"]),
         vec![1]
     );
     assert_eq!(
         num_smaller_by_frequency(
-            vec![String::from("bbb"), String::from("cc")],
-            vec![
-                String::from("a"),
-                String::from("aa"),
-                String::from("aaa"),
-                String::from("aaaa")
-            ]
+            vec_string!["bbb", "cc"],
+            vec_string!["a", "aa", "aaa", "aaaa"]
         ),
         vec![1, 2]
     );

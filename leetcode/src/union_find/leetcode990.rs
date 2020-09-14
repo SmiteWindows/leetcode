@@ -58,36 +58,19 @@ impl UnionFind {
 // union_find graph
 #[test]
 fn test1_990() {
+    use leetcode_prelude::vec_string;
+    assert_eq!(equations_possible(vec_string!["a==b", "b!=a"]), false);
+    assert_eq!(equations_possible(vec_string!["b==a", "a==b"]), true);
     assert_eq!(
-        equations_possible(vec![String::from("a==b"), String::from("b!=a")]),
-        false
-    );
-    assert_eq!(
-        equations_possible(vec![String::from("b==a"), String::from("a==b")]),
+        equations_possible(vec_string!["a==b", "b==c", "a==c"]),
         true
     );
     assert_eq!(
-        equations_possible(vec![
-            String::from("a==b"),
-            String::from("b==c"),
-            String::from("a==c")
-        ]),
-        true
-    );
-    assert_eq!(
-        equations_possible(vec![
-            String::from("a==b"),
-            String::from("b!=c"),
-            String::from("c==a")
-        ]),
+        equations_possible(vec_string!["a==b", "b!=c", "c==a"]),
         false
     );
     assert_eq!(
-        equations_possible(vec![
-            String::from("c==c"),
-            String::from("b==d"),
-            String::from("x!=z")
-        ]),
+        equations_possible(vec_string!["c==c", "b==d", "x!=z"]),
         true
     );
 }

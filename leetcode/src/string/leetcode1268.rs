@@ -22,80 +22,45 @@ pub fn suggested_products(products: Vec<String>, search_word: String) -> Vec<Vec
 // string
 #[test]
 fn test1_1268() {
+    use leetcode_prelude::{vec2_string, vec_string};
     assert_eq!(
         suggested_products(
-            vec![
-                String::from("mobile"),
-                String::from("mouse"),
-                String::from("moneypot"),
-                String::from("monitor"),
-                String::from("mousepad")
-            ],
-            String::from("mouse")
+            vec_string!["mobile", "mouse", "moneypot", "monitor", "mousepad"],
+            "mouse".to_string()
         ),
-        vec![
-            vec![
-                String::from("mobile"),
-                String::from("moneypot"),
-                String::from("monitor")
-            ],
-            vec![
-                String::from("mobile"),
-                String::from("moneypot"),
-                String::from("monitor")
-            ],
-            vec![String::from("mouse"), String::from("mousepad")],
-            vec![String::from("mouse"), String::from("mousepad")],
-            vec![String::from("mouse"), String::from("mousepad")]
+        vec2_string![
+            ["mobile", "moneypot", "monitor"],
+            ["mobile", "moneypot", "monitor"],
+            ["mouse", "mousepad"],
+            ["mouse", "mousepad"],
+            ["mouse", "mousepad"]
         ]
     );
     assert_eq!(
-        suggested_products(vec![String::from("havana")], String::from("havana")),
-        vec![
-            vec![String::from("havana")],
-            vec![String::from("havana")],
-            vec![String::from("havana")],
-            vec![String::from("havana")],
-            vec![String::from("havana")],
-            vec![String::from("havana")]
+        suggested_products(vec_string!["havana"], "havana".to_string()),
+        vec2_string![
+            ["havana"],
+            ["havana"],
+            ["havana"],
+            ["havana"],
+            ["havana"],
+            ["havana"]
         ]
     );
     assert_eq!(
         suggested_products(
-            vec![
-                String::from("bags"),
-                String::from("baggage"),
-                String::from("banner"),
-                String::from("box"),
-                String::from("cloths")
-            ],
-            String::from("bags")
+            vec_string!["bags", "baggage", "banner", "box", "cloths"],
+            "bags".to_string()
         ),
-        vec![
-            vec![
-                String::from("baggage"),
-                String::from("bags"),
-                String::from("banner")
-            ],
-            vec![
-                String::from("baggage"),
-                String::from("bags"),
-                String::from("banner")
-            ],
-            vec![String::from("baggage"), String::from("bags")],
-            vec![String::from("bags")]
+        vec2_string![
+            ["baggage", "bags", "banner"],
+            ["baggage", "bags", "banner"],
+            ["baggage", "bags"],
+            ["bags"]
         ]
     );
     assert_eq!(
-        suggested_products(vec![String::from("havana")], String::from("tatiana")),
-        vec![
-            vec![] as Vec<String>,
-            vec![] as Vec<String>,
-            vec![] as Vec<String>,
-            vec![] as Vec<String>,
-            vec![] as Vec<String>,
-            vec![] as Vec<String>,
-            vec![] as Vec<String>
-        ]
+        suggested_products(vec_string!["havana"], "tatiana".to_string()),
+        vec2_string![[], [], [], [], [], [], []]
     );
 }

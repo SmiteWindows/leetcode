@@ -4,9 +4,9 @@
 use std::collections::HashMap;
 pub fn find_words(words: Vec<String>) -> Vec<String> {
     let rows = vec![
-        String::from("qwertyuiopQWERTYUIOP"),
-        String::from("asdfghjklASDFGHJKL"),
-        String::from("zxcvbnmZXCVBNM"),
+        "qwertyuiopQWERTYUIOP".to_string(),
+        "asdfghjklASDFGHJKL".to_string(),
+        "zxcvbnmZXCVBNM".to_string(),
     ];
     let mut hm = HashMap::new();
     for (i, row) in rows.iter().enumerate().take(3) {
@@ -29,13 +29,9 @@ pub fn find_words(words: Vec<String>) -> Vec<String> {
 // hash_table
 #[test]
 fn test1_500() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
-        find_words(vec![
-            String::from("Hello"),
-            String::from("Alaska"),
-            String::from("Dad"),
-            String::from("Peace")
-        ]),
-        vec![String::from("Alaska"), String::from("Dad")]
+        find_words(vec_string!["Hello", "Alaska", "Dad", "Peace"]),
+        vec_string!["Alaska", "Dad"]
     );
 }

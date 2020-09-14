@@ -40,32 +40,28 @@ fn nums(ch: &[char]) -> Vec<String> {
 // string
 #[test]
 fn test1_816() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
-        ambiguous_coordinates(String::from("(123)")),
-        vec![
-            String::from("(1, 2.3)"),
-            String::from("(1, 23)"),
-            String::from("(1.2, 3)"),
-            String::from("(12, 3)"),
+        ambiguous_coordinates("(123)".to_string()),
+        vec_string!["(1, 2.3)", "(1, 23)", "(1.2, 3)", "(12, 3)"]
+    );
+    assert_eq!(
+        ambiguous_coordinates("(00011)".to_string()),
+        vec_string!["(0, 0.011)", "(0.001, 1)"]
+    );
+    assert_eq!(
+        ambiguous_coordinates("(0123)".to_string()),
+        vec_string![
+            "(0, 1.23)",
+            "(0, 12.3)",
+            "(0, 123)",
+            "(0.1, 2.3)",
+            "(0.1, 23)",
+            "(0.12, 3)"
         ]
     );
     assert_eq!(
-        ambiguous_coordinates(String::from("(00011)")),
-        vec![String::from("(0, 0.011)"), String::from("(0.001, 1)")]
-    );
-    assert_eq!(
-        ambiguous_coordinates(String::from("(0123)")),
-        vec![
-            String::from("(0, 1.23)"),
-            String::from("(0, 12.3)"),
-            String::from("(0, 123)"),
-            String::from("(0.1, 2.3)"),
-            String::from("(0.1, 23)"),
-            String::from("(0.12, 3)")
-        ]
-    );
-    assert_eq!(
-        ambiguous_coordinates(String::from("(100)")),
-        vec![String::from("(10, 0)")]
+        ambiguous_coordinates("(100)".to_string()),
+        vec_string!["(10, 0)"]
     );
 }

@@ -76,6 +76,6 @@ fn test1_282() {
     );
     assert_eq_sorted!(
         add_operators(String::from("3456237490"), 9191),
-        vec![] as Vec<String>
+        vec_string![]
     );
 }

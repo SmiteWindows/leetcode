@@ -6,40 +6,21 @@ pub fn is_solvable(words: Vec<String>, result: String) -> bool {
 #[test]
 #[ignore]
 fn test2_1307() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
-        is_solvable(
-            vec![String::from("SEND"), String::from("MORE")],
-            String::from("MONEY")
-        ),
+        is_solvable(vec_string!["SEND", "MORE"], String::from("MONEY")),
         true
     );
     assert_eq!(
-        is_solvable(
-            vec![
-                String::from("SIX"),
-                String::from("SEVEN"),
-                String::from("SEVEN")
-            ],
-            String::from("TWENTY")
-        ),
+        is_solvable(vec_string!["SIX", "SEVEN", "SEVEN"], String::from("TWENTY")),
         true
     );
     assert_eq!(
-        is_solvable(
-            vec![
-                String::from("THIS"),
-                String::from("IS"),
-                String::from("TOO")
-            ],
-            String::from("FUNNY")
-        ),
+        is_solvable(vec_string!["THIS", "IS", "TOO"], String::from("FUNNY")),
         true
     );
     assert_eq!(
-        is_solvable(
-            vec![String::from("LEET"), String::from("CODE")],
-            String::from("POINT")
-        ),
+        is_solvable(vec_string!["LEET", "CODE"], String::from("POINT")),
         false
     );
 }

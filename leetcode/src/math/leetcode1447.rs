@@ -31,5 +31,5 @@ fn test1_1447() {
         simplified_fractions(4),
         vec_string!["1/2", "1/3", "1/4", "2/3", "3/4"]
     );
-    assert_eq!(simplified_fractions(1), vec![] as Vec<String>);
+    assert_eq!(simplified_fractions(1), vec_string![]);
 }

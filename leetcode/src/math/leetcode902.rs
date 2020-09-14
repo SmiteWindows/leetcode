@@ -6,23 +6,13 @@ pub fn at_most_n_given_digit_set(d: Vec<String>, n: i32) -> i32 {
 #[test]
 #[ignore]
 fn test1_902() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
-        at_most_n_given_digit_set(
-            vec![
-                String::from("1"),
-                String::from("3"),
-                String::from("5"),
-                String::from("7")
-            ],
-            100
-        ),
+        at_most_n_given_digit_set(vec_string!["1", "3", "5", "7"], 100),
         20
     );
     assert_eq!(
-        at_most_n_given_digit_set(
-            vec![String::from("1"), String::from("4"), String::from("9")],
-            1000000000
-        ),
+        at_most_n_given_digit_set(vec_string!["1", "4", "9"], 1000000000),
         29523
     );
 }

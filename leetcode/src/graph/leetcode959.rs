@@ -80,24 +80,10 @@ impl UnionFind {
 // union_find depth_first_search graph
 #[test]
 fn test2_959() {
-    assert_eq!(
-        regions_by_slashes(vec![String::from(" /"), String::from("/ ")]),
-        2
-    );
-    assert_eq!(
-        regions_by_slashes(vec![String::from(" /"), String::from("  ")]),
-        1
-    );
-    assert_eq!(
-        regions_by_slashes(vec![String::from("\\/"), String::from("/\\")]),
-        4
-    );
-    assert_eq!(
-        regions_by_slashes(vec![String::from("/\\"), String::from("\\/")]),
-        5
-    );
-    assert_eq!(
-        regions_by_slashes(vec![String::from("//"), String::from("/ ")]),
-        3
-    );
+    use leetcode_prelude::vec_string;
+    assert_eq!(regions_by_slashes(vec_string![" /", "/ "]), 2);
+    assert_eq!(regions_by_slashes(vec_string![" /", "  "]), 1);
+    assert_eq!(regions_by_slashes(vec_string!["\\/", "/\\"]), 4);
+    assert_eq!(regions_by_slashes(vec_string!["/\\", "\\/"]), 5);
+    assert_eq!(regions_by_slashes(vec_string!["//", "/ "]), 3);
 }

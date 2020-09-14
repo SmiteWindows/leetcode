@@ -20,30 +20,19 @@ pub fn word_break(s: String, word_dict: Vec<String>) -> bool {
 // dynamic_programming
 #[test]
 fn test1_139() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
-        word_break(
-            String::from("leetcode"),
-            vec![String::from("leet"), String::from("code")]
-        ),
+        word_break("leetcode".to_string(), vec_string!["leet", "code"]),
+        true
+    );
+    assert_eq!(
+        word_break("applepenapple".to_string(), vec_string!["apple", "pen"]),
         true
     );
     assert_eq!(
         word_break(
-            String::from("applepenapple"),
-            vec![String::from("apple"), String::from("pen")]
-        ),
-        true
-    );
-    assert_eq!(
-        word_break(
-            String::from("catsandog"),
-            vec![
-                String::from("cats"),
-                String::from("dog"),
-                String::from("sand"),
-                String::from("and"),
-                String::from("cat")
-            ]
+            "catsandog".to_string(),
+            vec_string!["cats", "dog", "sand", "and", "cat"]
         ),
         false
     );

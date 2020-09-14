@@ -61,47 +61,30 @@ fn dfs(
 // backtracking dynamic_programming
 #[test]
 fn test1_140() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
         word_break(
-            String::from("catsanddog"),
-            vec![
-                String::from("cat"),
-                String::from("cats"),
-                String::from("and"),
-                String::from("sand"),
-                String::from("dog")
-            ]
+            "catsanddog".to_string(),
+            vec_string!["cat", "cats", "and", "sand", "dog"]
         ),
-        vec![String::from("cat sand dog"), String::from("cats and dog")]
+        vec_string!["cat sand dog", "cats and dog"]
     );
     assert_eq!(
         word_break(
-            String::from("pineapplepenapple"),
-            vec![
-                String::from("apple"),
-                String::from("pen"),
-                String::from("applepen"),
-                String::from("pine"),
-                String::from("pineapple")
-            ]
+            "pineapplepenapple".to_string(),
+            vec_string!["apple", "pen", "applepen", "pine", "pineapple"]
         ),
-        vec![
-            String::from("pine apple pen apple"),
-            String::from("pine applepen apple"),
-            String::from("pineapple pen apple"),
+        vec_string![
+            "pine apple pen apple",
+            "pine applepen apple",
+            "pineapple pen apple"
         ]
     );
     assert_eq!(
         word_break(
-            String::from("catsandog"),
-            vec![
-                String::from("cats"),
-                String::from("dog"),
-                String::from("sand"),
-                String::from("and"),
-                String::from("cat")
-            ]
+            "catsandog".to_string(),
+            vec_string!["cats", "dog", "sand", "and", "cat"]
         ),
-        vec![] as Vec<String>
+        vec_string![]
     );
 }

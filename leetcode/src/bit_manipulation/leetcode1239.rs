@@ -36,25 +36,8 @@ fn dfs(start: usize, cur: u32, max: &mut u32, arr: &[u32], n: usize) {
 // backtracking bit_manipulation
 #[test]
 fn test2_1239() {
-    assert_eq!(
-        max_length(vec![
-            String::from("un"),
-            String::from("iq"),
-            String::from("ue")
-        ]),
-        4
-    );
-    assert_eq!(
-        max_length(vec![
-            String::from("cha"),
-            String::from("r"),
-            String::from("act"),
-            String::from("ers")
-        ]),
-        6
-    );
-    assert_eq!(
-        max_length(vec![String::from("abcdefghijklmnopqrstuvwxyz")]),
-        26
-    );
+    use leetcode_prelude::vec_string;
+    assert_eq!(max_length(vec_string!["un", "iq", "ue"]), 4);
+    assert_eq!(max_length(vec_string!["cha", "r", "act", "ers"]), 6);
+    assert_eq!(max_length(vec_string!["abcdefghijklmnopqrstuvwxyz"]), 26);
 }

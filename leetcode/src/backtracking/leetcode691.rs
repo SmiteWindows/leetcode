@@ -6,22 +6,16 @@ pub fn min_stickers(stickers: Vec<String>, target: String) -> i32 {
 #[test]
 #[ignore]
 fn test1_691() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
         min_stickers(
-            vec![
-                String::from("with"),
-                String::from("example"),
-                String::from("science")
-            ],
-            String::from("thehat")
+            vec_string!["with", "example", "science"],
+            "thehat".to_string()
         ),
         3
     );
     assert_eq!(
-        min_stickers(
-            vec![String::from("notice"), String::from("possible")],
-            String::from("basicbasic")
-        ),
+        min_stickers(vec_string!["notice", "possible"], "basicbasic".to_string()),
         -1
     );
 }

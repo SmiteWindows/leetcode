@@ -51,26 +51,10 @@ fn dp(
 // dynamic_programming
 #[test]
 fn test1_474() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
-        find_max_form(
-            vec![
-                String::from("10"),
-                String::from("0001"),
-                String::from("111001"),
-                String::from("1"),
-                String::from("0")
-            ],
-            5,
-            3
-        ),
+        find_max_form(vec_string!["10", "0001", "111001", "1", "0"], 5, 3),
         4
     );
-    assert_eq!(
-        find_max_form(
-            vec![String::from("10"), String::from("0"), String::from("1")],
-            1,
-            1
-        ),
-        2
-    );
+    assert_eq!(find_max_form(vec_string!["10", "0", "1"], 1, 1), 2);
 }

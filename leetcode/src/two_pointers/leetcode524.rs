@@ -6,23 +6,16 @@ pub fn find_longest_word(s: String, d: Vec<String>) -> String {
 #[test]
 #[ignore]
 fn test1_524() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
         find_longest_word(
-            String::from("abpcplea"),
-            vec![
-                String::from("ale"),
-                String::from("apple"),
-                String::from("monkey"),
-                String::from("plea")
-            ]
+            "abpcplea".to_string(),
+            vec_string!["ale", "apple", "monkey", "plea"]
         ),
-        String::from("apple")
+        "apple".to_string()
     );
     assert_eq!(
-        find_longest_word(
-            String::from("abpcplea"),
-            vec![String::from("a"), String::from("b"), String::from("c")]
-        ),
-        String::from("a")
+        find_longest_word("abpcplea".to_string(), vec_string!["a", "b", "c"]),
+        "a".to_string()
     );
 }

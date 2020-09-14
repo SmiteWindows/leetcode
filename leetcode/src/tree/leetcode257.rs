@@ -43,6 +43,7 @@ impl TreeNode {
 // tree depth_first_search
 #[test]
 fn test1_257() {
+    use leetcode_prelude::vec_string;
     let root = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
         left: Some(Rc::new(RefCell::new(TreeNode {
@@ -52,6 +53,5 @@ fn test1_257() {
         }))),
         right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
     })));
-    let res = vec![String::from("1->2->5"), String::from("1->3")];
-    assert_eq!(res, binary_tree_paths(root));
+    assert_eq!(binary_tree_paths(root), vec_string!["1->2->5", "1->3"]);
 }

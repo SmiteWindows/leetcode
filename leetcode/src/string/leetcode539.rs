@@ -46,8 +46,6 @@ fn clock_to_minute(s: String) -> usize {
 // string
 #[test]
 fn test1_539() {
-    assert_eq!(
-        find_min_difference(vec![String::from("23:59"), String::from("00:00")]),
-        1
-    );
+    use leetcode_prelude::vec_string;
+    assert_eq!(find_min_difference(vec_string!["23:59", "00:00"]), 1);
 }

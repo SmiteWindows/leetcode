@@ -128,6 +128,6 @@ fn test4_126() {
             String::from("cog"),
             vec_string!["hot", "dot", "dog", "lot", "log"]
         ),
-        vec![] as Vec<Vec<String>>
+        vec2_string![]
     );
 }

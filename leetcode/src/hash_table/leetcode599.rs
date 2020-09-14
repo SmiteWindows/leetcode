@@ -26,37 +26,24 @@ pub fn find_restaurant(list1: Vec<String>, list2: Vec<String>) -> Vec<String> {
 // hash_table
 #[test]
 fn test1_599() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
         find_restaurant(
-            vec![
-                String::from("Shogun"),
-                String::from("Tapioca Express"),
-                String::from("Burger King"),
-                String::from("KFC")
-            ],
-            vec![
-                String::from("Piatti"),
-                String::from("The Grill at Torrey Pines"),
-                String::from("Hungry Hunter Steakhouse"),
-                String::from("Shogun")
+            vec_string!["Shogun", "Tapioca Express", "Burger King", "KFC"],
+            vec_string![
+                "Piatti",
+                "The Grill at Torrey Pines",
+                "Hungry Hunter Steakhouse",
+                "Shogun"
             ]
         ),
-        vec![String::from("Shogun")]
+        vec_string!["Shogun"]
     );
     assert_eq!(
         find_restaurant(
-            vec![
-                String::from("Shogun"),
-                String::from("Tapioca Express"),
-                String::from("Burger King"),
-                String::from("KFC")
-            ],
-            vec![
-                String::from("KFC"),
-                String::from("Shogun"),
-                String::from("Burger King")
-            ]
+            vec_string!["Shogun", "Tapioca Express", "Burger King", "KFC"],
+            vec_string!["KFC", "Shogun", "Burger King"]
         ),
-        vec![String::from("Shogun")]
+        vec_string!["Shogun"]
     );
 }
