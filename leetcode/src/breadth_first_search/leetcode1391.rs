@@ -56,20 +56,13 @@ impl Connect for i32 {
 // depth_first_search breadth_first_search
 #[test]
 fn test2_1391() {
-    assert_eq!(has_valid_path(vec![vec![2, 4, 3], vec![6, 5, 2]]), true);
-    assert_eq!(has_valid_path(vec![vec![1, 2, 1], vec![1, 2, 1]]), false);
-    assert_eq!(has_valid_path(vec![vec![1, 1, 2]]), false);
-    assert_eq!(has_valid_path(vec![vec![1, 1, 1, 1, 1, 1, 3]]), true);
+    use leetcode_prelude::vec2;
+    assert_eq!(has_valid_path(vec2![[2, 4, 3], [6, 5, 2]]), true);
+    assert_eq!(has_valid_path(vec2![[1, 2, 1], [1, 2, 1]]), false);
+    assert_eq!(has_valid_path(vec2![[1, 1, 2]]), false);
+    assert_eq!(has_valid_path(vec2![[1, 1, 1, 1, 1, 1, 3]]), true);
     assert_eq!(
-        has_valid_path(vec![
-            vec![2],
-            vec![2],
-            vec![2],
-            vec![2],
-            vec![2],
-            vec![2],
-            vec![6],
-        ]),
+        has_valid_path(vec2![[2], [2], [2], [2], [2], [2], [6]]),
         true
     );
 }

@@ -60,11 +60,9 @@ fn ones(mat: &[Vec<i32>], n: usize, m: usize) -> usize {
 // breadth_first_search
 #[test]
 fn test1_1284() {
-    assert_eq!(min_flips(vec![vec![0, 0], vec![0, 1]]), 3);
-    assert_eq!(min_flips(vec![vec![0]]), 0);
-    assert_eq!(
-        min_flips(vec![vec![1, 1, 1], vec![1, 0, 1], vec![0, 0, 0]]),
-        6
-    );
-    assert_eq!(min_flips(vec![vec![1, 0, 0], vec![1, 0, 0]]), -1);
+    use leetcode_prelude::vec2;
+    assert_eq!(min_flips(vec2![[0, 0], [0, 1]]), 3);
+    assert_eq!(min_flips(vec2![[0]]), 0);
+    assert_eq!(min_flips(vec2![[1, 1, 1], [1, 0, 1], [0, 0, 0]]), 6);
+    assert_eq!(min_flips(vec2![[1, 0, 0], [1, 0, 0]]), -1);
 }

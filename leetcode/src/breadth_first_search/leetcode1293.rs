@@ -6,21 +6,13 @@ pub fn shortest_path(grid: Vec<Vec<i32>>, k: i32) -> i32 {
 #[test]
 #[ignore]
 fn test1_1293() {
+    use leetcode_prelude::vec2;
     assert_eq!(
         shortest_path(
-            vec![
-                vec![0, 0, 0],
-                vec![1, 1, 0],
-                vec![0, 0, 0],
-                vec![0, 1, 1],
-                vec![0, 0, 0]
-            ],
+            vec2![[0, 0, 0], [1, 1, 0], [0, 0, 0], [0, 1, 1], [0, 0, 0]],
             1
         ),
         6
     );
-    assert_eq!(
-        shortest_path(vec![vec![0, 1, 1], vec![1, 1, 1], vec![1, 0, 0]], 1),
-        -1
-    );
+    assert_eq!(shortest_path(vec2![[0, 1, 1], [1, 1, 1], [1, 0, 0]], 1), -1);
 }

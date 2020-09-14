@@ -21,13 +21,14 @@ pub fn find_right_interval(intervals: Vec<Vec<i32>>) -> Vec<i32> {
 // binary_search
 #[test]
 fn test1_436() {
-    assert_eq!(find_right_interval(vec![vec![1, 2]]), vec![-1]);
+    use leetcode_prelude::vec2;
+    assert_eq!(find_right_interval(vec2![[1, 2]]), [-1]);
     assert_eq!(
-        find_right_interval(vec![vec![3, 4], vec![2, 3], vec![1, 2]]),
+        find_right_interval(vec2![[3, 4], [2, 3], [1, 2]]),
         vec![-1, 0, 1]
     );
     assert_eq!(
-        find_right_interval(vec![vec![1, 4], vec![2, 3], vec![3, 4]]),
+        find_right_interval(vec2![[1, 4], [2, 3], [3, 4]]),
         vec![-1, 2, -1]
     );
 }

@@ -6,12 +6,13 @@ pub fn is_escape_possible(blocked: Vec<Vec<i32>>, source: Vec<i32>, target: Vec<
 #[test]
 #[ignore]
 fn test1_1036() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        is_escape_possible(vec![vec![0, 1], vec![1, 0]], vec![0, 0], vec![0, 2]),
+        is_escape_possible(vec2![[0, 1], [1, 0]], vec![0, 0], vec![0, 2]),
         false
     );
     assert_eq!(
-        is_escape_possible(vec![vec![]], vec![0, 0], vec![999999, 999999]),
+        is_escape_possible(vec2![[]], vec![0, 0], vec![999999, 999999]),
         true
     );
 }

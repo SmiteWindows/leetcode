@@ -1,6 +1,7 @@
 // https://leetcode-cn.com/problems/is-graph-bipartite/
 // Runtime: 12 ms
 // Memory Usage: 2.3 MB
+use std::collections::HashSet;
 pub fn is_bipartite(graph: Vec<Vec<i32>>) -> bool {
     let n = graph.len();
     let mut g = Graph::new(n);
@@ -16,8 +17,6 @@ pub fn is_bipartite(graph: Vec<Vec<i32>>) -> bool {
     }
     true
 }
-
-use std::collections::HashSet;
 
 struct Graph {
     edges: Vec<HashSet<usize>>,
@@ -53,12 +52,10 @@ impl Graph {
 // graph depth_first_search breadth_first_search
 #[test]
 fn test3_785() {
+    use leetcode_prelude::vec2;
+    assert_eq!(is_bipartite(vec2![[1, 3], [0, 2], [1, 3], [0, 2]]), true);
     assert_eq!(
-        is_bipartite(vec![vec![1, 3], vec![0, 2], vec![1, 3], vec![0, 2]]),
-        true
-    );
-    assert_eq!(
-        is_bipartite(vec![vec![1, 2, 3], vec![0, 2], vec![0, 1, 3], vec![0, 2]]),
+        is_bipartite(vec2![[1, 2, 3], [0, 2], [0, 1, 3], [0, 2]]),
         false
     );
 }

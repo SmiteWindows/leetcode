@@ -51,22 +51,15 @@ fn dfs(i: usize, j: usize, matrix: &[Vec<i32>], visited: &mut Vec<Vec<bool>>) {
 // depth_first_search breadth_first_search
 #[test]
 fn test2_417() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        pacific_atlantic(vec![
-            vec![1, 2, 2, 3, 5],
-            vec![3, 2, 3, 4, 4],
-            vec![2, 4, 5, 3, 1],
-            vec![6, 7, 1, 4, 5],
-            vec![5, 1, 1, 2, 4]
+        pacific_atlantic(vec2![
+            [1, 2, 2, 3, 5],
+            [3, 2, 3, 4, 4],
+            [2, 4, 5, 3, 1],
+            [6, 7, 1, 4, 5],
+            [5, 1, 1, 2, 4]
         ]),
-        vec![
-            vec![0, 4],
-            vec![1, 3],
-            vec![1, 4],
-            vec![2, 2],
-            vec![3, 0],
-            vec![3, 1],
-            vec![4, 0]
-        ]
+        vec2![[0, 4], [1, 3], [1, 4], [2, 2], [3, 0], [3, 1], [4, 0]]
     );
 }

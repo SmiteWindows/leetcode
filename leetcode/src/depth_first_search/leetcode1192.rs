@@ -68,8 +68,9 @@ impl Node {
 // depth_first_search
 #[test]
 fn test1_1192() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        critical_connections(4, vec![vec![0, 1], vec![1, 2], vec![2, 0], vec![1, 3]]),
-        vec![vec![1, 3]]
+        critical_connections(4, vec2![vec![0, 1], vec![1, 2], vec![2, 0], vec![1, 3]]),
+        vec2![vec![1, 3]]
     );
 }

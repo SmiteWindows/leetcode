@@ -42,8 +42,9 @@ pub fn num_buses_to_destination(routes: Vec<Vec<i32>>, s: i32, t: i32) -> i32 {
 // breadth_first_search
 #[test]
 fn test1_815() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        num_buses_to_destination(vec![vec![1, 2, 7], vec![3, 6, 7]], 1, 6),
+        num_buses_to_destination(vec2![[1, 2, 7], [3, 6, 7]], 1, 6),
         2
     );
 }

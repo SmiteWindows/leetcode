@@ -40,33 +40,23 @@ fn dfs(
 // breadth_first_search depth_first_search
 #[test]
 fn test1_1519() {
+    use leetcode_prelude::vec2;
     assert_eq!(
         count_sub_trees(
             7,
-            vec![
-                vec![0, 1],
-                vec![0, 2],
-                vec![1, 4],
-                vec![1, 5],
-                vec![2, 3],
-                vec![2, 6]
-            ],
+            vec2![[0, 1], [0, 2], [1, 4], [1, 5], [2, 3], [2, 6]],
             "abaedcd".to_string()
         ),
         vec![2, 1, 1, 1, 1, 1, 1]
     );
     assert_eq!(
-        count_sub_trees(
-            4,
-            vec![vec![0, 1], vec![1, 2], vec![0, 3]],
-            "bbbb".to_string()
-        ),
+        count_sub_trees(4, vec2![[0, 1], [1, 2], [0, 3]], "bbbb".to_string()),
         vec![4, 2, 1, 1]
     );
     assert_eq!(
         count_sub_trees(
             5,
-            vec![vec![0, 1], vec![0, 2], vec![1, 3], vec![0, 4]],
+            vec2![[0, 1], [0, 2], [1, 3], [0, 4]],
             "aabab".to_string()
         ),
         vec![3, 2, 1, 1, 1]
@@ -74,7 +64,7 @@ fn test1_1519() {
     assert_eq!(
         count_sub_trees(
             6,
-            vec![vec![0, 1], vec![0, 2], vec![1, 3], vec![3, 4], vec![4, 5]],
+            vec2![[0, 1], [0, 2], [1, 3], [3, 4], [4, 5]],
             "cbabaa".to_string()
         ),
         vec![1, 2, 1, 1, 2, 1]
@@ -82,14 +72,7 @@ fn test1_1519() {
     assert_eq!(
         count_sub_trees(
             7,
-            vec![
-                vec![0, 1],
-                vec![1, 2],
-                vec![2, 3],
-                vec![3, 4],
-                vec![4, 5],
-                vec![5, 6]
-            ],
+            vec2![[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6]],
             "aaabaaa".to_string()
         ),
         vec![6, 5, 4, 1, 3, 2, 1]

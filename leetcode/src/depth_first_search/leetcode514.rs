@@ -8,7 +8,7 @@ pub fn find_rotate_steps(ring: String, key: String) -> i32 {
     let ring: Vec<char> = ring.chars().collect();
     let key: Vec<char> = key.chars().collect();
     let mut queue: BinaryHeap<(Reverse<i32>, usize, usize)> = BinaryHeap::new();
-    let mut dist = vec![vec![std::i32::MAX; n]; m];
+    let mut dist = vec![vec![i32::MAX; n]; m];
     queue.push((Reverse(0), 0, 0));
     while let Some((Reverse(step), i, size)) = queue.pop() {
         if size == m {

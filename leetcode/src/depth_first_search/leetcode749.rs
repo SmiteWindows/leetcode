@@ -6,24 +6,22 @@ pub fn contain_virus(grid: Vec<Vec<i32>>) -> i32 {
 #[test]
 #[ignore]
 fn test1_749() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        contain_virus(vec![
-            vec![0, 1, 0, 0, 0, 0, 0, 1],
-            vec![0, 1, 0, 0, 0, 0, 0, 1],
-            vec![0, 0, 0, 0, 0, 0, 0, 1],
-            vec![0, 0, 0, 0, 0, 0, 0, 0]
+        contain_virus(vec2![
+            [0, 1, 0, 0, 0, 0, 0, 1],
+            [0, 1, 0, 0, 0, 0, 0, 1],
+            [0, 0, 0, 0, 0, 0, 0, 1],
+            [0, 0, 0, 0, 0, 0, 0, 0]
         ]),
         10
     );
+    assert_eq!(contain_virus(vec2![[1, 1, 1], [1, 0, 1], [1, 1, 1]]), 4);
     assert_eq!(
-        contain_virus(vec![vec![1, 1, 1], vec![1, 0, 1], vec![1, 1, 1]]),
-        4
-    );
-    assert_eq!(
-        contain_virus(vec![
-            vec![1, 1, 1, 0, 0, 0, 0, 0, 0],
-            vec![1, 0, 1, 0, 1, 1, 1, 1, 1],
-            vec![1, 1, 1, 0, 0, 0, 0, 0, 0]
+        contain_virus(vec2![
+            [1, 1, 1, 0, 0, 0, 0, 0, 0],
+            [1, 0, 1, 0, 1, 1, 1, 1, 1],
+            [1, 1, 1, 0, 0, 0, 0, 0, 0]
         ]),
         13
     );

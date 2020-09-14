@@ -6,26 +6,27 @@ pub fn find_critical_and_pseudo_critical_edges(n: i32, edges: Vec<Vec<i32>>) -> 
 #[test]
 #[ignore]
 fn test1_1489() {
+    use leetcode_prelude::vec2;
     assert_eq!(
         find_critical_and_pseudo_critical_edges(
             5,
-            vec![
-                vec![0, 1, 1],
-                vec![1, 2, 1],
-                vec![2, 3, 2],
-                vec![0, 3, 2],
-                vec![0, 4, 3],
-                vec![3, 4, 3],
-                vec![1, 4, 6]
+            vec2![
+                [0, 1, 1],
+                [1, 2, 1],
+                [2, 3, 2],
+                [0, 3, 2],
+                [0, 4, 3],
+                [3, 4, 3],
+                [1, 4, 6]
             ]
         ),
-        vec![vec![0, 1], vec![2, 3, 4, 5]]
+        vec2![[0, 1], [2, 3, 4, 5]]
     );
     assert_eq!(
         find_critical_and_pseudo_critical_edges(
             4,
-            vec![vec![0, 1, 1], vec![1, 2, 1], vec![2, 3, 1], vec![0, 3, 1]]
+            vec2![[0, 1, 1], [1, 2, 1], [2, 3, 1], [0, 3, 1]]
         ),
-        vec![vec![], vec![0, 1, 2, 3]]
+        vec2![[], [0, 1, 2, 3]]
     );
 }

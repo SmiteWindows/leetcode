@@ -6,20 +6,18 @@ pub fn min_cost(grid: Vec<Vec<i32>>) -> i32 {
 #[test]
 #[ignore]
 fn test1_1368() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        min_cost(vec![
-            vec![1, 1, 1, 1],
-            vec![2, 2, 2, 2],
-            vec![1, 1, 1, 1],
-            vec![2, 2, 2, 2]
+        min_cost(vec2![
+            [1, 1, 1, 1],
+            [2, 2, 2, 2],
+            [1, 1, 1, 1],
+            [2, 2, 2, 2]
         ]),
         3
     );
-    assert_eq!(
-        min_cost(vec![vec![1, 1, 3], vec![3, 2, 2], vec![1, 1, 4]]),
-        0
-    );
-    assert_eq!(min_cost(vec![vec![1, 2], vec![4, 3]]), 1);
-    assert_eq!(min_cost(vec![vec![2, 2, 2], vec![2, 2, 2]]), 3);
-    assert_eq!(min_cost(vec![vec![4]]), 0);
+    assert_eq!(min_cost(vec2![[1, 1, 3], [3, 2, 2], [1, 1, 4]]), 0);
+    assert_eq!(min_cost(vec2![[1, 2], [4, 3]]), 1);
+    assert_eq!(min_cost(vec2![[2, 2, 2], [2, 2, 2]]), 3);
+    assert_eq!(min_cost(vec2![[4]]), 0);
 }

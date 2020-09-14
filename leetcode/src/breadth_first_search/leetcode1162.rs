@@ -36,12 +36,7 @@ pub fn max_distance(grid: Vec<Vec<i32>>) -> i32 {
 // graph breadth_first_search
 #[test]
 fn test2_1162() {
-    assert_eq!(
-        max_distance(vec![vec![1, 0, 1], vec![0, 0, 0], vec![1, 0, 1]]),
-        2
-    );
-    assert_eq!(
-        max_distance(vec![vec![1, 0, 0], vec![0, 0, 0], vec![0, 0, 0]]),
-        4
-    );
+    use leetcode_prelude::vec2;
+    assert_eq!(max_distance(vec2![[1, 0, 1], [0, 0, 0], [1, 0, 1]]), 2);
+    assert_eq!(max_distance(vec2![[1, 0, 0], [0, 0, 0], [0, 0, 0]]), 4);
 }

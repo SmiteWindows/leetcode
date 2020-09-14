@@ -20,12 +20,10 @@ pub fn can_visit_all_rooms(rooms: Vec<Vec<i32>>) -> bool {
 // graph depth_first_search
 #[test]
 fn test2_841() {
+    use leetcode_prelude::vec2;
+    assert_eq!(can_visit_all_rooms(vec2![[1], [2], [3], []]), true);
     assert_eq!(
-        can_visit_all_rooms(vec![vec![1], vec![2], vec![3], vec![]]),
-        true
-    );
-    assert_eq!(
-        can_visit_all_rooms(vec![vec![1, 3], vec![3, 0, 1], vec![2], vec![0]]),
+        can_visit_all_rooms(vec2![[1, 3], [3, 0, 1], [2], [0]]),
         false
     );
 }

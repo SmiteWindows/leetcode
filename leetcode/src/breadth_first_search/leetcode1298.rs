@@ -12,12 +12,13 @@ pub fn max_candies(
 #[test]
 #[ignore]
 fn test1_1298() {
+    use leetcode_prelude::vec2;
     assert_eq!(
         max_candies(
             vec![1, 0, 1, 0],
             vec![7, 5, 4, 100],
-            vec![vec![], vec![], vec![1], vec![]],
-            vec![vec![1, 2], vec![3], vec![], vec![]],
+            vec2![[], [], [1], []],
+            vec2![[1, 2], [3], [], []],
             vec![0]
         ),
         16
@@ -26,8 +27,8 @@ fn test1_1298() {
         max_candies(
             vec![1, 0, 0, 0, 0, 0],
             vec![1, 1, 1, 1, 1, 1],
-            vec![vec![1, 2, 3, 4, 5], vec![], vec![], vec![], vec![], vec![]],
-            vec![vec![1, 2, 3, 4, 5], vec![], vec![], vec![], vec![], vec![]],
+            vec2![[1, 2, 3, 4, 5], [], [], [], [], []],
+            vec2![[1, 2, 3, 4, 5], [], [], [], [], []],
             vec![0]
         ),
         6
@@ -36,22 +37,22 @@ fn test1_1298() {
         max_candies(
             vec![1, 1, 1],
             vec![100, 1, 100],
-            vec![vec![], vec![0, 2], vec![]],
-            vec![vec![], vec![], vec![]],
+            vec2![[], [0, 2], []],
+            vec2![[], [], []],
             vec![1]
         ),
         1
     );
     assert_eq!(
-        max_candies(vec![1], vec![100], vec![vec![]], vec![vec![]], vec![]),
+        max_candies(vec![1], vec![100], vec2![[]], vec2![[]], vec![]),
         0
     );
     assert_eq!(
         max_candies(
             vec![1, 1, 1],
             vec![2, 3, 2],
-            vec![vec![], vec![], vec![]],
-            vec![vec![], vec![], vec![]],
+            vec2![[], [], []],
+            vec2![[], [], []],
             vec![2, 1, 0]
         ),
         7

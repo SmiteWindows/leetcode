@@ -75,13 +75,8 @@ struct Orange {
 // breadth_first_search
 #[test]
 fn test1_994() {
-    assert_eq!(
-        oranges_rotting(vec![vec![2, 1, 1], vec![1, 1, 0], vec![0, 1, 1]]),
-        4
-    );
-    assert_eq!(
-        oranges_rotting(vec![vec![2, 1, 1], vec![0, 1, 1], vec![1, 0, 1]]),
-        -1
-    );
-    assert_eq!(oranges_rotting(vec![vec![0, 2]]), 0);
+    use leetcode_prelude::vec2;
+    assert_eq!(oranges_rotting(vec2![[2, 1, 1], [1, 1, 0], [0, 1, 1]]), 4);
+    assert_eq!(oranges_rotting(vec2![[2, 1, 1], [0, 1, 1], [1, 0, 1]]), -1);
+    assert_eq!(oranges_rotting(vec2![[0, 2]]), 0);
 }

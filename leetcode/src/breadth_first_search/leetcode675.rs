@@ -63,16 +63,8 @@ fn bfs(i: usize, j: usize, r: usize, c: usize, forest: &[Vec<i32>], n: usize, m:
 // breadth_first_search
 #[test]
 fn test1_675() {
-    assert_eq!(
-        cut_off_tree(vec![vec![1, 2, 3], vec![0, 0, 4], vec![7, 6, 5]]),
-        6
-    );
-    assert_eq!(
-        cut_off_tree(vec![vec![1, 2, 3], vec![0, 0, 0], vec![7, 6, 5]]),
-        -1
-    );
-    assert_eq!(
-        cut_off_tree(vec![vec![2, 3, 4], vec![0, 0, 5], vec![8, 7, 6]]),
-        6
-    );
+    use leetcode_prelude::vec2;
+    assert_eq!(cut_off_tree(vec2![[1, 2, 3], [0, 0, 4], [7, 6, 5]]), 6);
+    assert_eq!(cut_off_tree(vec2![[1, 2, 3], [0, 0, 0], [7, 6, 5]]), -1);
+    assert_eq!(cut_off_tree(vec2![[2, 3, 4], [0, 0, 5], [8, 7, 6]]), 6);
 }

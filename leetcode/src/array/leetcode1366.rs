@@ -30,42 +30,25 @@ pub fn rank_teams(votes: Vec<String>) -> String {
 // sort array
 #[test]
 fn test2_1366() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
-        rank_teams(vec![
-            String::from("ABC"),
-            String::from("ACB"),
-            String::from("ABC"),
-            String::from("ACB"),
-            String::from("ACB")
-        ]),
+        rank_teams(vec_string!["ABC", "ACB", "ABC", "ACB", "ACB"]),
         String::from("ACB")
     );
     assert_eq!(
-        rank_teams(vec![String::from("WXYZ"), String::from("XYZW")]),
+        rank_teams(vec_string!["WXYZ", "XYZW"]),
         String::from("XWYZ")
     );
     assert_eq!(
-        rank_teams(vec![String::from("ZMNAGUEDSJYLBOPHRQICWFXTVK")]),
+        rank_teams(vec_string!["ZMNAGUEDSJYLBOPHRQICWFXTVK"]),
         String::from("ZMNAGUEDSJYLBOPHRQICWFXTVK")
     );
     assert_eq!(
-        rank_teams(vec![
-            String::from("BCA"),
-            String::from("CAB"),
-            String::from("CBA"),
-            String::from("ABC"),
-            String::from("ACB"),
-            String::from("BAC")
-        ]),
+        rank_teams(vec_string!["BCA", "CAB", "CBA", "ABC", "ACB", "BAC"]),
         String::from("ABC")
     );
     assert_eq!(
-        rank_teams(vec![
-            String::from("M"),
-            String::from("M"),
-            String::from("M"),
-            String::from("M")
-        ]),
+        rank_teams(vec_string!["M", "M", "M", "M"]),
         String::from("M")
     );
 }

@@ -19,18 +19,13 @@ pub fn xor_queries(arr: Vec<i32>, queries: Vec<Vec<i32>>) -> Vec<i32> {
 // bit_manipulation
 #[test]
 fn test1_1310() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        xor_queries(
-            vec![1, 3, 4, 8],
-            vec![vec![0, 1], vec![1, 2], vec![0, 3], vec![3, 3]]
-        ),
+        xor_queries(vec![1, 3, 4, 8], vec2![[0, 1], [1, 2], [0, 3], [3, 3]]),
         vec![2, 7, 14, 8]
     );
     assert_eq!(
-        xor_queries(
-            vec![4, 8, 2, 10],
-            vec![vec![2, 3], vec![1, 3], vec![0, 0], vec![0, 3]]
-        ),
+        xor_queries(vec![4, 8, 2, 10], vec2![[2, 3], [1, 3], [0, 0], [0, 3]]),
         vec![8, 0, 4, 4]
     );
 }

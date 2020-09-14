@@ -37,6 +37,7 @@ fn dfs(edges: &[Vec<usize>], flags: &mut Vec<i32>, i: usize) -> bool {
 // depth_first_search topological_sort graph breadth_first_search
 #[test]
 fn test3_207() {
-    assert_eq!(can_finish(2, vec![vec![1, 0]]), true);
-    assert_eq!(can_finish(2, vec![vec![1, 0], vec![0, 1]]), false);
+    use leetcode_prelude::vec2;
+    assert_eq!(can_finish(2, vec2![[1, 0]]), true);
+    assert_eq!(can_finish(2, vec2![[1, 0], [0, 1]]), false);
 }

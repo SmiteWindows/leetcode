@@ -44,28 +44,15 @@ fn backtrack(v: &mut Vec<Vec<usize>>, map: &[Vec<HashSet<usize>>], row: usize, c
 // bit_manipulation depth_first_search
 #[test]
 fn test1_756() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
-        pyramid_transition(
-            String::from("BCD"),
-            vec![
-                String::from("BCG"),
-                String::from("CDE"),
-                String::from("GEA"),
-                String::from("FFF")
-            ]
-        ),
+        pyramid_transition(String::from("BCD"), vec_string!["BCG", "CDE", "GEA", "FFF"]),
         true
     );
     assert_eq!(
         pyramid_transition(
             String::from("AABA"),
-            vec![
-                String::from("AAA"),
-                String::from("AAB"),
-                String::from("ABA"),
-                String::from("ABB"),
-                String::from("BAC")
-            ]
+            vec_string!["AAA", "AAB", "ABA", "ABB", "BAC"]
         ),
         false
     );

@@ -75,18 +75,16 @@ fn dfs(
 // depth_first_search breadth_first_search
 #[test]
 fn test2_934() {
-    assert_eq!(shortest_bridge(vec![vec![0, 1], vec![1, 0]]), 1);
+    use leetcode_prelude::vec2;
+    assert_eq!(shortest_bridge(vec2![[0, 1], [1, 0]]), 1);
+    assert_eq!(shortest_bridge(vec2![[0, 1, 0], [0, 0, 0], [0, 0, 1]]), 2);
     assert_eq!(
-        shortest_bridge(vec![vec![0, 1, 0], vec![0, 0, 0], vec![0, 0, 1]]),
-        2
-    );
-    assert_eq!(
-        shortest_bridge(vec![
-            vec![1, 1, 1, 1, 1],
-            vec![1, 0, 0, 0, 1],
-            vec![1, 0, 1, 0, 1],
-            vec![1, 0, 0, 0, 1],
-            vec![1, 1, 1, 1, 1]
+        shortest_bridge(vec2![
+            [1, 1, 1, 1, 1],
+            [1, 0, 0, 0, 1],
+            [1, 0, 1, 0, 1],
+            [1, 0, 0, 0, 1],
+            [1, 1, 1, 1, 1]
         ]),
         1
     );

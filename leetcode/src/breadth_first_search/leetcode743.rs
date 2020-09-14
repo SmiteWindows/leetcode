@@ -35,8 +35,9 @@ pub fn network_delay_time(times: Vec<Vec<i32>>, n: i32, k: i32) -> i32 {
 // graph depth_first_search breadth_first_search heap
 #[test]
 fn test2_743() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        network_delay_time(vec![vec![2, 1, 1], vec![2, 3, 1], vec![3, 4, 1]], 4, 2),
+        network_delay_time(vec2![[2, 1, 1], [2, 3, 1], [3, 4, 1]], 4, 2),
         2
     );
 }

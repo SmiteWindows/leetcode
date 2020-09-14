@@ -29,16 +29,9 @@ pub fn num_matching_subseq(s: String, words: Vec<String>) -> i32 {
 // array
 #[test]
 fn test1_792() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
-        num_matching_subseq(
-            String::from("abcde"),
-            vec![
-                String::from("a"),
-                String::from("bb"),
-                String::from("acd"),
-                String::from("ace")
-            ]
-        ),
+        num_matching_subseq(String::from("abcde"), vec_string!["a", "bb", "acd", "ace"]),
         3
     );
 }

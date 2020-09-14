@@ -39,12 +39,13 @@ pub fn update_matrix(matrix: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
 // depth_first_search breadth_first_search
 #[test]
 fn test2_542() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        update_matrix(vec![vec![0, 0, 0], vec![0, 1, 0], vec![0, 0, 0]]),
-        vec![vec![0, 0, 0], vec![0, 1, 0], vec![0, 0, 0]]
+        update_matrix(vec2![[0, 0, 0], [0, 1, 0], [0, 0, 0]]),
+        vec2![[0, 0, 0], [0, 1, 0], [0, 0, 0]]
     );
     assert_eq!(
-        update_matrix(vec![vec![0, 0, 0], vec![0, 1, 0], vec![1, 1, 1]]),
-        vec![vec![0, 0, 0], vec![0, 1, 0], vec![1, 2, 1]]
+        update_matrix(vec2![[0, 0, 0], [0, 1, 0], [1, 1, 1]]),
+        vec2![[0, 0, 0], [0, 1, 0], [1, 2, 1]]
     );
 }

@@ -51,9 +51,10 @@ pub fn shortest_path_binary_matrix(grid: Vec<Vec<i32>>) -> i32 {
 // breadth_first_search
 #[test]
 fn test1_1091() {
-    assert_eq!(shortest_path_binary_matrix(vec![vec![0, 1], vec![1, 0]]), 2);
+    use leetcode_prelude::vec2;
+    assert_eq!(shortest_path_binary_matrix(vec2![[0, 1], [1, 0]]), 2);
     assert_eq!(
-        shortest_path_binary_matrix(vec![vec![0, 0, 0], vec![1, 1, 0], vec![1, 1, 0]]),
+        shortest_path_binary_matrix(vec2![[0, 0, 0], [1, 1, 0], [1, 1, 0]]),
         4
     );
 }

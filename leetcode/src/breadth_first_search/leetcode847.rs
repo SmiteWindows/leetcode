@@ -30,18 +30,10 @@ pub fn shortest_path_length(graph: Vec<Vec<i32>>) -> i32 {
 // dynamic_programming breadth_first_search
 #[test]
 fn test2_847() {
+    use leetcode_prelude::vec2;
+    assert_eq!(shortest_path_length(vec2![[1, 2, 3], [0], [0], [0]]), 4);
     assert_eq!(
-        shortest_path_length(vec![vec![1, 2, 3], vec![0], vec![0], vec![0]]),
-        4
-    );
-    assert_eq!(
-        shortest_path_length(vec![
-            vec![1],
-            vec![0, 2, 4],
-            vec![1, 3, 4],
-            vec![2],
-            vec![1, 2]
-        ]),
+        shortest_path_length(vec2![[1], [0, 2, 4], [1, 3, 4], [2], [1, 2]]),
         4
     );
 }
