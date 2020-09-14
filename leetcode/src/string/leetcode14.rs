@@ -3,7 +3,7 @@
 // Memory Usage: 2.2 MB
 pub fn longest_common_prefix(strs: Vec<String>) -> String {
     if strs.is_empty() {
-        return "");
+        return "".to_string();
     }
     let ss = strs
         .iter()

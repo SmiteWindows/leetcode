@@ -22,7 +22,7 @@ fn helper(t: Option<&RefCell<TreeNode>>) -> String {
             + &helper(n.right.as_deref())
             + ")"
     } else {
-        "")
+        "".to_string()
     }
 }
 

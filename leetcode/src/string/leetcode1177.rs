@@ -19,16 +19,11 @@ pub fn can_make_pali_queries(s: String, queries: Vec<Vec<i32>>) -> Vec<bool> {
 // array string
 #[test]
 fn test1_1177() {
+    use leetcode_prelude::vec2;
     assert_eq!(
         can_make_pali_queries(
-            "abcda"),
-            vec![
-                vec![3, 3, 0],
-                vec![1, 2, 0],
-                vec![0, 3, 1],
-                vec![0, 3, 2],
-                vec![0, 4, 1]
-            ]
+            "abcda".to_string(),
+            vec2![[3, 3, 0], [1, 2, 0], [0, 3, 1], [0, 3, 2], [0, 4, 1]]
         ),
         vec![true, false, false, true, true]
     );

@@ -30,9 +30,6 @@ pub fn longest_palindrome(s: String) -> String {
 // string dynamic_programming
 #[test]
 fn test2_5() {
-    assert_eq!(
-        longest_palindrome("babad")),
-        "bab")
-    );
-    assert_eq!(longest_palindrome("cbbd")), "bb"));
+    assert_eq!(longest_palindrome("babad".to_string()), "bab".to_string());
+    assert_eq!(longest_palindrome("cbbd".to_string()), "bb".to_string());
 }

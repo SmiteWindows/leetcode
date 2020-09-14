@@ -16,15 +16,9 @@ pub fn min_steps(s: String, t: String) -> i32 {
 // string
 #[test]
 fn test1_1347() {
-    assert_eq!(min_steps("bab"), "aba")), 1);
-    assert_eq!(
-        min_steps("leetcode"), "practice")),
-        5
-    );
-    assert_eq!(
-        min_steps("anagram"), "mangaar")),
-        0
-    );
-    assert_eq!(min_steps("xxyyzz"), "xxyyzz")), 0);
-    assert_eq!(min_steps("friend"), "family")), 4);
+    assert_eq!(min_steps("bab".to_string(), "aba".to_string()), 1);
+    assert_eq!(min_steps("leetcode".to_string(), "practice".to_string()), 5);
+    assert_eq!(min_steps("anagram".to_string(), "mangaar".to_string()), 0);
+    assert_eq!(min_steps("xxyyzz".to_string(), "xxyyzz".to_string()), 0);
+    assert_eq!(min_steps("friend".to_string(), "family".to_string()), 4);
 }

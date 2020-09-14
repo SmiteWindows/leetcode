@@ -31,12 +31,9 @@ fn vowel(c: char) -> usize {
 #[test]
 fn test1_1371() {
     assert_eq!(
-        find_the_longest_substring("eleetminicoworoep")),
+        find_the_longest_substring("eleetminicoworoep".to_string()),
         13
     );
-    assert_eq!(
-        find_the_longest_substring("leetcodeisgreat")),
-        5
-    );
-    assert_eq!(find_the_longest_substring("bcbcbc")), 6);
+    assert_eq!(find_the_longest_substring("leetcodeisgreat".to_string()), 5);
+    assert_eq!(find_the_longest_substring("bcbcbc".to_string()), 6);
 }

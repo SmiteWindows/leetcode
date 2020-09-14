@@ -52,9 +52,9 @@ pub fn int_to_roman(num: i32) -> String {
 // math string
 #[test]
 fn test1_12() {
-    assert_eq!(int_to_roman(3), "III"));
-    assert_eq!(int_to_roman(4), "IV"));
-    assert_eq!(int_to_roman(9), "IX"));
-    assert_eq!(int_to_roman(58), "LVIII"));
-    assert_eq!(int_to_roman(1994), "MCMXCIV"));
+    assert_eq!(int_to_roman(3), "III".to_string());
+    assert_eq!(int_to_roman(4), "IV".to_string());
+    assert_eq!(int_to_roman(9), "IX".to_string());
+    assert_eq!(int_to_roman(58), "LVIII".to_string());
+    assert_eq!(int_to_roman(1994), "MCMXCIV".to_string());
 }

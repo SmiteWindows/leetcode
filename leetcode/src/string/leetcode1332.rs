@@ -28,8 +28,8 @@ fn is_palindrome(s: &str) -> bool {
 // string
 #[test]
 fn test1_1332() {
-    assert_eq!(remove_palindrome_sub("ababa")), 1);
-    assert_eq!(remove_palindrome_sub("abb")), 2);
-    assert_eq!(remove_palindrome_sub("baabb")), 2);
-    assert_eq!(remove_palindrome_sub("")), 0);
+    assert_eq!(remove_palindrome_sub("ababa".to_string()), 1);
+    assert_eq!(remove_palindrome_sub("abb".to_string()), 2);
+    assert_eq!(remove_palindrome_sub("baabb".to_string()), 2);
+    assert_eq!(remove_palindrome_sub("".to_string()), 0);
 }

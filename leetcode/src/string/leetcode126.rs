@@ -113,8 +113,8 @@ fn test4_126() {
     use leetcode_prelude::{assert_eq_sorted, vec2_string, vec_string};
     assert_eq_sorted!(
         find_ladders(
-            "hit"),
-            "cog"),
+            "hit".to_string(),
+            "cog".to_string(),
             vec_string!["hot", "dot", "dog", "lot", "log", "cog"]
         ),
         vec2_string![
@@ -124,8 +124,8 @@ fn test4_126() {
     );
     assert_eq!(
         find_ladders(
-            "hit"),
-            "cog"),
+            "hit".to_string(),
+            "cog".to_string(),
             vec_string!["hot", "dot", "dog", "lot", "log"]
         ),
         vec2_string![]

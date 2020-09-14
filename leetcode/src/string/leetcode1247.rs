@@ -23,11 +23,11 @@ pub fn minimum_swap(s1: String, s2: String) -> i32 {
 // greedy string
 #[test]
 fn test2_1247() {
-    assert_eq!(minimum_swap("xx"), "yy")), 1);
-    assert_eq!(minimum_swap("xy"), "yx")), 2);
-    assert_eq!(minimum_swap("xx"), "xy")), -1);
+    assert_eq!(minimum_swap("xx".to_string(), "yy".to_string()), 1);
+    assert_eq!(minimum_swap("xy".to_string(), "yx".to_string()), 2);
+    assert_eq!(minimum_swap("xx".to_string(), "xy".to_string()), -1);
     assert_eq!(
-        minimum_swap("xxyyxyxyxx"), "xyyxyxxxyx")),
+        minimum_swap("xxyyxyxyxx".to_string(), "xyyxyxxxyx".to_string()),
         4
     );
 }

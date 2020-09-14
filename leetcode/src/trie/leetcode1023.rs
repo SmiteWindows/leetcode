@@ -6,42 +6,43 @@ pub fn camel_match(queries: Vec<String>, pattern: String) -> Vec<bool> {
 #[test]
 #[ignore]
 fn test1_1023() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
         camel_match(
-            vec![
-                "FooBar"),
-                "FooBarTest"),
-                "FootBall"),
-                "FrameBuffer"),
-                "ForceFeedBack"),
+            vec_string![
+                "FooBar",
+                "FooBarTest",
+                "FootBall",
+                "FrameBuffer",
+                "ForceFeedBack",
             ],
-            "FB")
+            "FB".to_string()
         ),
         vec![true, false, true, true, false]
     );
     assert_eq!(
         camel_match(
-            vec![
-                "FooBar"),
-                "FooBarTest"),
-                "FootBall"),
-                "FrameBuffer"),
-                "ForceFeedBack"),
+            vec_string![
+                "FooBar",
+                "FooBarTest",
+                "FootBall",
+                "FrameBuffer",
+                "ForceFeedBack",
             ],
-            "FoBa")
+            "FoBa".to_string()
         ),
         vec![true, false, true, false, false]
     );
     assert_eq!(
         camel_match(
-            vec![
-                "FooBar"),
-                "FooBarTest"),
-                "FootBall"),
-                "FrameBuffer"),
-                "ForceFeedBack"),
+            vec_string![
+                "FooBar",
+                "FooBarTest",
+                "FootBall",
+                "FrameBuffer",
+                "ForceFeedBack",
             ],
-            "FoBaT"),
+            "FoBaT".to_string()
         ),
         vec![false, true, false, false, false]
     );

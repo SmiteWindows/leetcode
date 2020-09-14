@@ -34,7 +34,7 @@ pub fn str_str(haystack: String, needle: String) -> i32 {
 // string two_pointers
 #[test]
 fn test1_28() {
-    assert_eq!(str_str("hello"), "ll")), 2);
-    assert_eq!(str_str("aaaaa"), "bba")), -1);
-    assert_eq!(str_str("abb"), "abaaa")), -1);
+    assert_eq!(str_str("hello".to_string(), "ll".to_string()), 2);
+    assert_eq!(str_str("aaaaa".to_string(), "bba".to_string()), -1);
+    assert_eq!(str_str("abb".to_string(), "abaaa".to_string()), -1);
 }

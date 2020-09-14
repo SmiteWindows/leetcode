@@ -18,7 +18,7 @@ pub fn num_steps(s: String) -> i32 {
 // string bit_manipulation
 #[test]
 fn test2_1404() {
-    assert_eq!(num_steps("1101")), 6);
-    assert_eq!(num_steps("10")), 1);
-    assert_eq!(num_steps("1")), 0);
+    assert_eq!(num_steps("1101".to_string()), 6);
+    assert_eq!(num_steps("10".to_string()), 1);
+    assert_eq!(num_steps("1".to_string()), 0);
 }

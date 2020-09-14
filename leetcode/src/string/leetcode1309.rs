@@ -16,16 +16,11 @@ pub fn freq_alphabets(s: String) -> String {
 // string
 #[test]
 fn test1_1309() {
+    assert_eq!(freq_alphabets("10#11#12".to_string()), "jkab".to_string());
+    assert_eq!(freq_alphabets("1326#".to_string()), "acz".to_string());
+    assert_eq!(freq_alphabets("25#".to_string()), "y".to_string());
     assert_eq!(
-        freq_alphabets("10#11#12")),
-        "jkab")
-    );
-    assert_eq!(freq_alphabets("1326#")), "acz"));
-    assert_eq!(freq_alphabets("25#")), "y"));
-    assert_eq!(
-        freq_alphabets(
-            "12345678910#11#12#13#14#15#16#17#18#19#20#21#22#23#24#25#26#"
-        )),
-        "abcdefghijklmnopqrstuvwxyz")
+        freq_alphabets("12345678910#11#12#13#14#15#16#17#18#19#20#21#22#23#24#25#26#".to_string()),
+        "abcdefghijklmnopqrstuvwxyz".to_string()
     );
 }

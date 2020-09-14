@@ -51,15 +51,12 @@ impl Trie {
 // hash_table trie
 #[test]
 fn test1_648() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
         replace_words(
-            vec![
-                "cat"),
-                "bat"),
-                "rat"),
-            ],
-            "the cattle was rattled by the battery")
+            vec_string!["cat", "bat", "rat",],
+            "the cattle was rattled by the battery".to_string()
         ),
-        "the cat was rat by the bat"),
+        "the cat was rat by the bat".to_string(),
     );
 }

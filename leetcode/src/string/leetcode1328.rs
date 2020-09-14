@@ -19,9 +19,6 @@ pub fn break_palindrome(palindrome: String) -> String {
 // string
 #[test]
 fn test1_1328() {
-    assert_eq!(
-        break_palindrome("abccba")),
-        "aaccba")
-    );
-    assert_eq!(break_palindrome("a")), ""));
+    assert_eq!(break_palindrome("abccba".to_string()), "aaccba".to_string());
+    assert_eq!(break_palindrome("a".to_string()), "".to_string());
 }

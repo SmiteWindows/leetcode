@@ -15,8 +15,8 @@ pub fn is_palindrome(s: String) -> bool {
 #[test]
 fn test1_125() {
     assert_eq!(
-        is_palindrome("A man, a plan, a canal: Panama")),
+        is_palindrome("A man, a plan, a canal: Panama".to_string()),
         true
     );
-    assert_eq!(is_palindrome("race a car")), false);
+    assert_eq!(is_palindrome("race a car".to_string()), false);
 }
