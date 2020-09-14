@@ -6,8 +6,6 @@ pub fn cherry_pickup(grid: Vec<Vec<i32>>) -> i32 {
 #[test]
 #[ignore]
 fn test1_741() {
-    assert_eq!(
-        cherry_pickup(vec![vec![0, 1, -1], vec![1, 0, -1], vec![1, 1, 1]]),
-        5
-    );
+    use leetcode_prelude::vec2;
+    assert_eq!(cherry_pickup(vec2![[0, 1, -1], [1, 0, -1], [1, 1, 1]]), 5);
 }

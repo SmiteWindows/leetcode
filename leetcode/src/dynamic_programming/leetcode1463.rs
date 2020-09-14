@@ -64,33 +64,29 @@ fn dp(
 // dynamic_programming
 #[test]
 fn test1_1463() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        cherry_pickup(vec![
-            vec![3, 1, 1],
-            vec![2, 5, 1],
-            vec![1, 5, 5],
-            vec![2, 1, 1]
-        ]),
+        cherry_pickup(vec2![[3, 1, 1], [2, 5, 1], [1, 5, 5], [2, 1, 1]]),
         24
     );
     assert_eq!(
-        cherry_pickup(vec![
-            vec![1, 0, 0, 0, 0, 0, 1],
-            vec![2, 0, 0, 0, 0, 3, 0],
-            vec![2, 0, 9, 0, 0, 0, 0],
-            vec![0, 3, 0, 5, 4, 0, 0],
-            vec![1, 0, 2, 3, 0, 0, 6]
+        cherry_pickup(vec2![
+            [1, 0, 0, 0, 0, 0, 1],
+            [2, 0, 0, 0, 0, 3, 0],
+            [2, 0, 9, 0, 0, 0, 0],
+            [0, 3, 0, 5, 4, 0, 0],
+            [1, 0, 2, 3, 0, 0, 6]
         ]),
         28
     );
     assert_eq!(
-        cherry_pickup(vec![
-            vec![1, 0, 0, 3],
-            vec![0, 0, 0, 3],
-            vec![0, 0, 3, 3],
-            vec![9, 0, 3, 3]
+        cherry_pickup(vec2![
+            [1, 0, 0, 3],
+            [0, 0, 0, 3],
+            [0, 0, 3, 3],
+            [9, 0, 3, 3]
         ]),
         22
     );
-    assert_eq!(cherry_pickup(vec![vec![1, 1], vec![1, 1]]), 4);
+    assert_eq!(cherry_pickup(vec2![[1, 1], [1, 1]]), 4);
 }

@@ -26,12 +26,10 @@ pub fn count_squares(matrix: Vec<Vec<i32>>) -> i32 {
 // dynamic_programming array
 #[test]
 fn test1_1277() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        count_squares(vec![vec![0, 1, 1, 1], vec![1, 1, 1, 1], vec![0, 1, 1, 1]]),
+        count_squares(vec2![[0, 1, 1, 1], [1, 1, 1, 1], [0, 1, 1, 1]]),
         15
     );
-    assert_eq!(
-        count_squares(vec![vec![1, 0, 1], vec![1, 1, 0], vec![1, 1, 0]]),
-        7
-    );
+    assert_eq!(count_squares(vec2![[1, 0, 1], [1, 1, 0], [1, 1, 0]]), 7);
 }

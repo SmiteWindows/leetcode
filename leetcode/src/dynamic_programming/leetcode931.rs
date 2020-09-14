@@ -26,8 +26,9 @@ pub fn min_falling_path_sum(a: Vec<Vec<i32>>) -> i32 {
 // dynamic_programming
 #[test]
 fn test1_931() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        min_falling_path_sum(vec![vec![1, 2, 3], vec![4, 5, 6], vec![7, 8, 9]]),
+        min_falling_path_sum(vec2![[1, 2, 3], [4, 5, 6], [7, 8, 9]]),
         12
     );
 }

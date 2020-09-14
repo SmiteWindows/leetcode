@@ -76,22 +76,23 @@ fn merge(a: Vec<Vec<i32>>, b: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
 // divide_and_conquer heap binary_indexed_tree segment_tree line_sweep
 #[test]
 fn test2_218() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        get_skyline(vec![
-            vec![2, 9, 10],
-            vec![3, 7, 15],
-            vec![5, 12, 12],
-            vec![15, 20, 10],
-            vec![19, 24, 8]
+        get_skyline(vec2![
+            [2, 9, 10],
+            [3, 7, 15],
+            [5, 12, 12],
+            [15, 20, 10],
+            [19, 24, 8]
         ]),
-        vec![
-            vec![2, 10],
-            vec![3, 15],
-            vec![7, 12],
-            vec![12, 0],
-            vec![15, 10],
-            vec![20, 8],
-            vec![24, 0]
+        vec2![
+            [2, 10],
+            [3, 15],
+            [7, 12],
+            [12, 0],
+            [15, 10],
+            [20, 8],
+            [24, 0]
         ]
     );
 }

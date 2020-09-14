@@ -22,8 +22,6 @@ pub fn max_envelopes(envelopes: Vec<Vec<i32>>) -> i32 {
 // binary_search dynamic_programming
 #[test]
 fn test2_354() {
-    assert_eq!(
-        max_envelopes(vec![vec![5, 4], vec![6, 4], vec![6, 7], vec![2, 3]]),
-        3
-    );
+    use leetcode_prelude::vec2;
+    assert_eq!(max_envelopes(vec2![[5, 4], [6, 4], [6, 7], [2, 3]]), 3);
 }

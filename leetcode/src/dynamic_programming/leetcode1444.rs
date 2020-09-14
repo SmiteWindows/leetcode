@@ -72,37 +72,8 @@ fn dp(
 // dynamic_programming
 #[test]
 fn test1_1444() {
-    assert_eq!(
-        ways(
-            vec![
-                String::from("A.."),
-                String::from("AAA"),
-                String::from("...")
-            ],
-            3
-        ),
-        3
-    );
-    assert_eq!(
-        ways(
-            vec![
-                String::from("A.."),
-                String::from("AA."),
-                String::from("...")
-            ],
-            3
-        ),
-        1
-    );
-    assert_eq!(
-        ways(
-            vec![
-                String::from("A.."),
-                String::from("A.."),
-                String::from("...")
-            ],
-            1
-        ),
-        1
-    );
+    use leetcode_prelude::vec_string;
+    assert_eq!(ways(vec_string!["A..", "AAA", "..."], 3), 3);
+    assert_eq!(ways(vec_string!["A..", "AA.", "..."], 3), 1);
+    assert_eq!(ways(vec_string!["A..", "A..", "..."], 1), 1);
 }

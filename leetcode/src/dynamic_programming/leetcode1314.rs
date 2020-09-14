@@ -53,12 +53,13 @@ fn sum(t: usize, l: usize, b: usize, r: usize, prefix: &[Vec<i32>]) -> i32 {
 // dynamic_programming
 #[test]
 fn test1_1314() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        matrix_block_sum(vec![vec![1, 2, 3], vec![4, 5, 6], vec![7, 8, 9]], 1),
-        vec![vec![12, 21, 16], vec![27, 45, 33], vec![24, 39, 28]]
+        matrix_block_sum(vec2![[1, 2, 3], [4, 5, 6], [7, 8, 9]], 1),
+        vec2![[12, 21, 16], [27, 45, 33], [24, 39, 28]]
     );
     assert_eq!(
-        matrix_block_sum(vec![vec![1, 2, 3], vec![4, 5, 6], vec![7, 8, 9]], 2),
-        vec![vec![45, 45, 45], vec![45, 45, 45], vec![45, 45, 45]]
+        matrix_block_sum(vec2![[1, 2, 3], [4, 5, 6], [7, 8, 9]], 2),
+        vec2![[45, 45, 45], [45, 45, 45], [45, 45, 45]]
     );
 }

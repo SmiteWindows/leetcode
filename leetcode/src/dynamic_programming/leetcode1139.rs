@@ -55,9 +55,10 @@ pub fn largest1_bordered_square(grid: Vec<Vec<i32>>) -> i32 {
 // dynamic_programming
 #[test]
 fn test1_1139() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        largest1_bordered_square(vec![vec![1, 1, 1], vec![1, 0, 1], vec![1, 1, 1]]),
+        largest1_bordered_square(vec2![[1, 1, 1], [1, 0, 1], [1, 1, 1]]),
         9
     );
-    assert_eq!(largest1_bordered_square(vec![vec![1, 1, 0, 0]]), 1);
+    assert_eq!(largest1_bordered_square(vec2![[1, 1, 0, 0]]), 1);
 }

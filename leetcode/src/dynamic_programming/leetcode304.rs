@@ -53,12 +53,13 @@ impl NumMatrix {
 // dynamic_programming
 #[test]
 fn test1_304() {
-    let matrix = vec![
-        vec![3, 0, 1, 4, 2],
-        vec![5, 6, 3, 2, 1],
-        vec![1, 2, 0, 1, 5],
-        vec![4, 1, 0, 1, 7],
-        vec![1, 0, 3, 0, 5],
+    use leetcode_prelude::vec2;
+    let matrix = vec2![
+        [3, 0, 1, 4, 2],
+        [5, 6, 3, 2, 1],
+        [1, 2, 0, 1, 5],
+        [4, 1, 0, 1, 7],
+        [1, 0, 3, 0, 5]
     ];
     let nm = NumMatrix::new(matrix);
     assert_eq!(nm.sum_region(2, 1, 4, 3), 8);

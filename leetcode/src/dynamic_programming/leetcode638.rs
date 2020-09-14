@@ -44,14 +44,15 @@ fn dfs(
 // dynamic_programming depth_first_search
 #[test]
 fn test1_638() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        shopping_offers(vec![2, 5], vec![vec![3, 0, 5], vec![1, 2, 10]], vec![3, 2]),
+        shopping_offers(vec![2, 5], vec2![[3, 0, 5], [1, 2, 10]], vec![3, 2]),
         14
     );
     assert_eq!(
         shopping_offers(
             vec![2, 3, 4],
-            vec![vec![1, 1, 0, 4], vec![2, 2, 1, 9]],
+            vec2![[1, 1, 0, 4], [2, 2, 1, 9]],
             vec![1, 2, 1]
         ),
         11

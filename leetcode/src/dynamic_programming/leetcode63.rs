@@ -25,8 +25,9 @@ pub fn unique_paths_with_obstacles(obstacle_grid: Vec<Vec<i32>>) -> i32 {
 // array dynamic_programming
 #[test]
 fn test1_63() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        unique_paths_with_obstacles(vec![vec![0, 0, 0], vec![0, 1, 0], vec![0, 0, 0]]),
+        unique_paths_with_obstacles(vec2![[0, 0, 0], [0, 1, 0], [0, 0, 0]]),
         2
     );
 }

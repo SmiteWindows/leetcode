@@ -17,8 +17,6 @@ pub fn find_longest_chain(pairs: Vec<Vec<i32>>) -> i32 {
 // dynamic_programming
 #[test]
 fn test1_646() {
-    assert_eq!(
-        find_longest_chain(vec![vec![1, 2], vec![2, 3], vec![3, 4]]),
-        2
-    );
+    use leetcode_prelude::vec2;
+    assert_eq!(find_longest_chain(vec2![[1, 2], [2, 3], [3, 4]]), 2);
 }

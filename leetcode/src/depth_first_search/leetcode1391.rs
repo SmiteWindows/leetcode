@@ -62,7 +62,7 @@ fn test1_1391() {
     assert_eq!(has_valid_path(vec2![[1, 1, 2]]), false);
     assert_eq!(has_valid_path(vec2![[1, 1, 1, 1, 1, 1, 3]]), true);
     assert_eq!(
-        has_valid_path(vec2![[2], [2], [2], [2], [2], [2], [6],]),
+        has_valid_path(vec2![[2], [2], [2], [2], [2], [2], [6]]),
         true
     );
 }

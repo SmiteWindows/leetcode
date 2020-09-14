@@ -27,8 +27,9 @@ pub fn calculate_minimum_hp(dungeon: Vec<Vec<i32>>) -> i32 {
 // binary_search dynamic_programming
 #[test]
 fn test2_174() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        calculate_minimum_hp(vec![vec![-2, -3, 3], vec![-5, -10, 1], vec![10, 30, -5]]),
+        calculate_minimum_hp(vec2![[-2, -3, 3], [-5, -10, 1], [10, 30, -5]]),
         7
     );
 }

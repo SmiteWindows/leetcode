@@ -39,40 +39,29 @@ fn edge(x1: i32, y1: i32, x2: i32, y2: i32) -> f64 {
 // math geometry
 #[test]
 fn test2_963() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        min_area_free_rect(vec![vec![1, 2], vec![2, 1], vec![1, 0], vec![0, 1]]),
+        min_area_free_rect(vec2![[1, 2], [2, 1], [1, 0], [0, 1]]),
         2.0000000000000004
     );
     assert_eq!(
-        min_area_free_rect(vec![
-            vec![0, 1],
-            vec![2, 1],
-            vec![1, 1],
-            vec![1, 0],
-            vec![2, 0]
-        ]),
+        min_area_free_rect(vec2![[0, 1], [2, 1], [1, 1], [1, 0], [2, 0]]),
         1.00000
     );
     assert_eq!(
-        min_area_free_rect(vec![
-            vec![0, 3],
-            vec![1, 2],
-            vec![3, 1],
-            vec![1, 3],
-            vec![2, 1]
-        ]),
+        min_area_free_rect(vec2![[0, 3], [1, 2], [3, 1], [1, 3], [2, 1]]),
         0.00000
     );
     assert_eq!(
-        min_area_free_rect(vec![
-            vec![3, 1],
-            vec![1, 1],
-            vec![0, 1],
-            vec![2, 1],
-            vec![3, 3],
-            vec![3, 2],
-            vec![0, 2],
-            vec![2, 3]
+        min_area_free_rect(vec2![
+            [3, 1],
+            [1, 1],
+            [0, 1],
+            [2, 1],
+            [3, 3],
+            [3, 2],
+            [0, 2],
+            [2, 3]
         ]),
         2.00000
     );

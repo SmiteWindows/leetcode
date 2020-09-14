@@ -78,24 +78,13 @@ struct Edge {
 // heap dynamic_programming breadth_first_search
 #[test]
 fn test3_787() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        find_cheapest_price(
-            3,
-            vec![vec![0, 1, 100], vec![1, 2, 100], vec![0, 2, 500]],
-            0,
-            2,
-            1
-        ),
+        find_cheapest_price(3, vec2![[0, 1, 100], [1, 2, 100], [0, 2, 500]], 0, 2, 1),
         200
     );
     assert_eq!(
-        find_cheapest_price(
-            3,
-            vec![vec![0, 1, 100], vec![1, 2, 100], vec![0, 2, 500]],
-            0,
-            2,
-            0
-        ),
+        find_cheapest_price(3, vec2![[0, 1, 100], [1, 2, 100], [0, 2, 500]], 0, 2, 0),
         500
     );
 }

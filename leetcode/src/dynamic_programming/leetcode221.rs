@@ -25,12 +25,13 @@ pub fn maximal_square(matrix: Vec<Vec<char>>) -> i32 {
 // dynamic_programming
 #[test]
 fn test1_221() {
+    use leetcode_prelude::vec2_char;
     assert_eq!(
-        maximal_square(vec![
-            vec!['1', '0', '1', '0', '0'],
-            vec!['1', '0', '1', '1', '1'],
-            vec!['1', '1', '1', '1', '1'],
-            vec!['1', '0', '0', '1', '0']
+        maximal_square(vec2_char![
+            ['1', '0', '1', '0', '0'],
+            ['1', '0', '1', '1', '1'],
+            ['1', '1', '1', '1', '1'],
+            ['1', '0', '0', '1', '0']
         ]),
         4
     );

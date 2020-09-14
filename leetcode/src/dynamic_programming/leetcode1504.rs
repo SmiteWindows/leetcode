@@ -25,17 +25,12 @@ pub fn num_submat(mat: Vec<Vec<i32>>) -> i32 {
 // dynamic_programming
 #[test]
 fn test1_1504() {
+    use leetcode_prelude::vec2;
+    assert_eq!(num_submat(vec2![[1, 0, 1], [1, 1, 0], [1, 1, 0]]), 13);
     assert_eq!(
-        num_submat(vec![vec![1, 0, 1], vec![1, 1, 0], vec![1, 1, 0]]),
-        13
-    );
-    assert_eq!(
-        num_submat(vec![vec![0, 1, 1, 0], vec![0, 1, 1, 1], vec![1, 1, 1, 0]]),
+        num_submat(vec2![[0, 1, 1, 0], [0, 1, 1, 1], [1, 1, 1, 0]]),
         24
     );
-    assert_eq!(num_submat(vec![vec![1, 1, 1, 1, 1, 1]]), 21);
-    assert_eq!(
-        num_submat(vec![vec![1, 0, 1], vec![0, 1, 0], vec![1, 0, 1]]),
-        5
-    );
+    assert_eq!(num_submat(vec2![[1, 1, 1, 1, 1, 1]]), 21);
+    assert_eq!(num_submat(vec2![[1, 0, 1], [0, 1, 0], [1, 0, 1]]), 5);
 }

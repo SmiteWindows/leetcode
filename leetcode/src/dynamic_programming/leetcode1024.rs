@@ -34,44 +34,35 @@ pub fn video_stitching(clips: Vec<Vec<i32>>, t: i32) -> i32 {
 // dynamic_programming
 #[test]
 fn test1_1024() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        video_stitching(
-            vec![
-                vec![0, 2],
-                vec![4, 6],
-                vec![8, 10],
-                vec![1, 9],
-                vec![1, 5],
-                vec![5, 9]
-            ],
-            10
-        ),
+        video_stitching(vec2![[0, 2], [4, 6], [8, 10], [1, 9], [1, 5], [5, 9]], 10),
         3
     );
-    assert_eq!(video_stitching(vec![vec![0, 1], vec![1, 2]], 5), -1);
+    assert_eq!(video_stitching(vec2![[0, 1], [1, 2]], 5), -1);
     assert_eq!(
         video_stitching(
-            vec![
-                vec![0, 1],
-                vec![6, 8],
-                vec![0, 2],
-                vec![5, 6],
-                vec![0, 4],
-                vec![0, 3],
-                vec![6, 7],
-                vec![1, 3],
-                vec![4, 7],
-                vec![1, 4],
-                vec![2, 5],
-                vec![2, 6],
-                vec![3, 4],
-                vec![4, 5],
-                vec![5, 7],
-                vec![6, 9]
+            vec2![
+                [0, 1],
+                [6, 8],
+                [0, 2],
+                [5, 6],
+                [0, 4],
+                [0, 3],
+                [6, 7],
+                [1, 3],
+                [4, 7],
+                [1, 4],
+                [2, 5],
+                [2, 6],
+                [3, 4],
+                [4, 5],
+                [5, 7],
+                [6, 9]
             ],
             9
         ),
         3
     );
-    assert_eq!(video_stitching(vec![vec![0, 4], vec![2, 8]], 5), 2);
+    assert_eq!(video_stitching(vec2![[0, 4], [2, 8]], 5), 2);
 }

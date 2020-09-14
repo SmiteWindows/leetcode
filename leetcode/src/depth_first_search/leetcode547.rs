@@ -29,5 +29,5 @@ fn dfs(m: &mut Vec<Vec<i32>>, visited: &mut Vec<bool>, i: usize, n: usize) {
 fn test2_547() {
     use leetcode_prelude::vec2;
     assert_eq!(find_circle_num(vec2![[1, 1, 0], [1, 1, 0], [0, 0, 1]]), 2);
-    assert_eq!(find_circle_num(vec2![[1, 1, 0], [1, 1, 1], [0, 1, 1],]), 1);
+    assert_eq!(find_circle_num(vec2![[1, 1, 0], [1, 1, 1], [0, 1, 1]]), 1);
 }

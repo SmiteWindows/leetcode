@@ -73,7 +73,8 @@ pub fn order_of_largest_plus_sign(n: i32, mines: Vec<Vec<i32>>) -> i32 {
 // dynamic_programming
 #[test]
 fn test1_764() {
-    assert_eq!(order_of_largest_plus_sign(5, vec![vec![4, 2]]), 2);
+    use leetcode_prelude::vec2;
+    assert_eq!(order_of_largest_plus_sign(5, vec2![[4, 2]]), 2);
     assert_eq!(order_of_largest_plus_sign(2, vec![]), 1);
-    assert_eq!(order_of_largest_plus_sign(1, vec![vec![0, 0]]), 0);
+    assert_eq!(order_of_largest_plus_sign(1, vec2![[0, 0]]), 0);
 }
