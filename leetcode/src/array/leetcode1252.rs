@@ -31,6 +31,7 @@ pub fn odd_cells(n: i32, m: i32, indices: Vec<Vec<i32>>) -> i32 {
 // array
 #[test]
 fn test1_1252() {
-    assert_eq!(odd_cells(2, 3, vec![vec![0, 1], vec![1, 1]]), 6);
-    assert_eq!(odd_cells(2, 2, vec![vec![1, 1], vec![0, 0]]), 0);
+    use leetcode_prelude::vec2;
+    assert_eq!(odd_cells(2, 3, vec2![[0, 1], [1, 1]]), 6);
+    assert_eq!(odd_cells(2, 2, vec2![[1, 1], [0, 0]]), 0);
 }

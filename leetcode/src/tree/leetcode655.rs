@@ -56,15 +56,13 @@ impl TreeNode {
 // tree
 #[test]
 fn test1_655() {
+    use leetcode_prelude::vec2_string;
     let t1 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
         left: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
         right: None,
     })));
-    let res1 = vec![
-        vec![String::from(""), String::from("1"), String::from("")],
-        vec![String::from("2"), String::from(""), String::from("")],
-    ];
+    let res1 = vec2_string![["", "1", ""], ["2", "", ""]];
     assert_eq!(print_tree(t1), res1);
     let t2 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
@@ -75,34 +73,10 @@ fn test1_655() {
         }))),
         right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
     })));
-    let res2 = vec![
-        vec![
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from("1"),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-        ],
-        vec![
-            String::from(""),
-            String::from("2"),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from("3"),
-            String::from(""),
-        ],
-        vec![
-            String::from(""),
-            String::from(""),
-            String::from("4"),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-        ],
+    let res2 = vec2_string![
+        ["", "", "", "1", "", "", ""],
+        ["", "2", "", "", "", "3", ""],
+        ["", "", "4", "", "", "", ""]
     ];
     assert_eq!(print_tree(t2), res2);
     let t3 = Some(Rc::new(RefCell::new(TreeNode {
@@ -118,75 +92,11 @@ fn test1_655() {
         }))),
         right: Some(Rc::new(RefCell::new(TreeNode::new(5)))),
     })));
-    let res3 = vec![
-        vec![
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from("1"),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-        ],
-        vec![
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from("2"),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from("5"),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-        ],
-        vec![
-            String::from(""),
-            String::from("3"),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-        ],
-        vec![
-            String::from("4"),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-            String::from(""),
-        ],
+    let res3 = vec2_string![
+        ["", "", "", "", "", "", "", "1", "", "", "", "", "", "", ""],
+        ["", "", "", "2", "", "", "", "", "", "", "", "5", "", "", ""],
+        ["", "3", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+        ["4", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
     ];
     assert_eq!(print_tree(t3), res3);
 }

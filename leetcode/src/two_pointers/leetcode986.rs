@@ -35,18 +35,12 @@ pub fn interval_intersection(a: Vec<Vec<i32>>, b: Vec<Vec<i32>>) -> Vec<Vec<i32>
 // two_pointers
 #[test]
 fn test1_986() {
+    use leetcode_prelude::vec2;
     assert_eq!(
         interval_intersection(
-            vec![vec![0, 2], vec![5, 10], vec![13, 23], vec![24, 25]],
-            vec![vec![1, 5], vec![8, 12], vec![15, 24], vec![25, 26]]
+            vec2![[0, 2], [5, 10], [13, 23], [24, 25]],
+            vec2![[1, 5], [8, 12], [15, 24], [25, 26]]
         ),
-        vec![
-            vec![1, 2],
-            vec![5, 5],
-            vec![8, 10],
-            vec![15, 23],
-            vec![24, 24],
-            vec![25, 25]
-        ]
+        vec2![[1, 2], [5, 5], [8, 10], [15, 23], [24, 24], [25, 25]]
     );
 }

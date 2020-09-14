@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/remove-max-number-of-edges-to-keep-graph-fully-traversable/
+// https://leetcode-cn.com/problems/remove-max-number-of-edges-to-keep-graph-fully-traversable/
 // Runtime: 84 ms
 // Memory Usage: 11.8 MB
 pub fn max_num_edges_to_remove(n: i32, edges: Vec<Vec<i32>>) -> i32 {

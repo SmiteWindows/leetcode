@@ -75,22 +75,23 @@ impl WordSearch {
 // backtracking array
 #[test]
 fn test1_79() {
-    let board = vec![
-        vec!['A', 'B', 'C', 'E'],
-        vec!['S', 'F', 'C', 'S'],
-        vec!['A', 'D', 'E', 'E'],
+    use leetcode_prelude::vec2_char;
+    let board = vec2_char![
+        ['A', 'B', 'C', 'E'],
+        ['S', 'F', 'C', 'S'],
+        ['A', 'D', 'E', 'E']
     ];
     assert_eq!(exist(board, String::from("ABCCED")), true);
-    let board = vec![
-        vec!['A', 'B', 'C', 'E'],
-        vec!['S', 'F', 'C', 'S'],
-        vec!['A', 'D', 'E', 'E'],
+    let board = vec2_char![
+        ['A', 'B', 'C', 'E'],
+        ['S', 'F', 'C', 'S'],
+        ['A', 'D', 'E', 'E']
     ];
     assert_eq!(exist(board, String::from("SEE")), true);
-    let board = vec![
-        vec!['A', 'B', 'C', 'E'],
-        vec!['S', 'F', 'C', 'S'],
-        vec!['A', 'D', 'E', 'E'],
+    let board = vec2_char![
+        ['A', 'B', 'C', 'E'],
+        ['S', 'F', 'C', 'S'],
+        ['A', 'D', 'E', 'E']
     ];
     assert_eq!(exist(board, String::from("ABCB")), false);
 }

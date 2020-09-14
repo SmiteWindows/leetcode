@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/number-of-ways-where-square-of-number-is-equal-to-product-of-two-numbers/
+// https://leetcode-cn.com/problems/number-of-ways-where-square-of-number-is-equal-to-product-of-two-numbers/
 // Runtime: 256 ms
 // Memory Usage: 2.2 MB
 use std::collections::HashMap;

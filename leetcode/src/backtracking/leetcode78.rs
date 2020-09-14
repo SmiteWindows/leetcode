@@ -24,18 +24,10 @@ fn backtrack(start: usize, curr: &mut Vec<i32>, nums: &[i32], res: &mut Vec<Vec<
 // array backtracking bit_manipulation
 #[test]
 fn test2_78() {
-    assert_eq!(subsets(vec![1]), vec![vec![], vec![1]]);
+    use leetcode_prelude::vec2;
+    assert_eq!(subsets(vec![1]), vec2![[], [1]]);
     assert_eq!(
         subsets(vec![1, 2, 3]),
-        vec![
-            vec![],
-            vec![1],
-            vec![2],
-            vec![3],
-            vec![1, 2],
-            vec![1, 3],
-            vec![2, 3],
-            vec![1, 2, 3],
-        ]
+        vec2![[], [1], [2], [3], [1, 2], [1, 3], [2, 3], [1, 2, 3]]
     );
 }

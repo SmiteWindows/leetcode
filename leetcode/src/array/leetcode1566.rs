@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/detect-pattern-of-length-m-repeated-k-or-more-times/
+// https://leetcode-cn.com/problems/detect-pattern-of-length-m-repeated-k-or-more-times/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn contains_pattern(arr: Vec<i32>, m: i32, k: i32) -> bool {

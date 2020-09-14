@@ -51,6 +51,7 @@ impl TreeNode {
 // tree breadth_first_search stack
 #[test]
 fn test1_103() {
+    use leetcode_prelude::vec2;
     let root = Some(Rc::new(RefCell::new(TreeNode {
         val: 3,
         left: Some(Rc::new(RefCell::new(TreeNode::new(9)))),
@@ -60,8 +61,5 @@ fn test1_103() {
             right: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
         }))),
     })));
-    assert_eq!(
-        vec![vec![3], vec![20, 9], vec![15, 7]],
-        zigzag_level_order(root)
-    );
+    assert_eq!(zigzag_level_order(root), vec2![[3], [20, 9], [15, 7]]);
 }

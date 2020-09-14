@@ -57,8 +57,6 @@ enum Direction {
 // array
 #[test]
 fn test1_59() {
-    assert_eq!(
-        generate_matrix(3),
-        vec![vec![1, 2, 3], vec![8, 9, 4], vec![7, 6, 5]]
-    );
+    use leetcode_prelude::vec2;
+    assert_eq!(generate_matrix(3), vec2![[1, 2, 3], [8, 9, 4], [7, 6, 5]]);
 }

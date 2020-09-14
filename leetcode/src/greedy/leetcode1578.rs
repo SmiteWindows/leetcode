@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-deletion-cost-to-avoid-repeating-letters/
+// https://leetcode-cn.com/problems/minimum-deletion-cost-to-avoid-repeating-letters/
 // Runtime: 32 ms
 // Memory Usage: 2.9 MB
 pub fn min_cost(s: String, cost: Vec<i32>) -> i32 {

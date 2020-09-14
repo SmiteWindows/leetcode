@@ -28,10 +28,11 @@ fn translate(x: usize, y: usize, a: &[Vec<i32>], b: &[Vec<i32>], n: usize) -> i3
 // array
 #[test]
 fn test1_835() {
+    use leetcode_prelude::vec2;
     assert_eq!(
         largest_overlap(
-            vec![vec![1, 1, 0], vec![0, 1, 0], vec![0, 1, 0]],
-            vec![vec![0, 0, 0], vec![0, 1, 1], vec![0, 0, 1]]
+            vec2![[1, 1, 0], [0, 1, 0], [0, 1, 0]],
+            vec2![[0, 0, 0], [0, 1, 1], [0, 0, 1]]
         ),
         3
     );

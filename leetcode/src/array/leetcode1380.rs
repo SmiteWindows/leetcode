@@ -25,17 +25,14 @@ pub fn lucky_numbers(matrix: Vec<Vec<i32>>) -> Vec<i32> {
 // array
 #[test]
 fn test1_1380() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        lucky_numbers(vec![vec![3, 7, 8], vec![9, 11, 13], vec![15, 16, 17]]),
+        lucky_numbers(vec2![[3, 7, 8], [9, 11, 13], [15, 16, 17]]),
         vec![15]
     );
     assert_eq!(
-        lucky_numbers(vec![
-            vec![1, 10, 4, 2],
-            vec![9, 3, 8, 7],
-            vec![15, 16, 17, 12]
-        ]),
+        lucky_numbers(vec2![[1, 10, 4, 2], [9, 3, 8, 7], [15, 16, 17, 12]]),
         vec![12]
     );
-    assert_eq!(lucky_numbers(vec![vec![7, 8], vec![1, 2]]), vec![7]);
+    assert_eq!(lucky_numbers(vec2![[7, 8], [1, 2]]), vec![7]);
 }

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/number-of-ways-to-reorder-array-to-get-same-bst/
+// https://leetcode-cn.com/problems/number-of-ways-to-reorder-array-to-get-same-bst/
 // Runtime: 60 ms
 // Memory Usage: 8.7 MB
 pub fn num_of_ways(nums: Vec<i32>) -> i32 {

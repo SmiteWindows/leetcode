@@ -54,16 +54,17 @@ struct Group {
 // array
 #[test]
 fn test1_830() {
+    use leetcode_prelude::vec2;
     assert_eq!(
         large_group_positions(String::from("abbxxxxzzy")),
-        vec![vec![3, 6]]
+        vec2![[3, 6]]
     );
     assert_eq!(
         large_group_positions(String::from("abc")),
-        vec![] as Vec<Vec<i32>>
+        vec2![] as Vec<Vec<i32>>
     );
     assert_eq!(
         large_group_positions(String::from("abcdddeeeeaabbbcd")),
-        vec![vec![3, 5], vec![6, 9], vec![12, 14]]
+        vec2![[3, 5], [6, 9], [12, 14]]
     );
 }

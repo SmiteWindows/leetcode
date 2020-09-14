@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/special-positions-in-a-binary-matrix/
+// https://leetcode-cn.com/problems/special-positions-in-a-binary-matrix/
 pub fn num_special(mat: Vec<Vec<i32>>) -> i32 {
     todo!()
 }

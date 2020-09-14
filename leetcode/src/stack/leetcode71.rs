@@ -1,4 +1,4 @@
-//https://leetcode.com/problems/simplify-path/
+//https://leetcode-cn.com/problems/simplify-path/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn simplify_path(path: String) -> String {

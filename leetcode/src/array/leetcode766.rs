@@ -16,9 +16,10 @@ pub fn is_toeplitz_matrix(matrix: Vec<Vec<i32>>) -> bool {
 // array
 #[test]
 fn test1_766() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        is_toeplitz_matrix(vec![vec![1, 2, 3, 4], vec![5, 1, 2, 3], vec![9, 5, 1, 2]]),
+        is_toeplitz_matrix(vec2![[1, 2, 3, 4], [5, 1, 2, 3], [9, 5, 1, 2]]),
         true
     );
-    assert_eq!(is_toeplitz_matrix(vec![vec![1, 2], vec![2, 2]]), false);
+    assert_eq!(is_toeplitz_matrix(vec2![[1, 2], [2, 2]]), false);
 }

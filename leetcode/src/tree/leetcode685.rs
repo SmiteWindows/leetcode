@@ -6,18 +6,13 @@ pub fn find_redundant_directed_connection(edges: Vec<Vec<i32>>) -> Vec<i32> {
 #[test]
 #[ignore]
 fn test1_685() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        find_redundant_directed_connection(vec![vec![1, 2], vec![1, 3], vec![2, 3]]),
+        find_redundant_directed_connection(vec2![[1, 2], [1, 3], [2, 3]]),
         vec![2, 3]
     );
     assert_eq!(
-        find_redundant_directed_connection(vec![
-            vec![1, 2],
-            vec![2, 3],
-            vec![3, 4],
-            vec![4, 1],
-            vec![1, 5]
-        ]),
+        find_redundant_directed_connection(vec2![[1, 2], [2, 3], [3, 4], [4, 1], [1, 5]]),
         vec![4, 1]
     );
 }

@@ -31,16 +31,11 @@ fn dfs(u: usize, visited: &mut [bool], changed: &mut i32, graph: &[Vec<(usize, b
 // tree depth_first_search
 #[test]
 fn test1_1466() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        min_reorder(
-            6,
-            vec![vec![0, 1], vec![1, 3], vec![2, 3], vec![4, 0], vec![4, 5]]
-        ),
+        min_reorder(6, vec2![[0, 1], [1, 3], [2, 3], [4, 0], [4, 5]]),
         3
     );
-    assert_eq!(
-        min_reorder(5, vec![vec![1, 0], vec![1, 2], vec![3, 2], vec![3, 4]]),
-        2
-    );
-    assert_eq!(min_reorder(3, vec![vec![1, 0], vec![2, 0]]), 0);
+    assert_eq!(min_reorder(5, vec2![[1, 0], [1, 2], [3, 2], [3, 4]]), 2);
+    assert_eq!(min_reorder(3, vec2![[1, 0], [2, 0]]), 0);
 }

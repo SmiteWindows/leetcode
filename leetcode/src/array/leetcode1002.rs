@@ -26,20 +26,13 @@ pub fn common_chars(a: Vec<String>) -> Vec<String> {
 // hash_table array
 #[test]
 fn test2_1002() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
-        common_chars(vec![
-            String::from("bella"),
-            String::from("label"),
-            String::from("roller")
-        ]),
-        vec![String::from("e"), String::from("l"), String::from("l")]
+        common_chars(vec_string!["bella", "label", "roller"]),
+        vec_string!["e", "l", "l"]
     );
     assert_eq!(
-        common_chars(vec![
-            String::from("cool"),
-            String::from("lock"),
-            String::from("cook")
-        ]),
-        vec![String::from("c"), String::from("o")]
+        common_chars(vec_string!["cool", "lock", "cook"]),
+        vec_string!["c", "o"]
     );
 }

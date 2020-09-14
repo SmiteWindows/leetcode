@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/count-all-possible-routes/
+// https://leetcode-cn.com/problems/count-all-possible-routes/
 // Runtime: 300 ms
 // Memory Usage: 3.5 MB
 use std::collections::HashMap;

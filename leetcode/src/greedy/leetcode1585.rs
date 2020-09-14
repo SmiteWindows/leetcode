@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/check-if-string-is-transformable-with-substring-sort-operations/
+// https://leetcode-cn.com/problems/check-if-string-is-transformable-with-substring-sort-operations/
 pub fn is_transformable(s: String, t: String) -> bool {
     todo!()
 }

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/number-of-ways-to-split-a-string/
+// https://leetcode-cn.com/problems/number-of-ways-to-split-a-string/
 // Runtime: 4 ms
 // Memory Usage: 3 MB
 const MOD: i64 = 1_000_000_007;

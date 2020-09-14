@@ -45,17 +45,18 @@ fn dfs(i: usize, j: usize, visited: &mut [Vec<bool>], board: &[Vec<char>], n: us
 // depth_first_search breadth_first_search union_find
 #[test]
 fn test1_130() {
-    let mut board = vec![
-        vec!['X', 'X', 'X', 'X'],
-        vec!['X', 'O', 'O', 'X'],
-        vec!['X', 'X', 'O', 'X'],
-        vec!['X', 'O', 'X', 'X'],
+    use leetcode_prelude::vec2_char;
+    let mut board = vec2_char![
+        ['X', 'X', 'X', 'X'],
+        ['X', 'O', 'O', 'X'],
+        ['X', 'X', 'O', 'X'],
+        ['X', 'O', 'X', 'X']
     ];
-    let res = vec![
-        vec!['X', 'X', 'X', 'X'],
-        vec!['X', 'X', 'X', 'X'],
-        vec!['X', 'X', 'X', 'X'],
-        vec!['X', 'O', 'X', 'X'],
+    let res = vec2_char![
+        ['X', 'X', 'X', 'X'],
+        ['X', 'X', 'X', 'X'],
+        ['X', 'X', 'X', 'X'],
+        ['X', 'O', 'X', 'X']
     ];
     solve(&mut board);
     assert_eq!(board, res);

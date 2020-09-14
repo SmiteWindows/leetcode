@@ -22,8 +22,6 @@ pub fn min_path_sum(grid: Vec<Vec<i32>>) -> i32 {
 // array dynamic_programming
 #[test]
 fn test2_64() {
-    assert_eq!(
-        min_path_sum(vec![vec![1, 3, 1], vec![1, 5, 1], vec![4, 2, 1]]),
-        7
-    );
+    use leetcode_prelude::vec2;
+    assert_eq!(min_path_sum(vec2![[1, 3, 1], [1, 5, 1], [4, 2, 1]]), 7);
 }

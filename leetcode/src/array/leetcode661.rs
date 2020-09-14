@@ -55,8 +55,9 @@ fn smooth(m: &[Vec<i32>], r: usize, c: usize, height: usize, weight: usize) -> i
 // array
 #[test]
 fn test1_661() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        image_smoother(vec![vec![1, 1, 1], vec![1, 0, 1], vec![1, 1, 1]]),
-        vec![vec![0, 0, 0], vec![0, 0, 0], vec![0, 0, 0]]
+        image_smoother(vec2![[1, 1, 1], [1, 0, 1], [1, 1, 1]]),
+        vec2![[0, 0, 0], [0, 0, 0], [0, 0, 0]]
     );
 }

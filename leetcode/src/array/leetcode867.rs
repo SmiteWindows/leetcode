@@ -15,12 +15,13 @@ pub fn transpose(a: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
 // array
 #[test]
 fn test1_867() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        transpose(vec![vec![1, 2, 3], vec![4, 5, 6], vec![7, 8, 9]]),
-        vec![vec![1, 4, 7], vec![2, 5, 8], vec![3, 6, 9]]
+        transpose(vec2![[1, 2, 3], [4, 5, 6], [7, 8, 9]]),
+        vec2![[1, 4, 7], [2, 5, 8], [3, 6, 9]]
     );
     assert_eq!(
-        transpose(vec![vec![1, 2, 3], vec![4, 5, 6]]),
-        vec![vec![1, 4], vec![2, 5], vec![3, 6]]
+        transpose(vec2![[1, 2, 3], [4, 5, 6]]),
+        vec2![[1, 4], [2, 5], [3, 6]]
     );
 }

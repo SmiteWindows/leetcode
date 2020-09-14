@@ -49,17 +49,15 @@ fn dfs(
 // backtracking
 #[test]
 fn test1_1219() {
+    use leetcode_prelude::vec2;
+    assert_eq!(get_maximum_gold(vec2![[0, 6, 0], [5, 8, 7], [0, 9, 0]]), 24);
     assert_eq!(
-        get_maximum_gold(vec![vec![0, 6, 0], vec![5, 8, 7], vec![0, 9, 0]]),
-        24
-    );
-    assert_eq!(
-        get_maximum_gold(vec![
-            vec![1, 0, 7],
-            vec![2, 0, 6],
-            vec![3, 4, 5],
-            vec![0, 3, 0],
-            vec![9, 0, 20]
+        get_maximum_gold(vec2![
+            [1, 0, 7],
+            [2, 0, 6],
+            [3, 4, 5],
+            [0, 3, 0],
+            [9, 0, 20]
         ]),
         28
     );

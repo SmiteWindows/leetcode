@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/min-cost-to-connect-all-points/
+// https://leetcode-cn.com/problems/min-cost-to-connect-all-points/
 pub fn min_cost_connect_points(points: Vec<Vec<i32>>) -> i32 {
     todo!()
 }

@@ -21,22 +21,18 @@ pub fn flip_and_invert_image(a: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
 // array
 #[test]
 fn test1_832() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        flip_and_invert_image(vec![vec![1, 1, 0], vec![1, 0, 1], vec![0, 0, 0]]),
-        vec![vec![1, 0, 0], vec![0, 1, 0], vec![1, 1, 1]]
+        flip_and_invert_image(vec2![[1, 1, 0], [1, 0, 1], [0, 0, 0]]),
+        vec2![[1, 0, 0], [0, 1, 0], [1, 1, 1]]
     );
     assert_eq!(
-        flip_and_invert_image(vec![
-            vec![1, 1, 0, 0],
-            vec![1, 0, 0, 1],
-            vec![0, 1, 1, 1],
-            vec![1, 0, 1, 0]
+        flip_and_invert_image(vec2![
+            [1, 1, 0, 0],
+            [1, 0, 0, 1],
+            [0, 1, 1, 1],
+            [1, 0, 1, 0]
         ]),
-        vec![
-            vec![1, 1, 0, 0],
-            vec![0, 1, 1, 0],
-            vec![0, 0, 0, 1],
-            vec![1, 0, 1, 0]
-        ]
+        vec2![[1, 1, 0, 0], [0, 1, 1, 0], [0, 0, 0, 1], [1, 0, 1, 0]]
     );
 }

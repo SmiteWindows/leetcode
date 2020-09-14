@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/matrix-diagonal-sum/
+// https://leetcode-cn.com/problems/matrix-diagonal-sum/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn diagonal_sum(mat: Vec<Vec<i32>>) -> i32 {

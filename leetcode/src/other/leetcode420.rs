@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/strong-password-checker/submissions/
+// https://leetcode-cn.com/problems/strong-password-checker/submissions/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn strong_password_checker(s: String) -> i32 {

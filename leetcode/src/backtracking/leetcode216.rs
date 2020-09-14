@@ -32,9 +32,10 @@ fn dfs(
 // backtracking array
 #[test]
 fn test1_216() {
-    assert_eq!(combination_sum3(3, 7), vec![vec![1, 2, 4]]);
+    use leetcode_prelude::vec2;
+    assert_eq!(combination_sum3(3, 7), vec2![[1, 2, 4]]);
     assert_eq!(
         combination_sum3(3, 9),
-        vec![vec![2, 3, 4], vec![1, 3, 5], vec![1, 2, 6]]
+        vec2![[2, 3, 4], [1, 3, 5], [1, 2, 6]]
     );
 }

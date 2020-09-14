@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/minimum-number-of-days-to-disconnect-island/
+// https://leetcode-cn.com/problems/minimum-number-of-days-to-disconnect-island/
 // Runtime: 16 ms
 // Memory Usage: 2.2 MB
 pub fn min_days(mut grid: Vec<Vec<i32>>) -> i32 {

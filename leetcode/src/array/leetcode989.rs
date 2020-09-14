@@ -1,4 +1,4 @@
-//https://leetcode.com/problems/add-to-array-form-of-integer/
+//https://leetcode-cn.com/problems/add-to-array-form-of-integer/
 // Runtime: 12 ms
 // Memory Usage: 2.2 MB
 pub fn add_to_array_form(a: Vec<i32>, k: i32) -> Vec<i32> {

@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/replace-all-s-to-avoid-consecutive-repeating-characters/
+// https://leetcode-cn.com/problems/replace-all-s-to-avoid-consecutive-repeating-characters/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn modify_string(s: String) -> String {

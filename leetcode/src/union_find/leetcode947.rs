@@ -49,26 +49,14 @@ fn dfs(
 // union_find depth_first_search
 #[test]
 fn test1_947() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        remove_stones(vec![
-            vec![0, 0],
-            vec![0, 1],
-            vec![1, 0],
-            vec![1, 2],
-            vec![2, 1],
-            vec![2, 2]
-        ]),
+        remove_stones(vec2![[0, 0], [0, 1], [1, 0], [1, 2], [2, 1], [2, 2]]),
         5
     );
     assert_eq!(
-        remove_stones(vec![
-            vec![0, 0],
-            vec![0, 2],
-            vec![1, 1],
-            vec![2, 0],
-            vec![2, 2]
-        ]),
+        remove_stones(vec2![[0, 0], [0, 2], [1, 1], [2, 0], [2, 2]]),
         3
     );
-    assert_eq!(remove_stones(vec![vec![0, 0]]), 0);
+    assert_eq!(remove_stones(vec2![[0, 0]]), 0);
 }

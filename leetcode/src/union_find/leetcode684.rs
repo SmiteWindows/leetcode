@@ -50,18 +50,13 @@ impl UnionFind {
 // tree graph union_find
 #[test]
 fn test2_684() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        find_redundant_connection(vec![vec![1, 2], vec![1, 3], vec![2, 3]]),
+        find_redundant_connection(vec2![[1, 2], [1, 3], [2, 3]]),
         vec![2, 3]
     );
     assert_eq!(
-        find_redundant_connection(vec![
-            vec![1, 2],
-            vec![2, 3],
-            vec![3, 4],
-            vec![1, 4],
-            vec![1, 5]
-        ]),
+        find_redundant_connection(vec2![[1, 2], [2, 3], [3, 4], [1, 4], [1, 5]]),
         vec![1, 4]
     );
 }

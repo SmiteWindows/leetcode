@@ -68,8 +68,9 @@ fn is_magic(grid: &[Vec<i32>], r: usize, c: usize) -> bool {
 // array
 #[test]
 fn test1_840() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        num_magic_squares_inside(vec![vec![4, 3, 8, 4], vec![9, 5, 1, 9], vec![2, 7, 6, 2]]),
+        num_magic_squares_inside(vec2![[4, 3, 8, 4], [9, 5, 1, 9], [2, 7, 6, 2]]),
         1
     );
 }

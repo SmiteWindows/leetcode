@@ -34,8 +34,9 @@ fn dfs(nums: &[i32], res: &mut Vec<Vec<i32>>, used: &mut Vec<bool>, cur: &mut Ve
 // backtracking
 #[test]
 fn test1_47() {
+    use leetcode_prelude::vec2;
     assert_eq!(
         permute_unique(vec![1, 1, 2]),
-        vec![vec![1, 1, 2], vec![1, 2, 1], vec![2, 1, 1]]
+        vec2![[1, 1, 2], [1, 2, 1], [2, 1, 1]]
     );
 }

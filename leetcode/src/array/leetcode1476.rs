@@ -42,7 +42,8 @@ impl SubrectangleQueries {
 // array
 #[test]
 fn test1_1476() {
-    let rectangle = vec![vec![1, 2, 1], vec![4, 3, 4], vec![3, 2, 1], vec![1, 1, 1]];
+    use leetcode_prelude::vec2;
+    let rectangle = vec2![[1, 2, 1], [4, 3, 4], [3, 2, 1], [1, 1, 1]];
     let mut obj = SubrectangleQueries::new(rectangle);
     assert_eq!(obj.get_value(0, 2), 1);
     obj.update_subrectangle(0, 0, 3, 2, 5);
@@ -52,7 +53,7 @@ fn test1_1476() {
     assert_eq!(obj.get_value(3, 1), 10);
     assert_eq!(obj.get_value(0, 2), 5);
 
-    let rectangle = vec![vec![1, 1, 1], vec![2, 2, 2], vec![3, 3, 3]];
+    let rectangle = vec2![[1, 1, 1], [2, 2, 2], [3, 3, 3]];
     let mut obj = SubrectangleQueries::new(rectangle);
     assert_eq!(obj.get_value(0, 0), 1);
     obj.update_subrectangle(0, 0, 2, 2, 100);

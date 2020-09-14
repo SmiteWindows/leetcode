@@ -51,6 +51,7 @@ impl TreeNode {
 // tree depth_first_search
 #[test]
 fn test1_113() {
+    use leetcode_prelude::vec2;
     let root = Some(Rc::new(RefCell::new(TreeNode {
         val: 5,
         left: Some(Rc::new(RefCell::new(TreeNode {
@@ -72,6 +73,6 @@ fn test1_113() {
             }))),
         }))),
     })));
-    let res = vec![vec![5, 4, 11, 2], vec![5, 8, 4, 5]];
+    let res = vec2![[5, 4, 11, 2], [5, 8, 4, 5]];
     assert_eq!(res, path_sum(root, 22));
 }

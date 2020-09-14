@@ -15,21 +15,13 @@ pub fn subsets(nums: Vec<i32>) -> Vec<Vec<i32>> {
     }
     res
 }
-//  array backtracking bit_manipulation
+// array backtracking bit_manipulation
 #[test]
 fn test1_78() {
-    assert_eq!(subsets(vec![1]), vec![vec![], vec![1]]);
+    use leetcode_prelude::vec2;
+    assert_eq!(subsets(vec![1]), vec2![[], [1]]);
     assert_eq!(
         subsets(vec![1, 2, 3]),
-        vec![
-            vec![],
-            vec![1],
-            vec![2],
-            vec![1, 2],
-            vec![3],
-            vec![1, 3],
-            vec![2, 3],
-            vec![1, 2, 3],
-        ]
+        vec2![[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
     );
 }

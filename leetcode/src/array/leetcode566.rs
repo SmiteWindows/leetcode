@@ -21,12 +21,13 @@ pub fn matrix_reshape(nums: Vec<Vec<i32>>, r: i32, c: i32) -> Vec<Vec<i32>> {
 // array
 #[test]
 fn test1_566() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        matrix_reshape(vec![vec![1, 2], vec![3, 4]], 1, 4),
-        vec![vec![1, 2, 3, 4]]
+        matrix_reshape(vec2![[1, 2], [3, 4]], 1, 4),
+        vec2![[1, 2, 3, 4]]
     );
     assert_eq!(
-        matrix_reshape(vec![vec![1, 2], vec![3, 4]], 2, 4),
-        vec![vec![1, 2], vec![3, 4]]
+        matrix_reshape(vec2![[1, 2], [3, 4]], 2, 4),
+        vec2![[1, 2], [3, 4]]
     );
 }

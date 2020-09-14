@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/count-unhappy-friends/
+// https://leetcode-cn.com/problems/count-unhappy-friends/
 pub fn unhappy_friends(n: i32, preferences: Vec<Vec<i32>>, pairs: Vec<Vec<i32>>) -> i32 {
     todo!()
 }

@@ -27,12 +27,7 @@ fn dfs(m: &mut Vec<Vec<i32>>, visited: &mut Vec<bool>, i: usize, n: usize) {
 // depth_first_search union_find
 #[test]
 fn test1_547() {
-    assert_eq!(
-        find_circle_num(vec![vec![1, 1, 0], vec![1, 1, 0], vec![0, 0, 1]]),
-        2
-    );
-    assert_eq!(
-        find_circle_num(vec![vec![1, 1, 0], vec![1, 1, 1], vec![0, 1, 1],]),
-        1
-    );
+    use leetcode_prelude::vec2;
+    assert_eq!(find_circle_num(vec2![[1, 1, 0], [1, 1, 0], [0, 0, 1]]), 2);
+    assert_eq!(find_circle_num(vec2![[1, 1, 0], [1, 1, 1], [0, 1, 1]]), 1);
 }

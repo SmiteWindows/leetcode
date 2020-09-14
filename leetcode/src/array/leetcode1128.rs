@@ -22,8 +22,9 @@ pub fn num_equiv_domino_pairs(dominoes: Vec<Vec<i32>>) -> i32 {
 // array
 #[test]
 fn test1_1128() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        num_equiv_domino_pairs(vec![vec![1, 2], vec![2, 1], vec![3, 4], vec![5, 6]]),
+        num_equiv_domino_pairs(vec2![[1, 2], [2, 1], [3, 4], [5, 6]]),
         1
     );
 }
