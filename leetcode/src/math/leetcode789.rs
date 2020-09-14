@@ -17,10 +17,8 @@ fn dist(a: &[i32], b: &[i32]) -> i32 {
 // math
 #[test]
 fn test1_789() {
-    assert_eq!(
-        escape_ghosts(vec![vec![1, 0], vec![0, 3]], vec![0, 1]),
-        true
-    );
-    assert_eq!(escape_ghosts(vec![vec![1, 0]], vec![2, 0]), false);
-    assert_eq!(escape_ghosts(vec![vec![2, 0]], vec![1, 0]), false);
+    use leetcode_prelude::vec2;
+    assert_eq!(escape_ghosts(vec2![[1, 0], [0, 3]], vec![0, 1]), true);
+    assert_eq!(escape_ghosts(vec2![[1, 0]], vec![2, 0]), false);
+    assert_eq!(escape_ghosts(vec2![[2, 0]], vec![1, 0]), false);
 }

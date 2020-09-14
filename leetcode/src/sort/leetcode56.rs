@@ -26,9 +26,10 @@ pub fn merge(intervals: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
 // array sort
 #[test]
 fn test1_56() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        merge(vec![vec![1, 3], vec![2, 6], vec![8, 10], vec![15, 18]]),
-        vec![vec![1, 6], vec![8, 10], vec![15, 18]]
+        merge(vec2![[1, 3], [2, 6], [8, 10], [15, 18]]),
+        vec2![[1, 6], [8, 10], [15, 18]]
     );
-    assert_eq!(merge(vec![vec![1, 4], vec![4, 5]]), vec![vec![1, 5]]);
+    assert_eq!(merge(vec2![[1, 4], [4, 5]]), vec2![[1, 5]]);
 }

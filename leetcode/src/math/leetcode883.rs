@@ -23,15 +23,10 @@ pub fn projection_area(grid: Vec<Vec<i32>>) -> i32 {
 // math
 #[test]
 fn test1_883() {
-    assert_eq!(projection_area(vec![vec![2]]), 5);
-    assert_eq!(projection_area(vec![vec![1, 2], vec![3, 4]]), 17);
-    assert_eq!(projection_area(vec![vec![1, 0], vec![0, 2]]), 8);
-    assert_eq!(
-        projection_area(vec![vec![1, 1, 1], vec![1, 0, 1], vec![1, 1, 1]]),
-        14
-    );
-    assert_eq!(
-        projection_area(vec![vec![2, 2, 2], vec![2, 1, 2], vec![2, 2, 2]]),
-        21
-    );
+    use leetcode_prelude::vec2;
+    assert_eq!(projection_area(vec2![[2]]), 5);
+    assert_eq!(projection_area(vec2![[1, 2], [3, 4]]), 17);
+    assert_eq!(projection_area(vec2![[1, 0], [0, 2]]), 8);
+    assert_eq!(projection_area(vec2![[1, 1, 1], [1, 0, 1], [1, 1, 1]]), 14);
+    assert_eq!(projection_area(vec2![[2, 2, 2], [2, 1, 2], [2, 2, 2]]), 21);
 }

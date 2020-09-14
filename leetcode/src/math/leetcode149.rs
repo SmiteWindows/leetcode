@@ -60,16 +60,10 @@ fn gcd(mut m: i32, mut n: i32) -> i32 {
 // math hash_table
 #[test]
 fn test1_149() {
-    assert_eq!(max_points(vec![vec![1, 1], vec![2, 2], vec![3, 3]]), 3);
+    use leetcode_prelude::vec2;
+    assert_eq!(max_points(vec2![[1, 1], [2, 2], [3, 3]]), 3);
     assert_eq!(
-        max_points(vec![
-            vec![1, 1],
-            vec![3, 2],
-            vec![5, 3],
-            vec![4, 1],
-            vec![2, 3],
-            vec![1, 4]
-        ]),
+        max_points(vec2![[1, 1], [3, 2], [5, 3], [4, 1], [2, 3], [1, 4]]),
         4
     );
 }

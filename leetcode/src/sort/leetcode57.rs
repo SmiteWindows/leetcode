@@ -27,21 +27,13 @@ pub fn insert(intervals: Vec<Vec<i32>>, new_interval: Vec<i32>) -> Vec<Vec<i32>>
 // array sort
 #[test]
 fn test1_57() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        insert(vec![vec![1, 3], vec![6, 9]], vec![2, 5]),
-        vec![vec![1, 5], vec![6, 9]]
+        insert(vec2![[1, 3], [6, 9]], vec![2, 5]),
+        vec2![[1, 5], [6, 9]]
     );
     assert_eq!(
-        insert(
-            vec![
-                vec![1, 2],
-                vec![3, 5],
-                vec![6, 7],
-                vec![8, 10],
-                vec![12, 16]
-            ],
-            vec![4, 8]
-        ),
-        vec![vec![1, 2], vec![3, 10], vec![12, 16]]
+        insert(vec2![[1, 2], [3, 5], [6, 7], [8, 10], [12, 16]], vec![4, 8]),
+        vec2![[1, 2], [3, 10], [12, 16]]
     );
 }

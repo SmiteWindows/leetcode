@@ -43,35 +43,28 @@ fn dfs(
 // graph
 #[test]
 fn test1_1462() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        check_if_prerequisite(2, vec![vec![1, 0]], vec![vec![0, 1], vec![1, 0]]),
+        check_if_prerequisite(2, vec2![[1, 0]], vec2![[0, 1], [1, 0]]),
         vec![false, true]
     );
     assert_eq!(
-        check_if_prerequisite(2, vec![], vec![vec![1, 0], vec![0, 1]]),
+        check_if_prerequisite(2, vec2![], vec2![[1, 0], [0, 1]]),
         vec![false, false]
     );
     assert_eq!(
-        check_if_prerequisite(
-            3,
-            vec![vec![1, 2], vec![1, 0], vec![2, 0]],
-            vec![vec![1, 0], vec![1, 2]]
-        ),
+        check_if_prerequisite(3, vec2![[1, 2], [1, 0], [2, 0]], vec2![[1, 0], [1, 2]]),
         vec![true, true]
     );
     assert_eq!(
-        check_if_prerequisite(
-            3,
-            vec![vec![1, 0], vec![2, 0]],
-            vec![vec![0, 1], vec![2, 0]]
-        ),
+        check_if_prerequisite(3, vec2![[1, 0], [2, 0]], vec2![[0, 1], [2, 0]]),
         vec![false, true]
     );
     assert_eq!(
         check_if_prerequisite(
             5,
-            vec![vec![0, 1], vec![1, 2], vec![2, 3], vec![3, 4]],
-            vec![vec![0, 4], vec![4, 0], vec![1, 3], vec![3, 0]]
+            vec2![[0, 1], [1, 2], [2, 3], [3, 4]],
+            vec2![[0, 4], [4, 0], [1, 3], [3, 0]]
         ),
         vec![true, false, true, false]
     );

@@ -6,12 +6,13 @@ pub fn intersection_size_two(intervals: Vec<Vec<i32>>) -> i32 {
 #[test]
 #[ignore]
 fn test1_757() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        intersection_size_two(vec![vec![1, 3], vec![1, 4], vec![2, 5], vec![3, 5]]),
+        intersection_size_two(vec2![[1, 3], [1, 4], [2, 5], [3, 5]]),
         3
     );
     assert_eq!(
-        intersection_size_two(vec![vec![1, 2], vec![2, 3], vec![2, 4], vec![4, 5]]),
+        intersection_size_two(vec2![[1, 2], [2, 3], [2, 4], [4, 5]]),
         5
     );
 }

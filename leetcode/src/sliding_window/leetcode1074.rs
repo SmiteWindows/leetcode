@@ -6,12 +6,10 @@ pub fn num_submatrix_sum_target(matrix: Vec<Vec<i32>>, target: i32) -> i32 {
 #[test]
 #[ignore]
 fn test1_1074() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        num_submatrix_sum_target(vec![vec![0, 1, 0], vec![1, 1, 1], vec![0, 1, 0]], 0),
+        num_submatrix_sum_target(vec2![[0, 1, 0], [1, 1, 1], [0, 1, 0]], 0),
         4
     );
-    assert_eq!(
-        num_submatrix_sum_target(vec![vec![1, -1], vec![-1, 1]], 0),
-        5
-    );
+    assert_eq!(num_submatrix_sum_target(vec2![[1, -1], [-1, 1]], 0), 5);
 }

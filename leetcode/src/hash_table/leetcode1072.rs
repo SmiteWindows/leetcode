@@ -23,10 +23,11 @@ pub fn max_equal_rows_after_flips(matrix: Vec<Vec<i32>>) -> i32 {
 // hash_table
 #[test]
 fn test1_1072() {
-    assert_eq!(max_equal_rows_after_flips(vec![vec![0, 1], vec![1, 1]]), 1);
-    assert_eq!(max_equal_rows_after_flips(vec![vec![0, 1], vec![1, 0]]), 2);
+    use leetcode_prelude::vec2;
+    assert_eq!(max_equal_rows_after_flips(vec2![[0, 1], [1, 1]]), 1);
+    assert_eq!(max_equal_rows_after_flips(vec2![[0, 1], [1, 0]]), 2);
     assert_eq!(
-        max_equal_rows_after_flips(vec![vec![0, 0, 0], vec![0, 0, 1], vec![1, 1, 0]]),
+        max_equal_rows_after_flips(vec2![[0, 0, 0], [0, 0, 1], [1, 1, 0]]),
         2
     );
 }

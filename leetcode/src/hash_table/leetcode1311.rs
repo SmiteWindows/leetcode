@@ -40,32 +40,23 @@ pub fn watched_videos_by_friends(
 // hash_table string breadth_first_search
 #[test]
 fn test1_1311() {
+    use leetcode_prelude::{vec2, vec2_string, vec_string};
     assert_eq!(
         watched_videos_by_friends(
-            vec![
-                vec![String::from("A"), String::from("B")],
-                vec![String::from("C")],
-                vec![String::from("B"), String::from("C")],
-                vec![String::from("D")]
-            ],
-            vec![vec![1, 2], vec![0, 3], vec![0, 3], vec![1, 2]],
+            vec2_string![["A", "B"], ["C"], ["B", "C"], ["D"]],
+            vec2![[1, 2], [0, 3], [0, 3], [1, 2]],
             0,
             1
         ),
-        vec![String::from("B"), String::from("C")]
+        vec_string!["B", "C"]
     );
     assert_eq!(
         watched_videos_by_friends(
-            vec![
-                vec![String::from("A"), String::from("B")],
-                vec![String::from("C")],
-                vec![String::from("B"), String::from("C")],
-                vec![String::from("D")]
-            ],
-            vec![vec![1, 2], vec![0, 3], vec![0, 3], vec![1, 2]],
+            vec2_string![["A", "B"], ["C"], ["B", "C"], ["D"]],
+            vec2![[1, 2], [0, 3], [0, 3], [1, 2]],
             0,
             2
         ),
-        vec![String::from("D")]
+        vec_string!["D"]
     );
 }

@@ -41,7 +41,8 @@ impl Solution {
 // random binary_search
 #[test]
 fn test1_947() {
-    let mut obj = Solution::new(vec![vec![1, 1, 5, 5]]);
+    use leetcode_prelude::vec2;
+    let mut obj = Solution::new(vec2![[1, 1, 5, 5]]);
     let res1 = obj.pick();
     let res2 = obj.pick();
     let res3 = obj.pick();
@@ -49,7 +50,7 @@ fn test1_947() {
     println!("{:?}", res2);
     println!("{:?}", res3);
     println!();
-    let mut obj = Solution::new(vec![vec![-2, -2, -1, -1], vec![1, 0, 3, 0]]);
+    let mut obj = Solution::new(vec2![[-2, -2, -1, -1], [1, 0, 3, 0]]);
     let res1 = obj.pick();
     let res2 = obj.pick();
     let res3 = obj.pick();

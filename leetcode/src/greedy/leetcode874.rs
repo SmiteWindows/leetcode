@@ -102,6 +102,7 @@ impl Grid {
 // greedy
 #[test]
 fn test1_874() {
+    use leetcode_prelude::vec2;
     assert_eq!(robot_sim(vec![4, -1, 3], vec![]), 25);
-    assert_eq!(robot_sim(vec![4, -1, 4, -2, 4], vec![vec![2, 4]]), 65);
+    assert_eq!(robot_sim(vec![4, -1, 4, -2, 4], vec2![[2, 4]]), 65);
 }

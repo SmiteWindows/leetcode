@@ -21,8 +21,6 @@ pub fn remove_covered_intervals(intervals: Vec<Vec<i32>>) -> i32 {
 // line_sweep
 #[test]
 fn test1_1288() {
-    assert_eq!(
-        remove_covered_intervals(vec![vec![1, 4], vec![3, 6], vec![2, 8]]),
-        2
-    );
+    use leetcode_prelude::vec2;
+    assert_eq!(remove_covered_intervals(vec2![[1, 4], [3, 6], [2, 8]]), 2);
 }

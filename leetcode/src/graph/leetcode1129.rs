@@ -42,24 +42,25 @@ pub fn shortest_alternating_paths(
 // graph breadth_first_search
 #[test]
 fn test1_1129() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        shortest_alternating_paths(3, vec![vec![0, 1], vec![1, 2]], vec![]),
+        shortest_alternating_paths(3, vec2![[0, 1], [1, 2]], vec![]),
         vec![0, 1, -1]
     );
     assert_eq!(
-        shortest_alternating_paths(3, vec![vec![0, 1]], vec![vec![2, 1]]),
+        shortest_alternating_paths(3, vec2![[0, 1]], vec2![[2, 1]]),
         vec![0, 1, -1]
     );
     assert_eq!(
-        shortest_alternating_paths(3, vec![vec![1, 0]], vec![vec![2, 1]]),
+        shortest_alternating_paths(3, vec2![[1, 0]], vec2![[2, 1]]),
         vec![0, -1, -1]
     );
     assert_eq!(
-        shortest_alternating_paths(3, vec![vec![0, 1]], vec![vec![1, 2]]),
+        shortest_alternating_paths(3, vec2![[0, 1]], vec2![[1, 2]]),
         vec![0, 1, 2]
     );
     assert_eq!(
-        shortest_alternating_paths(3, vec![vec![0, 1], vec![0, 2]], vec![vec![1, 0]]),
+        shortest_alternating_paths(3, vec2![[0, 1], [0, 2]], vec2![[1, 0]]),
         vec![0, 1, 1]
     );
 }

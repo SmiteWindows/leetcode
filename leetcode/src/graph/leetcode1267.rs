@@ -27,14 +27,15 @@ pub fn count_servers(grid: Vec<Vec<i32>>) -> i32 {
 // graph array
 #[test]
 fn test1_1267() {
-    assert_eq!(count_servers(vec![vec![1, 0], vec![0, 1]]), 0);
-    assert_eq!(count_servers(vec![vec![1, 0], vec![1, 1]]), 3);
+    use leetcode_prelude::vec2;
+    assert_eq!(count_servers(vec2![[1, 0], [0, 1]]), 0);
+    assert_eq!(count_servers(vec2![[1, 0], [1, 1]]), 3);
     assert_eq!(
-        count_servers(vec![
-            vec![1, 1, 0, 0],
-            vec![0, 0, 1, 0],
-            vec![0, 0, 1, 0],
-            vec![0, 0, 0, 1]
+        count_servers(vec2![
+            [1, 1, 0, 0],
+            [0, 0, 1, 0],
+            [0, 0, 1, 0],
+            [0, 0, 0, 1]
         ]),
         4
     );

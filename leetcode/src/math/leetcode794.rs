@@ -56,36 +56,9 @@ fn win(board: &[Vec<char>], c: char) -> i32 {
 // math recursion
 #[test]
 fn test1_794() {
-    assert_eq!(
-        valid_tic_tac_toe(vec![
-            String::from("O  "),
-            String::from("   "),
-            String::from("   ")
-        ]),
-        false
-    );
-    assert_eq!(
-        valid_tic_tac_toe(vec![
-            String::from("XOX"),
-            String::from(" X "),
-            String::from("   ")
-        ]),
-        false
-    );
-    assert_eq!(
-        valid_tic_tac_toe(vec![
-            String::from("XXX"),
-            String::from("   "),
-            String::from("OOO")
-        ]),
-        false
-    );
-    assert_eq!(
-        valid_tic_tac_toe(vec![
-            String::from("XOX"),
-            String::from("O O"),
-            String::from("XOX")
-        ]),
-        true
-    );
+    use leetcode_prelude::vec_string;
+    assert_eq!(valid_tic_tac_toe(vec_string!["O  ", "   ", "   "]), false);
+    assert_eq!(valid_tic_tac_toe(vec_string!["XOX", " X ", "   "]), false);
+    assert_eq!(valid_tic_tac_toe(vec_string!["XXX", "   ", "OOO"]), false);
+    assert_eq!(valid_tic_tac_toe(vec_string!["XOX", "O O", "XOX"]), true);
 }

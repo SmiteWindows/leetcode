@@ -68,20 +68,12 @@ fn dfs(
 // graph union_find
 #[test]
 fn test2_399() {
+    use leetcode_prelude::vec2_string;
     assert_eq!(
         calc_equation(
-            vec![
-                vec![String::from("a"), String::from("b")],
-                vec![String::from("b"), String::from("c")]
-            ],
+            vec2_string![["a", "b"], ["b", "c"]],
             vec![2.0, 3.0],
-            vec![
-                vec![String::from("a"), String::from("c")],
-                vec![String::from("b"), String::from("a")],
-                vec![String::from("a"), String::from("e")],
-                vec![String::from("a"), String::from("a")],
-                vec![String::from("x"), String::from("x")]
-            ]
+            vec2_string![["a", "c"], ["b", "a"], ["a", "e"], ["a", "a"], ["x", "x"]]
         ),
         vec![6.0, 0.5, -1.0, 1.0, -1.0]
     );

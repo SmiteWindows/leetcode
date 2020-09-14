@@ -22,8 +22,9 @@ fn dfs(u: i32, path: &mut Vec<i32>, paths: &mut Vec<Vec<i32>>, graph: &[Vec<i32>
 }
 #[test]
 fn test797() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        all_paths_source_target(vec![vec![1, 2], vec![3], vec![3], vec![]]),
-        vec![vec![0, 1, 3], vec![0, 2, 3]]
+        all_paths_source_target(vec2![[1, 2], [3], [3], []]),
+        vec2![[0, 1, 3], [0, 2, 3]]
     );
 }

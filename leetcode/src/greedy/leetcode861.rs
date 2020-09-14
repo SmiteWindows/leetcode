@@ -23,8 +23,9 @@ fn sum_col(j: usize, a: &[Vec<i32>], n: usize) -> usize {
 // greedy
 #[test]
 fn test1_861() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        matrix_score(vec![vec![0, 0, 1, 1], vec![1, 0, 1, 0], vec![1, 1, 0, 0]]),
+        matrix_score(vec2![[0, 0, 1, 1], [1, 0, 1, 0], [1, 1, 0, 0]]),
         39
     );
 }

@@ -17,8 +17,9 @@ pub fn kth_smallest(matrix: Vec<Vec<i32>>, k: i32) -> i32 {
 // binary_search heap
 #[test]
 fn test2_378() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        kth_smallest(vec![vec![1, 5, 9], vec![10, 11, 13], vec![12, 13, 15]], 8),
+        kth_smallest(vec2![[1, 5, 9], [10, 11, 13], [12, 13, 15]], 8),
         13
     );
 }

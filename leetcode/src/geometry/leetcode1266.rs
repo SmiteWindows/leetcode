@@ -16,12 +16,10 @@ pub fn min_time_to_visit_all_points(points: Vec<Vec<i32>>) -> i32 {
 // geometry array
 #[test]
 fn test1_1266() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        min_time_to_visit_all_points(vec![vec![1, 1], vec![3, 4], vec![-1, 0]]),
+        min_time_to_visit_all_points(vec2![[1, 1], [3, 4], [-1, 0]]),
         7
     );
-    assert_eq!(
-        min_time_to_visit_all_points(vec![vec![3, 2], vec![-2, 2]]),
-        5
-    );
+    assert_eq!(min_time_to_visit_all_points(vec2![[3, 2], [-2, 2]]), 5);
 }

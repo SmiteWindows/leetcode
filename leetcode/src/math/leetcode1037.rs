@@ -10,9 +10,7 @@ pub fn is_boomerang(points: Vec<Vec<i32>>) -> bool {
 // math
 #[test]
 fn test1_1037() {
-    assert_eq!(is_boomerang(vec![vec![1, 1], vec![2, 3], vec![3, 2]]), true);
-    assert_eq!(
-        is_boomerang(vec![vec![1, 1], vec![2, 2], vec![3, 3]]),
-        false
-    );
+    use leetcode_prelude::vec2;
+    assert_eq!(is_boomerang(vec2![[1, 1], [2, 3], [3, 2]]), true);
+    assert_eq!(is_boomerang(vec2![[1, 1], [2, 2], [3, 3]]), false);
 }

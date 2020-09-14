@@ -43,11 +43,9 @@ pub fn kth_smallest(mat: Vec<Vec<i32>>, k: i32) -> i32 {
 // heap
 #[test]
 fn test1_1439() {
-    assert_eq!(kth_smallest(vec![vec![1, 3, 11], vec![2, 4, 6]], 5), 7);
-    assert_eq!(kth_smallest(vec![vec![1, 3, 11], vec![2, 4, 6]], 9), 17);
-    assert_eq!(
-        kth_smallest(vec![vec![1, 10, 10], vec![1, 4, 5], vec![2, 3, 6]], 7),
-        9
-    );
-    assert_eq!(kth_smallest(vec![vec![1, 1, 10], vec![2, 2, 9]], 7), 12);
+    use leetcode_prelude::vec2;
+    assert_eq!(kth_smallest(vec2![[1, 3, 11], [2, 4, 6]], 5), 7);
+    assert_eq!(kth_smallest(vec2![[1, 3, 11], [2, 4, 6]], 9), 17);
+    assert_eq!(kth_smallest(vec2![[1, 10, 10], [1, 4, 5], [2, 3, 6]], 7), 9);
+    assert_eq!(kth_smallest(vec2![[1, 1, 10], [2, 2, 9]], 7), 12);
 }

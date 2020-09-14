@@ -36,8 +36,9 @@ pub fn find_diagonal_order(matrix: Vec<Vec<i32>>) -> Vec<i32> {
 }
 #[test]
 fn test498() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        find_diagonal_order(vec![vec![1, 2, 3], vec![4, 5, 6], vec![7, 8, 9]]),
+        find_diagonal_order(vec2![[1, 2, 3], [4, 5, 6], [7, 8, 9]]),
         vec![1, 2, 4, 7, 5, 3, 6, 8, 9]
     );
 }

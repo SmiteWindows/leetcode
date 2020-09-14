@@ -26,15 +26,10 @@ pub fn surface_area(grid: Vec<Vec<i32>>) -> i32 {
 // math geometry
 #[test]
 fn test1_892() {
-    assert_eq!(surface_area(vec![vec![2]]), 10);
-    assert_eq!(surface_area(vec![vec![1, 2], vec![3, 4]]), 34);
-    assert_eq!(surface_area(vec![vec![1, 0], vec![0, 2]]), 16);
-    assert_eq!(
-        surface_area(vec![vec![1, 1, 1], vec![1, 0, 1], vec![1, 1, 1]]),
-        32
-    );
-    assert_eq!(
-        surface_area(vec![vec![2, 2, 2], vec![2, 1, 2], vec![2, 2, 2]]),
-        46
-    );
+    use leetcode_prelude::vec2;
+    assert_eq!(surface_area(vec2![[2]]), 10);
+    assert_eq!(surface_area(vec2![[1, 2], [3, 4]]), 34);
+    assert_eq!(surface_area(vec2![[1, 0], [0, 2]]), 16);
+    assert_eq!(surface_area(vec2![[1, 1, 1], [1, 0, 1], [1, 1, 1]]), 32);
+    assert_eq!(surface_area(vec2![[2, 2, 2], [2, 1, 2], [2, 2, 2]]), 46);
 }

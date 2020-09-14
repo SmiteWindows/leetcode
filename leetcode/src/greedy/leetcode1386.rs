@@ -34,26 +34,14 @@ fn num_of_families(row_bitset: u16) -> usize {
 // greedy array
 #[test]
 fn test1_1386() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        max_number_of_families(
-            3,
-            vec![
-                vec![1, 2],
-                vec![1, 3],
-                vec![1, 8],
-                vec![2, 6],
-                vec![3, 1],
-                vec![3, 10]
-            ]
-        ),
+        max_number_of_families(3, vec2![[1, 2], [1, 3], [1, 8], [2, 6], [3, 1], [3, 10]]),
         4
     );
+    assert_eq!(max_number_of_families(2, vec2![[2, 1], [1, 8], [2, 6]]), 2);
     assert_eq!(
-        max_number_of_families(2, vec![vec![2, 1], vec![1, 8], vec![2, 6]]),
-        2
-    );
-    assert_eq!(
-        max_number_of_families(4, vec![vec![4, 3], vec![1, 4], vec![4, 6], vec![1, 7]]),
+        max_number_of_families(4, vec2![[4, 3], [1, 4], [4, 6], [1, 7]]),
         4
     );
 }

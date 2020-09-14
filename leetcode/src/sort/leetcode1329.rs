@@ -25,8 +25,9 @@ pub fn diagonal_sort(mat: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
 // sort array
 #[test]
 fn test1_1329() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        diagonal_sort(vec![vec![3, 3, 1, 1], vec![2, 2, 1, 2], vec![1, 1, 1, 2]]),
-        vec![vec![1, 1, 1, 1], vec![1, 2, 2, 2], vec![1, 2, 3, 3]]
+        diagonal_sort(vec2![[3, 3, 1, 1], [2, 2, 1, 2], [1, 1, 1, 2]]),
+        vec2![[1, 1, 1, 1], [1, 2, 2, 2], [1, 2, 3, 3]]
     );
 }

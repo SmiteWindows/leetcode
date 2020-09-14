@@ -52,12 +52,10 @@ impl Graph {
 // graph depth_first_search breadth_first_search
 #[test]
 fn test1_785() {
+    use leetcode_prelude::vec2;
+    assert_eq!(is_bipartite(vec2![[1, 3], [0, 2], [1, 3], [0, 2]]), true);
     assert_eq!(
-        is_bipartite(vec![vec![1, 3], vec![0, 2], vec![1, 3], vec![0, 2]]),
-        true
-    );
-    assert_eq!(
-        is_bipartite(vec![vec![1, 2, 3], vec![0, 2], vec![0, 1, 3], vec![0, 2]]),
+        is_bipartite(vec2![[1, 2, 3], [0, 2], [0, 1, 3], [0, 2]]),
         false
     );
 }

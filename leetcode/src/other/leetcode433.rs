@@ -57,11 +57,12 @@ pub fn min_mutation(start: String, end: String, bank: Vec<String>) -> i32 {
 }
 #[test]
 fn test433() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
         min_mutation(
             "AACCGGTT".to_string(),
             "AACCGGTA".to_string(),
-            vec!["AACCGGTA".to_string()]
+            vec_string!["AACCGGTA"]
         ),
         1
     );
@@ -69,11 +70,7 @@ fn test433() {
         min_mutation(
             "AACCGGTT".to_string(),
             "AAACGGTA".to_string(),
-            vec![
-                "AACCGGTA".to_string(),
-                "AACCGCTA".to_string(),
-                "AAACGGTA".to_string(),
-            ]
+            vec_string!["AACCGGTA", "AACCGCTA", "AAACGGTA"]
         ),
         2
     );
@@ -81,11 +78,7 @@ fn test433() {
         min_mutation(
             "AAAAACCC".to_string(),
             "AACCCCCC".to_string(),
-            vec![
-                "AAAACCCC".to_string(),
-                "AAACCCCC".to_string(),
-                "AACCCCCC".to_string(),
-            ]
+            vec_string!["AAAACCCC", "AAACCCCC", "AACCCCCC"]
         ),
         3
     );

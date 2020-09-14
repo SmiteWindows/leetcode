@@ -61,7 +61,7 @@ fn test1_352() {
     obj.add_num(7);
     assert_eq!(obj.get_intervals(), vec2![[1, 1], [3, 3], [7, 7]]);
     obj.add_num(2);
-    assert_eq!(obj.get_intervals(), vec![vec![1, 3], vec![7, 7]]);
+    assert_eq!(obj.get_intervals(), vec2![[1, 3], [7, 7]]);
     obj.add_num(6);
-    assert_eq!(obj.get_intervals(), vec![vec![1, 3], vec![6, 7]]);
+    assert_eq!(obj.get_intervals(), vec2![[1, 3], [6, 7]]);
 }

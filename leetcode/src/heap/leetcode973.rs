@@ -43,12 +43,10 @@ fn partition(a: &mut Vec<Vec<i32>>, l: usize, r: usize) -> usize {
 // divide_and_conquer heap sort
 #[test]
 fn test2_973() {
+    use leetcode_prelude::vec2;
+    assert_eq!(k_closest(vec2![[1, 3], [-2, 2]], 1), vec2![[-2, 2]]);
     assert_eq!(
-        k_closest(vec![vec![1, 3], vec![-2, 2]], 1),
-        vec![vec![-2, 2]]
-    );
-    assert_eq!(
-        k_closest(vec![vec![3, 3], vec![5, -1], vec![-2, 4]], 2),
-        vec![vec![3, 3], vec![-2, 4]]
+        k_closest(vec2![[3, 3], [5, -1], [-2, 4]], 2),
+        vec2![[3, 3], [-2, 4]]
     );
 }
