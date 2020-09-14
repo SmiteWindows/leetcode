@@ -29,11 +29,11 @@ pub fn remove_duplicate_letters(s: String) -> String {
 #[test]
 fn test2_316() {
     assert_eq!(
-        remove_duplicate_letters(String::from("bcabc")),
-        String::from("abc")
+        remove_duplicate_letters("bcabc".to_string()),
+        "abc".to_string()
     );
     assert_eq!(
-        remove_duplicate_letters(String::from("cbacdcbc")),
-        String::from("acdb")
+        remove_duplicate_letters("cbacdcbc".to_string()),
+        "acdb".to_string()
     );
 }

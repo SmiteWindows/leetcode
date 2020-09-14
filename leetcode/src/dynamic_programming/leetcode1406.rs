@@ -36,12 +36,12 @@ fn dp(start: usize, memo: &mut HashMap<usize, i32>, values: &[i32], n: usize) ->
 // dynamic_programming
 #[test]
 fn test1_1406() {
-    assert_eq!(stone_game_iii(vec![1, 2, 3, 7]), String::from("Bob"));
-    assert_eq!(stone_game_iii(vec![1, 2, 3, -9]), String::from("Alice"));
-    assert_eq!(stone_game_iii(vec![1, 2, 3, 6]), String::from("Tie"));
+    assert_eq!(stone_game_iii(vec![1, 2, 3, 7]), "Bob".to_string());
+    assert_eq!(stone_game_iii(vec![1, 2, 3, -9]), "Alice".to_string());
+    assert_eq!(stone_game_iii(vec![1, 2, 3, 6]), "Tie".to_string());
     assert_eq!(
         stone_game_iii(vec![1, 2, 3, -1, -2, -3, 7]),
-        String::from("Alice")
+        "Alice".to_string()
     );
-    assert_eq!(stone_game_iii(vec![-1, -2, -3]), String::from("Tie"));
+    assert_eq!(stone_game_iii(vec![-1, -2, -3]), "Tie".to_string());
 }

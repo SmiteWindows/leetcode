@@ -21,7 +21,7 @@ pub fn can_make_pali_queries(s: String, queries: Vec<Vec<i32>>) -> Vec<bool> {
 fn test1_1177() {
     assert_eq!(
         can_make_pali_queries(
-            String::from("abcda"),
+            "abcda"),
             vec![
                 vec![3, 3, 0],
                 vec![1, 2, 0],

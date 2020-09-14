@@ -19,8 +19,5 @@ pub fn remove_duplicates(s: String) -> String {
 // stack
 #[test]
 fn test1_1047() {
-    assert_eq!(
-        remove_duplicates(String::from("abbaca")),
-        String::from("ca")
-    );
+    assert_eq!(remove_duplicates("abbaca".to_string()), "ca".to_string());
 }

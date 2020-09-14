@@ -17,7 +17,7 @@ pub fn min_cost(s: String, cost: Vec<i32>) -> i32 {
 // greedy
 #[test]
 fn test1_1578() {
-    assert_eq!(min_cost(String::from("abaac"), vec![1, 2, 3, 4, 5]), 3);
-    assert_eq!(min_cost(String::from("abc"), vec![1, 2, 3]), 0);
-    assert_eq!(min_cost(String::from("aabaa"), vec![1, 2, 3, 4, 1]), 2);
+    assert_eq!(min_cost("abaac".to_string(), vec![1, 2, 3, 4, 5]), 3);
+    assert_eq!(min_cost("abc".to_string(), vec![1, 2, 3]), 0);
+    assert_eq!(min_cost("aabaa".to_string(), vec![1, 2, 3, 4, 1]), 2);
 }

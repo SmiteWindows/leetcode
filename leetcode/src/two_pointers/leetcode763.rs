@@ -27,7 +27,7 @@ pub fn partition_labels(s: String) -> Vec<i32> {
 #[test]
 fn test1_763() {
     assert_eq!(
-        partition_labels(String::from("ababcbacadefegdehijhklij")),
+        partition_labels("ababcbacadefegdehijhklij".to_string()),
         vec![9, 7, 8]
     );
 }

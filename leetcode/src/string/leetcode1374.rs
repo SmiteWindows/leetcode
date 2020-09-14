@@ -10,10 +10,10 @@ pub fn generate_the_string(n: i32) -> String {
 // string
 #[test]
 fn test1_1374() {
-    assert_eq!(generate_the_string(4), String::from("aaab"));
-    // assert_eq!(generate_the_string(4), String::from("pppz"));
-    assert_eq!(generate_the_string(2), String::from("ab"));
-    // assert_eq!(generate_the_string(2), String::from("xy"));
-    assert_eq!(generate_the_string(7), String::from("aaaaaaa"));
-    // assert_eq!(generate_the_string(7), String::from("holasss"));
+    assert_eq!(generate_the_string(4), "aaab"));
+    // assert_eq!(generate_the_string(4), "pppz"));
+    assert_eq!(generate_the_string(2), "ab"));
+    // assert_eq!(generate_the_string(2), "xy"));
+    assert_eq!(generate_the_string(7), "aaaaaaa"));
+    // assert_eq!(generate_the_string(7), "holasss"));
 }

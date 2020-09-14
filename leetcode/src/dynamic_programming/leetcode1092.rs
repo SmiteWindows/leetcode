@@ -39,7 +39,7 @@ pub fn shortest_common_supersequence(str1: String, str2: String) -> String {
 #[test]
 fn test1_1092() {
     assert_eq!(
-        shortest_common_supersequence(String::from("abac"), String::from("cab")),
-        String::from("cabac")
+        shortest_common_supersequence("abac".to_string(), "cab".to_string()),
+        "cabac".to_string()
     );
 }

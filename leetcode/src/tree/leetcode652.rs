@@ -29,7 +29,7 @@ fn walk(
         }
         serial
     } else {
-        String::from("#")
+        "#".to_string()
     }
 }
 

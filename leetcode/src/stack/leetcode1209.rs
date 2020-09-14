@@ -27,15 +27,15 @@ pub fn remove_duplicates(s: String, k: i32) -> String {
 #[test]
 fn test1_1209() {
     assert_eq!(
-        remove_duplicates(String::from("abcd"), 2),
-        String::from("abcd")
+        remove_duplicates("abcd".to_string(), 2),
+        "abcd".to_string()
     );
     assert_eq!(
-        remove_duplicates(String::from("deeedbbcccbdaa"), 3),
-        String::from("aa")
+        remove_duplicates("deeedbbcccbdaa"), 3),
+        "aa".to_string()
     );
     assert_eq!(
-        remove_duplicates(String::from("pbbcggttciiippooaais"), 2),
-        String::from("ps")
+        remove_duplicates("pbbcggttciiippooaais".to_string(), 2),
+        "ps".to_string()
     );
 }

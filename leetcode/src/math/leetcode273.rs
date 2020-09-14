@@ -66,17 +66,14 @@ fn words(
 // math string
 #[test]
 fn test2_273() {
-    assert_eq!(
-        number_to_words(123),
-        String::from("One Hundred Twenty Three")
-    );
+    assert_eq!(number_to_words(123), "One Hundred Twenty Three".to_string());
     assert_eq!(
         number_to_words(12345),
-        String::from("Twelve Thousand Three Hundred Forty Five")
+        "Twelve Thousand Three Hundred Forty Five".to_string()
     );
     assert_eq!(
         number_to_words(1234567),
-        String::from("One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven")
+        "One Million Two Hundred Thirty Four Thousand Five Hundred Sixty Seven".to_string()
     );
-    assert_eq!(number_to_words(1234567891), String::from("One Billion Two Hundred Thirty Four Million Five Hundred Sixty Seven Thousand Eight Hundred Ninety One"));
+    assert_eq!(number_to_words(1234567891), "One Billion Two Hundred Thirty Four Million Five Hundred Sixty Seven Thousand Eight Hundred Ninety One".to_string());
 }

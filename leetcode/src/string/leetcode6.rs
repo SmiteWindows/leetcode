@@ -34,11 +34,11 @@ pub fn convert(s: String, num_rows: i32) -> String {
 #[test]
 fn test1_6() {
     assert_eq!(
-        convert(String::from("PAYPALISHIRING"), 3),
-        String::from("PAHNAPLSIIGYIR")
+        convert("PAYPALISHIRING".to_string(), 3),
+        "PAHNAPLSIIGYIR".to_string()
     );
     assert_eq!(
-        convert(String::from("PAYPALISHIRING"), 4),
-        String::from("PINALSIGYAHRPI")
+        convert("PAYPALISHIRING".to_string(), 4),
+        "PINALSIGYAHRPI".to_string()
     );
 }

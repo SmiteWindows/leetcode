@@ -49,11 +49,11 @@ fn test1_1275() {
     use leetcode_prelude::vec2;
     assert_eq!(
         tictactoe(vec2![[0, 0], [2, 0], [1, 1], [2, 1], [2, 2]]),
-        String::from("A")
+        "A")
     );
     assert_eq!(
         tictactoe(vec2![[0, 0], [1, 1], [0, 1], [0, 2], [1, 0], [2, 0]]),
-        String::from("B")
+        "B")
     );
     assert_eq!(
         tictactoe(vec2![
@@ -67,7 +67,7 @@ fn test1_1275() {
             [0, 2],
             [2, 2]
         ]),
-        String::from("Draw")
+        "Draw")
     );
-    assert_eq!(tictactoe(vec2![[0, 0], [1, 1]]), String::from("Pending"));
+    assert_eq!(tictactoe(vec2![[0, 0], [1, 1]]), "Pending"));
 }

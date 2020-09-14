@@ -52,15 +52,9 @@ impl Word {
 // string
 #[test]
 fn test1_809() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
-        expressive_words(
-            String::from("heeellooo"),
-            vec![
-                String::from("hello"),
-                String::from("hi"),
-                String::from("helo")
-            ]
-        ),
+        expressive_words("heeellooo".to_string(), vec_string!["hello", "hi", "helo"]),
         1
     );
 }

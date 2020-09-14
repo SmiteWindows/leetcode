@@ -27,19 +27,13 @@ pub fn multiply(num1: String, num2: String) -> String {
 #[test]
 fn test1_43() {
     assert_eq!(
-        multiply(String::from("123"), String::from("45")),
-        String::from("5535")
+        multiply("123".to_string(), "45".to_string()),
+        "5535".to_string()
     );
     assert_eq!(
-        multiply(String::from("123"), String::from("456")),
-        String::from("56088")
+        multiply("123".to_string(), "456".to_string()),
+        "56088".to_string()
     );
-    assert_eq!(
-        multiply(String::from("2"), String::from("3")),
-        String::from("6")
-    );
-    assert_eq!(
-        multiply(String::from("0"), String::from("3")),
-        String::from("0")
-    );
+    assert_eq!(multiply("2".to_string(), "3".to_string()), "6".to_string());
+    assert_eq!(multiply("0".to_string(), "3".to_string()), "0".to_string());
 }

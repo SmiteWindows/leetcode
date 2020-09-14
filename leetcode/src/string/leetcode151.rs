@@ -8,15 +8,15 @@ pub fn reverse_words(s: String) -> String {
 #[test]
 fn test1_151() {
     assert_eq!(
-        reverse_words(String::from("the sky is blue")),
-        String::from("blue is sky the")
+        reverse_words("the sky is blue".to_string()),
+        "blue is sky the".to_string()
     );
     assert_eq!(
-        reverse_words(String::from("  hello world!  ")),
-        String::from("world! hello")
+        reverse_words("  hello world!  ".to_string()),
+        "world! hello".to_string()
     );
     assert_eq!(
-        reverse_words(String::from("a good   example")),
-        String::from("example good a")
+        reverse_words("a good   example".to_string()),
+        "example good a".to_string()
     );
 }

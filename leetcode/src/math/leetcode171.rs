@@ -8,7 +8,7 @@ pub fn title_to_number(s: String) -> i32 {
 // math
 #[test]
 fn test1_171() {
-    assert_eq!(title_to_number(String::from("A")), 1);
-    assert_eq!(title_to_number(String::from("AB")), 28);
-    assert_eq!(title_to_number(String::from("ZY")), 701);
+    assert_eq!(title_to_number("A".to_string()), 1);
+    assert_eq!(title_to_number("AB".to_string()), 28);
+    assert_eq!(title_to_number("ZY".to_string()), 701);
 }

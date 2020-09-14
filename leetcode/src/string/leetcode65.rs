@@ -110,18 +110,18 @@ enum Tok {
 // string math
 #[test]
 fn test2_65() {
-    assert_eq!(is_number(String::from("0")), true);
-    assert_eq!(is_number(String::from(" 0.1 ")), true);
-    assert_eq!(is_number(String::from("abc")), false);
-    assert_eq!(is_number(String::from("1 a")), false);
-    assert_eq!(is_number(String::from("2e10")), true);
-    assert_eq!(is_number(String::from(" -90e3   ")), true);
-    assert_eq!(is_number(String::from(" 1e")), false);
-    assert_eq!(is_number(String::from("e3")), false);
-    assert_eq!(is_number(String::from(" 6e-1")), true);
-    assert_eq!(is_number(String::from(" 99e2.5 ")), false);
-    assert_eq!(is_number(String::from("53.5e93")), true);
-    assert_eq!(is_number(String::from(" --6 ")), false);
-    assert_eq!(is_number(String::from("-+3")), false);
-    assert_eq!(is_number(String::from("95a54e53")), false);
+    assert_eq!(is_number("0".to_string()), true);
+    assert_eq!(is_number(" 0.1 ".to_string()), true);
+    assert_eq!(is_number("abc".to_string()), false);
+    assert_eq!(is_number("1 a".to_string()), false);
+    assert_eq!(is_number("2e10".to_string()), true);
+    assert_eq!(is_number(" -90e3   ".to_string()), true);
+    assert_eq!(is_number(" 1e".to_string()), false);
+    assert_eq!(is_number("e3".to_string()), false);
+    assert_eq!(is_number(" 6e-1".to_string()), true);
+    assert_eq!(is_number(" 99e2.5 ".to_string()), false);
+    assert_eq!(is_number("53.5e93".to_string()), true);
+    assert_eq!(is_number(" --6 ".to_string()), false);
+    assert_eq!(is_number("-+3".to_string()), false);
+    assert_eq!(is_number("95a54e53".to_string()), false);
 }

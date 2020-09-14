@@ -31,11 +31,11 @@ pub fn check_inclusion(s1: String, s2: String) -> bool {
 #[test]
 fn test1_567() {
     assert_eq!(
-        check_inclusion(String::from("ab"), String::from("eidbaooo")),
+        check_inclusion("ab".to_string(), "eidbaooo".to_string()),
         true
     );
     assert_eq!(
-        check_inclusion(String::from("ab"), String::from("eidboaoo")),
+        check_inclusion("ab".to_string(), "eidboaoo".to_string()),
         false
     );
 }

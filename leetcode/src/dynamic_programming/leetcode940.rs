@@ -6,7 +6,7 @@ pub fn distinct_subseq_ii(s: String) -> i32 {
 #[test]
 #[ignore]
 fn test1_940() {
-    assert_eq!(distinct_subseq_ii(String::from("abc")), 7);
-    assert_eq!(distinct_subseq_ii(String::from("aba")), 6);
-    assert_eq!(distinct_subseq_ii(String::from("aaa")), 3);
+    assert_eq!(distinct_subseq_ii("abc".to_string()), 7);
+    assert_eq!(distinct_subseq_ii("aba".to_string()), 6);
+    assert_eq!(distinct_subseq_ii("aaa".to_string()), 3);
 }

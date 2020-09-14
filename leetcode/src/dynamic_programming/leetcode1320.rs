@@ -34,8 +34,8 @@ fn dist(f: i32, g: i32) -> i32 {
 // dynamic_programming
 #[test]
 fn test1_1320() {
-    assert_eq!(minimum_distance(String::from("CAKE")), 3);
-    assert_eq!(minimum_distance(String::from("HAPPY")), 6);
-    assert_eq!(minimum_distance(String::from("NEW")), 3);
-    assert_eq!(minimum_distance(String::from("YEAR")), 7);
+    assert_eq!(minimum_distance("CAKE".to_string()), 3);
+    assert_eq!(minimum_distance("HAPPY".to_string()), 6);
+    assert_eq!(minimum_distance("NEW".to_string()), 3);
+    assert_eq!(minimum_distance("YEAR".to_string()), 7);
 }

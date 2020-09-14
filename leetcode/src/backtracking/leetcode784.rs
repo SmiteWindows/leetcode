@@ -33,15 +33,15 @@ fn permutation(s: &[char], n: usize, i: usize, t: &mut String, res: &mut Vec<Str
 fn test1_784() {
     use leetcode_prelude::vec_string;
     assert_eq!(
-        letter_case_permutation(String::from("a1b2")),
+        letter_case_permutation("a1b2".to_string()),
         vec_string!["a1b2", "a1B2", "A1b2", "A1B2"]
     );
     assert_eq!(
-        letter_case_permutation(String::from("3z4")),
+        letter_case_permutation("3z4".to_string()),
         vec_string!["3z4", "3Z4"]
     );
     assert_eq!(
-        letter_case_permutation(String::from("12345")),
+        letter_case_permutation("12345".to_string()),
         vec_string!["12345"]
     );
 }

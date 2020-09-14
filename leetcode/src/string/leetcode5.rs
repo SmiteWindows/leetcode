@@ -31,8 +31,8 @@ pub fn longest_palindrome(s: String) -> String {
 #[test]
 fn test2_5() {
     assert_eq!(
-        longest_palindrome(String::from("babad")),
-        String::from("bab")
+        longest_palindrome("babad")),
+        "bab")
     );
-    assert_eq!(longest_palindrome(String::from("cbbd")), String::from("bb"));
+    assert_eq!(longest_palindrome("cbbd")), "bb"));
 }

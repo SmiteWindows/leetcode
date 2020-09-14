@@ -25,6 +25,6 @@ fn is_palidrome(v: &str) -> Option<&str> {
 // string
 #[test]
 fn test1_680() {
-    // assert_eq!(valid_palindrome(String::from("aba")), true);
-    assert_eq!(valid_palindrome(String::from("abca")), true);
+    // assert_eq!(valid_palindrome("aba")), true);
+    assert_eq!(valid_palindrome("abca".to_string()), true);
 }

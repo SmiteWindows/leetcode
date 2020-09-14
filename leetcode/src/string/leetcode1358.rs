@@ -20,7 +20,7 @@ pub fn number_of_substrings(s: String) -> i32 {
 // string
 #[test]
 fn test1_1358() {
-    assert_eq!(number_of_substrings(String::from("abcabc")), 10);
-    assert_eq!(number_of_substrings(String::from("aaacb")), 3);
-    assert_eq!(number_of_substrings(String::from("abc")), 1);
+    assert_eq!(number_of_substrings("abcabc")), 10);
+    assert_eq!(number_of_substrings("aaacb")), 3);
+    assert_eq!(number_of_substrings("abc")), 1);
 }

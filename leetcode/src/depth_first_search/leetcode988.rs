@@ -60,7 +60,7 @@ fn test2_988() {
             right: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
         }))),
     })));
-    let s1 = String::from("dba");
+    let s1 = "dba".to_string();
     let t2 = Some(Rc::new(RefCell::new(TreeNode {
         val: 25,
         left: Some(Rc::new(RefCell::new(TreeNode {
@@ -74,7 +74,7 @@ fn test2_988() {
             right: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
         }))),
     })));
-    let s2 = String::from("adz");
+    let s2 = "adz".to_string();
     let t3 = Some(Rc::new(RefCell::new(TreeNode {
         val: 2,
         left: Some(Rc::new(RefCell::new(TreeNode {
@@ -92,7 +92,7 @@ fn test2_988() {
             right: None,
         }))),
     })));
-    let s3 = String::from("abc");
+    let s3 = "abc".to_string();
     assert_eq!(smallest_from_leaf(t1), s1);
     assert_eq!(smallest_from_leaf(t2), s2);
     assert_eq!(smallest_from_leaf(t3), s3);

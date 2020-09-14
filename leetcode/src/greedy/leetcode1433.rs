@@ -23,15 +23,15 @@ pub fn check_if_can_break(s1: String, s2: String) -> bool {
 #[test]
 fn test2_1433() {
     assert_eq!(
-        check_if_can_break(String::from("abc"), String::from("xya")),
+        check_if_can_break("abc".to_string(), "xya".to_string()),
         true
     );
     assert_eq!(
-        check_if_can_break(String::from("abe"), String::from("acd")),
+        check_if_can_break("abe".to_string(), "acd".to_string()),
         false
     );
     assert_eq!(
-        check_if_can_break(String::from("leetcodee"), String::from("interview")),
+        check_if_can_break("leetcodee".to_string(), "interview".to_string()),
         true
     );
 }

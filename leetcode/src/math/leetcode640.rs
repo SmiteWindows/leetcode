@@ -81,20 +81,20 @@ fn parse(s: &str) -> (i32, i32) {
 #[test]
 fn test1_640() {
     assert_eq!(
-        solve_equation(String::from("x+5-3+x=6+x-2")),
-        String::from("x=2")
+        solve_equation("x+5-3+x=6+x-2".to_string()),
+        "x=2".to_string()
     );
     assert_eq!(
-        solve_equation(String::from("x=x")),
-        String::from("Infinite solutions")
+        solve_equation("x=x".to_string()),
+        "Infinite solutions".to_string()
     );
-    assert_eq!(solve_equation(String::from("2x=x")), String::from("x=0"));
+    assert_eq!(solve_equation("2x=x".to_string()), "x=0".to_string());
     assert_eq!(
-        solve_equation(String::from("2x+3x-6x=x+2")),
-        String::from("x=-1")
+        solve_equation("2x+3x-6x=x+2".to_string()),
+        "x=-1".to_string()
     );
     assert_eq!(
-        solve_equation(String::from("x=x+2")),
-        String::from("No solution")
+        solve_equation("x=x+2".to_string()),
+        "No solution".to_string()
     );
 }

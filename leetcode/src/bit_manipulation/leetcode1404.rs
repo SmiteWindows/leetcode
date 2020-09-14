@@ -6,7 +6,7 @@ pub fn num_steps(s: String) -> i32 {
 #[test]
 #[ignore]
 fn test1_1404() {
-    assert_eq!(num_steps(String::from("1101")), 6);
-    assert_eq!(num_steps(String::from("10")), 1);
-    assert_eq!(num_steps(String::from("1")), 0);
+    assert_eq!(num_steps("1101".to_string()), 6);
+    assert_eq!(num_steps("10".to_string()), 1);
+    assert_eq!(num_steps("1".to_string()), 0);
 }

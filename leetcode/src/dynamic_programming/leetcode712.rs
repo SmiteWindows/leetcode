@@ -23,11 +23,11 @@ pub fn minimum_delete_sum(s1: String, s2: String) -> i32 {
 #[test]
 fn test1_712() {
     assert_eq!(
-        minimum_delete_sum(String::from("sea"), String::from("eat")),
+        minimum_delete_sum("sea".to_string(), "eat".to_string()),
         231
     );
     assert_eq!(
-        minimum_delete_sum(String::from("delete"), String::from("leet")),
+        minimum_delete_sum("delete".to_string(), "leet".to_string()),
         403
     );
 }

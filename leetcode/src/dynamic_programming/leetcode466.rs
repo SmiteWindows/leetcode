@@ -7,7 +7,7 @@ pub fn get_max_repetitions(s1: String, n1: i32, s2: String, n2: i32) -> i32 {
 #[ignore]
 fn test1_466() {
     assert_eq!(
-        get_max_repetitions(String::from("acb"), 4, String::from("ab"), 2),
+        get_max_repetitions("acb".to_string(), 4, "ab".to_string(), 2),
         2
     );
 }

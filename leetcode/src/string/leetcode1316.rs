@@ -6,9 +6,9 @@ pub fn distinct_echo_substrings(text: String) -> i32 {
 #[test]
 #[ignore]
 fn test2_1316() {
-    assert_eq!(distinct_echo_substrings(String::from("abcabcabc")), 3);
+    assert_eq!(distinct_echo_substrings("abcabcabc")), 3);
     assert_eq!(
-        distinct_echo_substrings(String::from("leetcodeleetcode")),
+        distinct_echo_substrings("leetcodeleetcode")),
         2
     );
 }

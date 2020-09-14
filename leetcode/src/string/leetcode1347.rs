@@ -16,15 +16,15 @@ pub fn min_steps(s: String, t: String) -> i32 {
 // string
 #[test]
 fn test1_1347() {
-    assert_eq!(min_steps(String::from("bab"), String::from("aba")), 1);
+    assert_eq!(min_steps("bab"), "aba")), 1);
     assert_eq!(
-        min_steps(String::from("leetcode"), String::from("practice")),
+        min_steps("leetcode"), "practice")),
         5
     );
     assert_eq!(
-        min_steps(String::from("anagram"), String::from("mangaar")),
+        min_steps("anagram"), "mangaar")),
         0
     );
-    assert_eq!(min_steps(String::from("xxyyzz"), String::from("xxyyzz")), 0);
-    assert_eq!(min_steps(String::from("friend"), String::from("family")), 4);
+    assert_eq!(min_steps("xxyyzz"), "xxyyzz")), 0);
+    assert_eq!(min_steps("friend"), "family")), 4);
 }

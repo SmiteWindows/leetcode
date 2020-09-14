@@ -56,12 +56,12 @@ fn is_match_dp(
 // string dynamic_programming backtracking
 #[test]
 fn test2_10() {
-    assert_eq!(is_match(String::from("aa"), String::from("a")), false);
-    assert_eq!(is_match(String::from("aa"), String::from("a*")), true);
-    assert_eq!(is_match(String::from("ab"), String::from(".*")), true);
-    assert_eq!(is_match(String::from("aab"), String::from("c*a*b")), true);
+    assert_eq!(is_match("aa".to_string(), "a".to_string()), false);
+    assert_eq!(is_match("aa".to_string(), "a*".to_string()), true);
+    assert_eq!(is_match("ab".to_string(), ".*".to_string(), true);
+    assert_eq!(is_match("aab").to_string(), "c*a*b".to_string()), true);
     assert_eq!(
-        is_match(String::from("mississippi"), String::from("mis*is*p*.")),
+        is_match("mississippi".to_string(), "mis*is*p*.".to_string()),
         false
     );
 }

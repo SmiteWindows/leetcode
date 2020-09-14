@@ -22,9 +22,9 @@ pub fn can_construct(s: String, k: i32) -> bool {
 // greedy
 #[test]
 fn test1_1400() {
-    assert_eq!(can_construct(String::from("annabelle"), 2), true);
-    assert_eq!(can_construct(String::from("leetcode"), 3), false);
-    assert_eq!(can_construct(String::from("true"), 4), true);
-    assert_eq!(can_construct(String::from("yzyzyzyzyzyzyzy"), 2), true);
-    assert_eq!(can_construct(String::from("cr"), 7), false);
+    assert_eq!(can_construct("annabelle".to_string(), 2), true);
+    assert_eq!(can_construct("leetcode".to_string(), 3), false);
+    assert_eq!(can_construct("true".to_string(), 4), true);
+    assert_eq!(can_construct("yzyzyzyzyzyzyzy".to_string(), 2), true);
+    assert_eq!(can_construct("cr".to_string(), 7), false);
 }

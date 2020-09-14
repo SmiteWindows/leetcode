@@ -33,6 +33,6 @@ fn dfs(start: usize, cur: &mut Vec<u64>, res: &mut bool, s: &str, n: usize) {
 // backtracking
 #[test]
 fn test1_306() {
-    assert_eq!(is_additive_number(String::from("112358")), true);
-    assert_eq!(is_additive_number(String::from("199100199")), true);
+    assert_eq!(is_additive_number("112358".to_string()), true);
+    assert_eq!(is_additive_number("199100199".to_string()), true);
 }

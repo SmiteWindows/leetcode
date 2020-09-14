@@ -6,6 +6,6 @@ pub fn reorganize_string(s: String) -> String {
 #[test]
 #[ignore]
 fn test4_767() {
-    assert_eq!(reorganize_string(String::from("aab")), String::from("aba"));
-    assert_eq!(reorganize_string(String::from("aaab")), String::from(""));
+    assert_eq!(reorganize_string("aab".to_string()), "aba".to_string());
+    assert_eq!(reorganize_string("aaab".to_string()), "".to_string());
 }

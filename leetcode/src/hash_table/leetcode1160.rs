@@ -28,26 +28,15 @@ pub fn count_characters(words: Vec<String>, chars: String) -> i32 {
 // hash_table array
 #[test]
 fn test1_1160() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
-        count_characters(
-            vec![
-                String::from("cat"),
-                String::from("bt"),
-                String::from("hat"),
-                String::from("tree")
-            ],
-            String::from("atach")
-        ),
+        count_characters(vec_string!["cat", "bt", "hat", "tree"], "atach".to_string()),
         6
     );
     assert_eq!(
         count_characters(
-            vec![
-                String::from("hello"),
-                String::from("world"),
-                String::from("leetcode")
-            ],
-            String::from("welldonehoneyr")
+            vec_string!["hello", "world", "leetcode"],
+            "welldonehoneyr".to_string()
         ),
         10
     );

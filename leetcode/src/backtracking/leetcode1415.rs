@@ -35,9 +35,9 @@ fn dfs(start: usize, cur: &mut Vec<u8>, all: &mut Vec<String>, n: usize, k: usiz
 // backtracking
 #[test]
 fn test1_1415() {
-    assert_eq!(get_happy_string(1, 3), String::from("c"));
-    assert_eq!(get_happy_string(1, 4), String::from(""));
-    assert_eq!(get_happy_string(3, 9), String::from("cab"));
-    assert_eq!(get_happy_string(2, 7), String::from(""));
-    assert_eq!(get_happy_string(10, 100), String::from("abacbabacb"));
+    assert_eq!(get_happy_string(1, 3), "c".to_string());
+    assert_eq!(get_happy_string(1, 4), "".to_string());
+    assert_eq!(get_happy_string(3, 9), "cab".to_string());
+    assert_eq!(get_happy_string(2, 7), "".to_string());
+    assert_eq!(get_happy_string(10, 100), "abacbabacb".to_string());
 }

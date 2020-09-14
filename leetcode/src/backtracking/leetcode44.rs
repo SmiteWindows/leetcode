@@ -46,12 +46,9 @@ fn is_match_dp(
 // string dynamic_programming backtracking greedy
 #[test]
 fn test1_44() {
-    assert_eq!(is_match(String::from("aa"), String::from("a")), false);
-    assert_eq!(is_match(String::from("aa"), String::from("*")), true);
-    assert_eq!(is_match(String::from("cb"), String::from("?a")), false);
-    assert_eq!(is_match(String::from("adceb"), String::from("a*b")), true);
-    assert_eq!(
-        is_match(String::from("acdcb"), String::from("a*c?b")),
-        false
-    );
+    assert_eq!(is_match("aa".to_string(), "a".to_string()), false);
+    assert_eq!(is_match("aa".to_string(), "*".to_string()), true);
+    assert_eq!(is_match("cb".to_string(), "?a".to_string()), false);
+    assert_eq!(is_match("adceb".to_string(), "a*b".to_string()), true);
+    assert_eq!(is_match("acdcb".to_string(), "a*c?b".to_string()), false);
 }

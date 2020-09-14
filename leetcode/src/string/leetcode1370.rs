@@ -35,17 +35,17 @@ pub fn sort_string(s: String) -> String {
 #[test]
 fn test2_1370() {
     assert_eq!(
-        sort_string(String::from("aaaabbbbcccc")),
-        String::from("abccbaabccba")
+        sort_string("aaaabbbbcccc")),
+        "abccbaabccba")
     );
-    assert_eq!(sort_string(String::from("rat")), String::from("art"));
+    assert_eq!(sort_string("rat")), "art"));
     assert_eq!(
-        sort_string(String::from("leetcode")),
-        String::from("cdelotee")
+        sort_string("leetcode")),
+        "cdelotee")
     );
     assert_eq!(
-        sort_string(String::from("ggggggg")),
-        String::from("ggggggg")
+        sort_string("ggggggg")),
+        "ggggggg")
     );
-    assert_eq!(sort_string(String::from("spo")), String::from("ops"));
+    assert_eq!(sort_string("spo")), "ops"));
 }

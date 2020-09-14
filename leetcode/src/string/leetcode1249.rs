@@ -33,19 +33,19 @@ pub fn min_remove_to_make_valid(s: String) -> String {
 #[test]
 fn test2_1249() {
     assert_eq!(
-        min_remove_to_make_valid(String::from("lee(t(c)o)de)")),
-        String::from("lee(t(c)o)de")
+        min_remove_to_make_valid("lee(t(c)o)de)")),
+        "lee(t(c)o)de")
     );
     assert_eq!(
-        min_remove_to_make_valid(String::from("a)b(c)d")),
-        String::from("ab(c)d")
+        min_remove_to_make_valid("a)b(c)d")),
+        "ab(c)d")
     );
     assert_eq!(
-        min_remove_to_make_valid(String::from("))((")),
-        String::from("")
+        min_remove_to_make_valid("))((")),
+        "")
     );
     assert_eq!(
-        min_remove_to_make_valid(String::from("(a(b(c)d)")),
-        String::from("a(b(c)d)")
+        min_remove_to_make_valid("(a(b(c)d)")),
+        "a(b(c)d)")
     );
 }

@@ -47,6 +47,6 @@ enum Tok {
 // string dynamic_programming
 #[test]
 fn test2_32() {
-    assert_eq!(longest_valid_parentheses(String::from("(()")), 2);
-    assert_eq!(longest_valid_parentheses(String::from(")()())")), 4);
+    assert_eq!(longest_valid_parentheses("(()".to_string()), 2);
+    assert_eq!(longest_valid_parentheses(")()())".to_string()), 4);
 }

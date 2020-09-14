@@ -7,13 +7,13 @@ pub fn longest_decomposition(text: String) -> i32 {
 #[ignore]
 fn test2_1147() {
     assert_eq!(
-        longest_decomposition(String::from("ghiabcdefhelloadamhelloabcdefghi")),
+        longest_decomposition("ghiabcdefhelloadamhelloabcdefghi".to_string()),
         7
     );
-    assert_eq!(longest_decomposition(String::from("merchant")), 1);
+    assert_eq!(longest_decomposition("merchant".to_string()), 1);
     assert_eq!(
-        longest_decomposition(String::from("antaprezatepzapreanta")),
+        longest_decomposition("antaprezatepzapreanta".to_string()),
         11
     );
-    assert_eq!(longest_decomposition(String::from("aaa")), 3);
+    assert_eq!(longest_decomposition("aaa".to_string()), 3);
 }

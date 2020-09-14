@@ -15,10 +15,7 @@ pub fn repeated_substring_pattern(s: String) -> bool {
 // string
 #[test]
 fn test1_459() {
-    assert_eq!(repeated_substring_pattern(String::from("abab")), true);
-    assert_eq!(repeated_substring_pattern(String::from("aba")), false);
-    assert_eq!(
-        repeated_substring_pattern(String::from("abcabcabcabc")),
-        true
-    );
+    assert_eq!(repeated_substring_pattern("abab".to_string()), true);
+    assert_eq!(repeated_substring_pattern("aba".to_string()), false);
+    assert_eq!(repeated_substring_pattern("abcabcabcabc".to_string()), true);
 }

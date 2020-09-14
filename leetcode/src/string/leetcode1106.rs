@@ -62,8 +62,8 @@ enum Tok {
 // string
 #[test]
 fn test1_1106() {
-    assert_eq!(parse_bool_expr(String::from("!(f)")), true);
-    assert_eq!(parse_bool_expr(String::from("|(f,t)")), true);
-    assert_eq!(parse_bool_expr(String::from("&(t,f)")), false);
-    assert_eq!(parse_bool_expr(String::from("|(&(t,f,t),!(t))")), false);
+    assert_eq!(parse_bool_expr("!(f)")), true);
+    assert_eq!(parse_bool_expr("|(f,t)")), true);
+    assert_eq!(parse_bool_expr("&(t,f)")), false);
+    assert_eq!(parse_bool_expr("|(&(t,f,t),!(t))")), false);
 }

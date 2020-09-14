@@ -29,22 +29,22 @@ pub fn simplify_path(path: String) -> String {
 // stack string
 #[test]
 fn test2_71() {
-    assert_eq!(simplify_path(String::from("/home/")), String::from("/home"));
-    assert_eq!(simplify_path(String::from("/../")), String::from("/"));
+    assert_eq!(simplify_path("/home/".to_string()), "/home".to_string());
+    assert_eq!(simplify_path("/../".to_string()), "/".to_string());
     assert_eq!(
-        simplify_path(String::from("/home//foo/")),
-        String::from("/home/foo")
+        simplify_path("/home//foo/".to_string()),
+        "/home/foo".to_string()
     );
     assert_eq!(
-        simplify_path(String::from("/a/./b/../../c/")),
-        String::from("/c")
+        simplify_path("/a/./b/../../c/".to_string()),
+        "/c".to_string()
     );
     assert_eq!(
-        simplify_path(String::from("/a/../../b/../c//.//")),
-        String::from("/c")
+        simplify_path("/a/../../b/../c//.//".to_string()),
+        "/c".to_string()
     );
     assert_eq!(
-        simplify_path(String::from("/a//b////c/d//././/..")),
-        String::from("/a/b/c")
+        simplify_path("/a//b////c/d//././/..".to_string()),
+        "/a/b/c".to_string()
     );
 }

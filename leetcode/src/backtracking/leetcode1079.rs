@@ -24,6 +24,6 @@ fn dfs(res: &mut i32, counts: &mut Vec<usize>) {
 // backtracking
 #[test]
 fn test1_1079() {
-    assert_eq!(num_tile_possibilities(String::from("AAB")), 8);
-    assert_eq!(num_tile_possibilities(String::from("AAABBC")), 188);
+    assert_eq!(num_tile_possibilities("AAB".to_string()), 8);
+    assert_eq!(num_tile_possibilities("AAABBC".to_string()), 188);
 }

@@ -59,23 +59,20 @@ fn dfs(num: &[u8], target: i64, v1: i64, v2: i64, path: &mut Vec<u8>, pathes: &m
 fn test1_282() {
     use leetcode_prelude::{assert_eq_sorted, vec_string};
     assert_eq_sorted!(
-        add_operators(String::from("123"), 6),
+        add_operators("123".to_string(), 6),
         vec_string!["1+2+3", "1*2*3"]
     );
     assert_eq_sorted!(
-        add_operators(String::from("232"), 8),
+        add_operators("232".to_string(), 8),
         vec_string!["2*3+2", "2+3*2"]
     );
     assert_eq_sorted!(
-        add_operators(String::from("105"), 5),
+        add_operators("105".to_string(), 5),
         vec_string!["1*0+5", "10-5"]
     );
     assert_eq_sorted!(
-        add_operators(String::from("00"), 0),
+        add_operators("00".to_string(), 0),
         vec_string!["0+0", "0-0", "0*0"]
     );
-    assert_eq_sorted!(
-        add_operators(String::from("3456237490"), 9191),
-        vec_string![]
-    );
+    assert_eq_sorted!(add_operators("3456237490".to_string(), 9191), vec_string![]);
 }

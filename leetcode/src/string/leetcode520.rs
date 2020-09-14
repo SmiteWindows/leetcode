@@ -31,6 +31,6 @@ pub fn detect_capital_use(word: String) -> bool {
 // string
 #[test]
 fn test1_520() {
-    assert_eq!(detect_capital_use(String::from("USA")), true);
-    assert_eq!(detect_capital_use(String::from("FlaG")), false);
+    assert_eq!(detect_capital_use("USA".to_string()), true);
+    assert_eq!(detect_capital_use("FlaG".to_string()), false);
 }

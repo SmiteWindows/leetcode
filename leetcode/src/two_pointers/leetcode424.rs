@@ -30,6 +30,6 @@ fn sum(count: &[i32]) -> i32 {
 // two_pointers sliding_window
 #[test]
 fn test2_424() {
-    assert_eq!(character_replacement(String::from("ABAB"), 2), 4);
-    assert_eq!(character_replacement(String::from("AABABBA"), 1), 4);
+    assert_eq!(character_replacement("ABAB".to_string(), 2), 4);
+    assert_eq!(character_replacement("AABABBA".to_string(), 1), 4);
 }

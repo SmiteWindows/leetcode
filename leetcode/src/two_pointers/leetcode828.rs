@@ -6,7 +6,7 @@ pub fn unique_letter_string(s: String) -> i32 {
 #[test]
 #[ignore]
 fn test1_828() {
-    assert_eq!(unique_letter_string(String::from("ABC")), 10);
-    assert_eq!(unique_letter_string(String::from("ABA")), 8);
-    assert_eq!(unique_letter_string(String::from("LEETCODE")), 92);
+    assert_eq!(unique_letter_string("ABC".to_string()), 10);
+    assert_eq!(unique_letter_string("ABA".to_string()), 8);
+    assert_eq!(unique_letter_string("LEETCODE".to_string()), 92);
 }

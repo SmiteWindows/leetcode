@@ -65,15 +65,15 @@ fn dfs(
 fn test1_301() {
     use leetcode_prelude::{assert_eq_sorted, vec_string};
     assert_eq_sorted!(
-        remove_invalid_parentheses(String::from("()())()")),
+        remove_invalid_parentheses("()())()".to_string()),
         vec_string!["()()()", "(())()"]
     );
     assert_eq_sorted!(
-        remove_invalid_parentheses(String::from("(a)())()")),
+        remove_invalid_parentheses("(a)())()".to_string()),
         vec_string!["(a)()()", "(a())()"]
     );
     assert_eq!(
-        remove_invalid_parentheses(String::from(")(")),
+        remove_invalid_parentheses(")(".to_string()),
         vec_string![""]
     );
 }

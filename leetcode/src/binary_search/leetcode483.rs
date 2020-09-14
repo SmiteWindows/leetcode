@@ -6,10 +6,10 @@ pub fn smallest_good_base(n: String) -> String {
 #[test]
 #[ignore]
 fn test1_483() {
-    assert_eq!(smallest_good_base(String::from("13")), String::from("3"));
-    assert_eq!(smallest_good_base(String::from("4681")), String::from("8"));
+    assert_eq!(smallest_good_base("13")), "3"));
+    assert_eq!(smallest_good_base("4681")), "8"));
     assert_eq!(
-        smallest_good_base(String::from("1000000000000000000")),
-        String::from("999999999999999999")
+        smallest_good_base("1000000000000000000")),
+        "999999999999999999")
     );
 }

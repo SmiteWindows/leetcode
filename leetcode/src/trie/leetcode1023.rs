@@ -9,39 +9,39 @@ fn test1_1023() {
     assert_eq!(
         camel_match(
             vec![
-                String::from("FooBar"),
-                String::from("FooBarTest"),
-                String::from("FootBall"),
-                String::from("FrameBuffer"),
-                String::from("ForceFeedBack"),
+                "FooBar"),
+                "FooBarTest"),
+                "FootBall"),
+                "FrameBuffer"),
+                "ForceFeedBack"),
             ],
-            String::from("FB")
+            "FB")
         ),
         vec![true, false, true, true, false]
     );
     assert_eq!(
         camel_match(
             vec![
-                String::from("FooBar"),
-                String::from("FooBarTest"),
-                String::from("FootBall"),
-                String::from("FrameBuffer"),
-                String::from("ForceFeedBack"),
+                "FooBar"),
+                "FooBarTest"),
+                "FootBall"),
+                "FrameBuffer"),
+                "ForceFeedBack"),
             ],
-            String::from("FoBa")
+            "FoBa")
         ),
         vec![true, false, true, false, false]
     );
     assert_eq!(
         camel_match(
             vec![
-                String::from("FooBar"),
-                String::from("FooBarTest"),
-                String::from("FootBall"),
-                String::from("FrameBuffer"),
-                String::from("ForceFeedBack"),
+                "FooBar"),
+                "FooBarTest"),
+                "FootBall"),
+                "FrameBuffer"),
+                "ForceFeedBack"),
             ],
-            String::from("FoBaT"),
+            "FoBaT"),
         ),
         vec![false, true, false, false, false]
     );

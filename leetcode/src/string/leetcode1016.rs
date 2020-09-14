@@ -13,6 +13,6 @@ pub fn query_string(s: String, n: i32) -> bool {
 // string
 #[test]
 fn test1_1016() {
-    assert_eq!(query_string(String::from("0110"), 3), true);
-    assert_eq!(query_string(String::from("0110"), 4), false);
+    assert_eq!(query_string("0110"), 3), true);
+    assert_eq!(query_string("0110"), 4), false);
 }

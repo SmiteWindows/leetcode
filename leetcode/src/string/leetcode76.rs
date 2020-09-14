@@ -47,7 +47,7 @@ pub fn min_window(s: String, t: String) -> String {
 #[test]
 fn test1_76() {
     assert_eq!(
-        min_window(String::from("ADOBECODEBANC"), String::from("ABC")),
-        String::from("BANC")
+        min_window("ADOBECODEBANC".to_string(), "ABC".to_string()),
+        "BANC".to_string()
     );
 }

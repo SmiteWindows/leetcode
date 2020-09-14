@@ -44,11 +44,11 @@ pub fn alphabet_board_path(target: String) -> String {
 #[test]
 fn test2_1138() {
     assert_eq!(
-        alphabet_board_path(String::from("leet")),
-        String::from("DDR!UURRR!!DDD!")
+        alphabet_board_path("leet")),
+        "DDR!UURRR!!DDD!")
     );
     assert_eq!(
-        alphabet_board_path(String::from("code")),
-        String::from("RR!DDRR!UUL!R!")
+        alphabet_board_path("code")),
+        "RR!DDRR!UUL!R!")
     );
 }

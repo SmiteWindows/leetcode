@@ -6,6 +6,6 @@ pub fn strange_printer(s: String) -> i32 {
 #[test]
 #[ignore]
 fn test2_664() {
-    assert_eq!(strange_printer(String::from("aaabbb")), 2);
-    assert_eq!(strange_printer(String::from("aba")), 2);
+    assert_eq!(strange_printer("aaabbb".to_string()), 2);
+    assert_eq!(strange_printer("aba".to_string()), 2);
 }

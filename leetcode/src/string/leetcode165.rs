@@ -27,21 +27,12 @@ pub fn compare_version(version1: String, version2: String) -> i32 {
 // string
 #[test]
 fn test1_165() {
+    assert_eq!(compare_version("0.1".to_string(), "1.1".to_string()), -1);
+    assert_eq!(compare_version("1.0.1".to_string(), "1".to_string()), 1);
     assert_eq!(
-        compare_version(String::from("0.1"), String::from("1.1")),
+        compare_version("7.5.2.4".to_string(), "7.5.3".to_string()),
         -1
     );
-    assert_eq!(compare_version(String::from("1.0.1"), String::from("1")), 1);
-    assert_eq!(
-        compare_version(String::from("7.5.2.4"), String::from("7.5.3")),
-        -1
-    );
-    assert_eq!(
-        compare_version(String::from("1.01"), String::from("1.001")),
-        0
-    );
-    assert_eq!(
-        compare_version(String::from("1.0"), String::from("1.0.0")),
-        0
-    );
+    assert_eq!(compare_version("1.01".to_string(), "1.001".to_string()), 0);
+    assert_eq!(compare_version("1.0".to_string(), "1.0.0".to_string()), 0);
 }

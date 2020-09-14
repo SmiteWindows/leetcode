@@ -38,12 +38,12 @@ pub fn decode_at_index(s: String, k: i32) -> String {
 #[test]
 fn test1_880() {
     assert_eq!(
-        decode_at_index(String::from("leet2code3"), 10),
-        String::from("o")
+        decode_at_index("leet2code3".to_string(), 10),
+        "o".to_string()
     );
-    assert_eq!(decode_at_index(String::from("ha22"), 5), String::from("h"));
+    assert_eq!(decode_at_index("ha22".to_string(), 5), "h".to_string());
     assert_eq!(
-        decode_at_index(String::from("a2345678999999999999999"), 1),
-        String::from("a")
+        decode_at_index("a2345678999999999999999".to_string(), 1),
+        "a".to_string()
     );
 }

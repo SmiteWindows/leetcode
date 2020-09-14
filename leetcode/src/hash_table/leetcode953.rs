@@ -25,21 +25,21 @@ fn test1_953() {
     assert_eq!(
         is_alien_sorted(
             vec_string!["hello", "leetcode"],
-            String::from("hlabcdefgijkmnopqrstuvwxyz")
+            "hlabcdefgijkmnopqrstuvwxyz".to_string()
         ),
         true
     );
     assert_eq!(
         is_alien_sorted(
             vec_string!["word", "world", "row"],
-            String::from("worldabcefghijkmnpqstuvxyz")
+            "worldabcefghijkmnpqstuvxyz".to_string()
         ),
         false
     );
     assert_eq!(
         is_alien_sorted(
             vec_string!["apple", "app"],
-            String::from("abcdefghijklmnopqrstuvwxyz")
+            "abcdefghijklmnopqrstuvwxyz".to_string()
         ),
         false
     );

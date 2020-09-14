@@ -35,15 +35,15 @@ fn decode(s: &[char], m: usize, i: &mut usize) -> String {
 #[test]
 fn test1_394() {
     assert_eq!(
-        decode_string(String::from("3[a]2[bc]")),
-        String::from("aaabcbc")
+        decode_string("3[a]2[bc]".to_string()),
+        "aaabcbc".to_string()
     );
     assert_eq!(
-        decode_string(String::from("3[a2[c]]")),
-        String::from("accaccacc")
+        decode_string("3[a2[c]]".to_string()),
+        "accaccacc".to_string()
     );
     assert_eq!(
-        decode_string(String::from("2[abc]3[cd]ef")),
-        String::from("abcabccdcdcdef")
+        decode_string("2[abc]3[cd]ef".to_string()),
+        "abcabccdcdcdef".to_string()
     );
 }

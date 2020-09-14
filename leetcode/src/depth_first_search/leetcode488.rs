@@ -68,17 +68,14 @@ fn dropable(board: &[char]) -> Option<Range<usize>> {
 // depth_first_search
 #[test]
 fn test1_488() {
+    assert_eq!(find_min_step("WRRBBW".to_string(), "RB".to_string()), -1);
     assert_eq!(
-        find_min_step(String::from("WRRBBW"), String::from("RB")),
-        -1
-    );
-    assert_eq!(
-        find_min_step(String::from("WWRRBBWW"), String::from("WRBRW")),
+        find_min_step("WWRRBBWW".to_string(), "WRBRW".to_string()),
         2
     );
-    assert_eq!(find_min_step(String::from("G"), String::from("GGGGG")), 2);
+    assert_eq!(find_min_step("G".to_string(), "GGGGG".to_string()), 2);
     assert_eq!(
-        find_min_step(String::from("RBYYBBRRB"), String::from("YRBGB")),
+        find_min_step("RBYYBBRRB".to_string(), "YRBGB".to_string()),
         3
     );
 }

@@ -101,9 +101,9 @@ impl NestedIntegerParser {
 #[test]
 fn test2_385() {
     use self::NestedInteger::*;
-    assert_eq!(deserialize(String::from("324")), Int(324));
+    assert_eq!(deserialize("324".to_string()), Int(324));
     assert_eq!(
-        deserialize(String::from("[123,[456,[789]]]")),
+        deserialize("[123,[456,[789]]]".to_string()),
         List(vec![Int(123), List(vec![Int(456), List(vec![Int(789)])])])
     );
 }

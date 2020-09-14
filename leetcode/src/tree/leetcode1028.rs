@@ -139,16 +139,13 @@ fn test1_1028() {
         }))),
         right: None,
     })));
+    assert_eq!(recover_from_preorder("1-2--3--4-5--6--7".to_string()), res1);
     assert_eq!(
-        recover_from_preorder(String::from("1-2--3--4-5--6--7")),
-        res1
-    );
-    assert_eq!(
-        recover_from_preorder(String::from("1-2--3---4-5--6---7")),
+        recover_from_preorder("1-2--3---4-5--6---7".to_string()),
         res2
     );
     assert_eq!(
-        recover_from_preorder(String::from("1-401--349---90--88")),
+        recover_from_preorder("1-401--349---90--88".to_string()),
         res3
     );
 }

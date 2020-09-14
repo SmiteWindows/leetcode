@@ -35,19 +35,19 @@ pub fn is_long_pressed_name(name: String, typed: String) -> bool {
 #[test]
 fn test2_925() {
     assert_eq!(
-        is_long_pressed_name(String::from("alex"), String::from("aaleex")),
+        is_long_pressed_name("alex".to_string(), "aaleex".to_string()),
         true
     );
     assert_eq!(
-        is_long_pressed_name(String::from("saeed"), String::from("ssaaedd")),
+        is_long_pressed_name("saeed".to_string(), "ssaaedd".to_string()),
         false
     );
     assert_eq!(
-        is_long_pressed_name(String::from("leelee"), String::from("lleeelee")),
+        is_long_pressed_name("leelee".to_string(), "lleeelee".to_string()),
         true
     );
     assert_eq!(
-        is_long_pressed_name(String::from("laiden"), String::from("laiden")),
+        is_long_pressed_name("laiden".to_string(), "laiden".to_string()),
         true
     );
 }

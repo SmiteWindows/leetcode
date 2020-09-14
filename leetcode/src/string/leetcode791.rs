@@ -15,7 +15,7 @@ pub fn custom_sort_string(s: String, t: String) -> String {
 #[test]
 fn test1_791() {
     assert_eq!(
-        custom_sort_string(String::from("cba"), String::from("abcd")),
-        String::from("cbad")
+        custom_sort_string("cba".to_string(), "abcd".to_string()),
+        "cbad".to_string()
     );
 }

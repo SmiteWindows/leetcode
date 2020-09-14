@@ -20,8 +20,8 @@ pub fn break_palindrome(palindrome: String) -> String {
 #[test]
 fn test1_1328() {
     assert_eq!(
-        break_palindrome(String::from("abccba")),
-        String::from("aaccba")
+        break_palindrome("abccba")),
+        "aaccba")
     );
-    assert_eq!(break_palindrome(String::from("a")), String::from(""));
+    assert_eq!(break_palindrome("a")), ""));
 }

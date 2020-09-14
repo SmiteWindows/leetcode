@@ -6,5 +6,5 @@ pub fn num_perms_di_sequence(s: String) -> i32 {
 #[test]
 #[ignore]
 fn test1_903() {
-    assert_eq!(num_perms_di_sequence(String::from("DID")), 5);
+    assert_eq!(num_perms_di_sequence("DID".to_string()), 5);
 }

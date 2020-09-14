@@ -24,8 +24,8 @@ fn is_leap(year: usize) -> bool {
 // math
 #[test]
 fn test1_1154() {
-    assert_eq!(day_of_year(String::from("2019-01-09")), 9);
-    assert_eq!(day_of_year(String::from("2019-02-10")), 41);
-    assert_eq!(day_of_year(String::from("2003-03-01")), 60);
-    assert_eq!(day_of_year(String::from("2004-03-01")), 61);
+    assert_eq!(day_of_year("2019-01-09".to_string()), 9);
+    assert_eq!(day_of_year("2019-02-10".to_string()), 41);
+    assert_eq!(day_of_year("2003-03-01".to_string()), 60);
+    assert_eq!(day_of_year("2004-03-01".to_string()), 61);
 }

@@ -31,11 +31,11 @@ pub fn shortest_palindrome(s: String) -> String {
 #[test]
 fn test1_214() {
     assert_eq!(
-        shortest_palindrome(String::from("aacecaaa")),
-        String::from("aaacecaaa")
+        shortest_palindrome("aacecaaa".to_string()),
+        "aaacecaaa".to_string()
     );
     assert_eq!(
-        shortest_palindrome(String::from("abcd")),
-        String::from("dcbabcd")
+        shortest_palindrome("abcd".to_string()),
+        "dcbabcd".to_string()
     );
 }

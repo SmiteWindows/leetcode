@@ -2,7 +2,6 @@
 // Runtime: 160 ms
 // Memory Usage: 6.8 MB
 use std::collections::HashMap;
-
 const MOD: u64 = 1_000_000_007;
 const P: u64 = 26;
 pub fn longest_dup_substring(s: String) -> String {
@@ -53,11 +52,8 @@ fn exist(size: usize, s: &[char], n: usize) -> Option<String> {
 #[test]
 fn test2_1044() {
     assert_eq!(
-        longest_dup_substring(String::from("banana")),
-        String::from("ana")
+        longest_dup_substring("banana".to_string()),
+        "ana".to_string()
     );
-    assert_eq!(
-        longest_dup_substring(String::from("abcd")),
-        String::from("")
-    );
+    assert_eq!(longest_dup_substring("abcd".to_string()), "".to_string());
 }

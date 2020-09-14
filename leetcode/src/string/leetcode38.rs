@@ -15,7 +15,7 @@ struct Pair {
 }
 
 fn next(nums: String) -> String {
-    let mut s = String::from("");
+    let mut s = "".to_string();
     let mut prev: Option<Pair> = None;
     for c in nums.chars() {
         if let Some(prev_pair) = prev {
@@ -42,6 +42,6 @@ fn next(nums: String) -> String {
 // string
 #[test]
 fn test1_38() {
-    assert_eq!(count_and_say(1), String::from("1"));
-    assert_eq!(count_and_say(4), String::from("1211"));
+    assert_eq!(count_and_say(1), "1".to_string());
+    assert_eq!(count_and_say(4), "1211".to_string());
 }

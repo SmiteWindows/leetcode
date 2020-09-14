@@ -7,20 +7,20 @@ pub fn find_good_strings(n: i32, s1: String, s2: String, evil: String) -> i32 {
 #[ignore]
 fn test1_1397() {
     assert_eq!(
-        find_good_strings(2, String::from("aa"), String::from("da"), String::from("b")),
+        find_good_strings(2, "aa".to_string(), "da".to_string(), "b".to_string()),
         51
     );
     assert_eq!(
         find_good_strings(
             8,
-            String::from("leetcode"),
-            String::from("leetgoes"),
-            String::from("leet")
+            "leetcode".to_string(),
+            "leetgoes".to_string(),
+            "leet".to_string()
         ),
         0
     );
     assert_eq!(
-        find_good_strings(2, String::from("gx"), String::from("gz"), String::from("x")),
+        find_good_strings(2, "gx".to_string(), "gz".to_string(), "x".to_string()),
         2
     );
 }

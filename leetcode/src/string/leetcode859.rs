@@ -38,12 +38,12 @@ pub fn buddy_strings(a: String, b: String) -> bool {
 // string
 #[test]
 fn test1_859() {
-    assert_eq!(buddy_strings(String::from("ab"), String::from("ba")), true);
-    assert_eq!(buddy_strings(String::from("ab"), String::from("ab")), false);
-    assert_eq!(buddy_strings(String::from("aa"), String::from("aa")), true);
+    assert_eq!(buddy_strings("ab".to_string(), "ba".to_string()), true);
+    assert_eq!(buddy_strings("ab".to_string(), "ab".to_string()), false);
+    assert_eq!(buddy_strings("aa".to_string(), "aa".to_string()), true);
     assert_eq!(
-        buddy_strings(String::from("aaaaaaabc"), String::from("aaaaaaacb")),
+        buddy_strings("aaaaaaabc".to_string(), "aaaaaaacb".to_string()),
         true
     );
-    assert_eq!(buddy_strings(String::from(""), String::from("aa")), false);
+    assert_eq!(buddy_strings("".to_string(), "aa".to_string()), false);
 }

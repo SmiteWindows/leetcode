@@ -33,11 +33,11 @@ pub fn to_goat_latin(s: String) -> String {
 #[test]
 fn test1_824() {
     assert_eq!(
-        to_goat_latin(String::from("I speak Goat Latin")),
-        String::from("Imaa peaksmaaa oatGmaaaa atinLmaaaaa")
+        to_goat_latin("I speak Goat Latin".to_string()),
+        "Imaa peaksmaaa oatGmaaaa atinLmaaaaa".to_string()
     );
     assert_eq!(
-        to_goat_latin(String::from("The quick brown fox jumped over the lazy dog")),
-        String::from("heTmaa uickqmaaa rownbmaaaa oxfmaaaaa umpedjmaaaaaa overmaaaaaaa hetmaaaaaaaa azylmaaaaaaaaa ogdmaaaaaaaaaa")
+        to_goat_latin("The quick brown fox jumped over the lazy dog".to_string()),
+        "heTmaa uickqmaaa rownbmaaaa oxfmaaaaa umpedjmaaaaaa overmaaaaaaa hetmaaaaaaaa azylmaaaaaaaaa ogdmaaaaaaaaaa".to_string()
     );
 }

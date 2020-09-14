@@ -29,7 +29,7 @@ pub fn min_flips_mono_incr(s: String) -> i32 {
 // array
 #[test]
 fn test1_926() {
-    assert_eq!(min_flips_mono_incr(String::from("00110")), 1);
-    assert_eq!(min_flips_mono_incr(String::from("010110")), 2);
-    assert_eq!(min_flips_mono_incr(String::from("00011000")), 2);
+    assert_eq!(min_flips_mono_incr("00110".to_string()), 1);
+    assert_eq!(min_flips_mono_incr("010110".to_string()), 2);
+    assert_eq!(min_flips_mono_incr("00011000".to_string()), 2);
 }

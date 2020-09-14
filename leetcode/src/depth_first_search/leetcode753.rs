@@ -6,6 +6,6 @@ pub fn crack_safe(n: i32, k: i32) -> String {
 #[test]
 #[ignore]
 fn test2_753() {
-    assert_eq!(crack_safe(1, 2), String::from("01"));
-    assert_eq!(crack_safe(2, 2), String::from("00110"));
+    assert_eq!(crack_safe(1, 2), "01".to_string());
+    assert_eq!(crack_safe(2, 2), "00110".to_string());
 }

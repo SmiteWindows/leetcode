@@ -28,15 +28,15 @@ pub fn reverse_only_letters(s: String) -> String {
 #[test]
 fn test1_917() {
     assert_eq!(
-        reverse_only_letters(String::from("ab-cd")),
-        String::from("dc-ba")
+        reverse_only_letters("ab-cd".to_string()),
+        "dc-ba".to_string()
     );
     assert_eq!(
-        reverse_only_letters(String::from("a-bC-dEf-ghIj")),
-        String::from("j-Ih-gfE-dCba")
+        reverse_only_letters("a-bC-dEf-ghIj".to_string()),
+        "j-Ih-gfE-dCba".to_string()
     );
     assert_eq!(
-        reverse_only_letters(String::from("Test1ng-Leet=code-Q!")),
-        String::from("Qedo1ct-eeLg=ntse-T!")
+        reverse_only_letters("Test1ng-Leet=code-Q!".to_string()),
+        "Qedo1ct-eeLg=ntse-T!".to_string()
     );
 }

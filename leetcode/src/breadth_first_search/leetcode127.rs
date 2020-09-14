@@ -48,32 +48,20 @@ pub fn ladder_length(begin_word: String, end_word: String, word_list: Vec<String
 // breadth_first_search
 #[test]
 fn test1_127() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
         ladder_length(
-            String::from("hit"),
-            String::from("cog"),
-            vec![
-                String::from("hot"),
-                String::from("dot"),
-                String::from("dog"),
-                String::from("lot"),
-                String::from("log"),
-                String::from("cog")
-            ]
+            "hit".to_string(),
+            "cog".to_string(),
+            vec_string!["hot", "dot", "dog", "lot", "log", "cog"]
         ),
         5
     );
     assert_eq!(
         ladder_length(
-            String::from("hit"),
-            String::from("cog"),
-            vec![
-                String::from("hot"),
-                String::from("dot"),
-                String::from("dog"),
-                String::from("lot"),
-                String::from("log")
-            ]
+            "hit".to_string(),
+            "cog".to_string(),
+            vec_string!["hot", "dot", "dog", "lot", "log"]
         ),
         0
     );

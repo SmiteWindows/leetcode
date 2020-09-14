@@ -6,9 +6,8 @@ pub fn last_substring(s: String) -> String {
 #[test]
 #[ignore]
 fn test1_1163() {
-    assert_eq!(last_substring(String::from("abab")), String::from("bab"));
-    assert_eq!(
-        last_substring(String::from("leetcode")),
-        String::from("tcode")
-    );
+    assert_eq!(last_substring("abab".to_string()), "bab".to_string());
+    assert_eq!(last_substring("leetcode".to_string()), "tcode".to_string());
+    }
+    }
 }

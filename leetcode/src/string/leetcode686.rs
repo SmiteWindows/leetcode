@@ -28,7 +28,7 @@ pub fn repeated_string_match(a: String, b: String) -> i32 {
 #[test]
 fn test1_686() {
     assert_eq!(
-        repeated_string_match(String::from("abcd"), String::from("cdabcdab")),
+        repeated_string_match("abcd".to_string(), "cdabcdab".to_string()),
         3
     );
 }

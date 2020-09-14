@@ -14,23 +14,15 @@ pub fn can_transform(start: String, end: String) -> bool {
             b = if let Some(c) = iter_b.next() { c } else { ' ' };
         }
         if a != b {
-            dbg!(count_a);
-            dbg!(count_b);
             return false;
         }
         if a == 'R' && b == 'R' && count_a > count_b {
-            dbg!(count_a);
-            dbg!(count_b);
             return false;
         }
         if a == 'L' && b == 'L' && count_a < count_b {
-            dbg!(count_a);
-            dbg!(count_b);
             return false;
         }
     }
-    dbg!(count_a);
-    dbg!(count_b);
     true
 }
 // brainteaser
@@ -38,11 +30,11 @@ pub fn can_transform(start: String, end: String) -> bool {
 #[ignore]
 fn test1_777() {
     // assert_eq!(
-    //     can_transform(String::from("RXR"), String::from("XXR")),
+    //     can_transform("RXR"), "XXR")),
     //     false,
     // );
     assert_eq!(
-        can_transform(String::from("RXXLRXRXL"), String::from("XRLXXRRLX")),
+        can_transform("RXXLRXRXL".to_string(), "XRLXXRRLX".to_string()),
         true,
     );
 }

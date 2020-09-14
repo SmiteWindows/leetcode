@@ -33,22 +33,22 @@ fn test2_1366() {
     use leetcode_prelude::vec_string;
     assert_eq!(
         rank_teams(vec_string!["ABC", "ACB", "ABC", "ACB", "ACB"]),
-        String::from("ACB")
+        "ACB")
     );
     assert_eq!(
         rank_teams(vec_string!["WXYZ", "XYZW"]),
-        String::from("XWYZ")
+        "XWYZ")
     );
     assert_eq!(
         rank_teams(vec_string!["ZMNAGUEDSJYLBOPHRQICWFXTVK"]),
-        String::from("ZMNAGUEDSJYLBOPHRQICWFXTVK")
+        "ZMNAGUEDSJYLBOPHRQICWFXTVK")
     );
     assert_eq!(
         rank_teams(vec_string!["BCA", "CAB", "CBA", "ABC", "ACB", "BAC"]),
-        String::from("ABC")
+        "ABC")
     );
     assert_eq!(
         rank_teams(vec_string!["M", "M", "M", "M"]),
-        String::from("M")
+        "M")
     );
 }

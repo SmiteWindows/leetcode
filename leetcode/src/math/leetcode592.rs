@@ -136,20 +136,11 @@ fn gcd(mut m: i32, mut n: i32) -> i32 {
 // math
 #[test]
 fn test1_592() {
+    assert_eq!(fraction_addition("-1/2+1/2".to_string()), "0/1".to_string());
     assert_eq!(
-        fraction_addition(String::from("-1/2+1/2")),
-        String::from("0/1")
+        fraction_addition("-1/2+1/2+1/3".to_string()),
+        "1/3".to_string()
     );
-    assert_eq!(
-        fraction_addition(String::from("-1/2+1/2+1/3")),
-        String::from("1/3")
-    );
-    assert_eq!(
-        fraction_addition(String::from("1/3-1/2")),
-        String::from("-1/6")
-    );
-    assert_eq!(
-        fraction_addition(String::from("5/3+1/3")),
-        String::from("2/1")
-    );
+    assert_eq!(fraction_addition("1/3-1/2".to_string()), "-1/6".to_string());
+    assert_eq!(fraction_addition("5/3+1/3".to_string()), "2/1".to_string());
 }

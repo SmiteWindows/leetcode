@@ -87,13 +87,10 @@ enum Tok {
 // hash_table stack recursion
 #[test]
 fn test2_726() {
-    assert_eq!(count_of_atoms(String::from("H2O")), String::from("H2O"));
+    assert_eq!(count_of_atoms("H2O".to_string()), "H2O".to_string());
+    assert_eq!(count_of_atoms("Mg(OH)2".to_string()), "H2MgO2".to_string());
     assert_eq!(
-        count_of_atoms(String::from("Mg(OH)2")),
-        String::from("H2MgO2")
-    );
-    assert_eq!(
-        count_of_atoms(String::from("K4(ON(SO3)2)2")),
-        String::from("K4N2O14S4")
+        count_of_atoms("K4(ON(SO3)2)2".to_string()),
+        "K4N2O14S4".to_string()
     );
 }

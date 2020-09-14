@@ -20,11 +20,11 @@ pub fn is_subsequence(s: String, t: String) -> bool {
 #[test]
 fn test3_392() {
     assert_eq!(
-        is_subsequence(String::from("abc"), String::from("ahbgdc")),
+        is_subsequence("abc".to_string(), "ahbgdc".to_string()),
         true
     );
     assert_eq!(
-        is_subsequence(String::from("axc"), String::from("ahbgdc")),
+        is_subsequence("axc".to_string(), "ahbgdc".to_string()),
         false
     );
 }

@@ -14,9 +14,9 @@ pub fn max_power(s: String) -> i32 {
 // string
 #[test]
 fn test1_1446() {
-    assert_eq!(max_power(String::from("leetcode")), 2);
-    assert_eq!(max_power(String::from("abbcccddddeeeeedcba")), 5);
-    assert_eq!(max_power(String::from("triplepillooooow")), 5);
-    assert_eq!(max_power(String::from("hooraaaaaaaaaaay")), 11);
-    assert_eq!(max_power(String::from("tourist")), 1);
+    assert_eq!(max_power("leetcode".to_string()), 2);
+    assert_eq!(max_power("abbcccddddeeeeedcba".to_string()), 5);
+    assert_eq!(max_power("triplepillooooow".to_string()), 5);
+    assert_eq!(max_power("hooraaaaaaaaaaay".to_string()), 11);
+    assert_eq!(max_power("tourist".to_string()), 1);
 }

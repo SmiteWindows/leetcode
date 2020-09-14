@@ -46,11 +46,11 @@ impl fmt::Display for Complex {
 #[test]
 fn test1_537() {
     assert_eq!(
-        complex_number_multiply(String::from("1+1i"), String::from("1+1i")),
-        String::from("0+2i")
+        complex_number_multiply("1+1i".to_string(), "1+1i".to_string()),
+        "0+2i".to_string()
     );
     assert_eq!(
-        complex_number_multiply(String::from("1+-1i"), String::from("1+-1i")),
-        String::from("0+-2i")
+        complex_number_multiply("1+-1i".to_string(), "1+-1i".to_string()),
+        "0+-2i".to_string()
     );
 }

@@ -24,11 +24,11 @@ fn test1_1436() {
             ["New York", "Lima"],
             ["Lima", "Sao Paulo"]
         ]),
-        String::from("Sao Paulo")
+        "Sao Paulo".to_string()
     );
     assert_eq!(
         dest_city(vec2_string![["B", "C"], ["D", "B"], ["C", "A"]]),
-        String::from("A")
+        "A".to_string()
     );
-    assert_eq!(dest_city(vec2_string![["A", "Z"]]), String::from("Z"));
+    assert_eq!(dest_city(vec2_string![["A", "Z"]]), "Z".to_string());
 }

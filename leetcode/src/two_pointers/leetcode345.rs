@@ -32,9 +32,9 @@ fn is_vowel(c: char) -> bool {
 // string two_pointers
 #[test]
 fn test1_345() {
-    assert_eq!(reverse_vowels(String::from("hello")), String::from("holle"));
+    assert_eq!(reverse_vowels("hello")), "holle"));
     assert_eq!(
-        reverse_vowels(String::from("leetcode")),
-        String::from("leotcede")
+        reverse_vowels("leetcode")),
+        "leotcede")
     );
 }

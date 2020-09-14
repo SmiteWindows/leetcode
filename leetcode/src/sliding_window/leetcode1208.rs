@@ -31,15 +31,15 @@ pub fn equal_substring(s: String, t: String, max_cost: i32) -> i32 {
 #[test]
 fn test1_1208() {
     assert_eq!(
-        equal_substring(String::from("abcd"), String::from("bcdf"), 3),
+        equal_substring("abcd".to_string(), "bcdf".to_string(), 3),
         3
     );
     assert_eq!(
-        equal_substring(String::from("abcd"), String::from("cdef"), 3),
+        equal_substring("abcd".to_string(), "cdef".to_string(), 3),
         1
     );
     assert_eq!(
-        equal_substring(String::from("abcd"), String::from("acde"), 0),
+        equal_substring("abcd".to_string(), "acde".to_string(), 0),
         1
     );
 }

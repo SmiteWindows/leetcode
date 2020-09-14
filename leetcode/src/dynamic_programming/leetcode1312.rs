@@ -28,9 +28,9 @@ fn dp(start: usize, end: usize, memo: &mut HashMap<(usize, usize), i32>, s: &[ch
 // dynamic_programming
 #[test]
 fn test1_1312() {
-    assert_eq!(min_insertions(String::from("zzazz")), 0);
-    assert_eq!(min_insertions(String::from("mbadm")), 2);
-    assert_eq!(min_insertions(String::from("leetcode")), 5);
-    assert_eq!(min_insertions(String::from("g")), 0);
-    assert_eq!(min_insertions(String::from("no")), 1);
+    assert_eq!(min_insertions("zzazz".to_string()), 0);
+    assert_eq!(min_insertions("mbadm".to_string()), 2);
+    assert_eq!(min_insertions("leetcode".to_string()), 5);
+    assert_eq!(min_insertions("g".to_string()), 0);
+    assert_eq!(min_insertions("no".to_string()), 1);
 }

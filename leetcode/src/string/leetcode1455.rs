@@ -12,29 +12,26 @@ pub fn is_prefix_of_word(sentence: String, search_word: String) -> i32 {
 #[test]
 fn test1_1455() {
     assert_eq!(
-        is_prefix_of_word(String::from("i love eating burger"), String::from("burg")),
+        is_prefix_of_word("i love eating burger".to_string(), "burg".to_string()),
         4
     );
     assert_eq!(
         is_prefix_of_word(
-            String::from("this problem is an easy problem"),
-            String::from("pro")
+            "this problem is an easy problem".to_string(),
+            "pro".to_string()
         ),
         2
     );
     assert_eq!(
-        is_prefix_of_word(String::from("i am tired"), String::from("you")),
+        is_prefix_of_word("i am tired".to_string(), "you".to_string()),
         -1
     );
     assert_eq!(
-        is_prefix_of_word(String::from("i use triple pillow"), String::from("pill")),
+        is_prefix_of_word("i use triple pillow".to_string(), "pill".to_string()),
         4
     );
     assert_eq!(
-        is_prefix_of_word(
-            String::from("hello from the other side"),
-            String::from("they")
-        ),
+        is_prefix_of_word("hello from the other side".to_string(), "they".to_string()),
         -1
     );
 }

@@ -43,17 +43,17 @@ fn dfs(start: usize, cur: &mut Vec<i32>, res: &mut Vec<i32>, s: &str, end: usize
 #[test]
 fn test2_842() {
     assert_eq!(
-        split_into_fibonacci(String::from("123456579")),
+        split_into_fibonacci("123456579".to_string()),
         vec![123, 456, 579]
     );
     assert_eq!(
-        split_into_fibonacci(String::from("11235813")),
+        split_into_fibonacci("11235813".to_string()),
         vec![1, 1, 2, 3, 5, 8, 13]
     );
-    assert_eq!(split_into_fibonacci(String::from("112358130")), vec![]);
-    assert_eq!(split_into_fibonacci(String::from("0123")), vec![]);
+    assert_eq!(split_into_fibonacci("112358130".to_string()), vec![]);
+    assert_eq!(split_into_fibonacci("0123".to_string()), vec![]);
     assert_eq!(
-        split_into_fibonacci(String::from("1101111")),
+        split_into_fibonacci("1101111".to_string()),
         vec![110, 1, 111]
     );
 }

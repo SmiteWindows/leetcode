@@ -12,7 +12,7 @@ pub fn reverse_words(s: String) -> String {
 #[test]
 fn test1_557() {
     assert_eq!(
-        reverse_words(String::from("Let's take LeetCode contest")),
-        String::from("s'teL ekat edoCteeL tsetnoc")
+        reverse_words("Let's take LeetCode contest".to_string()),
+        "s'teL ekat edoCteeL tsetnoc".to_string()
     );
 }

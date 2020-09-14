@@ -54,12 +54,12 @@ fn test1_648() {
     assert_eq!(
         replace_words(
             vec![
-                String::from("cat"),
-                String::from("bat"),
-                String::from("rat"),
+                "cat"),
+                "bat"),
+                "rat"),
             ],
-            String::from("the cattle was rattled by the battery")
+            "the cattle was rattled by the battery")
         ),
-        String::from("the cat was rat by the bat"),
+        "the cat was rat by the bat"),
     );
 }

@@ -20,6 +20,6 @@ pub fn count_substrings(s: String) -> i32 {
 // dynamic_programming string
 #[test]
 fn test1_647() {
-    assert_eq!(count_substrings(String::from("abc")), 3);
-    assert_eq!(count_substrings(String::from("aaa")), 6);
+    assert_eq!(count_substrings("abc".to_string()), 3);
+    assert_eq!(count_substrings("aaa".to_string()), 6);
 }

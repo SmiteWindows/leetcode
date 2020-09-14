@@ -26,11 +26,11 @@ pub fn get_hint(secret: String, guess: String) -> String {
 #[test]
 fn test1_299() {
     assert_eq!(
-        get_hint(String::from("1807"), String::from("7810")),
-        String::from("1A3B")
+        get_hint("1807".to_string(), "7810".to_string()),
+        "1A3B".to_string()
     );
     assert_eq!(
-        get_hint(String::from("1123"), String::from("0111")),
-        String::from("1A1B")
+        get_hint("1123".to_string(), "0111".to_string()),
+        "1A1B".to_string()
     );
 }

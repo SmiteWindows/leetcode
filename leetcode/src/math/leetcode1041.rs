@@ -25,7 +25,7 @@ pub fn is_robot_bounded(instructions: String) -> bool {
 // math
 #[test]
 fn test1_1041() {
-    assert_eq!(is_robot_bounded(String::from("GGLLGG")), true);
-    assert_eq!(is_robot_bounded(String::from("GG")), false);
-    assert_eq!(is_robot_bounded(String::from("GL")), true);
+    assert_eq!(is_robot_bounded("GGLLGG".to_string()), true);
+    assert_eq!(is_robot_bounded("GG".to_string()), false);
+    assert_eq!(is_robot_bounded("GL".to_string()), true);
 }

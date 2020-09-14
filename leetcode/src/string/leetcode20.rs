@@ -25,9 +25,9 @@ pub fn is_valid(s: String) -> bool {
 // stack string
 #[test]
 fn test2_20() {
-    assert_eq!(is_valid(String::from("()")), true);
-    assert_eq!(is_valid(String::from("()[]{}")), true);
-    assert_eq!(is_valid(String::from("(]")), false);
-    assert_eq!(is_valid(String::from("([)]")), false);
-    assert_eq!(is_valid(String::from("{[]}")), true);
+    assert_eq!(is_valid("()".to_string()), true);
+    assert_eq!(is_valid("()[]{}".to_string()), true);
+    assert_eq!(is_valid("(]".to_string()), false);
+    assert_eq!(is_valid("([)]".to_string()), false);
+    assert_eq!(is_valid("{[]}".to_string()), true);
 }

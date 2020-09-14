@@ -32,8 +32,5 @@ fn rev_half(s: &mut [char], k: usize) -> &[char] {
 // string
 #[test]
 fn test1_541() {
-    assert_eq!(
-        reverse_str(String::from("abcdefg"), 2),
-        String::from("bacdfeg")
-    );
+    assert_eq!(reverse_str("abcdefg".to_string(), 2), "bacdfeg".to_string());
 }

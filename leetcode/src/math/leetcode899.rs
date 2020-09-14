@@ -27,9 +27,6 @@ pub fn orderly_queue(s: String, k: i32) -> String {
 // math string
 #[test]
 fn test1_899() {
-    assert_eq!(orderly_queue(String::from("cba"), 1), String::from("acb"));
-    assert_eq!(
-        orderly_queue(String::from("baaca"), 3),
-        String::from("aaabc")
-    );
+    assert_eq!(orderly_queue("cba".to_string(), 1), "acb".to_string());
+    assert_eq!(orderly_queue("baaca".to_string(), 3), "aaabc".to_string());
 }

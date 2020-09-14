@@ -40,11 +40,11 @@ fn dp(
 #[test]
 fn test2_115() {
     assert_eq!(
-        num_distinct(String::from("rabbbit"), String::from("rabbit")),
+        num_distinct("rabbbit"), "rabbit")),
         3
     );
     assert_eq!(
-        num_distinct(String::from("babgbag"), String::from("bag")),
+        num_distinct("babgbag"), "bag")),
         5
     );
 }

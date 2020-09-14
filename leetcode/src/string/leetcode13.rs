@@ -31,9 +31,9 @@ pub fn roman_to_int(s: String) -> i32 {
 // math string
 #[test]
 fn test1_13() {
-    assert_eq!(roman_to_int(String::from("III")), 3);
-    assert_eq!(roman_to_int(String::from("IV")), 4);
-    assert_eq!(roman_to_int(String::from("IX")), 9);
-    assert_eq!(roman_to_int(String::from("LVIII")), 58);
-    assert_eq!(roman_to_int(String::from("MCMXCIV")), 1994);
+    assert_eq!(roman_to_int("III".to_string()), 3);
+    assert_eq!(roman_to_int("IV".to_string()), 4);
+    assert_eq!(roman_to_int("IX".to_string()), 9);
+    assert_eq!(roman_to_int("LVIII".to_string()), 58);
+    assert_eq!(roman_to_int("MCMXCIV".to_string()), 1994);
 }

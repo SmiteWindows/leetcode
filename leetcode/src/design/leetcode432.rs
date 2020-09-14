@@ -35,7 +35,7 @@ impl AllOne {
         self.dict
             .iter()
             .max_by_key(|(_, &v)| v)
-            .unwrap_or((&String::from(""), &0))
+            .unwrap_or((&"".to_string(), &0))
             .0
             .to_string()
     }
@@ -45,7 +45,7 @@ impl AllOne {
         self.dict
             .iter()
             .min_by_key(|(_, &v)| v)
-            .unwrap_or((&String::from(""), &0))
+            .unwrap_or((&"".to_string(), &0))
             .0
             .to_string()
     }

@@ -31,6 +31,6 @@ pub fn is_path_crossing(path: String) -> bool {
 // string
 #[test]
 fn test1_1496() {
-    assert_eq!(is_path_crossing(String::from("NES")), false);
-    assert_eq!(is_path_crossing(String::from("NESWW")), true);
+    assert_eq!(is_path_crossing("NES".to_string()), false);
+    assert_eq!(is_path_crossing("NESWW".to_string()), true);
 }

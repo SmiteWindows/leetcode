@@ -14,6 +14,6 @@ pub fn check_record(s: String) -> bool {
 // string
 #[test]
 fn test1_551() {
-    assert_eq!(check_record(String::from("PPALLP")), true);
-    assert_eq!(check_record(String::from("PPALLL")), false);
+    assert_eq!(check_record("PPALLP".to_string()), true);
+    assert_eq!(check_record("PPALLL".to_string()), false);
 }

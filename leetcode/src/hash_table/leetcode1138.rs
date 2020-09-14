@@ -7,11 +7,11 @@ pub fn alphabet_board_path(target: String) -> String {
 #[ignore]
 fn test1_1138() {
     assert_eq!(
-        alphabet_board_path(String::from("leet")),
-        String::from("DDR!UURRR!!DDD!")
+        alphabet_board_path("leet".to_string()),
+        "DDR!UURRR!!DDD!".to_string()
     );
     assert_eq!(
-        alphabet_board_path(String::from("code")),
-        String::from("RR!DDRR!UUL!R!")
+        alphabet_board_path("code".to_string()),
+        "RR!DDRR!UUL!R!".to_string()
     );
 }

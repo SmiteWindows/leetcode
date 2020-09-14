@@ -44,12 +44,6 @@ pub fn original_digits(s: String) -> String {
 // math
 #[test]
 fn test1_423() {
-    assert_eq!(
-        original_digits(String::from("owoztneoer")),
-        String::from("012")
-    );
-    assert_eq!(
-        original_digits(String::from("fviefuro")),
-        String::from("45")
-    );
+    assert_eq!(original_digits("owoztneoer".to_string()), "012".to_string());
+    assert_eq!(original_digits("fviefuro".to_string()), "45".to_string());
 }

@@ -6,11 +6,11 @@ pub fn minimum_swap(s1: String, s2: String) -> i32 {
 #[test]
 #[ignore]
 fn test1_1247() {
-    assert_eq!(minimum_swap(String::from("xx"), String::from("yy")), 1);
-    assert_eq!(minimum_swap(String::from("xy"), String::from("yx")), 2);
-    assert_eq!(minimum_swap(String::from("xx"), String::from("xy")), -1);
+    assert_eq!(minimum_swap("xx".to_string(), "yy".to_string()), 1);
+    assert_eq!(minimum_swap("xy".to_string(), "yx".to_string()), 2);
+    assert_eq!(minimum_swap("xx".to_string(), "xy".to_string()), -1);
     assert_eq!(
-        minimum_swap(String::from("xxyyxyxyxx"), String::from("xyyxyxxxyx")),
+        minimum_swap("xxyyxyxyxx".to_string(), "xyyxyxxxyx".to_string()),
         4
     );
 }

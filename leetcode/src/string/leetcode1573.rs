@@ -29,8 +29,8 @@ pub fn num_ways(s: String) -> i32 {
 // string
 #[test]
 fn test1_1573() {
-    assert_eq!(num_ways(String::from("10101")), 4);
-    assert_eq!(num_ways(String::from("1001")), 0);
-    assert_eq!(num_ways(String::from("0000")), 3);
-    assert_eq!(num_ways(String::from("100100010100110")), 12);
+    assert_eq!(num_ways("10101".to_string()), 4);
+    assert_eq!(num_ways("1001".to_string()), 0);
+    assert_eq!(num_ways("0000".to_string()), 3);
+    assert_eq!(num_ways("100100010100110".to_string()), 12);
 }

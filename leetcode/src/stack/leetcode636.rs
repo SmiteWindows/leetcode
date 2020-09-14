@@ -41,15 +41,11 @@ enum Action {
 // stack
 #[test]
 fn test1_636() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
         exclusive_time(
             2,
-            vec![
-                String::from("0:start:0"),
-                String::from("1:start:2"),
-                String::from("1:end:5"),
-                String::from("0:end:6")
-            ]
+            vec_string!["0:start:0", "1:start:2", "1:end:5", "0:end:6"]
         ),
         vec![3, 4]
     );

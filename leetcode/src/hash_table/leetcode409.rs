@@ -22,5 +22,5 @@ pub fn longest_palindrome(s: String) -> i32 {
 // hash_table
 #[test]
 fn test1_409() {
-    assert_eq!(longest_palindrome(String::from("abccccdd")), 7);
+    assert_eq!(longest_palindrome("abccccdd".to_string()), 7);
 }

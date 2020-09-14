@@ -22,7 +22,7 @@ fn helper(t: Option<&RefCell<TreeNode>>) -> String {
             + &helper(n.right.as_deref())
             + ")"
     } else {
-        String::from("")
+        "")
     }
 }
 
@@ -56,7 +56,7 @@ fn test1_606() {
         }))),
         right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
     })));
-    let res1 = String::from("1(2(4))(3)");
+    let res1 = "1(2(4))(3)".to_string();
     assert_eq!(res1, tree2str(t1));
     let t2 = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
@@ -67,6 +67,6 @@ fn test1_606() {
         }))),
         right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
     })));
-    let res2 = String::from("1(2()(4))(3)");
+    let res2 = "1(2()(4))(3)".to_string();
     assert_eq!(res2, tree2str(t2));
 }

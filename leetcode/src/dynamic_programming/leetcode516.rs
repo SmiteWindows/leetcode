@@ -23,6 +23,6 @@ pub fn longest_palindrome_subseq(s: String) -> i32 {
 // dynamic_programming
 #[test]
 fn test1_516() {
-    assert_eq!(longest_palindrome_subseq(String::from("bbbab")), 4);
-    assert_eq!(longest_palindrome_subseq(String::from("cbbd")), 2);
+    assert_eq!(longest_palindrome_subseq("bbbab".to_string()), 4);
+    assert_eq!(longest_palindrome_subseq("cbbd".to_string()), 2);
 }

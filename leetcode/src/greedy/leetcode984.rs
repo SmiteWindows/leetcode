@@ -46,6 +46,6 @@ pub fn str_without3a3b(a: i32, b: i32) -> String {
 // greedy
 #[test]
 fn test1_984() {
-    assert_eq!(str_without3a3b(1, 2), String::from("bab"));
-    assert_eq!(str_without3a3b(4, 1), String::from("aabaa"));
+    assert_eq!(str_without3a3b(1, 2), "bab".to_string());
+    assert_eq!(str_without3a3b(4, 1), "aabaa".to_string());
 }

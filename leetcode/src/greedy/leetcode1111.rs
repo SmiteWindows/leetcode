@@ -20,11 +20,11 @@ pub fn max_depth_after_split(seq: String) -> Vec<i32> {
 #[test]
 fn test2_1111() {
     assert_eq!(
-        max_depth_after_split(String::from("(()())")),
+        max_depth_after_split("(()())".to_string()),
         vec![0, 1, 1, 1, 1, 0]
     );
     assert_eq!(
-        max_depth_after_split(String::from("()(())()")),
+        max_depth_after_split("()(())()".to_string()),
         vec![0, 0, 0, 1, 1, 0, 0, 0]
     );
 }

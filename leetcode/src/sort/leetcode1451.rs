@@ -17,15 +17,15 @@ pub fn arrange_words(text: String) -> String {
 #[test]
 fn test2_1451() {
     assert_eq!(
-        arrange_words(String::from("Leetcode is cool")),
-        String::from("Is cool leetcode")
+        arrange_words("Leetcode is cool".to_string()),
+        "Is cool leetcode".to_string()
     );
     assert_eq!(
-        arrange_words(String::from("Keep calm and code on")),
-        String::from("On and keep calm code")
+        arrange_words("Keep calm and code on".to_string()),
+        "On and keep calm code".to_string()
     );
     assert_eq!(
-        arrange_words(String::from("To be or not to be")),
-        String::from("To be or to be not")
+        arrange_words("To be or not to be".to_string()),
+        "To be or to be not".to_string()
     );
 }

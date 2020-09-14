@@ -22,7 +22,7 @@ pub fn max_score(s: String) -> i32 {
 // string
 #[test]
 fn test1_1422() {
-    assert_eq!(max_score(String::from("011101")), 5);
-    assert_eq!(max_score(String::from("00111")), 5);
-    assert_eq!(max_score(String::from("1111")), 3);
+    assert_eq!(max_score("011101".to_string()), 5);
+    assert_eq!(max_score("00111".to_string()), 5);
+    assert_eq!(max_score("1111".to_string()), 3);
 }

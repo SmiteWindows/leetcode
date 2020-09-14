@@ -27,9 +27,9 @@ pub fn min_distance(word1: String, word2: String) -> i32 {
 // dynamic_programming string
 #[test]
 fn test1_72() {
-    assert_eq!(min_distance(String::from("horse"), String::from("ros")), 3);
+    assert_eq!(min_distance("horse".to_string(), "ros".to_string()), 3);
     assert_eq!(
-        min_distance(String::from("intention"), String::from("execution")),
+        min_distance("intention".to_string(), "execution".to_string()),
         5
     );
 }

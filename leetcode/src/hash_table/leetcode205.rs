@@ -28,16 +28,10 @@ pub fn is_isomorphic(s: String, t: String) -> bool {
 // hash_table
 #[test]
 fn test1_205() {
+    assert_eq!(is_isomorphic("egg".to_string(), "add".to_string()), true);
+    assert_eq!(is_isomorphic("foo".to_string(), "bar".to_string()), false);
     assert_eq!(
-        is_isomorphic(String::from("egg"), String::from("add")),
-        true
-    );
-    assert_eq!(
-        is_isomorphic(String::from("foo"), String::from("bar")),
-        false
-    );
-    assert_eq!(
-        is_isomorphic(String::from("paper"), String::from("title")),
+        is_isomorphic("paper".to_string(), "title".to_string()),
         true
     );
 }

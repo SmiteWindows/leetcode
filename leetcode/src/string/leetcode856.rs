@@ -27,8 +27,8 @@ pub fn score_of_parentheses(s: String) -> i32 {
 // stack string
 #[test]
 fn test2_856() {
-    assert_eq!(score_of_parentheses(String::from("()")), 1);
-    assert_eq!(score_of_parentheses(String::from("(())")), 2);
-    assert_eq!(score_of_parentheses(String::from("()()")), 2);
-    assert_eq!(score_of_parentheses(String::from("(()(()))")), 6);
+    assert_eq!(score_of_parentheses("()".to_string()), 1);
+    assert_eq!(score_of_parentheses("(())".to_string()), 2);
+    assert_eq!(score_of_parentheses("()()".to_string()), 2);
+    assert_eq!(score_of_parentheses("(()(()))".to_string()), 6);
 }

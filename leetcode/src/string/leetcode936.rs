@@ -7,11 +7,11 @@ pub fn moves_to_stamp(stamp: String, target: String) -> Vec<i32> {
 #[ignore]
 fn test2_936() {
     assert_eq!(
-        moves_to_stamp(String::from("abc"), String::from("ababc")),
+        moves_to_stamp("abc".to_string(), "ababc".to_string()),
         vec![0, 2]
     );
     assert_eq!(
-        moves_to_stamp(String::from("abca"), String::from("aabcaca")),
+        moves_to_stamp("abca".to_string(), "aabcaca".to_string()),
         vec![3, 0, 1]
     );
 }

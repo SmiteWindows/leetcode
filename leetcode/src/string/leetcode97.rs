@@ -49,17 +49,17 @@ fn dp(
 fn test2_97() {
     assert_eq!(
         is_interleave(
-            String::from("aabcc"),
-            String::from("dbbca"),
-            String::from("aadbbcbcac")
+            "aabcc".to_string(),
+            "dbbca".to_string(),
+            "aadbbcbcac".to_string()
         ),
         true
     );
     assert_eq!(
         is_interleave(
-            String::from("aabcc"),
-            String::from("dbbca"),
-            String::from("aadbbbaccc")
+            "aabcc".to_string(),
+            "dbbca".to_string(),
+            "aadbbbaccc".to_string()
         ),
         false
     );

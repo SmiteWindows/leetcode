@@ -6,9 +6,6 @@ pub fn longest_palindrome(s: String) -> String {
 #[test]
 #[ignore]
 fn test1_5() {
-    assert_eq!(
-        longest_palindrome(String::from("babad")),
-        String::from("bab")
-    );
-    assert_eq!(longest_palindrome(String::from("cbbd")), String::from("bb"));
+    assert_eq!(longest_palindrome("babad".to_string()), "bab".to_string());
+    assert_eq!(longest_palindrome("cbbd".to_string()), "bb".to_string());
 }

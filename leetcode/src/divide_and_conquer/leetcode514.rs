@@ -38,7 +38,7 @@ fn rotate(i: i32, j: i32, n: i32) -> i32 {
 #[test]
 fn test1_514() {
     assert_eq!(
-        find_rotate_steps(String::from("godding"), String::from("gd")),
+        find_rotate_steps("godding".to_string(), "gd".to_string()),
         4
     );
 }

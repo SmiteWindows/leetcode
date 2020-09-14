@@ -6,6 +6,6 @@ pub fn num_decodings(s: String) -> i32 {
 #[test]
 #[ignore]
 fn test1_639() {
-    assert_eq!(num_decodings(String::from("*")), 9);
-    assert_eq!(num_decodings(String::from("1*")), 18);
+    assert_eq!(num_decodings("*".to_string()), 9);
+    assert_eq!(num_decodings("1*".to_string()), 18);
 }

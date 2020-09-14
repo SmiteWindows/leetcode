@@ -26,11 +26,11 @@ pub fn add_binary(a: String, b: String) -> String {
 #[test]
 fn test2_67() {
     assert_eq!(
-        add_binary(String::from("11"), String::from("1")),
-        String::from("100")
+        add_binary("11".to_string(), "1".to_string()),
+        "100".to_string()
     );
     assert_eq!(
-        add_binary(String::from("1010"), String::from("1011")),
-        String::from("10101")
+        add_binary("1010".to_string(), "1011".to_string()),
+        "10101".to_string()
     );
 }

@@ -29,19 +29,19 @@ pub fn smallest_subsequence(text: String) -> String {
 #[test]
 fn test1_1081() {
     assert_eq!(
-        smallest_subsequence(String::from("cdadabcc")),
-        String::from("adbc")
+        smallest_subsequence("cdadabcc")),
+        "adbc")
     );
     assert_eq!(
-        smallest_subsequence(String::from("abcd")),
-        String::from("abcd")
+        smallest_subsequence("abcd")),
+        "abcd")
     );
     assert_eq!(
-        smallest_subsequence(String::from("ecbacba")),
-        String::from("eacb")
+        smallest_subsequence("ecbacba")),
+        "eacb")
     );
     assert_eq!(
-        smallest_subsequence(String::from("leetcode")),
-        String::from("letcod")
+        smallest_subsequence("leetcode")),
+        "letcod")
     );
 }

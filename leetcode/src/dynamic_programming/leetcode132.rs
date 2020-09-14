@@ -37,5 +37,5 @@ fn is_palindrome(start: usize, end: usize, s: &[char]) -> bool {
 // dynamic_programming
 #[test]
 fn test1_132() {
-    assert_eq!(min_cut(String::from("aab")), 1);
+    assert_eq!(min_cut("aab".to_string()), 1);
 }

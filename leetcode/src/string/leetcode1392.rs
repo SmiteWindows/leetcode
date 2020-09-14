@@ -6,11 +6,11 @@ pub fn longest_prefix(s: String) -> String {
 #[test]
 #[ignore]
 fn test1_1392() {
-    assert_eq!(longest_prefix(String::from("level")), String::from("l"));
-    assert_eq!(longest_prefix(String::from("ababab")), String::from("abab"));
+    assert_eq!(longest_prefix("level")), "l"));
+    assert_eq!(longest_prefix("ababab")), "abab"));
     assert_eq!(
-        longest_prefix(String::from("leetcodeleet")),
-        String::from("leet")
+        longest_prefix("leetcodeleet")),
+        "leet")
     );
-    assert_eq!(longest_prefix(String::from("a")), String::from(""));
+    assert_eq!(longest_prefix("a")), ""));
 }

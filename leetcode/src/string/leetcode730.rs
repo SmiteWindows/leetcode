@@ -6,11 +6,11 @@ pub fn count_palindromic_subsequences(s: String) -> i32 {
 #[test]
 #[ignore]
 fn test2_730() {
-    assert_eq!(count_palindromic_subsequences(String::from("bccb")), 6);
+    assert_eq!(count_palindromic_subsequences("bccb".to_string()), 6);
     assert_eq!(
-        count_palindromic_subsequences(String::from(
-            "abcdabcdabcdabcdabcdabcdabcdabcddcbadcbadcbadcbadcbadcbadcbadcba"
-        )),
+        count_palindromic_subsequences(
+            "abcdabcdabcdabcdabcdabcdabcdabcddcbadcbadcbadcbadcbadcbadcbadcba".to_string()
+        ),
         104860361
     );
 }

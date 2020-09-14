@@ -23,7 +23,7 @@ fn test806() {
                 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,
                 10, 10, 10, 10, 10
             ],
-            String::from("abcdefghijklmnopqrstuvwxyz")
+            "abcdefghijklmnopqrstuvwxyz".to_string()
         ),
         vec![3, 60]
     );
@@ -33,7 +33,7 @@ fn test806() {
                 4, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,
                 10, 10, 10, 10, 10
             ],
-            String::from("bbbcccdddaaa")
+            "bbbcccdddaaa".to_string()
         ),
         vec![2, 4]
     );

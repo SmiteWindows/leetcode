@@ -17,6 +17,6 @@ pub fn first_uniq_char(s: String) -> i32 {
 // hash_table string
 #[test]
 fn test2_387() {
-    assert_eq!(first_uniq_char(String::from("leetcode")), 0);
-    assert_eq!(first_uniq_char(String::from("loveleetcode")), 2);
+    assert_eq!(first_uniq_char("leetcode".to_string()), 0);
+    assert_eq!(first_uniq_char("loveleetcode".to_string()), 2);
 }

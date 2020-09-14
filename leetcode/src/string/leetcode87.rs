@@ -43,12 +43,6 @@ fn dp(
 // dynamic_programming string
 #[test]
 fn test2_87() {
-    assert_eq!(
-        is_scramble(String::from("great"), String::from("rgeat")),
-        true
-    );
-    assert_eq!(
-        is_scramble(String::from("abcde"), String::from("caebd")),
-        false
-    );
+    assert_eq!(is_scramble("great".to_string(), "rgeat".to_string()), true);
+    assert_eq!(is_scramble("abcde".to_string(), "caebd".to_string()), false);
 }

@@ -43,8 +43,5 @@ fn combine(left: i64, odd: bool) -> i64 {
 // string
 #[test]
 fn test1_564() {
-    assert_eq!(
-        nearest_palindromic(String::from("123")),
-        String::from("121")
-    );
+    assert_eq!(nearest_palindromic("123".to_string()), "121".to_string());
 }

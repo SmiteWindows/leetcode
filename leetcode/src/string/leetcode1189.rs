@@ -20,7 +20,7 @@ pub fn max_number_of_balloons(text: String) -> i32 {
 // hash_table string
 #[test]
 fn test2_1189() {
-    assert_eq!(max_number_of_balloons(String::from("nlaebolko")), 1);
-    assert_eq!(max_number_of_balloons(String::from("loonbalxballpoon")), 2);
-    assert_eq!(max_number_of_balloons(String::from("leetcode")), 0);
+    assert_eq!(max_number_of_balloons("nlaebolko")), 1);
+    assert_eq!(max_number_of_balloons("loonbalxballpoon")), 2);
+    assert_eq!(max_number_of_balloons("leetcode")), 0);
 }

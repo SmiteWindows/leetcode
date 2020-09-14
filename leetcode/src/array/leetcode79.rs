@@ -83,7 +83,7 @@ fn test2_79() {
                 ['S', 'F', 'C', 'S'],
                 ['A', 'D', 'E', 'E']
             ],
-            String::from("ABCCED")
+            "ABCCED".to_string()
         ),
         true
     );
@@ -94,7 +94,7 @@ fn test2_79() {
                 ['S', 'F', 'C', 'S'],
                 ['A', 'D', 'E', 'E']
             ],
-            String::from("SEE")
+            "SEE".to_string()
         ),
         true
     );
@@ -105,7 +105,7 @@ fn test2_79() {
                 ['S', 'F', 'C', 'S'],
                 ['A', 'D', 'E', 'E']
             ],
-            String::from("ABCB")
+            "ABCB".to_string()
         ),
         false
     );

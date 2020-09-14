@@ -10,6 +10,6 @@ pub fn str_str(haystack: String, needle: String) -> i32 {
 // string two_pointers
 #[test]
 fn test2_28() {
-    assert_eq!(str_str(String::from("hello"), String::from("ll")), 2);
-    assert_eq!(str_str(String::from("aaaaa"), String::from("bba")), -1);
+    assert_eq!(str_str("hello".to_string(), "ll".to_string()), 2);
+    assert_eq!(str_str("aaaaa".to_string(), "bba".to_string()), -1);
 }

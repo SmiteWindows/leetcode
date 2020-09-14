@@ -22,6 +22,6 @@ pub fn get_permutation(n: i32, k: i32) -> String {
 // math backtracking
 #[test]
 fn test1_60() {
-    assert_eq!(get_permutation(3, 3), String::from("213"));
-    assert_eq!(get_permutation(4, 9), String::from("2314"));
+    assert_eq!(get_permutation(3, 3), "213".to_string());
+    assert_eq!(get_permutation(4, 9), "2314".to_string());
 }

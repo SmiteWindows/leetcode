@@ -21,7 +21,7 @@ pub fn find_the_difference(s: String, t: String) -> char {
 #[test]
 fn test2_389() {
     assert_eq!(
-        find_the_difference(String::from("abcd"), String::from("abcde")),
+        find_the_difference("abcd".to_string(), "abcde".to_string()),
         'e'
     );
 }

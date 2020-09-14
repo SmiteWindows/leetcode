@@ -11,5 +11,5 @@ pub fn length_of_last_word(s: String) -> i32 {
 // string
 #[test]
 fn test1_58() {
-    assert_eq!(length_of_last_word(String::from("Hello World")), 5);
+    assert_eq!(length_of_last_word("Hello World".to_string()), 5);
 }

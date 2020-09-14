@@ -38,11 +38,11 @@ pub fn find_anagrams(s: String, p: String) -> Vec<i32> {
 #[test]
 fn test1_438() {
     assert_eq!(
-        find_anagrams(String::from("cbaebabacd"), String::from("abc")),
+        find_anagrams("cbaebabacd".to_string(), "abc".to_string()),
         vec![0, 6]
     );
     assert_eq!(
-        find_anagrams(String::from("abab"), String::from("ab")),
+        find_anagrams("abab".to_string(), "ab".to_string()),
         vec![0, 1, 2]
     );
 }

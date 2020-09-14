@@ -30,15 +30,15 @@ fn is_ipv6(ip: &str) -> bool {
 #[test]
 fn test1_468() {
     assert_eq!(
-        valid_ip_address(String::from("172.16.254.1")),
-        String::from("IPv4")
+        valid_ip_address("172.16.254.1".to_string()),
+        "IPv4".to_string()
     );
     assert_eq!(
-        valid_ip_address(String::from("2001:0db8:85a3:0:0:8A2E:0370:7334")),
-        String::from("IPv6")
+        valid_ip_address("2001:0db8:85a3:0:0:8A2E:0370:7334".to_string()),
+        "IPv6".to_string()
     );
     assert_eq!(
-        valid_ip_address(String::from("256.256.256.256")),
-        String::from("Neither")
+        valid_ip_address("256.256.256.256".to_string()),
+        "Neither".to_string()
     );
 }

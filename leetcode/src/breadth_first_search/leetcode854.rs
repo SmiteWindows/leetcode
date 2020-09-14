@@ -49,8 +49,8 @@ pub fn k_similarity(a: String, b: String) -> i32 {
 // graph breadth_first_search
 #[test]
 fn test2_854() {
-    assert_eq!(k_similarity(String::from("ab"), String::from("ba")), 1);
-    assert_eq!(k_similarity(String::from("abc"), String::from("bca")), 2);
-    assert_eq!(k_similarity(String::from("abac"), String::from("baca")), 2);
-    assert_eq!(k_similarity(String::from("aabc"), String::from("abca")), 2);
+    assert_eq!(k_similarity("ab".to_string(), "ba".to_string()), 1);
+    assert_eq!(k_similarity("abc".to_string(), "bca".to_string()), 2);
+    assert_eq!(k_similarity("abac".to_string(), "baca".to_string()), 2);
+    assert_eq!(k_similarity("aabc".to_string(), "abca".to_string()), 2);
 }

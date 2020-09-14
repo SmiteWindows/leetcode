@@ -13,25 +13,25 @@ pub fn entity_parser(text: String) -> String {
 #[test]
 fn test1_1410() {
     assert_eq!(
-        entity_parser(String::from(
+        entity_parser(
             "&amp; is an HTML entity but &ambassador; is not."
         )),
-        String::from("& is an HTML entity but &ambassador; is not.")
+        "& is an HTML entity but &ambassador; is not.")
     );
     assert_eq!(
-        entity_parser(String::from("and I quote: &quot;...&quot;")),
-        String::from("and I quote: \"...\"")
+        entity_parser("and I quote: &quot;...&quot;")),
+        "and I quote: \"...\"")
     );
     assert_eq!(
-        entity_parser(String::from("Stay home! Practice on Leetcode :)")),
-        String::from("Stay home! Practice on Leetcode :)")
+        entity_parser("Stay home! Practice on Leetcode :)")),
+        "Stay home! Practice on Leetcode :)")
     );
     assert_eq!(
-        entity_parser(String::from("x &gt; y &amp;&amp; x &lt; y is always false")),
-        String::from("x > y && x < y is always false")
+        entity_parser("x &gt; y &amp;&amp; x &lt; y is always false")),
+        "x > y && x < y is always false")
     );
     assert_eq!(
-        entity_parser(String::from("leetcode.com&frasl;problemset&frasl;all")),
-        String::from("leetcode.com/problemset/all")
+        entity_parser("leetcode.com&frasl;problemset&frasl;all")),
+        "leetcode.com/problemset/all")
     );
 }

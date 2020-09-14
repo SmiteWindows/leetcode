@@ -7,19 +7,16 @@ pub fn is_transformable(s: String, t: String) -> bool {
 #[ignore]
 fn test2_1585() {
     assert_eq!(
-        is_transformable(String::from("84532"), String::from("34852")),
+        is_transformable("84532".to_string(), "34852".to_string()),
         true
     );
     assert_eq!(
-        is_transformable(String::from("34521"), String::from("23415")),
+        is_transformable("34521".to_string(), "23415".to_string()),
         true
     );
     assert_eq!(
-        is_transformable(String::from("12345"), String::from("12435")),
+        is_transformable("12345".to_string(), "12435".to_string()),
         false
     );
-    assert_eq!(
-        is_transformable(String::from("1"), String::from("2")),
-        false
-    );
+    assert_eq!(is_transformable("1".to_string(), "2".to_string()), false);
 }

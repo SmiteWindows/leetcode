@@ -38,12 +38,9 @@ pub fn reformat(s: String) -> String {
 // string
 #[test]
 fn test1_1417() {
-    assert_eq!(reformat(String::from("a0b1c2")), String::from("0a1b2c"));
-    assert_eq!(reformat(String::from("leetcode")), String::from(""));
-    assert_eq!(reformat(String::from("1229857369")), String::from(""));
-    assert_eq!(
-        reformat(String::from("covid2019")),
-        String::from("c2o0v1i9d")
-    );
-    assert_eq!(reformat(String::from("ab123")), String::from("1a2b3"));
+    assert_eq!(reformat("a0b1c2".to_string()), "0a1b2c".to_string());
+    assert_eq!(reformat("leetcode".to_string()), "".to_string());
+    assert_eq!(reformat("1229857369".to_string()), "".to_string());
+    assert_eq!(reformat("covid2019".to_string()), "c2o0v1i9d".to_string());
+    assert_eq!(reformat("ab123".to_string()), "1a2b3".to_string());
 }

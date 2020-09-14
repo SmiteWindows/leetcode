@@ -45,8 +45,8 @@ fn get_index(c: char) -> usize {
 // string
 #[test]
 fn test1_1419() {
-    assert_eq!(min_number_of_frogs(String::from("croakcroak")), 1);
-    assert_eq!(min_number_of_frogs(String::from("crcoakroak")), 2);
-    assert_eq!(min_number_of_frogs(String::from("croakcrook")), -1);
-    assert_eq!(min_number_of_frogs(String::from("croakcroa")), -1);
+    assert_eq!(min_number_of_frogs("croakcroak".to_string()), 1);
+    assert_eq!(min_number_of_frogs("crcoakroak".to_string()), 2);
+    assert_eq!(min_number_of_frogs("croakcrook".to_string()), -1);
+    assert_eq!(min_number_of_frogs("croakcroa".to_string()), -1);
 }

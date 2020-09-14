@@ -22,15 +22,15 @@ pub fn longest_common_subsequence(text1: String, text2: String) -> i32 {
 #[test]
 fn test1_1143() {
     assert_eq!(
-        longest_common_subsequence(String::from("abcde"), String::from("ace")),
+        longest_common_subsequence("abcde".to_string(), "ace".to_string()),
         3
     );
     assert_eq!(
-        longest_common_subsequence(String::from("abc"), String::from("abc")),
+        longest_common_subsequence("abc".to_string(), "abc".to_string()),
         3
     );
     assert_eq!(
-        longest_common_subsequence(String::from("abc"), String::from("def")),
+        longest_common_subsequence("abc".to_string(), "def".to_string()),
         0
     );
 }

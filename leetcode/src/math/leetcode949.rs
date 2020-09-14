@@ -85,7 +85,7 @@ impl PartialOrd for Time {
 fn test1_949() {
     assert_eq!(
         largest_time_from_digits(vec![1, 2, 3, 4]),
-        String::from("23:41")
+        "23:41".to_string()
     );
-    assert_eq!(largest_time_from_digits(vec![5, 5, 5, 5]), String::from(""));
+    assert_eq!(largest_time_from_digits(vec![5, 5, 5, 5]), "".to_string());
 }

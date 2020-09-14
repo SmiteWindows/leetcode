@@ -48,7 +48,7 @@ fn is_palindrome(s: &[char]) -> bool {
 fn test1_131() {
     use leetcode_prelude::vec2_string;
     assert_eq!(
-        partition(String::from("aab")),
+        partition("aab".to_string()),
         vec2_string![["a", "a", "b"], ["aa", "b"]]
     );
 }

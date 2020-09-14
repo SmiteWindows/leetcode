@@ -20,19 +20,16 @@ fn get_backspaced(s: String) -> Vec<char> {
 #[test]
 fn test2_844() {
     assert_eq!(
-        backspace_compare(String::from("ab#c"), String::from("ad#c")),
+        backspace_compare("ab#c".to_string(), "ad#c".to_string()),
         true
     );
     assert_eq!(
-        backspace_compare(String::from("ab##"), String::from("c#d#")),
+        backspace_compare("ab##".to_string(), "c#d#".to_string()),
         true
     );
     assert_eq!(
-        backspace_compare(String::from("a##c"), String::from("#a#c")),
+        backspace_compare("a##c".to_string(), "#a#c".to_string()),
         true
     );
-    assert_eq!(
-        backspace_compare(String::from("a#c"), String::from("b")),
-        false
-    );
+    assert_eq!(backspace_compare("a#c".to_string(), "b".to_string()), false);
 }

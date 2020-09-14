@@ -25,6 +25,6 @@ pub fn num_decodings(s: String) -> i32 {
 // dynamic_programming string
 #[test]
 fn test1_91() {
-    assert_eq!(num_decodings(String::from("12")), 2);
-    assert_eq!(num_decodings(String::from("226")), 3);
+    assert_eq!(num_decodings("12".to_string()), 2);
+    assert_eq!(num_decodings("226".to_string()), 3);
 }

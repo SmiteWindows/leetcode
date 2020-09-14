@@ -6,7 +6,7 @@ pub fn palindrome_partition(s: String, k: i32) -> i32 {
 #[test]
 #[ignore]
 fn test1_1278() {
-    assert_eq!(palindrome_partition(String::from("abc"), 2), 1);
-    assert_eq!(palindrome_partition(String::from("aabbc"), 3), 0);
-    assert_eq!(palindrome_partition(String::from("leetcode"), 8), 0);
+    assert_eq!(palindrome_partition("abc".to_string(), 2), 1);
+    assert_eq!(palindrome_partition("aabbc".to_string(), 3), 0);
+    assert_eq!(palindrome_partition("leetcode".to_string(), 8), 0);
 }

@@ -21,5 +21,5 @@ pub fn min_distance(word1: String, word2: String) -> i32 {
 // string
 #[test]
 fn test1_583() {
-    assert_eq!(min_distance(String::from("sea"), String::from("eat")), 2);
+    assert_eq!(min_distance("sea".to_string(), "eat".to_string()), 2);
 }

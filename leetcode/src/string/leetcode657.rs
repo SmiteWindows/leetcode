@@ -18,6 +18,6 @@ pub fn judge_circle(moves: String) -> bool {
 // string
 #[test]
 fn test1_657() {
-    assert_eq!(judge_circle(String::from("UD")), true);
-    assert_eq!(judge_circle(String::from("LL")), false);
+    assert_eq!(judge_circle("UD".to_string()), true);
+    assert_eq!(judge_circle("LL".to_string()), false);
 }

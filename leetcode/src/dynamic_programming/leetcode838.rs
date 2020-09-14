@@ -54,8 +54,8 @@ pub fn push_dominoes(dominoes: String) -> String {
 #[test]
 fn test2_838() {
     assert_eq!(
-        push_dominoes(String::from(".L.R...LR..L..")),
-        String::from("LL.RR.LLRRLL..")
+        push_dominoes(".L.R...LR..L..".to_string()),
+        "LL.RR.LLRRLL..".to_string()
     );
-    assert_eq!(push_dominoes(String::from("RR.L")), String::from("RR.L"));
+    assert_eq!(push_dominoes("RR.L".to_string()), "RR.L".to_string());
 }

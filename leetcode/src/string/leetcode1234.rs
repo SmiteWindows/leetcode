@@ -31,8 +31,8 @@ pub fn balanced_string(s: String) -> i32 {
 // two_pointers string
 #[test]
 fn test2_1234() {
-    assert_eq!(balanced_string(String::from("QWER")), 0);
-    assert_eq!(balanced_string(String::from("QQWE")), 1);
-    assert_eq!(balanced_string(String::from("QQQW")), 2);
-    assert_eq!(balanced_string(String::from("QQQQ")), 3);
+    assert_eq!(balanced_string("QWER")), 0);
+    assert_eq!(balanced_string("QQWE")), 1);
+    assert_eq!(balanced_string("QQQW")), 2);
+    assert_eq!(balanced_string("QQQQ")), 3);
 }

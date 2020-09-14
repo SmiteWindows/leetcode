@@ -69,17 +69,17 @@ fn test1_752() {
     assert_eq!(
         open_lock(
             vec_string!["0201", "0101", "0102", "1212", "2002"],
-            String::from("0202")
+            "0202".to_string()
         ),
         6
     );
-    assert_eq!(open_lock(vec_string!["8888"], String::from("0009")), 1);
+    assert_eq!(open_lock(vec_string!["8888"], "0009")), 1);
     assert_eq!(
         open_lock(
             vec_string!["8887", "8889", "8878", "8898", "8788", "8988", "7888", "9888"],
-            String::from("8888")
+            "8888".to_string()
         ),
         -1
     );
-    assert_eq!(open_lock(vec_string!["0000"], String::from("8888")), -1);
+    assert_eq!(open_lock(vec_string!["0000"], "8888".to_string()), -1);
 }

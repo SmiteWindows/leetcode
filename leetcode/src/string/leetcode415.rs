@@ -34,11 +34,11 @@ pub fn add_strings(num1: String, num2: String) -> String {
 #[test]
 fn test1_415() {
     assert_eq!(
-        add_strings(String::from("1"), String::from("2")),
-        String::from("3")
+        add_strings("1".to_string(), "2".to_string()),
+        "3".to_string()
     );
     assert_eq!(
-        add_strings(String::from("12"), String::from("34")),
-        String::from("46")
+        add_strings("12".to_string(), "34".to_string()),
+        "46".to_string()
     );
 }

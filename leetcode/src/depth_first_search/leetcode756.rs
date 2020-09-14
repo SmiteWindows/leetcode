@@ -46,12 +46,12 @@ fn backtrack(v: &mut Vec<Vec<usize>>, map: &[Vec<HashSet<usize>>], row: usize, c
 fn test2_756() {
     use leetcode_prelude::vec_string;
     assert_eq!(
-        pyramid_transition(String::from("BCD"), vec_string!["BCG", "CDE", "GEA", "FFF"]),
+        pyramid_transition("BCD".to_string(), vec_string!["BCG", "CDE", "GEA", "FFF"]),
         true
     );
     assert_eq!(
         pyramid_transition(
-            String::from("AABA"),
+            "AABA".to_string(),
             vec_string!["AAA", "AAB", "ABA", "ABB", "BAC"]
         ),
         false

@@ -81,17 +81,17 @@ fn test1_79() {
         ['S', 'F', 'C', 'S'],
         ['A', 'D', 'E', 'E']
     ];
-    assert_eq!(exist(board, String::from("ABCCED")), true);
+    assert_eq!(exist(board, "ABCCED".to_string()), true);
     let board = vec2_char![
         ['A', 'B', 'C', 'E'],
         ['S', 'F', 'C', 'S'],
         ['A', 'D', 'E', 'E']
     ];
-    assert_eq!(exist(board, String::from("SEE")), true);
+    assert_eq!(exist(board, "SEE".to_string()), true);
     let board = vec2_char![
         ['A', 'B', 'C', 'E'],
         ['S', 'F', 'C', 'S'],
         ['A', 'D', 'E', 'E']
     ];
-    assert_eq!(exist(board, String::from("ABCB")), false);
+    assert_eq!(exist(board, "ABCB".to_string()), false);
 }

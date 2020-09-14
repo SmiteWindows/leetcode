@@ -22,7 +22,7 @@ pub fn can_construct(ransom_note: String, magazine: String) -> bool {
 // string
 #[test]
 fn test1_383() {
-    assert_eq!(can_construct(String::from("a"), String::from("b")), false);
-    assert_eq!(can_construct(String::from("aa"), String::from("ab")), false);
-    assert_eq!(can_construct(String::from("aa"), String::from("aab")), true);
+    assert_eq!(can_construct("a".to_string(), "b".to_string()), false);
+    assert_eq!(can_construct("aa".to_string(), "ab".to_string()), false);
+    assert_eq!(can_construct("aa".to_string(), "aab".to_string()), true);
 }

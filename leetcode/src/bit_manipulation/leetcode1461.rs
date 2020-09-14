@@ -21,9 +21,9 @@ pub fn has_all_codes(s: String, k: i32) -> bool {
 // string bit_manipulation
 #[test]
 fn test2_1461() {
-    assert_eq!(has_all_codes(String::from("00110110"), 2), true);
-    assert_eq!(has_all_codes(String::from("00110"), 2), true);
-    assert_eq!(has_all_codes(String::from("0110"), 1), true);
-    assert_eq!(has_all_codes(String::from("0110"), 2), false);
-    assert_eq!(has_all_codes(String::from("0000000001011100"), 4), false);
+    assert_eq!(has_all_codes("00110110".to_string(), 2), true);
+    assert_eq!(has_all_codes("00110".to_string(), 2), true);
+    assert_eq!(has_all_codes("0110".to_string(), 1), true);
+    assert_eq!(has_all_codes("0110".to_string(), 2), false);
+    assert_eq!(has_all_codes("0000000001011100".to_string(), 4), false);
 }

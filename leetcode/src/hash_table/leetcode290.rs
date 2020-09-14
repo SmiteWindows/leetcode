@@ -36,19 +36,19 @@ pub fn word_pattern(pattern: String, str: String) -> bool {
 #[test]
 fn test1_290() {
     assert_eq!(
-        word_pattern(String::from("abba"), String::from("dog cat cat dog")),
+        word_pattern("abba".to_string(), "dog cat cat dog".to_string()),
         true
     );
     assert_eq!(
-        word_pattern(String::from("abba"), String::from("dog cat cat fish")),
+        word_pattern("abba".to_string(), "dog cat cat fish".to_string()),
         false
     );
     assert_eq!(
-        word_pattern(String::from("aaaa"), String::from("dog cat cat dog")),
+        word_pattern("aaaa".to_string(), "dog cat cat dog".to_string()),
         false
     );
     assert_eq!(
-        word_pattern(String::from("abba"), String::from("dog dog dog dog")),
+        word_pattern("abba".to_string(), "dog dog dog dog".to_string()),
         false
     );
 }

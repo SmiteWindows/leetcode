@@ -17,14 +17,11 @@ pub fn modify_string(s: String) -> String {
 // string
 #[test]
 fn test1_1576() {
-    assert_eq!(modify_string(String::from("?zs")), String::from("azs"));
-    assert_eq!(modify_string(String::from("ubv?w")), String::from("ubvaw"));
-    assert_eq!(
-        modify_string(String::from("j?qg??b")),
-        String::from("jaqgacb")
-    );
+    assert_eq!(modify_string("?zs".to_string()), "azs".to_string());
+    assert_eq!(modify_string("ubv?w".to_string()), "ubvaw".to_string());
+    assert_eq!(modify_string("j?qg??b".to_string()), "jaqgacb".to_string());
     // assert_eq!(
-    //     modify_string(String::from("??yw?ipkj?")),
-    //     String::from("acywaipkja")
+    //     modify_string("??yw?ipkj?")),
+    //     "acywaipkja")
     // );
 }

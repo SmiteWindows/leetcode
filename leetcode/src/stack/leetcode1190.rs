@@ -27,19 +27,19 @@ pub fn reverse_parentheses(s: String) -> String {
 #[test]
 fn test1_1190() {
     assert_eq!(
-        reverse_parentheses(String::from("(abcd)")),
-        String::from("dcba")
+        reverse_parentheses("(abcd)".to_string()),
+        "dcba".to_string()
     );
     assert_eq!(
-        reverse_parentheses(String::from("(u(love)i)")),
-        String::from("iloveu")
+        reverse_parentheses("(u(love)i)".to_string()),
+        "iloveu".to_string()
     );
     assert_eq!(
-        reverse_parentheses(String::from("(ed(et(oc))el)")),
-        String::from("leetcode")
+        reverse_parentheses("(ed(et(oc))el)".to_string()),
+        "leetcode".to_string()
     );
     assert_eq!(
-        reverse_parentheses(String::from("a(bcdefghijkl(mno)p)q")),
-        String::from("apmnolkjihgfedcbq")
+        reverse_parentheses("a(bcdefghijkl(mno)p)q".to_string()),
+        "apmnolkjihgfedcbq".to_string()
     );
 }

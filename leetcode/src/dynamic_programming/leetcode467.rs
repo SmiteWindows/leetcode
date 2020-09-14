@@ -23,7 +23,7 @@ pub fn find_substring_in_wrapround_string(p: String) -> i32 {
 // dynamic_programming
 #[test]
 fn test1_467() {
-    assert_eq!(find_substring_in_wrapround_string(String::from("a")), 1);
-    assert_eq!(find_substring_in_wrapround_string(String::from("cac")), 2);
-    assert_eq!(find_substring_in_wrapround_string(String::from("zab")), 6);
+    assert_eq!(find_substring_in_wrapround_string("a".to_string()), 1);
+    assert_eq!(find_substring_in_wrapround_string("cac".to_string()), 2);
+    assert_eq!(find_substring_in_wrapround_string("zab".to_string()), 6);
 }

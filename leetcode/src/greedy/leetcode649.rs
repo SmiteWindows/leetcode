@@ -32,11 +32,8 @@ pub fn predict_party_victory(senate: String) -> String {
 #[test]
 fn test1_649() {
     assert_eq!(
-        predict_party_victory(String::from("RD")),
-        String::from("Radiant")
+        predict_party_victory("RD".to_string()),
+        "Radiant".to_string()
     );
-    assert_eq!(
-        predict_party_victory(String::from("RDD")),
-        String::from("Dire")
-    );
+    assert_eq!(predict_party_victory("RDD".to_string()), "Dire".to_string());
 }
