@@ -45,18 +45,9 @@ fn dfs(
 // string backtracking
 #[test]
 fn test1_17() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
-        letter_combinations(String::from("23")),
-        vec![
-            String::from("ad"),
-            String::from("ae"),
-            String::from("af"),
-            String::from("bd"),
-            String::from("be"),
-            String::from("bf"),
-            String::from("cd"),
-            String::from("ce"),
-            String::from("cf")
-        ]
+        letter_combinations("23".to_string()),
+        vec_string!["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]
     );
 }

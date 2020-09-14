@@ -29,11 +29,12 @@ fn is_head(i: usize, j: usize, board: &[Vec<char>]) -> bool {
 }
 #[test]
 fn test419() {
+    use leetcode_prelude::vec2_char;
     assert_eq!(
-        count_battleships(vec![
-            vec!['X', '.', '.', 'X'],
-            vec!['.', '.', '.', 'X'],
-            vec!['.', '.', '.', 'X'],
+        count_battleships(vec2_char![
+            ['X', '.', '.', 'X'],
+            ['.', '.', '.', 'X'],
+            ['.', '.', '.', 'X']
         ]),
         2
     );

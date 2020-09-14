@@ -24,14 +24,15 @@ pub fn least_bricks(wall: Vec<Vec<i32>>) -> i32 {
 // hash_table
 #[test]
 fn test1_554() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        least_bricks(vec![
-            vec![1, 2, 2, 1],
-            vec![3, 1, 2],
-            vec![1, 3, 2],
-            vec![2, 4],
-            vec![3, 1, 2],
-            vec![1, 3, 1, 1]
+        least_bricks(vec2![
+            [1, 2, 2, 1],
+            [3, 1, 2],
+            [1, 3, 2],
+            [2, 4],
+            [3, 1, 2],
+            [1, 3, 1, 1]
         ]),
         2
     );

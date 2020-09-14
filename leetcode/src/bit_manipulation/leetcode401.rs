@@ -15,19 +15,9 @@ pub fn read_binary_watch(num: i32) -> Vec<String> {
 // backtracking bit_manipulation
 #[test]
 fn test2_401() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
         read_binary_watch(1),
-        vec![
-            String::from("0:01"),
-            String::from("0:02"),
-            String::from("0:04"),
-            String::from("0:08"),
-            String::from("0:16"),
-            String::from("0:32"),
-            String::from("1:00"),
-            String::from("2:00"),
-            String::from("4:00"),
-            String::from("8:00")
-        ]
+        vec_string!["0:01", "0:02", "0:04", "0:08", "0:16", "0:32", "1:00", "2:00", "4:00", "8:00"]
     );
 }

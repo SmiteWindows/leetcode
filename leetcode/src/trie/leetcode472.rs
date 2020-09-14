@@ -42,21 +42,18 @@ fn dfs(start: usize, k: usize, hs: &HashSet<u64>, s: &[u8], n: usize) -> bool {
 // dynamic_programming depth_first_search trie
 #[test]
 fn test1_472() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
-        find_all_concatenated_words_in_a_dict(vec![
-            String::from("cat"),
-            String::from("cats"),
-            String::from("catsdogcats"),
-            String::from("dog"),
-            String::from("dogcatsdog"),
-            String::from("hippopotamuses"),
-            String::from("rat"),
-            String::from("ratcatdogcat"),
+        find_all_concatenated_words_in_a_dict(vec_string![
+            "cat",
+            "cats",
+            "catsdogcats",
+            "dog",
+            "dogcatsdog",
+            "hippopotamuses",
+            "rat",
+            "ratcatdogcat"
         ]),
-        vec![
-            String::from("catsdogcats"),
-            String::from("dogcatsdog"),
-            String::from("ratcatdogcat"),
-        ],
+        vec_string!["catsdogcats", "dogcatsdog", "ratcatdogcat"],
     );
 }

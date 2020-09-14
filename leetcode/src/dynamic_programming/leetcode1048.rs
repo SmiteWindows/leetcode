@@ -46,15 +46,9 @@ fn is_prev(prev: &str, next: &str) -> bool {
 // hash_table dynamic_programming
 #[test]
 fn test2_1048() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
-        longest_str_chain(vec![
-            String::from("a"),
-            String::from("b"),
-            String::from("ba"),
-            String::from("bca"),
-            String::from("bda"),
-            String::from("bdca")
-        ]),
+        longest_str_chain(vec_string!["a", "b", "ba", "bca", "bda", "bdca"]),
         4
     );
 }

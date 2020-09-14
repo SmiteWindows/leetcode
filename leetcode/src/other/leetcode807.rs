@@ -22,12 +22,13 @@ pub fn max_increase_keeping_skyline(grid: Vec<Vec<i32>>) -> i32 {
 }
 #[test]
 fn test807() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        max_increase_keeping_skyline(vec![
-            vec![3, 0, 8, 4],
-            vec![2, 4, 5, 7],
-            vec![9, 2, 6, 3],
-            vec![0, 3, 1, 0],
+        max_increase_keeping_skyline(vec2![
+            [3, 0, 8, 4],
+            [2, 4, 5, 7],
+            [9, 2, 6, 3],
+            [0, 3, 1, 0]
         ]),
         35
     );

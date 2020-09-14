@@ -24,20 +24,13 @@ pub fn longest_common_prefix(strs: Vec<String>) -> String {
 // string
 #[test]
 fn test1_14() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
-        longest_common_prefix(vec![
-            String::from("flower"),
-            String::from("flow"),
-            String::from("flight")
-        ]),
-        String::from("fl")
+        longest_common_prefix(vec_string!["flower", "flow", "flight"]),
+        "fl".to_string()
     );
     assert_eq!(
-        longest_common_prefix(vec![
-            String::from("dog"),
-            String::from("racecar"),
-            String::from("car")
-        ]),
-        String::from("")
+        longest_common_prefix(vec_string!["dog", "racecar", "car"]),
+        "".to_string()
     );
 }

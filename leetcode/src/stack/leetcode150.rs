@@ -35,41 +35,12 @@ pub fn eval_rpn(tokens: Vec<String>) -> i32 {
 // stack
 #[test]
 fn test1_150() {
+    use leetcode_prelude::vec_string;
+    assert_eq!(eval_rpn(vec_string!["2", "1", "+", "3", "*"]), 9);
+    assert_eq!(eval_rpn(vec_string!["4", "13", "5", "/", "+"]), 6);
     assert_eq!(
-        eval_rpn(vec![
-            String::from("2"),
-            String::from("1"),
-            String::from("+"),
-            String::from("3"),
-            String::from("*")
-        ]),
-        9
-    );
-    assert_eq!(
-        eval_rpn(vec![
-            String::from("4"),
-            String::from("13"),
-            String::from("5"),
-            String::from("/"),
-            String::from("+")
-        ]),
-        6
-    );
-    assert_eq!(
-        eval_rpn(vec![
-            String::from("10"),
-            String::from("6"),
-            String::from("9"),
-            String::from("3"),
-            String::from("+"),
-            String::from("-11"),
-            String::from("*"),
-            String::from("/"),
-            String::from("*"),
-            String::from("17"),
-            String::from("+"),
-            String::from("5"),
-            String::from("+"),
+        eval_rpn(vec_string![
+            "10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"
         ]),
         22
     );

@@ -64,20 +64,17 @@ fn dfs(
 // backtracking
 #[test]
 fn test1_51() {
+    use leetcode_prelude::vec2_string;
     assert_eq!(
         solve_n_queens(4),
-        vec![
-            vec![
-                String::from(".Q.."),
-                String::from("...Q"),
-                String::from("Q..."),
-                String::from("..Q.")
+        vec2_string![
+            [
+                ".Q..", // 解法 1
+                "...Q", "Q...", "..Q."
             ],
-            vec![
-                String::from("..Q."),
-                String::from("Q..."),
-                String::from("...Q"),
-                String::from(".Q..")
+            [
+                "..Q.", // 解法 2
+                "Q...", "...Q", ".Q.."
             ]
         ]
     );

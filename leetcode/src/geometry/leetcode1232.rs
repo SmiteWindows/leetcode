@@ -20,26 +20,13 @@ pub fn check_straight_line(coordinates: Vec<Vec<i32>>) -> bool {
 // math array geometry
 #[test]
 fn test3_1232() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        check_straight_line(vec![
-            vec![1, 2],
-            vec![2, 3],
-            vec![3, 4],
-            vec![4, 5],
-            vec![5, 6],
-            vec![6, 7]
-        ]),
+        check_straight_line(vec2![[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7]]),
         true
     );
     assert_eq!(
-        check_straight_line(vec![
-            vec![1, 1],
-            vec![2, 2],
-            vec![3, 4],
-            vec![4, 5],
-            vec![5, 6],
-            vec![7, 7]
-        ]),
+        check_straight_line(vec2![[1, 1], [2, 2], [3, 4], [4, 5], [5, 6], [7, 7]]),
         false
     );
 }

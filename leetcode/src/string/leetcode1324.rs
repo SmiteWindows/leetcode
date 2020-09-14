@@ -20,32 +20,17 @@ pub fn print_vertically(s: String) -> Vec<String> {
 // string
 #[test]
 fn test1_1324() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
-        print_vertically(String::from("HOW ARE YOU")),
-        vec![
-            String::from("HAY"),
-            String::from("ORO"),
-            String::from("WEU")
-        ]
+        print_vertically("HOW ARE YOU".to_string()),
+        vec!["HAY", "ORO", "WEU"]
     );
     assert_eq!(
-        print_vertically(String::from("TO BE OR NOT TO BE")),
-        vec![
-            String::from("TBONTB"),
-            String::from("OEROOE"),
-            String::from("   T")
-        ]
+        print_vertically("TO BE OR NOT TO BE".to_string()),
+        vec!["TBONTB", "OEROOE", "   T"]
     );
     assert_eq!(
-        print_vertically(String::from("CONTEST IS COMING")),
-        vec![
-            String::from("CIC"),
-            String::from("OSO"),
-            String::from("N M"),
-            String::from("T I"),
-            String::from("E N"),
-            String::from("S G"),
-            String::from("T")
-        ]
+        print_vertically("CONTEST IS COMING".to_string()),
+        vec!["CIC", "OSO", "N M", "T I", "E N", "S G", "T"]
     );
 }

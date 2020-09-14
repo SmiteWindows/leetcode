@@ -37,16 +37,9 @@ fn dfs(u: usize, state: &mut [i32], graph: &[Vec<i32>]) -> bool {
 // graph depth_first_search
 #[test]
 fn test2_802() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        eventual_safe_nodes(vec![
-            vec![1, 2],
-            vec![2, 3],
-            vec![5],
-            vec![0],
-            vec![5],
-            vec![],
-            vec![]
-        ]),
+        eventual_safe_nodes(vec2![[1, 2], [2, 3], [5], [0], [5], [], []]),
         vec![2, 4, 5, 6]
     );
 }

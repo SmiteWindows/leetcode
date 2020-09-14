@@ -6,22 +6,13 @@ pub fn shortest_superstring(a: Vec<String>) -> String {
 #[test]
 #[ignore]
 fn test1_943() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
-        shortest_superstring(vec![
-            String::from("alex"),
-            String::from("loves"),
-            String::from("leetcode")
-        ]),
-        String::from("alexlovesleetcode")
+        shortest_superstring(vec_string!["alex", "loves", "leetcode"]),
+        "alexlovesleetcode".to_string()
     );
     assert_eq!(
-        shortest_superstring(vec![
-            String::from("catg"),
-            String::from("ctaagt"),
-            String::from("gcta"),
-            String::from("ttca"),
-            String::from("atgcatc")
-        ]),
-        String::from("gctaagttcatgcatc")
+        shortest_superstring(vec_string!["catg", "ctaagt", "gcta", "ttca", "atgcatc"]),
+        "gctaagttcatgcatc".to_string()
     );
 }

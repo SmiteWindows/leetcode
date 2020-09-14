@@ -34,12 +34,6 @@ fn is_subsequence_of(c: &str, s: &str) -> bool {
 // string
 #[test]
 fn test1_522() {
-    assert_eq!(
-        find_lu_slength(vec![
-            String::from("aba"),
-            String::from("cdc"),
-            String::from("eae")
-        ]),
-        3
-    );
+    use leetcode_prelude::vec_string;
+    assert_eq!(find_lu_slength(vec_string!["aba", "cdc", "eae"]), 3);
 }

@@ -36,40 +36,41 @@ pub fn is_rectangle_cover(rectangles: Vec<Vec<i32>>) -> bool {
 // line_sweep
 #[test]
 fn test1_391() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        is_rectangle_cover(vec![
-            vec![1, 1, 3, 3],
-            vec![3, 1, 4, 2],
-            vec![3, 2, 4, 4],
-            vec![1, 3, 2, 4],
-            vec![2, 3, 3, 4]
+        is_rectangle_cover(vec2![
+            [1, 1, 3, 3],
+            [3, 1, 4, 2],
+            [3, 2, 4, 4],
+            [1, 3, 2, 4],
+            [2, 3, 3, 4]
         ]),
         true
     );
     assert_eq!(
-        is_rectangle_cover(vec![
-            vec![1, 1, 2, 3],
-            vec![1, 3, 2, 4],
-            vec![3, 1, 4, 2],
-            vec![3, 2, 4, 4]
+        is_rectangle_cover(vec2![
+            [1, 1, 2, 3],
+            [1, 3, 2, 4],
+            [3, 1, 4, 2],
+            [3, 2, 4, 4]
         ]),
         false
     );
     assert_eq!(
-        is_rectangle_cover(vec![
-            vec![1, 1, 3, 3],
-            vec![3, 1, 4, 2],
-            vec![1, 3, 2, 4],
-            vec![3, 2, 4, 4]
+        is_rectangle_cover(vec2![
+            [1, 1, 3, 3],
+            [3, 1, 4, 2],
+            [1, 3, 2, 4],
+            [3, 2, 4, 4]
         ]),
         false
     );
     assert_eq!(
-        is_rectangle_cover(vec![
-            vec![1, 1, 3, 3],
-            vec![3, 1, 4, 2],
-            vec![1, 3, 2, 4],
-            vec![2, 2, 4, 4]
+        is_rectangle_cover(vec2![
+            [1, 1, 3, 3],
+            [3, 1, 4, 2],
+            [1, 3, 2, 4],
+            [2, 2, 4, 4]
         ]),
         false
     );

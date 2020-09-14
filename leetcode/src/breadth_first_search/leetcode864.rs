@@ -6,20 +6,13 @@ pub fn shortest_path_all_keys(grid: Vec<String>) -> i32 {
 #[test]
 #[ignore]
 fn test2_864() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
-        shortest_path_all_keys(vec![
-            String::from("@.a.#"),
-            String::from("###.#"),
-            String::from("b.A.B")
-        ]),
+        shortest_path_all_keys(vec_string!["@.a.#", "###.#", "b.A.B"]),
         8
     );
     assert_eq!(
-        shortest_path_all_keys(vec![
-            String::from("@..aA"),
-            String::from("..B#."),
-            String::from("....b")
-        ]),
+        shortest_path_all_keys(vec_string!["@..aA", "..B#.", "....b"]),
         6
     );
 }

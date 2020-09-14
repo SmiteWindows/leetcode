@@ -25,36 +25,14 @@ pub fn max_product(words: Vec<String>) -> i32 {
 // bit_manipulation
 #[test]
 fn test1_318() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
-        max_product(vec![
-            String::from("abcw"),
-            String::from("baz"),
-            String::from("foo"),
-            String::from("bar"),
-            String::from("xtfn"),
-            String::from("abcdef")
-        ]),
+        max_product(vec_string!["abcw", "baz", "foo", "bar", "xtfn", "abcdef"]),
         16
     );
     assert_eq!(
-        max_product(vec![
-            String::from("a"),
-            String::from("ab"),
-            String::from("abc"),
-            String::from("d"),
-            String::from("cd"),
-            String::from("bcd"),
-            String::from("abcd")
-        ]),
+        max_product(vec_string!["a", "ab", "abc", "d", "cd", "bcd", "abcd"]),
         4
     );
-    assert_eq!(
-        max_product(vec![
-            String::from("a"),
-            String::from("aa"),
-            String::from("aaa"),
-            String::from("aaaa")
-        ]),
-        0
-    );
+    assert_eq!(max_product(vec_string!["a", "aa", "aaa", "aaaa"]), 0);
 }

@@ -58,74 +58,60 @@ fn make_the_last_line(queue: &mut VecDeque<String>, max_width: usize, width: usi
 // string
 #[test]
 fn test1_68() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
         full_justify(
-            vec![
-                String::from("This"),
-                String::from("is"),
-                String::from("an"),
-                String::from("example"),
-                String::from("of"),
-                String::from("text"),
-                String::from("justification.")
+            vec_string![
+                "This",
+                "is",
+                "an",
+                "example",
+                "of",
+                "text",
+                "justification."
             ],
             16
         ),
-        vec![
-            String::from("This    is    an"),
-            String::from("example  of text"),
-            String::from("justification.  ")
-        ]
+        vec_string!["This    is    an", "example  of text", "justification.  "]
     );
     assert_eq!(
         full_justify(
-            vec![
-                String::from("What"),
-                String::from("must"),
-                String::from("be"),
-                String::from("acknowledgment"),
-                String::from("shall"),
-                String::from("be")
-            ],
+            vec_string!["What", "must", "be", "acknowledgment", "shall", "be"],
             16
         ),
-        vec![
-            String::from("What   must   be"),
-            String::from("acknowledgment  "),
-            String::from("shall be        ")
-        ]
+        vec_string!["What   must   be", "acknowledgment  ", "shall be        "]
     );
     assert_eq!(
         full_justify(
-            vec![
-                String::from("Science"),
-                String::from("is"),
-                String::from("what"),
-                String::from("we"),
-                String::from("understand"),
-                String::from("well"),
-                String::from("enough"),
-                String::from("to"),
-                String::from("explain"),
-                String::from("to"),
-                String::from("a"),
-                String::from("computer."),
-                String::from("Art"),
-                String::from("is"),
-                String::from("everything"),
-                String::from("else"),
-                String::from("we"),
-                String::from("do")
+            vec_string![
+                "Science",
+                "is",
+                "what",
+                "we",
+                "understand",
+                "well",
+                "enough",
+                "to",
+                "explain",
+                "to",
+                "a",
+                "computer.",
+                "Art",
+                "is",
+                "everything",
+                "else",
+                "we",
+                "do"
             ],
             20
         ),
-        vec![
-            String::from("Science  is  what we"),
-            String::from("understand      well"),
-            String::from("enough to explain to"),
-            String::from("a  computer.  Art is"),
-            String::from("everything  else  we"),
-            String::from("do                  ")
+        vec_string![
+            "Science  is  what we",
+            "understand      well",
+            "enough to explain to",
+            "a  computer.  Art is",
+            "everything  else  we",
+            "do                  "
         ]
     );
 }

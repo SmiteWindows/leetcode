@@ -6,13 +6,9 @@ pub fn num_similar_groups(a: Vec<String>) -> i32 {
 #[test]
 #[ignore]
 fn test3_839() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
-        num_similar_groups(vec![
-            String::from("tars"),
-            String::from("rats"),
-            String::from("arts"),
-            String::from("star")
-        ]),
+        num_similar_groups(vec_string!["tars", "rats", "arts", "star"]),
         2
     );
 }

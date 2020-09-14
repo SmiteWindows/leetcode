@@ -30,20 +30,21 @@ pub fn reorder_log_files(logs: Vec<String>) -> Vec<String> {
 // string
 #[test]
 fn test1_937() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
-        reorder_log_files(vec![
-            String::from("dig1 8 1 5 1"),
-            String::from("let1 art can"),
-            String::from("dig2 3 6"),
-            String::from("let2 own kit dig"),
-            String::from("let3 art zero")
+        reorder_log_files(vec_string![
+            "dig1 8 1 5 1",
+            "let1 art can",
+            "dig2 3 6",
+            "let2 own kit dig",
+            "let3 art zero"
         ]),
         vec![
-            String::from("let1 art can"),
-            String::from("let3 art zero"),
-            String::from("let2 own kit dig"),
-            String::from("dig1 8 1 5 1"),
-            String::from("dig2 3 6")
+            "let1 art can",
+            "let3 art zero",
+            "let2 own kit dig",
+            "dig1 8 1 5 1",
+            "dig2 3 6"
         ]
     );
 }

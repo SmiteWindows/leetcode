@@ -44,21 +44,13 @@ impl fmt::Display for Range {
 // array
 #[test]
 fn test1_228() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
         summary_ranges(vec![0, 1, 2, 4, 5, 7]),
-        vec![
-            String::from("0->2"),
-            String::from("4->5"),
-            String::from("7")
-        ]
+        vec_string!["0->2", "4->5", "7"]
     );
     assert_eq!(
         summary_ranges(vec![0, 2, 3, 4, 6, 8, 9]),
-        vec![
-            String::from("0"),
-            String::from("2->4"),
-            String::from("6"),
-            String::from("8->9")
-        ]
+        vec_string!["0", "2->4", "6", "8->9"]
     );
 }

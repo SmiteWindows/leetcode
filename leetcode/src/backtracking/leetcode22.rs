@@ -27,14 +27,9 @@ fn dfs(left: i32, right: i32, cur: &mut String, all: &mut Vec<String>) {
 // string backtracking
 #[test]
 fn test1_22() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
         generate_parenthesis(3),
-        vec![
-            String::from("((()))"),
-            String::from("(()())"),
-            String::from("(())()"),
-            String::from("()(())"),
-            String::from("()()()")
-        ]
+        vec_string!["((()))", "(()())", "(())()", "()(())", "()()()"]
     );
 }

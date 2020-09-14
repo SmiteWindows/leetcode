@@ -23,15 +23,16 @@ fn backtrack(nums: &mut Vec<i32>, res: &mut Vec<Vec<i32>>, start: usize, length:
 // backtracking
 #[test]
 fn test1_46() {
+    use leetcode_prelude::vec2;
     assert_eq!(
         permute(vec![1, 2, 3]),
-        vec![
-            vec![1, 2, 3],
-            vec![1, 3, 2],
-            vec![2, 1, 3],
-            vec![2, 3, 1],
-            vec![3, 2, 1],
-            vec![3, 1, 2]
+        vec2![
+            [1, 2, 3],
+            [1, 3, 2],
+            [2, 1, 3],
+            [2, 3, 1],
+            [3, 2, 1],
+            [3, 1, 2]
         ]
     );
 }

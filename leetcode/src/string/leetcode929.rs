@@ -37,11 +37,12 @@ impl Email {
 // string
 #[test]
 fn test1_929() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
-        num_unique_emails(vec![
-            String::from("test.email+alex@leetcode.com"),
-            String::from("test.e.mail+bob.cathy@leetcode.com"),
-            String::from("testemail+david@lee.tcode.com")
+        num_unique_emails(vec_string![
+            "test.email+alex@leetcode.com",
+            "test.e.mail+bob.cathy@leetcode.com",
+            "testemail+david@lee.tcode.com"
         ]),
         2
     );

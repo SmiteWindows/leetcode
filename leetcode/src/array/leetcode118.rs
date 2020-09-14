@@ -20,14 +20,9 @@ pub fn generate(num_rows: i32) -> Vec<Vec<i32>> {
 // array
 #[test]
 fn test1_118() {
+    use leetcode_prelude::vec2;
     assert_eq!(
         generate(5),
-        vec![
-            vec![1],
-            vec![1, 1],
-            vec![1, 2, 1],
-            vec![1, 3, 3, 1],
-            vec![1, 4, 6, 4, 1]
-        ]
+        vec2![[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]]
     );
 }

@@ -89,24 +89,13 @@ enum Tok {
 // string
 #[test]
 fn test1_1096() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
-        brace_expansion_ii(String::from("{a,b}{c,{d,e}}")),
-        vec![
-            String::from("ac"),
-            String::from("ad"),
-            String::from("ae"),
-            String::from("bc"),
-            String::from("bd"),
-            String::from("be")
-        ]
+        brace_expansion_ii("{a,b}{c,{d,e}}".to_string()),
+        vec_string!["ac", "ad", "ae", "bc", "bd", "be"]
     );
     assert_eq!(
-        brace_expansion_ii(String::from("{{a,z},a{b,c},{ab,z}}")),
-        vec![
-            String::from("a"),
-            String::from("ab"),
-            String::from("ac"),
-            String::from("z")
-        ]
+        brace_expansion_ii("{{a,z},a{b,c},{ab,z}}".to_string()),
+        vec_string!["a", "ab", "ac", "z"]
     );
 }

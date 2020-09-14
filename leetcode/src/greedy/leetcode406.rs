@@ -18,22 +18,9 @@ pub fn reconstruct_queue(people: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
 // greedy
 #[test]
 fn test1_406() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        reconstruct_queue(vec![
-            vec![7, 0],
-            vec![4, 4],
-            vec![7, 1],
-            vec![5, 0],
-            vec![6, 1],
-            vec![5, 2]
-        ]),
-        vec![
-            vec![5, 0],
-            vec![7, 0],
-            vec![5, 2],
-            vec![6, 1],
-            vec![4, 4],
-            vec![7, 1]
-        ]
+        reconstruct_queue(vec2![[7, 0], [4, 4], [7, 1], [5, 0], [6, 1], [5, 2]]),
+        vec2![[5, 0], [7, 0], [5, 2], [6, 1], [4, 4], [7, 1]]
     );
 }

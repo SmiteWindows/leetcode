@@ -19,13 +19,9 @@ pub fn schedule_course(courses: Vec<Vec<i32>>) -> i32 {
 // greedy
 #[test]
 fn test1_630() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        schedule_course(vec![
-            vec![100, 200],
-            vec![200, 1300],
-            vec![1000, 1250],
-            vec![2000, 3200]
-        ]),
+        schedule_course(vec2![[100, 200], [200, 1300], [1000, 1250], [2000, 3200]]),
         3
     );
 }

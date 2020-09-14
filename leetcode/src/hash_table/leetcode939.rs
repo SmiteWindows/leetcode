@@ -29,25 +29,13 @@ pub fn min_area_rect(points: Vec<Vec<i32>>) -> i32 {
 // hash_table
 #[test]
 fn test1_939() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        min_area_rect(vec![
-            vec![1, 1],
-            vec![1, 3],
-            vec![3, 1],
-            vec![3, 3],
-            vec![2, 2]
-        ]),
+        min_area_rect(vec2![[1, 1], [1, 3], [3, 1], [3, 3], [2, 2]]),
         4
     );
     assert_eq!(
-        min_area_rect(vec![
-            vec![1, 1],
-            vec![1, 3],
-            vec![3, 1],
-            vec![3, 3],
-            vec![4, 1],
-            vec![4, 3]
-        ]),
+        min_area_rect(vec2![[1, 1], [1, 3], [3, 1], [3, 3], [4, 1], [4, 3]]),
         2
     );
 }

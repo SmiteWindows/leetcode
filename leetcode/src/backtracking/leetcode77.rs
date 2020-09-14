@@ -24,15 +24,9 @@ fn dfs(start: usize, cur: &mut Vec<i32>, res: &mut Vec<Vec<i32>>, k: usize, n: u
 // backtracking
 #[test]
 fn test1_77() {
+    use leetcode_prelude::vec2;
     assert_eq!(
         combine(4, 2),
-        vec![
-            vec![1, 2],
-            vec![1, 3],
-            vec![1, 4],
-            vec![2, 3],
-            vec![2, 4],
-            vec![3, 4]
-        ]
+        vec2![[1, 2], [1, 3], [1, 4], [2, 3], [2, 4], [3, 4]]
     );
 }

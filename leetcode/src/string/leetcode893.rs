@@ -33,15 +33,9 @@ impl Count {
 // string
 #[test]
 fn test1_893() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
-        num_special_equiv_groups(vec![
-            String::from("abcd"),
-            String::from("cdab"),
-            String::from("cbad"),
-            String::from("xyzz"),
-            String::from("zzxy"),
-            String::from("zzyx")
-        ]),
+        num_special_equiv_groups(vec_string!["abcd", "cdab", "cbad", "xyzz", "zzxy", "zzyx"]),
         3
     );
 }

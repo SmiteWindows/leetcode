@@ -21,14 +21,9 @@ pub fn largest_triangle_area(points: Vec<Vec<i32>>) -> f64 {
 // math
 #[test]
 fn test1_812() {
+    use leetcode_prelude::vec2;
     assert_eq!(
-        largest_triangle_area(vec![
-            vec![0, 0],
-            vec![0, 1],
-            vec![1, 0],
-            vec![0, 2],
-            vec![2, 0]
-        ]),
+        largest_triangle_area(vec2![[0, 0], [0, 1], [1, 0], [0, 2], [2, 0]]),
         2.0
     );
 }
