@@ -23,14 +23,14 @@ fn test1_1324() {
     use leetcode_prelude::vec_string;
     assert_eq!(
         print_vertically("HOW ARE YOU".to_string()),
-        vec!["HAY", "ORO", "WEU"]
+        vec_string!["HAY", "ORO", "WEU"]
     );
     assert_eq!(
         print_vertically("TO BE OR NOT TO BE".to_string()),
-        vec!["TBONTB", "OEROOE", "   T"]
+        vec_string!["TBONTB", "OEROOE", "   T"]
     );
     assert_eq!(
         print_vertically("CONTEST IS COMING".to_string()),
-        vec!["CIC", "OSO", "N M", "T I", "E N", "S G", "T"]
+        vec_string!["CIC", "OSO", "N M", "T I", "E N", "S G", "T"]
     );
 }
