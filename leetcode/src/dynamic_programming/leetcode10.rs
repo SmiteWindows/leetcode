@@ -58,8 +58,8 @@ fn is_match_dp(
 fn test2_10() {
     assert_eq!(is_match("aa".to_string(), "a".to_string()), false);
     assert_eq!(is_match("aa".to_string(), "a*".to_string()), true);
-    assert_eq!(is_match("ab".to_string(), ".*".to_string(), true);
-    assert_eq!(is_match("aab").to_string(), "c*a*b".to_string()), true);
+    assert_eq!(is_match("ab".to_string(), ".*".to_string()), true);
+    assert_eq!(is_match("aab".to_string(), "c*a*b".to_string()), true);
     assert_eq!(
         is_match("mississippi".to_string(), "mis*is*p*.".to_string()),
         false

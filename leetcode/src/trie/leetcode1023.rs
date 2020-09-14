@@ -14,7 +14,7 @@ fn test1_1023() {
                 "FooBarTest",
                 "FootBall",
                 "FrameBuffer",
-                "ForceFeedBack",
+                "ForceFeedBack"
             ],
             "FB".to_string()
         ),
@@ -27,7 +27,7 @@ fn test1_1023() {
                 "FooBarTest",
                 "FootBall",
                 "FrameBuffer",
-                "ForceFeedBack",
+                "ForceFeedBack"
             ],
             "FoBa".to_string()
         ),
@@ -40,7 +40,7 @@ fn test1_1023() {
                 "FooBarTest",
                 "FootBall",
                 "FrameBuffer",
-                "ForceFeedBack",
+                "ForceFeedBack"
             ],
             "FoBaT".to_string()
         ),
