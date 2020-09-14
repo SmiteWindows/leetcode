@@ -26,12 +26,9 @@ pub fn remove_duplicates(s: String, k: i32) -> String {
 // stack
 #[test]
 fn test1_1209() {
+    assert_eq!(remove_duplicates("abcd".to_string(), 2), "abcd".to_string());
     assert_eq!(
-        remove_duplicates("abcd".to_string(), 2),
-        "abcd".to_string()
-    );
-    assert_eq!(
-        remove_duplicates("deeedbbcccbdaa"), 3),
+        remove_duplicates("deeedbbcccbdaa".to_string(), 3),
         "aa".to_string()
     );
     assert_eq!(

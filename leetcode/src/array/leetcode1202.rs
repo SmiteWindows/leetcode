@@ -57,15 +57,15 @@ impl UnionFind {
 fn test2_1202() {
     use leetcode_prelude::vec2;
     assert_eq!(
-        smallest_string_with_swaps("dcab"), vec2![[0, 3], [1, 2]]),
-        "bacd")
+        smallest_string_with_swaps("dcab".to_string(), vec2![[0, 3], [1, 2]]),
+        "bacd".to_string()
     );
     assert_eq!(
-        smallest_string_with_swaps("dcab"), vec2![[0, 3], [1, 2], [0, 2]]),
-        "abcd")
+        smallest_string_with_swaps("dcab".to_string(), vec2![[0, 3], [1, 2], [0, 2]]),
+        "abcd".to_string()
     );
     assert_eq!(
-        smallest_string_with_swaps("cba"), vec2![[0, 1], [1, 2]]),
-        "abc")
+        smallest_string_with_swaps("cba".to_string(), vec2![[0, 1], [1, 2]]),
+        "abc".to_string()
     );
 }

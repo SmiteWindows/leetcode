@@ -73,7 +73,7 @@ fn test1_752() {
         ),
         6
     );
-    assert_eq!(open_lock(vec_string!["8888"], "0009")), 1);
+    assert_eq!(open_lock(vec_string!["8888"], "0009".to_string()), 1);
     assert_eq!(
         open_lock(
             vec_string!["8887", "8889", "8878", "8898", "8788", "8988", "7888", "9888"],

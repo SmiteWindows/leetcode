@@ -48,29 +48,20 @@ impl Count {
 }
 // hash_table
 #[test]
-fn test1_748() {use leetcode_prelude::vec_string;
+fn test1_748() {
+    use leetcode_prelude::vec_string;
     assert_eq!(
         shortest_completing_word(
             "1s3 PSt".to_string(),
-            vec_string![
-                "step",
-                "steps",
-                "stripe",
-                "stepple"
-            ]
+            vec_string!["step", "steps", "stripe", "stepple"]
         ),
-        "steps")
+        "steps".to_string()
     );
     assert_eq!(
         shortest_completing_word(
             "1s3 456".to_string(),
-            vec_string![
-                "looks",
-                "pest",
-                "stew",
-                "show"
-            ]
+            vec_string!["looks", "pest", "stew", "show"]
         ),
-        "pest")
+        "pest".to_string()
     );
 }

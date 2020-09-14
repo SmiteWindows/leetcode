@@ -29,15 +29,15 @@ pub fn gcd_of_strings(str1: String, str2: String) -> String {
 #[test]
 fn test1_1071() {
     assert_eq!(
-        gcd_of_strings("ABCABC"), "ABC")),
-        "ABC")
+        gcd_of_strings("ABCABC".to_string(), "ABC".to_string()),
+        "ABC".to_string()
     );
     assert_eq!(
-        gcd_of_strings("ABABAB"), "ABAB")),
-        "AB")
+        gcd_of_strings("ABABAB".to_string(), "ABAB".to_string()),
+        "AB".to_string()
     );
     assert_eq!(
-        gcd_of_strings("LEET"), "CODE")),
-        "")
+        gcd_of_strings("LEET".to_string(), "CODE".to_string()),
+        "".to_string()
     );
 }

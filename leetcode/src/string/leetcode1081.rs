@@ -29,19 +29,16 @@ pub fn smallest_subsequence(text: String) -> String {
 #[test]
 fn test1_1081() {
     assert_eq!(
-        smallest_subsequence("cdadabcc")),
-        "adbc")
+        smallest_subsequence("cdadabcc".to_string()),
+        "adbc".to_string()
+    );
+    assert_eq!(smallest_subsequence("abcd".to_string()), "abcd".to_string());
+    assert_eq!(
+        smallest_subsequence("ecbacba".to_string()),
+        "eacb".to_string()
     );
     assert_eq!(
-        smallest_subsequence("abcd")),
-        "abcd")
-    );
-    assert_eq!(
-        smallest_subsequence("ecbacba")),
-        "eacb")
-    );
-    assert_eq!(
-        smallest_subsequence("leetcode")),
-        "letcod")
+        smallest_subsequence("leetcode".to_string()),
+        "letcod".to_string()
     );
 }

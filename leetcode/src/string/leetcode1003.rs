@@ -17,8 +17,8 @@ pub fn is_valid(s: String) -> bool {
 // stack string
 #[test]
 fn test2_1003() {
-    assert_eq!(is_valid("aabcbc")), true);
-    assert_eq!(is_valid("abcabcababcc")), true);
-    assert_eq!(is_valid("abccba")), false);
-    assert_eq!(is_valid("cababc")), false);
+    assert_eq!(is_valid("aabcbc".to_string()), true);
+    assert_eq!(is_valid("abcabcababcc".to_string()), true);
+    assert_eq!(is_valid("abccba".to_string()), false);
+    assert_eq!(is_valid("cababc".to_string()), false);
 }

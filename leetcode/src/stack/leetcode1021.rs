@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn remove_outer_parentheses(s: String) -> String {
-    let mut res = "");
+    let mut res = "".to_string();
     let mut count = 0;
     for c in s.chars() {
         if c == '(' {
@@ -30,8 +30,5 @@ fn test1_1021() {
         remove_outer_parentheses("(()())(())(()(()))".to_string()),
         "()()()()(())".to_string()
     );
-    assert_eq!(
-        remove_outer_parentheses("()()".to_string()),
-        "".to_string()
-    );
+    assert_eq!(remove_outer_parentheses("()()".to_string()), "".to_string());
 }

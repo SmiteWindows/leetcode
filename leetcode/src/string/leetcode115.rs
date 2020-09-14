@@ -39,12 +39,6 @@ fn dp(
 // dynamic_programming string
 #[test]
 fn test2_115() {
-    assert_eq!(
-        num_distinct("rabbbit"), "rabbit")),
-        3
-    );
-    assert_eq!(
-        num_distinct("babgbag"), "bag")),
-        5
-    );
+    assert_eq!(num_distinct("rabbbit".to_string(), "rabbit".to_string()), 3);
+    assert_eq!(num_distinct("babgbag".to_string(), "bag".to_string()), 5);
 }

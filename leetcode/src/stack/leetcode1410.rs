@@ -7,10 +7,8 @@ pub fn entity_parser(text: String) -> String {
 #[ignore]
 fn test1_1410() {
     assert_eq!(
-        entity_parser(
-            "&amp; is an HTML entity but &ambassador; is not."
-        .to_string()),
-        "& is an HTML entity but &ambassador; is not.")
+        entity_parser("&amp; is an HTML entity but &ambassador; is not.".to_string()),
+        "& is an HTML entity but &ambassador; is not.".to_string()
     );
     assert_eq!(
         entity_parser("and I quote: &quot;...&quot;".to_string()),
