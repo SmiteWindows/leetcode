@@ -106,12 +106,12 @@ fn test1_68() {
             20
         ),
         vec_string![
-            "Science  is  what we",
-            "understand      well",
+            "Science  is  what we",
+            "understand      well",
             "enough to explain to",
-            "a  computer.  Art is",
-            "everything  else  we",
-            "do                  "
+            "a  computer.  Art is",
+            "everything  else  we",
+            "do                  "
         ]
     );
 }
