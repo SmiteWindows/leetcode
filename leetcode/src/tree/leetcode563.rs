@@ -41,10 +41,6 @@ impl TreeNode {
 // tree
 #[test]
 fn test1_563() {
-    let root = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
-        right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-    })));
-    assert_eq!(1, find_tilt(root));
+    use leetcode_prelude::btree;
+    assert_eq!(find_tilt(btree![1, 2, 3]), 1);
 }

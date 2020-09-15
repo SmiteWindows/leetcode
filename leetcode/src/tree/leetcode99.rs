@@ -58,11 +58,10 @@ impl TreeNode {
 fn test1_99() {
     use leetcode_prelude::btree;
     let mut t1 = btree![1, 3, null, null, 2];
-    let res1 = btree![3, 1, null, null, 2];
     recover_tree(&mut t1);
-    assert_eq!(res1, t1);
+    assert_eq!(t1, btree![3, 1, null, null, 2]);
+
     let mut t2 = btree![3, 1, 4, null, null, 2];
-    let res2 = btree![2, 1, 4, null, null, 3];
     recover_tree(&mut t2);
-    assert_eq!(res2, t2);
+    assert_eq!(t2, btree![2, 1, 4, null, null, 3]);
 }

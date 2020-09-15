@@ -42,59 +42,9 @@ impl TreeNode {
 // tree depth_first_search
 #[test]
 fn test1_897() {
-    let root = Some(Rc::new(RefCell::new(TreeNode {
-        val: 5,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 3,
-            left: Some(Rc::new(RefCell::new(TreeNode {
-                val: 2,
-                left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-                right: None,
-            }))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 6,
-            left: None,
-            right: Some(Rc::new(RefCell::new(TreeNode {
-                val: 8,
-                left: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
-                right: Some(Rc::new(RefCell::new(TreeNode::new(9)))),
-            }))),
-        }))),
-    }))); // [5,3,6,2,4,null,8,1,null,null,null,7,9]
-    let res = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: None,
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 2,
-            left: None,
-            right: Some(Rc::new(RefCell::new(TreeNode {
-                val: 3,
-                left: None,
-                right: Some(Rc::new(RefCell::new(TreeNode {
-                    val: 4,
-                    left: None,
-                    right: Some(Rc::new(RefCell::new(TreeNode {
-                        val: 5,
-                        left: None,
-                        right: Some(Rc::new(RefCell::new(TreeNode {
-                            val: 6,
-                            left: None,
-                            right: Some(Rc::new(RefCell::new(TreeNode {
-                                val: 7,
-                                left: None,
-                                right: Some(Rc::new(RefCell::new(TreeNode {
-                                    val: 8,
-                                    left: None,
-                                    right: Some(Rc::new(RefCell::new(TreeNode::new(9)))),
-                                }))),
-                            }))),
-                        }))),
-                    }))),
-                }))),
-            }))),
-        }))),
-    }))); // [1,null,2,null,3,null,4,null,5,null,6,null,7,null,8,null,9]
-    assert_eq!(increasing_bst(root), res);
+    use leetcode_prelude::btree;
+    assert_eq!(
+        increasing_bst(btree![5, 3, 6, 2, 4, null, 8, 1, null, null, null, 7, 9]),
+        btree![1, null, 2, null, 3, null, 4, null, 5, null, 6, null, 7, null, 8, null, 9]
+    );
 }

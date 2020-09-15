@@ -41,18 +41,6 @@ impl TreeNode {
 // tree
 #[test]
 fn test1_1022() {
-    let root = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 0,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 1,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-        }))),
-    }))); // [1,0,1,0,1,0,1]
-    assert_eq!(sum_root_to_leaf(root), 22);
+    use leetcode_prelude::btree;
+    assert_eq!(sum_root_to_leaf(btree![1, 0, 1, 0, 1, 0, 1]), 22);
 }

@@ -46,20 +46,7 @@ impl TreeNode {
 // tree depth_first_search
 #[test]
 fn test1_98() {
-    let t1 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 2,
-        left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-        right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-    }))); // [2,1,3]
-    assert_eq!(true, is_valid_bst(t1));
-    let t2 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 5,
-        left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 4,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
-        }))),
-    }))); // [5,1,4,null,null,3,6]
-    assert_eq!(false, is_valid_bst(t2));
+    use leetcode_prelude::btree;
+    assert_eq!(is_valid_bst(btree![2, 1, 3]), true);
+    assert_eq!(is_valid_bst(btree![5, 1, 4, null, null, 3, 6]), false);
 }

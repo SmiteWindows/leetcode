@@ -43,26 +43,9 @@ impl TreeNode {
 // tree depth_first_search
 #[test]
 fn test1_1026() {
-    let root = Some(Rc::new(RefCell::new(TreeNode {
-        val: 8,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 3,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-            right: Some(Rc::new(RefCell::new(TreeNode {
-                val: 6,
-                left: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
-                right: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
-            }))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 10,
-            left: None,
-            right: Some(Rc::new(RefCell::new(TreeNode {
-                val: 14,
-                left: Some(Rc::new(RefCell::new(TreeNode::new(13)))),
-                right: None,
-            }))),
-        }))),
-    }))); // [8,3,10,1,6,null,14,null,null,4,7,13]
-    assert_eq!(max_ancestor_diff(root), 7);
+    use leetcode_prelude::btree;
+    assert_eq!(
+        max_ancestor_diff(btree![8, 3, 10, 1, 6, null, 14, null, null, 4, 7, 13]),
+        7
+    );
 }

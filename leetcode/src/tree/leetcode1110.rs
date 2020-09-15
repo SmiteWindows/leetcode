@@ -76,29 +76,9 @@ impl TreeNode {
 // tree depth_first_search
 #[test]
 fn test1_1110() {
-    let root = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 2,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(5)))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 3,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
-        }))),
-    }))); // [1,2,3,4,5,6,7]
-    let s1 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 2,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
-            right: None,
-        }))),
-        right: None,
-    }))); // [1,2,null,4]
-    let s2 = Some(Rc::new(RefCell::new(TreeNode::new(6))));
-    let s3 = Some(Rc::new(RefCell::new(TreeNode::new(7))));
-    assert_eq!(del_nodes(root, vec![3, 5]), vec![s1, s2, s3]);
+    use leetcode_prelude::{btree, vec_btree};
+    assert_eq!(
+        del_nodes(btree![1, 2, 3, 4, 5, 6, 7], vec![3, 5]),
+        vec_btree![[1, 2, null, 4], [6], [7]]
+    );
 }

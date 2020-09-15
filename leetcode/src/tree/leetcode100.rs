@@ -43,37 +43,8 @@ impl TreeNode {
 // tree depth_first_search
 #[test]
 fn test1_100() {
-    let tree1 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
-        right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-    })));
-    let tree2 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
-        right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-    })));
-    assert_eq!(true, is_same_tree(tree1, tree2));
-    let tree3 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
-        right: None,
-    })));
-    let tree4 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: None,
-        right: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
-    })));
-    assert_eq!(false, is_same_tree(tree3, tree4));
-    let tree5 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
-        right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-    })));
-    let tree6 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-        right: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
-    })));
-    assert_eq!(false, is_same_tree(tree5, tree6));
+    use leetcode_prelude::btree;
+    assert_eq!(is_same_tree(btree![1, 2, 3], btree![1, 2, 3]), true);
+    assert_eq!(is_same_tree(btree![1, 2], btree![1, null, 2]), false);
+    assert_eq!(is_same_tree(btree![1, 2, 1], btree![1, 1, 2]), false);
 }

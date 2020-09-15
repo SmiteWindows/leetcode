@@ -49,7 +49,6 @@ impl TreeNode {
 // tree depth_first_search breadth_first_search
 #[test]
 fn test1_515() {
-    let res = vec![1, 3, 9];
     let root = Some(Rc::new(RefCell::new(TreeNode {
         val: 1,
         left: Some(Rc::new(RefCell::new(TreeNode {
@@ -63,5 +62,5 @@ fn test1_515() {
             right: Some(Rc::new(RefCell::new(TreeNode::new(9)))),
         }))),
     })));
-    assert_eq!(res, largest_values(root));
+    assert_eq!(largest_values(root), vec![1, 3, 9]);
 }

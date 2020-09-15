@@ -38,15 +38,6 @@ impl TreeNode {
 // tree
 #[test]
 fn test1_538() {
-    let root = Some(Rc::new(RefCell::new(TreeNode {
-        val: 5,
-        left: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
-        right: Some(Rc::new(RefCell::new(TreeNode::new(13)))),
-    })));
-    let res = Some(Rc::new(RefCell::new(TreeNode {
-        val: 18,
-        left: Some(Rc::new(RefCell::new(TreeNode::new(20)))),
-        right: Some(Rc::new(RefCell::new(TreeNode::new(13)))),
-    })));
-    assert_eq!(res, convert_bst(root));
+    use leetcode_prelude::btree;
+    assert_eq!(convert_bst(btree![5, 2, 13]), btree![18, 20, 13]);
 }
