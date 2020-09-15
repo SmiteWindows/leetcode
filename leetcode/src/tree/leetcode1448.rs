@@ -40,30 +40,8 @@ impl TreeNode {
 // tree depth_first_search
 #[test]
 fn test1_1448() {
-    let t1 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 3,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 1,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-            right: None,
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 4,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(5)))),
-        }))),
-    }))); // [3,1,4,3,null,1,5]
-    assert_eq!(good_nodes(t1), 4);
-    let t2 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 3,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 3,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
-        }))),
-        right: None,
-    }))); // [3,3,null,4,2]
-    assert_eq!(good_nodes(t2), 3);
-    let t3 = Some(Rc::new(RefCell::new(TreeNode::new(1))));
-    assert_eq!(good_nodes(t3), 1);
+    use leetcode_prelude::btree;
+    assert_eq!(good_nodes(btree![3, 1, 4, 3, null, 1, 5]), 4);
+    assert_eq!(good_nodes(btree![3, 3, null, 4, 2]), 3);
+    assert_eq!(good_nodes(btree![1]), 1);
 }

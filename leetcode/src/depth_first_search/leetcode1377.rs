@@ -6,17 +6,11 @@ pub fn frog_position(n: i32, edges: Vec<Vec<i32>>, t: i32, target: i32) -> f64 {
 #[test]
 #[ignore]
 fn test1_1377() {
+    use leetcode_prelude::vec2;
     assert_eq!(
         frog_position(
             7,
-            vec![
-                vec![1, 2],
-                vec![1, 3],
-                vec![1, 7],
-                vec![2, 4],
-                vec![2, 6],
-                vec![3, 5]
-            ],
+            vec2![[1, 2], [1, 3], [1, 7], [2, 4], [2, 6], [3, 5]],
             2,
             4
         ),
@@ -25,14 +19,7 @@ fn test1_1377() {
     assert_eq!(
         frog_position(
             7,
-            vec![
-                vec![1, 2],
-                vec![1, 3],
-                vec![1, 7],
-                vec![2, 4],
-                vec![2, 6],
-                vec![3, 5]
-            ],
+            vec2![[1, 2], [1, 3], [1, 7], [2, 4], [2, 6], [3, 5]],
             1,
             7
         ),
@@ -41,14 +28,7 @@ fn test1_1377() {
     assert_eq!(
         frog_position(
             7,
-            vec![
-                vec![1, 2],
-                vec![1, 3],
-                vec![1, 7],
-                vec![2, 4],
-                vec![2, 6],
-                vec![3, 5]
-            ],
+            vec2![[1, 2], [1, 3], [1, 7], [2, 4], [2, 6], [3, 5]],
             20,
             6
         ),

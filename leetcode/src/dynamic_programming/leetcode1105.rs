@@ -21,17 +21,10 @@ pub fn min_height_shelves(books: Vec<Vec<i32>>, shelf_width: i32) -> i32 {
 // dynamic_programming
 #[test]
 fn test1_1105() {
+    use leetcode_prelude::vec2;
     assert_eq!(
         min_height_shelves(
-            vec![
-                vec![1, 1],
-                vec![2, 3],
-                vec![2, 3],
-                vec![1, 1],
-                vec![1, 1],
-                vec![1, 1],
-                vec![1, 2]
-            ],
+            vec2![[1, 1], [2, 3], [2, 3], [1, 1], [1, 1], [1, 1], [1, 2]],
             4
         ),
         6

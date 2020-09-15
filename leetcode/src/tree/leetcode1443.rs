@@ -32,17 +32,11 @@ fn dfs(u: usize, visited: &mut Vec<bool>, graph: &[HashSet<usize>], has_apple: &
 // tree depth_first_search
 #[test]
 fn test1_1443() {
+    use leetcode_prelude::vec2;
     assert_eq!(
         min_time(
             7,
-            vec![
-                vec![0, 1],
-                vec![0, 2],
-                vec![1, 4],
-                vec![1, 5],
-                vec![2, 3],
-                vec![2, 6]
-            ],
+            vec2![[0, 1], [0, 2], [1, 4], [1, 5], [2, 3], [2, 6]],
             vec![false, false, true, false, true, true, false]
         ),
         8
@@ -50,14 +44,7 @@ fn test1_1443() {
     assert_eq!(
         min_time(
             7,
-            vec![
-                vec![0, 1],
-                vec![0, 2],
-                vec![1, 4],
-                vec![1, 5],
-                vec![2, 3],
-                vec![2, 6]
-            ],
+            vec2![[0, 1], [0, 2], [1, 4], [1, 5], [2, 3], [2, 6]],
             vec![false, false, true, false, false, true, false]
         ),
         6
@@ -65,14 +52,7 @@ fn test1_1443() {
     assert_eq!(
         min_time(
             7,
-            vec![
-                vec![0, 1],
-                vec![0, 2],
-                vec![1, 4],
-                vec![1, 5],
-                vec![2, 3],
-                vec![2, 6]
-            ],
+            vec2![[0, 1], [0, 2], [1, 4], [1, 5], [2, 3], [2, 6]],
             vec![false, false, false, false, false, false, false]
         ),
         0

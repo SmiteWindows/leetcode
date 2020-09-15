@@ -41,34 +41,11 @@ impl TreeNode {
 // tree depth_first_search bit_manipulation
 #[test]
 fn test1_1457() {
-    let t1 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 2,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 3,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 1,
-            left: None,
-            right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-        }))),
-    }))); // [2,3,1,3,1,null,1]
-    assert_eq!(pseudo_palindromic_paths(t1), 2);
-    let t2 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 2,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 1,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-            right: Some(Rc::new(RefCell::new(TreeNode {
-                val: 3,
-                left: None,
-                right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-            }))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-    }))); // [2,1,1,1,3,null,null,null,null,null,1]
-    assert_eq!(pseudo_palindromic_paths(t2), 1);
-    let t3 = Some(Rc::new(RefCell::new(TreeNode::new(9))));
-    assert_eq!(pseudo_palindromic_paths(t3), 1);
+    use leetcode_prelude::btree;
+    assert_eq!(pseudo_palindromic_paths(btree![2, 3, 1, 3, 1, null, 1]), 2);
+    assert_eq!(
+        pseudo_palindromic_paths(btree![2, 1, 1, 1, 3, null, null, null, null, null, 1]),
+        1
+    );
+    assert_eq!(pseudo_palindromic_paths(btree![9]), 1);
 }
