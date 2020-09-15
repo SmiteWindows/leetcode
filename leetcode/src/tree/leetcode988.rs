@@ -46,53 +46,19 @@ impl TreeNode {
 // tree depth_first_search
 #[test]
 fn test1_988() {
-    let t1 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 0,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 1,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 2,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
-        }))),
-    }))); // [0,1,2,3,4,3,4]
-    let s1 = "dba".to_string();
-    assert_eq!(smallest_from_leaf(t1), s1);
-    let t2 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 25,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 1,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 3,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
-        }))),
-    }))); // [25,1,3,1,3,0,2]
-    let s2 = "adz".to_string();
-    assert_eq!(smallest_from_leaf(t2), s2);
-    let t3 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 2,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 2,
-            left: None,
-            right: Some(Rc::new(RefCell::new(TreeNode {
-                val: 1,
-                left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-                right: None,
-            }))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 1,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-            right: None,
-        }))),
-    }))); // [2,2,1,null,1,0,null,0]
-    let s3 = "abc".to_string();
-    assert_eq!(smallest_from_leaf(t3), s3);
+    use leetcode_prelude::btree;
+    assert_eq!(
+        smallest_from_leaf(btree![0, 1, 2, 3, 4, 3, 4]),
+        "dba".to_string()
+    );
+
+    assert_eq!(
+        smallest_from_leaf(btree![25, 1, 3, 1, 3, 0, 2]),
+        "adz".to_string()
+    );
+
+    assert_eq!(
+        smallest_from_leaf(btree![2, 2, 1, null, 1, 0, null, 0]),
+        "abc".to_string()
+    );
 }

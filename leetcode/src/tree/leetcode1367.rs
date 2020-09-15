@@ -70,6 +70,7 @@ fn test1_1367() {
         ),
         true
     );
+
     assert_eq!(
         is_sub_path(
             list![1, 4, 2, 6],
@@ -77,6 +78,7 @@ fn test1_1367() {
         ),
         true
     );
+
     assert_eq!(
         is_sub_path(
             list![1, 4, 2, 6, 8],

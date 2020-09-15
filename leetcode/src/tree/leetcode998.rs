@@ -48,73 +48,19 @@ impl TreeNode {
 // tree
 #[test]
 fn test1_998() {
-    let t1 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 4,
-        left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 3,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
-            right: None,
-        }))),
-    }))); // [4,1,3,null,null,2]
-    let res1 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 5,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 4,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-            right: Some(Rc::new(RefCell::new(TreeNode {
-                val: 3,
-                left: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
-                right: None,
-            }))),
-        }))),
-        right: None,
-    }))); // [5,4,null,1,3,null,null,2]
-    assert_eq!(insert_into_max_tree(t1, 5), res1);
-    let t2 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 5,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 2,
-            left: None,
-            right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
-    }))); // [5,2,4,null,1]
-    let res2 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 5,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 2,
-            left: None,
-            right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 4,
-            left: None,
-            right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-        }))),
-    }))); // [5,2,4,null,1,null,3]
-    assert_eq!(insert_into_max_tree(t2, 3), res2);
-    let t3 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 5,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 2,
-            left: None,
-            right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-    }))); // [5,2,3,null,1]
-    let res3 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 5,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 2,
-            left: None,
-            right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 4,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-            right: None,
-        }))),
-    }))); // [5,2,4,null,1,3]
-    assert_eq!(insert_into_max_tree(t3, 4), res3);
+    use leetcode_prelude::btree;
+    assert_eq!(
+        insert_into_max_tree(btree![4, 1, 3, null, null, 2], 5),
+        btree![5, 4, null, 1, 3, null, null, 2]
+    );
+
+    assert_eq!(
+        insert_into_max_tree(btree![5, 2, 4, null, 1], 3),
+        btree![5, 2, 4, null, 1, null, 3]
+    );
+
+    assert_eq!(
+        insert_into_max_tree(btree![5, 2, 3, null, 1], 4),
+        btree![5, 2, 4, null, 1, 3]
+    );
 }

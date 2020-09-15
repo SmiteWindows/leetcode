@@ -50,39 +50,12 @@ impl TreeNode {
 // tree
 #[test]
 fn test1_951() {
-    let t1 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 2,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
-            right: Some(Rc::new(RefCell::new(TreeNode {
-                val: 5,
-                left: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
-                right: Some(Rc::new(RefCell::new(TreeNode::new(8)))),
-            }))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 3,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
-            right: None,
-        }))),
-    }))); // [1,2,3,4,5,6,null,null,null,7,8]
-    let t2 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 3,
-            left: None,
-            right: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 2,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
-            right: Some(Rc::new(RefCell::new(TreeNode {
-                val: 5,
-                left: Some(Rc::new(RefCell::new(TreeNode::new(8)))),
-                right: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
-            }))),
-        }))),
-    }))); // [1,3,2,null,6,4,5,null,null,null,null,8,7]
-    assert_eq!(flip_equiv(t1, t2), true);
+    use leetcode_prelude::btree;
+    assert_eq!(
+        flip_equiv(
+            btree![1, 2, 3, 4, 5, 6, null, null, null, 7, 8],
+            btree![1, 3, 2, null, 6, 4, 5, null, null, null, null, 8, 7]
+        ),
+        true
+    );
 }

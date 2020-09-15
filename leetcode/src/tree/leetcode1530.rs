@@ -64,7 +64,9 @@ impl TreeNode {
 fn test1_1530() {
     use leetcode_prelude::btree;
     assert_eq!(count_pairs(btree![1, 2, 3, null, 4], 3), 1);
+
     assert_eq!(count_pairs(btree![1, 2, 3, 4, 5, 6, 7], 3), 2);
+
     assert_eq!(
         count_pairs(
             btree![7, 1, 4, 6, null, 5, 3, null, null, null, null, null, 2],
@@ -72,6 +74,8 @@ fn test1_1530() {
         ),
         1
     );
+
     assert_eq!(count_pairs(btree![100], 1), 0);
+
     assert_eq!(count_pairs(btree![1, 1, 1], 2), 1);
 }

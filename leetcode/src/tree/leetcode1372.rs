@@ -44,46 +44,18 @@ impl TreeNode {
 // tree dynamic_programming
 #[test]
 fn test1_1372() {
-    let t1 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: None,
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 1,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-            right: Some(Rc::new(RefCell::new(TreeNode {
-                val: 1,
-                left: Some(Rc::new(RefCell::new(TreeNode {
-                    val: 1,
-                    left: None,
-                    right: Some(Rc::new(RefCell::new(TreeNode {
-                        val: 1,
-                        left: None,
-                        right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-                    }))),
-                }))),
-                right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-            }))),
-        }))),
-    }))); // [1,null,1,1,1,null,null,1,1,null,1,null,null,null,1,null,1]
-    assert_eq!(longest_zig_zag(t1), 3);
-    let t2 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 1,
-            left: None,
-            right: Some(Rc::new(RefCell::new(TreeNode {
-                val: 1,
-                left: Some(Rc::new(RefCell::new(TreeNode {
-                    val: 1,
-                    left: None,
-                    right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-                }))),
-                right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-            }))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-    }))); // [1,1,1,null,1,null,null,1,1,null,1]
-    assert_eq!(longest_zig_zag(t2), 4);
-    let t3 = Some(Rc::new(RefCell::new(TreeNode::new(1))));
-    assert_eq!(longest_zig_zag(t3), 0);
+    use leetcode_prelude::btree;
+    assert_eq!(
+        longest_zig_zag(btree![
+            1, null, 1, 1, 1, null, null, 1, 1, null, 1, null, null, null, 1, null, 1
+        ]),
+        3
+    );
+
+    assert_eq!(
+        longest_zig_zag(btree![1, 1, 1, null, 1, null, null, 1, 1, null, 1]),
+        4
+    );
+
+    assert_eq!(longest_zig_zag(btree![1]), 0);
 }

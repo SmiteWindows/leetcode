@@ -36,6 +36,8 @@ fn test1_1466() {
         min_reorder(6, vec2![[0, 1], [1, 3], [2, 3], [4, 0], [4, 5]]),
         3
     );
+
     assert_eq!(min_reorder(5, vec2![[1, 0], [1, 2], [3, 2], [3, 4]]), 2);
+
     assert_eq!(min_reorder(3, vec2![[1, 0], [2, 0]]), 0);
 }

@@ -56,38 +56,10 @@ impl TreeNode {
 // tree breadth_first_search
 #[test]
 fn test1_993() {
-    let t1 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 2,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
-            right: None,
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-    }))); // [1,2,3,4]
-    assert_eq!(is_cousins(t1, 4, 3), false);
-    let t2 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 2,
-            left: None,
-            right: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 3,
-            left: None,
-            right: Some(Rc::new(RefCell::new(TreeNode::new(5)))),
-        }))),
-    }))); // [1,2,3,null,4,null,5]
-    assert_eq!(is_cousins(t2, 5, 4), true);
-    let t3 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 2,
-            left: None,
-            right: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-    }))); // [1,2,3,null,4]
-    assert_eq!(is_cousins(t3, 2, 3), false);
+    use leetcode_prelude::btree;
+    assert_eq!(is_cousins(btree![1, 2, 3, 4], 4, 3), false);
+
+    assert_eq!(is_cousins(btree![1, 2, 3, null, 4, null, 5], 5, 4), true);
+
+    assert_eq!(is_cousins(btree![1, 2, 3, null, 4], 2, 3), false);
 }

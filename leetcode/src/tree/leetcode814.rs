@@ -42,77 +42,19 @@ impl TreeNode {
 // tree
 #[test]
 fn test1_814() {
-    let t1 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: None,
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 0,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-        }))),
-    }))); // [1,null,0,0,1]
-    let res1 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: None,
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 0,
-            left: None,
-            right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-        }))),
-    }))); // [1,null,0,null,1]
-    assert_eq!(prune_tree(t1), res1);
-    let t2 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 0,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 1,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-        }))),
-    }))); // [1,0,1,0,0,0,1]
-    let res2 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: None,
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 1,
-            left: None,
-            right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-        }))),
-    }))); // [1,null,1,null,1]
-    assert_eq!(prune_tree(t2), res2);
-    let t3 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 1,
-            left: Some(Rc::new(RefCell::new(TreeNode {
-                val: 1,
-                left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-                right: None,
-            }))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 0,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-        }))),
-    }))); // [1,1,0,1,1,0,1,0]
-    let res3 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 1,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 0,
-            left: None,
-            right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-        }))),
-    }))); // [1,1,0,1,1,null,1]
-    assert_eq!(prune_tree(t3), res3);
+    use leetcode_prelude::btree;
+    assert_eq!(
+        prune_tree(btree![1, null, 0, 0, 1]),
+        btree![1, null, 0, null, 1]
+    );
+
+    assert_eq!(
+        prune_tree(btree![1, 0, 1, 0, 0, 0, 1]),
+        btree![1, null, 1, null, 1]
+    );
+
+    assert_eq!(
+        prune_tree(btree![1, 1, 0, 1, 1, 0, 1, 0]),
+        btree![1, 1, 0, 1, 1, null, 1]
+    );
 }

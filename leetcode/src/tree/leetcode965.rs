@@ -45,28 +45,8 @@ impl TreeNode {
 // tree
 #[test]
 fn test1_965() {
-    let t1 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 1,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 1,
-            left: None,
-            right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-        }))),
-    }))); // [1,1,1,1,1,null,1]
-    assert_eq!(is_unival_tree(t1), true);
-    let t2 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 2,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 2,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(5)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
-    }))); // [2,2,2,5,2]
-    assert_eq!(is_unival_tree(t2), false);
+    use leetcode_prelude::btree;
+    assert_eq!(is_unival_tree(btree![1, 1, 1, 1, 1, null, 1]), true);
+
+    assert_eq!(is_unival_tree(btree![2, 2, 2, 5, 2]), false);
 }

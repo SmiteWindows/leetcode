@@ -52,70 +52,15 @@ impl TreeNode {
 // tree recursion
 #[test]
 fn test1_894() {
-    let t1 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 0,
-        left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 0,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-            right: Some(Rc::new(RefCell::new(TreeNode {
-                val: 0,
-                left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-                right: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-            }))),
-        }))),
-    }))); // [0,0,0,null,null,0,0,null,null,0,0]
-    let t2 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 0,
-        left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 0,
-            left: Some(Rc::new(RefCell::new(TreeNode {
-                val: 0,
-                left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-                right: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-            }))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-        }))),
-    }))); // [0,0,0,null,null,0,0,0,0]
-    let t3 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 0,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 0,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 0,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-        }))),
-    }))); // [0,0,0,0,0,0,0]
-    let t4 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 0,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 0,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-            right: Some(Rc::new(RefCell::new(TreeNode {
-                val: 0,
-                left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-                right: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-            }))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-    }))); // [0,0,0,0,0,null,null,null,null,0,0]
-    let t5 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 0,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 0,
-            left: Some(Rc::new(RefCell::new(TreeNode {
-                val: 0,
-                left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-                right: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-            }))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-    }))); // [0,0,0,0,0,null,null,0,0]
-    assert_eq!(all_possible_fbt(7), vec![t1, t2, t3, t4, t5]);
+    use leetcode_prelude::vec_btree;
+    assert_eq!(
+        all_possible_fbt(7),
+        vec_btree![
+            [0, 0, 0, null, null, 0, 0, null, null, 0, 0],
+            [0, 0, 0, null, null, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, null, null, null, null, 0, 0],
+            [0, 0, 0, 0, 0, null, null, 0, 0]
+        ]
+    );
 }

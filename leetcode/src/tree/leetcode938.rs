@@ -45,40 +45,11 @@ impl TreeNode {
 // tree recursion
 #[test]
 fn test1_938() {
-    let t1 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 10,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 5,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 15,
-            left: None,
-            right: Some(Rc::new(RefCell::new(TreeNode::new(18)))),
-        }))),
-    }))); // [10,5,15,3,7,null,18]
-    assert_eq!(range_sum_bst(t1, 7, 15), 32);
-    let t2 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 10,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 5,
-            left: Some(Rc::new(RefCell::new(TreeNode {
-                val: 3,
-                left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-                right: None,
-            }))),
-            right: Some(Rc::new(RefCell::new(TreeNode {
-                val: 7,
-                left: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
-                right: None,
-            }))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 15,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(13)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(18)))),
-        }))),
-    }))); // [10,5,15,3,7,13,18,1,null,6]
-    assert_eq!(range_sum_bst(t2, 6, 10), 23);
+    use leetcode_prelude::btree;
+    assert_eq!(range_sum_bst(btree![10, 5, 15, 3, 7, null, 18], 7, 15), 32);
+
+    assert_eq!(
+        range_sum_bst(btree![10, 5, 15, 3, 7, 13, 18, 1, null, 6], 6, 10),
+        23
+    );
 }

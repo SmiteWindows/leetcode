@@ -42,6 +42,8 @@ impl TreeNode {
 fn test1_1448() {
     use leetcode_prelude::btree;
     assert_eq!(good_nodes(btree![3, 1, 4, 3, null, 1, 5]), 4);
+
     assert_eq!(good_nodes(btree![3, 3, null, 4, 2]), 3);
+
     assert_eq!(good_nodes(btree![1]), 1);
 }

@@ -44,59 +44,29 @@ impl TreeNode {
 // tree sort
 #[test]
 fn test1_1305() {
-    let t1 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 2,
-        left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-        right: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
-    }))); // [2,1,4]
-    let t2 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-        right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-    }))); // [1,0,3]
-    assert_eq!(get_all_elements(t1, t2), vec![0, 1, 1, 2, 3, 4]);
-    let t3 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 0,
-        left: Some(Rc::new(RefCell::new(TreeNode::new(-10)))),
-        right: Some(Rc::new(RefCell::new(TreeNode::new(10)))),
-    }))); // [0,-10,10]
-    let t4 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 5,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 1,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
-    }))); // [5,1,7,0,2]
-    assert_eq!(get_all_elements(t3, t4), vec![-10, 0, 0, 1, 2, 5, 7, 10]);
-    let t5 = None;
-    let t6 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 5,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 1,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
-    }))); // [5,1,7,0,2]
-    assert_eq!(get_all_elements(t5, t6), vec![0, 1, 2, 5, 7]);
-    let t7 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 0,
-        left: Some(Rc::new(RefCell::new(TreeNode::new(-10)))),
-        right: Some(Rc::new(RefCell::new(TreeNode::new(10)))),
-    }))); // [0,-10,10]
-    let t8 = None;
-    assert_eq!(get_all_elements(t7, t8), vec![-10, 0, 10]);
-    let t9 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: None,
-        right: Some(Rc::new(RefCell::new(TreeNode::new(8)))),
-    }))); // [1,null,8]
-    let t10 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 8,
-        left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-        right: None,
-    }))); // [8,1]
-    assert_eq!(get_all_elements(t9, t10), vec![1, 1, 8, 8]);
+    use leetcode_prelude::btree;
+    assert_eq!(
+        get_all_elements(btree![2, 1, 4], btree![1, 0, 3]),
+        vec![0, 1, 1, 2, 3, 4]
+    );
+
+    assert_eq!(
+        get_all_elements(btree![0, -10, 10], btree![5, 1, 7, 0, 2]),
+        vec![-10, 0, 0, 1, 2, 5, 7, 10]
+    );
+
+    assert_eq!(
+        get_all_elements(btree![], btree![5, 1, 7, 0, 2]),
+        vec![0, 1, 2, 5, 7]
+    );
+
+    assert_eq!(
+        get_all_elements(btree![0, -10, 10], btree![]),
+        vec![-10, 0, 10]
+    );
+
+    assert_eq!(
+        get_all_elements(btree![1, null, 8], btree![8, 1]),
+        vec![1, 1, 8, 8]
+    );
 }

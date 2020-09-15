@@ -43,9 +43,11 @@ impl TreeNode {
 fn test1_1457() {
     use leetcode_prelude::btree;
     assert_eq!(pseudo_palindromic_paths(btree![2, 3, 1, 3, 1, null, 1]), 2);
+
     assert_eq!(
         pseudo_palindromic_paths(btree![2, 1, 1, 1, 3, null, null, null, null, null, 1]),
         1
     );
+
     assert_eq!(pseudo_palindromic_paths(btree![9]), 1);
 }

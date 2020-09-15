@@ -43,32 +43,12 @@ impl TreeNode {
 // tree depth_first_search
 #[test]
 fn test1_979() {
-    let t1 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 3,
-        left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-        right: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-    }))); // [3,0,0]
-    assert_eq!(distribute_coins(t1), 2);
-    let t2 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 0,
-        left: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-        right: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-    }))); // [0,3,0]
-    assert_eq!(distribute_coins(t2), 3);
-    let t3 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-        right: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
-    }))); // [1,0,2]
-    assert_eq!(distribute_coins(t3), 2);
-    let t4 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 0,
-            left: None,
-            right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode::new(0)))),
-    }))); // [1,0,0,null,3]
-    assert_eq!(distribute_coins(t4), 4);
+    use leetcode_prelude::btree;
+    assert_eq!(distribute_coins(btree![3, 0, 0]), 2);
+
+    assert_eq!(distribute_coins(btree![0, 3, 0]), 3);
+
+    assert_eq!(distribute_coins(btree![1, 0, 2]), 2);
+
+    assert_eq!(distribute_coins(btree![1, 0, 0, null, 3]), 4);
 }

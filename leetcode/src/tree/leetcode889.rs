@@ -42,20 +42,9 @@ impl TreeNode {
 // tree
 #[test]
 fn test1_889() {
-    let pre = vec![1, 2, 4, 5, 3, 6, 7];
-    let post = vec![4, 5, 2, 6, 7, 3, 1];
-    let res = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 2,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(5)))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 3,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
-        }))),
-    }))); // [1,2,3,4,5,6,7]
-    assert_eq!(construct_from_pre_post(pre, post), res);
+    use leetcode_prelude::btree;
+    assert_eq!(
+        construct_from_pre_post(vec![1, 2, 4, 5, 3, 6, 7], vec![4, 5, 2, 6, 7, 3, 1]),
+        btree![1, 2, 3, 4, 5, 6, 7]
+    );
 }

@@ -41,6 +41,7 @@ fn test1_1443() {
         ),
         8
     );
+
     assert_eq!(
         min_time(
             7,
@@ -49,6 +50,7 @@ fn test1_1443() {
         ),
         6
     );
+
     assert_eq!(
         min_time(
             7,

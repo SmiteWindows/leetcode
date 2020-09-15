@@ -56,60 +56,12 @@ impl TreeNode {
 // tree depth_first_search dynamic_programming
 #[test]
 fn test1_1339() {
-    let t1 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 2,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(5)))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 3,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
-            right: None,
-        }))),
-    }))); // [1,2,3,4,5,6]
-    assert_eq!(max_product(t1), 110);
-    let t2 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: None,
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 2,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-            right: Some(Rc::new(RefCell::new(TreeNode {
-                val: 4,
-                left: Some(Rc::new(RefCell::new(TreeNode::new(5)))),
-                right: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
-            }))),
-        }))),
-    }))); // [1,null,2,3,4,null,null,5,6]
-    assert_eq!(max_product(t2), 90);
-    let t3 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 2,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 3,
-            left: Some(Rc::new(RefCell::new(TreeNode {
-                val: 10,
-                left: Some(Rc::new(RefCell::new(TreeNode::new(5)))),
-                right: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
-            }))),
-            right: Some(Rc::new(RefCell::new(TreeNode {
-                val: 7,
-                left: Some(Rc::new(RefCell::new(TreeNode::new(11)))),
-                right: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-            }))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 9,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(8)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
-        }))),
-    }))); // [2,3,9,10,7,8,6,5,4,11,1]
-    assert_eq!(max_product(t3), 1025);
-    let t4 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-        right: None,
-    })));
-    assert_eq!(max_product(t4), 1);
+    use leetcode_prelude::btree;
+    assert_eq!(max_product(btree![1, 2, 3, 4, 5, 6]), 110);
+
+    assert_eq!(max_product(btree![1, null, 2, 3, 4, null, null, 5, 6]), 90);
+
+    assert_eq!(max_product(btree![2, 3, 9, 10, 7, 8, 6, 5, 4, 11, 1]), 1025);
+
+    assert_eq!(max_product(btree![1, 1]), 1);
 }

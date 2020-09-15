@@ -45,52 +45,6 @@ impl TreeNode {
 // tree recursion
 #[test]
 fn test1_783() {
-    let t1 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 4,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 2,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(1)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
-    }))); // [4,2,6,1,3,null,null]
-    assert_eq!(1, min_diff_in_bst(t1));
-    let t2 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 5,
-        left: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
-        right: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
-    })));
-    assert_eq!(1, min_diff_in_bst(t2));
-    let t3 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 27,
-        left: None,
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 34,
-            left: None,
-            right: Some(Rc::new(RefCell::new(TreeNode {
-                val: 58,
-                left: Some(Rc::new(RefCell::new(TreeNode {
-                    val: 50,
-                    left: Some(Rc::new(RefCell::new(TreeNode::new(44)))),
-                    right: None,
-                }))),
-                right: None,
-            }))),
-        }))),
-    })));
-    assert_eq!(6, min_diff_in_bst(t3));
-    let t4 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 90,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 69,
-            left: Some(Rc::new(RefCell::new(TreeNode {
-                val: 49,
-                left: None,
-                right: Some(Rc::new(RefCell::new(TreeNode::new(52)))),
-            }))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(89)))),
-        }))),
-        right: None,
-    })));
-    assert_eq!(1, min_diff_in_bst(t4));
+    use leetcode_prelude::btree;
+    assert_eq!(min_diff_in_bst(btree![4, 2, 6, 1, 3, null, null]), 1);
 }
