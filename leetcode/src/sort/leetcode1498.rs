@@ -2,8 +2,7 @@
 // Runtime: 32 ms
 // Memory Usage: 3.1 MB
 const MOD: i32 = 1_000_000_007;
-pub fn num_subseq(nums: Vec<i32>, target: i32) -> i32 {
-    let mut nums = nums;
+pub fn num_subseq(mut nums: Vec<i32>, target: i32) -> i32 {
     nums.sort_unstable();
     let mut res = 0;
     let n = nums.len();

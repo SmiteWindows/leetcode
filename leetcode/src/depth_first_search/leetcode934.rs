@@ -3,8 +3,7 @@
 // Runtime: 12 ms
 // Memory Usage: 2.3 MB
 use std::collections::VecDeque;
-pub fn shortest_bridge(a: Vec<Vec<i32>>) -> i32 {
-    let mut a = a;
+pub fn shortest_bridge(mut a: Vec<Vec<i32>>) -> i32 {
     let n = a.len();
     let m = a[0].len();
     let mut queue = VecDeque::new();

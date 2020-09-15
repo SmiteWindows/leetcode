@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/minimum-subsequence-in-non-increasing-order/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
-pub fn min_subsequence(nums: Vec<i32>) -> Vec<i32> {
-    let mut nums = nums;
+pub fn min_subsequence(mut nums: Vec<i32>) -> Vec<i32> {
     let n = nums.len();
     nums.sort_unstable();
     let sum: i32 = nums.iter().sum();

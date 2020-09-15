@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/reverse-pairs/
 // Runtime: 64 ms
 // Memory Usage: 2.6 MB
-pub fn reverse_pairs(nums: Vec<i32>) -> i32 {
-    let mut nums = nums;
+pub fn reverse_pairs(mut nums: Vec<i32>) -> i32 {
     let n = nums.len();
     let mut temp = vec![0; n];
     merge_sort(0, n, &mut nums, &mut temp) as i32

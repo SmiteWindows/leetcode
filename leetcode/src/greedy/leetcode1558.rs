@@ -26,8 +26,7 @@ fn test1_1558() {
     assert_eq!(min_operations(vec![2, 4, 8, 16]), 8);
 }
 use std::cmp::Reverse;
-pub fn _min_operations(nums: Vec<i32>) -> i32 {
-    let mut nums = nums;
+pub fn _min_operations(mut nums: Vec<i32>) -> i32 {
     nums.sort_unstable_by_key(|&x| Reverse(x));
 
     let mut count = 0;

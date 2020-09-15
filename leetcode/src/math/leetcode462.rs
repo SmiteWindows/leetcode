@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/minimum-moves-to-equal-array-elements-ii/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
-pub fn min_moves2(nums: Vec<i32>) -> i32 {
-    let mut nums = nums;
+pub fn min_moves2(mut nums: Vec<i32>) -> i32 {
     nums.sort_unstable();
     let n = nums.len();
     let median = nums[n / 2];

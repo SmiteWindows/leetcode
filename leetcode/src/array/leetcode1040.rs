@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/moving-stones-until-consecutive-ii/
 // Runtime: 4 ms
 // Memory Usage: 2.1 MB
-pub fn num_moves_stones_ii(stones: Vec<i32>) -> Vec<i32> {
-    let mut stones = stones;
+pub fn num_moves_stones_ii(mut stones: Vec<i32>) -> Vec<i32> {
     stones.sort_unstable();
     let n = stones.len();
     let mut min = n as i32;

@@ -2,8 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::{cmp::Ordering, collections::HashMap};
-pub fn relative_sort_array(arr1: Vec<i32>, arr2: Vec<i32>) -> Vec<i32> {
-    let mut arr1 = arr1;
+pub fn relative_sort_array(mut arr1: Vec<i32>, arr2: Vec<i32>) -> Vec<i32> {
     let mut hm = HashMap::new();
     for (i, &v) in arr2.iter().enumerate() {
         hm.insert(v, i);

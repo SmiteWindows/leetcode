@@ -6,8 +6,7 @@ struct NumArray {
 }
 
 impl NumArray {
-    fn new(nums: Vec<i32>) -> Self {
-        let mut nums = nums;
+    fn new(mut nums: Vec<i32>) -> Self {
         for i in 1..nums.len() {
             nums[i] += nums[i - 1];
         }

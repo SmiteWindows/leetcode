@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/smallest-range-ii/
 // Runtime: 4 ms
 // Memory Usage: 2.1 MB
-pub fn smallest_range_ii(a: Vec<i32>, k: i32) -> i32 {
-    let mut a = a;
+pub fn smallest_range_ii(mut a: Vec<i32>, k: i32) -> i32 {
     let n = a.len();
     a.sort_unstable();
     let mut max = a[n - 1];

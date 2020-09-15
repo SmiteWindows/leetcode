@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/beautiful-arrangement-ii/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
-pub fn construct_array(n: i32, k: i32) -> Vec<i32> {
-    let mut k = k;
+pub fn construct_array(n: i32, mut k: i32) -> Vec<i32> {
     let mut res = vec![1];
     let mut l = 2;
     let mut r = n;

@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/can-place-flowers/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
-pub fn can_place_flowers(flowerbed: Vec<i32>, n: i32) -> bool {
-    let mut flowerbed = flowerbed;
+pub fn can_place_flowers(mut flowerbed: Vec<i32>, n: i32) -> bool {
     let m = flowerbed.len();
     let mut sum = 0;
     for i in 0..m {

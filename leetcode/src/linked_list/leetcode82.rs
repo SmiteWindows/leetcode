@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
-pub fn delete_duplicates(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
-    let mut head = head;
+pub fn delete_duplicates(mut head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
     let mut root = None; //head(node) ,(head)node.next ,last_node
     let mut p = &mut root;
     let mut last_node: Option<Box<ListNode>> = None;

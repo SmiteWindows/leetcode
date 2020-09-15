@@ -2,8 +2,7 @@
 // Runtime: 20 ms
 // Memory Usage: 2.2 MB
 use std::collections::HashMap;
-pub fn num_factored_binary_trees(a: Vec<i32>) -> i32 {
-    let mut a = a;
+pub fn num_factored_binary_trees(mut a: Vec<i32>) -> i32 {
     let n = a.len();
     let mut dp = vec![1_i64; n];
     let modulo = 1_000_000_007;

@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/remove-linked-list-elements/
 // Runtime: 4 ms
 // Memory Usage: 2.7 MB
-pub fn remove_elements(head: Option<Box<ListNode>>, val: i32) -> Option<Box<ListNode>> {
-    let mut head = head;
+pub fn remove_elements(mut head: Option<Box<ListNode>>, val: i32) -> Option<Box<ListNode>> {
     let mut p = &mut head;
     while p.is_some() {
         if p.as_ref()?.val == val {

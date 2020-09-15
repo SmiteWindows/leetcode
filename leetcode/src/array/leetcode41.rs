@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/first-missing-positive/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
-pub fn first_missing_positive(nums: Vec<i32>) -> i32 {
-    let mut nums = nums;
+pub fn first_missing_positive(mut nums: Vec<i32>) -> i32 {
     let n = nums.len();
     for i in 0..n {
         loop {

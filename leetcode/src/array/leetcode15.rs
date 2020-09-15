@@ -2,7 +2,7 @@
 // Runtime: 16 ms
 // Memory Usage: 3.4 MB
 use std::cmp::Ordering;
-pub fn three_sum(nums: Vec<i32>) -> Vec<Vec<i32>> {
+pub fn three_sum(mut nums: Vec<i32>) -> Vec<Vec<i32>> {
     let mut res = vec![];
     let n = nums.len();
 
@@ -10,7 +10,6 @@ pub fn three_sum(nums: Vec<i32>) -> Vec<Vec<i32>> {
         return res;
     }
 
-    let mut nums = nums;
     nums.sort_unstable();
 
     for i in 0..n - 2 {

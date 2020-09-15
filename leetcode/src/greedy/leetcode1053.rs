@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/previous-permutation-with-one-swap/
 // Runtime: 12 ms
 // Memory Usage: 2.3 MB
-pub fn prev_perm_opt1(a: Vec<i32>) -> Vec<i32> {
-    let mut a = a;
+pub fn prev_perm_opt1(mut a: Vec<i32>) -> Vec<i32> {
     let n = a.len();
     if n < 2 {
         return a;

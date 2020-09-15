@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/minimum-increment-to-make-array-unique/
 // Runtime: 12 ms
 // Memory Usage: 2.4 MB
-pub fn min_increment_for_unique(a: Vec<i32>) -> i32 {
-    let mut a = a;
+pub fn min_increment_for_unique(mut a: Vec<i32>) -> i32 {
     let mut res = 0;
     a.sort_unstable();
     let mut prev = None;

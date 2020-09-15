@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/maximum-gap/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
-pub fn maximum_gap(nums: Vec<i32>) -> i32 {
-    let mut nums = nums;
+pub fn maximum_gap(mut nums: Vec<i32>) -> i32 {
     let n = nums.len();
     nums.sort_unstable();
     let mut res = 0;

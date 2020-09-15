@@ -1,12 +1,11 @@
 // https://leetcode-cn.com/problems/partition-list/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
-pub fn partition(head: Option<Box<ListNode>>, x: i32) -> Option<Box<ListNode>> {
+pub fn partition(mut head: Option<Box<ListNode>>, x: i32) -> Option<Box<ListNode>> {
     let mut lower = Some(Box::new(ListNode::new(0)));
     let mut higher = Some(Box::new(ListNode::new(0)));
     let mut lower_tail = lower.as_deref_mut();
     let mut higher_tail = higher.as_deref_mut();
-    let mut head = head;
     while let Some(mut inner) = head {
         let next = inner.next.take();
         if inner.val < x {

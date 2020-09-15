@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/next-greater-node-in-linked-list/
 // Runtime: 32 ms
 // Memory Usage: 2.6 MB
-pub fn next_larger_nodes(head: Option<Box<ListNode>>) -> Vec<i32> {
-    let mut head = head;
+pub fn next_larger_nodes(mut head: Option<Box<ListNode>>) -> Vec<i32> {
     let mut nodes = vec![];
     while let Some(node) = head {
         nodes.push(node.val);

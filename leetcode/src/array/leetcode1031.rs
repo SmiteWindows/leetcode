@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/maximum-sum-of-two-non-overlapping-subarrays/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
-pub fn max_sum_two_no_overlap(a: Vec<i32>, l: i32, m: i32) -> i32 {
-    let mut a = a;
+pub fn max_sum_two_no_overlap(mut a: Vec<i32>, l: i32, m: i32) -> i32 {
     let n = a.len();
     let l = l as usize;
     let m = m as usize;

@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/minimum-difference-between-largest-and-smallest-value-in-three-moves/?
 // Runtime: 36 ms
 // Memory Usage: 3.3 MB
-pub fn min_difference(nums: Vec<i32>) -> i32 {
-    let mut nums = nums;
+pub fn min_difference(mut nums: Vec<i32>) -> i32 {
     let n = nums.len();
     if n <= 3 {
         return 0;

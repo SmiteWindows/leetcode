@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/matchsticks-to-square/
 // Runtime: 12 ms
 // Memory Usage: 2 MB
-pub fn makesquare(nums: Vec<i32>) -> bool {
-    let mut nums = nums;
+pub fn makesquare(mut nums: Vec<i32>) -> bool {
     let n = nums.len();
     if n == 0 {
         return false;

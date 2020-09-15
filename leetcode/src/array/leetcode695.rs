@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/max-area-of-island/
 // Runtime: 4 ms
 // Memory Usage: 2.1 MB
-pub fn max_area_of_island(grid: Vec<Vec<i32>>) -> i32 {
-    let mut grid = grid;
+pub fn max_area_of_island(mut grid: Vec<Vec<i32>>) -> i32 {
     let n = grid.len();
     let m = grid[0].len();
     let mut res = 0;

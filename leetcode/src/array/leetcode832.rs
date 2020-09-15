@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/flipping-an-image/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
-pub fn flip_and_invert_image(a: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
-    let mut a = a;
+pub fn flip_and_invert_image(mut a: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
     let n = a.len();
     for i in a.iter_mut().take(n) {
         let mut l = 0;

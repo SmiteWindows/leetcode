@@ -2,8 +2,7 @@
 // Runtime: 24 ms
 // Memory Usage: 12.6 MB
 use std::collections::HashMap;
-pub fn find_words(board: Vec<Vec<char>>, words: Vec<String>) -> Vec<String> {
-    let mut board = board;
+pub fn find_words(mut board: Vec<Vec<char>>, words: Vec<String>) -> Vec<String> {
     let mut trie = Trie::default();
     for word in words {
         trie.insert(word);

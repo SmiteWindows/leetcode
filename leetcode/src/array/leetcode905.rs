@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/sort-array-by-parity/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
-pub fn sort_array_by_parity(a: Vec<i32>) -> Vec<i32> {
-    let mut a = a;
+pub fn sort_array_by_parity(mut a: Vec<i32>) -> Vec<i32> {
     let mut l = 0;
     let mut r = a.len() - 1;
     while l < r {

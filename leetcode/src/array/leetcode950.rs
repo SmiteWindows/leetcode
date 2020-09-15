@@ -2,8 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 use std::collections::VecDeque;
-pub fn deck_revealed_increasing(deck: Vec<i32>) -> Vec<i32> {
-    let mut deck = deck;
+pub fn deck_revealed_increasing(mut deck: Vec<i32>) -> Vec<i32> {
     deck.sort_unstable();
     let mut queue = VecDeque::new();
     let n = deck.len();

@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/palindrome-linked-list/
 // Runtime: 4 ms
 // Memory Usage: 4.3 MB
-pub fn is_palindrome(head: Option<Box<ListNode>>) -> bool {
-    let mut head = head;
+pub fn is_palindrome(mut head: Option<Box<ListNode>>) -> bool {
     let mut dummy = head.as_deref();
     let mut len: usize = 0;
     while let Some(x) = dummy {

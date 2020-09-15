@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/maximum-product-of-two-elements-in-an-array/
 // Runtime: 0 ms
 // Memory Usage: 1.9 MB
-pub fn max_product(nums: Vec<i32>) -> i32 {
-    let mut nums = nums;
+pub fn max_product(mut nums: Vec<i32>) -> i32 {
     let n = nums.len();
     nums.sort_unstable();
     (nums[n - 1] - 1) * (nums[n - 2] - 1)

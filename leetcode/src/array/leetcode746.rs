@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/min-cost-climbing-stairs/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
-pub fn min_cost_climbing_stairs(cost: Vec<i32>) -> i32 {
-    let mut cost = cost;
+pub fn min_cost_climbing_stairs(mut cost: Vec<i32>) -> i32 {
     let n = cost.len();
     cost.push(0);
     if n < 2 {

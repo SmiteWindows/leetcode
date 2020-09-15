@@ -2,8 +2,7 @@
 // Runtime: 4 ms
 // Memory Usage: 2.3 MB
 use std::{cell::RefCell, rc::Rc};
-pub fn is_sub_path(head: Option<Box<ListNode>>, root: Option<Rc<RefCell<TreeNode>>>) -> bool {
-    let mut head = head;
+pub fn is_sub_path(mut head: Option<Box<ListNode>>, root: Option<Rc<RefCell<TreeNode>>>) -> bool {
     let mut path = vec![];
     while let Some(node) = head {
         path.push(node.val);

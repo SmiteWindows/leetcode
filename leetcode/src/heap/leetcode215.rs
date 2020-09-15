@@ -3,8 +3,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::cmp::Ordering::{Equal, Greater, Less};
-pub fn find_kth_largest(nums: Vec<i32>, k: i32) -> i32 {
-    let mut nums = nums;
+pub fn find_kth_largest(mut nums: Vec<i32>, k: i32) -> i32 {
     let n = nums.len();
     let mut l = 0;
     let mut r = n - 1;

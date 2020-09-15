@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/permutations-ii/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
-pub fn permute_unique(nums: Vec<i32>) -> Vec<Vec<i32>> {
-    let mut nums = nums;
+pub fn permute_unique(mut nums: Vec<i32>) -> Vec<Vec<i32>> {
     let n = nums.len();
     let mut res = vec![];
     let mut used = vec![false; n];

@@ -2,10 +2,8 @@
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::cmp::Ordering::{Equal, Greater, Less};
-pub fn intersect(nums1: Vec<i32>, nums2: Vec<i32>) -> Vec<i32> {
-    let mut nums1 = nums1;
+pub fn intersect(mut nums1: Vec<i32>, mut nums2: Vec<i32>) -> Vec<i32> {
     nums1.sort_unstable();
-    let mut nums2 = nums2;
     nums2.sort_unstable();
     let (mut i, mut j, mut k) = (0, 0, 0);
     while i < nums1.len() && j < nums2.len() {

@@ -2,9 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 use std::cmp::Ordering::{Equal, Greater, Less};
-pub fn str_without3a3b(a: i32, b: i32) -> String {
-    let mut a = a;
-    let mut b = b;
+pub fn str_without3a3b(mut a: i32, mut b: i32) -> String {
     let mut res = "".to_string();
     match a.cmp(&b) {
         Less => {

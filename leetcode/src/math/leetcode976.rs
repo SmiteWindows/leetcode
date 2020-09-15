@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/largest-perimeter-triangle/
 // Runtime: 8 ms
 // Memory Usage: 2 MB
-pub fn largest_perimeter(a: Vec<i32>) -> i32 {
-    let mut a = a;
+pub fn largest_perimeter(mut a: Vec<i32>) -> i32 {
     let n = a.len();
     a.sort_unstable();
     for i in (0..=n - 3).rev() {

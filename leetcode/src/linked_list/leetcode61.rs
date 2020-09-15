@@ -2,8 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 use std::mem::replace;
-pub fn rotate_right(head: Option<Box<ListNode>>, k: i32) -> Option<Box<ListNode>> {
-    let mut head = head;
+pub fn rotate_right(mut head: Option<Box<ListNode>>, k: i32) -> Option<Box<ListNode>> {
     let mut k = k;
     if head.is_none() {
         return head;

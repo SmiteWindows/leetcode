@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/permutations/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
-pub fn permute(nums: Vec<i32>) -> Vec<Vec<i32>> {
-    let mut nums = nums;
+pub fn permute(mut nums: Vec<i32>) -> Vec<Vec<i32>> {
     let mut res = vec![];
     let n = nums.len();
     backtrack(&mut nums, &mut res, 0, n);

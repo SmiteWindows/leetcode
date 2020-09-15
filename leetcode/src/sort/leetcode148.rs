@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/sort-list/
 // Runtime: 8 ms
 // Memory Usage: 4.2 MB
-pub fn sort_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
-    let mut head = head;
+pub fn sort_list(mut head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
     head.as_ref()?;
     let mut len = 1;
     loop {

@@ -2,8 +2,7 @@
 #![allow(clippy::many_single_char_names)]
 // Runtime: 16 ms
 // Memory Usage: 2.4 MB
-pub fn num_enclaves(a: Vec<Vec<i32>>) -> i32 {
-    let mut a = a;
+pub fn num_enclaves(mut a: Vec<Vec<i32>>) -> i32 {
     let n = a.len();
     let m = a[0].len();
     let mut res = 0;

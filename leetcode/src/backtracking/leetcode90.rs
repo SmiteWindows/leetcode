@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/subsets-ii/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
-pub fn subsets_with_dup(nums: Vec<i32>) -> Vec<Vec<i32>> {
-    let mut nums = nums;
+pub fn subsets_with_dup(mut nums: Vec<i32>) -> Vec<Vec<i32>> {
     nums.sort_unstable();
     let n = nums.len();
     let mut cur = vec![];

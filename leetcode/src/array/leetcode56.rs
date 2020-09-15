@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/merge-intervals/
 // Runtime: 0 ms
 // Memory Usage: 2.6 MB
-pub fn merge(intervals: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
-    let mut intervals = intervals;
+pub fn merge(mut intervals: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
     intervals.sort_unstable_by_key(|a| a[0]);
     let mut res = vec![];
     let mut temp: Option<Vec<i32>> = None;

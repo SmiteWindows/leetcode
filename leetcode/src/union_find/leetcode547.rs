@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/friend-circles/
 // Runtime: 0 ms
 // Memory Usage: 2.3 MB
-pub fn find_circle_num(m: Vec<Vec<i32>>) -> i32 {
-    let mut m = m;
+pub fn find_circle_num(mut m: Vec<Vec<i32>>) -> i32 {
     let mut res = 0;
     let n = m.len();
     let mut visited = vec![false; n];

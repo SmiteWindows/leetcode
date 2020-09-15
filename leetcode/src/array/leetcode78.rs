@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/subsets/
 /// Runtime: 0 ms
 /// Memory Usage: 2.1 MB
-pub fn subsets(nums: Vec<i32>) -> Vec<Vec<i32>> {
-    let mut nums = nums;
+pub fn subsets(mut nums: Vec<i32>) -> Vec<Vec<i32>> {
     if nums.is_empty() {
         return vec![vec![]];
     }

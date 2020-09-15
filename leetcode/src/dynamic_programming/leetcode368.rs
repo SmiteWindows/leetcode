@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/largest-divisible-subset/
 // Runtime: 20 ms
 // Memory Usage: 2.1 MB
-pub fn largest_divisible_subset(nums: Vec<i32>) -> Vec<i32> {
-    let mut nums = nums;
+pub fn largest_divisible_subset(mut nums: Vec<i32>) -> Vec<i32> {
     let n = nums.len();
     let mut index = (0..n).collect::<Vec<_>>();
     let mut size = vec![1; n];

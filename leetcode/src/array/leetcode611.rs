@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/valid-triangle-number/
 // Runtime: 8 ms
 // Memory Usage: 2 MB
-pub fn triangle_number(nums: Vec<i32>) -> i32 {
-    let mut nums = nums;
+pub fn triangle_number(mut nums: Vec<i32>) -> i32 {
     let mut res = 0;
     let n = nums.len();
     nums.sort_unstable();

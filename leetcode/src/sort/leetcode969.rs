@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/pancake-sorting/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
-pub fn pancake_sort(a: Vec<i32>) -> Vec<i32> {
-    let mut a = a;
+pub fn pancake_sort(mut a: Vec<i32>) -> Vec<i32> {
     let n = a.len();
     let mut res = vec![];
     for i in 0..n {

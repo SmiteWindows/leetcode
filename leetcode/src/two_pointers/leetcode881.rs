@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/boats-to-save-people/
 // Runtime: 20 ms
 // Memory Usage: 2.3 MB
-pub fn num_rescue_boats(people: Vec<i32>, limit: i32) -> i32 {
-    let mut people = people;
+pub fn num_rescue_boats(mut people: Vec<i32>, limit: i32) -> i32 {
     let n = people.len();
     people.sort_unstable();
     people.reverse();

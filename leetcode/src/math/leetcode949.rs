@@ -2,8 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 1.9 MB
 use std::{cmp::Ordering, fmt};
-pub fn largest_time_from_digits(a: Vec<i32>) -> String {
-    let mut a = a;
+pub fn largest_time_from_digits(mut a: Vec<i32>) -> String {
     let mut max = None;
     backtrack(&mut a, 0, &mut max);
     if let Some(max_time) = max {

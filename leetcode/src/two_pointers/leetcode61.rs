@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/rotate-list/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
-pub fn rotate_right(head: Option<Box<ListNode>>, k: i32) -> Option<Box<ListNode>> {
-    let mut head = head;
+pub fn rotate_right(mut head: Option<Box<ListNode>>, k: i32) -> Option<Box<ListNode>> {
     let mut p = head.as_deref();
     let mut n = 0;
     while let Some(node) = p {

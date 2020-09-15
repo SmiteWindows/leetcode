@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/3sum-closest/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
-pub fn three_sum_closest(nums: Vec<i32>, target: i32) -> i32 {
-    let mut nums = nums;
+pub fn three_sum_closest(mut nums: Vec<i32>, target: i32) -> i32 {
     nums.sort_unstable();
     let n = nums.len();
     let mut res = 0;

@@ -2,8 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 use std::cmp::Ordering::{Equal, Greater, Less};
-pub fn four_sum(nums: Vec<i32>, target: i32) -> Vec<Vec<i32>> {
-    let mut nums = nums;
+pub fn four_sum(mut nums: Vec<i32>, target: i32) -> Vec<Vec<i32>> {
     let n = nums.len();
     let mut res = vec![];
     nums.sort_unstable();
