@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/factorial-trailing-zeroes/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
-pub fn trailing_zeroes(n: i32) -> i32 {
-    let mut n = n;
+pub fn trailing_zeroes(mut n: i32) -> i32 {
     let mut res = 0;
     while n > 0 {
         res += n / 5;

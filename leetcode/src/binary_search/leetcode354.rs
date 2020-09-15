@@ -2,8 +2,7 @@
 // Runtime: 8 ms
 // Memory Usage: 2.5 MB
 use std::cmp::Reverse;
-pub fn max_envelopes(envelopes: Vec<Vec<i32>>) -> i32 {
-    let mut envelopes = envelopes;
+pub fn max_envelopes(mut envelopes: Vec<Vec<i32>>) -> i32 {
     let n = envelopes.len();
     envelopes.sort_unstable_by_key(|v| (v[0], Reverse(v[1])));
     let mut dp = vec![];

@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/super-pow
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
-pub fn super_pow(a: i32, b: Vec<i32>) -> i32 {
-    let mut b = b;
+pub fn super_pow(a: i32, mut b: Vec<i32>) -> i32 {
     let a = a % 1337;
     if let Some(last) = b.pop() {
         pow_mod(super_pow(a, b) % 1337, 10) * pow_mod(a, last) % 1337

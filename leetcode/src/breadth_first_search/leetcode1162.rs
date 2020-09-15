@@ -2,8 +2,7 @@
 // Runtime: 8 ms
 // Memory Usage: 2.4 MB
 use std::collections::VecDeque;
-pub fn max_distance(grid: Vec<Vec<i32>>) -> i32 {
-    let mut grid = grid;
+pub fn max_distance(mut grid: Vec<Vec<i32>>) -> i32 {
     let n = grid.len();
     let m = grid[0].len();
     let mut queue = VecDeque::new();

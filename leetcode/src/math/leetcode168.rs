@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/excel-sheet-column-title/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
-pub fn convert_to_title(n: i32) -> String {
-    let mut n = n;
+pub fn convert_to_title(mut n: i32) -> String {
     let mut v = vec![];
     while n > 0 {
         let x = ((n - 1) % 26) as u8;

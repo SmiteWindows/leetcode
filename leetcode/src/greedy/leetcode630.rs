@@ -2,8 +2,7 @@
 // Runtime: 32 ms
 // Memory Usage: 2.8 MB
 use std::collections::BinaryHeap;
-pub fn schedule_course(courses: Vec<Vec<i32>>) -> i32 {
-    let mut courses = courses;
+pub fn schedule_course(mut courses: Vec<Vec<i32>>) -> i32 {
     courses.sort_by_key(|x| x[1]);
     let mut sum = 0;
     let mut queue = BinaryHeap::new();

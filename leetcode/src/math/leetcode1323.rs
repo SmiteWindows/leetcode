@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/maximum-69-number/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
-pub fn maximum69_number(num: i32) -> i32 {
-    let mut num = num;
+pub fn maximum69_number(mut num: i32) -> i32 {
     let mut stack: Vec<i32> = vec![];
     while num > 0 {
         stack.push(num % 10);

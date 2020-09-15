@@ -3,8 +3,7 @@
 #![allow(clippy::many_single_char_names)]
 // Runtime: 8 ms
 // Memory Usage: 2 MB
-pub fn color_border(grid: Vec<Vec<i32>>, r0: i32, c0: i32, color: i32) -> Vec<Vec<i32>> {
-    let mut grid = grid;
+pub fn color_border(mut grid: Vec<Vec<i32>>, r0: i32, c0: i32, color: i32) -> Vec<Vec<i32>> {
     let n = grid.len();
     let m = grid[0].len();
     let r0 = r0 as usize;

@@ -3,8 +3,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 use std::collections::VecDeque;
-pub fn oranges_rotting(grid: Vec<Vec<i32>>) -> i32 {
-    let mut grid = grid;
+pub fn oranges_rotting(mut grid: Vec<Vec<i32>>) -> i32 {
     let n = grid.len();
     let m = grid[0].len();
     let mut queue = VecDeque::new();

@@ -5,8 +5,7 @@ use std::{
     cmp::Reverse,
     collections::{BinaryHeap, HashMap},
 };
-pub fn diagonal_sort(mat: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
-    let mut mat = mat;
+pub fn diagonal_sort(mut mat: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
     let n = mat.len();
     let m = mat[0].len();
     let mut hs: HashMap<i32, BinaryHeap<Reverse<i32>>> = HashMap::new();

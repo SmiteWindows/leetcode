@@ -1,9 +1,7 @@
 // https://leetcode-cn.com/problems/reconstruct-a-2-row-binary-matrix/
 // Runtime: 36 ms
 // Memory Usage: 3.8 MB
-pub fn reconstruct_matrix(upper: i32, lower: i32, colsum: Vec<i32>) -> Vec<Vec<i32>> {
-    let mut upper = upper;
-    let mut lower = lower;
+pub fn reconstruct_matrix(mut upper: i32, mut lower: i32, colsum: Vec<i32>) -> Vec<Vec<i32>> {
     let n = colsum.len();
     let mut res = vec![vec![0; n]; 2];
     for (j, &cs) in colsum.iter().enumerate().take(n) {

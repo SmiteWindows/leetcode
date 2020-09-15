@@ -5,8 +5,7 @@ use std::{
     cmp::Reverse,
     collections::{BinaryHeap, HashSet},
 };
-pub fn kth_smallest(mat: Vec<Vec<i32>>, k: i32) -> i32 {
-    let mut k = k;
+pub fn kth_smallest(mat: Vec<Vec<i32>>, mut k: i32) -> i32 {
     let n = mat.len();
     let m = mat[0].len();
     let mut queue: BinaryHeap<(Reverse<i32>, Vec<usize>)> = BinaryHeap::new();

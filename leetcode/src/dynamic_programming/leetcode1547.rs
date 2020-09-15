@@ -2,8 +2,7 @@
 // Runtime: 156 ms
 // Memory Usage: 2.3 MB
 use std::collections::HashMap;
-pub fn min_cost(n: i32, cuts: Vec<i32>) -> i32 {
-    let mut cuts = cuts;
+pub fn min_cost(n: i32, mut cuts: Vec<i32>) -> i32 {
     cuts.sort_unstable();
     let mut memo: HashMap<(i32, i32), i32> = HashMap::new();
     dp(0, n, &mut memo, &cuts)

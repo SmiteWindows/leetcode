@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/convert-to-base-2/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
-pub fn base_neg2(n: i32) -> String {
-    let mut n = n;
+pub fn base_neg2(mut n: i32) -> String {
     if n == 0 {
         return "0".to_string();
     }

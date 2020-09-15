@@ -24,8 +24,7 @@ fn test1_1556() {
     assert_eq!(thousand_separator(123456789), "123.456.789");
     assert_eq!(thousand_separator(0), "0");
 }
-fn _thousand_separator(n: i32) -> String {
-    let mut n = n;
+fn _thousand_separator(mut n: i32) -> String {
     if n == 0 {
         return "0".to_string();
     }

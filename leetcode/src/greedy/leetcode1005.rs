@@ -2,10 +2,9 @@
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 use std::{cmp::Reverse, collections::BinaryHeap};
-pub fn largest_sum_after_k_negations(a: Vec<i32>, k: i32) -> i32 {
+pub fn largest_sum_after_k_negations(a: Vec<i32>, mut k: i32) -> i32 {
     let reverse: Vec<Reverse<i32>> = a.into_iter().map(Reverse).collect();
     let mut pq = BinaryHeap::from(reverse);
-    let mut k = k;
     while k > 0 {
         if let Some(min) = pq.pop() {
             pq.push(Reverse(-min.0));

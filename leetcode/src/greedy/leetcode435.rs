@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/non-overlapping-intervals/
 // Runtime: 0 ms
 // Memory Usage: 2.5 MB
-pub fn erase_overlap_intervals(intervals: Vec<Vec<i32>>) -> i32 {
-    let mut intervals = intervals;
+pub fn erase_overlap_intervals(mut intervals: Vec<Vec<i32>>) -> i32 {
     if intervals.is_empty() {
         return 0;
     }

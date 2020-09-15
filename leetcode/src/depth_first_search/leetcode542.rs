@@ -2,8 +2,7 @@
 // Runtime: 32 ms
 // Memory Usage: 3.5 MB
 use std::collections::VecDeque;
-pub fn update_matrix(matrix: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
-    let mut matrix = matrix;
+pub fn update_matrix(mut matrix: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
     let n = matrix.len();
     let m = matrix[0].len();
     let mut visited = vec![vec![false; m]; n];

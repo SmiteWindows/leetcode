@@ -2,8 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 use std::cmp::Reverse;
-pub fn find_lu_slength(strs: Vec<String>) -> i32 {
-    let mut strs = strs;
+pub fn find_lu_slength(mut strs: Vec<String>) -> i32 {
     let n = strs.len();
     strs.sort_by_key(|s| Reverse(s.len()));
     for i in 0..n {

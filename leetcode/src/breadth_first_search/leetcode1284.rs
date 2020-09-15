@@ -2,8 +2,7 @@
 #![allow(clippy::many_single_char_names)]
 // Runtime: 0 ms
 // Memory Usage: 2 MB
-pub fn min_flips(mat: Vec<Vec<i32>>) -> i32 {
-    let mut mat = mat;
+pub fn min_flips(mut mat: Vec<Vec<i32>>) -> i32 {
     let n = mat.len();
     let m = mat[0].len();
     let mut res = usize::MAX;

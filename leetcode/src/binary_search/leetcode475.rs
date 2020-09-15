@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/heaters/
 // Runtime: 8 ms
 // Memory Usage: 2.3 MB
-pub fn find_radius(houses: Vec<i32>, heaters: Vec<i32>) -> i32 {
-    let mut heaters = heaters;
+pub fn find_radius(houses: Vec<i32>, mut heaters: Vec<i32>) -> i32 {
     heaters.sort_unstable();
     let n = heaters.len();
     houses

@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/combination-sum/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
-pub fn combination_sum(candidates: Vec<i32>, target: i32) -> Vec<Vec<i32>> {
-    let mut candidates = candidates;
+pub fn combination_sum(mut candidates: Vec<i32>, target: i32) -> Vec<Vec<i32>> {
     candidates.sort_unstable();
     let mut combination = vec![];
     let mut res = vec![];

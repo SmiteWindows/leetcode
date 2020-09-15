@@ -2,9 +2,8 @@
 // Runtime: 4 ms
 // Memory Usage: 2.3 MB
 use std::collections::HashSet;
-pub fn longest_word(words: Vec<String>) -> String {
+pub fn longest_word(mut words: Vec<String>) -> String {
     let mut res = "".to_string();
-    let mut words = words;
     let mut set = HashSet::new();
     words.sort();
     for word in words {

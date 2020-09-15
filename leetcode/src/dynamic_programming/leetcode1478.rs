@@ -2,8 +2,7 @@
 // Runtime: 20 ms
 // Memory Usage: 2.2 MB
 use std::collections::HashMap;
-pub fn min_distance(houses: Vec<i32>, k: i32) -> i32 {
-    let mut houses = houses;
+pub fn min_distance(mut houses: Vec<i32>, k: i32) -> i32 {
     let n = houses.len();
     let k = k as usize;
     houses.sort_unstable();

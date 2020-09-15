@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/broken-calculator/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
-pub fn broken_calc(x: i32, y: i32) -> i32 {
-    let mut y = y;
+pub fn broken_calc(x: i32, mut y: i32) -> i32 {
     let mut res = 0;
     while y > x {
         if y % 2 == 0 {

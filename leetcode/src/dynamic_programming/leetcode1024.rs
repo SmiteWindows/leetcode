@@ -2,8 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::cmp::Reverse;
-pub fn video_stitching(clips: Vec<Vec<i32>>, t: i32) -> i32 {
-    let mut clips = clips;
+pub fn video_stitching(mut clips: Vec<Vec<i32>>, t: i32) -> i32 {
     clips.sort_by_key(|v| (v[0], Reverse(v[1])));
     let n = clips.len();
     let mut res = 0;

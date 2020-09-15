@@ -1,9 +1,7 @@
 // https://leetcode-cn.com/problems/adding-two-negabinary-numbers/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
-pub fn add_negabinary(arr1: Vec<i32>, arr2: Vec<i32>) -> Vec<i32> {
-    let mut arr1 = arr1;
-    let mut arr2 = arr2;
+pub fn add_negabinary(mut arr1: Vec<i32>, mut arr2: Vec<i32>) -> Vec<i32> {
     let n = arr1.len();
     let m = arr2.len();
     arr1.reverse();

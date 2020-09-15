@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/the-kth-factor-of-n/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
-pub fn kth_factor(n: i32, k: i32) -> i32 {
-    let mut k = k;
+pub fn kth_factor(n: i32, mut k: i32) -> i32 {
     for i in 1..=n {
         if n % i == 0 {
             k -= 1;

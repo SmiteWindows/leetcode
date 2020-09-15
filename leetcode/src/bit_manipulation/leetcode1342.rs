@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/number-of-steps-to-reduce-a-number-to-zero/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
-pub fn number_of_steps(num: i32) -> i32 {
-    let mut num = num;
+pub fn number_of_steps(mut num: i32) -> i32 {
     let mut res = 0;
     while num != 0 {
         if num & 1 == 1 {

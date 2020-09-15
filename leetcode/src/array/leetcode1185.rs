@@ -1,9 +1,7 @@
 // https://leetcode-cn.com/problems/day-of-the-week/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
-pub fn day_of_the_week(day: i32, month: i32, year: i32) -> String {
-    let mut month = month;
-    let mut year = year;
+pub fn day_of_the_week(day: i32, mut month: i32, mut year: i32) -> String {
     let days = [
         "Sunday",
         "Monday",

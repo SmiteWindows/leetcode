@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/replace-elements-with-greatest-element-on-right-side/
 // Runtime: 4 ms
 // Memory Usage: 2.2 MB
-pub fn replace_elements(arr: Vec<i32>) -> Vec<i32> {
-    let mut arr = arr;
+pub fn replace_elements(mut arr: Vec<i32>) -> Vec<i32> {
     let mut max = -1;
     let n = arr.len();
     for val in arr.iter_mut().rev() {

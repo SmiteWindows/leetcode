@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/longest-string-chain/
 // Runtime: 16 ms
 // Memory Usage: 2.1 MB
-pub fn longest_str_chain(words: Vec<String>) -> i32 {
-    let mut words = words;
+pub fn longest_str_chain(mut words: Vec<String>) -> i32 {
     let n = words.len();
     let mut v = vec![1; n];
     let mut res = 1;

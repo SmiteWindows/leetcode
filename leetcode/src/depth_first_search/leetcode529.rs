@@ -2,8 +2,7 @@
 // Runtime: 20 ms
 // Memory Usage: 2.2 MB
 use std::collections::VecDeque;
-pub fn update_board(board: Vec<Vec<char>>, click: Vec<i32>) -> Vec<Vec<char>> {
-    let mut board = board;
+pub fn update_board(mut board: Vec<Vec<char>>, click: Vec<i32>) -> Vec<Vec<char>> {
     let n = board.len();
     let m = board[0].len();
     let i = click[0] as usize;

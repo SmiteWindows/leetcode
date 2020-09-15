@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/shift-2d-grid/
 // Runtime: 8 ms
 // Memory Usage: 2 MB
-pub fn shift_grid(grid: Vec<Vec<i32>>, k: i32) -> Vec<Vec<i32>> {
-    let mut grid = grid;
+pub fn shift_grid(mut grid: Vec<Vec<i32>>, k: i32) -> Vec<Vec<i32>> {
     let m = grid.len();
     let n = grid[0].len();
     let mut arr = vec![];

@@ -2,9 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::collections::HashMap;
-pub fn prison_after_n_days(cells: Vec<i32>, n: i32) -> Vec<i32> {
-    // let mut cells = cells;
-    // let mut n = n;
+pub fn prison_after_n_days(cells: Vec<i32>, mut n: i32) -> Vec<i32> {
     // let mut hm: HashMap<Vec<i32>, i32> = HashMap::new();
     // while n > 0 {
     //     hm.insert(cells.to_vec(), n);
@@ -19,7 +17,6 @@ pub fn prison_after_n_days(cells: Vec<i32>, n: i32) -> Vec<i32> {
     //     }
     // }
     // cells
-    let mut n = n;
     let mut fast_forwarded = false;
     let mut seen = HashMap::new();
     let mut state_bitmap = 0x0;

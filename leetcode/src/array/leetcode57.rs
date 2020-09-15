@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/insert-interval/
 // Runtime: 0 ms
 // Memory Usage: 2.6 MB
-pub fn insert(intervals: Vec<Vec<i32>>, new_interval: Vec<i32>) -> Vec<Vec<i32>> {
-    let mut intervals = intervals;
+pub fn insert(mut intervals: Vec<Vec<i32>>, new_interval: Vec<i32>) -> Vec<Vec<i32>> {
     intervals.push(new_interval);
     intervals.sort_unstable_by_key(|a| a[0]);
     let mut res = vec![];

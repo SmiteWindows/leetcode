@@ -2,8 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::cmp::Reverse;
-pub fn remove_covered_intervals(intervals: Vec<Vec<i32>>) -> i32 {
-    let mut intervals = intervals;
+pub fn remove_covered_intervals(mut intervals: Vec<Vec<i32>>) -> i32 {
     intervals.sort_by_key(|v| (v[0], Reverse(v[1])));
     let mut r = -1;
     let mut res = 0;

@@ -1,9 +1,8 @@
 // https://leetcode-cn.com/problems/powx-n/
 // Runtime: 0 ms
 // Memory Usage: 1.9 MB
-pub fn my_pow(x: f64, n: i32) -> f64 {
+pub fn my_pow(mut x: f64, n: i32) -> f64 {
     let mut n = n as i64;
-    let mut x = x;
     if n < 0 {
         x = 1_f64 / x;
         n = -n;

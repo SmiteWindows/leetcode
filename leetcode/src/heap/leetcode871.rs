@@ -5,8 +5,7 @@ use std::{
     cmp::Reverse,
     collections::{BinaryHeap, HashMap},
 };
-pub fn min_refuel_stops(target: i32, start_fuel: i32, stations: Vec<Vec<i32>>) -> i32 {
-    let mut stations = stations;
+pub fn min_refuel_stops(target: i32, start_fuel: i32, mut stations: Vec<Vec<i32>>) -> i32 {
     let mut queue = BinaryHeap::new();
     stations.push(vec![target, 0]);
     let n = stations.len();

@@ -5,8 +5,7 @@ use std::{
     cmp::Reverse,
     collections::{BinaryHeap, HashSet},
 };
-pub fn k_smallest_pairs(nums1: Vec<i32>, nums2: Vec<i32>, k: i32) -> Vec<Vec<i32>> {
-    let mut k = k;
+pub fn k_smallest_pairs(nums1: Vec<i32>, nums2: Vec<i32>, mut k: i32) -> Vec<Vec<i32>> {
     let n1 = nums1.len();
     let n2 = nums2.len();
     let mut visited = HashSet::new();

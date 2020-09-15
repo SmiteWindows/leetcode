@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/remove-k-digits/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
-pub fn remove_kdigits(num: String, k: i32) -> String {
-    let mut k = k;
+pub fn remove_kdigits(num: String, mut k: i32) -> String {
     let mut stack = vec![];
     for c in num.chars() {
         while let Some(&top) = stack.last() {

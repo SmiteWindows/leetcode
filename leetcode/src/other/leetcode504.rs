@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/base-7/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
-pub fn convert_to_base7(num: i32) -> String {
-    let mut num = num;
+pub fn convert_to_base7(mut num: i32) -> String {
     if num == 0 {
         return "0".to_string();
     }

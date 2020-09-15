@@ -2,8 +2,7 @@
 // Runtime: 208 ms
 // Memory Usage: 3.2 MB
 use std::cmp::Ordering;
-pub fn merge_k_lists(lists: Vec<Option<Box<ListNode>>>) -> Option<Box<ListNode>> {
-    let mut lists = lists;
+pub fn merge_k_lists(mut lists: Vec<Option<Box<ListNode>>>) -> Option<Box<ListNode>> {
     let mut head = ListNode::new(0);
     let mut tail = &mut head;
     if lists.is_empty() {

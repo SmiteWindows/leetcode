@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/integer-to-roman/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
-pub fn int_to_roman(num: i32) -> String {
-    let mut num = num;
+pub fn int_to_roman(mut num: i32) -> String {
     let mapping = vec![
         (1, "I"),
         (2, "II"),

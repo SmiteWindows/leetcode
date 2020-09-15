@@ -1,9 +1,7 @@
 // https://leetcode-cn.com/problems/mirror-reflection/
 // Runtime: 0 ms
 // Memory Usage: 1.9 MB
-pub fn mirror_reflection(p: i32, q: i32) -> i32 {
-    let mut p = p;
-    let mut q = q;
+pub fn mirror_reflection(mut p: i32, mut q: i32) -> i32 {
     while p % 2 == 0 && q % 2 == 0 {
         p /= 2;
         q /= 2;

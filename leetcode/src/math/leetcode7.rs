@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/reverse-integer/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
-pub fn reverse(x: i32) -> i32 {
-    let mut x = x;
+pub fn reverse(mut x: i32) -> i32 {
     let mut rev = 0;
     while x != 0 {
         let pop = x % 10;

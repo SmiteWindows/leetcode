@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/palindrome-number/
 // Runtime: 4 ms
 // Memory Usage: 2 MB
-pub fn is_palindrome(x: i32) -> bool {
-    let mut x = x;
+pub fn is_palindrome(mut x: i32) -> bool {
     if x < 0 || (x % 10 == 0 && x != 0) {
         return false;
     }

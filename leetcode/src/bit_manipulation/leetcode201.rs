@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/bitwise-and-of-numbers-range/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
-pub fn range_bitwise_and(m: i32, n: i32) -> i32 {
-    let mut n = n;
+pub fn range_bitwise_and(m: i32, mut n: i32) -> i32 {
     while n > m {
         n &= n - 1;
     }

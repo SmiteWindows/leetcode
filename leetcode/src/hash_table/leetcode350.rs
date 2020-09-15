@@ -2,11 +2,10 @@
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 use std::collections::HashMap;
-pub fn intersect(nums1: Vec<i32>, nums2: Vec<i32>) -> Vec<i32> {
+pub fn intersect(mut nums1: Vec<i32>, nums2: Vec<i32>) -> Vec<i32> {
     if nums1.len() > nums2.len() {
         return intersect(nums2, nums1);
     }
-    let mut nums1 = nums1;
     let mut hm: HashMap<i32, i32> = HashMap::new();
     for &n in &nums1 {
         *hm.entry(n).or_default() += 1;

@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/search-suggestions-system/
 // Runtime: 8 ms
 // Memory Usage: 4.5 MB
-pub fn suggested_products(products: Vec<String>, search_word: String) -> Vec<Vec<String>> {
-    let mut products = products;
+pub fn suggested_products(mut products: Vec<String>, search_word: String) -> Vec<Vec<String>> {
     products.sort();
     let n = search_word.len();
     let mut res = Vec::with_capacity(n);

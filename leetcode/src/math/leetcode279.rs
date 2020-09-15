@@ -2,7 +2,6 @@
 // Runtime: 16 ms
 // Memory Usage: 2.1 MB
 pub fn num_squares(n: i32) -> i32 {
-    // let mut n = n;
     // if is_square(n as f64) {
     //     return 1;
     // }

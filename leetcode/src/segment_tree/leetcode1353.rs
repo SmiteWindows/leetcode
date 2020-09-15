@@ -2,8 +2,7 @@
 // Runtime: 56 ms
 // Memory Usage: 8.7 MB
 use std::{cmp::Reverse, collections::BinaryHeap};
-pub fn max_events(events: Vec<Vec<i32>>) -> i32 {
-    let mut events = events;
+pub fn max_events(mut events: Vec<Vec<i32>>) -> i32 {
     events.sort_by_key(|e| e[0]);
     let mut queue: BinaryHeap<Reverse<i32>> = BinaryHeap::new();
     let max = events.iter().map(|e| e[1]).max().unwrap();

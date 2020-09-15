@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/unique-paths-iii/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
-pub fn unique_paths_iii(grid: Vec<Vec<i32>>) -> i32 {
-    let mut grid = grid;
+pub fn unique_paths_iii(mut grid: Vec<Vec<i32>>) -> i32 {
     let mut res = 0;
     let n = grid.len();
     let m = grid[0].len();

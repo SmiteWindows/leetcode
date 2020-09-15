@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/maximum-number-of-coins-you-can-get/
 // Runtime: 40 ms
 // Memory Usage: 3.1 MB
-pub fn max_coins(piles: Vec<i32>) -> i32 {
-    let mut piles = piles;
+pub fn max_coins(mut piles: Vec<i32>) -> i32 {
     piles.sort_unstable();
     let mut res = 0;
     let n = piles.len() / 3;

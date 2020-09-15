@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/find-the-minimum-number-of-fibonacci-numbers-whose-sum-is-k/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
-pub fn find_min_fibonacci_numbers(k: i32) -> i32 {
-    let mut k = k;
+pub fn find_min_fibonacci_numbers(mut k: i32) -> i32 {
     let mut v = vec![1, 1];
     let mut i = 1;
     while v[i] + v[i - 1] <= k {

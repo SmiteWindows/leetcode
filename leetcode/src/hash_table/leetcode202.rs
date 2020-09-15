@@ -2,17 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 use std::collections::HashSet;
-pub fn is_happy(n: i32) -> bool {
-    fn get_next(mut n: i32) -> i32 {
-        let mut sum = 0;
-        while n > 0 {
-            let d = n % 10;
-            n /= 10;
-            sum += d * d;
-        }
-        sum
-    }
-
+pub fn is_happy(mut n: i32) -> bool {
     let mut cycle_members = HashSet::new();
     cycle_members.insert(4);
     cycle_members.insert(16);
@@ -22,11 +12,20 @@ pub fn is_happy(n: i32) -> bool {
     cycle_members.insert(145);
     cycle_members.insert(42);
     cycle_members.insert(20);
-    let mut n = n;
     while n != 1 && !cycle_members.contains(&n) {
         n = get_next(n);
     }
     n == 1
+}
+
+fn get_next(mut n: i32) -> i32 {
+    let mut sum = 0;
+    while n > 0 {
+        let d = n % 10;
+        n /= 10;
+        sum += d * d;
+    }
+    sum
 }
 // math hash_table
 #[test]

@@ -1,13 +1,12 @@
 // https://leetcode-cn.com/problems/merge-k-sorted-lists/
 // Runtime: 4 ms
 // Memory Usage: 3.3 MB
-pub fn merge_k_lists(lists: Vec<Option<Box<ListNode>>>) -> Option<Box<ListNode>> {
+pub fn merge_k_lists(mut lists: Vec<Option<Box<ListNode>>>) -> Option<Box<ListNode>> {
     if lists.is_empty() {
         return None;
     }
     let len = lists.len();
     let mut i = 1;
-    let mut lists = lists;
     while i < len {
         for x in (0..len - i).step_by(i * 2) {
             lists[x] = merge_two_lists(lists[x].take(), lists[x + i].take());

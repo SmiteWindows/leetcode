@@ -5,8 +5,7 @@ use std::{
     cmp::Reverse,
     collections::{BinaryHeap, HashSet},
 };
-pub fn nth_super_ugly_number(n: i32, primes: Vec<i32>) -> i32 {
-    let mut n = n;
+pub fn nth_super_ugly_number(mut n: i32, primes: Vec<i32>) -> i32 {
     let mut queue = BinaryHeap::new();
     let mut visited = HashSet::new();
     queue.push(Reverse(1));

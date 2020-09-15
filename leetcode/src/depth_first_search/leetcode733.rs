@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/flood-fill/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
-pub fn flood_fill(image: Vec<Vec<i32>>, sr: i32, sc: i32, new_color: i32) -> Vec<Vec<i32>> {
-    let mut image = image;
+pub fn flood_fill(mut image: Vec<Vec<i32>>, sr: i32, sc: i32, new_color: i32) -> Vec<Vec<i32>> {
     let sr = sr as usize;
     let sc = sc as usize;
     let color = image[sr][sc];

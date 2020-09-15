@@ -2,8 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 use std::cmp::Ordering::{Equal, Greater, Less};
-pub fn reorder_log_files(logs: Vec<String>) -> Vec<String> {
-    let mut logs = logs;
+pub fn reorder_log_files(mut logs: Vec<String>) -> Vec<String> {
     logs.sort_by(|a, b| {
         let i = a.find(' ').unwrap();
         let j = b.find(' ').unwrap();

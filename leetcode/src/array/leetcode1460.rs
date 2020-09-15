@@ -1,9 +1,7 @@
 // https://leetcode-cn.com/problems/make-two-arrays-equal-by-reversing-sub-arrays/
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
-pub fn can_be_equal(target: Vec<i32>, arr: Vec<i32>) -> bool {
-    let mut target = target;
-    let mut arr = arr;
+pub fn can_be_equal(mut target: Vec<i32>, mut arr: Vec<i32>) -> bool {
     target.sort_unstable();
     arr.sort_unstable();
     target == arr

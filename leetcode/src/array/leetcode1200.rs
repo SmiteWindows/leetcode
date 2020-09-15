@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/minimum-absolute-difference/
 // Runtime: 20 ms
 // Memory Usage: 3.2 MB
-pub fn minimum_abs_difference(arr: Vec<i32>) -> Vec<Vec<i32>> {
-    let mut arr = arr;
+pub fn minimum_abs_difference(mut arr: Vec<i32>) -> Vec<Vec<i32>> {
     arr.sort_unstable();
     let min = arr.windows(2).fold(i32::MAX, |x, v| x.min(v[1] - v[0]));
     let mut res: Vec<Vec<i32>> = vec![];

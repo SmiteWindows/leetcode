@@ -3,8 +3,7 @@
 // Runtime: 28 ms
 // Memory Usage: 2.7 MB
 use std::cmp::Ordering::{Equal, Greater, Less};
-pub fn k_closest(points: Vec<Vec<i32>>, k: i32) -> Vec<Vec<i32>> {
-    let mut points = points;
+pub fn k_closest(mut points: Vec<Vec<i32>>, k: i32) -> Vec<Vec<i32>> {
     let n = points.len();
     quick_select(&mut points, 0, n - 1, k as usize);
     points.resize(k as usize, vec![]);

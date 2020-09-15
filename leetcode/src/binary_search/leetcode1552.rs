@@ -1,8 +1,7 @@
 // https://leetcode-cn.com/problems/magnetic-force-between-two-balls/
 // Runtime: 48 ms
 // Memory Usage: 3.8 MB
-pub fn max_distance(position: Vec<i32>, m: i32) -> i32 {
-    let mut position = position;
+pub fn max_distance(mut position: Vec<i32>, m: i32) -> i32 {
     position.sort_unstable();
     let n = position.len();
     let mut low = i32::MAX;
