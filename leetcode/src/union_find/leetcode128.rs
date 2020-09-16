@@ -1,6 +1,6 @@
 // https://leetcode-cn.com/problems/longest-consecutive-sequence/
+use std::{collections::HashSet, iter::FromIterator};
 pub fn longest_consecutive(nums: Vec<i32>) -> i32 {
-    use std::{collections::HashSet, iter::FromIterator};
     if nums.is_empty() {
         return 0;
     }

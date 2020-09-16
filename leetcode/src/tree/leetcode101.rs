@@ -40,32 +40,7 @@ impl TreeNode {
 // tree depth_first_search breadth_first_search
 #[test]
 fn test1_101() {
-    let root1 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 2,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 2,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-        }))),
-    })));
-    assert_eq!(true, is_symmetric(root1));
-    let root2 = Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 2,
-            left: None,
-            right: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 2,
-            left: None,
-            right: Some(Rc::new(RefCell::new(TreeNode::new(3)))),
-        }))),
-    })));
-    assert_eq!(false, is_symmetric(root2));
+    use leetcode_prelude::btree;
+    assert_eq!(is_symmetric(btree![1, 2, 2, 3, 4, 4, 3]), true);
+    assert_eq!(is_symmetric(btree![1, 2, 2, null, 3, null, 3]), false);
 }

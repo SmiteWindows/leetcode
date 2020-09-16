@@ -46,14 +46,6 @@ impl TreeNode {
 // tree depth_first_search breadth_first_search
 #[test]
 fn test1_111() {
-    let root = Some(Rc::new(RefCell::new(TreeNode {
-        val: 3,
-        left: Some(Rc::new(RefCell::new(TreeNode::new(9)))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 20,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(15)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
-        }))),
-    })));
-    assert_eq!(2, min_depth(root));
+    use leetcode_prelude::btree;
+    assert_eq!(min_depth(btree![3, 9, 20, null, null, 15, 7]), 2);
 }

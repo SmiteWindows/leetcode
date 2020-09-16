@@ -43,5 +43,9 @@ impl TreeNode {
 #[test]
 fn test1_94() {
     use leetcode_prelude::btree;
-    assert_eq!(vec![1, 3, 2], inorder_traversal(btree![1, null, 2, 3]));
+    assert_eq!(inorder_traversal(btree![1, null, 2, 3]), vec![1, 3, 2]);
+    assert_eq!(inorder_traversal(btree![]), vec![]);
+    assert_eq!(inorder_traversal(btree![1]), vec![1]);
+    assert_eq!(inorder_traversal(btree![1, 2]), vec![2, 1]);
+    assert_eq!(inorder_traversal(btree![1, null, 2]), vec![1, 2]);
 }

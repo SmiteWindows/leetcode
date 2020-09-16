@@ -49,15 +49,9 @@ impl TreeNode {
 // tree breadth_first_search
 #[test]
 fn test2_107() {
-    use leetcode_prelude::vec2;
-    let root = Some(Rc::new(RefCell::new(TreeNode {
-        val: 3,
-        left: Some(Rc::new(RefCell::new(TreeNode::new(9)))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 20,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(15)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
-        }))),
-    })));
-    assert_eq!(level_order_bottom(root), vec2![[15, 7], [9, 20], [3]]);
+    use leetcode_prelude::{btree, vec2};
+    assert_eq!(
+        level_order_bottom(btree![3, 9, 20, null, null, 15, 7]),
+        vec2![[15, 7], [9, 20], [3]]
+    );
 }

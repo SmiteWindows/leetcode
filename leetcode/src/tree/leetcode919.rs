@@ -69,50 +69,13 @@ impl TreeNode {
  */
 // tree
 #[test]
-fn test1_199() {
-    let mut obj = CBTInserter::new(Some(Rc::new(RefCell::new(TreeNode::new(1)))));
+fn test1_919() {
+    use leetcode_prelude::btree;
+    let mut obj = CBTInserter::new(btree![1]);
     assert_eq!(obj.insert(2), 1);
-    assert_eq!(
-        obj.get_root(),
-        Some(Rc::new(RefCell::new(TreeNode {
-            val: 1,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(2)))),
-            right: None,
-        })))
-    );
-    let mut obj = CBTInserter::new(Some(Rc::new(RefCell::new(TreeNode {
-        val: 1,
-        left: Some(Rc::new(RefCell::new(TreeNode {
-            val: 2,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(4)))),
-            right: Some(Rc::new(RefCell::new(TreeNode::new(5)))),
-        }))),
-        right: Some(Rc::new(RefCell::new(TreeNode {
-            val: 3,
-            left: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
-            right: None,
-        }))),
-    }))));
+    assert_eq!(obj.get_root(), btree![1, 2]);
+    let mut obj = CBTInserter::new(btree![1, 2, 3, 4, 5, 6]);
     assert_eq!(obj.insert(7), 3);
     assert_eq!(obj.insert(8), 4);
-    assert_eq!(
-        obj.get_root(),
-        Some(Rc::new(RefCell::new(TreeNode {
-            val: 1,
-            left: Some(Rc::new(RefCell::new(TreeNode {
-                val: 2,
-                left: Some(Rc::new(RefCell::new(TreeNode {
-                    val: 4,
-                    left: Some(Rc::new(RefCell::new(TreeNode::new(8)))),
-                    right: None,
-                }))),
-                right: Some(Rc::new(RefCell::new(TreeNode::new(5)))),
-            }))),
-            right: Some(Rc::new(RefCell::new(TreeNode {
-                val: 3,
-                left: Some(Rc::new(RefCell::new(TreeNode::new(6)))),
-                right: Some(Rc::new(RefCell::new(TreeNode::new(7)))),
-            }))),
-        })))
-    );
+    assert_eq!(obj.get_root(), btree![1, 2, 3, 4, 5, 6, 7, 8]);
 }
