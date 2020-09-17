@@ -1,2 +1,2 @@
-many_single_char_names = 10
-too_many_arguments = 10
+single-char-binding-names-threshold = 10
+too-many-arguments-threshold = 10
