@@ -7,8 +7,8 @@ pub fn num_buses_to_destination(routes: Vec<Vec<i32>>, s: i32, t: i32) -> i32 {
         return 0;
     }
     let mut buses: HashMap<i32, HashSet<usize>> = HashMap::new();
-    for i in 0..routes.len() {
-        for &j in &routes[i] {
+    for (i, route) in routes.iter().enumerate() {
+        for &j in route {
             buses.entry(j).or_default().insert(i);
         }
     }

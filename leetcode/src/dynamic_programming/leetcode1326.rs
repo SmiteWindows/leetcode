@@ -4,8 +4,8 @@
 pub fn min_taps(n: i32, ranges: Vec<i32>) -> i32 {
     let n = n as usize;
     let mut jumps = vec![0; n + 1];
-    for i in 0..=n {
-        let d = ranges[i];
+    for (i, &range) in ranges.iter().enumerate().take(n + 1) {
+        let d = range;
         let l = 0.max(i as i32 - d) as usize;
         let r = n.min(i + d as usize);
         jumps[l] = jumps[l].max(r - l);
@@ -13,11 +13,11 @@ pub fn min_taps(n: i32, ranges: Vec<i32>) -> i32 {
     let mut end = 0;
     let mut reach = 0;
     let mut res = 0;
-    for i in 0..n {
+    for (i, &jump) in jumps.iter().enumerate().take(n) {
         if i > reach {
             return -1;
         }
-        reach = reach.max(i + jumps[i]);
+        reach = reach.max(i + jump);
         if i == end {
             res += 1;
             end = reach;

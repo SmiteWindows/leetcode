@@ -11,26 +11,26 @@ pub fn maximal_rectangle(matrix: Vec<Vec<char>>) -> i32 {
     let mut right = vec![m; m];
     let mut height = vec![0; m];
     let mut res = 0;
-    for i in 0..n {
+    for mi in matrix.iter().take(n) {
         let mut l = 0;
         let mut r = m;
-        for j in 0..m {
-            if matrix[i][j] == '1' {
-                height[j] += 1;
+        for (j, hj) in height.iter_mut().enumerate().take(m) {
+            if mi[j] == '1' {
+                *hj += 1;
             } else {
-                height[j] = 0;
+                *hj = 0;
             }
         }
-        for j in 0..m {
-            if matrix[i][j] == '1' {
-                left[j] = left[j].max(l);
+        for (j, lj) in left.iter_mut().enumerate().take(m) {
+            if mi[j] == '1' {
+                *lj = l.max(*lj);
             } else {
-                left[j] = 0;
+                *lj = 0;
                 l = j + 1;
             }
         }
         for j in (0..m).rev() {
-            if matrix[i][j] == '1' {
+            if mi[j] == '1' {
                 right[j] = right[j].min(r);
             } else {
                 right[j] = m;

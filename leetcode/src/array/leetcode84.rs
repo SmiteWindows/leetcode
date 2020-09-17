@@ -6,9 +6,9 @@ pub fn largest_rectangle_area(mut heights: Vec<i32>) -> i32 {
     heights.push(0);
     let n = heights.len();
     let mut res = 0;
-    for i in 0..n {
+    for (i, &height) in heights.iter().enumerate().take(n) {
         let x1 = (i + 1) as i32;
-        let y1 = heights[i];
+        let y1 = height;
         let mut x3 = x1;
         while let Some(&(x2, y2)) = stack.last() {
             if y2 > y1 {
