@@ -5,9 +5,9 @@ pub fn diagonal_sum(mat: Vec<Vec<i32>>) -> i32 {
     let n = mat.len();
     let mut res = 0;
     for (i, mi) in mat.iter().enumerate().take(n) {
-        for j in 0..n {
+        for (j, &m) in mi.iter().enumerate().take(n) {
             if i == j || i + j == n - 1 {
-                res += mi[j];
+                res += m;
             }
         }
     }

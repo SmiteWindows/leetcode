@@ -1,4 +1,5 @@
 // https://leetcode-cn.com/problems/the-skyline-problem/
+#![allow(clippy::many_single_char_names)]
 // Runtime: 0 ms
 // Memory Usage: 3.6 MB
 use std::{cmp::Ordering::*, collections::VecDeque};

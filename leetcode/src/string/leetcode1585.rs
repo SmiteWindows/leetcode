@@ -1,4 +1,5 @@
 // https://leetcode-cn.com/problems/check-if-string-is-transformable-with-substring-sort-operations/
+#![allow(clippy::many_single_char_names)]
 // Runtime: 8 ms
 // Memory Usage: 3.5 MB
 pub fn is_transformable(s: String, t: String) -> bool {
