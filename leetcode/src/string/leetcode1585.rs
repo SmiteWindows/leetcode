@@ -9,14 +9,14 @@ pub fn is_transformable(s: String, t: String) -> bool {
     for i in (0..n).rev() {
         idx[(s[i] - b'0') as usize].push(i);
     }
-    for i in 0..n {
-        let k = (t[i] - b'0') as usize;
+    for &ti in t.iter().take(n) {
+        let k = (ti - b'0') as usize;
         if idx[k].is_empty() {
             return false;
         }
         let p = idx[k].pop().unwrap();
-        for j in 0..k {
-            if let Some(&q) = idx[j].last() {
+        for i in idx.iter().take(k) {
+            if let Some(&q) = i.last() {
                 if q < p {
                     return false;
                 }

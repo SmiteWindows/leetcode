@@ -15,12 +15,12 @@ pub fn num_ways(s: String) -> i32 {
     let mut indexes = vec![];
     let k = m / 3;
     let mut sum = 0;
-    for i in 0..n {
-        if s[i] == 1 && sum % k == 0 {
+    for (i, &si) in s.iter().enumerate().take(n) {
+        if si == 1 && sum % k == 0 {
             indexes.push(i);
         }
-        sum += s[i];
-        if s[i] == 1 && sum % k == 0 {
+        sum += si;
+        if si == 1 && sum % k == 0 {
             indexes.push(i);
         }
     }

@@ -7,8 +7,8 @@ pub fn unique_letter_string(s: String) -> i32 {
     let n = s.len();
     let s: Vec<char> = s.chars().collect();
     let mut idx: HashMap<char, Vec<usize>> = HashMap::new();
-    for i in 0..n {
-        idx.entry(s[i]).or_default().push(i + 1);
+    for (i, &si) in s.iter().enumerate().take(n) {
+        idx.entry(si).or_default().push(i + 1);
     }
     let mut res = 0;
     for v in idx.values() {
