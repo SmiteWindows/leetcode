@@ -30,7 +30,7 @@ fn test1_73() {
     let mut nums1 = vec2![[1, 1, 1], [1, 0, 1], [1, 1, 1]];
     set_zeroes(&mut nums1);
     assert_eq!(nums1, vec2![[1, 0, 1], [0, 0, 0], [1, 0, 1]]);
-    
+
     let mut nums2 = vec2![[0, 1, 2, 0], [3, 4, 5, 2], [1, 3, 1, 5]];
     set_zeroes(&mut nums2);
     assert_eq!(nums2, vec2![[0, 0, 0, 0], [0, 4, 5, 0], [0, 3, 1, 0]]);
