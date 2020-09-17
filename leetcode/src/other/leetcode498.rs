@@ -1,5 +1,4 @@
 // https://leetcode-cn.com/problems/diagonal-traverse/
-#![allow(clippy::many_single_char_names)]
 // Runtime: 8 ms
 // Memory Usage: 2.6 MB
 pub fn find_diagonal_order(matrix: Vec<Vec<i32>>) -> Vec<i32> {

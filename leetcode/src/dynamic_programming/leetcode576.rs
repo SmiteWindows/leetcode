@@ -1,9 +1,7 @@
 // https://leetcode-cn.com/problems/out-of-boundary-paths/
-#![allow(clippy::many_single_char_names)]
 // Runtime: 12 ms
 // Memory Usage: 3.9 MB
 use std::collections::HashMap;
-
 const MOD: i32 = 1_000_000_007;
 pub fn find_paths(m: i32, n: i32, k: i32, i: i32, j: i32) -> i32 {
     let mut memo = HashMap::new();

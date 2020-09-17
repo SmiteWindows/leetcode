@@ -1,8 +1,6 @@
 // https://leetcode-cn.com/problems/detect-cycles-in-2d-grid/
 // Runtime: 88 ms
 // Memory Usage: 33.3 MB
-#![allow(clippy::many_single_char_names)]
-#![allow(clippy::too_many_arguments)]
 pub fn contains_cycle(grid: Vec<Vec<char>>) -> bool {
     let n = grid.len();
     let m = grid[0].len();

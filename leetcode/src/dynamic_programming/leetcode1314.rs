@@ -1,5 +1,4 @@
 // https://leetcode-cn.com/problems/matrix-block-sum/
-#![allow(clippy::many_single_char_names)]
 // Runtime: 4 ms
 // Memory Usage: 2.3 MB
 pub fn matrix_block_sum(mat: Vec<Vec<i32>>, k: i32) -> Vec<Vec<i32>> {

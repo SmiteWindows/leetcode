@@ -1,7 +1,6 @@
 // https://leetcode-cn.com/problems/can-convert-string-in-k-moves/
 // Runtime: 28 ms
 // Memory Usage: 3.1 MB
-#![allow(clippy::many_single_char_names)]
 use std::collections::HashMap;
 pub fn can_convert_string(s: String, t: String, k: i32) -> bool {
     let n = s.len();

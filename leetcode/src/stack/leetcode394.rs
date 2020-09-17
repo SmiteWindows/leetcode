@@ -1,7 +1,6 @@
 // https://leetcode-cn.com/problems/decode-string/
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
-#![allow(clippy::many_single_char_names)]
 pub fn decode_string(s: String) -> String {
     let s = s.chars().collect::<Vec<_>>();
     let mut i = 0;

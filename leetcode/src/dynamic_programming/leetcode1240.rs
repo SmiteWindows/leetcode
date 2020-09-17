@@ -1,7 +1,6 @@
 // https://leetcode-cn.com/problems/tiling-a-rectangle-with-the-fewest-squares/
 // Runtime: 0 ms
 // Memory Usage: 2 MB
-#![allow(clippy::many_single_char_names)]
 use std::collections::HashMap;
 pub fn tiling_rectangle(n: i32, m: i32) -> i32 {
     let mut memo: HashMap<(i32, i32), i32> = HashMap::new();

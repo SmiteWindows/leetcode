@@ -1,5 +1,4 @@
 // https://leetcode-cn.com/problems/interval-list-intersections/
-#![allow(clippy::many_single_char_names)]
 // Runtime: 4 ms
 // Memory Usage: 2.1 MB
 pub fn interval_intersection(a: Vec<Vec<i32>>, b: Vec<Vec<i32>>) -> Vec<Vec<i32>> {

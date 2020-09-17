@@ -1,5 +1,4 @@
 // https://leetcode-cn.com/problems/shortest-subarray-to-be-removed-to-make-array-sorted/
-#![allow(clippy::many_single_char_names)]
 // Runtime: 12 ms
 // Memory Usage: 3.7 MB
 pub fn find_length_of_shortest_subarray(arr: Vec<i32>) -> i32 {

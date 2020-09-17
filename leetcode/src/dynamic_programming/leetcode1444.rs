@@ -1,7 +1,6 @@
 // https://leetcode-cn.com/problems/number-of-ways-of-cutting-a-pizza/
 // Runtime: 16 ms
 // Memory Usage: 3.7 MB
-#![allow(clippy::many_single_char_names)]
 use std::collections::HashMap;
 const MOD: i64 = 1_000_000_007;
 pub fn ways(pizza: Vec<String>, k: i32) -> i32 {

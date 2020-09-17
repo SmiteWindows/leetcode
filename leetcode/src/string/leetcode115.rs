@@ -1,7 +1,6 @@
 // https://leetcode-cn.com/problems/distinct-subsequences/
 // Runtime: 40 ms
 // Memory Usage: 22.7 MB
-#![allow(clippy::many_single_char_names)]
 use std::collections::HashMap;
 pub fn num_distinct(s: String, t: String) -> i32 {
     let mut memo: HashMap<(usize, usize), i32> = HashMap::new();

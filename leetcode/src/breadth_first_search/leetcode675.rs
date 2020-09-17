@@ -1,7 +1,6 @@
 // https://leetcode-cn.com/problems/cut-off-trees-for-golf-event/
 // Runtime: 96 ms
 // Memory Usage: 2.2 MB
-#![allow(clippy::many_single_char_names)]
 use std::{
     cmp::Reverse,
     collections::{BinaryHeap, VecDeque},

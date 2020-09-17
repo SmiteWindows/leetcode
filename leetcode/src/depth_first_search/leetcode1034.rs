@@ -1,6 +1,4 @@
 // https://leetcode-cn.com/problems/coloring-a-border/
-#![allow(clippy::too_many_arguments)]
-#![allow(clippy::many_single_char_names)]
 // Runtime: 8 ms
 // Memory Usage: 2 MB
 pub fn color_border(mut grid: Vec<Vec<i32>>, r0: i32, c0: i32, color: i32) -> Vec<Vec<i32>> {

@@ -1,5 +1,4 @@
 // https://leetcode-cn.com/problems/minimum-window-substring/
-#![allow(clippy::many_single_char_names)]
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn min_window(s: String, t: String) -> String {

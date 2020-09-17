@@ -1,7 +1,6 @@
 // https://leetcode-cn.com/problems/find-latest-group-of-size-m/
 // Runtime: 124 ms
 // Memory Usage: 8.5 MB
-#![allow(clippy::many_single_char_names)]
 use std::collections::HashMap;
 pub fn find_latest_step(arr: Vec<i32>, m: i32) -> i32 {
     let m = m as usize;

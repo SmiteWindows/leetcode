@@ -1,7 +1,6 @@
 // https://leetcode-cn.com/problems/substring-with-concatenation-of-all-words/
 // Runtime: 44 ms
 // Memory Usage: 2.4 MB
-#![allow(clippy::many_single_char_names)]
 use std::collections::HashMap;
 pub fn find_substring(s: String, words: Vec<String>) -> Vec<i32> {
     let n = s.len();

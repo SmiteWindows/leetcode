@@ -1,7 +1,6 @@
 // https://leetcode-cn.com/problems/count-vowels-permutation/
 // Runtime: 0 ms
 // Memory Usage: 2.8 MB
-#![allow(clippy::many_single_char_names)]
 const MOD: i64 = 1_000_000_007;
 pub fn count_vowel_permutation(n: i32) -> i32 {
     let n = n as usize;

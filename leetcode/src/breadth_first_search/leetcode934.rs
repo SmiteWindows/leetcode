@@ -1,5 +1,4 @@
 // https://leetcode-cn.com/problems/shortest-bridge/
-#![allow(clippy::many_single_char_names)]
 // Runtime: 12 ms
 // Memory Usage: 2.3 MB
 use std::collections::VecDeque;
