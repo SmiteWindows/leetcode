@@ -26,9 +26,9 @@ fn exist(size: usize, s: &[char], n: usize) -> Option<String> {
     let mut pos: HashMap<u64, usize> = HashMap::new();
     let mut hash: u64 = 0;
     let mut pn: u64 = 1;
-    for i in 0..size {
+    for &si in s.iter().take(size) {
         hash *= P;
-        hash += (s[i] as u8 - b'a') as u64;
+        hash += (si as u8 - b'a') as u64;
         hash %= MOD;
         pn *= P;
         pn %= MOD;

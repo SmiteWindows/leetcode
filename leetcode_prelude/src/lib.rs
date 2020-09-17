@@ -41,8 +41,8 @@ macro_rules! vec2 {
 macro_rules! assert_eq_sorted {
     ($left:expr, $right:expr) => ({
         let (mut v1, mut v2) = ($left, $right);
-        v1.sort();
-        v2.sort();
+        v1.sort_unstable();
+        v2.sort_unstable();
         assert_eq!(v1, v2)
     });
     ($left:expr, $right:expr,) => ({
