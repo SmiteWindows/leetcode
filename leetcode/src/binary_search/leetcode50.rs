@@ -25,7 +25,8 @@ fn fast_pow(x: f64, n: i64) -> f64 {
 // math binary_search
 #[test]
 fn test1_50() {
-    assert_eq!(my_pow(2.00000, 10), 1024.00000);
-    assert_eq!(my_pow(2.10000, 3), 9.261000000000001);
-    assert_eq!(my_pow(2.00000, -2), 0.25000);
+    use leetcode_prelude::assert_approx_eq;
+    assert_approx_eq!(my_pow(2.00000, 10), 1024.00000);
+    assert_approx_eq!(my_pow(2.10000, 3), 9.261000000000001);
+    assert_approx_eq!(my_pow(2.00000, -2), 0.25000);
 }

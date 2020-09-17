@@ -39,20 +39,20 @@ fn edge(x1: i32, y1: i32, x2: i32, y2: i32) -> f64 {
 // math geometry
 #[test]
 fn test1_963() {
-    use leetcode_prelude::vec2;
-    assert_eq!(
+    use leetcode_prelude::{assert_approx_eq, vec2};
+    assert_approx_eq!(
         min_area_free_rect(vec2![[1, 2], [2, 1], [1, 0], [0, 1]]),
         2.0000000000000004
     );
-    assert_eq!(
+    assert_approx_eq!(
         min_area_free_rect(vec2![[0, 1], [2, 1], [1, 1], [1, 0], [2, 0]]),
         1.00000
     );
-    assert_eq!(
+    assert_approx_eq!(
         min_area_free_rect(vec2![[0, 3], [1, 2], [3, 1], [1, 3], [2, 1]]),
         0.00000
     );
-    assert_eq!(
+    assert_approx_eq!(
         min_area_free_rect(vec2![
             [3, 1],
             [1, 1],

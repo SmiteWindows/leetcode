@@ -76,15 +76,15 @@ fn weis(positions: &[Vec<i32>], x: f64, y: f64) -> (f64, f64) {
 // geometry
 #[test]
 fn test1_1515() {
-    use leetcode_prelude::vec2;
-    assert_eq!(
+    use leetcode_prelude::{assert_approx_eq, vec2};
+    assert_approx_eq!(
         get_min_dist_sum(vec2![[0, 1], [1, 0], [1, 2], [2, 1]]),
         4.00000
     );
-    // assert_eq!(get_min_dist_sum(vec2![[1, 1], [3, 3]]), 2.82843);
-    assert_eq!(get_min_dist_sum(vec2![[1, 1]]), 0.00000);
-    // assert_eq!(get_min_dist_sum(vec2![[1, 1], [0, 0], [2, 0]]), 2.73205);
-    // assert_eq!(
+    // assert_approx_eq!(get_min_dist_sum(vec2![[1, 1], [3, 3]]), 2.82843);
+    assert_approx_eq!(get_min_dist_sum(vec2![[1, 1]]), 0.00000);
+    // assert_approx_eq!(get_min_dist_sum(vec2![[1, 1], [0, 0], [2, 0]]), 2.73205);
+    // assert_approx_eq!(
     //     get_min_dist_sum(vec2![
     //         [0, 1],
     //         [3, 2],

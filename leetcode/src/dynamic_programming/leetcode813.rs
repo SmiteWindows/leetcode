@@ -34,5 +34,6 @@ fn dp(n: usize, k: usize, memo: &mut HashMap<(usize, usize), f64>, a: &[i32]) ->
 // dynamic_programming
 #[test]
 fn test1_813() {
-    assert_eq!(largest_sum_of_averages(vec![9, 1, 2, 3, 9], 3), 20.0);
+    use leetcode_prelude::assert_approx_eq;
+    assert_approx_eq!(largest_sum_of_averages(vec![9, 1, 2, 3, 9], 3), 20.0);
 }

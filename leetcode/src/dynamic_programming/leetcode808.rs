@@ -35,5 +35,6 @@ fn dp(a: i32, b: i32, memo: &mut HashMap<(i32, i32), f64>) -> f64 {
 // dynamic_programming
 #[test]
 fn test1_808() {
-    assert_eq!(soup_servings(50), 0.625);
+    use leetcode_prelude::assert_approx_eq;
+    assert_approx_eq!(soup_servings(50), 0.625);
 }

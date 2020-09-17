@@ -69,14 +69,14 @@ impl Ord for State {
 // graph
 #[test]
 fn test1_1514() {
-    use leetcode_prelude::vec2;
-    assert_eq!(
+    use leetcode_prelude::{assert_approx_eq, vec2};
+    assert_approx_eq!(
         max_probability(3, vec2![[0, 1], [1, 2], [0, 2]], vec![0.5, 0.5, 0.2], 0, 2),
         0.25000
     );
-    assert_eq!(
+    assert_approx_eq!(
         max_probability(3, vec2![[0, 1], [1, 2], [0, 2]], vec![0.5, 0.5, 0.3], 0, 2),
         0.30000
     );
-    assert_eq!(max_probability(3, vec2![[0, 1]], vec![0.5], 0, 2), 0.00000);
+    assert_approx_eq!(max_probability(3, vec2![[0, 1]], vec![0.5], 0, 2), 0.00000);
 }

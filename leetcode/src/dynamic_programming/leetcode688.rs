@@ -85,5 +85,6 @@ impl Chessboard {
 // dynamic_programming
 #[test]
 fn test1_688() {
-    assert_eq!(knight_probability(3, 2, 0, 0), 0.0625);
+    use leetcode_prelude::assert_approx_eq;
+    assert_approx_eq!(knight_probability(3, 2, 0, 0), 0.0625);
 }
