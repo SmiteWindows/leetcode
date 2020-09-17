@@ -18,7 +18,7 @@ pub fn max_area(height: Vec<i32>) -> i32 {
 }
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
-// ✔
+// ✔✔
 // array two_pointers
 #[test]
 fn test2_11() {

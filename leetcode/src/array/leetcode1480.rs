@@ -1,7 +1,4 @@
 // https://leetcode-cn.com/problems/running-sum-of-1d-array/
-// Runtime: 0 ms
-// Memory Usage: 2 MB
-// ✔
 pub fn running_sum(nums: Vec<i32>) -> Vec<i32> {
     nums.iter()
         .scan(0, |sum, &v| {
@@ -10,6 +7,9 @@ pub fn running_sum(nums: Vec<i32>) -> Vec<i32> {
         })
         .collect::<Vec<i32>>()
 }
+// Runtime: 0 ms
+// Memory Usage: 2 MB
+// ✔
 // array
 #[test]
 fn test1_1480() {
