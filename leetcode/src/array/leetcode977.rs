@@ -1,11 +1,12 @@
 // https://leetcode-cn.com/problems/squares-of-a-sorted-array/
-// Runtime: 8 ms
-// Memory Usage: 2.3 MB
 pub fn sorted_squares(a: Vec<i32>) -> Vec<i32> {
-    let mut squared = a.iter().map(|a| a * a).collect::<Vec<_>>();
-    squared.sort_unstable();
-    squared
+    let mut b = a.iter().map(|&a| a.pow(2)).collect::<Vec<_>>();
+    b.sort_unstable();
+    b
 }
+// Runtime: 16 ms
+// Memory Usage: 2.1 MB
+// ✔
 // two_pointers array
 #[test]
 fn test2_977() {

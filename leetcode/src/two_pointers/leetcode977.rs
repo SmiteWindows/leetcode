@@ -1,35 +1,5 @@
 // https://leetcode-cn.com/problems/squares-of-a-sorted-array/
 pub fn sorted_squares(a: Vec<i32>) -> Vec<i32> {
-    // let n = a.len();
-    // let mut j = 0;
-    // while j < n && a[j] < 0 {
-    //     j += 1;
-    // }
-    // let mut i = j - 1;
-    // let mut res = vec![0; n];
-    // let mut t = 0;
-    // while i >= 0 && j < n {
-    //     if a[i] * a[i] < a[j] * a[j] {
-    //         res[t] = a[i] * a[i];
-    //         t += 1;
-    //         i -= 1;
-    //     } else {
-    //         res[t] = a[j] * a[j];
-    //         t += 1;
-    //         j += 1;
-    //     }
-    // }
-    // while i >= 0 {
-    //     res[t] = a[i] * a[i];
-    //     t += 1;
-    //     i -= 1;
-    // }
-    // while j < n {
-    //     res[t] = a[j] * a[j];
-    //     t += 1;
-    //     j += 1;
-    // }
-    // res
     todo!()
 }
 // two_pointers array
@@ -45,3 +15,10 @@ fn test1_977() {
         vec![4, 9, 9, 49, 121]
     );
 }
+// 我们的策略就是从前向后遍历数组中的非负数部分，并且反向遍历数组中的负数部分。
+
+// 算法
+
+// 我们可以使用两个指针分别读取数组的非负部分与负数部分 —— 指针 i 反向读取负数部分，指针 j 正向读取非负数部分。
+
+// 那么，现在我们就在使用两个指针分别读取两个递增的数组了（按元素的平方排序）。接下来，我们可以使用双指针的技巧合并这两个数组。

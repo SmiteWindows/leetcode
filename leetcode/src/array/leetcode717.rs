@@ -1,6 +1,4 @@
 // https://leetcode-cn.com/problems/1-bit-and-2-bit-characters/
-// Runtime: 0 ms
-// Memory Usage: 2.1 MB
 pub fn is_one_bit_character(bits: Vec<i32>) -> bool {
     bits.into_iter()
         .rev()
@@ -10,6 +8,9 @@ pub fn is_one_bit_character(bits: Vec<i32>) -> bool {
         % 2
         == 0
 }
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
+// ✔
 // array
 #[test]
 fn test1_717() {
