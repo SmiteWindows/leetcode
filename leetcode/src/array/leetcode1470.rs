@@ -1,15 +1,15 @@
 // https://leetcode-cn.com/problems/shuffle-the-array/
-// Runtime: 0 ms
-// Memory Usage: 2 MB
 pub fn shuffle(nums: Vec<i32>, n: i32) -> Vec<i32> {
-    let n = n as usize;
-    let mut res = vec![];
-    for i in 0..n {
-        res.push(nums[i]);
-        res.push(nums[i + n]);
-    }
-    res
+    nums.iter()
+        .skip(n as usize)
+        .zip(nums.iter())
+        .map(|(&x, &y)| vec![y, x])
+        .flatten()
+        .collect::<Vec<i32>>()
 }
+// Runtime: 0 ms
+// Memory Usage: 2.1 MB
+// ✔
 // array
 #[test]
 fn test1_1470() {

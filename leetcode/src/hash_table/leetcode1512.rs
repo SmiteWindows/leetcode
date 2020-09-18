@@ -6,9 +6,8 @@ pub fn num_identical_pairs(nums: Vec<i32>) -> i32 {
     let mut hm: HashMap<i32, usize> = HashMap::new();
     let mut res = 0;
     for x in nums {
-        let count = hm.entry(x).or_default();
+        let count = hm.entry(x).and_modify(|e| *e += 1).or_default();
         res += *count;
-        *count += 1;
     }
     res as i32
 }
