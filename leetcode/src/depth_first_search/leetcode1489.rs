@@ -13,10 +13,8 @@ pub fn find_critical_and_pseudo_critical_edges(n: i32, edges: Vec<Vec<i32>>) -> 
     for i in 0..m {
         if mst(i, usize::MAX, &sorted_index, &edges, n) > min_cost {
             critical.push(i as i32);
-        } else {
-            if mst(usize::MAX, i, &sorted_index, &edges, n) == min_cost {
-                noncritical.push(i as i32);
-            }
+        } else if mst(usize::MAX, i, &sorted_index, &edges, n) == min_cost {
+            noncritical.push(i as i32);
         }
     }
     vec![critical, noncritical]
@@ -25,16 +23,12 @@ pub fn find_critical_and_pseudo_critical_edges(n: i32, edges: Vec<Vec<i32>>) -> 
 fn mst(skip: usize, pick: usize, sorted_index: &[usize], edges: &[Vec<i32>], n: usize) -> i32 {
     let mut uf = UnionFind::new(n);
     let mut res = 0;
-    if pick != usize::MAX {
-        if uf.union(edges[pick][0] as usize, edges[pick][1] as usize) {
-            res += edges[pick][2];
-        }
+    if pick != usize::MAX && uf.union(edges[pick][0] as usize, edges[pick][1] as usize) {
+        res += edges[pick][2];
     }
     for &idx in sorted_index {
-        if idx != skip {
-            if uf.union(edges[idx][0] as usize, edges[idx][1] as usize) {
-                res += edges[idx][2];
-            }
+        if idx != skip && uf.union(edges[idx][0] as usize, edges[idx][1] as usize) {
+            res += edges[idx][2];
         }
     }
     if uf.n == 1 {

@@ -241,9 +241,9 @@ impl Mul for Expr {
         let mut terms = vec![];
         let left_terms = self.terms;
         let right_terms = rhs.terms;
-        for i in 0..left_terms.len() {
-            for j in 0..right_terms.len() {
-                terms.push(left_terms[i].clone() * right_terms[j].clone());
+        for left_term in &left_terms {
+            for right_term in &right_terms {
+                terms.push(left_term.clone() * right_term.clone());
             }
         }
         Expr::new(terms)
