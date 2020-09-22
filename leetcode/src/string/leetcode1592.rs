@@ -16,8 +16,8 @@ pub fn reorder_spaces(text: String) -> String {
         let width = space / gap;
         let left = space - width * gap;
         let mut res = "".to_string();
-        for i in 0..words.len() {
-            res.push_str(&words[i]);
+        for (i, word) in words.iter().enumerate() {
+            res.push_str(word);
             for _ in 0..if i < gap { width } else { left } {
                 res.push(' ');
             }
