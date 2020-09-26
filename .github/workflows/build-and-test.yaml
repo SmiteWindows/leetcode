@@ -9,7 +9,7 @@ on:
 jobs:
   lint:
     name: Lint
-    runs-on: [windows-2019, ubuntu-20.04]
+    runs-on: windows-latest
     # needs: [compile]
     steps:
       - name: Setup | Checkout
