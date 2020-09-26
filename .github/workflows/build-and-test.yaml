@@ -9,10 +9,7 @@ on:
 jobs:
   lint:
     name: Lint
-    runs-on: [windows-2019, ubuntu-20.04, macos-10.15]
-    exclude:
-      - os: macos-10.15
-        toolchain: nightly
+    runs-on: [windows-2019, ubuntu-20.04]
     # needs: [compile]
     steps:
       - name: Setup | Checkout
