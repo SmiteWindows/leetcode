@@ -32,7 +32,7 @@ fn dfs(
 }
 // backtracking
 #[test]
-fn test1_593() {
+fn test1_1593() {
     assert_eq!(max_unique_split("ababccc".to_string()), 5);
     assert_eq!(max_unique_split("aba".to_string()), 2);
     assert_eq!(max_unique_split("aa".to_string()), 1);

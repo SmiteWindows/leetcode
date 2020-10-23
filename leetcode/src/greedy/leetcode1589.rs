@@ -1,10 +1,31 @@
 // https://leetcode.com/problems/maximum-sum-obtained-of-any-permutation/
-pub fn max_sum_range_query(nums: Vec<i32>, requests: Vec<Vec<i32>>) -> i32 {
-    todo!()
+// Runtime: 64 ms
+// Memory Usage: 6.6 MB
+const MOD: i64 = 1_000_000_007;
+pub fn max_sum_range_query(mut nums: Vec<i32>, requests: Vec<Vec<i32>>) -> i32 {
+    let n = nums.len();
+    let mut count = vec![0; n + 1];
+    for r in requests {
+        count[r[0] as usize] += 1;
+        count[r[1] as usize + 1] -= 1;
+    }
+    count.pop();
+    let mut prev = 0;
+    for i in 0..n {
+        prev += count[i];
+        count[i] = prev;
+    }
+    count.sort_unstable();
+    nums.sort_unstable();
+    let mut res = 0;
+    for i in 0..n {
+        res += nums[i] as i64 * count[i] as i64;
+        res %= MOD;
+    }
+    res as i32
 }
 // greedy
 #[test]
-#[ignore]
 fn test1_1589() {
     use leetcode_prelude::vec2;
     assert_eq!(

@@ -32,7 +32,7 @@ fn dp(
             })
             .sum::<i32>()
     } else {
-        let mut res = std::i32::MAX;
+        let mut res = i32::MAX;
         for j in 0..m {
             let next2 = mask2 & !(1 << j);
             res = res.min(cost[n1 - 1][j] + dp(n1 - 1, next2, memo, cost, n, m));
