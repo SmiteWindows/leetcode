@@ -11,9 +11,9 @@ pub fn max_sum_range_query(mut nums: Vec<i32>, requests: Vec<Vec<i32>>) -> i32 {
     }
     count.pop();
     let mut prev = 0;
-    for i in 0..n {
-        prev += count[i];
-        count[i] = prev;
+    for ci in count.iter_mut().take(n) {
+        prev += *ci;
+        *ci = prev;
     }
     count.sort_unstable();
     nums.sort_unstable();

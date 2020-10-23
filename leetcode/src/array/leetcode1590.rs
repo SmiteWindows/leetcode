@@ -5,8 +5,8 @@ use std::collections::HashMap;
 pub fn min_subarray(nums: Vec<i32>, p: i32) -> i32 {
     let n = nums.len();
     let mut total = 0;
-    for i in 0..n {
-        total += nums[i];
+    for num in nums.iter().take(n) {
+        total += num;
         total %= p;
     }
     if total == 0 {
@@ -16,8 +16,8 @@ pub fn min_subarray(nums: Vec<i32>, p: i32) -> i32 {
         let mut index: HashMap<i32, usize> = HashMap::new();
         index.insert(0, 0);
         let mut cur = 0;
-        for i in 0..n {
-            cur += nums[i];
+        for (i, num) in nums.iter().enumerate().take(n) {
+            cur += num;
             cur %= p;
             let comp = (cur + p - total) % p;
 
