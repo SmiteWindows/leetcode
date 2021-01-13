@@ -13,7 +13,7 @@ pub fn rand10() -> i32 {
  * fn rand7() -> i32;
  */
 fn rand7() -> i32 {
-    thread_rng().gen_range(1, 7)
+    thread_rng().gen_range(1..7)
 }
 // random rejection_sampling
 #[test]

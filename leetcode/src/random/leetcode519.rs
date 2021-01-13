@@ -28,7 +28,7 @@ impl Solution {
     }
 
     fn flip(&mut self) -> Vec<i32> {
-        let r = self.rng.gen_range(0, self.size);
+        let r = self.rng.gen_range(0..self.size);
         let x = *self.indexes.entry(r).or_insert(r);
         self.size -= 1;
         let y = *self.indexes.entry(self.size).or_insert(self.size);

@@ -19,7 +19,7 @@ impl Solution {
         for (i, &num) in self.nums.iter().enumerate() {
             if num == target {
                 count += 1;
-                if self.rng.gen_range(0, count) == 0 {
+                if self.rng.gen_range(0..count) == 0 {
                     res = i;
                 }
             }

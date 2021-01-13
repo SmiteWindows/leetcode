@@ -10,7 +10,7 @@ pub fn count_nodes(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
     if d == 0 {
         return 1;
     }
-    let mut left = 1 as usize;
+    let mut left = 1_usize;
     let mut right = 2usize.pow(d) - 1;
     let mut pivot;
     while left <= right {
@@ -36,7 +36,7 @@ fn compute_depth(mut root: Option<Rc<RefCell<TreeNode>>>) -> u32 {
 }
 
 fn exists(mut root: Option<Rc<RefCell<TreeNode>>>, idx: usize, d: u32) -> bool {
-    let mut left = 0 as usize;
+    let mut left = 0_usize;
     let mut right = 2usize.pow(d) - 1;
     let mut pivot;
     for i in 0..d {

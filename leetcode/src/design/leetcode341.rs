@@ -12,17 +12,17 @@ struct NestedIterator {
 }
 
 trait ToVec {
-    fn to_vec(self) -> Vec<i32>;
+    fn into_vec(self) -> Vec<i32>;
 }
 
 impl ToVec for NestedInteger {
-    fn to_vec(self) -> Vec<i32> {
+    fn into_vec(self) -> Vec<i32> {
         match self {
             NestedInteger::Int(x) => vec![x],
             NestedInteger::List(v) => {
                 let mut res = vec![];
                 for x in v {
-                    res.append(&mut x.to_vec());
+                    res.append(&mut x.into_vec());
                 }
                 res
             }
@@ -34,7 +34,7 @@ impl NestedIterator {
     fn new(nested_list: Vec<NestedInteger>) -> Self {
         let mut data = vec![];
         for x in nested_list {
-            data.append(&mut x.to_vec());
+            data.append(&mut x.into_vec());
         }
         Self {
             it: data.into_iter().peekable(),

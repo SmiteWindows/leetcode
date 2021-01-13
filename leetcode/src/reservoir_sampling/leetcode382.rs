@@ -23,7 +23,7 @@ impl Solution {
         while let Some(node) = cur {
             let val = node.val;
             count += 1;
-            if self.rng.gen_range(0, count) == 0 {
+            if self.rng.gen_range(0..count) == 0 {
                 res = val;
             }
             cur = &node.next;

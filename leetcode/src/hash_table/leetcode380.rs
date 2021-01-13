@@ -51,7 +51,7 @@ impl RandomizedSet {
 
     /** Get a random element from the set. */
     fn get_random(&mut self) -> i32 {
-        let index = self.rng.gen_range(0, self.values.len());
+        let index = self.rng.gen_range(0..self.values.len());
         self.values[index]
     }
 }

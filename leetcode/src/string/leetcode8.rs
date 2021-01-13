@@ -17,7 +17,7 @@ pub fn my_atoi(str: String) -> i32 {
             }
             _ => {
                 if let Some(c) = c.chars().next() {
-                    if !(c >= '0' && c <= '9') {
+                    if !('0'..='9').contains(&c) {
                         return 0;
                     }
                 }
@@ -25,7 +25,7 @@ pub fn my_atoi(str: String) -> i32 {
         }
     }
     for c in start.chars() {
-        if c >= '0' && c <= '9' {
+        if ('0'..='9').contains(&c) {
             res = match res.checked_mul(10) {
                 None => {
                     return overflow(positive);

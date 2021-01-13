@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn num_trees(n: i32) -> i32 {
-    let mut catalan = 1 as i64;
+    let mut catalan = 1_i64;
     let n = n as i64;
     for i in 0..n {
         catalan = catalan * 2 * (2 * i + 1) / (i + 2);

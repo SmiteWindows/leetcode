@@ -8,7 +8,7 @@ pub fn mask_pii(s: String) -> String {
     } else {
         let digits = s
             .chars()
-            .filter(|&c| c >= '0' && c <= '9')
+            .filter(|&c| ('0'..='9').contains(&c))
             .collect::<String>();
         let n = digits.len();
         match digits.len() {

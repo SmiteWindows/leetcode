@@ -54,7 +54,7 @@ impl RandomizedCollection {
 
     /** Get a random element from the collection. */
     fn get_random(&mut self) -> i32 {
-        self.choices[self.rng.gen_range(0, self.choices.len())]
+        self.choices[self.rng.gen_range(0..self.choices.len())]
     }
 }
 /**

@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn find_the_difference(s: String, t: String) -> char {
-    let mut res = 0 as u8;
+    let mut res = 0_u8;
     for (i, ch) in s.char_indices() {
         res ^= ch as u8;
     }

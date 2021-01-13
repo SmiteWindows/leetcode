@@ -6,24 +6,24 @@ pub fn insert_into_max_tree(
     root: Option<Rc<RefCell<TreeNode>>>,
     val: i32,
 ) -> Option<Rc<RefCell<TreeNode>>> {
-    insert(root, val)
+    Some(insert(root, val))
 }
 
-fn insert(root: Option<Rc<RefCell<TreeNode>>>, val: i32) -> Option<Rc<RefCell<TreeNode>>> {
+fn insert(root: Option<Rc<RefCell<TreeNode>>>, val: i32) -> Rc<RefCell<TreeNode>> {
     if let Some(node) = root {
         if node.borrow().val > val {
             let right = node.borrow_mut().right.take();
-            node.borrow_mut().right = insert(right, val);
-            Some(node)
+            node.borrow_mut().right = Some(insert(right, val));
+            node
         } else {
-            Some(Rc::new(RefCell::new(TreeNode {
+            Rc::new(RefCell::new(TreeNode {
                 val,
                 left: Some(node),
                 right: None,
-            })))
+            }))
         }
     } else {
-        Some(Rc::new(RefCell::new(TreeNode::new(val))))
+        Rc::new(RefCell::new(TreeNode::new(val)))
     }
 }
 

@@ -25,7 +25,7 @@ impl Solution {
         let mut v = self.nums.to_vec();
         let n = self.n;
         for i in 0..n {
-            let j = self.rng.gen_range(i, n);
+            let j = self.rng.gen_range(i..n);
             v.swap(i, j);
         }
         v

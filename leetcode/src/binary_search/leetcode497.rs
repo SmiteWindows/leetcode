@@ -28,8 +28,8 @@ impl Solution {
 
     fn pick(&mut self) -> Vec<i32> {
         let rect = &self.rects[self.rng.sample(&self.dist)];
-        let x = self.rng.gen_range(rect[0], rect[2] + 1);
-        let y = self.rng.gen_range(rect[1], rect[3] + 1);
+        let x = self.rng.gen_range(rect[0]..rect[2] + 1);
+        let y = self.rng.gen_range(rect[1]..rect[3] + 1);
         vec![x, y]
     }
 }
