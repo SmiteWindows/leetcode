@@ -3,7 +3,7 @@
 // Memory Usage: 2 MB
 use std::fmt;
 pub fn summary_ranges(nums: Vec<i32>) -> Vec<String> {
-    let mut r: Option<Range> = None;
+    let mut r: Option<Range> = None; // ?
     let mut res = vec![];
     for x in nums {
         if let Some(prev) = r {

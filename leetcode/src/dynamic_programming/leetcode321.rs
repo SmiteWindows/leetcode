@@ -5,7 +5,7 @@ pub fn max_number(nums1: Vec<i32>, nums2: Vec<i32>, k: i32) -> Vec<i32> {
     let n1 = nums1.len();
     let n2 = nums2.len();
     let k = k as usize;
-    let mut max_merged: Option<Vec<i32>> = None;
+    let mut max_merged = None;
     for size1 in 0..=k.min(n1) {
         let size2 = k - size1;
         if size2 > n2 {

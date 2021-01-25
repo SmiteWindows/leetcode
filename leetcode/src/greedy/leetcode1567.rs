@@ -11,7 +11,7 @@ pub fn get_max_len(nums: Vec<i32>) -> i32 {
 fn max_length(v: &[i32]) -> i32 {
     let mut neg = 0;
     let mut res = 0;
-    let mut first_neg: Option<usize> = None;
+    let mut first_neg = None;
     for (i, &vi) in v.iter().enumerate() {
         if vi < 0 {
             neg += 1;

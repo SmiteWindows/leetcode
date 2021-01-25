@@ -2,9 +2,9 @@
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn max_dist_to_closest(seats: Vec<i32>) -> i32 {
-    let mut first: Option<usize> = None;
-    let mut last: Option<usize> = None;
-    let mut prev: Option<usize> = None;
+    let mut first = None;
+    let mut last = None;
+    let mut prev = None;
     let n = seats.len();
     let mut max = 0;
     for (i, &seat) in seats.iter().enumerate().take(n) {

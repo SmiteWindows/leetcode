@@ -4,8 +4,8 @@
 use std::cmp::Ordering::{Equal, Greater, Less};
 pub fn third_max(nums: Vec<i32>) -> i32 {
     let mut max1 = nums[0];
-    let mut m2: Option<i32> = None;
-    let mut m3: Option<i32> = None;
+    let mut m2 = None;
+    let mut m3 = None;
     for x in nums {
         match x.cmp(&max1) {
             Greater => {
