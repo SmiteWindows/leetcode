@@ -6,7 +6,7 @@ pub fn check_possibility(nums: Vec<i32>) -> bool {
     if n < 2 {
         return true;
     }
-    let mut p: Option<usize> = None;
+    let mut p = None;
     for i in 0..n - 1 {
         if nums[i] > nums[i + 1] {
             if p.is_some() {
