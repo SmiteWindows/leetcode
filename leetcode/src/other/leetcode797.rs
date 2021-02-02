@@ -2,8 +2,8 @@
 // Runtime: 8 ms
 // Memory Usage: 2.4 MB
 pub fn all_paths_source_target(graph: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
-    let mut res = vec![];
-    let mut path = vec![];
+    let mut res = Vec::new();
+    let mut path = Vec::new();
     let n = graph.len();
     dfs(0, &mut path, &mut res, &graph, n);
     res

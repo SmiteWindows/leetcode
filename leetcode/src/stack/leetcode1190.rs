@@ -3,7 +3,7 @@
 // Memory Usage: 2.1 MB
 use std::collections::VecDeque;
 pub fn reverse_parentheses(s: String) -> String {
-    let mut stack = vec![];
+    let mut stack = Vec::new();
     let mut queue = VecDeque::new();
     for c in s.chars() {
         if c == ')' {

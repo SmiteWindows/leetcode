@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn sequential_digits(low: i32, high: i32) -> Vec<i32> {
-    let mut res = vec![];
+    let mut res = Vec::new();
     for i in 1..10 {
         dfs(i, i, &mut res, low, high);
     }

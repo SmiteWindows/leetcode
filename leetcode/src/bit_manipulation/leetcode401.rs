@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn read_binary_watch(num: i32) -> Vec<String> {
-    let mut res = vec![];
+    let mut res = Vec::new();
     for i in 0..12 {
         for j in 0..60 {
             if i32::count_ones(i) + i32::count_ones(j) == num as u32 {

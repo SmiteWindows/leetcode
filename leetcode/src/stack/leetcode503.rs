@@ -2,7 +2,7 @@
 // Runtime: 8 ms
 // Memory Usage: 2.1 MB
 pub fn next_greater_elements(nums: Vec<i32>) -> Vec<i32> {
-    let mut stack = vec![];
+    let mut stack = Vec::new();
     let n = nums.len();
     let mut res = vec![-1; n];
     for i in 0..2 * n {

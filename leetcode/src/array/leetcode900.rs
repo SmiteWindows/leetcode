@@ -10,8 +10,8 @@ struct RLEIterator {
 
 impl RLEIterator {
     fn new(a: Vec<i32>) -> Self {
-        let mut prefix = vec![];
-        let mut values = vec![];
+        let mut prefix = Vec::new();
+        let mut values = Vec::new();
         let n = a.len();
         let index = 0;
         let mut prev = 0;

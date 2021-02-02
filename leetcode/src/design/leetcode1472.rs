@@ -16,7 +16,7 @@ impl BrowserHistory {
 
     fn visit(&mut self, url: String) {
         self.backward.push(url);
-        self.forward = vec![];
+        self.forward = Vec::new();
     }
 
     fn back(&mut self, steps: i32) -> String {

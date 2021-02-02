@@ -4,7 +4,7 @@
 use std::{cmp::Ordering::*, collections::VecDeque};
 pub fn get_skyline(buildings: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
     if buildings.is_empty() {
-        return vec![];
+        return Vec::new();
     }
     let mut queue: VecDeque<Vec<Vec<i32>>> = buildings
         .into_iter()
@@ -22,7 +22,7 @@ pub fn get_skyline(buildings: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
 fn merge(a: Vec<Vec<i32>>, b: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
     let mut i = 0;
     let mut j = 0;
-    let mut res = vec![];
+    let mut res = Vec::new();
     let mut prev_h = 0;
     let mut l = 0;
     let mut r = 0;

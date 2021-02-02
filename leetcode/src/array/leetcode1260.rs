@@ -4,7 +4,7 @@
 pub fn shift_grid(mut grid: Vec<Vec<i32>>, k: i32) -> Vec<Vec<i32>> {
     let m = grid.len();
     let n = grid[0].len();
-    let mut arr = vec![];
+    let mut arr = Vec::new();
     for row in grid.iter().take(m) {
         for &col in row.iter().take(n) {
             arr.push(col);

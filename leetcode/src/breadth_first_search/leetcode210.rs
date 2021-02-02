@@ -3,9 +3,9 @@
 // Memory Usage: 2.4 MB
 use std::collections::VecDeque;
 pub fn find_order(num_courses: i32, prerequisites: Vec<Vec<i32>>) -> Vec<i32> {
-    let mut res = vec![];
+    let mut res = Vec::new();
     let n = num_courses as usize;
-    let mut edges = vec![vec![]; n];
+    let mut edges = vec![Vec::new(); n];
     let mut indegrees = vec![0; n];
     let mut queue = VecDeque::new();
     for e in prerequisites {

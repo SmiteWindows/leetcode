@@ -30,7 +30,7 @@ pub fn watched_videos_by_friends(
             }
         }
     }
-    let mut pairs: Vec<(usize, String)> = vec![];
+    let mut pairs: Vec<(usize, String)> = Vec::new();
     for (video, count) in freq {
         pairs.push((count, video));
     }

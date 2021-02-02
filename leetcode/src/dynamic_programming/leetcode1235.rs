@@ -3,7 +3,7 @@
 // Memory Usage: 4.5 MB
 use std::collections::BTreeMap;
 pub fn job_scheduling(start_time: Vec<i32>, end_time: Vec<i32>, profit: Vec<i32>) -> i32 {
-    let mut jobs = vec![];
+    let mut jobs = Vec::new();
     let n = start_time.len();
     for i in 0..n {
         jobs.push((start_time[i], end_time[i], profit[i]));

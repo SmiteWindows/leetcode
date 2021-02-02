@@ -2,7 +2,7 @@
 // Runtime: 4 ms
 // Memory Usage: 2.2 MB
 pub fn find_anagrams(s: String, p: String) -> Vec<i32> {
-    let mut res = vec![];
+    let mut res = Vec::new();
     let mut ss = vec![0_usize; 26];
     let mut sp = vec![0_usize; 26];
     let s = s.bytes().collect::<Vec<_>>();

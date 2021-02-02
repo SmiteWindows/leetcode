@@ -3,7 +3,7 @@
 // Memory Usage: 2.2 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn zigzag_level_order(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<i32>> {
-    let mut levels = vec![];
+    let mut levels = Vec::new();
     preorder(root.as_deref(), 0, &mut levels);
     for (i, level) in levels.iter_mut().enumerate() {
         if i % 2 == 1 {

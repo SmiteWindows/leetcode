@@ -6,8 +6,8 @@ pub fn leaf_similar(
     root1: Option<Rc<RefCell<TreeNode>>>,
     root2: Option<Rc<RefCell<TreeNode>>>,
 ) -> bool {
-    let mut leaves1 = vec![];
-    let mut leaves2 = vec![];
+    let mut leaves1 = Vec::new();
+    let mut leaves2 = Vec::new();
     preorder(root1.as_deref(), &mut leaves1);
     preorder(root2.as_deref(), &mut leaves2);
     leaves1 == leaves2

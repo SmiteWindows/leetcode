@@ -30,7 +30,7 @@ pub fn _find_smallest_set_of_vertices(n: i32, edges: Vec<Vec<i32>>) -> Vec<i32> 
         let to = e[1] as usize;
         indegree[to] += 1;
     }
-    let mut res = vec![];
+    let mut res = Vec::new();
     for (i, &a) in indegree.iter().enumerate().take(n) {
         if a == 0 {
             res.push(i as i32);

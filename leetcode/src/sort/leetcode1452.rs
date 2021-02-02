@@ -8,7 +8,7 @@ pub fn people_indexes(favorite_companies: Vec<Vec<String>>) -> Vec<i32> {
         .map(|v| v.into_iter().collect())
         .collect::<Vec<HashSet<_>>>();
     let n = people.len();
-    let mut res = vec![];
+    let mut res = Vec::new();
     'outer: for i in 0..n {
         for j in 0..n {
             if i != j && people[i].is_subset(&people[j]) {

@@ -5,7 +5,7 @@ use std::collections::VecDeque;
 pub fn network_delay_time(times: Vec<Vec<i32>>, n: i32, k: i32) -> i32 {
     let n = n as usize;
     let k = k as usize - 1;
-    let mut graph: Vec<Vec<(usize, i32)>> = vec![vec![]; n];
+    let mut graph: Vec<Vec<(usize, i32)>> = vec![Vec::new(); n];
     for time in times {
         let u = time[0] as usize - 1;
         let v = time[1] as usize - 1;

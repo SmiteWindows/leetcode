@@ -3,8 +3,8 @@
 // Memory Usage: 2.1 MB
 pub fn nums_same_consec_diff(n: i32, k: i32) -> Vec<i32> {
     let n = n as usize;
-    let mut cur = vec![];
-    let mut res = vec![];
+    let mut cur = Vec::new();
+    let mut res = Vec::new();
     for i in 0..10 {
         if i == 0 && n != 1 {
             continue;

@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn car_pooling(trips: Vec<Vec<i32>>, capacity: i32) -> bool {
-    let mut pairs = vec![];
+    let mut pairs = Vec::new();
     for trip in trips {
         pairs.push((trip[1], trip[0]));
         pairs.push((trip[2], -trip[0]));

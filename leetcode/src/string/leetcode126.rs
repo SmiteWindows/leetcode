@@ -15,14 +15,14 @@ pub fn find_ladders(
         dict.insert(word);
     }
     if !dict.contains(&end_word) {
-        return vec![];
+        return Vec::new();
     }
     let set1 = HashSet::from_iter(vec![begin_word.to_string()]);
     let set2 = HashSet::from_iter(vec![end_word.to_string()]);
     let mut map = HashMap::new();
     bfs(set1, set2, false, &mut map, &mut dict);
     let mut path = vec![begin_word.to_string()];
-    let mut res = vec![];
+    let mut res = Vec::new();
     dfs(&begin_word, &mut path, &mut res, &map, &end_word);
     res
 }
@@ -95,7 +95,7 @@ fn dfs(
 
 fn connected_words(word: &str) -> Vec<String> {
     let n = word.len();
-    let mut res = vec![];
+    let mut res = Vec::new();
     for i in 0..n {
         let mut s = word.chars().collect::<Vec<char>>();
         for j in 0..26 {

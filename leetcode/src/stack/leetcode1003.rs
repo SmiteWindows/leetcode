@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn is_valid(s: String) -> bool {
-    let mut stack = vec![];
+    let mut stack = Vec::new();
     for c in s.chars() {
         let n = stack.len();
         if n > 1 && c == 'c' && stack[n - 1] == 'b' && stack[n - 2] == 'a' {

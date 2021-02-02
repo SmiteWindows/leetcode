@@ -12,7 +12,7 @@ pub fn max_num_of_substrings(s: String) -> Vec<String> {
         l[j] = l[j].min(i);
         r[j] = r[j].max(i);
     }
-    let mut res = vec![];
+    let mut res = Vec::new();
     let mut end = 0;
     for i in 0..n {
         let j = (s[i] - b'a') as usize;

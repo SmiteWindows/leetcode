@@ -14,7 +14,7 @@ pub fn find_words(words: Vec<String>) -> Vec<String> {
             hm.insert(c, i);
         }
     }
-    let mut res = vec![];
+    let mut res = Vec::new();
     for word in words {
         let rows = word
             .chars()

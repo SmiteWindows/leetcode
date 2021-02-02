@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.7 MB
 pub fn fizz_buzz(n: i32) -> Vec<String> {
-    let mut res = vec![];
+    let mut res = Vec::new();
     for i in 1..=n {
         let fizz = i % 3 == 0;
         let buzz = i % 5 == 0;

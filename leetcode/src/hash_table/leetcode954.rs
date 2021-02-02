@@ -3,7 +3,7 @@
 // Memory Usage: 2.3 MB
 use std::cmp::Ordering;
 pub fn can_reorder_doubled(a: Vec<i32>) -> bool {
-    let mut nonzero = vec![vec![]; 2];
+    let mut nonzero = vec![Vec::new(); 2];
     let mut zero = 0_usize;
     for x in a {
         match x.cmp(&0) {

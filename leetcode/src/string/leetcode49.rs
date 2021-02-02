@@ -9,7 +9,7 @@ pub fn group_anagrams(strs: Vec<String>) -> Vec<Vec<String>> {
         v.sort_unstable();
         hm.entry(v).or_default().push(s);
     }
-    let mut res = vec![];
+    let mut res = Vec::new();
     for (_, mut v) in hm {
         v.sort_unstable();
         res.push(v.to_vec());

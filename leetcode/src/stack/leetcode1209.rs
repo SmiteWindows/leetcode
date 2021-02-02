@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.3 MB
 pub fn remove_duplicates(s: String, k: i32) -> String {
-    let mut stack: Vec<(char, usize)> = vec![];
+    let mut stack: Vec<(char, usize)> = Vec::new();
     for c in s.chars() {
         if let Some(top) = stack.pop() {
             if top.0 != c {

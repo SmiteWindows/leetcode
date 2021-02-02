@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn is_valid_serialization(preorder: String) -> bool {
-    let mut stack = vec![];
+    let mut stack = Vec::new();
     for tok in preorder.split(',') {
         if tok == "#" {
             while let Some('#') = stack.last() {

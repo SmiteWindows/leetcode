@@ -3,7 +3,7 @@
 // Memory Usage: 3.4 MB
 use std::cmp::Ordering::{Equal, Greater, Less};
 pub fn three_sum(mut nums: Vec<i32>) -> Vec<Vec<i32>> {
-    let mut res = vec![];
+    let mut res = Vec::new();
     let n = nums.len();
     if n < 3 {
         return res;

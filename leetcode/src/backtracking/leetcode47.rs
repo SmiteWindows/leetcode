@@ -3,9 +3,9 @@
 // Memory Usage: 2.2 MB
 pub fn permute_unique(mut nums: Vec<i32>) -> Vec<Vec<i32>> {
     let n = nums.len();
-    let mut res = vec![];
+    let mut res = Vec::new();
     let mut used = vec![false; n];
-    let mut cur = vec![];
+    let mut cur = Vec::new();
     nums.sort_unstable();
     dfs(&nums, &mut res, &mut used, &mut cur, n);
     res

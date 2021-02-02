@@ -2,7 +2,7 @@
 use std::collections::HashMap;
 pub fn letter_combinations(digits: String) -> Vec<String> {
     if digits.is_empty() {
-        return vec![];
+        return Vec::new();
     }
     let digits = digits.chars().collect::<Vec<_>>();
     let hm = [
@@ -18,8 +18,8 @@ pub fn letter_combinations(digits: String) -> Vec<String> {
     .iter()
     .map(|(d, v)| (*d, v.chars().collect::<Vec<_>>()))
     .collect::<HashMap<_, _>>();
-    let mut s = vec![];
-    let mut res = vec![];
+    let mut s = Vec::new();
+    let mut res = Vec::new();
     dfs(&hm, &digits, &mut s, &mut res, 0);
     res
 }

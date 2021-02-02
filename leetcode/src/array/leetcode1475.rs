@@ -3,7 +3,7 @@
 // Memory Usage: 2 MB
 pub fn final_prices(prices: Vec<i32>) -> Vec<i32> {
     let n = prices.len();
-    let mut stack = vec![];
+    let mut stack = Vec::new();
     let mut res = prices.to_vec();
     for i in 0..n {
         while let Some(&j) = stack.last() {

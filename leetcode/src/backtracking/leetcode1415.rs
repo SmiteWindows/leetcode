@@ -4,8 +4,8 @@
 pub fn get_happy_string(n: i32, k: i32) -> String {
     let n = n as usize;
     let k = k as usize;
-    let mut all = vec![];
-    let mut cur = vec![];
+    let mut all = Vec::new();
+    let mut cur = Vec::new();
     dfs(0, &mut cur, &mut all, n, k);
     if all.len() < k {
         "".to_string()

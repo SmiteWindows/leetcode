@@ -39,7 +39,7 @@ pub fn prison_after_n_days(cells: Vec<i32>, mut n: i32) -> Vec<i32> {
             n -= 1;
         }
     }
-    let mut output = vec![];
+    let mut output = Vec::new();
     for _ in 0..cells.len() {
         output.push(state_bitmap & 1);
         state_bitmap >>= 1;

@@ -13,7 +13,7 @@ struct Word {
 
 impl Word {
     fn new(s: String) -> Self {
-        let mut data = vec![];
+        let mut data = Vec::new();
         let mut prev: Option<(char, usize)> = None;
         for c in s.chars() {
             if let Some(p) = prev {

@@ -20,7 +20,7 @@ pub fn original_digits(s: String) -> String {
     for c in s.chars() {
         *count.entry(c).or_default() += 1;
     }
-    let mut res = vec![];
+    let mut res = Vec::new();
     for i in vec![0, 4, 5, 6, 7, 8, 3, 2, 1, 9].into_iter() {
         let mut min = usize::MAX;
         for (&c, &v) in &digits[i] {

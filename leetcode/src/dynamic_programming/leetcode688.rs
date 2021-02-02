@@ -38,7 +38,7 @@ impl Chessboard {
             (-2, 1),
             (-1, 2),
         ];
-        let mut res: Vec<Point> = vec![];
+        let mut res: Vec<Point> = Vec::new();
         for offset in &offsets {
             let i = p.0 + offset.0;
             let j = p.1 + offset.1;

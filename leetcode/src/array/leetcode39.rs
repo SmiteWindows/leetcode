@@ -3,8 +3,8 @@
 // Memory Usage: 2 MB
 pub fn combination_sum(mut candidates: Vec<i32>, target: i32) -> Vec<Vec<i32>> {
     candidates.sort_unstable();
-    let mut combination = vec![];
-    let mut res = vec![];
+    let mut combination = Vec::new();
+    let mut res = Vec::new();
     backtrack(&mut res, &mut combination, &candidates, target, 0);
     res
 }

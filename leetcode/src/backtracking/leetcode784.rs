@@ -4,7 +4,7 @@
 pub fn letter_case_permutation(s: String) -> Vec<String> {
     let n = s.len();
     let s = s.chars().collect::<Vec<_>>();
-    let mut res = vec![];
+    let mut res = Vec::new();
     let mut t = "".to_string();
     permutation(&s, n, 0, &mut t, &mut res);
     res

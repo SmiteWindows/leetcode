@@ -33,7 +33,7 @@ impl Twitter {
     /** Retrieve the 10 most recent tweet ids in the user's news feed. Each item in the news feed must be posted by users who the user followed or by the user herself. Tweets must be ordered from most recent to least recent. */
     fn get_news_feed(&mut self, user_id: i32) -> Vec<i32> {
         let mut pq = BinaryHeap::with_capacity(self.limit + 1);
-        let mut res = vec![];
+        let mut res = Vec::new();
         let followers = self.users.entry(user_id).or_default();
         followers.insert(user_id);
         for &user in followers.iter() {

@@ -10,7 +10,7 @@ pub fn longest_common_prefix(strs: Vec<String>) -> String {
         .map(|s| s.chars().collect::<Vec<_>>())
         .collect::<Vec<_>>();
     let n = ss.iter().map(|s| s.len()).min().unwrap();
-    let mut prefix = vec![];
+    let mut prefix = Vec::new();
     for i in 0..n {
         let c = ss[0][i];
         if ss.iter().all(|s| s[i] == c) {

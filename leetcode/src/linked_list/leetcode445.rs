@@ -5,8 +5,8 @@ pub fn add_two_numbers(
     l1: Option<Box<ListNode>>,
     l2: Option<Box<ListNode>>,
 ) -> Option<Box<ListNode>> {
-    let mut stack1: Vec<i32> = vec![];
-    let mut stack2: Vec<i32> = vec![];
+    let mut stack1: Vec<i32> = Vec::new();
+    let mut stack2: Vec<i32> = Vec::new();
     let mut res = None;
     let mut p1 = l1.as_deref();
     let mut p2 = l2.as_deref();

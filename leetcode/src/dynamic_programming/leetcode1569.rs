@@ -3,7 +3,7 @@
 // Memory Usage: 8.7 MB
 pub fn num_of_ways(nums: Vec<i32>) -> i32 {
     let n = nums.len();
-    let mut table = vec![];
+    let mut table = Vec::new();
     for i in 0..=n {
         table.push(vec![1; i + 1]);
         for j in 1..i {

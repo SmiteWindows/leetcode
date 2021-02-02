@@ -6,7 +6,7 @@ pub fn lucky_numbers(matrix: Vec<Vec<i32>>) -> Vec<i32> {
     let n = matrix[0].len();
     let mut mins: Vec<i32> = vec![i32::MAX; m];
     let mut maxs: Vec<i32> = vec![0; n];
-    let mut res = vec![];
+    let mut res = Vec::new();
     for (i, min) in mins.iter_mut().enumerate().take(m) {
         for (j, max) in maxs.iter_mut().enumerate().take(n) {
             *min = matrix[i][j].min(*min);

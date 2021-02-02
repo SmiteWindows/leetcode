@@ -3,7 +3,7 @@
 // Memory Usage: 2.1 MB
 pub fn diff_ways_to_compute(input: String) -> Vec<i32> {
     let mut val = 0;
-    let mut toks: Vec<Tok> = vec![];
+    let mut toks: Vec<Tok> = Vec::new();
     for c in input.chars() {
         match c {
             '+' | '-' | '*' => {
@@ -22,7 +22,7 @@ pub fn diff_ways_to_compute(input: String) -> Vec<i32> {
 }
 
 fn eval(toks: &[Tok]) -> Vec<i32> {
-    let mut res = vec![];
+    let mut res = Vec::new();
     let n = toks.len();
     for i in 0..n {
         if let Tok::Op(c) = toks[i] {

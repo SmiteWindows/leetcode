@@ -4,7 +4,7 @@
 use std::fmt;
 pub fn summary_ranges(nums: Vec<i32>) -> Vec<String> {
     let mut r: Option<Range> = None; // ?
-    let mut res = vec![];
+    let mut res = Vec::new();
     for x in nums {
         if let Some(prev) = r {
             if prev.end + 1 == x {

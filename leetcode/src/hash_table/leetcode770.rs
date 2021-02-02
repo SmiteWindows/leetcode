@@ -36,7 +36,7 @@ pub fn basic_calculator_iv(
             .entry((Reverse(term.va.len()), term.va.to_vec()))
             .or_default() += term.co;
     }
-    let mut res = vec![];
+    let mut res = Vec::new();
     for ((_, va), co) in groups {
         if co == 0 {
             continue;
@@ -54,7 +54,7 @@ pub fn basic_calculator_iv(
 }
 
 fn parse_tokens(it: &mut Peekable<Chars<'_>>, mapping: HashMap<String, i32>) -> Vec<Tok> {
-    let mut res: Vec<Tok> = vec![];
+    let mut res: Vec<Tok> = Vec::new();
     while let Some(c) = it.next() {
         match c {
             '0'..='9' => {
@@ -188,7 +188,7 @@ impl Mul for Term {
 
     fn mul(self, rhs: Term) -> Self::Output {
         let co = self.co * rhs.co;
-        let mut va = vec![];
+        let mut va = Vec::new();
         let mut left_va = self.va;
         let mut right_va = rhs.va;
         va.append(&mut left_va);
@@ -212,7 +212,7 @@ impl Add for Expr {
     type Output = Expr;
 
     fn add(self, rhs: Expr) -> Self::Output {
-        let mut terms = vec![];
+        let mut terms = Vec::new();
         let mut left_terms = self.terms;
         let mut right_terms = rhs.terms;
         terms.append(&mut left_terms);
@@ -225,7 +225,7 @@ impl Sub for Expr {
     type Output = Expr;
 
     fn sub(self, rhs: Expr) -> Self::Output {
-        let mut terms = vec![];
+        let mut terms = Vec::new();
         let mut left_terms = self.terms;
         let mut right_terms = rhs.terms.into_iter().map(|t| -t).collect();
         terms.append(&mut left_terms);
@@ -238,7 +238,7 @@ impl Mul for Expr {
     type Output = Expr;
 
     fn mul(self, rhs: Expr) -> Self::Output {
-        let mut terms = vec![];
+        let mut terms = Vec::new();
         let left_terms = self.terms;
         let right_terms = rhs.terms;
         for left_term in &left_terms {

@@ -5,7 +5,7 @@ pub fn max_sum_of_three_subarrays(nums: Vec<i32>, k: i32) -> Vec<i32> {
     let k = k as usize;
     let sums: Vec<i32> = nums.windows(k).map(|w| w.iter().sum()).collect();
     let n = sums.len();
-    let mut left = vec![];
+    let mut left = Vec::new();
     let mut left_max = 0;
     let mut left_index = 0;
     for (i, &sum) in sums.iter().enumerate().take(n) {
@@ -16,7 +16,7 @@ pub fn max_sum_of_three_subarrays(nums: Vec<i32>, k: i32) -> Vec<i32> {
         left.push((left_max, left_index));
     }
 
-    let mut right = vec![];
+    let mut right = Vec::new();
     let mut right_max = 0;
     let mut right_index = n;
     for i in (0..n).rev() {

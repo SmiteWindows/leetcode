@@ -3,7 +3,7 @@
 // Memory Usage: 2.2 MB
 pub fn longest_valid_parentheses(s: String) -> i32 {
     let mut res = 0;
-    let mut stack = vec![];
+    let mut stack = Vec::new();
     for c in s.chars() {
         if c == '(' {
             stack.push(Tok::Left)

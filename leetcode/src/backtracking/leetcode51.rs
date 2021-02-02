@@ -3,8 +3,8 @@
 // Memory Usage: 2.2 MB
 pub fn solve_n_queens(n: i32) -> Vec<Vec<String>> {
     let n = n as usize;
-    let mut queens = vec![];
-    let mut res = vec![];
+    let mut queens = Vec::new();
+    let mut res = Vec::new();
     let mut column = 0;
     let mut diagonal1 = 0;
     let mut diagonal2 = 0;

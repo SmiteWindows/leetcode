@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn remove_duplicate_letters(s: String) -> String {
-    let mut stack = vec![];
+    let mut stack = Vec::new();
     let mut left = vec![0; 26];
     for b in s.bytes() {
         left[(b - b'a') as usize] += 1;

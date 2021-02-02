@@ -3,7 +3,7 @@
 // Memory Usage: 2.2 MB
 pub fn subsets(nums: Vec<i32>) -> Vec<Vec<i32>> {
     let mut res = vec![vec![]];
-    let mut curr = vec![];
+    let mut curr = Vec::new();
     let n = nums.len();
     for k in 1..=n {
         backtrack(0, &mut curr, &nums, &mut res, k);

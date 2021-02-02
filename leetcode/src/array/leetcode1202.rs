@@ -15,7 +15,7 @@ pub fn smallest_string_with_swaps(s: String, pairs: Vec<Vec<i32>>) -> String {
     for v in hm.values_mut() {
         v.sort_unstable_by_key(|&x| Reverse(x));
     }
-    let mut res: Vec<char> = vec![];
+    let mut res: Vec<char> = Vec::new();
     for i in 0..n {
         res.push(hm.entry(uf.find(i)).or_default().pop().unwrap());
     }

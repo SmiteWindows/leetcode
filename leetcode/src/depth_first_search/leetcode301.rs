@@ -4,7 +4,7 @@
 #![allow(clippy::too_many_arguments)]
 use std::collections::HashSet;
 pub fn remove_invalid_parentheses(s: String) -> Vec<String> {
-    let mut cur = vec![];
+    let mut cur = Vec::new();
     let s: Vec<char> = s.chars().collect();
     let n = s.len();
     let mut min = usize::MAX;

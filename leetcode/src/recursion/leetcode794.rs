@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn valid_tic_tac_toe(board: Vec<String>) -> bool {
-    let mut a = vec![vec![]; 3];
+    let mut a = vec![Vec::new(); 3];
     let mut x = 0;
     let mut o = 0;
     for (i, row) in board.iter().enumerate() {

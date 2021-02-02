@@ -14,7 +14,7 @@ impl RandomizedCollection {
     fn new() -> Self {
         let rng = thread_rng();
         let indexes = HashMap::new();
-        let choices = vec![];
+        let choices = Vec::new();
         Self {
             rng,
             indexes,

@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn search_matrix(matrix: Vec<Vec<i32>>, target: i32) -> bool {
-    let mut a = vec![];
+    let mut a = Vec::new();
     for row in matrix {
         for x in row {
             a.push(x);

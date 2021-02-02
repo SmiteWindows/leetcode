@@ -7,7 +7,7 @@ pub fn find_min_height_trees(n: i32, edges: Vec<Vec<i32>>) -> Vec<i32> {
     if n == 1 {
         return vec![0];
     }
-    let mut graph = vec![vec![]; n];
+    let mut graph = vec![Vec::new(); n];
     let mut visited = vec![false; n];
     let mut degree = vec![0; n];
     for e in edges {

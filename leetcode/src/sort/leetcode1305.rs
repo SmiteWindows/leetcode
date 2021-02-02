@@ -6,7 +6,7 @@ pub fn get_all_elements(
     root1: Option<Rc<RefCell<TreeNode>>>,
     root2: Option<Rc<RefCell<TreeNode>>>,
 ) -> Vec<i32> {
-    let mut res = vec![];
+    let mut res = Vec::new();
     inorder(root1.as_deref(), &mut res);
     inorder(root2.as_deref(), &mut res);
     res.sort_unstable();

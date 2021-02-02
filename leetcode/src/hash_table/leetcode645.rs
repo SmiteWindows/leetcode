@@ -5,7 +5,7 @@ use std::collections::HashSet;
 pub fn find_error_nums(nums: Vec<i32>) -> Vec<i32> {
     let n = nums.len();
     let mut hs = HashSet::new();
-    let mut res = vec![];
+    let mut res = Vec::new();
     for x in nums {
         if !hs.insert(x) {
             res.push(x);

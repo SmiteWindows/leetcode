@@ -9,7 +9,7 @@ pub fn smaller_numbers_than_current(nums: Vec<i32>) -> Vec<i32> {
     for i in 0..100 {
         count[i + 1] += count[i]
     }
-    let mut res = vec![];
+    let mut res = Vec::new();
     for &x in &nums {
         let v = if x == 0 { 0 } else { count[(x - 1) as usize] };
         res.push(v)

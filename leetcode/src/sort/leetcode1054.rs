@@ -16,7 +16,7 @@ pub fn rearrange_barcodes(barcodes: Vec<i32>) -> Vec<i32> {
             max = (*count, barcode);
         }
     }
-    let mut stack = vec![];
+    let mut stack = Vec::new();
     for (k, v) in hm {
         if k != max.1 {
             stack.resize(v, k);

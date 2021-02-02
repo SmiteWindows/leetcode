@@ -14,7 +14,7 @@ pub fn sliding_puzzle(board: Vec<Vec<i32>>) -> i32 {
     ];
     let solved = vec![1, 2, 3, 4, 5, 0];
     let mut queue = VecDeque::new();
-    let mut line = vec![];
+    let mut line = Vec::new();
     board
         .into_iter()
         .for_each(|v| v.into_iter().for_each(|x| line.push(x)));

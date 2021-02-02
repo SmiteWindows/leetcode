@@ -6,7 +6,7 @@ pub fn add_operators(num: String, target: i32) -> Vec<String> {
     let num = num.as_bytes();
     let len = num.len();
     let mut path = Vec::new();
-    let mut pathes = vec![];
+    let mut pathes = Vec::new();
     if len > 0 {
         let mut v = num[0] as i64 - 48;
         path.push(num[0]);

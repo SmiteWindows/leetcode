@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn length_longest_path(input: String) -> i32 {
-    let mut stack: Vec<Folder> = vec![];
+    let mut stack: Vec<Folder> = Vec::new();
     let mut folder_length = 0;
     let mut max = 0;
     for line in input.split('\n') {

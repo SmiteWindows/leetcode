@@ -11,7 +11,7 @@ pub fn get_permutation(n: i32, k: i32) -> String {
         prev *= x;
         factorial.push(prev);
     }
-    let mut res = vec![];
+    let mut res = Vec::new();
     for i in 0..n {
         let index = k / factorial[n - 1 - i];
         res.push(nums.remove(index));

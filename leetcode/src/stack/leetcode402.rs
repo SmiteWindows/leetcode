@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn remove_kdigits(num: String, mut k: i32) -> String {
-    let mut stack = vec![];
+    let mut stack = Vec::new();
     for c in num.chars() {
         while let Some(&top) = stack.last() {
             if k > 0 && top > c {

@@ -4,7 +4,7 @@
 pub fn restore_ip_addresses(s: String) -> Vec<String> {
     let n = s.len();
     let mut v = vec![0_u8; 4];
-    let mut res = vec![];
+    let mut res = Vec::new();
     for i in 1..4 {
         if i + 3 > n {
             break;

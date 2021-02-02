@@ -2,7 +2,7 @@
 // Runtime: 4 ms
 // Memory Usage: 2.1 MB
 pub fn pacific_atlantic(matrix: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
-    let mut res = vec![];
+    let mut res = Vec::new();
     let n = matrix.len();
     if n == 0 {
         return res;

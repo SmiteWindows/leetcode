@@ -21,7 +21,7 @@ pub fn powerful_integers(x: i32, y: i32, bound: i32) -> Vec<i32> {
             break;
         }
     }
-    let mut res = vec![];
+    let mut res = Vec::new();
     for i in 0..=bound {
         if set[i as usize] {
             res.push(i);

@@ -5,21 +5,21 @@ use std::collections::HashMap;
 pub fn find_substring(s: String, words: Vec<String>) -> Vec<i32> {
     let n = s.len();
     if n == 0 {
-        return vec![];
+        return Vec::new();
     }
     let mut count: HashMap<&str, usize> = HashMap::new();
     let m = words.len();
     if m == 0 {
-        return vec![];
+        return Vec::new();
     }
     let size = words[0].len();
     if m * size > n {
-        return vec![];
+        return Vec::new();
     }
     for w in &words {
         *count.entry(w).or_default() += 1;
     }
-    let mut res = vec![];
+    let mut res = Vec::new();
     'outer: for i in 0..=n - m * size {
         let mut cur: HashMap<&str, usize> = HashMap::new();
         for j in 0..m {

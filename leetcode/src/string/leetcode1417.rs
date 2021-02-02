@@ -3,9 +3,9 @@
 // Memory Usage: 2.1 MB
 use std::mem::swap;
 pub fn reformat(s: String) -> String {
-    let mut chars = vec![];
-    let mut digits = vec![];
-    let mut res = vec![];
+    let mut chars = Vec::new();
+    let mut digits = Vec::new();
+    let mut res = Vec::new();
     for c in s.chars() {
         if c.is_digit(10) {
             digits.push(c);

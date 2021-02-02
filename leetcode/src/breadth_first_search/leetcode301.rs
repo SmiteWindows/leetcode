@@ -3,7 +3,7 @@
 // Memory Usage: 2.1 MB
 #![allow(clippy::too_many_arguments)]
 pub fn remove_invalid_parentheses(s: String) -> Vec<String> {
-    let mut res: Vec<String> = vec![];
+    let mut res: Vec<String> = Vec::new();
 
     if s.is_empty() {
         res.push(String::new());

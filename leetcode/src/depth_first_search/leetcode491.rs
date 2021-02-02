@@ -2,9 +2,9 @@
 // Runtime: 36 ms
 // Memory Usage: 5 MB
 pub fn find_subsequences(nums: Vec<i32>) -> Vec<Vec<i32>> {
-    let mut res = vec![];
+    let mut res = Vec::new();
     let n = nums.len();
-    let mut cur = vec![];
+    let mut cur = Vec::new();
     dfs(0, &mut cur, &mut res, &nums, n);
     res
 }

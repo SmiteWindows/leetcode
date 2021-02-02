@@ -3,7 +3,7 @@
 // Memory Usage: 2 MB
 pub fn large_group_positions(s: String) -> Vec<Vec<i32>> {
     let mut prev: Option<Group> = None;
-    let mut groups = vec![];
+    let mut groups = Vec::new();
     for (i, c) in s.char_indices() {
         if let Some(prev_group) = prev {
             if prev_group.c == c {

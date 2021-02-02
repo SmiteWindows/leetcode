@@ -3,7 +3,7 @@
 // Memory Usage: 2.1 MB
 pub fn pancake_sort(mut a: Vec<i32>) -> Vec<i32> {
     let n = a.len();
-    let mut res = vec![];
+    let mut res = Vec::new();
     for i in 0..n {
         let (_, j) = (0..n - i).fold(
             (a[0], 0),

@@ -3,7 +3,7 @@
 // Memory Usage: 10.4 MB
 pub fn find_diagonal_order(nums: Vec<Vec<i32>>) -> Vec<i32> {
     let n = nums.len();
-    let mut rows = vec![];
+    let mut rows = Vec::new();
     for (i, num) in nums.iter().enumerate().take(n) {
         for (j, &v) in num.iter().enumerate() {
             let k = i + j;

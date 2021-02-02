@@ -4,7 +4,7 @@
 pub fn max_rep_opt1(text: String) -> i32 {
     let s = text.bytes().collect::<Vec<_>>();
     let n = s.len();
-    let mut group = vec![];
+    let mut group = Vec::new();
     let mut count = vec![0; 26];
     for i in &s {
         count[(i - b'a') as usize] += 1;

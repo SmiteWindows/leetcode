@@ -2,7 +2,7 @@
 // Runtime: 4 ms
 // Memory Usage: 2.2 MB
 pub fn decompress_rl_elist(nums: Vec<i32>) -> Vec<i32> {
-    let mut res = vec![];
+    let mut res = Vec::new();
     for p in nums.chunks(2) {
         let a = p[0] as usize;
         let b = p[1];

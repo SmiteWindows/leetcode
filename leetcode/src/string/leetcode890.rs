@@ -5,7 +5,7 @@ use std::collections::HashMap;
 pub fn find_and_replace_pattern(words: Vec<String>, pattern: String) -> Vec<String> {
     let n = pattern.len();
     let pattern = pattern.chars().collect::<Vec<_>>();
-    let mut res = vec![];
+    let mut res = Vec::new();
     for word in words {
         let word = word.chars().collect::<Vec<_>>();
         if matches(&word, &pattern, n) {

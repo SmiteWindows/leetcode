@@ -3,7 +3,7 @@
 // Memory Usage: 2.3 MB
 pub fn majority_element(nums: Vec<i32>) -> Vec<i32> {
     let n = nums.len();
-    let mut pairs: Vec<(i32, usize)> = vec![];
+    let mut pairs: Vec<(i32, usize)> = Vec::new();
     for &x in &nums {
         if pairs.iter().any(|p| p.0 == x) {
             pairs = pairs
@@ -17,7 +17,7 @@ pub fn majority_element(nums: Vec<i32>) -> Vec<i32> {
             pairs = pairs.into_iter().filter(|p| p.1 > 0).collect();
         }
     }
-    let mut res = vec![];
+    let mut res = Vec::new();
     for pair in pairs {
         let sum = nums
             .iter()

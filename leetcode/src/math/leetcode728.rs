@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn self_dividing_numbers(left: i32, right: i32) -> Vec<i32> {
-    let mut res = vec![];
+    let mut res = Vec::new();
     for i in left..=right {
         if is_self_dividing(i) {
             res.push(i);

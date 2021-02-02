@@ -3,7 +3,7 @@
 // Memory Usage: 2.1 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn flip_match_voyage(root: Option<Rc<RefCell<TreeNode>>>, voyage: Vec<i32>) -> Vec<i32> {
-    let mut nodes = vec![];
+    let mut nodes = Vec::new();
     let mut size = 0;
     if preorder(root.as_deref(), &mut size, &mut nodes, &voyage) {
         nodes

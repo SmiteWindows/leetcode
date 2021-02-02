@@ -3,7 +3,7 @@
 // Memory Usage: 2.1 MB
 use std::collections::HashSet;
 pub fn queens_attackthe_king(queens: Vec<Vec<i32>>, king: Vec<i32>) -> Vec<Vec<i32>> {
-    let mut res = vec![];
+    let mut res = Vec::new();
     let cb = Chessboard::new(queens, king);
     for i in 0..8 {
         let mut step = 1;

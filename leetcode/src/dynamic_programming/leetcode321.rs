@@ -28,7 +28,7 @@ pub fn max_number(nums1: Vec<i32>, nums2: Vec<i32>, k: i32) -> Vec<i32> {
 }
 
 fn max_one(nums: &[i32], k: usize) -> Vec<i32> {
-    let mut stack = vec![];
+    let mut stack = Vec::new();
     let n = nums.len();
     for (i, &num) in nums.iter().enumerate().take(n) {
         let right = n - i;
@@ -48,7 +48,7 @@ fn max_one(nums: &[i32], k: usize) -> Vec<i32> {
 }
 
 fn max_merge(nums1: Vec<i32>, nums2: Vec<i32>) -> Vec<i32> {
-    let mut res = vec![];
+    let mut res = Vec::new();
     let mut i = 0;
     let mut j = 0;
     loop {

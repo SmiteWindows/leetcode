@@ -5,7 +5,7 @@ pub fn base_neg2(mut n: i32) -> String {
     if n == 0 {
         return "0".to_string();
     }
-    let mut res = vec![];
+    let mut res = Vec::new();
     while n != 0 {
         res.push((b'0' + (n & 1) as u8) as char);
         n = -(n >> 1);

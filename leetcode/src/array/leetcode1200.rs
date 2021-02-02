@@ -4,7 +4,7 @@
 pub fn minimum_abs_difference(mut arr: Vec<i32>) -> Vec<Vec<i32>> {
     arr.sort_unstable();
     let min = arr.windows(2).fold(i32::MAX, |x, v| x.min(v[1] - v[0]));
-    let mut res: Vec<Vec<i32>> = vec![];
+    let mut res: Vec<Vec<i32>> = Vec::new();
     for v in arr.windows(2) {
         if v[1] - v[0] == min {
             res.push(v.to_vec())

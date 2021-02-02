@@ -18,7 +18,7 @@ pub fn calc_equation(
         ids.insert(s, i);
     }
     let n = ids.len();
-    let mut graph = vec![vec![]; n];
+    let mut graph = vec![Vec::new(); n];
 
     for i in 0..m {
         let u = ids[&equations[i][0]];
@@ -26,14 +26,14 @@ pub fn calc_equation(
         graph[u].push((v, values[i]));
         graph[v].push((u, 1.0 / values[i]));
     }
-    let mut res = vec![];
+    let mut res = Vec::new();
     for query in queries {
         if ids.contains_key(&query[0]) && ids.contains_key(&query[1]) {
             let u = ids[&query[0]];
             let v = ids[&query[1]];
             let mut product = -1.0;
             let mut visited = vec![false; n];
-            let mut path = vec![];
+            let mut path = Vec::new();
             dfs(u, v, &mut visited, &mut path, &mut product, &graph);
             res.push(product);
         } else {

@@ -5,7 +5,7 @@ use std::collections::HashMap;
 pub fn find_restaurant(list1: Vec<String>, list2: Vec<String>) -> Vec<String> {
     let mut hm = HashMap::new();
     let mut min = usize::MAX;
-    let mut res = vec![];
+    let mut res = Vec::new();
     for (i, l1) in list1.iter().enumerate() {
         hm.insert(l1, i);
     }

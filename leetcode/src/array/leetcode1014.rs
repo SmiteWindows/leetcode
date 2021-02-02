@@ -3,7 +3,7 @@
 // Memory Usage: 2.6 MB
 pub fn max_score_sightseeing_pair(a: Vec<i32>) -> i32 {
     let n = a.len();
-    let mut maxs = vec![];
+    let mut maxs = Vec::new();
     let mut prev_max = 0;
     let mut res = 0;
     for (i, ai) in a.iter().enumerate().take(n) {

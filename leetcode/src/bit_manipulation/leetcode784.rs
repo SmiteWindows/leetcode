@@ -8,7 +8,7 @@ pub fn letter_case_permutation(s: String) -> Vec<String> {
             b += 1;
         }
     }
-    let mut res = vec![];
+    let mut res = Vec::new();
     for bits in 0..1 << b {
         let mut b = 0;
         let mut word = "".to_string();

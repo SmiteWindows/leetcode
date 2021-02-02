@@ -3,7 +3,7 @@
 // Memory Usage: 2.6 MB
 pub fn eventual_safe_nodes(graph: Vec<Vec<i32>>) -> Vec<i32> {
     let n = graph.len();
-    let mut res = vec![];
+    let mut res = Vec::new();
     let mut state = vec![0; n];
     for i in 0..n {
         if dfs(i, &mut state, &graph) {

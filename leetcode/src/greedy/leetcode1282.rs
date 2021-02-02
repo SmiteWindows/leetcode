@@ -3,18 +3,18 @@
 // Memory Usage: 2.1 MB
 type Person = (i32, usize);
 pub fn group_the_people(group_sizes: Vec<i32>) -> Vec<Vec<i32>> {
-    let mut people: Vec<Person> = vec![];
-    let mut res: Vec<Vec<i32>> = vec![];
+    let mut people: Vec<Person> = Vec::new();
+    let mut res: Vec<Vec<i32>> = Vec::new();
     for (id, &group_size) in group_sizes.iter().enumerate() {
         people.push((group_size, id))
     }
     people.sort_unstable();
-    let mut group: Vec<i32> = vec![];
+    let mut group: Vec<i32> = Vec::new();
     for p in people {
         group.push(p.1 as i32);
         if group.len() == p.0 as usize {
             res.push(group);
-            group = vec![];
+            group = Vec::new();
         }
     }
     res

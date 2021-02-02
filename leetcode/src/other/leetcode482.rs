@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.5 MB
 pub fn license_key_formatting(s: String, k: i32) -> String {
-    let mut res = vec![];
+    let mut res = Vec::new();
     let mut i = 0;
     for c in s.chars().rev() {
         if c != '-' {

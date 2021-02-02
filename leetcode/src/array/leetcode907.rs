@@ -6,7 +6,7 @@ pub fn sum_subarray_mins(a: Vec<i32>) -> i32 {
     let mut sum = 0;
     let mut left = vec![0; n];
     let mut right = vec![0; n];
-    let mut stack = vec![];
+    let mut stack = Vec::new();
     for i in 0..n {
         left[i] = i + 1;
         right[i] = n - i;

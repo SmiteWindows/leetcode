@@ -9,7 +9,7 @@ pub fn common_chars(a: Vec<String>) -> Vec<String> {
             counts[i][c as usize] += 1;
         }
     }
-    let mut res = vec![];
+    let mut res = Vec::new();
     for i in 0..26 {
         let c: u8 = b'a' + i;
         let mut min = usize::MAX;

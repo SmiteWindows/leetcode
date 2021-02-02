@@ -4,9 +4,9 @@
 pub fn can_finish(num_courses: i32, prerequisites: Vec<Vec<i32>>) -> bool {
     let n = num_courses as usize;
     let mut indegrees = vec![0; n];
-    let mut edges = vec![vec![]; n];
-    let mut queue = vec![];
-    let mut res = vec![];
+    let mut edges = vec![Vec::new(); n];
+    let mut queue = Vec::new();
+    let mut res = Vec::new();
     for e in prerequisites {
         let u = e[1] as usize;
         let v = e[0] as usize;

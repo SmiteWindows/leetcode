@@ -20,7 +20,7 @@ impl ToVec for NestedInteger {
         match self {
             NestedInteger::Int(x) => vec![x],
             NestedInteger::List(v) => {
-                let mut res = vec![];
+                let mut res = Vec::new();
                 for x in v {
                     res.append(&mut x.into_vec());
                 }
@@ -32,7 +32,7 @@ impl ToVec for NestedInteger {
 
 impl NestedIterator {
     fn new(nested_list: Vec<NestedInteger>) -> Self {
-        let mut data = vec![];
+        let mut data = Vec::new();
         for x in nested_list {
             data.append(&mut x.into_vec());
         }
@@ -65,7 +65,7 @@ fn test1_341() {
     ];
     let mut obj = NestedIterator::new(nested_list);
     let res = vec![1, 1, 2, 1, 1];
-    let mut ans = vec![];
+    let mut ans = Vec::new();
     while obj.has_next() {
         ans.push(obj.next());
     }
@@ -80,7 +80,7 @@ fn test1_341() {
     ];
     let mut obj = NestedIterator::new(nested_list);
     let res = vec![1, 4, 6];
-    let mut ans = vec![];
+    let mut ans = Vec::new();
     while obj.has_next() {
         ans.push(obj.next());
     }

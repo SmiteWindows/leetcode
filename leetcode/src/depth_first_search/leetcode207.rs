@@ -3,7 +3,7 @@
 // Memory Usage: 2.2 MB
 pub fn can_finish(num_courses: i32, prerequisites: Vec<Vec<i32>>) -> bool {
     let n = num_courses as usize;
-    let mut edges = vec![vec![]; n];
+    let mut edges = vec![Vec::new(); n];
     let mut flags = vec![0; n];
     for e in prerequisites {
         let u = e[1] as usize;

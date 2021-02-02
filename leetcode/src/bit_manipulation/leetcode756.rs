@@ -4,7 +4,7 @@
 use std::collections::HashSet;
 pub fn pyramid_transition(bottom: String, allowed: Vec<String>) -> bool {
     let n = bottom.len();
-    let mut v = vec![vec![]; n];
+    let mut v = vec![Vec::new(); n];
     let mut map = vec![vec![HashSet::new(); 7]; 7];
     for c in bottom.bytes() {
         let b = (c - b'A') as usize;

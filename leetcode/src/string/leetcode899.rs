@@ -10,7 +10,7 @@ pub fn orderly_queue(s: String, k: i32) -> String {
     } else {
         let mut res = s.to_vec();
         for i in 0..n {
-            let mut t = vec![];
+            let mut t = Vec::new();
             for &sj in s.iter().take(n).skip(i) {
                 t.push(sj);
             }

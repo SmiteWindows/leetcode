@@ -2,7 +2,7 @@
 // Runtime: 8 ms
 // Memory Usage: 2.6 MB
 pub fn find_diagonal_order(matrix: Vec<Vec<i32>>) -> Vec<i32> {
-    let mut res = vec![];
+    let mut res = Vec::new();
     let mut i = 0;
     let mut j = 0;
     let mut d = true;

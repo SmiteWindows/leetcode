@@ -4,12 +4,12 @@
 use std::{cell::RefCell, rc::Rc};
 pub fn all_possible_fbt(n: i32) -> Vec<Option<Rc<RefCell<TreeNode>>>> {
     if n % 2 == 0 {
-        return vec![];
+        return Vec::new();
     }
     if n == 1 {
         vec![Some(Rc::new(RefCell::new(TreeNode::new(0))))]
     } else {
-        let mut res = vec![];
+        let mut res = Vec::new();
         let mut l = 1;
         let mut r = n - 1 - l;
         while r > 0 {

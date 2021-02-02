@@ -3,7 +3,7 @@
 // Memory Usage: 2.7 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn smallest_from_leaf(root: Option<Rc<RefCell<TreeNode>>>) -> String {
-    let mut cur = vec![];
+    let mut cur = Vec::new();
     let mut res = "".to_string();
     preorder(root.as_deref(), &mut cur, &mut res);
     res

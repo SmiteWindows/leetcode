@@ -3,7 +3,7 @@
 // Memory Usage: 2.1 MB
 use std::collections::HashMap;
 pub fn next_greater_element(nums1: Vec<i32>, nums2: Vec<i32>) -> Vec<i32> {
-    let mut stack = vec![];
+    let mut stack = Vec::new();
     let mut hm = HashMap::new();
     for x in nums2 {
         while let Some(last) = stack.pop() {

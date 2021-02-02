@@ -13,7 +13,7 @@ impl StreamChecker {
         for s in words {
             trie.insert(s);
         }
-        let stream = vec![];
+        let stream = Vec::new();
         Self { trie, stream }
     }
 

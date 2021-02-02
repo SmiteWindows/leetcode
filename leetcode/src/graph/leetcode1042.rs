@@ -3,7 +3,7 @@
 // Memory Usage: 3.2 MB
 pub fn garden_no_adj(n: i32, paths: Vec<Vec<i32>>) -> Vec<i32> {
     let n = n as usize;
-    let mut g = vec![vec![]; n];
+    let mut g = vec![Vec::new(); n];
     for path in paths {
         let u = (path[0] - 1) as usize;
         let v = (path[1] - 1) as usize;

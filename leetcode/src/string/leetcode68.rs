@@ -6,7 +6,7 @@ pub fn full_justify(words: Vec<String>, max_width: i32) -> Vec<String> {
     let mut queue = VecDeque::new();
     let max_width = max_width as usize;
     let mut width = 0;
-    let mut res = vec![];
+    let mut res = Vec::new();
     for word in words {
         if width + queue.len() + word.len() > max_width as usize {
             res.push(make_a_line(&mut queue, max_width, width));

@@ -11,7 +11,7 @@ impl TopVotedCandidate {
     fn new(persons: Vec<i32>, times: Vec<i32>) -> Self {
         let n = persons.len();
         let mut hm: HashMap<i32, usize> = HashMap::new();
-        let mut leaders = vec![];
+        let mut leaders = Vec::new();
         let mut leader = (0, 0);
         for &p in &persons {
             let count = hm.entry(p).or_default();

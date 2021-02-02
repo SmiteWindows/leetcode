@@ -2,10 +2,10 @@
 // Runtime: 4 ms
 // Memory Usage: 2.9 MB
 pub fn partition(s: String) -> Vec<Vec<String>> {
-    let mut res = vec![];
+    let mut res = Vec::new();
     let s = s.chars().collect::<Vec<_>>();
     let n = s.len();
-    let mut indexes = vec![];
+    let mut indexes = Vec::new();
     dfs(0, &s, &mut indexes, &mut res, n);
     res
 }
@@ -18,7 +18,7 @@ fn dfs(
     n: usize,
 ) {
     if start == n {
-        let mut partition = vec![];
+        let mut partition = Vec::new();
         for &(l, r) in indexes.iter() {
             partition.push(s[l..r].iter().collect());
         }

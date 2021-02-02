@@ -3,7 +3,7 @@
 // Memory Usage: 2.7 MB
 pub fn insert(intervals: Vec<Vec<i32>>, new_interval: Vec<i32>) -> Vec<Vec<i32>> {
     let mut new_interval = new_interval;
-    let mut res = vec![];
+    let mut res = Vec::new();
     for interval in intervals {
         if interval[0] < new_interval[0] {
             if interval[1] < new_interval[0] {

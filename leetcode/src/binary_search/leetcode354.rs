@@ -5,7 +5,7 @@ use std::cmp::Reverse;
 pub fn max_envelopes(mut envelopes: Vec<Vec<i32>>) -> i32 {
     let n = envelopes.len();
     envelopes.sort_unstable_by_key(|v| (v[0], Reverse(v[1])));
-    let mut dp = vec![];
+    let mut dp = Vec::new();
     for envelope in envelopes.iter().take(n) {
         let height = envelope[1];
         if let Err(p) = dp.binary_search(&height) {

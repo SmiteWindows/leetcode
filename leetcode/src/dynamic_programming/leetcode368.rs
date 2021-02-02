@@ -16,7 +16,7 @@ pub fn largest_divisible_subset(mut nums: Vec<i32>) -> Vec<i32> {
             }
         }
     }
-    let mut res = vec![];
+    let mut res = Vec::new();
     for (i, &s) in size.iter().enumerate().take(n) {
         if s == max_size {
             let mut j = i;

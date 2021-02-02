@@ -3,7 +3,7 @@
 // Memory Usage: 2.2 MB
 pub fn exclusive_time(n: i32, logs: Vec<String>) -> Vec<i32> {
     let n = n as usize;
-    let mut stack = vec![];
+    let mut stack = Vec::new();
     let mut res = vec![0; n];
     let mut prev = 0;
     for log in logs {

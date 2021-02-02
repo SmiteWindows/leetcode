@@ -2,7 +2,7 @@
 // Runtime: 8 ms
 // Memory Usage: 2.6 MB
 pub fn lexical_order(n: i32) -> Vec<i32> {
-    let mut res = vec![];
+    let mut res = Vec::new();
     for i in 1..10 {
         dfs(i, &mut res, n);
     }

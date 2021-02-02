@@ -4,12 +4,12 @@
 pub fn median_sliding_window(nums: Vec<i32>, k: i32) -> Vec<f64> {
     let k = k as usize;
     let n = nums.len();
-    let mut w = vec![];
+    let mut w = Vec::new();
     for &num in nums.iter().take(k) {
         w.push(num);
     }
     w.sort_unstable();
-    let mut res = vec![];
+    let mut res = Vec::new();
     res.push(median(&w, k));
     for i in k..n {
         let pos = w.binary_search(&nums[i - k]).unwrap_or_else(|e| e);

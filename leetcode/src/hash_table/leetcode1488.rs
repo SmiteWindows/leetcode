@@ -22,7 +22,7 @@ pub fn avoid_flood(rains: Vec<i32>) -> Vec<i32> {
                 res[k] = rain;
                 dry_days.remove(&k);
             } else {
-                return vec![];
+                return Vec::new();
             }
         }
     }

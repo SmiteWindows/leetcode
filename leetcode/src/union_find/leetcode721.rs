@@ -13,8 +13,8 @@ pub fn accounts_merge(accounts: Vec<Vec<String>>) -> Vec<Vec<String>> {
     }
     let count = btm.len();
     let mut uf = UnionFind::new(count);
-    let mut owners = vec![];
-    let mut emails = vec![];
+    let mut owners = Vec::new();
+    let mut emails = Vec::new();
     let mut ids = HashMap::new();
     for (i, (email, name)) in btm.into_iter().enumerate() {
         emails.push(email.to_string());
@@ -32,14 +32,14 @@ pub fn accounts_merge(accounts: Vec<Vec<String>>) -> Vec<Vec<String>> {
             uf.union(id_a, id_b);
         }
     }
-    let mut res = vec![];
+    let mut res = Vec::new();
     let mut hm: HashMap<usize, BTreeSet<usize>> = HashMap::new();
     for i in 0..count {
         let group_id = uf.find(i);
         hm.entry(group_id).or_default().insert(i);
     }
     for (group_id, ids) in hm.into_iter() {
-        let mut v = vec![];
+        let mut v = Vec::new();
         v.push(owners[group_id].to_string());
         for id in ids {
             v.push(emails[id].to_string());

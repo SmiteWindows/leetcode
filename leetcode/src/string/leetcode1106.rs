@@ -43,7 +43,7 @@ fn parse(it: &mut Peekable<IntoIter<Tok>>) -> bool {
 }
 
 fn parse_tokens(it: &mut Chars<'_>) -> Vec<Tok> {
-    let mut res = vec![];
+    let mut res = Vec::new();
     for c in it {
         let tok = match c {
             't' => Tok::Bool(true),

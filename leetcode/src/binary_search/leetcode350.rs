@@ -8,7 +8,7 @@ pub fn intersect(mut nums1: Vec<i32>, mut nums2: Vec<i32>) -> Vec<i32> {
     nums1.sort_unstable();
     nums2.sort_unstable();
     let n = nums1.len();
-    let mut res = vec![];
+    let mut res = Vec::new();
     let mut k = 0;
     for i in nums2 {
         if k == n {

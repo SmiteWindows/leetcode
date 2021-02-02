@@ -4,7 +4,7 @@
 pub fn is_additive_number(num: String) -> bool {
     let n = num.len();
     let mut res = false;
-    let mut cur = vec![];
+    let mut cur = Vec::new();
     dfs(0, &mut cur, &mut res, &num[..], n);
     res
 }

@@ -8,7 +8,7 @@ struct CBTInserter {
 
 impl CBTInserter {
     fn new(root: Option<Rc<RefCell<TreeNode>>>) -> Self {
-        let mut stack = vec![];
+        let mut stack = Vec::new();
         stack.push(root);
         let mut i = 0;
         while i < stack.len() {

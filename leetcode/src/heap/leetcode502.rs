@@ -3,7 +3,7 @@
 // Memory Usage: 3.6 MB
 use std::collections::BinaryHeap;
 pub fn find_maximized_capital(mut k: i32, w: i32, profits: Vec<i32>, capital: Vec<i32>) -> i32 {
-    let mut sorted_capital: Vec<(i32, usize)> = vec![];
+    let mut sorted_capital: Vec<(i32, usize)> = Vec::new();
     for (i, &ci) in capital.iter().enumerate() {
         sorted_capital.push((ci, i));
     }

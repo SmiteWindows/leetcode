@@ -28,7 +28,7 @@ fn rotate(a: &[f64], b: &[f64], c: &[f64]) -> Vec<f64> {
 }
 
 fn values(a: &[f64], b: &[f64]) -> Vec<f64> {
-    let mut res = vec![];
+    let mut res = Vec::new();
     for &x in a {
         for &y in b {
             res.push(x + y);

@@ -3,7 +3,7 @@
 // Memory Usage: 2.2 MB
 pub fn equations_possible(equations: Vec<String>) -> bool {
     let mut uf = UnionFind::new(26);
-    let mut pairs = vec![];
+    let mut pairs = Vec::new();
     for equation in equations {
         let s = equation.chars().collect::<Vec<_>>();
         let i = (s[0] as u8 - b'a') as usize;

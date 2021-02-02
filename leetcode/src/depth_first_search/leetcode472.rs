@@ -14,7 +14,7 @@ pub fn find_all_concatenated_words_in_a_dict(words: Vec<String>) -> Vec<String> 
         }
         hs.insert(hasher.finish());
     }
-    let mut res = vec![];
+    let mut res = Vec::new();
     for w in words {
         let s = w.bytes().collect::<Vec<u8>>();
         let n = s.len();

@@ -5,7 +5,7 @@ pub fn moves_to_make_zigzag(nums: Vec<i32>) -> i32 {
     let mut sums = vec![0, 0];
     let n = nums.len();
     for i in 0..n {
-        let mut adj = vec![];
+        let mut adj = Vec::new();
         if i > 0 {
             adj.push(nums[i - 1]);
         }

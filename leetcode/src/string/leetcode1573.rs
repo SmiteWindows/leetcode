@@ -12,7 +12,7 @@ pub fn num_ways(s: String) -> i32 {
     if m % 3 != 0 {
         return 0;
     }
-    let mut indexes = vec![];
+    let mut indexes = Vec::new();
     let k = m / 3;
     let mut sum = 0;
     for (i, &si) in s.iter().enumerate().take(n) {

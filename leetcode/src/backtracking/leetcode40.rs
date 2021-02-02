@@ -2,8 +2,8 @@
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn combination_sum2(mut candidates: Vec<i32>, target: i32) -> Vec<Vec<i32>> {
-    let mut combination = vec![];
-    let mut res = vec![];
+    let mut combination = Vec::new();
+    let mut res = Vec::new();
     candidates.sort_unstable();
     dfs(&candidates, &mut combination, &mut res, target, 0);
     res

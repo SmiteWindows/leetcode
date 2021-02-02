@@ -10,7 +10,7 @@ pub fn uncommon_from_sentences(a: String, b: String) -> Vec<String> {
     b.split_whitespace().for_each(|s| {
         *hs.entry(s).or_default() += 1;
     });
-    let mut res = vec![];
+    let mut res = Vec::new();
     for (s, v) in hs {
         if v == 1 {
             res.push(s.to_string());

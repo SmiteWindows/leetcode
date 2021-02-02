@@ -52,7 +52,7 @@ fn x2s(x: u32) -> String {
 }
 
 fn adj(x: u32) -> Vec<u32> {
-    let mut res = vec![];
+    let mut res = Vec::new();
     for i in 0..4 {
         let b1 = (((x >> (i * 8) & 0xff) + 1) % 10) << (i * 8);
         let b2 = (((x >> (i * 8) & 0xff) + 9) % 10) << (i * 8);

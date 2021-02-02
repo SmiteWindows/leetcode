@@ -3,7 +3,7 @@
 // Memory Usage: 6.8 MB
 pub fn min_reorder(n: i32, connections: Vec<Vec<i32>>) -> i32 {
     let n = n as usize;
-    let mut graph = vec![vec![]; n];
+    let mut graph = vec![Vec::new(); n];
     for connection in connections {
         let u = connection[0] as usize;
         let v = connection[1] as usize;

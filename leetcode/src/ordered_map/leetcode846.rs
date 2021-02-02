@@ -14,7 +14,7 @@ pub fn is_n_straight_hand(hand: Vec<i32>, w: i32) -> bool {
     let mut queue: VecDeque<(i32, usize)> = VecDeque::from_iter(btm);
     while !queue.is_empty() {
         let first = queue.pop_front().unwrap();
-        let mut stack = vec![];
+        let mut stack = Vec::new();
         for i in 1..w {
             if let Some(front) = queue.pop_front() {
                 if front.0 != first.0 + i as i32 || front.1 < first.1 {

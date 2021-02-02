@@ -3,7 +3,7 @@
 // Memory Usage: 22.6 MB
 pub fn count_sub_trees(n: i32, edges: Vec<Vec<i32>>, labels: String) -> Vec<i32> {
     let n = n as usize;
-    let mut adj = vec![vec![]; n];
+    let mut adj = vec![Vec::new(); n];
     for e in edges {
         let u = e[0] as usize;
         let v = e[1] as usize;

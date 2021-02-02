@@ -5,7 +5,7 @@ use std::{cmp::Ordering::*, iter::Peekable, vec::IntoIter};
 pub fn is_number(s: String) -> bool {
     let s = s.trim();
     let mut it = s.chars().peekable();
-    let mut tokens = vec![];
+    let mut tokens = Vec::new();
     let mut e_count = 0;
     while let Some(c) = it.next() {
         match c {
@@ -34,8 +34,8 @@ pub fn is_number(s: String) -> bool {
     }
 
     if let Some(e_pos) = tokens.iter().position(|&x| x == Tok::Op('e')) {
-        let mut left = vec![];
-        let mut right = vec![];
+        let mut left = Vec::new();
+        let mut right = Vec::new();
         for (i, tok) in tokens.into_iter().enumerate() {
             match i.cmp(&e_pos) {
                 Less => {

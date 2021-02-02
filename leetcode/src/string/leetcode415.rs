@@ -14,7 +14,7 @@ pub fn add_strings(num1: String, num2: String) -> String {
         .collect::<Vec<_>>();
     let mut carry = 0;
     let mut i = 0;
-    let mut s3 = vec![];
+    let mut s3 = Vec::new();
     while i < s1.len() || i < s2.len() || carry > 0 {
         let mut v = 0;
         if i < s1.len() {

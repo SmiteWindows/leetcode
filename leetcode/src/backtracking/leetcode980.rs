@@ -57,7 +57,7 @@ fn dfs(
 }
 
 fn adj(i: usize, j: usize, n: usize, m: usize) -> Vec<(usize, usize)> {
-    let mut res = vec![];
+    let mut res = Vec::new();
     if i > 0 {
         res.push((i - 1, j));
     }

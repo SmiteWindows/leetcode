@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn make_good(s: String) -> String {
-    let mut stack: Vec<char> = vec![];
+    let mut stack: Vec<char> = Vec::new();
     for c in s.chars() {
         if let Some(&last) = stack.last() {
             if c.is_uppercase() && last.is_lowercase() && c.to_ascii_lowercase() == last {

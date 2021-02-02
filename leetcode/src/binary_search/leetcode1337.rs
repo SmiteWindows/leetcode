@@ -11,7 +11,7 @@ pub fn k_weakest_rows(mat: Vec<Vec<i32>>, k: i32) -> Vec<i32> {
             pq.pop();
         }
     }
-    let mut res = vec![];
+    let mut res = Vec::new();
     while let Some(biggest) = pq.pop() {
         res.push(biggest.1 as i32);
     }

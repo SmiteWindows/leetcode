@@ -3,7 +3,7 @@
 // Memory Usage: 4.1 MB
 const MOD: i64 = 1_000_000_007;
 pub fn range_sum(nums: Vec<i32>, n: i32, left: i32, right: i32) -> i32 {
-    let mut sums = vec![];
+    let mut sums = Vec::new();
     for (i, &num) in nums.iter().enumerate() {
         let k = sums.len();
         for j in 0..i {

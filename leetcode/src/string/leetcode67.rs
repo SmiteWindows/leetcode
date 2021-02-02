@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn add_binary(a: String, b: String) -> String {
-    let mut res = vec![];
+    let mut res = Vec::new();
     let v_a = a.chars().collect::<Vec<_>>();
     let v_b = b.chars().collect::<Vec<_>>();
     let mut carry = 0;

@@ -12,7 +12,7 @@ fn dp(left: i32, right: i32, memo: &mut HashMap<(i32, i32), i32>, cuts: &[i32]) 
     if let Some(&res) = memo.get(&(left, right)) {
         return res;
     }
-    let mut cuts_inside = vec![];
+    let mut cuts_inside = Vec::new();
     for &x in cuts {
         if x > left && x < right {
             cuts_inside.push(x);

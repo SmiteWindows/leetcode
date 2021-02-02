@@ -12,7 +12,7 @@ pub fn word_subsets(a: Vec<String>, b: Vec<String>) -> Vec<String> {
             max_count[i] = max_count[i].max(count[i]);
         }
     }
-    let mut res = vec![];
+    let mut res = Vec::new();
     'a: for s in a {
         let mut count = [0; 26];
         for b in s.bytes() {

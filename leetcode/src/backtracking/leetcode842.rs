@@ -2,8 +2,8 @@
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn split_into_fibonacci(s: String) -> Vec<i32> {
-    let mut cur = vec![];
-    let mut res = vec![];
+    let mut cur = Vec::new();
+    let mut res = Vec::new();
     dfs(0, &mut cur, &mut res, &s, s.len());
     res
 }

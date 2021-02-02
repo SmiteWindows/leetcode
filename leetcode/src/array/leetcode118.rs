@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn generate(num_rows: i32) -> Vec<Vec<i32>> {
-    let mut res = vec![];
+    let mut res = Vec::new();
     for i in 0..num_rows as usize {
         res.push(vec![]);
         for j in 0..=i {

@@ -6,7 +6,7 @@ use std::{
     collections::HashSet,
 };
 pub fn num_squares(n: i32) -> i32 {
-    let mut square_nums = vec![];
+    let mut square_nums = Vec::new();
     let mut i = 1;
     while i * i <= n {
         square_nums.push(i * i);

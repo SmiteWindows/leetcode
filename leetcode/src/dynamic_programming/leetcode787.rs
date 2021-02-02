@@ -9,7 +9,7 @@ pub fn find_cheapest_price(n: i32, flights: Vec<Vec<i32>>, src: i32, dst: i32, k
     let k = k as usize;
     let mut prices = vec![i32::MAX; n];
     prices[src] = 0;
-    let mut edges = vec![vec![]; n];
+    let mut edges = vec![Vec::new(); n];
     for f in flights {
         let u = f[0] as usize;
         let v = f[1] as usize;

@@ -20,7 +20,7 @@ pub fn buddy_strings(a: String, b: String) -> bool {
         }
         sum != 0
     } else {
-        let mut pair = vec![];
+        let mut pair = Vec::new();
         for i in 0..a_len {
             if ac[i] != bc[i] {
                 pair.push(i);

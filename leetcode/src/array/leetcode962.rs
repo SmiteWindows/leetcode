@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.4 MB
 pub fn max_width_ramp(a: Vec<i32>) -> i32 {
-    let mut stack = vec![];
+    let mut stack = Vec::new();
     let n = a.len();
     for i in 0..n {
         if let Some(&j) = stack.last() {

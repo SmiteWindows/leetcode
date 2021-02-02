@@ -2,7 +2,7 @@
 // Runtime: 28 ms
 // Memory Usage: 2.5 MB
 pub fn find_duplicates(mut nums: Vec<i32>) -> Vec<i32> {
-    let mut res = vec![];
+    let mut res = Vec::new();
     let n = nums.len();
     for i in 0..n {
         let x = nums[i];

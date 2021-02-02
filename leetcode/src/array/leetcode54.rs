@@ -5,13 +5,13 @@ use Direction::{Down, Left, Right, Up};
 pub fn spiral_order(matrix: Vec<Vec<i32>>) -> Vec<i32> {
     let n = matrix.len();
     if n == 0 {
-        return vec![];
+        return Vec::new();
     }
     let m = matrix[0].len();
     if m == 0 {
-        return vec![];
+        return Vec::new();
     }
-    let mut res = vec![];
+    let mut res = Vec::new();
     let mut i = 0;
     let mut j = 0;
     let mut left = 0;

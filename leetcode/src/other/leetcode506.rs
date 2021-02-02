@@ -3,7 +3,7 @@
 // Memory Usage: 2.3 MB
 use std::cmp::Reverse;
 pub fn find_relative_ranks(nums: Vec<i32>) -> Vec<String> {
-    let mut av = vec![];
+    let mut av = Vec::new();
     for (i, &num) in nums.iter().enumerate() {
         av.push(Athlete {
             index: i,

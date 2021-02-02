@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn alphabet_board_path(target: String) -> String {
-    let mut pos: Vec<(i32, i32)> = vec![];
+    let mut pos: Vec<(i32, i32)> = Vec::new();
     for i in 0..5 {
         for j in 0..5 {
             pos.push((i, j));

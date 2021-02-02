@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn gray_code(n: i32) -> Vec<i32> {
-    let mut res = vec![];
+    let mut res = Vec::new();
     for i in 0..(1 << n) {
         res.push(i ^ i >> 1);
     }

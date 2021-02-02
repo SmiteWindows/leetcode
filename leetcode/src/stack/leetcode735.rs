@@ -3,7 +3,7 @@
 // Memory Usage: 2.3 MB
 use std::cmp::Ordering::{Equal, Greater, Less};
 pub fn asteroid_collision(asteroids: Vec<i32>) -> Vec<i32> {
-    let mut res = vec![];
+    let mut res = Vec::new();
     for x in asteroids {
         if x > 0 {
             res.push(x);

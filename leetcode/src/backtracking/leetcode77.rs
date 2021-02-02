@@ -2,8 +2,8 @@
 // Runtime: 4 ms
 // Memory Usage: 2.9 MB
 pub fn combine(n: i32, k: i32) -> Vec<Vec<i32>> {
-    let mut res = vec![];
-    let mut cur = vec![];
+    let mut res = Vec::new();
+    let mut cur = Vec::new();
     let k = k as usize;
     let n = n as usize;
     dfs(1, &mut cur, &mut res, k, n);

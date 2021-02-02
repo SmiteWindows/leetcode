@@ -8,7 +8,7 @@ pub fn multiply(num1: String, num2: String) -> String {
     let mut v1 = vec![0; n1];
     let mut v2 = vec![0; n2];
     let mut v3 = vec![0; n3];
-    let mut v4 = vec![];
+    let mut v4 = Vec::new();
     for (i, c) in num1.char_indices() {
         v1[n1 - 1 - i] = (c as u8 - b'0') as i32;
     }

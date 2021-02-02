@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.7 MB
 pub fn eval_rpn(tokens: Vec<String>) -> i32 {
-    let mut stack = vec![];
+    let mut stack = Vec::new();
     for tok in tokens {
         match tok.as_ref() {
             "+" => {

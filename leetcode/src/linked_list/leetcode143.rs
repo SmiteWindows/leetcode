@@ -9,7 +9,7 @@ pub fn reorder_list(head: &mut Option<Box<ListNode>>) {
         p = n.next.take();
         deque.push_back(Some(n));
     }
-    let mut stack = vec![];
+    let mut stack = Vec::new();
     let mut direction = true;
     while !deque.is_empty() {
         if direction {

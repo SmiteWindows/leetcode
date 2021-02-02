@@ -4,8 +4,8 @@
 pub fn subsets_with_dup(mut nums: Vec<i32>) -> Vec<Vec<i32>> {
     nums.sort_unstable();
     let n = nums.len();
-    let mut cur = vec![];
-    let mut res = vec![];
+    let mut cur = Vec::new();
+    let mut res = Vec::new();
     dfs(0, &mut cur, &mut res, &nums, n);
     res
 }

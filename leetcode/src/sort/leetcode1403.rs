@@ -5,7 +5,7 @@ pub fn min_subsequence(mut nums: Vec<i32>) -> Vec<i32> {
     let n = nums.len();
     nums.sort_unstable();
     let sum: i32 = nums.iter().sum();
-    let mut res = vec![];
+    let mut res = Vec::new();
     let mut cur = 0;
     for &item in nums.iter().rev() {
         if cur * 2 <= sum {

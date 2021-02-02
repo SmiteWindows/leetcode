@@ -6,7 +6,7 @@ pub fn xor_queries(mut arr: Vec<i32>, queries: Vec<Vec<i32>>) -> Vec<i32> {
     for i in 1..n {
         arr[i] ^= arr[i - 1];
     }
-    let mut res = vec![];
+    let mut res = Vec::new();
     for query in queries {
         let l = query[0] as usize;
         let r = query[1] as usize;

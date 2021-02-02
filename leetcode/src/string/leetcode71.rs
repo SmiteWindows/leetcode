@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn simplify_path(path: String) -> String {
-    let mut stack = vec![];
+    let mut stack = Vec::new();
     let mut res = "".to_string();
     for s in path.split_terminator('/') {
         match s {

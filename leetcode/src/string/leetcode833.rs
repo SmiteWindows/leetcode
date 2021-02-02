@@ -8,7 +8,7 @@ pub fn find_replace_string(
     targets: Vec<String>,
 ) -> String {
     let mut s = s;
-    let mut v = vec![];
+    let mut v = Vec::new();
     for (i, &index) in indexes.iter().enumerate() {
         v.push((index as usize, i));
     }

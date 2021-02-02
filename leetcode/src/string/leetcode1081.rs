@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn smallest_subsequence(text: String) -> String {
-    let mut stack = vec![];
+    let mut stack = Vec::new();
     let mut left = vec![0; 26];
     for b in text.bytes() {
         left[(b - b'a') as usize] += 1;

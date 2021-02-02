@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn min_add_to_make_valid(s: String) -> i32 {
-    let mut stack = vec![];
+    let mut stack = Vec::new();
     let mut res = 0;
     for c in s.chars() {
         match c {

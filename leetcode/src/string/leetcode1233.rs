@@ -7,7 +7,7 @@ pub fn remove_subfolders(folder: Vec<String>) -> Vec<String> {
     for s in folder {
         hs.insert(s);
     }
-    let mut res = vec![];
+    let mut res = Vec::new();
     for s in &hs {
         if !is_subfolder(&s, &hs) {
             res.push(s.to_string());

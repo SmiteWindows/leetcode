@@ -5,7 +5,7 @@ pub fn sum_four_divisors(nums: Vec<i32>) -> i32 {
     let mut res = 0;
     'outer: for x in nums {
         let mut i = 2;
-        let mut v = vec![];
+        let mut v = Vec::new();
         while i * i <= x {
             if x % i == 0 {
                 v.push(i);

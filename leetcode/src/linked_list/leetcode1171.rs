@@ -3,7 +3,7 @@
 // Memory Usage: 2 MB
 use std::collections::HashMap;
 pub fn remove_zero_sum_sublists(mut head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
-    let mut stack = vec![];
+    let mut stack = Vec::new();
     let mut hm = HashMap::new();
     let mut sum = 0;
     hm.insert(0, 0);

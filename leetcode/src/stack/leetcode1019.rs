@@ -2,13 +2,13 @@
 // Runtime: 32 ms
 // Memory Usage: 2.6 MB
 pub fn next_larger_nodes(mut head: Option<Box<ListNode>>) -> Vec<i32> {
-    let mut nodes = vec![];
+    let mut nodes = Vec::new();
     while let Some(node) = head {
         nodes.push(node.val);
         head = node.next;
     }
     let n = nodes.len();
-    let mut stack = vec![];
+    let mut stack = Vec::new();
     let mut res = vec![0; n];
     for i in 0..n {
         while let Some(j) = stack.pop() {

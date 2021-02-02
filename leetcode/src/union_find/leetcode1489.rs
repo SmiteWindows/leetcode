@@ -7,8 +7,8 @@ pub fn find_critical_and_pseudo_critical_edges(n: i32, edges: Vec<Vec<i32>>) -> 
     let mut sorted_index: Vec<usize> = (0..m).collect();
     sorted_index.sort_unstable_by_key(|&i| edges[i][2]);
     let min_cost = mst(usize::MAX, usize::MAX, &sorted_index, &edges, n);
-    let mut critical = vec![];
-    let mut noncritical = vec![];
+    let mut critical = Vec::new();
+    let mut noncritical = Vec::new();
     dbg!(min_cost);
     for i in 0..m {
         if mst(i, usize::MAX, &sorted_index, &edges, n) > min_cost {

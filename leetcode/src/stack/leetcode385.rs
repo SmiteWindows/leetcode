@@ -30,7 +30,7 @@ impl NestedIntegerParser {
         T: Into<String>,
     {
         let s = s.into();
-        let mut tokens = vec![];
+        let mut tokens = Vec::new();
         let mut it = s.chars().peekable();
         while let Some(c) = it.next() {
             match c {
@@ -64,7 +64,7 @@ impl NestedIntegerParser {
         if !self.eat('[') {
             return self.parse_int();
         }
-        let mut list = vec![];
+        let mut list = Vec::new();
         while let Some(x) = self.parse() {
             list.push(x);
             self.eat(',');

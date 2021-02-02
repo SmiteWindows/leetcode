@@ -4,7 +4,7 @@
 use std::cmp::Reverse;
 pub fn make_largest_special(s: String) -> String {
     let mut count = 0;
-    let mut v = vec![];
+    let mut v = Vec::new();
     let mut ss = "".to_string();
     for c in s.chars() {
         ss.push(c);

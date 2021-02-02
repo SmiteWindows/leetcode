@@ -31,7 +31,7 @@ fn _thousand_separator(mut n: i32) -> String {
     if n == 0 {
         return "0".to_string();
     }
-    let mut stack = vec![];
+    let mut stack = Vec::new();
     let mut count = 0;
     while n > 0 {
         if count % 3 == 0 && count > 0 {

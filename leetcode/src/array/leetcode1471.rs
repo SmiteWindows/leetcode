@@ -7,7 +7,7 @@ pub fn get_strongest(mut arr: Vec<i32>, mut k: i32) -> Vec<i32> {
     let median = arr[(n - 1) / 2];
     let mut l = 0;
     let mut r = n - 1;
-    let mut res = vec![];
+    let mut res = Vec::new();
     while k > 0 {
         if (arr[l] - median).abs() <= (arr[r] - median).abs() {
             res.push(arr[r]);

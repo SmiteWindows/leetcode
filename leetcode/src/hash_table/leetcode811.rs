@@ -4,7 +4,7 @@
 use std::collections::HashMap;
 pub fn subdomain_visits(cpdomains: Vec<String>) -> Vec<String> {
     fn parse(s: String) -> (Vec<String>, usize) {
-        let mut domains = vec![];
+        let mut domains = Vec::new();
         let mut iter = s.split_whitespace();
         let count = iter.next().unwrap().parse::<usize>().unwrap();
         let domain = iter.next().unwrap().parse::<String>().unwrap();
@@ -18,7 +18,7 @@ pub fn subdomain_visits(cpdomains: Vec<String>) -> Vec<String> {
         (domains, count)
     }
 
-    let mut res = vec![];
+    let mut res = Vec::new();
     let mut hm: HashMap<String, usize> = HashMap::new();
     for s in cpdomains {
         let (domains, count) = parse(s);

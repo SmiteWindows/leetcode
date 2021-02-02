@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn cal_points(ops: Vec<String>) -> i32 {
-    let mut stack = vec![];
+    let mut stack = Vec::new();
     for s in ops {
         match s.as_ref() {
             "C" => {

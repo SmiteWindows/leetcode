@@ -20,11 +20,11 @@ pub fn word_break(s: String, word_dict: Vec<String>) -> Vec<String> {
     let s = s.bytes().collect::<Vec<u8>>();
     for i in 0..n {
         if !alphabet[s[i] as usize] {
-            return vec![];
+            return Vec::new();
         }
     }
-    let mut cur = vec![];
-    let mut res = vec![];
+    let mut cur = Vec::new();
+    let mut res = Vec::new();
     dfs(0, &mut cur, &mut res, &dict, &s, n);
     res
 }
@@ -38,7 +38,7 @@ fn dfs(
     n: usize,
 ) {
     if start == n {
-        let mut words = vec![];
+        let mut words = Vec::new();
         for &(l, r) in cur.iter() {
             let mut word = "".to_string();
             for &si in s.iter().take(r + 1).skip(l) {

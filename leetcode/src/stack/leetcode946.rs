@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.2 MB
 pub fn validate_stack_sequences(pushed: Vec<i32>, popped: Vec<i32>) -> bool {
-    let mut stack = vec![];
+    let mut stack = Vec::new();
     let mut it = popped.iter().peekable();
     for x in pushed {
         stack.push(x);

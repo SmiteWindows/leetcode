@@ -5,7 +5,7 @@ pub fn convert_to_base7(mut num: i32) -> String {
     if num == 0 {
         return "0".to_string();
     }
-    let mut base_7 = vec![];
+    let mut base_7 = Vec::new();
     let minus = num < 0;
     if minus {
         num = -num;

@@ -4,7 +4,7 @@
 use std::cmp::Ordering::{Equal, Greater, Less};
 pub fn four_sum(mut nums: Vec<i32>, target: i32) -> Vec<Vec<i32>> {
     let n = nums.len();
-    let mut res = vec![];
+    let mut res = Vec::new();
     nums.sort_unstable();
     let mut index = 0;
     while index + 3 < n {

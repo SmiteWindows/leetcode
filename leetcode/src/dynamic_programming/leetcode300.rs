@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn length_of_lis(nums: Vec<i32>) -> i32 {
-    let mut dp = vec![];
+    let mut dp = Vec::new();
     for x in nums {
         if let Err(i) = dp.binary_search(&x) {
             if i == dp.len() {

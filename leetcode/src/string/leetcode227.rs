@@ -49,7 +49,7 @@ fn parse_num(it: &mut Peekable<Iter<'_, Tok>>) -> Option<i32> {
 }
 
 fn tokens(s: &str) -> Vec<Tok> {
-    let mut v = vec![];
+    let mut v = Vec::new();
     let mut it = s.chars().peekable();
     while let Some(c) = it.next() {
         match c {

@@ -2,8 +2,8 @@
 // Runtime: 16 ms
 // Memory Usage: 2.8 MB
 pub fn num_matching_subseq(s: String, words: Vec<String>) -> i32 {
-    let mut queues = vec![vec![]; 26];
-    let mut temp = vec![];
+    let mut queues = vec![Vec::new(); 26];
+    let mut temp = Vec::new();
     for word in &words {
         let mut iter = word.chars();
         if let Some(c) = iter.next() {

@@ -2,8 +2,8 @@
 // Runtime: 20 ms
 // Memory Usage: 2.5 MB
 pub fn daily_temperatures(t: Vec<i32>) -> Vec<i32> {
-    let mut res = vec![];
-    let mut stack = vec![];
+    let mut res = Vec::new();
+    let mut stack = Vec::new();
     let n = t.len();
     for i in (0..n).rev() {
         while let Some(j) = stack.pop() {

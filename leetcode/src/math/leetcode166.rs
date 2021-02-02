@@ -6,7 +6,7 @@ pub fn fraction_to_decimal(numerator: i32, denominator: i32) -> String {
     if numerator == 0 {
         return "0".to_string();
     }
-    let mut res = vec![];
+    let mut res = Vec::new();
     if (numerator < 0) ^ (denominator < 0) {
         res.push('-');
     }

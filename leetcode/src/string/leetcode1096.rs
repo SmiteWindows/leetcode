@@ -63,7 +63,7 @@ fn eat(it: &mut Peekable<IntoIter<Tok>>, c: char) -> bool {
 }
 
 fn parse_tokens(it: &mut Peekable<Chars<'_>>) -> Vec<Tok> {
-    let mut res = vec![];
+    let mut res = Vec::new();
     while let Some(c) = it.next() {
         match c {
             '{' | '}' | ',' => res.push(Tok::Op(c)),

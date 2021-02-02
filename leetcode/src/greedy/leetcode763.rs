@@ -3,7 +3,7 @@
 // Memory Usage: 2 MB
 use std::collections::HashMap;
 pub fn partition_labels(s: String) -> Vec<i32> {
-    let mut res = vec![];
+    let mut res = Vec::new();
     let mut last = HashMap::new();
     for (i, c) in s.char_indices() {
         last.insert(c, i);

@@ -24,7 +24,7 @@ pub fn shortest_common_supersequence(str1: String, str2: String) -> String {
             }
         }
     }
-    let mut path = vec![];
+    let mut path = Vec::new();
     let mut i = n;
     let mut j = m;
     while dp[i][j].0 != ' ' {

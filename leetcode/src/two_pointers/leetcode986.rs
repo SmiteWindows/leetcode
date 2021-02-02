@@ -2,7 +2,7 @@
 // Runtime: 4 ms
 // Memory Usage: 2.1 MB
 pub fn interval_intersection(a: Vec<Vec<i32>>, b: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
-    let mut res = vec![];
+    let mut res = Vec::new();
     let mut i = 0;
     let mut j = 0;
     let n = a.len();

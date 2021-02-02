@@ -6,7 +6,7 @@ pub fn max_sliding_window(nums: Vec<i32>, k: i32) -> Vec<i32> {
     let k = k as usize;
     let n = nums.len();
     let mut queue = VecDeque::new();
-    let mut res = vec![];
+    let mut res = Vec::new();
     for i in 0..n {
         let n = queue.len();
         for _ in 0..n {

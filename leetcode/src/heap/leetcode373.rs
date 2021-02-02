@@ -13,9 +13,9 @@ pub fn k_smallest_pairs(nums1: Vec<i32>, nums2: Vec<i32>, mut k: i32) -> Vec<Vec
     if 0 < n1 && 0 < n2 && visited.insert((0, 0)) {
         queue.push((Reverse(nums1[0] + nums2[0]), 0, 0));
     } else {
-        return vec![];
+        return Vec::new();
     }
-    let mut res = vec![];
+    let mut res = Vec::new();
     while k > 0 {
         if let Some((_, i, j)) = queue.pop() {
             res.push(vec![nums1[i], nums2[j]]);

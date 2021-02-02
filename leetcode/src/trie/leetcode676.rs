@@ -19,7 +19,7 @@ impl MagicDictionary {
             let s = s.chars().collect::<Vec<_>>();
             let n = s.len();
             for i in 0..n {
-                let mut t = vec![];
+                let mut t = Vec::new();
                 for &c in &s[..i] {
                     t.push(c);
                 }
@@ -36,7 +36,7 @@ impl MagicDictionary {
         let s = word.chars().collect::<Vec<_>>();
         let n = s.len();
         for i in 0..n {
-            let mut t = vec![];
+            let mut t = Vec::new();
             for &c in &s[..i] {
                 t.push(c);
             }

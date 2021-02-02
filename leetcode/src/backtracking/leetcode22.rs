@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn generate_parenthesis(n: i32) -> Vec<String> {
-    let mut res: Vec<String> = vec![];
+    let mut res: Vec<String> = Vec::new();
     let mut cur: String = "".to_string();
     dfs(n, n, &mut cur, &mut res);
     res

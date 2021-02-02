@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn convert_to_title(mut n: i32) -> String {
-    let mut v = vec![];
+    let mut v = Vec::new();
     while n > 0 {
         let x = ((n - 1) % 26) as u8;
         let c = (x + b'A') as char;

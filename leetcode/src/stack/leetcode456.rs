@@ -4,7 +4,7 @@
 pub fn find132pattern(nums: Vec<i32>) -> bool {
     let n = nums.len();
     let mut a3 = i32::MIN;
-    let mut stack = vec![];
+    let mut stack = Vec::new();
     for i in (0..n).rev() {
         if nums[i] < a3 {
             return true;

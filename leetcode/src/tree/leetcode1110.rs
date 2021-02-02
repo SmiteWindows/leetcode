@@ -6,7 +6,7 @@ pub fn del_nodes(
     root: Option<Rc<RefCell<TreeNode>>>,
     to_delete: Vec<i32>,
 ) -> Vec<Option<Rc<RefCell<TreeNode>>>> {
-    let mut res = vec![];
+    let mut res = Vec::new();
     let nodes = HashSet::from_iter(to_delete);
     let (root, forest) = postorder(root, &nodes);
     if root.is_some() {
@@ -30,7 +30,7 @@ fn postorder(root: Option<Rc<RefCell<TreeNode>>>, nodes: &HashSet<i32>) -> RootF
         let right = node.borrow_mut().right.take();
         let (left_root, left_forest) = postorder(left, nodes);
         let (right_root, right_forest) = postorder(right, nodes);
-        let mut forest = vec![];
+        let mut forest = Vec::new();
         for t in left_forest {
             forest.push(t);
         }

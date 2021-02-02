@@ -5,7 +5,7 @@ use std::collections::{HashMap, HashSet};
 pub fn get_folder_names(names: Vec<String>) -> Vec<String> {
     let mut hs = HashSet::new();
     let mut hm = HashMap::new();
-    let mut res = vec![];
+    let mut res = Vec::new();
     'outer: for name in names {
         if !hs.insert(name.to_string()) {
             let mut i = *hm.get(&name).unwrap_or(&1);

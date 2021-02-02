@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2 MB
 pub fn create_target_array(nums: Vec<i32>, index: Vec<i32>) -> Vec<i32> {
-    let mut res = vec![];
+    let mut res = Vec::new();
     let n = nums.len();
     for i in 0..n {
         let e = nums[i];

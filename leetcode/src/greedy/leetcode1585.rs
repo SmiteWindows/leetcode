@@ -5,7 +5,7 @@ pub fn is_transformable(s: String, t: String) -> bool {
     let n = s.len();
     let s: Vec<u8> = s.bytes().collect();
     let t: Vec<u8> = t.bytes().collect();
-    let mut idx: Vec<Vec<usize>> = vec![vec![]; 10];
+    let mut idx: Vec<Vec<usize>> = vec![Vec::new(); 10];
     for i in (0..n).rev() {
         idx[(s[i] - b'0') as usize].push(i);
     }

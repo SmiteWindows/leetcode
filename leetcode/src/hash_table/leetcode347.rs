@@ -4,7 +4,7 @@
 use std::{cmp::Reverse, collections::HashMap};
 pub fn top_k_frequent(nums: Vec<i32>, k: i32) -> Vec<i32> {
     if nums.is_empty() {
-        return vec![];
+        return Vec::new();
     }
     let mut counts = HashMap::new();
     for n in nums {

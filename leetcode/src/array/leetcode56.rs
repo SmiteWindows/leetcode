@@ -3,7 +3,7 @@
 // Memory Usage: 2.6 MB
 pub fn merge(mut intervals: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
     intervals.sort_unstable_by_key(|a| a[0]);
-    let mut res = vec![];
+    let mut res = Vec::new();
     let mut temp: Option<Vec<i32>> = None; // ?
     for v in intervals {
         if let Some(t) = temp {

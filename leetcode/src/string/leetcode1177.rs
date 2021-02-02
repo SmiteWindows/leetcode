@@ -7,7 +7,7 @@ pub fn can_make_pali_queries(s: String, queries: Vec<Vec<i32>>) -> Vec<bool> {
     for (i, c) in s.char_indices() {
         prefix[i + 1] = prefix[i] ^ (1 << (c as u32 - 'a' as u32));
     }
-    let mut res = vec![];
+    let mut res = Vec::new();
     for q in queries {
         let left = q[0] as usize;
         let right = q[1] as usize + 1;

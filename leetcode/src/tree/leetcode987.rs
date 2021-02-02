@@ -36,7 +36,7 @@ fn vertical_order(
     mut nodes: BTreeMap<i32, BTreeMap<i32, BinaryHeap<Reverse<i32>>>>,
 ) -> Vec<Vec<i32>> {
     let n = nodes.len();
-    let mut res = vec![vec![]; n];
+    let mut res = vec![Vec::new(); n];
     for (i, col) in nodes.values_mut().enumerate() {
         for row in col.values_mut() {
             while let Some(Reverse(smallest)) = row.pop() {

@@ -10,8 +10,8 @@ impl CombinationIterator {
     fn new(characters: String, combination_length: i32) -> Self {
         let combination_length = combination_length as usize;
         let n = characters.len();
-        let mut indexes = vec![];
-        let mut combinations = vec![];
+        let mut indexes = Vec::new();
+        let mut combinations = Vec::new();
         let s = characters.chars().collect::<Vec<_>>();
         Self::dfs(
             0,

@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn score_of_parentheses(s: String) -> i32 {
-    let mut stack = vec![];
+    let mut stack = Vec::new();
     for c in s.chars() {
         if c == '(' {
             stack.push(0);

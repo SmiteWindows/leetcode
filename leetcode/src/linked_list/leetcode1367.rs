@@ -3,12 +3,12 @@
 // Memory Usage: 2.3 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn is_sub_path(mut head: Option<Box<ListNode>>, root: Option<Rc<RefCell<TreeNode>>>) -> bool {
-    let mut path = vec![];
+    let mut path = Vec::new();
     while let Some(node) = head {
         path.push(node.val);
         head = node.next;
     }
-    let mut cur = vec![];
+    let mut cur = Vec::new();
     let mut res = false;
     preorder(root.as_deref(), &mut cur, &mut res, &path);
     res

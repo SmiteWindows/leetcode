@@ -6,7 +6,7 @@ pub fn num_subseq(mut nums: Vec<i32>, target: i32) -> i32 {
     nums.sort_unstable();
     let mut res = 0;
     let n = nums.len();
-    let mut power = vec![];
+    let mut power = Vec::new();
     let mut prev = 1;
     for _ in 0..n {
         power.push(prev);

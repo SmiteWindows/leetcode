@@ -3,7 +3,7 @@
 // Memory Usage: 2.1 MB
 pub fn process_queries(queries: Vec<i32>, m: i32) -> Vec<i32> {
     let mut v = (1..=m).collect::<Vec<i32>>();
-    let mut res = vec![];
+    let mut res = Vec::new();
     for q in queries {
         let p = v.iter().position(|&x| x == q).unwrap();
         v.remove(p);

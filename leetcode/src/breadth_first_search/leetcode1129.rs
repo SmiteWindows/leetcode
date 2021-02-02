@@ -8,7 +8,7 @@ pub fn shortest_alternating_paths(
     blue_edges: Vec<Vec<i32>>,
 ) -> Vec<i32> {
     let n = n as usize;
-    let mut graph = vec![vec![vec![]; n]; 2];
+    let mut graph = vec![vec![Vec::new(); n]; 2];
     let mut visited = vec![vec![false; n]; 2];
     let mut res = vec![-1; n];
     for e in red_edges {

@@ -9,7 +9,7 @@ pub fn reconstruct_queue(people: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
         .map(|v| (Reverse(v[0]), v[1]))
         .collect::<Vec<People>>();
     people.sort_unstable();
-    let mut res = vec![];
+    let mut res = Vec::new();
     for p in people {
         res.insert(p.1 as usize, vec![(p.0).0, p.1]);
     }

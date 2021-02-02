@@ -3,7 +3,7 @@
 // Memory Usage: 3 MB
 pub fn possible_bipartition(n: i32, dislikes: Vec<Vec<i32>>) -> bool {
     let n = n as usize;
-    let mut graph = vec![vec![]; n];
+    let mut graph = vec![Vec::new(); n];
     for dislike in dislikes {
         let u = dislike[0] as usize - 1;
         let v = dislike[1] as usize - 1;

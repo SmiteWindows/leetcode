@@ -51,7 +51,7 @@ macro_rules! point {
 
 impl Point {
     fn adj(&self, n: usize, m: usize) -> Vec<Point> {
-        let mut res = vec![];
+        let mut res = Vec::new();
         for i in -1..=1 {
             for j in -1..=1 {
                 let r = self.i as i32 + i;

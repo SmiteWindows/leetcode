@@ -16,7 +16,7 @@ pub fn min_mutation(start: String, end: String, bank: Vec<String>) -> i32 {
     for (i, gene) in hs.into_iter().enumerate() {
         hm.insert(gene, i);
     }
-    let mut edges = vec![vec![]; n];
+    let mut edges = vec![Vec::new(); n];
     for (gene, &u) in &hm {
         let gene = gene.chars().collect::<Vec<_>>();
         let n = gene.len();

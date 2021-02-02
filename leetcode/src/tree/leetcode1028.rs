@@ -8,7 +8,7 @@ pub fn recover_from_preorder(s: String) -> Option<Rc<RefCell<TreeNode>>> {
 }
 
 fn parse_tokens(it: &mut Peekable<Chars<'_>>) -> Vec<Tok> {
-    let mut toks = vec![];
+    let mut toks = Vec::new();
     while let Some(c) = it.next() {
         match c {
             '-' => {

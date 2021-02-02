@@ -9,7 +9,7 @@ pub fn find_words(mut board: Vec<Vec<char>>, words: Vec<String>) -> Vec<String> 
     }
     let n = board.len();
     let m = board[0].len();
-    let mut res = vec![];
+    let mut res = Vec::new();
     for i in 0..n {
         for j in 0..m {
             dfs(i, j, &mut board, &mut res, &mut trie, n, m);

@@ -6,14 +6,14 @@ use std::{
     collections::{BinaryHeap, HashMap},
 };
 pub fn find_itinerary(tickets: Vec<Vec<String>>) -> Vec<String> {
-    let mut res = vec![];
+    let mut res = Vec::new();
     let mut g: HashMap<String, BinaryHeap<Reverse<String>>> = HashMap::new();
     for ticket in tickets {
         g.entry(ticket[0].clone())
             .or_default()
             .push(Reverse(ticket[1].clone()));
     }
-    let mut stack = vec![];
+    let mut stack = Vec::new();
     stack.push("JFK".to_string());
     while !stack.is_empty() {
         while g.contains_key(stack.last().unwrap())

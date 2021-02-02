@@ -7,7 +7,7 @@ pub fn add_negabinary(mut arr1: Vec<i32>, mut arr2: Vec<i32>) -> Vec<i32> {
     arr1.reverse();
     arr2.reverse();
     let mut carry = 0;
-    let mut res = vec![];
+    let mut res = Vec::new();
     let mut i = 0;
     while i < n.max(m) || carry != 0 {
         if i < n {

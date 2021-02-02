@@ -3,7 +3,7 @@
 // Memory Usage: 2.1 MB
 use std::fmt::{Display, Formatter, Result};
 pub fn fraction_addition(expression: String) -> String {
-    let mut toks = vec![];
+    let mut toks = Vec::new();
     let mut c_it = expression.chars().peekable();
     while let Some(c) = c_it.next() {
         match c {
@@ -25,7 +25,7 @@ pub fn fraction_addition(expression: String) -> String {
         }
     }
     let mut t_it = toks.into_iter().peekable();
-    let mut fractions = vec![];
+    let mut fractions = Vec::new();
     while t_it.peek().is_some() {
         let mut sign = 1;
         let numerator;

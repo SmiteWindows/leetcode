@@ -51,7 +51,7 @@ fn parse(it: &mut Peekable<IntoIter<Tok>>) -> BTreeMap<String, usize> {
 }
 
 fn parse_tokens(it: &mut Peekable<Chars<'_>>) -> Vec<Tok> {
-    let mut res = vec![];
+    let mut res = Vec::new();
     while let Some(c) = it.next() {
         match c {
             '(' | ')' => res.push(Tok::Op(c)),

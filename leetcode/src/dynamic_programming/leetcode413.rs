@@ -2,7 +2,7 @@
 // Runtime: 0 ms
 // Memory Usage: 2.1 MB
 pub fn number_of_arithmetic_slices(a: Vec<i32>) -> i32 {
-    let mut slice = vec![];
+    let mut slice = Vec::new();
     let mut res = 0;
     for x in a {
         if slice.len() < 2 {
