@@ -12,8 +12,7 @@ fn helper(root: Option<&RefCell<TreeNode>>, level: usize, res: &mut Vec<Vec<i32>
     if let Some(node) = root {
         let node = node.borrow();
         if level >= res.len() {
-            let mut new_level = Vec::new();
-            new_level.push(node.val);
+            let new_level = vec![node.val];
             res.push(new_level);
         } else if level % 2 == 0 {
             res[level].push(node.val);

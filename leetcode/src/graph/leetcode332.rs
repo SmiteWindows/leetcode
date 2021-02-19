@@ -13,8 +13,7 @@ pub fn find_itinerary(tickets: Vec<Vec<String>>) -> Vec<String> {
             .or_default()
             .push(Reverse(ticket[1].clone()));
     }
-    let mut stack = Vec::new();
-    stack.push("JFK".to_string());
+    let mut stack = vec!["JFK".to_string()];
     while !stack.is_empty() {
         while g.contains_key(stack.last().unwrap())
             && !g.get(stack.last().unwrap()).unwrap().is_empty()

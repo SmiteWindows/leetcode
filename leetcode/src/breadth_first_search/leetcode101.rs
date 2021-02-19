@@ -3,9 +3,7 @@
 // Memory Usage: 2 MB
 use std::{cell::RefCell, rc::Rc};
 pub fn is_symmetric(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
-    let mut queue = Vec::new();
-    queue.push(root.clone());
-    queue.push(root);
+    let mut queue = vec![root.clone(), root];
     while !queue.is_empty() {
         let t1 = queue.pop().unwrap();
         let t2 = queue.pop().unwrap();

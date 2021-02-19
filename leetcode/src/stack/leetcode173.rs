@@ -2,6 +2,7 @@
 // Runtime: 12 ms
 // Memory Usage: 9.4 MB
 use std::{cell::RefCell, rc::Rc};
+#[allow(clippy::upper_case_acronyms)]
 struct BSTIterator {
     stack: Vec<Rc<RefCell<TreeNode>>>,
 }

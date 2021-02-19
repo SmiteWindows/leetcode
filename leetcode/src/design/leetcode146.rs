@@ -9,7 +9,7 @@ use std::{
 };
 type NodeRef = Rc<RefCell<Node>>;
 type Link = Option<NodeRef>;
-
+#[allow(clippy::upper_case_acronyms)]
 #[derive(Debug)]
 struct LRUCache {
     hash_map: HashMap<i32, Weak<RefCell<Node>>>,

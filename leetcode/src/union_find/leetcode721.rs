@@ -39,8 +39,7 @@ pub fn accounts_merge(accounts: Vec<Vec<String>>) -> Vec<Vec<String>> {
         hm.entry(group_id).or_default().insert(i);
     }
     for (group_id, ids) in hm.into_iter() {
-        let mut v = Vec::new();
-        v.push(owners[group_id].to_string());
+        let mut v = vec![owners[group_id].to_string()];
         for id in ids {
             v.push(emails[id].to_string());
         }

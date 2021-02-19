@@ -2,6 +2,7 @@
 // Runtime: 48 ms
 // Memory Usage: 12.1 MB
 use std::{cell::RefCell, collections::HashMap, rc::Rc};
+#[allow(clippy::upper_case_acronyms)]
 struct LFUCache {
     capacity: usize,
     count: usize,

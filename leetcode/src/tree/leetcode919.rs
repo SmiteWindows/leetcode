@@ -2,14 +2,14 @@
 // Runtime: 4 ms
 // Memory Usage: 2.6 MB
 use std::{cell::RefCell, rc::Rc};
+#[allow(clippy::upper_case_acronyms)]
 struct CBTInserter {
     stack: Vec<Option<Rc<RefCell<TreeNode>>>>,
 }
 
 impl CBTInserter {
     fn new(root: Option<Rc<RefCell<TreeNode>>>) -> Self {
-        let mut stack = Vec::new();
-        stack.push(root);
+        let mut stack = vec![root];
         let mut i = 0;
         while i < stack.len() {
             let left = stack[i].as_deref().unwrap().borrow_mut().left.clone();

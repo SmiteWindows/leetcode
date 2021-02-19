@@ -1,6 +1,7 @@
 // https://leetcode-cn.com/problems/rle-iterator/
 // Runtime: 0 ms
 // Memory Usage: 2.3 MB
+#[allow(clippy::upper_case_acronyms)]
 struct RLEIterator {
     prefix: Vec<usize>,
     values: Vec<i32>,
