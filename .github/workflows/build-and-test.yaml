@@ -1,76 +1,32 @@
-name: Rust
-
+name: CI
 on:
+  pull_request:
   push:
     branches:
-      - mod
-  pull_request:
+    - master
+    - staging
+    - trying
+
+env:
+  CARGO_INCREMENTAL: 0
+  CARGO_NET_RETRY: 10
+  CI: 1
+  RUST_BACKTRACE: short
+  RUSTFLAGS: -D warnings
+  RUSTUP_MAX_RETRIES: 10
 
 jobs:
-  lint:
-    name: Lint
-    runs-on: windows-latest
-    # needs: [compile]
+  rust:
+    name: Rust
+    runs-on: ubuntu-latest
+
     steps:
-      - name: Setup | Checkout
-        uses: actions/checkout@v2
-      - name: Setup | Rust
-        uses: ATiltedTree/setup-rust@v1.0.4
-        with:
-          rust-version: nightly
-          components: clippy
-      - name: Update
-        run: cargo update
-      - name: Tree
-        run: cargo tree
-      - name: Build | Compile
-        run: cargo check
-      - name: Build | Lint
-        run: cargo clippy
-#   compile:
-#     name: Compile
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Setup | Checkout
-#         uses: actions/checkout@v2
-#       - name: Setup | Rust
-#         uses: ATiltedTree/setup-rust@v1
-#         with:
-#           rust-version: stable
-#       - name: Update
-#         run: cargo update
-#       - name: Tree
-#         run: cargo tree
-#       - name: Build | Compile
-#         run: cargo check
-  test:
-    name: Test
-    strategy:
-      matrix:
-        os:
-        # - ubuntu-latest
-        - windows-latest
-        rust:
-          - stable
-          - beta
-          - nightly
-    runs-on: ${{ matrix.os }}
-#     needs: [compile]
-    steps:
-      - name: Setup | Checkout
-        uses: actions/checkout@v2
-      - name: Setup | Rust
-        uses: ATiltedTree/setup-rust@v1.0.4
-        with:
-          rust-version: ${{ matrix.rust }}
-      #     components: clippy
-      # - name: Update
-      #   run: cargo update
-      # - name: Tree
-      #   run: cargo tree
-      # - name: Build | Compile
-      #   run: cargo check
-      # - name: Build | Lint
-      #   run: cargo clippy
-      - name: Build | Compile
-        run: cargo test
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install Rust toolchain
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        profile: minimal
+        override: true

@@ -47,9 +47,9 @@ impl Chessboard {
             queens.insert(queen);
         }
         Self {
-            king,
-            queens,
             directions,
+            queens,
+            king,
         }
     }
 

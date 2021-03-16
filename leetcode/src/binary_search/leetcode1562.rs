@@ -40,8 +40,8 @@ impl UnionFind {
         Self {
             parent,
             size,
-            n,
             group,
+            n,
         }
     }
 
