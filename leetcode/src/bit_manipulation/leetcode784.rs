@@ -16,11 +16,10 @@ pub fn letter_case_permutation(s: String) -> Vec<String> {
             if letter.is_alphabetic() {
                 if ((bits >> b) & 1) == 1 {
                     word.push(letter.to_ascii_uppercase());
-                    b += 1;
                 } else {
                     word.push(letter.to_ascii_lowercase());
-                    b += 1;
                 }
+                b += 1;
             } else {
                 word.push(letter);
             }

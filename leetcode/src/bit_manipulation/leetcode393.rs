@@ -20,14 +20,11 @@ pub fn valid_utf8(data: Vec<i32>) -> bool {
             if x >> 7 & 0b1 == 0 {
                 continue;
             }
-            return false;
-        } else {
-            if x >> 6 & 0b11 == 0b10 {
-                count -= 1;
-                continue;
-            }
-            return false;
+        } else if x >> 6 & 0b11 == 0b10 {
+            count -= 1;
+            continue;
         }
+        return false;
     }
     count == 0
 }

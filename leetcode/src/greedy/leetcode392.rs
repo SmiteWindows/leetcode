@@ -9,10 +9,8 @@ pub fn is_subsequence(s: String, t: String) -> bool {
     while i < sn && j < tm {
         if s[i..=i] == t[j..=j] {
             i += 1;
-            j += 1;
-        } else {
-            j += 1;
         }
+        j += 1;
     }
     i == sn
 }

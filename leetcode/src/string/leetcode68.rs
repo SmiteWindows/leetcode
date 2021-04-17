@@ -11,11 +11,10 @@ pub fn full_justify(words: Vec<String>, max_width: i32) -> Vec<String> {
         if width + queue.len() + word.len() > max_width as usize {
             res.push(make_a_line(&mut queue, max_width, width));
             width = word.len();
-            queue.push_back(word);
         } else {
             width += word.len();
-            queue.push_back(word);
         }
+        queue.push_back(word);
     }
     res.push(make_the_last_line(&mut queue, max_width, width));
     res

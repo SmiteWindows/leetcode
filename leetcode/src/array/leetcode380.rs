@@ -16,7 +16,7 @@ impl RandomizedSet {
     /** Initialize your data structure here. */
     fn new() -> Self {
         Self {
-            rng: rand::thread_rng(),
+            rng: rand::thread_rng(), // miri test 有误，注意修正
             indexes: HashMap::new(),
             values: Vec::new(),
         }
@@ -66,6 +66,7 @@ impl RandomizedSet {
  */
 // design array hash_table
 #[test]
+#[cfg_attr(miri, ignore)]
 fn test2_380() {
     let mut obj = RandomizedSet::new();
     assert_eq!(obj.insert(1), true);
