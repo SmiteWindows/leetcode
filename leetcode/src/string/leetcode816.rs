@@ -19,8 +19,8 @@ fn nums(ch: &[char]) -> Vec<String> {
     let n = ch.len();
     let mut res = Vec::new();
     for i in 1..=n {
-        let left = ch[..i].iter().collect::<String<_>>();
-        let right = ch[i..].iter().collect::<String<_>>();
+        let left = ch[..i].iter().collect::<String>();
+        let right = ch[i..].iter().collect::<String>();
         if left.starts_with('0') && left != "0" {
             continue;
         }
