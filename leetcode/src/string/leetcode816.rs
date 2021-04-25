@@ -1,7 +1,6 @@
 // https://leetcode-cn.com/problems/ambiguous-coordinates/
 // Runtime: 4 ms
 // Memory Usage: 2.1 MB
-use std::iter::FromIterator;
 pub fn ambiguous_coordinates(s: String) -> Vec<String> {
     let s = s.chars().collect::<Vec<_>>();
     let n = s.len();
@@ -20,8 +19,8 @@ fn nums(ch: &[char]) -> Vec<String> {
     let n = ch.len();
     let mut res = Vec::new();
     for i in 1..=n {
-        let left = String::from_iter(ch[..i].iter());
-        let right = String::from_iter(ch[i..].iter());
+        let left = ch[..i].iter().collect::<String<_>>();
+        let right = ch[i..].iter().collect::<String<_>>();
         if left.starts_with('0') && left != "0" {
             continue;
         }
