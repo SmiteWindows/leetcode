@@ -14,7 +14,7 @@ pub fn solve(board: &mut Vec<Vec<char>>) {
                 && board[i][j] == 'O'
                 && !visited[i][j]
             {
-                dfs(i, j, &mut visited, &board, n, m);
+                dfs(i, j, &mut visited, board, n, m);
             }
         }
     }

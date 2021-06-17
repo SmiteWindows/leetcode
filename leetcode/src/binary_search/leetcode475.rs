@@ -6,7 +6,7 @@ pub fn find_radius(houses: Vec<i32>, mut heaters: Vec<i32>) -> i32 {
     let n = heaters.len();
     houses
         .iter()
-        .map(|h| (h, heaters.binary_search(&h)))
+        .map(|h| (h, heaters.binary_search(h)))
         .map(|(h, min_dist)| match min_dist {
             Ok(_) => 0,
             Err(i) => match i {

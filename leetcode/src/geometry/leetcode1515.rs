@@ -65,8 +65,8 @@ fn upper(positions: &[Vec<i32>], x: f64, y: f64) -> (f64, f64) {
 }
 
 fn weis(positions: &[Vec<i32>], x: f64, y: f64) -> (f64, f64) {
-    let (xx, yy) = upper(&positions, x, y);
-    let bottom = sum_of_bottom(&positions, x, y);
+    let (xx, yy) = upper(positions, x, y);
+    let bottom = sum_of_bottom(positions, x, y);
     if bottom < f64::EPSILON * 10.0 {
         (x, y)
     } else {

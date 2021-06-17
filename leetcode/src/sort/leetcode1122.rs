@@ -11,10 +11,10 @@ pub fn relative_sort_array(mut arr1: Vec<i32>, arr2: Vec<i32>) -> Vec<i32> {
         hm.insert(v, i);
     }
     arr1.sort_by(|a, b| match (hm.get(a), hm.get(b)) {
-        (Some(i), Some(j)) => i.cmp(&j),
+        (Some(i), Some(j)) => i.cmp(j),
         (Some(_), None) => Less,
         (None, Some(_)) => Greater,
-        (None, None) => a.cmp(&b),
+        (None, None) => a.cmp(b),
     });
     arr1
 }

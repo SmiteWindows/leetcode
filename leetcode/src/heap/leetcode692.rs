@@ -6,7 +6,7 @@ pub fn top_k_frequent(words: Vec<String>, k: i32) -> Vec<String> {
     let mut hm: HashMap<&str, usize> = HashMap::new();
     let mut v = Vec::new();
     for w in words.iter() {
-        *hm.entry(&w).or_default() += 1;
+        *hm.entry(w).or_default() += 1;
     }
     for (word, freq) in hm {
         v.push(Pair { word, freq });
